@@ -11,7 +11,7 @@ const QHash<unsigned int, QPair<QString, DeviceLanguage>> Singleton::hashLanguag
 
 void Singleton::init()
 {
-    deviceLanguage = EN;
+    deviceLanguage = KR;
 
 #if DEVICE == false
     thresholdLow = 69;
