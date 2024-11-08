@@ -19,6 +19,7 @@ public:
     QLabel* labelButtonOK;
     QLabel* labelButtonCancel;
 
+    QString strDirPath = "/ImagePassword";
     void update() override;
     void pageShow() override;
     void pageHide() override;

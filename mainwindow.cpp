@@ -5,8 +5,6 @@ MainWindow::MainWindow(QWidget* parent)
 {
     init();
     initConnect();
-
-    stackedWidget->setCurrentIndex(0);
 }
 
 MainWindow::~MainWindow()
@@ -39,7 +37,8 @@ void MainWindow::init()
     comMenu = new ComponentMenu(stackedWidget);
 
     listComponent<<comBat<<comBle<<comClock<<comHome<<comMenu;
-    //HideComponents();
+
+    HideComponents();
 }
 
 void MainWindow::initConnect()
