@@ -29,7 +29,7 @@ public:
     void pageHide() override;
 private:
     void init();
-
+    void updatePasswordNum();
 signals:
 
 };

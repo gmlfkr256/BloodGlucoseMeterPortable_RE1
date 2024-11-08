@@ -88,31 +88,21 @@ void PagePassword::update()
 
 void PagePassword::mousePressEvent(QMouseEvent *ev)
 {
+    if(instance.touchCheck(labelButtonCancel->geometry(),ev))
+    {
+        strPasswordNum.chop(1);
+    }
+
     for(int i=0; i<10; i++)
     {
         if(instance.touchCheck(labelButtonNum[i]->geometry(),ev))
         {
-            if(strPasswordNum.size()<4)
-            {
-                strPasswordNum.append(QString::number(i));
-                for(int i=0; i<4; i++)
-                {
-                    if(i<strPasswordNum.size())
-                    {
-                        labelPasswordNum[i]->show();
-                    }
-                    else
-                    {
-                        labelPasswordNum[i]->hide();
-                    }
-
-                }
-            }
-
             labelButtonNum[i]->setStyleSheet("background-color: #077bdd; color: #ffffff; border: 1px solid #ebebeb;");
             nCheckButtonNum = i;
         }
     }
+
+    updatePasswordNum();
 }
 
 void PagePassword::mouseReleaseEvent(QMouseEvent *ev)
@@ -126,6 +116,24 @@ void PagePassword::mouseReleaseEvent(QMouseEvent *ev)
     }
 }
 
+void PagePassword::updatePasswordNum()
+{
+    if(strPasswordNum.size()<4)
+    {
+        strPasswordNum.append(nCheckButtonNum);
+        for(int i=0; i<4; i++)
+        {
+            if(i<strPasswordNum.size())
+            {
+                labelPasswordNum[i]->show();
+            }
+            else
+            {
+                labelPasswordNum[i]->hide();
+            }
+        }
+    }
+}
 void PagePassword::pageShow()
 {
     strPasswordNum.clear();
