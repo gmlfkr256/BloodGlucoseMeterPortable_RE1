@@ -42,8 +42,8 @@ void TextResource::init()
     textData[EN][PAGE_PASSWORD].insert("labelTitleSub",QStringList{"Please enter your 4-digit password"});
     fontData[EN][PAGE_PASSWORD].insert("labelTitleSub",QFont(instance.fontSuit,instance.pixelToPoint(30)));
 
-    textData[KR][PAGE_PASSWORD].insert("labelButtonOKText",QStringList{"OK"});
-    fontData[KR][PAGE_PASSWORD].insert("labelButtonOKText",QFont(instance.fontSuit,instance.pixelToPoint(48)));
+    textData[EN][PAGE_PASSWORD].insert("labelButtonOKText",QStringList{"OK"});
+    fontData[EN][PAGE_PASSWORD].insert("labelButtonOKText",QFont(instance.fontSuit,instance.pixelToPoint(48)));
 
     //PAGE_HOME
     fontData[EN][PAGE_HOME].insert("labelButtonTitle",QFont(instance.fontSuit,instance.pixelToPoint(26),QFont::Bold));
