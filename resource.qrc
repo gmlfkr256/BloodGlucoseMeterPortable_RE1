@@ -66,5 +66,6 @@
         <file>Image/Default/Public/ImagePassword/buttonCancel.png</file>
         <file>Image/Default/Public/ImagePassword/buttonOK.png</file>
         <file>Image/Default/Public/ImagePassword/passwordNumBg.png</file>
+        <file>Image/Default/Public/ImagePassword/circlePassword.png</file>
     </qresource>
 </RCC>

@@ -43,6 +43,7 @@ void PagePassword::init()
     for(int i=0; i<4; i++)
     {
         labelPasswordNum[i] = new QLabel(this);
+        labelPasswordNum[i]->setGeometry(150+(i*42),163,26,26);
     }
 
     labelButtonOK = new QLabel(this);
@@ -77,6 +78,12 @@ void PagePassword::update()
 
     pixmap = instance.pixLoad(false,strDirPath,"/buttonCancel.png");
     labelButtonCancel->setPixmap(pixmap.copy());
+
+    pixmap = instance.pixLoad(false,strDirPath,"/circlePassword.png");
+    for(QLabel *label : labelPasswordNum)
+    {
+        label->setPixmap(pixmap.copy());
+    }
 }
 
 void PagePassword::mousePressEvent(QMouseEvent *ev)
@@ -85,6 +92,23 @@ void PagePassword::mousePressEvent(QMouseEvent *ev)
     {
         if(instance.touchCheck(labelButtonNum[i]->geometry(),ev))
         {
+            if(strPasswordNum.size()<4)
+            {
+                strPasswordNum.append(QString::number(i));
+                for(int i=0; i<4; i++)
+                {
+                    if(i<strPasswordNum.size())
+                    {
+                        labelPasswordNum[i]->show();
+                    }
+                    else
+                    {
+                        labelPasswordNum[i]->hide();
+                    }
+
+                }
+            }
+
             labelButtonNum[i]->setStyleSheet("background-color: #077bdd; color: #ffffff; border: 1px solid #ebebeb;");
             nCheckButtonNum = i;
         }
