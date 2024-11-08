@@ -24,8 +24,10 @@ void MainWindow::init()
 
     pagePassword = new PagePassword(this);
     stackedWidget->addWidget(pagePassword);
+
     pageHome = new PageHome(this);
     stackedWidget->addWidget(pageHome);
+
     pageSelect = new PageSelect(this);
     stackedWidget->addWidget(pageSelect);
 
