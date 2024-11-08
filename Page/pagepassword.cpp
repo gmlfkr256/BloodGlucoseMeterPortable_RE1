@@ -13,9 +13,11 @@ void PagePassword::init()
     labelTitle = new QLabel(this);
     labelTitle->setGeometry(0,30,640,50);
     labelTitle->setAlignment(Qt::AlignCenter);
+    labelTitle->setStyleSheet("color: #000000");
     labelTitleSub = new QLabel(this);
     labelTitleSub->setGeometry(0,84,640,30);
     labelTitleSub->setAlignment(Qt::AlignCenter);
+    labelTitleSub->setStyleSheet("color: #808080");
 
     for(int i=0; i<10; i++)
     {
