@@ -1,0 +1,51 @@
+#include "componenthome.h"
+
+ComponentHome::ComponentHome(QWidget *parent) : CustomComponent(parent)
+{
+    this->setGeometry(372,0,70,80);
+    init();
+}
+
+void ComponentHome::init()
+{
+    labelHome = new QLabel(this);
+    labelHome->setGeometry(14,18,37,42);
+
+    update();
+}
+
+void ComponentHome::update()
+{
+    QString pngPath;
+
+    QHash<UserNum,QString> userPngPaths =
+    {
+        {USER1, "/homeButton1.png"},
+        {USER2, "/homeButton2.png"},
+        {ROOT, "/homeButton0.png"}
+    };
+
+    pngPath = userPngPaths.value(instance.getUserNumber(),"/homeButton1.png");
+
+    qDebug()<<pngPath;
+    QPixmap pixmap = instance.pixLoad(false,strDirPath,pngPath);
+    labelHome->setPixmap(pixmap.copy());
+}
+
+void ComponentHome::mousePressEvent(QMouseEvent *ev)
+{
+    if(instance.touchCheck(this->rect(),ev))
+    {
+        emit singalComHomeClick();
+    }
+}
+
+void ComponentHome::pageShow()
+{
+    this->show();
+}
+
+void ComponentHome::pageHide()
+{
+    this->hide();
+}

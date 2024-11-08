@@ -1,0 +1,67 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Image/Default/Public/ImageBooting/Happyzone 01_00000.png</file>
+        <file>Image/Default/Public/ImageBooting/Happyzone 01_00001.png</file>
+        <file>Image/Default/Public/ImageBooting/Happyzone 01_00002.png</file>
+        <file>Image/Default/Public/ImageBooting/Happyzone 01_00003.png</file>
+        <file>Image/Default/Public/ImageBooting/Happyzone 01_00004.png</file>
+        <file>Image/Default/Public/ImageBooting/Happyzone 01_00005.png</file>
+        <file>Image/Default/Public/ImageBooting/Happyzone 01_00006.png</file>
+        <file>Image/Default/Public/ImageBooting/Happyzone 01_00007.png</file>
+        <file>Image/Default/Public/ImageBooting/Happyzone 01_00008.png</file>
+        <file>Image/Default/Public/ImageBooting/Happyzone 01_00009.png</file>
+        <file>Image/Default/Public/ImageBooting/Happyzone 01_00010.png</file>
+        <file>Image/Default/Public/ImageBooting/Happyzone 01_00011.png</file>
+        <file>Image/Default/Public/ImageBooting/Happyzone 01_00012.png</file>
+        <file>Image/Default/Public/ImageBooting/Happyzone 01_00013.png</file>
+        <file>Image/Default/Public/ImageBooting/Happyzone 01_00014.png</file>
+        <file>Image/Default/Public/ImageBooting/Happyzone 01_00015.png</file>
+        <file>Image/Default/Public/ImageBooting/Happyzone 01_00016.png</file>
+        <file>Image/Default/Public/ImageBooting/Happyzone 01_00017.png</file>
+        <file>Image/Default/Public/ImageBooting/Happyzone 01_00018.png</file>
+        <file>Image/Default/Public/ImageBooting/Happyzone 01_00019.png</file>
+        <file>Font/SUIT-ttf/LICENSE</file>
+        <file>Font/SUIT-ttf/SUIT-Bold.ttf</file>
+        <file>Font/SUIT-ttf/SUIT-ExtraBold.ttf</file>
+        <file>Font/SUIT-ttf/SUIT-ExtraLight.ttf</file>
+        <file>Font/SUIT-ttf/SUIT-Heavy.ttf</file>
+        <file>Font/SUIT-ttf/SUIT-Light.ttf</file>
+        <file>Font/SUIT-ttf/SUIT-Medium.ttf</file>
+        <file>Font/SUIT-ttf/SUIT-Regular.ttf</file>
+        <file>Font/SUIT-ttf/SUIT-SemiBold.ttf</file>
+        <file>Font/SUIT-ttf/SUIT-Thin.ttf</file>
+        <file>Image/Default/Public/ImageComBattery/nBattery100.png</file>
+        <file>Image/Default/Public/ImageComBattery/nBattery100_Charge.png</file>
+        <file>Image/Default/Public/ImageComBattery/nBattery15.png</file>
+        <file>Image/Default/Public/ImageComBattery/nBattery15_Charge.png</file>
+        <file>Image/Default/Public/ImageComBattery/nBattery5.png</file>
+        <file>Image/Default/Public/ImageComBattery/nBattery50.png</file>
+        <file>Image/Default/Public/ImageComBattery/nBattery50_Charge.png</file>
+        <file>Image/Default/Public/ImageComBattery/nBattery5_Charge.png</file>
+        <file>Image/Default/Public/ImageComBattery/nBattery75.png</file>
+        <file>Image/Default/Public/ImageComBattery/nBattery75_Charge.png</file>
+        <file>Image/Default/Public/ImageComBluetooth/Bluetooth_Off.png</file>
+        <file>Image/Default/Public/ImageComBluetooth/Bluetooth_On.png</file>
+        <file>Image/Default/Public/ImageComBluetooth/Bluetooth_Pairing.png</file>
+        <file>Image/Default/Public/ImageComHome/homeButton1.png</file>
+        <file>Image/Default/Public/ImageComHome/homeButton2.png</file>
+        <file>Image/Default/Public/ImageComHome/homeButton0.png</file>
+        <file>Image/Default/Public/ImageComMenu/menuButton.png</file>
+        <file>Image/Default/Public/ImageHome/Bg_BedTime.png</file>
+        <file>Image/Default/Public/ImageHome/Bg_BreakFastAfter.png</file>
+        <file>Image/Default/Public/ImageHome/Bg_BreakFastBefore.png</file>
+        <file>Image/Default/Public/ImageHome/Bg_DinnerAfter.png</file>
+        <file>Image/Default/Public/ImageHome/Bg_DinnerBefore.png</file>
+        <file>Image/Default/Public/ImageHome/Bg_LunchAfter.png</file>
+        <file>Image/Default/Public/ImageHome/Bg_LunchBefore.png</file>
+        <file>Image/Default/Public/ImageHome/Bg_WakeUp.png</file>
+        <file>Image/Default/Public/ImageHome/Icon_BedTime.png</file>
+        <file>Image/Default/Public/ImageHome/Icon_BreakFastAfter.png</file>
+        <file>Image/Default/Public/ImageHome/Icon_BreakFastBefore.png</file>
+        <file>Image/Default/Public/ImageHome/Icon_DinnerAfter.png</file>
+        <file>Image/Default/Public/ImageHome/Icon_DinnerBefore.png</file>
+        <file>Image/Default/Public/ImageHome/Icon_LunchAfter.png</file>
+        <file>Image/Default/Public/ImageHome/Icon_LunchBefore.png</file>
+        <file>Image/Default/Public/ImageHome/Icon_WakeUp.png</file>
+    </qresource>
+</RCC>
