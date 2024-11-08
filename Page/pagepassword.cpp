@@ -47,8 +47,12 @@ void PagePassword::init()
 
     labelButtonOK = new QLabel(this);
     labelButtonOK->setGeometry(427,133,98,85);
+
     labelButtonOKText = new QLabel(this);
     labelButtonOKText->setGeometry(labelButtonOK->geometry());
+    labelButtonOKText->setStyleSheet("color: #ffffff;");
+    labelButtonOKText->setAlignment(Qt::AlignCenter);
+
     labelButtonCancel = new QLabel(this);
     labelButtonCancel->setGeometry(336,152,67,47);
 
