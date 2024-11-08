@@ -19,6 +19,8 @@ void MainWindow::init()
     stackedWidget = new QStackedWidget(this);
     stackedWidget->setGeometry(this->geometry());
 
+    pagePassword = new PagePassword(this);
+    stackedWidget->addWidget(pagePassword);
     pageHome = new PageHome(this);
     stackedWidget->addWidget(pageHome);
     pageSelect = new PageSelect(this);

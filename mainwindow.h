@@ -11,6 +11,7 @@
 #include "Component/componenthome.h"
 #include "Component/componentmenu.h"
 
+#include "Page/pagepassword.h"
 #include "Page/pagehome.h"
 #include "Page/pageselect.h"
 
@@ -30,6 +31,7 @@ public:
     ComponentHome *comHome;
     ComponentMenu *comMenu;
 
+    PagePassword *pagePassword;
     PageHome *pageHome;
     PageSelect *pageSelect;
 private:

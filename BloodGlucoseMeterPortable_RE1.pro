@@ -29,6 +29,7 @@ SOURCES += \
     Page/page.cpp \
     Page/pagebooting.cpp \
     Page/pagehome.cpp \
+    Page/pagepassword.cpp \
     Page/pageselect.cpp \
     guiapi/guiapi.cpp \
     guiapi/vtipc.cpp \
@@ -52,6 +53,7 @@ HEADERS += \
     Page/page.h \
     Page/pagebooting.h \
     Page/pagehome.h \
+    Page/pagepassword.h \
     Page/pageselect.h \
     guiapi/gapi.h \
     guiapi/guiapi.h \
