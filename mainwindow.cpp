@@ -5,6 +5,8 @@ MainWindow::MainWindow(QWidget* parent)
 {
     init();
     initConnect();
+
+    stackedWidget->setCurrentIndex(0);
 }
 
 MainWindow::~MainWindow()
