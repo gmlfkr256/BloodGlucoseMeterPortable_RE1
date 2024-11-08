@@ -25,7 +25,7 @@ void PagePassword::init()
         }
         else
         {
-            labelButtonNum[i]->setGeometry(i*128,360,128,120);
+            labelButtonNum[i]->setGeometry((i-4)*128,360,128,120);
         }
     }
 
