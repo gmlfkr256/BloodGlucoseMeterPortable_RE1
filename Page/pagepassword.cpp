@@ -18,7 +18,7 @@ void PagePassword::init()
     for(int i=0; i<10; i++)
     {
         labelButtonNum[i] = new QLabel(this);
-        labelButtonNum[i]->setStyleSheet("border: #ebebeb solid 1px;");
+        labelButtonNum[i]->setStyleSheet("border: 1px solid #ebebeb;");
         if(i<5)
         {
             labelButtonNum[i]->setGeometry(i*128,240,128,120);
