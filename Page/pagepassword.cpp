@@ -124,7 +124,7 @@ void PagePassword::mouseReleaseEvent(QMouseEvent *ev)
 void PagePassword::updatePasswordNum()
 {
     QPixmap pixmapNull;
-    QPixmap pixmap = instance.pixLoad(false,strDirPath,"/circelPassword.png");
+    QPixmap pixmap = instance.pixLoad(false,strDirPath,"/circlePassword.png");
 
     for(int i=0; i<4; i++)
     {
