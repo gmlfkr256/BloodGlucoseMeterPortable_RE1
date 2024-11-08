@@ -126,6 +126,7 @@ void PagePassword::updatePasswordNum()
     QPixmap pixmapNull;
     QPixmap pixmap = instance.pixLoad(false,strDirPath,"/circlePassword.png");
 
+    qDebug()<<"strPasswordNum: "<<strPasswordNum;
     for(int i=0; i<4; i++)
     {
         if(i<strPasswordNum.size())
