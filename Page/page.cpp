@@ -21,6 +21,10 @@ void Page::initBG()
     labelBgTop->setStyleSheet("background-color: #212121");
 }
 
+void Page::setBgTopHide()
+{
+    labelBgTop->hide();
+}
 
 void Page::pageShow()
 {
