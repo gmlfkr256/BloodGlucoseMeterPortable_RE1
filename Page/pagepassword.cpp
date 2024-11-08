@@ -44,6 +44,7 @@ void PagePassword::init()
     {
         labelPasswordNum[i] = new QLabel(this);
         labelPasswordNum[i]->setGeometry(150+(i*42),163,26,26);
+        labelPasswordNum[i]->hide();
     }
 
     labelButtonOK = new QLabel(this);
@@ -122,11 +123,24 @@ void PagePassword::mouseReleaseEvent(QMouseEvent *ev)
 
 void PagePassword::updatePasswordNum()
 {
+    QPixmap pixmapNull;
+    QPixmap pixmap = instance.pixLoad(false,strDirPath,"/circelPassword.png");
 
     for(int i=0; i<4; i++)
     {
         if(i<strPasswordNum.size())
         {
+            if(i== strPasswordNum.size()-1)
+            {
+                labelPasswordNum[i]->setPixmap(pixmapNull);
+                labelPasswordNum[i]->setText(strPasswordNum.at(i));
+            }
+            else
+            {
+                labelPasswordNum[i]->setPixmap(pixmap);
+                labelPasswordNum[i]->setText("");
+            }
+
             labelPasswordNum[i]->show();
         }
         else
@@ -134,7 +148,6 @@ void PagePassword::updatePasswordNum()
             labelPasswordNum[i]->hide();
         }
     }
-
 }
 void PagePassword::pageShow()
 {
