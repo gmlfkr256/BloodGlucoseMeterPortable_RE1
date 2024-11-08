@@ -34,7 +34,8 @@ Q_ENUMS(UserNum)
 
 typedef enum
 {
-    PAGE_HOME = 0,
+    PAGE_PASSWORD = 0,
+    PAGE_HOME,
     PAGE_SELECT,
     PAGE_MAX
 } PageNum;
