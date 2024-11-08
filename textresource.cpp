@@ -15,7 +15,11 @@ void TextResource::init()
 {
     //KR
     //PAGE_PASSWORD
-    fontData[KR][PAGE_PASSWORD].insert("labelButtonNum",QFont(instance.fontSuit,instance.pixelToPoint(44),QFont::Bold));
+    fontData[KR][PAGE_PASSWORD].insert("labelButtonNum",QFont(instance.fontSuit,instance.pixelToPoint(44),QFont::Medium));
+    textData[KR][PAGE_PASSWORD].insert("labelTitle",QStringList{"로그인을 하세요"});
+    fontData[KR][PAGE_PASSWORD].insert("labelTitle",QFont(instance.fontSuit,instance.pixelToPoint(40),QFont::Bold));
+    textData[KR][PAGE_PASSWORD].insert("labelTitleSub",QStringList{"비밀번호 4자리를 눌러주세요"});
+    fontData[KR][PAGE_PASSWORD].insert("labelTitleSub",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
 
     //PAGE_HOME
     fontData[KR][PAGE_HOME].insert("labelButtonTitle",QFont(instance.fontSuit,instance.pixelToPoint(33),QFont::Bold));

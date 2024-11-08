@@ -12,8 +12,10 @@ void PagePassword::init()
 
     labelTitle = new QLabel(this);
     labelTitle->setGeometry(0,30,640,50);
+    labelTitle->setAlignment(Qt::AlignCenter);
     labelTitleSub = new QLabel(this);
     labelTitleSub->setGeometry(0,84,640,30);
+    labelTitleSub->setAlignment(Qt::AlignCenter);
 
     for(int i=0; i<10; i++)
     {
@@ -42,11 +44,16 @@ void PagePassword::init()
 
     labelButtonOK = new QLabel(this);
     labelButtonCancel = new QLabel(this);
+
+    update();
 }
 
 void PagePassword::update()
 {
-
+    labelTitle->setFont(textResource.getFont(PAGE_PASSWORD,"labelTitle"));
+    labelTitle->setText(textResource.getText(PAGE_PASSWORD,"labelTtite").at(0));
+    labelTitleSub->setFont(textResource.getFont(PAGE_PASSWORD,"labelTitleSub"));
+    labelTitleSub->setFont(textResource.getText(PAGE_PASSWORD,"labelTitleSub").at(0));
 }
 
 void PagePassword::mousePressEvent(QMouseEvent *ev)
