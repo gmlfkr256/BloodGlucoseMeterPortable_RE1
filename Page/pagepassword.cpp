@@ -20,6 +20,7 @@ void PagePassword::init()
         labelButtonNum[i] = new QLabel(this);
         labelButtonNum[i]->setStyleSheet("border: 1px solid #ebebeb;");
         labelButtonNum[i]->setText(QString::number(i));
+        labelButtonNum[i]->setAlignment(Qt::AlignCenter);
 
         if(i<5)
         {
