@@ -131,17 +131,6 @@ void PagePassword::updatePasswordNum()
     {
         if(i<strPasswordNum.size())
         {
-            if(i== strPasswordNum.size()-1)
-            {
-                labelPasswordNum[i]->setPixmap(pixmapNull);
-                labelPasswordNum[i]->setText(strPasswordNum.at(i));
-            }
-            else
-            {
-                labelPasswordNum[i]->setPixmap(pixmap);
-                labelPasswordNum[i]->setText("");
-            }
-
             labelPasswordNum[i]->show();
         }
         else
