@@ -100,7 +100,7 @@ void PagePassword::mousePressEvent(QMouseEvent *ev)
         {
             if(strPasswordNum.size()<4)
             {
-                strPasswordNum.append(i);
+                strPasswordNum.append(QString::number(i));
             }
             labelButtonNum[i]->setStyleSheet("background-color: #077bdd; color: #ffffff; border: 1px solid #ebebeb;");
             nCheckButtonNum = i;
