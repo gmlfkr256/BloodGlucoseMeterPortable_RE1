@@ -22,7 +22,7 @@ void PagePassword::init()
     for(int i=0; i<10; i++)
     {
         labelButtonNum[i] = new QLabel(this);
-        labelButtonNum[i]->setStyleSheet("border: 1px solid #ebebeb;");
+        labelButtonNum[i]->setStyleSheet("background-color: #ffffff; border: 1px solid #ebebeb;");
         labelButtonNum[i]->setFont(textResource.getFont(PAGE_PASSWORD,"labelButtonNum"));
         labelButtonNum[i]->setAlignment(Qt::AlignCenter);
         labelButtonNum[i]->setText(QString::number(i));
@@ -81,12 +81,30 @@ void PagePassword::update()
 
 void PagePassword::mousePressEvent(QMouseEvent *ev)
 {
+    for(int i=0; i<10; i++)
+    {
+        if(instance.touchCheck(labelButtonNum[i]->rect(),ev))
+        {
+            labelButtonNum[i]->setStyleSheet("background-color: #077bdd; color: #ffffff; border: 1px solid #ebebeb;");
+            nCheckButtonNum = i;
+        }
+    }
+}
 
+void PagePassword::mouseReleaseEvent(QMouseEvent *ev)
+{
+    Q_UNUSED(ev);
+
+    if(nCheckButtonNum != -1)
+    {
+        labelButtonNum[nCheckButtonNum]->setStyleSheet("background-color: #ffffff; color: #000000; border: 1px solid #ebebeb;");
+        nCheckButtonNum = -1;
+    }
 }
 
 void PagePassword::pageShow()
 {
-
+    strPasswordNum.clear();
 }
 
 void PagePassword::pageHide()

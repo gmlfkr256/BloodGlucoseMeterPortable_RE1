@@ -9,11 +9,14 @@ class PagePassword : public Page
 public:
     PagePassword(QWidget *parent);
     void mousePressEvent(QMouseEvent *ev) override;
+    void mouseReleaseEvent(QMouseEvent *ev) override;
 
     QLabel* labelTitle;
     QLabel* labelTitleSub;
     QLabel* labelPasswordBg;
     QLabel* labelPasswordNum[4];
+    QString strPasswordNum;
+    int nCheckButtonNum;
     QLabel* labelButtonNum[10];
 
     QLabel* labelButtonOK;
