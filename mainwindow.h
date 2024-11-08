@@ -30,11 +30,16 @@ public:
     ComponentClock *comClock;
     ComponentHome *comHome;
     ComponentMenu *comMenu;
+    QList<CustomComponent*> listComponent;
 
     PagePassword *pagePassword;
     PageHome *pageHome;
     PageSelect *pageSelect;
 private:
     void init();
+    void initConnect();
+    void currentPageChanged(int index);
+    void ShowComponents();
+    void HideComponents();
 };
 #endif // MAINWINDOW_H

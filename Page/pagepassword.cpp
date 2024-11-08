@@ -8,7 +8,7 @@ PagePassword::PagePassword(QWidget *parent) : Page(parent)
 
 void PagePassword::init()
 {
-    setBgTopHide();
+    //setBgTopHide();
 }
 
 void PagePassword::update()

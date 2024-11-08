@@ -4,6 +4,7 @@ MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent)
 {
     init();
+    initConnect();
 }
 
 MainWindow::~MainWindow()
@@ -31,5 +32,38 @@ void MainWindow::init()
     comClock = new ComponentClock(stackedWidget);
     comHome = new ComponentHome(stackedWidget);
     comMenu = new ComponentMenu(stackedWidget);
+
+    listComponent<<comBat<<comBle<<comClock<<comHome<<comMenu;
+}
+
+void MainWindow::initConnect()
+{
+    connect(stackedWidget,&QStackedWidget::currentChanged,this,&MainWindow::currentPageChanged);
+}
+
+void MainWindow::currentPageChanged(int index)
+{
+    ShowComponents();
+
+    if(index == stackedWidget->indexOf(pagePassword))
+    {
+        HideComponents();
+    }
+}
+
+void MainWindow::ShowComponents()
+{
+    for(CustomComponent *com : listComponent)
+    {
+        com->show();
+    }
+}
+
+void MainWindow::HideComponents()
+{
+    for(CustomComponent *com : listComponent)
+    {
+        com->hide();
+    }
 }
 
