@@ -22,7 +22,7 @@ void MainWindow::init()
 
     pagePassword = new PagePassword(this);
     stackedWidget->addWidget(pagePassword);
-    HideComponents();
+
 
     pageHome = new PageHome(this);
     stackedWidget->addWidget(pageHome);
@@ -37,6 +37,7 @@ void MainWindow::init()
     comMenu = new ComponentMenu(stackedWidget);
 
     listComponent<<comBat<<comBle<<comClock<<comHome<<comMenu;
+    HideComponents();
 }
 
 void MainWindow::initConnect()
