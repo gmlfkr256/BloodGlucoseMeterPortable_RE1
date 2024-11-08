@@ -83,7 +83,7 @@ void PagePassword::mousePressEvent(QMouseEvent *ev)
 {
     for(int i=0; i<10; i++)
     {
-        if(instance.touchCheck(labelButtonNum[i]->rect(),ev))
+        if(instance.touchCheck(labelButtonNum[i]->geometry(),ev))
         {
             labelButtonNum[i]->setStyleSheet("background-color: #077bdd; color: #ffffff; border: 1px solid #ebebeb;");
             nCheckButtonNum = i;
