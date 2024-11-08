@@ -44,6 +44,8 @@ QStringList TextResource::getText(PageNum page, const QString& textName)
     {
         return textData[lang][page].value(textName,QStringList{"EMPTY"});
     }
+
+    qDebug()<<"getText fail";
     return QStringList{"EMPTY"};
 }
 
@@ -54,5 +56,7 @@ QFont TextResource::getFont(PageNum page, const QString& textName)
     {
         return fontData[lang][page].value(textName,QFont("Default",12));
     }
+
+    qDebug()<<"getFont fail";
     return QFont("Default",12);
 }
