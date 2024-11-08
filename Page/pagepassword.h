@@ -17,6 +17,7 @@ public:
     QLabel* labelButtonNum[10];
 
     QLabel* labelButtonOK;
+    QLabel* labelButtonOKText;
     QLabel* labelButtonCancel;
 
     QString strDirPath = "/ImagePassword";
