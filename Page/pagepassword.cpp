@@ -38,6 +38,7 @@ void PagePassword::init()
     }
 
     labelPasswordBg = new QLabel(this);
+    labelPasswordBg->setGeometry(116,133,303,85);
 
     for(int i=0; i<4; i++)
     {
@@ -56,6 +57,15 @@ void PagePassword::update()
     labelTitle->setText(textResource.getText(PAGE_PASSWORD,"labelTitle").at(0));
     labelTitleSub->setFont(textResource.getFont(PAGE_PASSWORD,"labelTitleSub"));
     labelTitleSub->setText(textResource.getText(PAGE_PASSWORD,"labelTitleSub").at(0));
+
+    QPixmap pixmap = instance.pixLoad(false,strDirPath,"/passwordNumBg.png");
+    labelPasswordBg->setPixmap(pixmap.copy());
+
+    pixmap = instance.pixLoad(false,strDirPath,"/buttonOK.png");
+    labelButtonOK->setPixmap(pixmap.copy());
+
+    pixmap = instance.pixLoad(false,strDirPath,"/buttonCancel.png");
+    labelButtonCancel->setPixmap(pixmap.copy());
 }
 
 void PagePassword::mousePressEvent(QMouseEvent *ev)

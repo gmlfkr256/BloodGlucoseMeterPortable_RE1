@@ -63,5 +63,8 @@
         <file>Image/Default/Public/ImageHome/Icon_LunchAfter.png</file>
         <file>Image/Default/Public/ImageHome/Icon_LunchBefore.png</file>
         <file>Image/Default/Public/ImageHome/Icon_WakeUp.png</file>
+        <file>Image/Default/Public/ImagePassword/buttonCancel.png</file>
+        <file>Image/Default/Public/ImagePassword/buttonOK.png</file>
+        <file>Image/Default/Public/ImagePassword/passwordNumBg.png</file>
     </qresource>
 </RCC>
