@@ -5,8 +5,6 @@ MainWindow::MainWindow(QWidget* parent)
 {
     init();
     initConnect();
-
-    stackedWidget->setCurrentIndex(0);
 }
 
 MainWindow::~MainWindow()
@@ -24,6 +22,7 @@ void MainWindow::init()
 
     pagePassword = new PagePassword(this);
     stackedWidget->addWidget(pagePassword);
+    HideComponents();
 
     pageHome = new PageHome(this);
     stackedWidget->addWidget(pageHome);
