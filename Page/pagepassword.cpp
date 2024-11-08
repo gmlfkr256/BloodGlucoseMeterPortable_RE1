@@ -68,6 +68,9 @@ void PagePassword::update()
     pixmap = instance.pixLoad(false,strDirPath,"/buttonOK.png");
     labelButtonOK->setPixmap(pixmap.copy());
 
+    labelButtonOKText->setFont(textResource.getFont(PAGE_PASSWORD,"labelButtonOKText"));
+    labelButtonOKText->setText(textResource.getText(PAGE_PASSWORD,"labelButtonOKText").at(0));
+
     pixmap = instance.pixLoad(false,strDirPath,"/buttonCancel.png");
     labelButtonCancel->setPixmap(pixmap.copy());
 }
