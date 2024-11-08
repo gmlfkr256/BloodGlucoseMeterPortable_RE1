@@ -8,7 +8,7 @@ PagePassword::PagePassword(QWidget *parent) : Page(parent)
 
 void PagePassword::init()
 {
-    //setBgTopHide();
+    setBgTopHide();
 
     labelTitle = new QLabel(this);
     labelTitle->setGeometry(0,30,640,50);
@@ -19,6 +19,8 @@ void PagePassword::init()
     {
         labelButtonNum[i] = new QLabel(this);
         labelButtonNum[i]->setStyleSheet("border: 1px solid #ebebeb;");
+        labelButtonNum[i]->setText(QString::number(i));
+
         if(i<5)
         {
             labelButtonNum[i]->setGeometry(i*128,240,128,120);
