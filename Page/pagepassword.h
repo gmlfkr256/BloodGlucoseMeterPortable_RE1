@@ -16,7 +16,7 @@ public:
     QLabel* labelPasswordBg;
     QLabel* labelPasswordNum[4];
     QString strPasswordNum;
-    int nCheckButtonNum;
+    int nCheckButtonNum = -1;
     QLabel* labelButtonNum[10];
 
     QLabel* labelButtonOK;
