@@ -34,7 +34,7 @@ void Singleton::init()
 
     //caliUserInfo
     //dispData
-    langData.used = KR;
+    langData.used = EN;
 #endif
 }
 
