@@ -73,6 +73,42 @@ void PagePasswordConfirm::mousePressEvent(QMouseEvent *ev)
     if(instance.touchCheck(customButtonOK->geometry(),ev))
     {
         qDebug()<<"customButtonOK";
+        switch (instance.getPasswordStrStatus())
+        {
+        case PASSWORD_STR_LOGIN_SUCCESS:
+            signalShowPageHome();
+            break;
+        case PASSWORD_STR_LOGIN_FAIL:
+            break;
+        case PASSWORD_STR_LOGIN_CHANGE:
+            break;
+        case PASSWORD_STR_CONFIRM:
+            break;
+        case PASSWORD_STR_CONFIRM_FAIL:
+            break;
+        case PASSWORD_STR_REPEAT:
+            break;
+        case PASSWORD_STR_REPEAT_FAIL:
+            break;
+        case PASSWORD_STR_EDIT:
+            break;
+        case PASSWORD_STR_EDIT_CONFIRM:
+            break;
+        case PASSWORD_STR_EDIT_CHANGE:
+            break;
+        case PASSWORD_STR_EDIT_SUCCESS:
+            break;
+        case PASSWORD_STR_DELETE:
+            break;
+        case PASSWORD_STR_DELETE_CONFIRM:
+            break;
+        case PASSWORD_STR_DELETE_SUCCESS:
+            break;
+        case PASSWORD_STR_LOGOUT:
+            break;
+        case PASSWORD_STR_MAX:
+            break;
+        }
     }
 
     if(instance.touchCheck(customButtonCancel->geometry(),ev))

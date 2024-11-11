@@ -21,6 +21,9 @@ public:
     void pageHide() override;
 private:
     void init();
+
+signals:
+    void signalShowPageHome();
 };
 
 #endif // PAGEPASSWORDCONFIRM_H
