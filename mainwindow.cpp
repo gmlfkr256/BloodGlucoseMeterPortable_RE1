@@ -47,7 +47,7 @@ void MainWindow::init()
 
     listComponent<<comBat<<comBle<<comClock<<comHome<<comMenu;
 
-    //HideComponents();
+    HideComponents();
 }
 
 void MainWindow::initConnect()
@@ -65,6 +65,7 @@ void MainWindow::initConnect()
 
 void MainWindow::currentPageChanged(int index)
 {
+    qDebug()<<"Parent visible: "<<stackedWidget->isVisible();
     if(index == stackedWidget->indexOf(pagePassword))
     {
         qDebug()<<"hidecomponent index:"<<index<<", pagePassword:"<<stackedWidget->indexOf(pagePassword);
