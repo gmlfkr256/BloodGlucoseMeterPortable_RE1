@@ -144,7 +144,7 @@ public:
 
 private:
     //Singleton() = default;
-    explicit Singleton(QObject* parent = nullptr) : QObject(parent){};
+    explicit Singleton(QObject* parent = nullptr) : QObject(parent){init();};
     ~Singleton() = default;
 
     QString strImgLoot = ":/Image";

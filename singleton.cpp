@@ -36,7 +36,6 @@ void Singleton::init()
 Singleton& Singleton::getInstance()
 {
     static Singleton instance;
-    instance.init();
     return instance;
 }
 
