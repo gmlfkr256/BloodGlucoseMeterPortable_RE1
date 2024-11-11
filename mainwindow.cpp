@@ -65,11 +65,8 @@ void MainWindow::initConnect()
 
 void MainWindow::currentPageChanged(int index)
 {
-
-
     if(index == stackedWidget->indexOf(pagePassword))
     {
-
         qDebug()<<"hidecomponent index:"<<index<<", pagePassword:"<<stackedWidget->indexOf(pagePassword);
         HideComponents();
     }
