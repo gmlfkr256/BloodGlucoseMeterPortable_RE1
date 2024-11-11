@@ -34,9 +34,16 @@ void CustomButtonOK::update()
     int x, width;
 
     if(bIsLong)
-        x = 0, width = 640;
+    {
+        x = 0;
+        width = 640;
+    }
     else
-        x = 320, width = 320;
+    {
+        x = 320;
+        width = 320;
+    }
+
 
     this->setGeometry(x,390,width,90);
     labelButtonOk->setGeometry(this->geometry());
