@@ -151,6 +151,7 @@ void PagePassword::updatePasswordNum()
 
 void PagePassword::processOK()
 {
+    bool bCheckPassword = false;
     qDebug()<<"strPasswordNum: "+strPasswordNum;
     switch (instance.getPasswordStatus())
     {
@@ -159,23 +160,27 @@ void PagePassword::processOK()
         {
             if(strPasswordNum == instance.sysUserInfo[i].passwd)
             {
+                bCheckPassword = true;
                 qDebug()<<"Log in Success";
                 instance.actUserLogin(i);
-
-                if(strPasswordNum == "1111" || strPasswordNum == "2222")
-                    instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_CHANGE);
-                else
-                    instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
-
                 emit signalUserTrans();
                 break;
             }
         }
 
-        instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
-        if(strPasswordNum == "9999")
-            instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
-
+        if(bCheckPassword)
+        {
+            if(strPasswordNum == "1111" || strPasswordNum == "2222")
+                instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_CHANGE);
+            else
+                instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
+        }
+        else
+        {
+            instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
+            if(strPasswordNum == "9999")
+                instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
+        }
         break;
     case PASSWORD_EDIT:
         instance.setPasswordStatusPrev(PASSWORD_EDIT);
