@@ -69,12 +69,13 @@ void MainWindow::currentPageChanged(int index)
 
     if(index == stackedWidget->indexOf(pagePassword))
     {
-        qDebug()<<"index:"<<index<<", pagePassword:"<<stackedWidget->indexOf(pagePassword);
+
+        qDebug()<<"hidecomponent index:"<<index<<", pagePassword:"<<stackedWidget->indexOf(pagePassword);
         HideComponents();
     }
     else
     {
-        qDebug()<<"index:"<<index<<", pagePassword:"<<stackedWidget->indexOf(pagePassword);
+        qDebug()<<"showcomponent index:"<<index<<", pagePassword:"<<stackedWidget->indexOf(pagePassword);
         ShowComponents();
     }
 }
