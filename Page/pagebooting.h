@@ -9,8 +9,8 @@ class PageBooting : public QObject
 public:
     PageBooting(QRect windowRect);
     QPoint getBootingPoint();
-private:
     QSplashScreen splashScreenBooting;
+private:
     QPixmap pixBooting;
     QString strDirPath = "/ImageBooting";
     int currentFrame;
