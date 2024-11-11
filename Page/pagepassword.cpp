@@ -224,6 +224,8 @@ void PagePassword::processOK()
         instance.setPasswordStrStatus(PASSWORD_STR_MAX);
         break;
     }
+
+    emit signalPassword();
 }
 
 void PagePassword::pageShow()
