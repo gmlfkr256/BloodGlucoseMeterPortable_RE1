@@ -33,10 +33,8 @@ int main(int argc, char* argv[])
     w.move(pageBooting->getBootingPoint());
 
     QObject::connect(pageBooting,&PageBooting::signalFinished,[&](){
-        pageBooting->splashScreenBooting.close();
-        pageBooting->splashScreenBooting.deleteLater();
         w.show();
-        //pageBooting->deleteLater();
+        pageBooting->deleteLater();
         qApp->processEvents();
     });
 

@@ -15,6 +15,11 @@ PageBooting::PageBooting(QRect windowRect) : currentFrame(0)
     timerImg->start(50);
 }
 
+PageBooting::~PageBooting()
+{
+    splashScreenBooting.close();
+}
+
 
 void PageBooting::updateImage()
 {
