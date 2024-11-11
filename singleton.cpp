@@ -12,6 +12,7 @@ const QHash<unsigned int, QPair<QString, DeviceLanguage>> Singleton::hashLanguag
 void Singleton::init()
 {
     deviceLanguage = KR;
+    deviceColor = COLOR_DEFAULT;
 
 #if DEVCIE
     updateSysUserInfo();
