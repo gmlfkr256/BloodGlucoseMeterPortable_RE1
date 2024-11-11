@@ -65,7 +65,6 @@ void MainWindow::initConnect()
 
 void MainWindow::currentPageChanged(int index)
 {
-    qDebug()<<"Parent visible: "<<stackedWidget->isVisible();
     if(index == stackedWidget->indexOf(pagePassword))
     {
         qDebug()<<"hidecomponent index:"<<index<<", pagePassword:"<<stackedWidget->indexOf(pagePassword);
@@ -83,6 +82,7 @@ void MainWindow::ShowComponents()
     for(CustomComponent *com : listComponent)
     {
         com->show();
+        com->raise();
     }
 }
 
@@ -91,6 +91,7 @@ void MainWindow::HideComponents()
     for(CustomComponent *com : listComponent)
     {
         com->hide();
+        com->raise();
     }
 }
 
