@@ -157,12 +157,12 @@ UserNum Singleton::getUserNumber()
 
 void Singleton::setUserNumber(int nUserNumber)
 {
-    if(nUserNumber>= USER1 && nUserNumber<=ROOT)
+    if(nUserNumber>= USER_1 && nUserNumber<= USER_MAX)
         this->nUserNumber = static_cast<UserNum> (nUserNumber);
     else
     {
         qWarning()<<"Invalid user Number: "<<nUserNumber;
-        this->nUserNumber = USER1;
+        this->nUserNumber = USER_1;
     }
 }
 
@@ -174,6 +174,16 @@ bool Singleton::getProcCheck()
 void Singleton::setProcCheck(bool used)
 {
     procCheck = used;
+}
+
+PasswordStatus Singleton::getPasswordStatus()
+{
+    return passwordStatus;
+}
+
+void Singleton::setPasswordStatus(PasswordStatus passwordStatus)
+{
+    this->passwordStatus = passwordStatus;
 }
 
 bool Singleton::touchCheck(const QRect &rect, QMouseEvent* ev)
@@ -188,52 +198,4 @@ int Singleton::pixelToPoint(int pixelSize)
     return static_cast<int>((pixelSize*72.0)/dpi);
 }
 
-QStringList Singleton::getString(PageNum pageNum, QString textName)
-{
-    QStringList listStr;
-    switch (deviceLanguage)
-    {
-    case KR:
-        switch (pageNum)
-        {
-        case PAGE_HOME:
-            if(textName.contains("title"))
-            {
-                listStr = QStringList{"기상","조식 전","조식 후","중식 전","중식 후","석식 전","석식 후","취침"};
-            }
-            break;
-        case PAGE_SELECT:
-            break;
-        case PAGE_MAX:
-            break;
-        }
-        break;
-    case EN:
-        switch (pageNum)
-        {
-        case PAGE_HOME:
-            if(textName.contains("title"))
-            {
-                listStr = QStringList{"Wake\nUp","Before\nBreakfast","After\nBreakfast","Before\nLunch","After\nLunch","Before\nDinner","After\nDinner","Bed\nTime"};
-            }
-            break;
-        case PAGE_SELECT:
-            break;
-        case PAGE_MAX:
-            break;
-        }
-        break;
-    case JP:
-        break;
-    case CN_GAN:
-        break;
-    case CN_BUN:
-        break;
-    default:
-        return listStr<<"EMPTY";
-        break;
-    }
-
-    return listStr;
-}
 

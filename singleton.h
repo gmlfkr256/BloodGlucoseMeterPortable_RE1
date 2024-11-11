@@ -18,16 +18,17 @@ typedef enum
     EN,
     JP,
     CN_GAN,
-    CN_BUN
+    CN_BUN,
+    LAN_MAX
 } DeviceLanguage;
 
 Q_ENUMS(DeviceLanguage)
 
 typedef enum
 {
-    USER1 = 0,
-    USER2,
-    ROOT
+    USER_1 = 0,
+    USER_2,
+    USER_MAX
 } UserNum;
 
 Q_ENUMS(UserNum)
@@ -41,6 +42,16 @@ typedef enum
 } PageNum;
 
 Q_ENUMS(PageNum)
+
+typedef enum
+{
+    PASSWORD_LOGIN = 0,
+    PASSWORD_EDIT,
+    PASSWORD_DELETE,
+    PASSWORD_CONFIRM,
+    PASSWORD_REPEAT,
+    PASSWORD_MAX
+} PasswordStatus;
 
 class Singleton : public QObject
 {
@@ -75,10 +86,11 @@ public:
     UserNum getUserNumber();
     void setUserNumber(int nUserNumber);
 
+    PasswordStatus getPasswordStatus();
+    void setPasswordStatus(PasswordStatus passwordStatus);
+
     bool touchCheck(const QRect &rect, QMouseEvent* ev);
     int pixelToPoint(int pixelSize);
-
-    QStringList getString(PageNum pageNum,QString textName);
 
 private:
     //Singleton() = default;
@@ -90,7 +102,8 @@ private:
     QString strImgPathLan = "/KR";
 
     bool procCheck = false;
-    UserNum nUserNumber = USER1;
+    UserNum nUserNumber = USER_1;
+    PasswordStatus passwordStatus = PASSWORD_LOGIN;
 
     static const QHash<unsigned int, QPair<QString, DeviceLanguage>> hashLanguage;
 };

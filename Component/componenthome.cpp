@@ -20,9 +20,9 @@ void ComponentHome::update()
 
     QHash<UserNum,QString> userPngPaths =
     {
-        {USER1, "/homeButton1.png"},
-        {USER2, "/homeButton2.png"},
-        {ROOT, "/homeButton0.png"}
+        {USER_1, "/homeButton1.png"},
+        {USER_2, "/homeButton2.png"},
+        {USER_MAX, "/homeButton0.png"}
     };
 
     pngPath = userPngPaths.value(instance.getUserNumber(),"/homeButton1.png");

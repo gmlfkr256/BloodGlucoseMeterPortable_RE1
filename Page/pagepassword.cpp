@@ -89,6 +89,14 @@ void PagePassword::update()
 
 void PagePassword::mousePressEvent(QMouseEvent *ev)
 {
+    if(instance.touchCheck(labelButtonOK->geometry(),ev))
+    {
+        if(strPasswordNum.size()<4)
+            return;
+
+
+    }
+
     if(instance.touchCheck(labelButtonCancel->geometry(),ev))
     {
         strPasswordNum.chop(1);
