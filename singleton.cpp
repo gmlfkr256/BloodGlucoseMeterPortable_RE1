@@ -244,12 +244,13 @@ void Singleton::setPasswordStrStatus(PasswordStrStatus passwordStrStatus)
 //UserLogin
 void Singleton::actUserLogin(int i)
 {
-    guiApi.glucoseActUserLogin(i);
-    setUserNumber(i);
+    guiApi.glucoseActUserLogin(i); 
     guiApi.glucoseCaliGetUserInfo(&caliUserInfo);
-    guiApi.glucoseGetDispData(&dispData);
-    setSleepTime(dispData.ts_timeout);
+    guiApi.glucoseGetDispData(&dispData); 
     guiApi.glucoseGetLangData(&langData);
+
+    setSleepTime(dispData.ts_timeout);
+    setUserNumber(i);
     setDeviceLanguage(langData.used);
 }
 
