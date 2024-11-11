@@ -35,7 +35,9 @@ public:
     PagePassword *pagePassword;
     PageHome *pageHome;
     PageSelect *pageSelect;
+
 private:
+    void initGuiApi();
     void init();
     void initConnect();
     void currentPageChanged(int index);

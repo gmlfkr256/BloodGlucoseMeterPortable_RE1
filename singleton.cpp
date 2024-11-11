@@ -11,18 +11,19 @@ const QHash<unsigned int, QPair<QString, DeviceLanguage>> Singleton::hashLanguag
 
 void Singleton::init()
 {
-    deviceLanguage = EN;
+    deviceLanguage = KR;
 
-#if DEVICE == false
+#if DEVCIE
+    updateSysUserInfo();
+#else
     thresholdLow = 69;
     thresholdHigh = 170;
 
-    dayInfo.val[0].valid_flag = 1;
-    dayInfo.val[0].value = 99;
-    dayInfo.val[0].hour = 9;
-    dayInfo.val[0].min = 10;
+    histInfo.val[0].valid_flag = 1;
+    histInfo.val[0].value = 99;
+    histInfo.val[0].hour = 9;
+    histInfo.val[0].min = 10;
 #endif
-
 }
 
 Singleton& Singleton::getInstance()
@@ -184,6 +185,15 @@ PasswordStatus Singleton::getPasswordStatus()
 void Singleton::setPasswordStatus(PasswordStatus passwordStatus)
 {
     this->passwordStatus = passwordStatus;
+}
+
+void Singleton::updateSysUserInfo()
+{
+    for(int i=0; i<USER_MAX; i++)
+    {
+        if(guiApi.glucoseGetUserInfo(i,&sysUserInfo[i]) == GAPI_SUCCESS)
+            qDebug()<<"sysUserInfo["+QString::number(i)+"] update Success";
+    }
 }
 
 bool Singleton::touchCheck(const QRect &rect, QMouseEvent* ev)

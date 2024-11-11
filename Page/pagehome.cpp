@@ -94,14 +94,14 @@ void PageHome::update()
         labelGroups[i].labelButtonImage->hide();
         labelGroups[i].labelButtonText->hide();
 
-        if(instance.dayInfo.val[order[i]].valid_flag == 0)
+        if(instance.histInfo.val[order[i]].valid_flag == 0)
         {
             labelGroups[i].labelButtonImage->show();
         }
         else
         {
             labelGroups[i].labelButtonText->show();
-            int glucoseValue = instance.dayInfo.val[order[i]].value;
+            int glucoseValue = instance.histInfo.val[order[i]].value;
 
             setLabelTextColor(labelGroups[i].labelButtonText,glucoseValue);
         }

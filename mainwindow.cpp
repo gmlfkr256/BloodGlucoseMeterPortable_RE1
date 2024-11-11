@@ -3,11 +3,18 @@
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent)
 {
+    initGuiApi();
+
     init();
     initConnect();
 }
 
 MainWindow::~MainWindow()
+{
+
+}
+
+void MainWindow::initGuiApi()
 {
 
 }

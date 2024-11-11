@@ -53,6 +53,28 @@ typedef enum
     PASSWORD_MAX
 } PasswordStatus;
 
+Q_ENUMS(PasswordStatus)
+
+typedef  enum
+{
+    PASSWORD_STR_LOGIN_SUCCESS = 0,
+    PASSWORD_STR_LOGIN_FAIL,
+    PASSWORD_STR_LOGIN_CHANGE,
+    PASSWORD_STR_CONFIRM,
+    PASSWORD_STR_CONFIRM_FAIL,
+    PASSWORD_STR_REPEAT,
+    PASSWORD_STR_REPEAT_FAIL,
+    PASSWORD_STR_EDIT,
+    PASSWORD_STR_EDIT_CONFIRM,
+    PASSWORD_STR_EDIT_CHANGE,
+    PASSWORD_STR_EDIT_SUCCESS,
+    PASSWORD_STR_DELETE,
+    PASSWORD_STR_DELETE_CONFIRM,
+    PASSWORD_STR_DELETE_SUCCESS,
+    PASSWORD_STR_LOGOUT,
+    PASSWORD_STR_MAX
+} PasswordStrStatus;
+
 class Singleton : public QObject
 {
     Q_OBJECT
@@ -70,7 +92,8 @@ public:
 
     int thresholdLow;
     int thresholdHigh;
-    gapiHistInfo_t dayInfo;
+    gapiHistInfo_t histInfo;
+    gapiSysUserInfo_t sysUserInfo[USER_MAX];
 
     void init();
 
@@ -89,6 +112,8 @@ public:
     PasswordStatus getPasswordStatus();
     void setPasswordStatus(PasswordStatus passwordStatus);
 
+    void updateSysUserInfo();
+
     bool touchCheck(const QRect &rect, QMouseEvent* ev);
     int pixelToPoint(int pixelSize);
 
@@ -101,11 +126,12 @@ private:
     QString strImgPathColor = "/Default";
     QString strImgPathLan = "/KR";
 
+    static const QHash<unsigned int, QPair<QString, DeviceLanguage>> hashLanguage;
+
     bool procCheck = false;
+
     UserNum nUserNumber = USER_1;
     PasswordStatus passwordStatus = PASSWORD_LOGIN;
-
-    static const QHash<unsigned int, QPair<QString, DeviceLanguage>> hashLanguage;
 };
 
 #endif // SINGLETON_H
