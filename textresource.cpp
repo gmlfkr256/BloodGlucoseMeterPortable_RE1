@@ -20,7 +20,13 @@ void TextResource::init()
     textData[KR][PAGE_PASSWORD].insert("labelTitle",QStringList{"로그인을 하세요","비밀번호 수정","사용자 삭제","비밀번호 확인","비밀번호 재확인","PASSWORD_MAX"});
     fontData[KR][PAGE_PASSWORD].insert("labelTitle",QFont(instance.fontSuit,instance.pixelToPoint(40),QFont::Bold));
 
-    textData[KR][PAGE_PASSWORD].insert("labelTitleSub",QStringList{"비밀번호 4자리를 눌러주세요","수정할 번호 4자리를 눌러주세요","확인을 위해 4자리를 눌러주세요","재확인을 위해 4자리를 눌러주세요","PASSWORD_MAX"});
+    textData[KR][PAGE_PASSWORD].insert("labelTitleSub",QStringList{
+                                           "비밀번호 4자리를 눌러주세요",""
+                                           "수정할 번호 4자리를 눌러주세요",
+                                           "확인을 위해 4자리를 눌러주세요",
+                                           "재확인을 위해 4자리를 눌러주세요",
+                                           "PASSWORD_MAX"
+                                       });
     fontData[KR][PAGE_PASSWORD].insert("labelTitleSub",QFont(instance.fontSuit,instance.pixelToPoint(30)));
 
     textData[KR][PAGE_PASSWORD].insert("labelButtonOKText",QStringList{"확인"});
@@ -39,7 +45,13 @@ void TextResource::init()
     textData[EN][PAGE_PASSWORD].insert("labelTitle",QStringList{"Please log in","Edit Password","Delete User","Password Confirmation","Password Re-confirmation","PASSWORD_MAX"});
     fontData[EN][PAGE_PASSWORD].insert("labelTitle",QFont(instance.fontSuit,instance.pixelToPoint(40),QFont::Bold));
 
-    textData[EN][PAGE_PASSWORD].insert("labelTitleSub",QStringList{"Please enter your 4-digit password"});
+    textData[EN][PAGE_PASSWORD].insert("labelTitleSub", QStringList{
+                                           "Please enter your 4-digit password",
+                                           "Please enter the 4 digits to modify",
+                                           "Please confirm by entering 4 digits",
+                                           "Please re-enter the 4 digits to verify",
+                                           "PASSWORD_MAX"
+                                       });
     fontData[EN][PAGE_PASSWORD].insert("labelTitleSub",QFont(instance.fontSuit,instance.pixelToPoint(30)));
 
     textData[EN][PAGE_PASSWORD].insert("labelButtonOKText",QStringList{"OK"});
