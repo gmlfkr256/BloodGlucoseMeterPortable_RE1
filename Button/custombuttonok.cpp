@@ -10,6 +10,7 @@ void CustomButtonOK::init()
 {
     labelButtonOk = new QLabel(this);
     labelButtonOk->setGeometry(0,0,this->width(),this->height());
+    labelButtonOk->setAlignment(Qt::AlignCenter);
 
     update();
 }

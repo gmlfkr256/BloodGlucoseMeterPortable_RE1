@@ -10,6 +10,7 @@ void CustomButtonCancel::init()
 {
     labelButtonCancel = new QLabel(this);
     labelButtonCancel->setGeometry(0,0,this->width(),this->height());
+    labelButtonCancel->setAlignment(Qt::AlignCenter);
 
     update();
 }
@@ -30,12 +31,8 @@ void CustomButtonCancel::update()
         break;
     }
 
-    int x, width;
-
-    if(bIsLong)
-        x = 0, width = 640;
-    else
-        x = 320, width = 320;
+    int x = bIsLong ? 0 : 320;
+    int width = bIsLong ? 640 : 320;
 
     this->setGeometry(x,390,width,90);
     labelButtonCancel->setGeometry(this->geometry());
