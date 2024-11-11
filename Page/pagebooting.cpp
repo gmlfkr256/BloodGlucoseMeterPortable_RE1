@@ -3,7 +3,7 @@
 PageBooting::PageBooting(QRect windowRect) : currentFrame(0)
 {
     splashScreenBooting.setGeometry(windowRect);
-    //splashScreenBooting.setWindowFlags(splashScreenBooting.windowFlags() | Qt::WindowStaysOnTopHint);
+    splashScreenBooting.setWindowFlags(splashScreenBooting.windowFlags() | Qt::WindowStaysOnTopHint);
     pixBooting = Singleton::getInstance().pixLoad(false,strDirPath,"/Happyzone 01_00001.png");
 
     splashScreenBooting.setPixmap(pixBooting.copy());
@@ -23,6 +23,7 @@ void PageBooting::updateImage()
         if(sendTimer)
         {
             sendTimer->stop();
+            splashScreenBooting.hide();
             emit signalFinished();
         }
         return;
