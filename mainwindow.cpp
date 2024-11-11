@@ -55,6 +55,7 @@ void MainWindow::initConnect()
     connect(stackedWidget,&QStackedWidget::currentChanged,this,&MainWindow::currentPageChanged);
     connect(stackedWidget,&QStackedWidget::currentChanged,this,[this](int index){
         Page *currentPage = qobject_cast<Page *>(stackedWidget->widget(index));
+        qDebug()<<"update() index: "<<index;
         if(currentPage)
             currentPage->update();
     });
@@ -64,14 +65,16 @@ void MainWindow::initConnect()
 
 void MainWindow::currentPageChanged(int index)
 {
-    qDebug()<<"index:"<<index<<", pagePassword:"<<stackedWidget->indexOf(pagePassword);
+
 
     if(index == stackedWidget->indexOf(pagePassword))
     {
+        qDebug()<<"index:"<<index<<", pagePassword:"<<stackedWidget->indexOf(pagePassword);
         HideComponents();
     }
     else
     {
+        qDebug()<<"index:"<<index<<", pagePassword:"<<stackedWidget->indexOf(pagePassword);
         ShowComponents();
     }
 }
