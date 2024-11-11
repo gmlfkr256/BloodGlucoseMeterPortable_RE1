@@ -65,9 +65,9 @@ void MainWindow::initConnect()
 
 void MainWindow::currentPageChanged(int index)
 {
-    QWidget *currentPage = stackedWidget->widget(index);
+    Page *currentPage = qobject_cast<Page*>(stackedWidget->widget(index));
 
-    if(listComHiddenPages.contains(currentPage))
+    if(currentPage && listComHiddenPages.contains(currentPage))
     {
         HideComponents();
     }

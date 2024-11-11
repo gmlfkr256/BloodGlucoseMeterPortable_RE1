@@ -38,7 +38,7 @@ public:
     PageHome *pageHome;
     PageSelect *pageSelect;
 
-    QList<QWidget*> listComHiddenPages = {pagePassword,pagePasswordConfirm};
+    QList<Page *> listComHiddenPages = {pagePassword,pagePasswordConfirm};
 private:
     void initGuiApi();
     void init();
