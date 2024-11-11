@@ -3,6 +3,8 @@
 
 #include "singleton.h"
 #include "textresource.h"
+#include "Button/custombuttonok.h"
+#include "Button/custombuttoncancel.h"
 
 class Page : public QWidget
 {
@@ -15,6 +17,8 @@ public:
     virtual void update() = 0;
     virtual void pageShow() = 0;
     virtual void pageHide() = 0;
+    virtual ~Page() = default;
+
     void setBgTopHide();
 private:
     QLabel *labelBg;

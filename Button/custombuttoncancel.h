@@ -7,7 +7,15 @@ class CustomButtonCancel : public CustomButton
 {
     Q_OBJECT
 public:
-    CustomButtonCancel(QLabel *parent);
+    CustomButtonCancel(QWidget *parent);
+    QLabel *labelButtonCancel;
+
+    void update() override;
+
+    void setLongWidth(bool bIsLong);
+private:
+    void init();
+    bool bIsLong = false;
 };
 
 #endif // CUSTOMBUTTONCANCEL_H

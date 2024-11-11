@@ -30,6 +30,8 @@ void MainWindow::init()
     pagePassword = new PagePassword(this);
     stackedWidget->addWidget(pagePassword);
 
+    pagePasswordConfirm =new PagePasswordConfirm(this);
+    stackedWidget->addWidget(pagePasswordConfirm);
 
     pageHome = new PageHome(this);
     stackedWidget->addWidget(pageHome);

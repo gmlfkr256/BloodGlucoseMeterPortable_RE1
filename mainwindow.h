@@ -12,6 +12,7 @@
 #include "Component/componentmenu.h"
 
 #include "Page/pagepassword.h"
+#include "Page/pagepasswordconfirm.h"
 #include "Page/pagehome.h"
 #include "Page/pageselect.h"
 
@@ -33,6 +34,7 @@ public:
     QList<CustomComponent*> listComponent;
 
     PagePassword *pagePassword;
+    PagePasswordConfirm *pagePasswordConfirm;
     PageHome *pageHome;
     PageSelect *pageSelect;
 

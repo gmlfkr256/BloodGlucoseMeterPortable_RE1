@@ -1,6 +1,6 @@
 #include "custombutton.h"
 
-CustomButton::CustomButton(QLabel* parent) : QLabel(parent)
+CustomButton::CustomButton(QWidget* parent) : QWidget(parent)
 {
 
 }

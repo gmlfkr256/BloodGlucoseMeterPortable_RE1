@@ -36,8 +36,10 @@ Q_ENUMS(UserNum)
 typedef enum
 {
     PAGE_PASSWORD = 0,
+    PAGE_PASSWORD_CONFIRM,
     PAGE_HOME,
     PAGE_SELECT,
+    CUSTOM_BUTTON,
     PAGE_MAX
 } PageNum;
 
@@ -109,10 +111,14 @@ public:
     UserNum getUserNumber();
     void setUserNumber(int nUserNumber);
 
+    //PagePasswordStatus
     PasswordStatus getPasswordStatus();
     void setPasswordStatus(PasswordStatus passwordStatus);
-
     void updateSysUserInfo();
+
+    //PagePasswordStrStatus
+    PasswordStrStatus getPasswordStrStatus();
+    void setPasswordStrStatus(PasswordStrStatus passwordStrStatus);
 
     bool touchCheck(const QRect &rect, QMouseEvent* ev);
     int pixelToPoint(int pixelSize);
@@ -130,8 +136,12 @@ private:
 
     bool procCheck = false;
 
+    //PagePassword
     UserNum nUserNumber = USER_1;
     PasswordStatus passwordStatus = PASSWORD_LOGIN;
+
+    //PagePasswordConfirm
+    PasswordStrStatus passwordStrSatus = PASSWORD_STR_LOGIN_SUCCESS;
 };
 
 #endif // SINGLETON_H

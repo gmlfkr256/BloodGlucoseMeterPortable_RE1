@@ -177,6 +177,7 @@ void Singleton::setProcCheck(bool used)
     procCheck = used;
 }
 
+//PagePasswordStatus
 PasswordStatus Singleton::getPasswordStatus()
 {
     return passwordStatus;
@@ -194,6 +195,18 @@ void Singleton::updateSysUserInfo()
         if(guiApi.glucoseGetUserInfo(i,&sysUserInfo[i]) == GAPI_SUCCESS)
             qDebug()<<"sysUserInfo["+QString::number(i)+"] update Success";
     }
+}
+
+
+//PagePasswordStrStatus
+PasswordStrStatus Singleton::getPasswordStrStatus()
+{
+    return passwordStrSatus;
+}
+
+void Singleton::setPasswordStrStatus(PasswordStrStatus passwordStrStatus)
+{
+    this->passwordStrSatus = passwordStrStatus;
 }
 
 bool Singleton::touchCheck(const QRect &rect, QMouseEvent* ev)
