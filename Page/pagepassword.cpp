@@ -64,9 +64,9 @@ void PagePassword::init()
 void PagePassword::update()
 {
     labelTitle->setFont(textResource.getFont(PAGE_PASSWORD,"labelTitle"));
-    labelTitle->setText(textResource.getText(PAGE_PASSWORD,"labelTitle").at(0));
+    labelTitle->setText(textResource.getText(PAGE_PASSWORD,"labelTitle").at(instance.getPasswordStatus()));
     labelTitleSub->setFont(textResource.getFont(PAGE_PASSWORD,"labelTitleSub"));
-    labelTitleSub->setText(textResource.getText(PAGE_PASSWORD,"labelTitleSub").at(0));
+    labelTitleSub->setText(textResource.getText(PAGE_PASSWORD,"labelTitleSub").at(instance.getPasswordStatus()));
 
     QPixmap pixmap = instance.pixLoad(false,strDirPath,"/passwordNumBg.png");
     labelPasswordBg->setPixmap(pixmap.copy());
