@@ -35,6 +35,7 @@ void Singleton::init()
     //caliUserInfo
     //dispData
     langData.used = EN;
+    setDeviceLanguage(langData.used);
 #endif
 }
 
