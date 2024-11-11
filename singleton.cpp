@@ -23,6 +23,11 @@ void Singleton::init()
     histInfo.val[0].value = 99;
     histInfo.val[0].hour = 9;
     histInfo.val[0].min = 10;
+
+    for(int i=0; i<USER_MAX; i++)
+    {
+        qstrncpy(sysUserInfo[i].passwd,QString::number(i+1).repeated(4).toUtf8().constData(),sizeof (sysUserInfo[i].passwd));
+    }
 #endif
 }
 
