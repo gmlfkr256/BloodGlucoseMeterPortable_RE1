@@ -70,7 +70,7 @@ void PagePasswordConfirm::update()
 
 void PagePasswordConfirm::mousePressEvent(QMouseEvent *ev)
 {
-    if(instance.touchCheck(customButtonOK->geometry(),ev))
+    if(instance.touchCheck(customButtonOK->geometry(),ev) && !customButtonOK->isHidden())
     {
         qDebug()<<"customButtonOK";
         switch (instance.getPasswordStrStatus())
@@ -111,7 +111,7 @@ void PagePasswordConfirm::mousePressEvent(QMouseEvent *ev)
         }
     }
 
-    if(instance.touchCheck(customButtonCancel->geometry(),ev))
+    if(instance.touchCheck(customButtonCancel->geometry(),ev) && !customButtonCancel->isHidden())
     {
         qDebug()<<"customButtonCancel";
     }
