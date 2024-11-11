@@ -11,7 +11,7 @@ const QHash<unsigned int, QPair<QString, DeviceLanguage>> Singleton::hashLanguag
 
 void Singleton::init()
 {
-    deviceLanguage = KR;
+    //deviceLanguage = KR;
     deviceColor = COLOR_DEFAULT;
 
 #if DEVCIE
@@ -31,6 +31,10 @@ void Singleton::init()
         qstrncpy(sysUserInfo[i].passwd,password.toUtf8().constData(),sizeof (sysUserInfo[i].passwd));
         qDebug()<<sysUserInfo[i].passwd;
     }
+
+    //caliUserInfo
+    //dispData
+    langData.used = KR;
 #endif
 }
 
@@ -244,14 +248,16 @@ void Singleton::setPasswordStrStatus(PasswordStrStatus passwordStrStatus)
 //UserLogin
 void Singleton::actUserLogin(int i)
 {
+#if DEVICE
     guiApi.glucoseActUserLogin(i); 
     guiApi.glucoseCaliGetUserInfo(&caliUserInfo);
     guiApi.glucoseGetDispData(&dispData); 
     guiApi.glucoseGetLangData(&langData);
-
+#else
     setSleepTime(dispData.ts_timeout);
     setUserNumber(i);
     setDeviceLanguage(langData.used);
+#endif
 }
 
 QString Singleton::getStrNowUserPassword()
