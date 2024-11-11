@@ -35,7 +35,7 @@ void CustomButtonCancel::update()
     int width = bIsLong ? 640 : 320;
 
     this->setGeometry(x,390,width,90);
-    labelButtonCancel->setGeometry(this->geometry());
+    labelButtonCancel->setGeometry(0,0,this->width(),this->height());
 }
 
 void CustomButtonCancel::setLongWidth(bool bIsLong)

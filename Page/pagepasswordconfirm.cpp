@@ -68,6 +68,19 @@ void PagePasswordConfirm::update()
     labelText->setText(textResource.getText(PAGE_PASSWORD_CONFIRM,"labelText").at(instance.getPasswordStrStatus()));
 }
 
+void PagePasswordConfirm::mousePressEvent(QMouseEvent *ev)
+{
+    if(instance.touchCheck(customButtonOK->geometry(),ev))
+    {
+        qDebug()<<"customButtonOK";
+    }
+
+    if(instance.touchCheck(customButtonCancel->geometry(),ev))
+    {
+        qDebug()<<"customButtonCancel";
+    }
+}
+
 void PagePasswordConfirm::pageShow()
 {
 

@@ -8,6 +8,7 @@ class PagePasswordConfirm : public Page
     Q_OBJECT
 public:
     PagePasswordConfirm(QWidget *parent);
+    void mousePressEvent(QMouseEvent *ev) override;
 
     QString strDirPath = "/ImagePasswordConfirm";
 
