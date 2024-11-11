@@ -9,7 +9,7 @@ CustomButtonCancel::CustomButtonCancel(QWidget *parent) : CustomButton(parent)
 void CustomButtonCancel::init()
 {
     labelButtonCancel = new QLabel(this);
-    labelButtonCancel->setGeometry(this->geometry());
+    labelButtonCancel->setGeometry(0,0,this->width(),this->height());
 
     update();
 }

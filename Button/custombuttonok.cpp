@@ -31,7 +31,6 @@ void CustomButtonOK::update()
         break;
     }
 
-    /*
     int x, width;
 
     if(bIsLong)
@@ -47,7 +46,7 @@ void CustomButtonOK::update()
 
     this->setGeometry(x,390,width,90);
     labelButtonOk->setGeometry(this->geometry());
-    */
+
 }
 
 void CustomButtonOK::setLongWidth(bool bIsLong)
