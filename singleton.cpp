@@ -28,7 +28,7 @@ void Singleton::init()
     {
         QString password = QString::number(i+1).repeated(4);
         qstrncpy(sysUserInfo[i].passwd,password.toUtf8().constData(),sizeof (sysUserInfo[i].passwd));
-        qDebug()<<password;
+        qDebug()<<sysUserInfo[i].passwd;
     }
 #endif
 }
