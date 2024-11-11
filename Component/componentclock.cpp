@@ -37,6 +37,8 @@ void ComponentClock::update()
     case CN_GAN:
     case CN_BUN:
         break;
+    case LAN_MAX:
+        break;
     }
 
     labelClock->setText(strLocale);
