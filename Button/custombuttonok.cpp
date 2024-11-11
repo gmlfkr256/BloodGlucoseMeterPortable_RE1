@@ -9,7 +9,7 @@ CustomButtonOK::CustomButtonOK(QWidget *parent) : CustomButton(parent)
 void CustomButtonOK::init()
 {
     labelButtonOk = new QLabel(this);
-    labelButtonOk->setGeometry(this->geometry());
+    labelButtonOk->setGeometry(0,0,this->width(),this->height());
 
     update();
 }
