@@ -36,7 +36,7 @@ int main(int argc, char* argv[])
         pageBooting->splashScreenBooting.close();
         pageBooting->splashScreenBooting.deleteLater();
         w.show();
-        pageBooting->deleteLater();
+        //pageBooting->deleteLater();
         qApp->processEvents();
     });
 
