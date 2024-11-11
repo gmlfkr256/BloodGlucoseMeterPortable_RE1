@@ -29,9 +29,11 @@ void MainWindow::init()
 
     pagePassword = new PagePassword(this);
     stackedWidget->addWidget(pagePassword);
+    listComHiddenPageIndex.append(stackedWidget->indexOf(pagePassword));
 
     pagePasswordConfirm =new PagePasswordConfirm(this);
     stackedWidget->addWidget(pagePasswordConfirm);
+    listComHiddenPageIndex.append(stackedWidget->indexOf(pagePasswordConfirm));
 
     pageHome = new PageHome(this);
     stackedWidget->addWidget(pageHome);
@@ -65,9 +67,7 @@ void MainWindow::initConnect()
 
 void MainWindow::currentPageChanged(int index)
 {
-    Page *currentPage = qobject_cast<Page*>(stackedWidget->widget(index));
-
-    if(currentPage && listComHiddenPages.contains(currentPage))
+    if(listComHiddenPageIndex.contains(index))
     {
         HideComponents();
     }

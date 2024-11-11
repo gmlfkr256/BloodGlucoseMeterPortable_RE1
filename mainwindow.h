@@ -38,7 +38,7 @@ public:
     PageHome *pageHome;
     PageSelect *pageSelect;
 
-    QList<Page *> listComHiddenPages = {pagePassword,pagePasswordConfirm};
+    QList<int> listComHiddenPageIndex;
 private:
     void initGuiApi();
     void init();
