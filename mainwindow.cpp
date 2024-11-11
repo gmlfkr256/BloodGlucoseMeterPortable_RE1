@@ -47,7 +47,7 @@ void MainWindow::init()
 
     listComponent<<comBat<<comBle<<comClock<<comHome<<comMenu;
 
-    HideComponents();
+    //HideComponents();
 }
 
 void MainWindow::initConnect()
