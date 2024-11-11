@@ -53,6 +53,7 @@ void MainWindow::init()
 void MainWindow::initConnect()
 {
     connect(stackedWidget,&QStackedWidget::currentChanged,this,&MainWindow::currentPageChanged);
+    connect(pagePassword,&PagePassword::signalPassword,this,[this](){stackedWidget->setCurrentIndex(PAGE_PASSWORD_CONFIRM);});
 }
 
 void MainWindow::currentPageChanged(int index)

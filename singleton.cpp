@@ -188,6 +188,16 @@ void Singleton::setPasswordStatus(PasswordStatus passwordStatus)
     this->passwordStatus = passwordStatus;
 }
 
+PasswordStatus Singleton::getPasswordStatusPrev()
+{
+    return passwordStatusPrev;
+}
+
+void Singleton::setPasswordStatusPrev(PasswordStatus passwordStatus)
+{
+    this->passwordStatusPrev = passwordStatus;
+}
+
 void Singleton::updateSysUserInfo()
 {
     for(int i=0; i<USER_MAX; i++)
@@ -197,6 +207,20 @@ void Singleton::updateSysUserInfo()
     }
 }
 
+QString Singleton::getPasswordChage()
+{
+    return this->strPasswordChange;
+}
+
+void Singleton::setPasswordChange(QString strPasswordChange)
+{
+    this->strPasswordChange = strPasswordChange;
+}
+
+void Singleton::setUserPasswordChange()
+{
+    guiApi.glucoseSetUserPassword(nUserNumber,strPasswordChange.toUtf8().data());
+}
 
 //PagePasswordStrStatus
 PasswordStrStatus Singleton::getPasswordStrStatus()
@@ -207,6 +231,44 @@ PasswordStrStatus Singleton::getPasswordStrStatus()
 void Singleton::setPasswordStrStatus(PasswordStrStatus passwordStrStatus)
 {
     this->passwordStrSatus = passwordStrStatus;
+}
+
+
+//UserLogin
+void Singleton::actUserLogin(int i)
+{
+    guiApi.glucoseActUserLogin(i);
+    setUserNumber(i);
+    guiApi.glucoseCaliGetUserInfo(&caliUserInfo);
+    guiApi.glucoseGetDispData(&dispData);
+    setSleepTime(dispData.ts_timeout);
+    guiApi.glucoseGetLangData(&langData);
+    setDeviceLanguage(langData.used);
+}
+
+QString Singleton::getStrNowUserPassword()
+{
+    return sysUserInfo[nUserNumber].passwd;
+}
+
+//CaliGainCompleteCheck
+bool Singleton::getCaliGainCompleteCheck()
+{
+    if(caliUserInfo.led_sense !=0 && caliUserInfo.completed != 0)
+        return true;
+
+    return false;
+}
+
+//PageSleep
+void Singleton::setSleepTime(int nSleepTime)
+{
+    this->nSleepTime = nSleepTime;
+}
+
+int Singleton::getSleepTime()
+{
+    return this->nSleepTime;
 }
 
 bool Singleton::touchCheck(const QRect &rect, QMouseEvent* ev)

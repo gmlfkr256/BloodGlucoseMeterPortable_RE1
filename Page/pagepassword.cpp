@@ -94,7 +94,7 @@ void PagePassword::mousePressEvent(QMouseEvent *ev)
         if(strPasswordNum.size()<4)
             return;
 
-
+        processOK();
     }
 
     if(instance.touchCheck(labelButtonCancel->geometry(),ev))
@@ -147,6 +147,84 @@ void PagePassword::updatePasswordNum()
         }
     }
 }
+
+void PagePassword::processOK()
+{
+    qDebug()<<"strPasswordNum: "+strPasswordNum;
+    switch (instance.getPasswordStatus())
+    {
+    case PASSWORD_LOGIN:
+        for(int i=0; i<USER_MAX; i++)
+        {
+            if(strPasswordNum == instance.sysUserInfo[i].passwd)
+            {
+                qDebug()<<"Log in Success";
+                instance.actUserLogin(i);
+
+                if(strPasswordNum == "1111" || strPasswordNum == "2222")
+                    instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_CHANGE);
+                else
+                    instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
+
+                emit signalUserTrans();
+                break;
+            }
+        }
+
+        instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
+        if(strPasswordNum == "9999")
+            instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
+
+        break;
+    case PASSWORD_EDIT:
+        instance.setPasswordStatusPrev(PASSWORD_EDIT);
+        instance.setPasswordChange(strPasswordNum);
+        instance.setPasswordStrStatus(PASSWORD_STR_REPEAT);
+        break;
+    case PASSWORD_DELETE:
+        if(instance.sysUserInfo[instance.getUserNumber()].passwd == strPasswordNum)
+        {
+            instance.setPasswordStatusPrev(PASSWORD_DELETE);
+            instance.setPasswordStrStatus(PASSWORD_STR_REPEAT);
+        }
+        else
+            instance.setPasswordStrStatus(PASSWORD_STR_CONFIRM_FAIL);
+        break;
+    case PASSWORD_REPEAT:
+        switch (instance.getPasswordStatusPrev())
+        {
+        case PASSWORD_EDIT:
+            if(instance.getPasswordChage() == strPasswordNum)
+            {
+                instance.setPasswordStrStatus(PASSWORD_STR_EDIT_SUCCESS);
+                instance.setUserPasswordChange();
+            }
+            else
+                instance.setPasswordStrStatus(PASSWORD_STR_REPEAT_FAIL);
+            break;
+        case PASSWORD_DELETE:
+            if(instance.sysUserInfo[instance.getUserNumber()].passwd == strPasswordNum)
+                instance.setPasswordStrStatus(PASSWORD_STR_DELETE_SUCCESS);
+            else
+                instance.setPasswordStrStatus(PASSWORD_STR_REPEAT_FAIL);
+            break;
+        default:
+            instance.setPasswordStrStatus(PASSWORD_STR_MAX);
+            break;
+        }
+        break;
+    case PASSWORD_CONFIRM:
+        if(instance.sysUserInfo[instance.getUserNumber()].passwd == strPasswordNum)
+            instance.setPasswordStrStatus(PASSWORD_STR_EDIT_CHANGE);
+        else
+            instance.setPasswordStrStatus(PASSWORD_STR_CONFIRM_FAIL);
+        break;
+    case PASSWORD_MAX:
+        instance.setPasswordStrStatus(PASSWORD_STR_MAX);
+        break;
+    }
+}
+
 void PagePassword::pageShow()
 {
     strPasswordNum.clear();

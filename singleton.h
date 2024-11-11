@@ -96,6 +96,9 @@ public:
     int thresholdHigh;
     gapiHistInfo_t histInfo;
     gapiSysUserInfo_t sysUserInfo[USER_MAX];
+    gapiCaliUserInfo_t caliUserInfo;
+    gapiDispData_t dispData;
+    gapiLangData_t langData;
 
     void init();
 
@@ -114,11 +117,27 @@ public:
     //PagePasswordStatus
     PasswordStatus getPasswordStatus();
     void setPasswordStatus(PasswordStatus passwordStatus);
+    PasswordStatus getPasswordStatusPrev();
+    void setPasswordStatusPrev(PasswordStatus passwordStatus);
     void updateSysUserInfo();
+    void setPasswordChange(QString strPasswordChange);
+    QString getPasswordChage();
+    void setUserPasswordChange();
 
     //PagePasswordStrStatus
     PasswordStrStatus getPasswordStrStatus();
     void setPasswordStrStatus(PasswordStrStatus passwordStrStatus);
+
+    //UserLogin
+    void actUserLogin(int i);
+    QString getStrNowUserPassword();
+
+    //CaliCompleteCheck
+    bool getCaliGainCompleteCheck();
+
+    //PageSleep
+    void setSleepTime(int nSleepTime);
+    int getSleepTime();
 
     bool touchCheck(const QRect &rect, QMouseEvent* ev);
     int pixelToPoint(int pixelSize);
@@ -139,9 +158,14 @@ private:
     //PagePassword
     UserNum nUserNumber = USER_1;
     PasswordStatus passwordStatus = PASSWORD_LOGIN;
+    PasswordStatus passwordStatusPrev = PASSWORD_MAX;
+    QString strPasswordChange;
 
     //PagePasswordConfirm
     PasswordStrStatus passwordStrSatus = PASSWORD_STR_LOGIN_SUCCESS;
+
+    //PageSleep
+    int nSleepTime;
 };
 
 #endif // SINGLETON_H

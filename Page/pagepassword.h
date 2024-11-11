@@ -30,8 +30,10 @@ public:
 private:
     void init();
     void updatePasswordNum();
+    void processOK();
 signals:
-
+    void signalUserTrans();
+    void signalPassword();
 };
 
 #endif // PAGEPASSWORD_H
