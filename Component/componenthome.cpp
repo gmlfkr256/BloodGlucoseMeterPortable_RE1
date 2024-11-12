@@ -35,7 +35,7 @@ void ComponentHome::mousePressEvent(QMouseEvent *ev)
 {
     if(instance.touchCheck(this->rect(),ev))
     {
-        emit singalComHomeClick();
+        emit singalShowPageHome();
     }
 }
 

@@ -21,7 +21,7 @@ public slots:
     void pageHide() override;
 
 signals:
-    void singalComHomeClick();
+    void singalShowPageHome();
 };
 
 #endif // COMPONENTHOME_H

@@ -61,6 +61,9 @@ void MainWindow::initConnect()
         if(currentPage)
             currentPage->update();
     });
+
+    connect(comHome,&ComponentHome::singalShowPageHome,this,[this](){stackedWidget->setCurrentIndex(PAGE_HOME);});
+
     connect(pagePassword,&PagePassword::signalPassword,this,[this](){stackedWidget->setCurrentIndex(PAGE_PASSWORD_CONFIRM);});
     connect(pagePasswordConfirm,&PagePasswordConfirm::signalShowPageHome,this,[this](){stackedWidget->setCurrentIndex(PAGE_HOME);});
     connect(pageHome,&PageHome::signalShowPageSelect,this,[this](){stackedWidget->setCurrentIndex(PAGE_SELECT); pageSelect->update();});
