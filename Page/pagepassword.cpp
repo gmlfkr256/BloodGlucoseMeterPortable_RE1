@@ -112,12 +112,15 @@ void PagePassword::mousePressEvent(QMouseEvent *ev)
             {
                 strPasswordNum.append(QString::number(i));
             }
+
             labelButtonNum[i]->setStyleSheet("background-color: #077bdd; color: #ffffff; border: 1px solid #ebebeb;");
             nCheckButtonNum = i;
+
+            updatePasswordNum();
         }
     }
 
-    updatePasswordNum();
+
 }
 
 void PagePassword::mouseReleaseEvent(QMouseEvent *ev)
@@ -133,9 +136,6 @@ void PagePassword::mouseReleaseEvent(QMouseEvent *ev)
 
 void PagePassword::updatePasswordNum()
 {
-    QPixmap pixmapNull;
-    QPixmap pixmap = instance.pixLoad(false,strDirPath,"/circlePassword.png");
-
     qDebug()<<"strPasswordNum: "<<strPasswordNum;
     for(int i=0; i<4; i++)
     {
