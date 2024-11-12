@@ -39,7 +39,7 @@ void PageSelect::init()
     labelTextGlucoseValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
 
     labelTextMgdl = new QLabel(this);
-    labelTextMgdl->setGeometry(379,189,261,34);
+    labelTextMgdl->setGeometry(379,189,261,43);
     labelTextMgdl->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
     labelTextResult = new QLabel(this);
