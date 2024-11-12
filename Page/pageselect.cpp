@@ -145,6 +145,8 @@ void PageSelect::updateStatus()
             break;
         case CN_BUN:
             break;
+        case LAN_MAX:
+            break;
         }
 
 
