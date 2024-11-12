@@ -160,7 +160,7 @@ public:
     bool touchCheck(const QRect &rect, QMouseEvent* ev);
     int pixelToPoint(int pixelSize);
 
-    QString getTextColorGlucoseValue(int &glucoseValue);
+    QString getTextColorGlucoseValue(int glucoseValue);
 
 private:
     //Singleton() = default;

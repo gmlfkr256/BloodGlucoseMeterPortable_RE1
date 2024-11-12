@@ -310,7 +310,7 @@ int Singleton::pixelToPoint(int pixelSize)
     return static_cast<int>((pixelSize*72.0)/dpi);
 }
 
-QString Singleton::getTextColorGlucoseValue(int &glucoseValue)
+QString Singleton::getTextColorGlucoseValue(int glucoseValue)
 {
     QString strColor = "color: #666666;";
 
