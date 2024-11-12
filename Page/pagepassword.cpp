@@ -102,6 +102,7 @@ void PagePassword::mousePressEvent(QMouseEvent *ev)
     if(instance.touchCheck(labelButtonCancel->geometry(),ev))
     {
         strPasswordNum.chop(1);
+        updatePasswordNum();
     }
 
     for(int i=0; i<10; i++)
