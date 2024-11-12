@@ -126,8 +126,8 @@ void PageSelect::updateStatus()
         BloodSugarLevel bloodSugarLevel = instance.getBloodSugarLevel(glucoseValue);
         int bloodSugarIndex = static_cast<int>(bloodSugarLevel);
         strResult =
-                "<span style='font-weight:bold;'>"+labelTextStatus->text()+"</span>";
-                "<span style='font-weight:bold; "+strStyleSheetColor+"'>"+textResource.getText(PAGE_SELECT,"labelTextResult").at(bloodSugarIndex)+"</span>";
+                "<span style='font-weight:bold;'>"+labelTextStatus->text()+"</span>" +
+                "<span style='font-weight:bold; "+strStyleSheetColor+"'>"+textResource.getText(PAGE_SELECT,"labelTextResult").at(bloodSugarIndex)+"</span>" +
                 "<span>"+textResource.getText(PAGE_SELECT,"resultSub").at(0)+"</span>";
 
         labelTextResult->setText(strResult);
