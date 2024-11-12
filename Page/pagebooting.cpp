@@ -9,6 +9,8 @@ PageBooting::PageBooting(QRect windowRect) : currentFrame(0)
 
     splashScreenBooting.setPixmap(pixBooting.copy());
 
+    splashScreenBooting.show();
+
     for(int i=0; i<20; i++)
     {
         QString strPng = QString("/Happyzone 01_000%01.png").arg(QString::number(currentFrame).rightJustified(2,'0'));
