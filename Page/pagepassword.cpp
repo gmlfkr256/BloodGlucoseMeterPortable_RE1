@@ -140,6 +140,9 @@ void PagePassword::updatePasswordNum()
     qDebug()<<"updatePasswordNum() strPasswordNum: "<<strPasswordNum;
     for(int i=0; i<4; i++)
     {
+        if(labelPasswordNum[i])
+            qDebug()<<i;
+
         if(i<strPasswordNum.size())
         {
             labelPasswordNum[i]->show();
