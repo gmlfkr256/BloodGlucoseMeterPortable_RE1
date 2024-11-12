@@ -91,6 +91,17 @@ typedef enum
     BED_TIME
 } TimeStatus;
 
+Q_ENUMS(TimeStatus);
+
+typedef enum
+{
+    BLOOD_NORMAL = 0,
+    BLOOD_CAUTION_LOW,
+    BLOOD_CAUTION_HIGH,
+    BLOOD_WARNING_LOW,
+    BLOOD_WARNING_HIGH
+} BloodSugarLevel;
+
 class Singleton : public QObject
 {
     Q_OBJECT
@@ -161,6 +172,7 @@ public:
     int pixelToPoint(int pixelSize);
 
     QString getTextColorGlucoseValue(int glucoseValue);
+    BloodSugarLevel getBloodSugarLevel(int glucoseValue);
 
 private:
     //Singleton() = default;

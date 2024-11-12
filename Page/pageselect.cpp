@@ -72,6 +72,7 @@ void PageSelect::update()
 
     labelTextGlucoseValue->setFont(textResource.getFont(PAGE_SELECT,"labelTextGlucoseValue"));
     labelTextMgdl->setFont(textResource.getFont(PAGE_SELECT,"labelTextMgdl"));
+    labelTextResult->setFont(textResource.getFont(PAGE_SELECT,"labelTextResult"));
 
     updateStatus();
 }
@@ -114,14 +115,26 @@ void PageSelect::updateStatus()
         int glucoseValue = instance.histInfo.val[nTimeStatus].value;
         labelTextGlucoseValue->setText(QString::number(glucoseValue));
 
-        QString strStyleSheet = instance.getTextColorGlucoseValue(glucoseValue);
-        labelTextGlucoseValue->setStyleSheet(strStyleSheet);
+        QString strStyleSheetColor = instance.getTextColorGlucoseValue(glucoseValue);
+        labelTextGlucoseValue->setStyleSheet(strStyleSheetColor);
 
         labelTextMgdl->setText("mg/dL");
         labelTextMgdl->setStyleSheet("color: #666666;");
 
+        QString strResult;
+
+        BloodSugarLevel bloodSugarLevel = instance.getBloodSugarLevel(glucoseValue);
+        int bloodSugarIndex = static_cast<int>(bloodSugarLevel);
+        strResult =
+                "<span style='font-weight:bold;'>"+labelTextStatus->text()+"</span>";
+                "<span style='font-weight:bold; "+strStyleSheetColor+"'>"+textResource.getText(PAGE_SELECT,"labelTextResult").at(bloodSugarIndex)+"</span>";
+                "<span>"+textResource.getText(PAGE_SELECT,"resultSub").at(0)+"</span>";
+
+        labelTextResult->setText(strResult);
+
         labelTextGlucoseValue->show();
         labelTextMgdl->show();
+        labelTextResult->show();
     }
 }
 

@@ -82,6 +82,7 @@ void TextResource::init()
 
     fontData[Lan][PAGE_SELECT].insert("labelTextGlucoseValue",QFont(instance.fontSuit,instance.pixelToPoint(131),QFont::ExtraBold));
     fontData[Lan][PAGE_SELECT].insert("labelTextMgdl",QFont(instance.fontSuit,instance.pixelToPoint(34),QFont::ExtraBold));
+    fontData[Lan][PAGE_SELECT].insert("labelTextResult",QFont(instance.fontSuit,instance.pixelToPoint(32)));
 
     //====================================================================================================================================
     //EN
@@ -151,7 +152,11 @@ void TextResource::init()
     fontData[Lan][PAGE_SELECT].insert("labelTextStatusSub", QFont(instance.fontSuit, instance.pixelToPoint(24)));
     textData[Lan][PAGE_SELECT].insert("labelTextStatusSub", QStringList{"Please start the measurement"});
 
-    fontData[Lan][PAGE_SELECT].insert("labelTextGlucoseValue",QFont(instance.fontSuit,instance.pixelToPoint(131),QFont::Black));
+    fontData[Lan][PAGE_SELECT].insert("labelTextGlucoseValue",QFont(instance.fontSuit,instance.pixelToPoint(131),QFont::ExtraBold));
+    fontData[Lan][PAGE_SELECT].insert("labelTextMgdl",QFont(instance.fontSuit,instance.pixelToPoint(34),QFont::ExtraBold));
+    fontData[Lan][PAGE_SELECT].insert("labelTextResult",QFont(instance.fontSuit,instance.pixelToPoint(32)));
+    textData[Lan][PAGE_SELECT].insert("labelTextResult",QStringList{"정상","저혈당 주의","고혈당 주의","저혈당 경고","고혈당 경고"});
+    textData[Lan][PAGE_SELECT].insert("resultSub",QStringList{"혈당입니다"});
     //=====================================================================================================================================
     //JP
     //CN_GAN

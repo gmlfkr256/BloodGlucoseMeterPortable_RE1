@@ -319,7 +319,7 @@ QString Singleton::getTextColorGlucoseValue(int glucoseValue)
     case COLOR_DEFAULT:
         if(glucoseValue<=thresholdLow || glucoseValue>=thresholdHigh)
         {
-            strColor = "color: #f2b29;";
+            strColor = "color: #fd2b29;";
         }
         else if(glucoseValue<=thresholdLow+GLUCOSE_LOW_PLUS || glucoseValue>=thresholdHigh+GLUCOSE_HIGH_MINUS)
         {
@@ -327,7 +327,7 @@ QString Singleton::getTextColorGlucoseValue(int glucoseValue)
         }
         else
         {
-            strColor = "color: #000000;";
+            strColor = "color: #52d0ba;";
         }
         break;
     case COLOR_BLUE:
@@ -339,4 +339,17 @@ QString Singleton::getTextColorGlucoseValue(int glucoseValue)
     return strColor;
 }
 
+BloodSugarLevel Singleton::getBloodSugarLevel(int glucoseValue)
+{
+    if(glucoseValue<=thresholdLow)
+        return BLOOD_WARNING_LOW;
+    else if(glucoseValue>=thresholdHigh)
+        return BLOOD_WARNING_HIGH;
+    else if(glucoseValue<=thresholdLow+GLUCOSE_LOW_PLUS)
+        return BLOOD_CAUTION_LOW;
+    else if(glucoseValue>=thresholdHigh+GLUCOSE_HIGH_MINUS)
+        return BLOOD_CAUTION_HIGH;
+    else
+        return BLOOD_NORMAL;
+}
 
