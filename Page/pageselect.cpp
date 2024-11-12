@@ -71,6 +71,7 @@ void PageSelect::update()
     labelTextStatusSub->setText(textResource.getText(PAGE_SELECT,"labelTextStatusSub").at(0));
 
     labelTextGlucoseValue->setFont(textResource.getFont(PAGE_SELECT,"labelTextGlucoseValue"));
+    labelTextMgdl->setFont(textResource.getFont(PAGE_SELECT,"labelTextMgdl"));
 
     updateStatus();
 }
