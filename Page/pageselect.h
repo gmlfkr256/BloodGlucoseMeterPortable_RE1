@@ -14,7 +14,9 @@ public:
     CustomButtonHome *customButtonHome;
     CustomButtonMeasureStart *customButtonMeasureStart;
     QLabel *labelArrowLeft;
+    QLabel *labelArrowLeftTouch;
     QLabel *labelArrowRight;
+    QLabel *labelArrowRightTouch;
 
     QLabel *labelBgCircle;
     QLabel *labelImageTime;

@@ -10,10 +10,17 @@ void PageSelect::init()
 {
     customButtonHome = new CustomButtonHome(this);
     customButtonMeasureStart = new CustomButtonMeasureStart(this);
+
     labelArrowLeft = new QLabel(this);
     labelArrowLeft->setGeometry(10,202,53,53);
+    labelArrowLeftTouch = new QLabel(this);
+    labelArrowLeftTouch->setGeometry(0,73,100,317);
+
     labelArrowRight = new QLabel(this);
     labelArrowRight->setGeometry(578,202,53,53);
+    labelArrowRightTouch = new QLabel(this);
+    labelArrowRightTouch->setGeometry(540,73,100,317);
+
     labelBgCircle = new QLabel(this);
     labelBgCircle->setGeometry(230,98,162,162);
     labelImageTime = new QLabel(this);
@@ -68,7 +75,29 @@ void PageSelect::updateStatus()
 
 void PageSelect::mousePressEvent(QMouseEvent *ev)
 {
+    if(instance.touchCheck(labelArrowLeftTouch->geometry(),ev))
+    {
+        int nTimeStatus = instance.getTimeStatus();
 
+        nTimeStatus--;
+
+        nTimeStatus = (nTimeStatus<WAKE_UP) ? WAKE_UP : nTimeStatus;
+
+        instance.setTimeStatus(static_cast<TimeStatus>(nTimeStatus));
+        updateStatus();
+    }
+
+    if(instance.touchCheck(labelArrowRightTouch->geometry(),ev))
+    {
+        int nTimeStatus = instance.getTimeStatus();
+
+        nTimeStatus++;
+
+        nTimeStatus = (nTimeStatus>BED_TIME) ? BED_TIME : nTimeStatus;
+
+        instance.setTimeStatus((static_cast<TimeStatus>(nTimeStatus)));
+        updateStatus();
+    }
 }
 
 void PageSelect::pageShow()
