@@ -22,9 +22,9 @@ void PageSelect::init()
     labelArrowRightTouch->setGeometry(540,73,100,317);
 
     labelBgCircle = new QLabel(this);
-    labelBgCircle->setGeometry(230,98,162,162);
+    labelBgCircle->setGeometry(244,98,162,162);
     labelImageTime = new QLabel(this);
-    labelImageTime->setGeometry(251,129,120,100);
+    labelImageTime->setGeometry(265,129,120,100);
 
     labelTextStatus = new QLabel(this);
     labelTextStatus->setGeometry(0,275,640,52);
