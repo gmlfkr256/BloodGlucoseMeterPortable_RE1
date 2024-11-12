@@ -125,10 +125,28 @@ void PageSelect::updateStatus()
 
         BloodSugarLevel bloodSugarLevel = instance.getBloodSugarLevel(glucoseValue);
         int bloodSugarIndex = static_cast<int>(bloodSugarLevel);
-        strResult =
-                "<span style='font-weight:bold;'>"+textResource.getText(PAGE_SELECT,"labelTextStatus").at(nTimeStatus)+" "+"</span>" +
-                "<span style='font-weight:bold; "+strStyleSheetColor+"'>"+textResource.getText(PAGE_SELECT,"labelTextResult").at(bloodSugarIndex)+" "+"</span>" +
-                "<span>"+textResource.getText(PAGE_SELECT,"resultSub").at(0)+"</span>";
+
+        switch (instance.getDeviceLanguage())
+        {
+        case KR:
+            strResult =
+                    "<span style='font-weight:bold;'>"+textResource.getText(PAGE_SELECT,"labelTextStatus").at(nTimeStatus)+" "+"</span>" +
+                    "<span style='font-weight:bold; "+strStyleSheetColor+"'>"+textResource.getText(PAGE_SELECT,"labelTextResult").at(bloodSugarIndex)+" "+"</span>" +
+                    "<span>"+textResource.getText(PAGE_SELECT,"resultSub").at(0)+"</span>";
+            break;
+        case EN:
+            strResult =
+                    "<span style='font-weight:bold;'>"+textResource.getText(PAGE_SELECT,"labelTextStatus").at(nTimeStatus)+": "+"</span>" +
+                    "<span style='font-weight:bold; "+strStyleSheetColor+"'>"+textResource.getText(PAGE_SELECT,"labelTextResult").at(bloodSugarIndex)+" "+"</span>";
+            break;
+        case JP:
+            break;
+        case CN_GAN:
+            break;
+        case CN_BUN:
+            break;
+        }
+
 
         labelTextResult->setText(strResult);
 
