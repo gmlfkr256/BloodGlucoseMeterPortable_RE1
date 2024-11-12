@@ -116,7 +116,11 @@ void PageSelect::updateStatus()
         QString strStyleSheet = instance.getTextColorGlucoseValue(glucoseValue);
         labelTextGlucoseValue->setStyleSheet(strStyleSheet);
 
+        labelTextMgdl->setText("mg/dL");
+        labelTextMgdl->setStyleSheet("color: #666666;");
+
         labelTextGlucoseValue->show();
+        labelTextMgdl->show();
     }
 }
 
