@@ -127,6 +127,7 @@ void PagePassword::mouseReleaseEvent(QMouseEvent *ev)
 {
     Q_UNUSED(ev);
 
+    qDebug()<<"nCheckButtonNum: "<<nCheckButtonNum;
     if(nCheckButtonNum != -1)
     {
         labelButtonNum[nCheckButtonNum]->setStyleSheet("background-color: #ffffff; color: #000000; border: 1px solid #ebebeb;");
@@ -136,7 +137,7 @@ void PagePassword::mouseReleaseEvent(QMouseEvent *ev)
 
 void PagePassword::updatePasswordNum()
 {
-    qDebug()<<"strPasswordNum: "<<strPasswordNum;
+    qDebug()<<"updatePasswordNum() strPasswordNum: "<<strPasswordNum;
     for(int i=0; i<4; i++)
     {
         if(i<strPasswordNum.size())
@@ -153,7 +154,7 @@ void PagePassword::updatePasswordNum()
 void PagePassword::processOK()
 {
     bool bCheckPassword = false;
-    qDebug()<<"strPasswordNum: "+strPasswordNum;
+    qDebug()<<"processOK() strPasswordNum: "+strPasswordNum;
     switch (instance.getPasswordStatus())
     {
     case PASSWORD_LOGIN:
