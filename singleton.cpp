@@ -251,9 +251,9 @@ void Singleton::setPasswordStrStatus(PasswordStrStatus passwordStrStatus)
 void Singleton::actUserLogin(int i)
 {
 #if DEVICE
-    guiApi.glucoseActUserLogin(i); 
+    guiApi.glucoseActUserLogin(i);
     guiApi.glucoseCaliGetUserInfo(&caliUserInfo);
-    guiApi.glucoseGetDispData(&dispData); 
+    guiApi.glucoseGetDispData(&dispData);
     guiApi.glucoseGetLangData(&langData);
 #else
     setSleepTime(dispData.ts_timeout);
@@ -310,7 +310,7 @@ int Singleton::pixelToPoint(int pixelSize)
     return static_cast<int>((pixelSize*72.0)/dpi);
 }
 
-QString Singleton::getTextColorGlucoseValue(int glucoseValue)
+QString Singleton::getTextColorGlucoseValue(int glucoseValue, bool bIsBlack)
 {
     QString strColor = "color: #666666;";
 
@@ -327,7 +327,10 @@ QString Singleton::getTextColorGlucoseValue(int glucoseValue)
         }
         else
         {
-            strColor = "color: #52d0ba;";
+            if(bIsBlack)
+                strColor = "color: #000000;";
+            else
+                strColor = "color: #52d0ba;";
         }
         break;
     case COLOR_BLUE:

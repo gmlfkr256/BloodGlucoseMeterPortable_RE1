@@ -171,7 +171,7 @@ public:
     bool touchCheck(const QRect &rect, QMouseEvent* ev);
     int pixelToPoint(int pixelSize);
 
-    QString getTextColorGlucoseValue(int glucoseValue);
+    QString getTextColorGlucoseValue(int glucoseValue,bool bInBlack = false);
     BloodSugarLevel getBloodSugarLevel(int glucoseValue);
 
 private:
