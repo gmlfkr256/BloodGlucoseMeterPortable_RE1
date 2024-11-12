@@ -23,6 +23,26 @@ void Singleton::init()
     histInfo.val[0].hour = 9;
     histInfo.val[0].min = 10;
 
+    histInfo.val[1].valid_flag = 1;
+    histInfo.val[1].value = 200;
+    histInfo.val[1].hour = 11;
+    histInfo.val[1].min = 9;
+
+    histInfo.val[2].valid_flag = 1;
+    histInfo.val[2].value = 60;
+    histInfo.val[2].hour = 12;
+    histInfo.val[2].min = 0;
+
+    histInfo.val[3].valid_flag = 1;
+    histInfo.val[3].value = 160;
+    histInfo.val[3].hour = 15;
+    histInfo.val[3].min = 20;
+
+    histInfo.val[4].valid_flag = 1;
+    histInfo.val[4].value = 75;
+    histInfo.val[4].hour = 19;
+    histInfo.val[4].min = 59;
+
     for(int i=0; i<USER_MAX; i++)
     {
         QString password = QString::number(i+1).repeated(4);
