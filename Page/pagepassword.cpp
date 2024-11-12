@@ -89,6 +89,7 @@ void PagePassword::update()
 
 void PagePassword::mousePressEvent(QMouseEvent *ev)
 {
+    qDebug()<<"touch";
     if(instance.touchCheck(labelButtonOK->geometry(),ev))
     {
         qDebug()<<"strPasswordNum.size: "<<strPasswordNum.size();

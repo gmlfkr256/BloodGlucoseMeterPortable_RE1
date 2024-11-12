@@ -17,7 +17,9 @@ PageBooting::PageBooting(QRect windowRect) : currentFrame(0)
 
 PageBooting::~PageBooting()
 {
+    disconnect();
     splashScreenBooting.close();
+    splashScreenBooting.deleteLater();
 }
 
 

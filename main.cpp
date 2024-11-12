@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 
 #include <QApplication>
-#include <singleton.h>
+#include "singleton.h"
 #include "Page/pagebooting.h"
 
 QRect getInitialWindowRect(QScreen* screen) {
