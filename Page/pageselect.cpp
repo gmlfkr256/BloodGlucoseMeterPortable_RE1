@@ -115,6 +115,8 @@ void PageSelect::updateStatus()
 
         QString strStyleSheet = instance.getTextColorGlucoseValue(glucoseValue);
         labelTextGlucoseValue->setStyleSheet(strStyleSheet);
+
+        labelTextGlucoseValue->show();
     }
 }
 
