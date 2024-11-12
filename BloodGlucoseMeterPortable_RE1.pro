@@ -33,6 +33,7 @@ SOURCES += \
     Page/page.cpp \
     Page/pagebooting.cpp \
     Page/pagehome.cpp \
+    Page/pagemenu.cpp \
     Page/pagepassword.cpp \
     Page/pagepasswordconfirm.cpp \
     Page/pageselect.cpp \
@@ -60,6 +61,7 @@ HEADERS += \
     Page/page.h \
     Page/pagebooting.h \
     Page/pagehome.h \
+    Page/pagemenu.h \
     Page/pagepassword.h \
     Page/pagepasswordconfirm.h \
     Page/pageselect.h \

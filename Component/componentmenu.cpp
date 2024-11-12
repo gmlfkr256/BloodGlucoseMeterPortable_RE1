@@ -17,8 +17,7 @@ void ComponentMenu::update()
 {
     QString pngPath = "/menuButton.png";
 
-    QPixmap pixmap = instance.pixLoad(false,strDirPath,pngPath);
-    labelMenu->setPixmap(pixmap.copy());
+    instance.pixLoad(labelMenu,false,strDirPath,pngPath);
 }
 
 void ComponentMenu::mousePressEvent(QMouseEvent* ev)

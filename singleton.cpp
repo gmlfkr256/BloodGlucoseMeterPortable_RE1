@@ -66,7 +66,7 @@ Singleton& Singleton::getInstance()
     return instance;
 }
 
-QPixmap Singleton::pixLoad(bool bIsLanguage, const QString &strDir, const QString &strPng)
+void Singleton::pixLoad(QLabel *label,bool bIsLanguage, const QString &strDir, const QString &strPng)
 {
     QPixmap pixmap;
     QString strLan;
@@ -79,7 +79,7 @@ QPixmap Singleton::pixLoad(bool bIsLanguage, const QString &strDir, const QStrin
         strLan = strImgPathLan;
     }
 
-    QString strImgPath = strImgLoot+ strImgPathColor + strLan + strDir + strPng;
+    QString strImgPath = strImgRoot+ strImgPathColor + strLan + strDir + strPng;
     QString strImgPathSub;
 
     if(!pixmap.load(strImgPath,Q_NULLPTR))
@@ -97,15 +97,15 @@ QPixmap Singleton::pixLoad(bool bIsLanguage, const QString &strDir, const QStrin
         }
 #endif
 
-        strImgPathSub = strImgLoot+"/Default"+strLan+strDir+strPng;
+        strImgPathSub = strImgRoot+"/Default"+strLan+strDir+strPng;
         if(!pixmap.load(strImgPathSub,Q_NULLPTR))
         {
             if(!strImgPathSub.contains("/Public"))
             {
-                strImgPathSub = strImgLoot+strImgPathColor+"/KR"+strDir+strPng;
+                strImgPathSub = strImgRoot+strImgPathColor+"/KR"+strDir+strPng;
                 if(!pixmap.load(strImgPathSub,Q_NULLPTR))
                 {
-                    strImgPathSub = strImgLoot+"/Default/KR"+strDir+strPng;
+                    strImgPathSub = strImgRoot+"/Default/KR"+strDir+strPng;
                     if(!pixmap.load(strImgPathSub,Q_NULLPTR))
                     {
                         qDebug()<<"strImgPathSub Image Empty: "<<strImgPathSub;
@@ -115,7 +115,7 @@ QPixmap Singleton::pixLoad(bool bIsLanguage, const QString &strDir, const QStrin
         }
     }
 
-    return pixmap;
+    label->setPixmap(pixmap.copy());
 }
 
 DeviceColor Singleton::getDeviceColor()

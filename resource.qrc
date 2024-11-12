@@ -85,5 +85,7 @@
         <file>Image/Default/Public/ImageSelect/5.png</file>
         <file>Image/Default/Public/ImageSelect/6.png</file>
         <file>Image/Default/Public/ImageSelect/7.png</file>
+        <file>Image/Default/Public/ImageMenu/buttonArrowLeft.png</file>
+        <file>Image/Default/Public/ImageMenu/buttonArrowRight.png</file>
     </qresource>
 </RCC>

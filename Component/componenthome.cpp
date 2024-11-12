@@ -28,8 +28,7 @@ void ComponentHome::update()
     pngPath = userPngPaths.value(instance.getUserNumber(),"/homeButton1.png");
 
     qDebug()<<pngPath;
-    QPixmap pixmap = instance.pixLoad(false,strDirPath,pngPath);
-    labelHome->setPixmap(pixmap.copy());
+    instance.pixLoad(labelHome,false,strDirPath,pngPath);
 }
 
 void ComponentHome::mousePressEvent(QMouseEvent *ev)

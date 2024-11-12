@@ -68,22 +68,19 @@ void PagePassword::update()
     labelTitleSub->setFont(textResource.getFont(PAGE_PASSWORD,"labelTitleSub"));
     labelTitleSub->setText(textResource.getText(PAGE_PASSWORD,"labelTitleSub").at(instance.getPasswordStatus()));
 
-    QPixmap pixmap = instance.pixLoad(false,strDirPath,"/passwordNumBg.png");
-    labelPasswordBg->setPixmap(pixmap.copy());
+    instance.pixLoad(labelPasswordBg,false,strDirPath,"/passwordNumBg.png");
 
-    pixmap = instance.pixLoad(false,strDirPath,"/buttonOK.png");
-    labelButtonOK->setPixmap(pixmap.copy());
+    instance.pixLoad(labelButtonOK,false,strDirPath,"/buttonOK.png");
 
     labelButtonOKText->setFont(textResource.getFont(PAGE_PASSWORD,"labelButtonOKText"));
     labelButtonOKText->setText(textResource.getText(PAGE_PASSWORD,"labelButtonOKText").at(0));
 
-    pixmap = instance.pixLoad(false,strDirPath,"/buttonCancel.png");
-    labelButtonCancel->setPixmap(pixmap.copy());
+    instance.pixLoad(labelButtonCancel,false,strDirPath,"/buttonCancel.png");
 
-    pixmap = instance.pixLoad(false,strDirPath,"/circlePassword.png");
+
     for(QLabel *label : labelPasswordNum)
     {
-        label->setPixmap(pixmap.copy());
+        instance.pixLoad(label,false,strDirPath,"/circlePassword.png");
     }
 }
 

@@ -59,12 +59,10 @@ void PageSelect::update()
     QPixmap pixmap;
 
     pngPath = "/buttonArrowLeft.png";
-    pixmap = instance.pixLoad(false,strDirPath,pngPath);
-    labelArrowLeft->setPixmap(pixmap.copy());
+    instance.pixLoad(labelArrowLeft,false,strDirPath,pngPath);
 
     pngPath = "/buttonArrowRight.png";
-    pixmap = instance.pixLoad(false,strDirPath,pngPath);
-    labelArrowRight->setPixmap(pixmap.copy());
+    instance.pixLoad(labelArrowRight,false,strDirPath,pngPath);
 
     labelTextStatus->setFont(textResource.getFont(PAGE_SELECT,"labelTextStatus"));
     labelTextStatusSub->setFont(textResource.getFont(PAGE_SELECT,"labelTextStatusSub"));
@@ -96,11 +94,9 @@ void PageSelect::updateStatus()
     if(instance.histInfo.val[nTimeStatus].valid_flag == 0)
     {
         pngPath = "/bg"+QString::number(nTimeStatus)+".png";
-        pixmap = instance.pixLoad(false,strDirPath,pngPath);
-        labelBgCircle->setPixmap(pixmap.copy());
+        instance.pixLoad(labelBgCircle,false,strDirPath,pngPath);
         pngPath = "/"+QString::number(nTimeStatus)+".png";
-        pixmap = instance.pixLoad(false,strDirPath,pngPath);
-        labelImageTime->setPixmap(pixmap.copy());
+        instance.pixLoad(labelImageTime,false,strDirPath,pngPath);
 
         labelTextStatus->setText(textResource.getText(PAGE_SELECT,"labelTextStatus").at(nTimeStatus));
 

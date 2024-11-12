@@ -127,7 +127,7 @@ public:
 
     void init();
 
-    QPixmap pixLoad(bool bIsLanguage = false,const QString &strDir="",const QString &strPng="");
+    void pixLoad(QLabel* label,bool bIsLanguage = false,const QString &strDir="",const QString &strPng="");
     DeviceColor getDeviceColor();
     void setDeviceColor(unsigned int nColor);
     DeviceLanguage getDeviceLanguage();
@@ -179,7 +179,7 @@ private:
     explicit Singleton(QObject* parent = nullptr) : QObject(parent){init();};
     ~Singleton() = default;
 
-    QString strImgLoot = ":/Image";
+    QString strImgRoot = ":/Image";
     QString strImgPathColor = "/Default";
     QString strImgPathLan = "/KR";
 

@@ -61,8 +61,7 @@ void ComponentBluetooth::update()
 
         if(pngPath!="")
         {
-            QPixmap pixmap = instance.pixLoad(false,strDirPath,pngPath);
-            labelBluetoothButton->setPixmap(pixmap.copy());
+            instance.pixLoad(labelBluetoothButton,false,strDirPath,pngPath);
         }
         else
             qDebug()<<"componentBlutooth pngPath empty";

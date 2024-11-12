@@ -78,8 +78,7 @@ void PageHome::update()
         pngPath += strListBg.at(order[i]);
         pngPath += ".png";
 
-        QPixmap pixmap = instance.pixLoad(false,strDirPath,pngPath);
-        labelGroups[i].labelButton->setPixmap(pixmap.copy());
+        instance.pixLoad(labelGroups[i].labelButton,false,strDirPath,pngPath);
 
         labelGroups[i].labelButtonTitle->setFont(textResource.getFont(PAGE_HOME,"labelButtonTitle"));
         labelGroups[i].labelButtonTitle->setText(textResource.getText(PAGE_HOME,"labelButtonTitle").at(order[i]));
@@ -88,8 +87,7 @@ void PageHome::update()
         pngPath += strListBg.at(order[i]);
         pngPath += ".png";
 
-        pixmap = instance.pixLoad(false,strDirPath,pngPath);
-        labelGroups[i].labelButtonImage->setPixmap(pixmap.copy());
+        instance.pixLoad(labelGroups[i].labelButtonImage,false,strDirPath,pngPath);
 
         labelGroups[i].labelButtonImage->hide();
         labelGroups[i].labelButtonText->hide();

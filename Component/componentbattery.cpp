@@ -105,8 +105,7 @@ void ComponentBattery::updateUI()
     else
         pngPath += ".png";
 
-    QPixmap pixmap = instance.pixLoad(false,strDirPath,pngPath);
-    labelBattery->setPixmap(pixmap.copy());
+    instance.pixLoad(labelBattery,false,strDirPath,pngPath);
 }
 
 void ComponentBattery::pageShow()
