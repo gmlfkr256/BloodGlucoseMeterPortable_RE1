@@ -39,7 +39,7 @@ void Singleton::init()
     histInfo.val[3].min = 20;
 
     histInfo.val[4].valid_flag = 1;
-    histInfo.val[4].value = 75;
+    histInfo.val[4].value = 65;
     histInfo.val[4].hour = 19;
     histInfo.val[4].min = 59;
 
