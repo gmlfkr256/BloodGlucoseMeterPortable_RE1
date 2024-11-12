@@ -103,7 +103,6 @@ void PageHome::update()
             labelGroups[i].labelButtonText->show();
             int glucoseValue = instance.histInfo.val[order[i]].value;
 
-            //setLabelTextColor(labelGroups[i].labelButtonText,glucoseValue);
             QString strStyleSheet;
             strStyleSheet = instance.getTextColorGlucoseValue(glucoseValue)+" padding-right: 5px;";
             qDebug()<<strStyleSheet;
@@ -112,39 +111,6 @@ void PageHome::update()
             labelGroups[i].labelButtonText->setText(QString::number(glucoseValue));
         }
     }
-}
-
-void PageHome::setLabelTextColor(QLabel *labelText, int &glucoseValue)
-{
-    int thresholdLow = instance.thresholdLow;
-    int thresholdHigh = instance.thresholdHigh;
-
-    QString strColor = "color: #666666;";
-
-    switch (instance.getDeviceColor())
-    {
-    case COLOR_DEFAULT:
-        if(glucoseValue<=thresholdLow || glucoseValue>=thresholdHigh)
-        {
-            strColor = "color: #f2b29;";
-        }
-        else if(glucoseValue<=thresholdLow+GLUCOSE_LOW_PLUS || glucoseValue>=thresholdHigh+GLUCOSE_HIGH_MINUS)
-        {
-            strColor = "color: #ff6f00;";
-        }
-        else
-        {
-            strColor = "color: #000000;";
-        }
-        break;
-    case COLOR_BLUE:
-    case COLOR_RED:
-        break;
-    }
-
-    labelText->setStyleSheet(strColor+" padding-right: 5px");
-    labelText->setFont(textResource.getFont(PAGE_HOME,"labelButtonText"));
-    labelText->setText(QString::number(glucoseValue));
 }
 
 void PageHome::mousePressEvent(QMouseEvent *ev)

@@ -37,7 +37,6 @@ public:
     void pageHide() override;
 private:
     void init();
-    void setLabelTextColor(QLabel *labelText,int &glucoseValue);
 
 signals:
     void signalShowSelect();
