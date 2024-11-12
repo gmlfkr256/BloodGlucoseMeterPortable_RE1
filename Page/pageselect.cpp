@@ -56,10 +56,10 @@ void PageSelect::updateStatus()
     QPixmap pixmap;
     int nTimeStatus = static_cast<int>(instance.getTimeStatus());
 
-    pngPath = "bg"+QString::number(nTimeStatus)+".png";
+    pngPath = "/bg"+QString::number(nTimeStatus)+".png";
     pixmap = instance.pixLoad(false,strDirPath,pngPath);
     labelBgCircle->setPixmap(pixmap.copy());
-    pngPath = QString::number(nTimeStatus)+".png";
+    pngPath = "/"+QString::number(nTimeStatus)+".png";
     pixmap = instance.pixLoad(false,strDirPath,pngPath);
     labelImageTime->setPixmap(pixmap.copy());
 
