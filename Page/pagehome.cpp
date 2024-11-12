@@ -120,7 +120,7 @@ void PageHome::mousePressEvent(QMouseEvent *ev)
         if(instance.touchCheck(labelGroups[i].labelButton->geometry(),ev))
         {
             instance.setTimeStatus(static_cast<TimeStatus>(i));
-            emit signalShowSelect();
+            emit signalShowPageSelect();
         }
     }
 }

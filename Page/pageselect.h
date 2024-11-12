@@ -36,6 +36,9 @@ public:
 private:
     void init();
     void updateStatus();
+
+signals:
+    void signalShowPageHome();
 };
 
 #endif // PAGESELECT_H

@@ -39,7 +39,7 @@ private:
     void init();
 
 signals:
-    void signalShowSelect();
+    void signalShowPageSelect();
 };
 
 #endif // PAGEHOME_H

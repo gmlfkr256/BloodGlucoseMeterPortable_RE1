@@ -145,6 +145,11 @@ void PageSelect::mousePressEvent(QMouseEvent *ev)
         instance.setTimeStatus((static_cast<TimeStatus>(nTimeStatus)));
         updateStatus();
     }
+
+    if(instance.touchCheck(customButtonHome->geometry(),ev))
+    {
+        emit signalShowPageHome();
+    }
 }
 
 void PageSelect::pageShow()
