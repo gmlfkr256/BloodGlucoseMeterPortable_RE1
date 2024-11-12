@@ -9,20 +9,31 @@ PageBooting::PageBooting(QRect windowRect) : currentFrame(0)
 
     splashScreenBooting.setPixmap(pixBooting.copy());
 
+    for(int i=0; i<20; i++)
+    {
+        QString strPng = QString("/Happyzone 01_000%01.png").arg(QString::number(currentFrame).rightJustified(2,'0'));
+        pixBooting = Singleton::getInstance().pixLoad(false,strDirPath,strPng);
+        splashScreenBooting.setPixmap(pixBooting.copy());
+        QThread::msleep(50);
+    }
+    /*
     splashScreenBooting.show();
     QTimer* timerImg = new QTimer(this);
     connect(timerImg, &QTimer::timeout,this,&PageBooting::updateImage);
     timerImg->start(50);
+    */
 }
 
+/*
 PageBooting::~PageBooting()
 {
     disconnect();
     splashScreenBooting.close();
     splashScreenBooting.deleteLater();
 }
+*/
 
-
+/*
 void PageBooting::updateImage()
 {
     if(currentFrame>=20)
@@ -44,6 +55,7 @@ void PageBooting::updateImage()
 
     currentFrame++;
 }
+*/
 
 QPoint PageBooting::getBootingPoint()
 {

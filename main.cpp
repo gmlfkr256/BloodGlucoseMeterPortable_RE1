@@ -32,11 +32,15 @@ int main(int argc, char* argv[])
     w.setGeometry(windowRect);
     w.move(pageBooting->getBootingPoint());
 
+    delete pageBooting;
+    w.show();
+    /*
     QObject::connect(pageBooting,&PageBooting::signalFinished,[&](){
         w.show();
         pageBooting->deleteLater();
         //qApp->processEvents();
     });
+    */
 
     return a.exec();
 }

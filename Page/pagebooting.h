@@ -11,7 +11,7 @@ public:
     QPoint getBootingPoint();
     QSplashScreen splashScreenBooting;
 
-    ~PageBooting();
+    //~PageBooting();
 private:
     QPixmap pixBooting;
     QString strDirPath = "/ImageBooting";
