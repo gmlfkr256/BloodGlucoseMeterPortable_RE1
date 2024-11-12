@@ -34,6 +34,22 @@ void PageSelect::init()
     labelTextStatusSub->setGeometry(0,329,640,30);
     labelTextStatusSub->setAlignment(Qt::AlignCenter);
 
+    labelTextGlucoseValue = new QLabel(this);
+    labelTextGlucoseValue->setGeometry(0,98,376,163);
+    labelTextGlucoseValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
+
+    labelTextMgdl = new QLabel(this);
+    labelTextMgdl->setGeometry(379,189,261,34);
+    labelTextMgdl->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+
+    labelTextResult = new QLabel(this);
+    labelTextResult->setGeometry(0,253,640,40);
+    labelTextResult->setAlignment(Qt::AlignCenter);
+
+    labelTextTime = new QLabel(this);
+    labelTextTime->setGeometry(237,305,167,36);
+    labelTextTime->setAlignment(Qt::AlignCenter);
+
     update();
 }
 
@@ -63,14 +79,36 @@ void PageSelect::updateStatus()
     QPixmap pixmap;
     int nTimeStatus = static_cast<int>(instance.getTimeStatus());
 
-    pngPath = "/bg"+QString::number(nTimeStatus)+".png";
-    pixmap = instance.pixLoad(false,strDirPath,pngPath);
-    labelBgCircle->setPixmap(pixmap.copy());
-    pngPath = "/"+QString::number(nTimeStatus)+".png";
-    pixmap = instance.pixLoad(false,strDirPath,pngPath);
-    labelImageTime->setPixmap(pixmap.copy());
+    labelBgCircle->hide();
+    labelImageTime->hide();
+    labelTextStatus->hide();
+    labelTextStatusSub->hide();
 
-    labelTextStatus->setText(textResource.getText(PAGE_SELECT,"labelTextStatus").at(nTimeStatus));
+    labelTextGlucoseValue->hide();
+    labelTextMgdl->hide();
+    labelTextResult->hide();
+    labelTextTime->hide();
+
+    if(instance.histInfo.val[nTimeStatus].valid_flag == 0)
+    {
+        pngPath = "/bg"+QString::number(nTimeStatus)+".png";
+        pixmap = instance.pixLoad(false,strDirPath,pngPath);
+        labelBgCircle->setPixmap(pixmap.copy());
+        pngPath = "/"+QString::number(nTimeStatus)+".png";
+        pixmap = instance.pixLoad(false,strDirPath,pngPath);
+        labelImageTime->setPixmap(pixmap.copy());
+
+        labelTextStatus->setText(textResource.getText(PAGE_SELECT,"labelTextStatus").at(nTimeStatus));
+
+        labelBgCircle->show();
+        labelImageTime->show();
+        labelTextStatus->show();
+        labelTextStatusSub->show();
+    }
+    else
+    {
+
+    }
 }
 
 void PageSelect::mousePressEvent(QMouseEvent *ev)

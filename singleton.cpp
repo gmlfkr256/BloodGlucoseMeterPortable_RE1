@@ -310,4 +310,33 @@ int Singleton::pixelToPoint(int pixelSize)
     return static_cast<int>((pixelSize*72.0)/dpi);
 }
 
+QString Singleton::getTextColorGlucoseValue(int &glucoseValue)
+{
+    QString strColor = "color: #666666;";
+
+    switch (getDeviceColor())
+    {
+    case COLOR_DEFAULT:
+        if(glucoseValue<=thresholdLow || glucoseValue>=thresholdHigh)
+        {
+            strColor = "color: #f2b29;";
+        }
+        else if(glucoseValue<=thresholdLow+GLUCOSE_LOW_PLUS || glucoseValue>=thresholdHigh+GLUCOSE_HIGH_MINUS)
+        {
+            strColor = "color: #ff6f00;";
+        }
+        else
+        {
+            strColor = "color: #000000;";
+        }
+        break;
+    case COLOR_BLUE:
+        break;
+    case COLOR_RED:
+        break;
+    }
+
+    return strColor;
+}
+
 

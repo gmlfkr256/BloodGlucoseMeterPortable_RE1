@@ -103,7 +103,10 @@ void PageHome::update()
             labelGroups[i].labelButtonText->show();
             int glucoseValue = instance.histInfo.val[order[i]].value;
 
-            setLabelTextColor(labelGroups[i].labelButtonText,glucoseValue);
+            //setLabelTextColor(labelGroups[i].labelButtonText,glucoseValue);
+            QString strStyleSheet;
+            strStyleSheet = instance.getTextColorGlucoseValue(glucoseValue)+" padding-right: 5px";
+            labelGroups[i].labelButtonText->setStyleSheet(strStyleSheet);
         }
     }
 }
@@ -118,7 +121,6 @@ void PageHome::setLabelTextColor(QLabel *labelText, int &glucoseValue)
     switch (instance.getDeviceColor())
     {
     case COLOR_DEFAULT:
-
         if(glucoseValue<=thresholdLow || glucoseValue>=thresholdHigh)
         {
             strColor = "color: #f2b29;";

@@ -18,11 +18,17 @@ public:
     QLabel *labelArrowRight;
     QLabel *labelArrowRightTouch;
 
+    //empty
     QLabel *labelBgCircle;
     QLabel *labelImageTime;
-
     QLabel *labelTextStatus;
     QLabel *labelTextStatusSub;
+
+    //value
+    QLabel *labelTextGlucoseValue;
+    QLabel *labelTextMgdl;
+    QLabel *labelTextResult;
+    QLabel *labelTextTime;
 
     void update() override;
     void pageShow() override;
