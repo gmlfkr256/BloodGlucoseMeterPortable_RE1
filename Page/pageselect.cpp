@@ -148,13 +148,14 @@ void PageSelect::updateStatus()
         case LAN_MAX:
             break;
         }
-
-
         labelTextResult->setText(strResult);
+
+        labelTextTime->setStyleSheet("color: #777777; border: 1px solid #777777; border-radius: 18px");
 
         labelTextGlucoseValue->show();
         labelTextMgdl->show();
         labelTextResult->show();
+        labelTextTime->show();
     }
 }
 
