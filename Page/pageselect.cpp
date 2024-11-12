@@ -115,7 +115,7 @@ void PageSelect::updateStatus()
         int glucoseValue = instance.histInfo.val[nTimeStatus].value;
         labelTextGlucoseValue->setText(QString::number(glucoseValue));
 
-        QString strStyleSheetColor = instance.getTextColorGlucoseValue(glucoseValue,true);
+        QString strStyleSheetColor = instance.getTextColorGlucoseValue(glucoseValue);
         labelTextGlucoseValue->setStyleSheet(strStyleSheetColor);
 
         labelTextMgdl->setText("mg/dL");
