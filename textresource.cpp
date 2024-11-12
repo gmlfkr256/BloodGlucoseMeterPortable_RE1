@@ -158,7 +158,7 @@ void TextResource::init()
     fontData[Lan][PAGE_SELECT].insert("labelTextMgdl",QFont(instance.fontSuit,instance.pixelToPoint(34),QFont::ExtraBold));
     fontData[Lan][PAGE_SELECT].insert("labelTextResult",QFont(instance.fontSuit,instance.pixelToPoint(32)));
     textData[Lan][PAGE_SELECT].insert("labelTextResult", QStringList{"Normal", "Low Blood Sugar Caution", "High Blood Sugar Caution", "Low Blood Sugar Warning", "High Blood Sugar Warning"});
-    textData[Lan][PAGE_SELECT].insert("resultSub", QStringList{"is your blood sugar level"});
+    textData[Lan][PAGE_SELECT].insert("resultSub", QStringList{"sugar level"});
 
     //=====================================================================================================================================
     //JP
