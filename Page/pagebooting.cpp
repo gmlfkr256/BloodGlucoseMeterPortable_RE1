@@ -13,6 +13,7 @@ PageBooting::PageBooting(QRect windowRect) : currentFrame(0)
 
     for(int i=0; i<20; i++)
     {
+        qDebug()<<i;
         QString strPng = QString("/Happyzone 01_000%01.png").arg(QString::number(currentFrame).rightJustified(2,'0'));
         pixBooting = Singleton::getInstance().pixLoad(false,strDirPath,strPng);
         splashScreenBooting.setPixmap(pixBooting.copy());
