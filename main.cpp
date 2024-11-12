@@ -35,7 +35,7 @@ int main(int argc, char* argv[])
     QObject::connect(pageBooting,&PageBooting::signalFinished,[&](){
         w.show();
         pageBooting->deleteLater();
-        qApp->processEvents();
+        //qApp->processEvents();
     });
 
     return a.exec();
