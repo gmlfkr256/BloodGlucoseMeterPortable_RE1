@@ -30,7 +30,7 @@ void Singleton::init()
         qDebug()<<sysUserInfo[i].passwd;
     }
 
-    langData.used = KR;
+    langData.used = EN;
     setDeviceLanguage(langData.used);
 
     dispData.color = COLOR_DEFAULT;

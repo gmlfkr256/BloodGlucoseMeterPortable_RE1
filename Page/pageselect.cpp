@@ -151,6 +151,9 @@ void PageSelect::updateStatus()
         labelTextResult->setText(strResult);
 
         labelTextTime->setStyleSheet("color: #777777; border: 1px solid #777777; border-radius: 18px");
+        QString strTime;
+        strTime = textResource.getText(PAGE_SELECT,"labelTextTime").at(0)+" "+QString("%1:%2").arg(QString::number(instance.histInfo.val[nTimeStatus].hour).rightJustified(2,'0'),QString::number(instance.histInfo.val[nTimeStatus].min).rightJustified(2,'0'));
+        labelTextTime->setText(strTime);
 
         labelTextGlucoseValue->show();
         labelTextMgdl->show();
