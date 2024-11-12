@@ -267,6 +267,17 @@ QString Singleton::getStrNowUserPassword()
     return sysUserInfo[nUserNumber].passwd;
 }
 
+//PageSelect
+void Singleton::setTimeStatus(TimeStatus timeStatus)
+{
+    this->timeStatus = timeStatus;
+}
+
+TimeStatus Singleton::getTimeStatus()
+{
+    return this->timeStatus;
+}
+
 //CaliGainCompleteCheck
 bool Singleton::getCaliGainCompleteCheck()
 {

@@ -38,6 +38,9 @@ public:
 private:
     void init();
     void setLabelTextColor(QLabel *labelText,int &glucoseValue);
+
+signals:
+    void signalShowSelect();
 };
 
 #endif // PAGEHOME_H

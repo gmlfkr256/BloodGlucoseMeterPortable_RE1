@@ -144,7 +144,14 @@ void PageHome::setLabelTextColor(QLabel *labelText, int &glucoseValue)
 
 void PageHome::mousePressEvent(QMouseEvent *ev)
 {
-
+    for(int i=0; i<8; i++)
+    {
+        if(instance.touchCheck(labelGroups[i].labelButton->geometry(),ev))
+        {
+            instance.setTimeStatus(static_cast<TimeStatus>(i));
+            emit signalShowSelect();
+        }
+    }
 }
 
 void PageHome::pageShow()

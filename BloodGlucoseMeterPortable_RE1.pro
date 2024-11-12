@@ -20,6 +20,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     Button/custombutton.cpp \
     Button/custombuttoncancel.cpp \
+    Button/custombuttonhome.cpp \
+    Button/custombuttonmeasurestart.cpp \
     Button/custombuttonok.cpp \
     Component/componentbattery.cpp \
     Component/componentbluetooth.cpp \
@@ -44,6 +46,8 @@ SOURCES += \
 HEADERS += \
     Button/custombutton.h \
     Button/custombuttoncancel.h \
+    Button/custombuttonhome.h \
+    Button/custombuttonmeasurestart.h \
     Button/custombuttonok.h \
     Component/componentbattery.h \
     Component/componentbluetooth.h \

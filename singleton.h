@@ -57,7 +57,7 @@ typedef enum
 
 Q_ENUMS(PasswordStatus)
 
-typedef  enum
+typedef enum
 {
     PASSWORD_STR_LOGIN_SUCCESS = 0,
     PASSWORD_STR_LOGIN_FAIL,
@@ -76,6 +76,20 @@ typedef  enum
     PASSWORD_STR_LOGOUT,
     PASSWORD_STR_MAX
 } PasswordStrStatus;
+
+Q_ENUMS(PasswordStrStatus)
+
+typedef enum
+{
+    WAKE_UP = 0,
+    BREAKFAST_BEFORE,
+    BREAKFAST_AFTER,
+    LUNCH_BEFROE,
+    LUNCH_AFTER,
+    DINNER_BEFORE,
+    DINNER_AFTER,
+    BED_TIME
+} TimeStatus;
 
 class Singleton : public QObject
 {
@@ -132,6 +146,10 @@ public:
     void actUserLogin(int i);
     QString getStrNowUserPassword();
 
+    //PageSelect
+    void setTimeStatus(TimeStatus timeStatus);
+    TimeStatus getTimeStatus();
+
     //CaliCompleteCheck
     bool getCaliGainCompleteCheck();
 
@@ -166,6 +184,9 @@ private:
 
     //PageSleep
     int nSleepTime;
+
+    //PageSelect
+    TimeStatus timeStatus = WAKE_UP;
 };
 
 #endif // SINGLETON_H

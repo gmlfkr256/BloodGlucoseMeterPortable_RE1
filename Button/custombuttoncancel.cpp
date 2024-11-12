@@ -23,7 +23,7 @@ void CustomButtonCancel::update()
     switch (instance.getDeviceColor())
     {
     case COLOR_DEFAULT:
-        labelButtonCancel->setStyleSheet("background-color: #ffffff; color: #ffffff;");
+        labelButtonCancel->setStyleSheet("background-color: #212121; color: #ffffff;");
         break;
     case COLOR_BLUE:
         break;

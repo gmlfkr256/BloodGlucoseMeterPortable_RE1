@@ -67,5 +67,23 @@
         <file>Image/Default/Public/ImagePassword/buttonOK.png</file>
         <file>Image/Default/Public/ImagePassword/passwordNumBg.png</file>
         <file>Image/Default/Public/ImagePassword/circlePassword.png</file>
+        <file>Image/Default/Public/ImageSelect/buttonArrowLeft.png</file>
+        <file>Image/Default/Public/ImageSelect/buttonArrowRight.png</file>
+        <file>Image/Default/Public/ImageSelect/bg0.png</file>
+        <file>Image/Default/Public/ImageSelect/bg1.png</file>
+        <file>Image/Default/Public/ImageSelect/bg2.png</file>
+        <file>Image/Default/Public/ImageSelect/bg3.png</file>
+        <file>Image/Default/Public/ImageSelect/bg4.png</file>
+        <file>Image/Default/Public/ImageSelect/bg5.png</file>
+        <file>Image/Default/Public/ImageSelect/bg6.png</file>
+        <file>Image/Default/Public/ImageSelect/bg7.png</file>
+        <file>Image/Default/Public/ImageSelect/0.png</file>
+        <file>Image/Default/Public/ImageSelect/1.png</file>
+        <file>Image/Default/Public/ImageSelect/2.png</file>
+        <file>Image/Default/Public/ImageSelect/3.png</file>
+        <file>Image/Default/Public/ImageSelect/4.png</file>
+        <file>Image/Default/Public/ImageSelect/5.png</file>
+        <file>Image/Default/Public/ImageSelect/6.png</file>
+        <file>Image/Default/Public/ImageSelect/7.png</file>
     </qresource>
 </RCC>

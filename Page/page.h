@@ -5,6 +5,8 @@
 #include "textresource.h"
 #include "Button/custombuttonok.h"
 #include "Button/custombuttoncancel.h"
+#include "Button/custombuttonhome.h"
+#include "Button/custombuttonmeasurestart.h"
 
 class Page : public QWidget
 {
