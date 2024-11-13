@@ -47,6 +47,9 @@ void MainWindow::init()
     pageCaliCheck = new PageCaliCheck(this);
     stackedWidget->addWidget(pageCaliCheck);
 
+    pageCaliGainConfirm = new PageCaliGainConfirm(this);
+    stackedWidget->addWidget(pageCaliGainConfirm);
+
     comBat = new ComponentBattery(stackedWidget);
     comBle = new ComponentBluetooth(stackedWidget);
     comClock = new ComponentClock(stackedWidget);
