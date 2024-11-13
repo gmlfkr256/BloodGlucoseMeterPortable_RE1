@@ -74,6 +74,13 @@ void MainWindow::initConnect()
     connect(pagePasswordConfirm,&PagePasswordConfirm::signalShowPageHome,this,[this](){stackedWidget->setCurrentIndex(PAGE_HOME);});
     connect(pageHome,&PageHome::signalShowPageSelect,this,[this](){stackedWidget->setCurrentIndex(PAGE_SELECT); pageSelect->update();});
     connect(pageSelect,&PageSelect::signalShowPageHome,this,[this](){stackedWidget->setCurrentIndex(PAGE_HOME);});
+    connect(pageMenu, &PageMenu::signalShowPageNum, this, [this](PageNum pageNum) {
+        if (stackedWidget && pageNum >= 0 && pageNum < stackedWidget->count()) {
+            stackedWidget->setCurrentIndex(static_cast<int>(pageNum));
+        } else {
+            qDebug() << "Invalid pageNum:" << static_cast<int>(pageNum);
+        }
+    });
 }
 
 void MainWindow::currentPageChanged(int index)

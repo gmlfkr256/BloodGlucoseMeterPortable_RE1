@@ -24,6 +24,7 @@ public:
     QLabel *labelArrowRightTouch;
     QLabel *labelButton[6];
     QLabel *labelButtonText[6];
+    QList<PageNum> listPageNum;
     QString strButtonPathPng[6];
 
     MenuPageIndex selectPage = MENU_PAGE_0;
@@ -51,7 +52,24 @@ private:
     void init();
 
 signals:
+    void signalShowPageNum(PageNum pageNum);
+    /*
+    void signalShowPageCalibration();
+    void signalShowPageThreshold();
+    void signalShowPageHistory();
+    void signalShowPageSound();
+    void signalShowPageSleep();
+    void signalShowPageReverse();
 
+    void signalShowPageDateTime();
+    void signalShowPageTranslation();
+    void signalShowPageUpgrade();
+    void signalShowPageDeviceInfo();
+    void signalShowPageReset();
+    void signalShowPageUser();
+
+    void signalShowPageColor();
+    */
 };
 
 #endif // PAGEMENU_H

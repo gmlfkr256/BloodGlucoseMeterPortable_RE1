@@ -78,6 +78,8 @@ void PageMenu::update()
         labelButtonText->setStyleSheet("color: #000000;");
     }
 
+    listPageNum.clear();
+
     //strPathPngColor
     switch(selectPage)
     {
@@ -95,6 +97,16 @@ void PageMenu::update()
         labelButtonText[3]->setText(textResource.getText(PAGE_MENU,"labelButtonText").at(3));
         labelButtonText[4]->setText(textResource.getText(PAGE_MENU,"labelButtonText").at(4));
         labelButtonText[5]->setText(textResource.getText(PAGE_MENU,"labelButtonText").at(5));
+
+        listPageNum = {
+            PAGE_CALIBRATION,
+            PAGE_THRESHOLD,
+            PAGE_HISTORY,
+            PAGE_SOUND,
+            PAGE_SLEEP,
+            PAGE_REVERSE
+        };
+
         break;
     case MENU_PAGE_1:
         strButtonPathPng[0] = strPathPngDateTime;
@@ -110,6 +122,15 @@ void PageMenu::update()
         labelButtonText[3]->setText(textResource.getText(PAGE_MENU,"labelButtonText").at(10));
         labelButtonText[4]->setText(textResource.getText(PAGE_MENU,"labelButtonText").at(11));
         labelButtonText[5]->setText(textResource.getText(PAGE_MENU,"labelButtonText").at(12));
+
+        listPageNum = {
+            PAGE_DATETIME,
+            PAGE_TRANSLATION,
+            PAGE_UPGRADE,
+            PAGE_DEVICEINFO,
+            PAGE_RESET,
+            PAGE_USER
+        };
         break;
     case MENU_PAGE_MAX:
         break;
@@ -152,6 +173,17 @@ void PageMenu::mousePressEvent(QMouseEvent *ev)
             selectPage = static_cast<MenuPageIndex>(nSelectPage);
 
         update();
+    }
+
+    for(int i=0; i<6; i++)
+    {
+        if(instance.touchCheck(labelButton[i]->geometry(),ev))
+        {
+            if(i>=0 && i<listPageNum.size())
+                emit signalShowPageNum(listPageNum.at(i));
+            else
+                qDebug()<<"[fail] Invalid listPageNum index: "<<i;
+        }
     }
 }
 
