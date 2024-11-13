@@ -41,6 +41,9 @@ void MainWindow::init()
     pageSelect = new PageSelect(this);
     stackedWidget->addWidget(pageSelect);
 
+    pageMenu = new PageMenu(this);
+    stackedWidget->addWidget(pageMenu);
+
     comBat = new ComponentBattery(stackedWidget);
     comBle = new ComponentBluetooth(stackedWidget);
     comClock = new ComponentClock(stackedWidget);
@@ -62,8 +65,11 @@ void MainWindow::initConnect()
             currentPage->update();
     });
 
+    //com
     connect(comHome,&ComponentHome::singalShowPageHome,this,[this](){stackedWidget->setCurrentIndex(PAGE_HOME);});
+    connect(comMenu,&ComponentMenu::signalShowPageMenu,this,[this](){stackedWidget->setCurrentIndex(PAGE_MENU);});
 
+    //page
     connect(pagePassword,&PagePassword::signalPassword,this,[this](){stackedWidget->setCurrentIndex(PAGE_PASSWORD_CONFIRM);});
     connect(pagePasswordConfirm,&PagePasswordConfirm::signalShowPageHome,this,[this](){stackedWidget->setCurrentIndex(PAGE_HOME);});
     connect(pageHome,&PageHome::signalShowPageSelect,this,[this](){stackedWidget->setCurrentIndex(PAGE_SELECT); pageSelect->update();});

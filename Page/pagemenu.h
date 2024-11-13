@@ -18,11 +18,12 @@ public:
     void mousePressEvent(QMouseEvent *ev) override;
     QString strDirPath = "/ImageMenu";
 
-    QLabel *labelButton[6];
     QLabel *labelArrowLeft;
     QLabel *labelArrowLeftTouch;
     QLabel *labelArrowRight;
     QLabel *labelArrowRightTouch;
+    QLabel *labelButton[6];
+    QLabel *labelButtonText[6];
     QString strButtonPathPng[6];
 
     MenuPageIndex selectPage = MENU_PAGE_0;

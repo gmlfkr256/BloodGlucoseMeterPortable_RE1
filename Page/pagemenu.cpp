@@ -11,10 +11,26 @@ void PageMenu::init()
     for(int i=0; i<6; i++)
     {
         labelButton[i] = new QLabel(this);
+        labelButtonText[i] = new QLabel(this);
+
         if(i<3)
+        {
             labelButton[i]->setGeometry(81+i*163,91,151,179);
+            labelButtonText[i]->setGeometry(81+i*163,212,151,38);
+        }
         else
+        {
             labelButton[i]->setGeometry(81+(i-3)*163,282,151,179);
+        }
+
+        // labelButton[i]의 아래에 텍스트 라벨 위치를 설정
+        QRect buttonRect = labelButton[i]->geometry();
+        labelButtonText[i]->setGeometry(
+                    buttonRect.x(),                   // labelButton과 동일한 x 좌표
+                    buttonRect.y() + buttonRect.height() + 5,  // 버튼 바로 아래 (5px 간격)
+                    buttonRect.width(),               // 버튼과 동일한 너비
+                    38                                // 고정된 높이
+                    );
     }
 
     labelArrowLeft = new QLabel(this);
@@ -56,6 +72,12 @@ void PageMenu::update()
     pngPath = "/buttonArrowRight.png";
     instance.pixLoad(labelArrowRight,false,strDirPath,pngPath);
 
+    for(QLabel *labelButtonText : this->labelButtonText)
+    {
+        labelButtonText->setFont(textResource.getFont(PAGE_MENU,"labelButtonText"));
+        labelButtonText->setStyleSheet("color: #000000;");
+    }
+
     //strPathPngColor
     switch(selectPage)
     {
@@ -66,6 +88,13 @@ void PageMenu::update()
         strButtonPathPng[3] = strPathPngSound;
         strButtonPathPng[4] = strPathPngSleep;
         strButtonPathPng[5] = strPathPngReverse;
+
+        labelButtonText[0]->setText(textResource.getText(PAGE_MENU,"labelButtonText").at(0));
+        labelButtonText[1]->setText(textResource.getText(PAGE_MENU,"labelButtonText").at(1));
+        labelButtonText[2]->setText(textResource.getText(PAGE_MENU,"labelButtonText").at(2));
+        labelButtonText[3]->setText(textResource.getText(PAGE_MENU,"labelButtonText").at(3));
+        labelButtonText[4]->setText(textResource.getText(PAGE_MENU,"labelButtonText").at(4));
+        labelButtonText[5]->setText(textResource.getText(PAGE_MENU,"labelButtonText").at(5));
         break;
     case MENU_PAGE_1:
         strButtonPathPng[0] = strPathPngDateTime;
@@ -74,6 +103,13 @@ void PageMenu::update()
         strButtonPathPng[3] = strPathPngDeviceInfo;
         strButtonPathPng[4] = strPathPngReset;
         strButtonPathPng[5] = strPathPngUser;
+
+        labelButtonText[0]->setText(textResource.getText(PAGE_MENU,"labelButtonText").at(6));
+        labelButtonText[1]->setText(textResource.getText(PAGE_MENU,"labelButtonText").at(8));
+        labelButtonText[2]->setText(textResource.getText(PAGE_MENU,"labelButtonText").at(9));
+        labelButtonText[3]->setText(textResource.getText(PAGE_MENU,"labelButtonText").at(10));
+        labelButtonText[4]->setText(textResource.getText(PAGE_MENU,"labelButtonText").at(11));
+        labelButtonText[5]->setText(textResource.getText(PAGE_MENU,"labelButtonText").at(12));
         break;
     case MENU_PAGE_MAX:
         break;

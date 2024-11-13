@@ -39,6 +39,7 @@ typedef enum
     PAGE_PASSWORD_CONFIRM,
     PAGE_HOME,
     PAGE_SELECT,
+    PAGE_MENU,
     CUSTOM_BUTTON,
     PAGE_MAX
 } PageNum;

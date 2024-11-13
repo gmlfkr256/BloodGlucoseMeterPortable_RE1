@@ -15,6 +15,7 @@
 #include "Page/pagepasswordconfirm.h"
 #include "Page/pagehome.h"
 #include "Page/pageselect.h"
+#include "Page/pagemenu.h"
 
 
 class MainWindow : public QMainWindow
@@ -37,6 +38,7 @@ public:
     PagePasswordConfirm *pagePasswordConfirm;
     PageHome *pageHome;
     PageSelect *pageSelect;
+    PageMenu *pageMenu;
 
     QList<int> listComHiddenPageIndex;
 private:

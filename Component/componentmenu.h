@@ -21,7 +21,7 @@ public slots:
     void pageHide() override;
 
 signals:
-    void signalComMenuClick();
+    void signalShowPageMenu();
 };
 
 #endif // COMPONENTMENU_H
