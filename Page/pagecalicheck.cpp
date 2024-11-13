@@ -9,6 +9,7 @@ PageCaliCheck::PageCaliCheck(QWidget *parent) : Page(parent)
 void PageCaliCheck::init()
 {
     labelTextCheck = new QLabel(this);
+    labelTextCheck->setGeometry(0,73,640,477);
     labelTextCheck->setAlignment(Qt::AlignCenter);
 
     customButtonOK = new CustomButtonOK(this);
