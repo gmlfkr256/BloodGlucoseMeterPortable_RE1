@@ -31,10 +31,10 @@ void CustomButtonCancel::update()
         break;
     }
 
-    int x = bIsLong ? 0 : 320;
+    //int x = bIsLong ? 0 : 320;
     int width = bIsLong ? 640 : 320;
 
-    this->setGeometry(x,390,width,90);
+    this->setGeometry(0,390,width,90);
     labelButtonCancel->setGeometry(0,0,this->width(),this->height());
 }
 
