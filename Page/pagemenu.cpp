@@ -12,7 +12,7 @@ void PageMenu::init()
     {
         labelButton[i] = new QLabel(this);
         labelButtonText[i] = new QLabel(this);
-
+        labelButtonText[i]->setAlignment(Qt::AlignCenter);
         if(i<3)
         {
             labelButton[i]->setGeometry(81+i*163,91,151,179);
