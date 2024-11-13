@@ -22,7 +22,7 @@ private:
     void init();
 
 signals:
-
+    void signalShowPageNum(PageNum pageNum);
 };
 
 #endif // PAGECALICHECK_H
