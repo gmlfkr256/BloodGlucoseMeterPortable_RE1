@@ -121,7 +121,7 @@ void TextResource::init()
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonOK",QStringList{"OK"});
 
     fontData[Lan][CUSTOM_BUTTON].insert("labelButtonCancel",QFont(instance.fontSuit,instance.pixelToPoint(35),QFont::Bold));
-    textData[Lan][CUSTOM_BUTTON].insert("labelButtonCacnel",QStringList{"Cancel"});
+    textData[Lan][CUSTOM_BUTTON].insert("labelButtonCancel",QStringList{"Cancel"});
 
     fontData[Lan][CUSTOM_BUTTON].insert("labelButtonHome",QFont(instance.fontSuit,instance.pixelToPoint(35),QFont::Bold));
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonHome",QStringList{"Home"});
