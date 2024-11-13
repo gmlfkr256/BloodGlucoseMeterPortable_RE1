@@ -376,3 +376,12 @@ BloodSugarLevel Singleton::getBloodSugarLevel(int glucoseValue)
         return BLOOD_NORMAL;
 }
 
+void Singleton::setPageNumPrev(PageNum pageNumPrev)
+{
+    this->pageNumPrev = pageNumPrev;
+}
+
+PageNum Singleton::getPageNumPrev()
+{
+    return pageNumPrev;
+}

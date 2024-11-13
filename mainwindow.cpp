@@ -50,6 +50,9 @@ void MainWindow::init()
     pageCaliGainConfirm = new PageCaliGainConfirm(this);
     stackedWidget->addWidget(pageCaliGainConfirm);
 
+    pageGraph = new PageGarph(this);
+    stackedWidget->addWidget(pageGraph);
+
     comBat = new ComponentBattery(stackedWidget);
     comBle = new ComponentBluetooth(stackedWidget);
     comClock = new ComponentClock(stackedWidget);
@@ -67,6 +70,7 @@ void MainWindow::init()
         {PAGE_MENU, "PageMenu"},
         {PAGE_CALI_CHECK, "PageCaliCheck"},
         {PAGE_CALI_GAIN_CONFIRM, "PageCaliGainConfirm"},
+        {PAGE_GRAPH, "PageGraph"},
 
         {PAGE_CALIBRATION, "PageCalibration"},
         {PAGE_CALI_SELECT, "PageCaliSelect"},
@@ -110,6 +114,8 @@ void MainWindow::initConnect()
     connect(pageSelect,&PageSelect::signalShowPageHome,this,[this](){stackedWidget->setCurrentIndex(PAGE_HOME);});
     connect(pageMenu, &PageMenu::signalShowPageNum, this,&MainWindow::setPageByPageNum);
     connect(pageCaliCheck, &PageCaliCheck::signalShowPageNum,this,&MainWindow::setPageByPageNum);
+    connect(pageCaliGainConfirm, &PageCaliGainConfirm::signalShowPageNum,this,&MainWindow::setPageByPageNum);
+    connect(pageGraph, &PageGarph::signalShowPageNum,this,&MainWindow::setPageByPageNum);
 }
 
 void MainWindow::currentPageChanged(int index)

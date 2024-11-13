@@ -42,8 +42,8 @@ typedef enum
     PAGE_MENU,
     PAGE_CALI_CHECK,
     PAGE_CALI_GAIN_CONFIRM,
-
     PAGE_GRAPH,
+
     PAGE_CALIBRATION,
     PAGE_CALI_SELECT,
     PAGE_THRESHOLD,
@@ -187,12 +187,16 @@ public:
     void setSleepTime(int nSleepTime);
     int getSleepTime();
 
+
+    //public
     bool touchCheck(const QRect &rect, QMouseEvent* ev);
     int pixelToPoint(int pixelSize);
 
     QString getTextColorGlucoseValue(int glucoseValue,bool bInBlack = false);
     BloodSugarLevel getBloodSugarLevel(int glucoseValue);
 
+    void setPageNumPrev(PageNum pageNumPrev);
+    PageNum getPageNumPrev();
 private:
     //Singleton() = default;
     explicit Singleton(QObject* parent = nullptr) : QObject(parent){init();};
@@ -203,6 +207,8 @@ private:
     QString strImgPathLan = "/KR";
 
     static const QHash<unsigned int, QPair<QString, DeviceLanguage>> hashLanguage;
+
+    PageNum pageNumPrev = PAGE_MAX;
 
     bool procCheck = false;
 

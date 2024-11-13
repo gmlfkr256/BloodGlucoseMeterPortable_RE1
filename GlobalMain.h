@@ -26,6 +26,7 @@
 #include <QHash>
 #include <QPair>
 #include <QApplication>
+#include <QPainter>
 
 
 //=======================

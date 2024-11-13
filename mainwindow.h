@@ -18,6 +18,7 @@
 #include "Page/pagemenu.h"
 #include "Page/pagecalicheck.h"
 #include "Page/pagecaligainconfirm.h"
+#include "Page/pagegarph.h"
 
 
 class MainWindow : public QMainWindow
@@ -43,6 +44,7 @@ public:
     PageMenu *pageMenu;
     PageCaliCheck *pageCaliCheck;
     PageCaliGainConfirm *pageCaliGainConfirm;
+    PageGarph *pageGraph;
 
     QList<int> listComHiddenPageIndex;
     QMap<PageNum,QString> mapPageNumName;
