@@ -136,6 +136,8 @@ void PageMenu::mousePressEvent(QMouseEvent *ev)
         nSelectPage--;
         if(nSelectPage<MENU_PAGE_0)
             selectPage = MENU_PAGE_1;
+        else
+            selectPage = static_cast<MenuPageIndex>(nSelectPage);
 
         update();
     }
@@ -146,6 +148,8 @@ void PageMenu::mousePressEvent(QMouseEvent *ev)
         nSelectPage++;
         if(nSelectPage>MENU_PAGE_1)
             selectPage = MENU_PAGE_0;
+        else
+            selectPage = static_cast<MenuPageIndex>(nSelectPage);
 
         update();
     }
