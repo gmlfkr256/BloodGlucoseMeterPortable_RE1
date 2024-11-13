@@ -22,6 +22,9 @@ void PagePasswordConfirm::init()
 
 void PagePasswordConfirm::update()
 {
+    customButtonOK->update();
+    customButtonCancel->update();
+
     switch (instance.getPasswordStrStatus())
     {
     case PASSWORD_STR_LOGIN_SUCCESS:

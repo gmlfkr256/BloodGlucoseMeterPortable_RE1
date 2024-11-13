@@ -99,7 +99,7 @@ void PageMenu::update()
         labelButtonText[5]->setText(textResource.getText(PAGE_MENU,"labelButtonText").at(5));
 
         listPageNum = {
-            PAGE_CALIBRATION,
+            PAGE_CALI_CHECK,//PAGE_CALIBRATION,
             PAGE_THRESHOLD,
             PAGE_HISTORY,
             PAGE_SOUND,

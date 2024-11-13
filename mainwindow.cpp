@@ -52,6 +52,31 @@ void MainWindow::init()
 
     listComponent<<comBat<<comBle<<comClock<<comHome<<comMenu;
 
+    mapPageNumName =
+    {
+        {PAGE_PASSWORD, "PagePassword"},
+        {PAGE_PASSWORD_CONFIRM, "PagePasswordConfirm"},
+        {PAGE_HOME, "PageHome"},
+        {PAGE_SELECT, "PageSelect"},
+        {PAGE_MENU, "PageMenu"},
+        {PAGE_CALIBRATION, "PageCalibration"},
+        {PAGE_CALI_CHECK, "PageCaliCheck"},
+        {PAGE_THRESHOLD, "PageThreshold"},
+        {PAGE_HISTORY, "PageHistory"},
+        {PAGE_SOUND, "PageSound"},
+        {PAGE_SLEEP, "PageSleep"},
+        {PAGE_REVERSE, "PageReverse"},
+        {PAGE_DATETIME, "PageDateTime"},
+        {PAGE_TRANSLATION, "PageTranslation"},
+        {PAGE_UPGRADE, "PageUpgrade"},
+        {PAGE_DEVICEINFO, "PageDeviceInfo"},
+        {PAGE_RESET, "PageReset"},
+        {PAGE_USER, "PageUser"},
+        {PAGE_COLOR, "PageColor"},
+        {CUSTOM_BUTTON, "CustomButton"},
+        {PAGE_MAX, "InvalidPage"}  // 예외 처리
+    };
+
     HideComponents();
 }
 
@@ -74,13 +99,7 @@ void MainWindow::initConnect()
     connect(pagePasswordConfirm,&PagePasswordConfirm::signalShowPageHome,this,[this](){stackedWidget->setCurrentIndex(PAGE_HOME);});
     connect(pageHome,&PageHome::signalShowPageSelect,this,[this](){stackedWidget->setCurrentIndex(PAGE_SELECT); pageSelect->update();});
     connect(pageSelect,&PageSelect::signalShowPageHome,this,[this](){stackedWidget->setCurrentIndex(PAGE_HOME);});
-    connect(pageMenu, &PageMenu::signalShowPageNum, this, [this](PageNum pageNum) {
-        if (stackedWidget && pageNum >= 0 && pageNum < stackedWidget->count()) {
-            stackedWidget->setCurrentIndex(static_cast<int>(pageNum));
-        } else {
-            qDebug() << "Invalid pageNum:" << static_cast<int>(pageNum);
-        }
-    });
+    connect(pageMenu, &PageMenu::signalShowPageNum, this,&MainWindow::setPageByPageNum);
 }
 
 void MainWindow::currentPageChanged(int index)
@@ -92,6 +111,16 @@ void MainWindow::currentPageChanged(int index)
     else
     {
         ShowComponents();
+    }
+}
+
+void MainWindow::setPageByPageNum(PageNum pageNum)
+{
+    if (stackedWidget && pageNum >= 0 && pageNum < stackedWidget->count()) {
+        stackedWidget->setCurrentIndex(static_cast<int>(pageNum));
+    } else {
+        qDebug() << "[fail] Invalid pageNum:" << static_cast<int>(pageNum)<<" page open fail";
+        qDebug() << "pageName: "<<getPageName(pageNum);
     }
 }
 
@@ -113,3 +142,10 @@ void MainWindow::HideComponents()
     }
 }
 
+QString MainWindow::getPageName(PageNum pageNum)
+{
+    if(mapPageNumName.contains(pageNum))
+        return mapPageNumName.value(pageNum);
+    else
+        return QString("This page is empty");
+}

@@ -41,6 +41,9 @@ public:
     PageMenu *pageMenu;
 
     QList<int> listComHiddenPageIndex;
+    QMap<PageNum,QString> mapPageNumName;
+public slots:
+     void setPageByPageNum(PageNum pageNum);
 private:
     void initGuiApi();
     void init();
@@ -48,5 +51,7 @@ private:
     void currentPageChanged(int index);
     void ShowComponents();
     void HideComponents();
+
+    QString getPageName(PageNum pageNum);
 };
 #endif // MAINWINDOW_H

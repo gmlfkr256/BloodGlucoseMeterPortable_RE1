@@ -32,6 +32,7 @@ SOURCES += \
     Loadfont.cpp \
     Page/page.cpp \
     Page/pagebooting.cpp \
+    Page/pagecalicheck.cpp \
     Page/pagehome.cpp \
     Page/pagemenu.cpp \
     Page/pagepassword.cpp \
@@ -60,6 +61,7 @@ HEADERS += \
     Loadfont.h \
     Page/page.h \
     Page/pagebooting.h \
+    Page/pagecalicheck.h \
     Page/pagehome.h \
     Page/pagemenu.h \
     Page/pagepassword.h \

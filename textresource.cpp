@@ -106,6 +106,13 @@ void TextResource::init()
                                         "초기화",
                                         "유저정보"});
 
+    //PAGE_CALI_CEHCK
+    fontData[Lan][PAGE_CALI_CHECK].insert("labelTextCheck",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
+    textData[Lan][PAGE_CALI_CHECK].insert("labelTextCheck",QStringList{
+                                              "혈당 보정 단계입니다\n손가락을 삽입구에 넣어주세요",
+                                              "혈당 보정 완료입니다\n재진행하시겠습니까?"
+                                          });
+
     //====================================================================================================================================
     //EN
     Lan = EN;
@@ -198,6 +205,13 @@ void TextResource::init()
         "Reset",
         "User"
     });
+
+    //PAGE_CALI_CHECK
+    fontData[Lan][PAGE_CALI_CHECK].insert("labelTextCheck",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
+    textData[Lan][PAGE_CALI_CHECK].insert("labelTextCheck",QStringList{
+                                              "Calibration phase\nPlease insert your finger",
+                                              "Calibration complete\nDo you want to proceed again?"
+                                          });
 
     //=====================================================================================================================================
     //JP
