@@ -3,6 +3,13 @@
 
 #include "page.h"
 
+typedef enum
+{
+    MENU_PAGE_0 = 0,
+    MENU_PAGE_1,
+    MENU_PAGE_MAX
+} MenuPageIndex;
+
 class PageMenu : public Page
 {
     Q_OBJECT
@@ -16,6 +23,25 @@ public:
     QLabel *labelArrowLeftTouch;
     QLabel *labelArrowRight;
     QLabel *labelArrowRightTouch;
+    QString strButtonPathPng[6];
+
+    MenuPageIndex selectPage = MENU_PAGE_0;
+    //MenuPageIndex selectPagePrev = MENU_PAGE_0;
+
+    QString strPathPngSound;
+    QString strPathPngDateTime;
+    QString strPathPngReverse;
+    QString strPathPngHistory;
+    QString strPathPngSleep;
+    QString strPathPngTranslation;
+    QString strPathPngUpgrade;
+    QString strPathPngColor;
+    QString strPathPngCalibration;
+    QString strPathPngDeviceInfo;
+    QString strPathPngDebug;
+    QString strPathPngThreshold;
+    QString strPathPngReset;
+    QString strPathPngUser;
 
     void update() override;
     void pageShow() override;
