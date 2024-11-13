@@ -53,7 +53,14 @@ void PageCaliCheck::mousePressEvent(QMouseEvent *ev)
 
     if(instance.touchCheck(customButtonCancel->geometry(),ev))
     {
-        emit signalShowPageNum(PAGE_MENU);
+        if(instance.getCaliGainCompleteCheck())
+        {
+            emit signalShowPageNum(PAGE_CALI_SELECT);
+        }
+        else
+        {
+            emit signalShowPageNum(PAGE_MENU);
+        }
     }
 }
 

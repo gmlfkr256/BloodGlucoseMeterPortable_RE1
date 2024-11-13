@@ -62,10 +62,11 @@ void MainWindow::init()
         {PAGE_HOME, "PageHome"},
         {PAGE_SELECT, "PageSelect"},
         {PAGE_MENU, "PageMenu"},
-        {PAGE_CALIBRATION, "PageCalibration"},
         {PAGE_CALI_CHECK, "PageCaliCheck"},
-        {PAGE_CALI_SELECT, "PageCaliSelect"},
         {PAGE_CALI_GAIN_CONFIRM, "PageCaliGainConfirm"},
+
+        {PAGE_CALIBRATION, "PageCalibration"},
+        {PAGE_CALI_SELECT, "PageCaliSelect"},
         {PAGE_THRESHOLD, "PageThreshold"},
         {PAGE_HISTORY, "PageHistory"},
         {PAGE_SOUND, "PageSound"},

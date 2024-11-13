@@ -113,6 +113,13 @@ void TextResource::init()
                                               "혈당 보정 완료입니다\n재진행하시겠습니까?"
                                           });
 
+    //Page_CALI_GAIN_CONFIRM
+    fontData[Lan][PAGE_CALI_GAIN_CONFIRM].insert("labelTextGainConfirm",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
+    textData[Lan][PAGE_CALI_GAIN_CONFIRM].insert("labelTextGainConfirm",QStringList{
+                                                     "LED 감도 조절 단계입니다\n손가락을 움직이지 말아주세요",
+                                                     "LED 감도 조절이 끝났습니다\n다음 측정 단계로 넘어가세요"
+                                                 });
+
     //====================================================================================================================================
     //EN
     Lan = EN;
@@ -212,6 +219,12 @@ void TextResource::init()
                                               "Calibration phase\nPlease insert your finger",
                                               "Calibration complete\nDo you want to proceed again?"
                                           });
+    //Page_CALI_GAIN_CONFIRM
+    fontData[Lan][PAGE_CALI_GAIN_CONFIRM].insert("labelTextGainConfirm",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
+    textData[Lan][PAGE_CALI_GAIN_CONFIRM].insert("labelTextGainConfirm",QStringList{
+                                                     "LED sensitivity adjustment step\nPlease do not move your finger",
+                                                     "LED sensitivity adjustment\nhas been completed"
+                                                 });
 
     //=====================================================================================================================================
     //JP

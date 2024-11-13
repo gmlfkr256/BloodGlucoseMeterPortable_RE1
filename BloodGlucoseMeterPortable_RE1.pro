@@ -33,6 +33,7 @@ SOURCES += \
     Page/page.cpp \
     Page/pagebooting.cpp \
     Page/pagecalicheck.cpp \
+    Page/pagecaligainconfirm.cpp \
     Page/pagehome.cpp \
     Page/pagemenu.cpp \
     Page/pagepassword.cpp \
@@ -62,6 +63,7 @@ HEADERS += \
     Page/page.h \
     Page/pagebooting.h \
     Page/pagecalicheck.h \
+    Page/pagecaligainconfirm.h \
     Page/pagehome.h \
     Page/pagemenu.h \
     Page/pagepassword.h \
