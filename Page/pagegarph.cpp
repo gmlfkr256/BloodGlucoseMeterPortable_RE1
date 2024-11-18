@@ -38,7 +38,7 @@ void PageGarph::update()
     labelProgressText->setText(textResource.getText(PAGE_GRAPH,"labelProgressText").at(0));
     labelProgressValue->setFont(textResource.getFont(PAGE_GRAPH,"labelProgressValue"));
     labelProgressValue->setText("0");
-    labelProgressPercent->setFont(textResource.getFont(PAGE_GRAPH,"labelProgresPercent"));
+    labelProgressPercent->setFont(textResource.getFont(PAGE_GRAPH,"labelProgressPercent"));
     labelProgressPercent->setText("%");
 }
 
