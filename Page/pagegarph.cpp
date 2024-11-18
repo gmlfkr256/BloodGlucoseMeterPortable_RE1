@@ -70,10 +70,8 @@ void PageGarph::update()
     labelProgressPercent->setText("%");
 
     labelProgressBarBg->setStyleSheet("background-color: #f2f2f2; border-radius:10px;");
-    labelProgressBar->setStyleSheet("border-radius:10px;");
+    labelProgressBar->setStyleSheet("background-color: transparent; background-image: url(qrc:/Image/Default/Public/ImageGraph/progressBar.png); border-radius:10px;");
     labelProgressBar->setFixedWidth(100);
-
-    instance.pixLoad(labelProgressBar,false,strDirPath,"/progressBar.png");
 
     labelAdcText->setFont(textResource.getFont(PAGE_GRAPH,"labelAdcText"));
     labelAdcText->setText(textResource.getText(PAGE_GRAPH,"labelAdcText").at(0)+"9999");
