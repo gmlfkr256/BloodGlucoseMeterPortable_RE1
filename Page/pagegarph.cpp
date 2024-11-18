@@ -12,19 +12,19 @@ void PageGarph::init()
 
     labelGraph = new QLabel(this);
     labelProgressText = new QLabel(this);
-    labelProgressText->setGeometry(194,43,188,45);
-    labelProgressText->setAlignment(Qt::AlignCenter);
+    labelProgressText->setGeometry(200,0,188,90);
+    labelProgressText->setAlignment(Qt::AlignHCenter | Qt::AlignBottom);
     labelProgressText->setStyleSheet("color: #6c6c6c;");
 
     labelProgressValue = new QLabel(this);
-    labelProgressValue->setGeometry(10,10,70,90);
-    labelProgressValue->setAlignment(Qt::AlignCenter);
+    labelProgressValue->setGeometry(10,0,70,90);
+    labelProgressValue->setAlignment(Qt::AlignHCenter | Qt::AlignBottom);
     labelProgressValue->setStyleSheet("color: #000000;");
 
     labelProgressPercent = new QLabel(this);
-    labelProgressPercent->setGeometry(120,40,60,60);
+    labelProgressPercent->setGeometry(120,0,60,90);
     labelProgressPercent->setStyleSheet("color: #000000;");
-    labelProgressPercent->setAlignment(Qt::AlignCenter);
+    labelProgressPercent->setAlignment(Qt::AlignHCenter | Qt::AlignBottom);
 
     customButtonCancel = new CustomButtonCancel(this);
     customButtonCancel->setLongWidth(true);
