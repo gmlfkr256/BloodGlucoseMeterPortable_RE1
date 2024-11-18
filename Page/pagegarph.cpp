@@ -14,7 +14,7 @@ void PageGarph::init()
 
     labelTop = new QLabel(this);
     labelTop->setGeometry(10,10,620,80);
-    hBoxLayoutGraph = new QVBoxLayout(this);
+    hBoxLayoutGraph = new QHBoxLayout(this);
     labelTop->setLayout(hBoxLayoutGraph);
 
     labelProgressText = new QLabel(this);

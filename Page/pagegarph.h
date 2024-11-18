@@ -12,7 +12,7 @@ public:
     QString strDirPath = "/ImageGraph";
 
     QLabel *labelTop;
-    QVBoxLayout *hBoxLayoutGraph;
+    QHBoxLayout *hBoxLayoutGraph;
 
     QLabel *labelGraph;
     QLabel *labelProgressText;
