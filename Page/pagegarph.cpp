@@ -79,7 +79,7 @@ void PageGarph::update()
         "    background-position: center;"
         "}"
     );
-    labelProgressBar->setFixedWidth(40);
+    labelProgressBar->setFixedWidth(30);
 
     labelAdcText->setFont(textResource.getFont(PAGE_GRAPH,"labelAdcText"));
     labelAdcText->setText(textResource.getText(PAGE_GRAPH,"labelAdcText").at(0)+"9999");
