@@ -17,7 +17,7 @@ void PageGarph::init()
     labelProgressText->setStyleSheet("color: #6c6c6c;");
 
     labelProgressValue = new QLabel(this);
-    labelProgressValue->setGeometry(10,10,70,150);
+    labelProgressValue->setGeometry(10,10,70,88);
     labelProgressValue->setAlignment(Qt::AlignCenter);
     labelProgressValue->setStyleSheet("color: #000000;");
 
@@ -38,6 +38,7 @@ void PageGarph::update()
     labelProgressText->setText(textResource.getText(PAGE_GRAPH,"labelProgressText").at(0));
     labelProgressValue->setFont(textResource.getFont(PAGE_GRAPH,"labelProgressValue"));
     labelProgressValue->setText("0");
+    labelProgressPercent->setFont(textResource.getFont(PAGE_GRAPH,"labelProgresPercent"));
     labelProgressPercent->setText("%");
 }
 
