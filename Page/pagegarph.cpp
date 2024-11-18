@@ -14,8 +14,8 @@ void PageGarph::init()
 
     labelTop = new QLabel(this);
     labelTop->setGeometry(10,10,620,80);
-    vBoxLayoutGraph = new QVBoxLayout(this);
-    labelTop->setLayout(vBoxLayoutGraph);
+    hBoxLayoutGraph = new QVBoxLayout(this);
+    labelTop->setLayout(hBoxLayoutGraph);
 
     labelProgressText = new QLabel(this);
     //labelProgressText->setGeometry(200,0,160,90);
@@ -33,9 +33,9 @@ void PageGarph::init()
     labelProgressPercent->setStyleSheet("background-color: orange; color: #000000;");
     //labelProgressPercent->setAlignment(Qt::AlignHCenter | Qt::AlignBottom);
 
-    vBoxLayoutGraph->addWidget(labelProgressValue);
-    vBoxLayoutGraph->addWidget(labelProgressPercent);
-    vBoxLayoutGraph->addWidget(labelProgressText);
+    hBoxLayoutGraph->addWidget(labelProgressValue);
+    hBoxLayoutGraph->addWidget(labelProgressPercent);
+    hBoxLayoutGraph->addWidget(labelProgressText);
 
     customButtonCancel = new CustomButtonCancel(this);
     customButtonCancel->setLongWidth(true);

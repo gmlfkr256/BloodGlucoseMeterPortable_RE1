@@ -27,6 +27,7 @@
 #include <QPair>
 #include <QApplication>
 #include <QPainter>
+#include <QHBoxLayout>
 #include <QVBoxLayout>
 
 //=======================
