@@ -9,6 +9,7 @@ class PageGarph : public Page
 public:
     PageGarph(QWidget *parent);
     void mousePressEvent(QMouseEvent *ev) override;
+    virtual void paintEvent(QPaintEvent *ev) override;
     QString strDirPath = "/ImageGraph";
 
     QLabel *labelTop;
@@ -24,15 +25,27 @@ public:
     QLabel *labelAdcText;
     QLabel *labelAdcRect;
 
+    QTimer *timerPainter;
     QLabel *labelPainter;
+    QPixmap pixPainter;
+    QPainter *painter;
+    QPen pen,pen1,pen2,pen3;
+    int nGraphPointY[50];
+    int nProgressValue;
+
+    QLabel *labelLoading;
+    int nDotCount;
 
     CustomButtonCancel *customButtonCancel;
+
+    bool bIsProcessSuccess = false;
 
     void update() override;
     void pageShow() override;
     void pageHide() override;
 private:
     void init();
+    void updatePainter();
 
 signals:
     void signalShowPageNum(PageNum pageNum);

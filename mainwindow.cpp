@@ -136,6 +136,10 @@ void MainWindow::setPageByPageNum(PageNum pageNum)
     qDebug() << "set pageName: "<<getPageName(pageNum);
     if (stackedWidget && pageNum >= 0 && pageNum < stackedWidget->count()) {
         stackedWidget->setCurrentIndex(static_cast<int>(pageNum));
+
+        Page *page = qobject_cast<Page*>(stackedWidget->currentWidget());
+        if(page)
+            page->pageShow();
     } else {
         qDebug() << "[fail] Invalid pageNum:" << static_cast<int>(pageNum)<<" page open fail";
     }

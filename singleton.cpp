@@ -56,6 +56,10 @@ void Singleton::init()
     dispData.color = COLOR_DEFAULT;
     setDeviceColor(dispData.color);
 
+    sysProcAct.act = GAPI_ACT_START;
+    sysProcAct.proc = GAPI_PROC_ACT_GAIN;
+    sysProcAct.user = static_cast<int>(nUserNumber);
+
     //caliUserInfo
 #endif
 }
@@ -322,6 +326,24 @@ int Singleton::getSleepTime()
 void Singleton::setGraphMode(GraphMode graphMode)
 {
     this->graphMode = graphMode;
+
+    sysProcAct.act = GAPI_ACT_START;
+
+    switch (this->graphMode)
+    {
+    case GRAPH_GAIN:
+        sysProcAct.proc = GAPI_PROC_ACT_GAIN;
+        break;
+    case GRAPH_CALI:
+        sysProcAct.proc = GAPI_PROC_ACT_CALIBRATION;
+        break;
+    case GRAPH_MEASURE:
+        sysProcAct.proc = GAPI_PROC_ACT_MEASURE;
+        break;
+    case GRAPH_MAX:
+        break;
+    }
+    sysProcAct.user = nUserNumber;
 }
 
 GraphMode Singleton::getGraphMode()

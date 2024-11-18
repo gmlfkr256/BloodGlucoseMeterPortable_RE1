@@ -153,6 +153,8 @@ public:
     gapiCaliUserInfo_t caliUserInfo;
     gapiDispData_t dispData;
     gapiLangData_t langData;
+    gapiSysProcAct_t sysProcAct;
+    gapiSysProcMonInfo_t sysProcMonInfo;
 
     void init();
 
