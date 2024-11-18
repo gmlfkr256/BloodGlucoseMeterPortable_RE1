@@ -213,6 +213,7 @@ void PageGarph::updatePainter()
 void PageGarph::paintEvent(QPaintEvent *ev)
 {
     Q_UNUSED(ev);
+    qDebug()<<".";
 
     if (!painter->begin(&pixPainter)) {
             qWarning() << "QPainter::begin failed. Check pixPainter initialization.";
