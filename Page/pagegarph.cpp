@@ -13,7 +13,7 @@ void PageGarph::init()
     labelGraph = new QLabel(this);
 
     labelTop = new QLabel(this);
-    labelTop->setGeometry(10,10,620,80);
+    labelTop->setGeometry(10,10,620,70);
     hBoxLayoutGraph = new QHBoxLayout(this);
     hBoxLayoutGraph->setSpacing(0);
     hBoxLayoutGraph->setContentsMargins(0,0,0,0);
