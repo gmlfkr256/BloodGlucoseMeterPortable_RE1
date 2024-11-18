@@ -259,7 +259,7 @@ void PageGarph::pageShow()
 
     timerPainter->start(100);
 
-    for(int nGraphPointY : nGraphPointY)
+    for(int &nGraphPointY : nGraphPointY)
     {
         nGraphPointY = 200;
     }
