@@ -259,9 +259,9 @@ void PageGarph::pageShow()
 
     timerPainter->start(100);
 
-    for(int nPoint : nGraphPointY)
+    for(int nGraphPointY : nGraphPointY)
     {
-        nPoint = 200;
+        nGraphPointY = 200;
     }
 
     instance.setProcCheck(true);
