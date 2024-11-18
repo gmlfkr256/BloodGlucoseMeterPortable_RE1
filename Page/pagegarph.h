@@ -31,7 +31,7 @@ public:
     QPainter *painter;
     QPen pen,pen1,pen2,pen3;
     int nGraphPointY[50];
-    int nProgressValue;
+    int nProgressValue = 0;
 
     QLabel *labelLoading;
     int nDotCount;

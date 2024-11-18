@@ -120,6 +120,7 @@ void PageGarph::updatePainter()
     instance.guiApi.glucoseMonGetRawData(&instance.sysProcMonInfo);
 #else
     nProgressValue++;
+
     if(nProgressValue>100)
     {
         instance.sysProcMonInfo.completed = 1;
@@ -169,7 +170,7 @@ void PageGarph::updatePainter()
     }
 
 #if DEVICE == false
-    //instance.sysProcMonInfo.adc_raw = QRandomGenerator::global()->bounded(2501);
+    instance.sysProcMonInfo.adc_raw = QRandomGenerator::global()->bounded(2501);
 #endif
 
     int nValue = instance.sysProcMonInfo.adc_raw;
