@@ -36,6 +36,7 @@ void PageGarph::init()
     hBoxLayoutGraph->addWidget(labelProgressValue);
     hBoxLayoutGraph->addWidget(labelProgressPercent);
     hBoxLayoutGraph->addWidget(labelProgressText);
+    hBoxLayoutGraph->addStretch();
 
     customButtonCancel = new CustomButtonCancel(this);
     customButtonCancel->setLongWidth(true);
