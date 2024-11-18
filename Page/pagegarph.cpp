@@ -139,7 +139,7 @@ void PageGarph::updatePainter()
     if(nProgressValue <= 100)
     {
         labelProgressValue->setText(QString::number(nProgressValue));
-        labelProgressBar->setGeometry(20,76,nProgressValue*6,20);
+        labelProgressBar->setGeometry(20,100,nProgressValue*6,20);
     }
 
     if(instance.sysProcMonInfo.completed == 1)
@@ -284,7 +284,7 @@ void PageGarph::pageHide()
     }
     else
     {
-        labelProgressBar->setFixedWidth(20);
+        labelProgressBar->setGeometry(20,100,20,20);
     }
 
     bIsProcessSuccess = false;
