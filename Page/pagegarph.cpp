@@ -17,12 +17,12 @@ void PageGarph::init()
     labelProgressText->setStyleSheet("color: #6c6c6c; padding-bottom: 1px;");
 
     labelProgressValue = new QLabel(this);
-    labelProgressValue->setGeometry(10,0,70,90);
+    labelProgressValue->setGeometry(10,0,160,90);
     labelProgressValue->setAlignment(Qt::AlignRight | Qt::AlignBottom);
     labelProgressValue->setStyleSheet("color: #000000;");
 
     labelProgressPercent = new QLabel(this);
-    labelProgressPercent->setGeometry(140,0,60,90);
+    labelProgressPercent->setGeometry(140,0,40,90);
     labelProgressPercent->setStyleSheet("color: #000000;");
     labelProgressPercent->setAlignment(Qt::AlignHCenter | Qt::AlignBottom);
 
