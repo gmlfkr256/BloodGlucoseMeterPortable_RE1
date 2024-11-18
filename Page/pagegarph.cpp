@@ -21,6 +21,7 @@ void PageGarph::init()
     //labelProgressValue->setGeometry(10,0,140,90);
     labelProgressValue->setStyleSheet("background-color: blue;color: #000000;");
     labelProgressValue->setAlignment(Qt::AlignBottom);
+    labelProgressValue->setFixedWidth(140);
 
     labelProgressPercent = new QLabel(this);
     //labelProgressPercent->setGeometry(160,0,50,90);
@@ -121,7 +122,7 @@ void PageGarph::updatePainter()
 #else
     nProgressValue++;
 
-    if(nProgressValue>100)
+    if(nProgressValue>99)
     {
         instance.sysProcMonInfo.completed = 1;
     }
@@ -140,7 +141,7 @@ void PageGarph::updatePainter()
             pageHide();
         }
 
-        if(nProgressValue>100)
+        if(nProgressValue>99)
             nProgressValue = 100;
 
         labelProgressValue->setText(QString::number(nProgressValue));
