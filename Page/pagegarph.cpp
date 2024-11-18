@@ -70,7 +70,8 @@ void PageGarph::update()
     labelProgressPercent->setText("%");
 
     labelProgressBarBg->setStyleSheet("background-color: #f2f2f2; border-radius:10px;");
-    labelProgressBar->setStyleSheet("radius:10;");
+    labelProgressBar->setStyleSheet("border-radius:10px;");
+    labelProgressBar->setFixedWidth(100);
 
     instance.pixLoad(labelProgressBar,false,strDirPath,"/progressBar.png");
 
