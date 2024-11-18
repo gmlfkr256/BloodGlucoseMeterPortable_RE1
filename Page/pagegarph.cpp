@@ -11,20 +11,31 @@ void PageGarph::init()
     setBgTopHide();
 
     labelGraph = new QLabel(this);
+
+    labelTop = new QLabel(this);
+    labelTop->setGeometry(10,10,620,80);
+    vBoxLayoutGraph = new QVBoxLayout(this);
+    labelTop->setLayout(vBoxLayoutGraph);
+
     labelProgressText = new QLabel(this);
-    labelProgressText->setGeometry(200,0,160,90);
-    labelProgressText->setAlignment(Qt::AlignLeft | Qt::AlignBottom);
+    //labelProgressText->setGeometry(200,0,160,90);
+    //labelProgressText->setAlignment(Qt::AlignLeft | Qt::AlignBottom);
     labelProgressText->setStyleSheet("background-color:red; color: #6c6c6c; padding-bottom: 1px;");
 
+
     labelProgressValue = new QLabel(this);
-    labelProgressValue->setGeometry(10,0,140,90);
+    //labelProgressValue->setGeometry(10,0,140,90);
     labelProgressValue->setStyleSheet("background-color: blue;color: #000000; padding-right: 1px;");
-    labelProgressValue->setAlignment(Qt::AlignRight | Qt::AlignBottom);
+    //labelProgressValue->setAlignment(Qt::AlignRight | Qt::AlignBottom);
 
     labelProgressPercent = new QLabel(this);
-    labelProgressPercent->setGeometry(160,0,50,90);
+    //labelProgressPercent->setGeometry(160,0,50,90);
     labelProgressPercent->setStyleSheet("background-color: orange; color: #000000;");
-    labelProgressPercent->setAlignment(Qt::AlignHCenter | Qt::AlignBottom);
+    //labelProgressPercent->setAlignment(Qt::AlignHCenter | Qt::AlignBottom);
+
+    vBoxLayoutGraph->addWidget(labelProgressValue);
+    vBoxLayoutGraph->addWidget(labelProgressPercent);
+    vBoxLayoutGraph->addWidget(labelProgressText);
 
     customButtonCancel = new CustomButtonCancel(this);
     customButtonCancel->setLongWidth(true);

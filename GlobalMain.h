@@ -27,7 +27,7 @@
 #include <QPair>
 #include <QApplication>
 #include <QPainter>
-
+#include <QVBoxLayout>
 
 //=======================
 // guiapi Library

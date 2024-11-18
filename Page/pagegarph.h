@@ -11,6 +11,9 @@ public:
     void mousePressEvent(QMouseEvent *ev) override;
     QString strDirPath = "/ImageGraph";
 
+    QLabel *labelTop;
+    QVBoxLayout *vBoxLayoutGraph;
+
     QLabel *labelGraph;
     QLabel *labelProgressText;
     QLabel *labelProgressValue;
