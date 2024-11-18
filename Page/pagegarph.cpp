@@ -112,7 +112,8 @@ void PageGarph::update()
     pen3.setCapStyle(Qt::RoundCap);
 
     labelLoading->setFont(textResource.getFont(PAGE_GRAPH,"labelLoading"));
-    labelLoading->setText(textResource.getText(PAGE_GRAPH,"labelLoading").at(0));
+    strLoading = textResource.getText(PAGE_GRAPH,"labelLoading").at(0);
+    labelLoading->setText(strLoading);
     labelLoading->setStyleSheet("background-color: #1F2025; color: white; padding-bottom: 30px;");
 }
 
@@ -191,7 +192,11 @@ void PageGarph::updatePainter()
     {
         labelLoading->show();
 
-        labelLoading->setText(textResource.getText(PAGE_GRAPH,"labelLoading").at(0)+QString(nDotCount/2,'.'));
+        //labelLoading->setText(textResource.getText(PAGE_GRAPH,"labelLoading").at(0)+QString(nDotCount/2,'.'));
+        int count = nDotCount/2;
+        QString str;
+        str = strLoading + QString(count,'.');
+        labelLoading->setText(str);
 
         nDotCount++;
         if(nDotCount >12)

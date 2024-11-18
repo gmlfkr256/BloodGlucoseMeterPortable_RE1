@@ -34,6 +34,7 @@ public:
     int nProgressValue = 0;
 
     QLabel *labelLoading;
+    QString strLoading;
     int nDotCount;
 
     CustomButtonCancel *customButtonCancel;
