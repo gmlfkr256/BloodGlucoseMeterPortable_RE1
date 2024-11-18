@@ -93,8 +93,7 @@ void PageGarph::update()
                 "    background-position: center;"
                 "}"
                 );
-    //labelProgressBar->setFixedWidth(20);
-    labelProgressBar->setGeometry(20,100,20,20);
+    labelProgressBar->setGeometry(20,80,20,20);
 
     labelAdcText->setFont(textResource.getFont(PAGE_GRAPH,"labelAdcText"));
     labelAdcText->setText(textResource.getText(PAGE_GRAPH,"labelAdcText").at(0)+"9999");
@@ -145,7 +144,7 @@ void PageGarph::updatePainter()
         qDebug()<<"nPorgressValue: "<<nProgressValue;
         labelProgressValue->setText(QString::number(nProgressValue));
         if(nProgressValue>3)
-            labelProgressBar->setGeometry(20,100,nProgressValue*6,20);
+            labelProgressBar->setGeometry(20,80,nProgressValue*6,20);
     }
 
     if(instance.sysProcMonInfo.completed == 1)
@@ -300,7 +299,7 @@ void PageGarph::pageHide()
     }
     else
     {
-        labelProgressBar->setGeometry(20,100,20,20);
+        labelProgressBar->setGeometry(20,80,20,20);
     }
 
     bIsProcessSuccess = false;
