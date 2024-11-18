@@ -213,7 +213,6 @@ void PageGarph::updatePainter()
 void PageGarph::paintEvent(QPaintEvent *ev)
 {
     Q_UNUSED(ev);
-    qDebug()<<".";
 
     if (!painter->begin(&pixPainter)) {
             qWarning() << "QPainter::begin failed. Check pixPainter initialization.";
@@ -223,6 +222,9 @@ void PageGarph::paintEvent(QPaintEvent *ev)
     //painter->begin(&pixPainter);
     painter->setRenderHint(QPainter::Antialiasing,true);
     painter->setPen(pen1);
+
+    painter->setBrush(QColor("#ffffff"));
+    painter->drawRect(-1,-1,labelPainter->width()+1,labelPainter->height()+1);
 
     for(int i=1; i<6; i++)
     {
