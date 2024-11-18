@@ -125,6 +125,7 @@ void PageGarph::updatePainter()
 
     if(nProgressValue>99)
     {
+        nProgressValue = 100;
         instance.sysProcMonInfo.completed = 1;
     }
 #endif
@@ -134,24 +135,15 @@ void PageGarph::updatePainter()
         nProgressValue = instance.sysProcMonInfo.progress;
     }
 
-    if(instance.sysProcMonInfo.completed != 1)
+    if(nProgressValue <= 100)
     {
-        if(nProgressValue == -1)
-        {
-            bIsProcessSuccess = false;
-            pageHide();
-        }
-
-        if(nProgressValue>99)
-            nProgressValue = 100;
-
         labelProgressValue->setText(QString::number(nProgressValue));
         labelProgressBar->setGeometry(20,76,nProgressValue*6,20);
     }
-    else
+
+    if(instance.sysProcMonInfo.completed == 1)
     {
         bIsProcessSuccess = true;
-        labelProgressValue->setText(QString::number(nProgressValue));
 
 #if DEVICE
         instance.sysProcAct.act = GAPI_ACT_STOP;
@@ -159,6 +151,14 @@ void PageGarph::updatePainter()
 #endif
 
         pageHide();
+    }
+    else
+    {
+        if(nProgressValue == -1)
+        {
+            bIsProcessSuccess = false;
+            pageHide();
+        }
     }
 
     for(int i=0; i<49; i++)
