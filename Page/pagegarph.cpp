@@ -74,7 +74,7 @@ void PageGarph::update()
         "QLabel {"
         "    border-radius: 10px;"
         "    background-color: transparent;"  // 투명 배경 설정
-        "    background-image: url(qrc:/Image/Default/Public/ImageGraph/progressBar.png);"
+        "    background-image: url(:/Image/Default/Public/ImageGraph/progressBar.png);"
         "    background-repeat: no-repeat;"
         "    background-position: center;"
         "}"
