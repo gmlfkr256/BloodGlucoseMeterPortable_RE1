@@ -113,6 +113,7 @@ void PageGarph::update()
     pen3.setStyle(Qt::SolidLine);
     pen3.setJoinStyle(Qt::RoundJoin);
     pen3.setCapStyle(Qt::RoundCap);
+    pen3.setBrush(QColor("#52d0ba"));
 
     labelLoading->setFont(textResource.getFont(PAGE_GRAPH,"labelLoading"));
     strLoading = textResource.getText(PAGE_GRAPH,"labelLoading").at(0);
