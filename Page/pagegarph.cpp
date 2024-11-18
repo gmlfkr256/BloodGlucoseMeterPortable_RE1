@@ -29,7 +29,9 @@ void PageGarph::update()
 {
     customButtonCancel->update();
 
+    labelProgressText->setFont(textResource.getFont(PAGE_GRAPH,"labelProgressText"));
     labelProgressText->setText(textResource.getText(PAGE_GRAPH,"labelProgressText").at(0));
+    labelProgressValue->setFont(textResource.getFont(PAGE_GRAPH,"labelProgressValue"));
     labelProgressValue->setText("0%");
 }
 
