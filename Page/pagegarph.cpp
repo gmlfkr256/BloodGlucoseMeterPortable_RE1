@@ -125,6 +125,7 @@ void PageGarph::updatePainter()
         instance.sysProcMonInfo.completed = 1;
     }
 #endif
+
     if(instance.sysProcMonInfo.valid == 1)
     {
         nProgressValue = instance.sysProcMonInfo.progress;
@@ -168,7 +169,7 @@ void PageGarph::updatePainter()
     }
 
 #if DEVICE == false
-    instance.sysProcMonInfo.adc_raw = QRandomGenerator::global()->bounded(2501);
+    //instance.sysProcMonInfo.adc_raw = QRandomGenerator::global()->bounded(2501);
 #endif
 
     int nValue = instance.sysProcMonInfo.adc_raw;
