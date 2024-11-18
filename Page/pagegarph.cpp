@@ -47,7 +47,7 @@ void PageGarph::init()
     labelAdcText->setGeometry(12,137,132,40);
 
     labelAdcRect = new QLabel(this);
-    labelAdcRect->setGeometry(labelAdcText->geometry().x()+10,labelAdcText->geometry().y()+10,10,10);
+    labelAdcRect->setGeometry(labelAdcText->geometry().x()+15,labelAdcText->geometry().y()+15,10,10);
 
     labelPainter = new QLabel(this);
     labelPainter->setGeometry(0,160,640,220);
@@ -76,7 +76,7 @@ void PageGarph::update()
 
     labelAdcText->setFont(textResource.getFont(PAGE_GRAPH,"labelAdcText"));
     labelAdcText->setText(textResource.getText(PAGE_GRAPH,"labelAdcText").at(0)+"9999");
-    labelAdcText->setStyleSheet("color: #6c6c6c; border: 1px solid black; border-radius: 20px;");
+    labelAdcText->setStyleSheet("color: #6c6c6c; border: 1px solid black; border-radius: 20px; padding-left: 20px;");
 
     labelAdcRect->setStyleSheet("background-color: #52d0ba;");
 }
