@@ -56,7 +56,7 @@ void PageGarph::init()
     labelPainter = new QLabel();
     labelPainter->setGeometry(0,160,640,220);
 
-    painter = new QPainter(this);
+    painter = new QPainter();
 
     pixPainter = QPixmap(640,220);
     pixPainter.fill(Qt::transparent);
