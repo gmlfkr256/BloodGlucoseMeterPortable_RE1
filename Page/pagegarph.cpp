@@ -53,7 +53,7 @@ void PageGarph::init()
 
     connect(timerPainter,&QTimer::timeout,this,&PageGarph::updatePainter);
 
-    labelPainter = new QLabel();
+    labelPainter = new QLabel(this);
     labelPainter->setGeometry(0,160,640,220);
 
     painter = new QPainter();
@@ -213,6 +213,8 @@ void PageGarph::updatePainter()
 void PageGarph::paintEvent(QPaintEvent *ev)
 {
     Q_UNUSED(ev);
+
+    qDebug()<<".";
 
     if (!painter->begin(&pixPainter)) {
             qWarning() << "QPainter::begin failed. Check pixPainter initialization.";
