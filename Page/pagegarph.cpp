@@ -32,7 +32,7 @@ void PageGarph::init()
     labelProgressPercent = new QLabel(this);
     //labelProgressPercent->setGeometry(160,0,50,90);
     labelProgressPercent->setStyleSheet("background-color: orange; color: #000000;");
-    //labelProgressPercent->setAlignment(Qt::AlignHCenter | Qt::AlignBottom);
+    labelProgressPercent->setAlignment(Qt::AlignBottom);
 
     hBoxLayoutGraph->addWidget(labelProgressValue);
     hBoxLayoutGraph->addWidget(labelProgressPercent);
