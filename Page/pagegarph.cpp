@@ -59,6 +59,7 @@ void PageGarph::init()
     painter = new QPainter(this);
 
     pixPainter = QPixmap(640,220);
+    pixPainter.fill(Qt::transparent);
 
     customButtonCancel = new CustomButtonCancel(this);
     customButtonCancel->setLongWidth(true);
@@ -212,6 +213,11 @@ void PageGarph::updatePainter()
 void PageGarph::paintEvent(QPaintEvent *ev)
 {
     Q_UNUSED(ev);
+
+    if (!painter->begin(&pixPainter)) {
+            qWarning() << "QPainter::begin failed. Check pixPainter initialization.";
+            return;
+        }
 
     painter->begin(&pixPainter);
     painter->setRenderHint(QPainter::Antialiasing,true);
