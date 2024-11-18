@@ -11,7 +11,7 @@ void PageGarph::init()
     setBgTopHide();
 
     labelTop = new QLabel(this);
-    labelTop->setGeometry(20,10,620,80);
+    labelTop->setGeometry(20,10,620,60);
     hBoxLayoutGraph = new QHBoxLayout(this);
     hBoxLayoutGraph->setSpacing(0);
     hBoxLayoutGraph->setContentsMargins(0,0,0,0);
@@ -39,12 +39,12 @@ void PageGarph::init()
     hBoxLayoutGraph->addStretch();
 
     labelProgressBarBg = new QLabel(this);
-    labelProgressBarBg->setGeometry(20,100,600,20);
+    labelProgressBarBg->setGeometry(20,80,600,20);
     labelProgressBar = new QLabel(this);
-    labelProgressBar->setGeometry(20,100,600,20);
+    labelProgressBar->setGeometry(20,80,600,20);
 
     labelAdcText = new QLabel(this);
-    labelAdcText->setGeometry(22,130,130,40);
+    labelAdcText->setGeometry(22,110,130,40);
 
     labelAdcRect = new QLabel(this);
     labelAdcRect->setGeometry(labelAdcText->geometry().x()+15,labelAdcText->geometry().y()+15,10,10);
