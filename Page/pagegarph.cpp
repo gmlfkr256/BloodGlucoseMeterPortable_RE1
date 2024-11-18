@@ -58,6 +58,8 @@ void PageGarph::init()
 
     painter = new QPainter(this);
 
+    pixPainter = QPixmap(640,220);
+
     customButtonCancel = new CustomButtonCancel(this);
     customButtonCancel->setLongWidth(true);
 
