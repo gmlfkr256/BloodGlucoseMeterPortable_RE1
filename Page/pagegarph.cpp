@@ -76,7 +76,7 @@ void PageGarph::update()
 
     labelAdcText->setFont(textResource.getFont(PAGE_GRAPH,"labelAdcText"));
     labelAdcText->setText(textResource.getText(PAGE_GRAPH,"labelAdcText").at(0)+"9999");
-    labelAdcText->setStyleSheet("color: #6c6c6c; border: 1px solid black; border-radius: 5px; padding-left: 25px;");
+    labelAdcText->setStyleSheet("color: #6c6c6c; border: 1px solid #6c6c6c; border-radius: 5px; padding-left: 25px;");
 
     labelAdcRect->setStyleSheet("background-color: #52d0ba;");
 }
