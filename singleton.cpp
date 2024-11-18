@@ -318,6 +318,18 @@ int Singleton::getSleepTime()
     return this->nSleepTime;
 }
 
+//PageGraph
+void Singleton::setGraphMode(GraphMode graphMode)
+{
+    this->graphMode = graphMode;
+}
+
+GraphMode Singleton::getGraphMode()
+{
+    return graphMode;
+}
+
+//public
 bool Singleton::touchCheck(const QRect &rect, QMouseEvent* ev)
 {
     return rect.contains(ev->pos());

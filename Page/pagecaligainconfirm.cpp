@@ -47,6 +47,7 @@ void PageCaliGainConfirm::mousePressEvent(QMouseEvent *ev)
         }
         else
         {
+            instance.setGraphMode(GRAPH_GAIN);
             emit signalShowPageNum(PAGE_GRAPH);
         }
     }

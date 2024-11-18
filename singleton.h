@@ -121,6 +121,16 @@ typedef enum
     BLOOD_WARNING_HIGH
 } BloodSugarLevel;
 
+Q_ENUMS(BloodSuarLevel);
+
+typedef enum
+{
+    GRAPH_GAIN = 0,
+    GRAPH_CALI,
+    GRAPH_MEASURE,
+    GRAPH_MAX
+} GraphMode;
+
 class Singleton : public QObject
 {
     Q_OBJECT
@@ -187,6 +197,9 @@ public:
     void setSleepTime(int nSleepTime);
     int getSleepTime();
 
+    //PageGraph
+    void setGraphMode(GraphMode graphMode);
+    GraphMode getGraphMode();
 
     //public
     bool touchCheck(const QRect &rect, QMouseEvent* ev);
@@ -226,6 +239,9 @@ private:
 
     //PageSelect
     TimeStatus timeStatus = WAKE_UP;
+
+    //PageGraph
+    GraphMode graphMode = GRAPH_MAX;
 };
 
 #endif // SINGLETON_H

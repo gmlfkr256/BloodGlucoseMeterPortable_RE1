@@ -52,6 +52,7 @@ void MainWindow::init()
 
     pageGraph = new PageGarph(this);
     stackedWidget->addWidget(pageGraph);
+    listComHiddenPageIndex.append(stackedWidget->indexOf(pageGraph));
 
     comBat = new ComponentBattery(stackedWidget);
     comBle = new ComponentBluetooth(stackedWidget);
