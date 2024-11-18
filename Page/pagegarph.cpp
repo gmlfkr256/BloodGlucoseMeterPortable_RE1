@@ -44,7 +44,7 @@ void PageGarph::init()
     labelProgressBar->setGeometry(20,100,600,20);
 
     labelAdcText = new QLabel(this);
-    labelAdcText->setGeometry(22,140,130,40);
+    labelAdcText->setGeometry(22,130,130,40);
 
     labelAdcRect = new QLabel(this);
     labelAdcRect->setGeometry(labelAdcText->geometry().x()+15,labelAdcText->geometry().y()+15,10,10);
