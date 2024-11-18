@@ -191,7 +191,7 @@ void PageGarph::updatePainter()
     {
         labelLoading->show();
 
-        //labelLoading->setText(textResource.getText(PAGE_GRAPH,"labelLoading").at(0)+QString(nDotCount/2,'.'));
+        labelLoading->setText(textResource.getText(PAGE_GRAPH,"labelLoading").at(0)+QString(nDotCount/2,'.'));
 
         nDotCount++;
         if(nDotCount >12)
