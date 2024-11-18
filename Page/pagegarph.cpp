@@ -191,7 +191,6 @@ void PageGarph::updatePainter()
 
     labelPainter->setPixmap(pixPainter);
 
-
     if(nProgressValue>=95)
     {
         labelLoading->show();
@@ -207,7 +206,6 @@ void PageGarph::updatePainter()
         if(nDotCount >12)
             nDotCount =1;
     }
-
 }
 
 void PageGarph::paintEvent(QPaintEvent *ev)
@@ -219,7 +217,7 @@ void PageGarph::paintEvent(QPaintEvent *ev)
             return;
         }
 
-    painter->begin(&pixPainter);
+    //painter->begin(&pixPainter);
     painter->setRenderHint(QPainter::Antialiasing,true);
     painter->setPen(pen1);
 
