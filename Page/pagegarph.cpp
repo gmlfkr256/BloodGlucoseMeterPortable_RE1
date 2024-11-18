@@ -70,7 +70,15 @@ void PageGarph::update()
     labelProgressPercent->setText("%");
 
     labelProgressBarBg->setStyleSheet("background-color: #f2f2f2; border-radius:10px;");
-    labelProgressBar->setStyleSheet("background-color: transparent; background-image: url(qrc:/Image/Default/Public/ImageGraph/progressBar.png); border-radius:10px;");
+    labelProgressBar->setStyleSheet(
+        "QLabel {"
+        "    border-radius: 10px;"
+        "    background-color: transparent;"  // 투명 배경 설정
+        "    background-image: url(/path/to/progressBar.png);"
+        "    background-repeat: no-repeat;"
+        "    background-position: center;"
+        "}"
+    );
     labelProgressBar->setFixedWidth(100);
 
     labelAdcText->setFont(textResource.getFont(PAGE_GRAPH,"labelAdcText"));
