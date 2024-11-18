@@ -14,10 +14,13 @@ public:
     QLabel *labelTop;
     QHBoxLayout *hBoxLayoutGraph;
 
-    QLabel *labelGraph;
     QLabel *labelProgressText;
     QLabel *labelProgressValue;
     QLabel *labelProgressPercent;
+
+    QLabel *labelProgressBarBg;
+    QLabel *labelProgressBar;
+    QLabel *labelPainter;
 
     CustomButtonCancel *customButtonCancel;
 
