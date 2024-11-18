@@ -53,7 +53,7 @@ void PageGarph::init()
 
     connect(timerPainter,&QTimer::timeout,this,&PageGarph::updatePainter);
 
-    labelPainter = new QLabel(this);
+    labelPainter = new QLabel();
     labelPainter->setGeometry(0,160,640,220);
 
     painter = new QPainter(this);
