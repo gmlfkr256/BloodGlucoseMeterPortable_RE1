@@ -14,7 +14,7 @@ public:
     QLabel *labelGraph;
     QLabel *labelProgressText;
     QLabel *labelProgressValue;
-    //QLabel *labelProgressPercent;
+    QLabel *labelProgressPercent;
 
     CustomButtonCancel *customButtonCancel;
 
