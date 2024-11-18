@@ -23,7 +23,7 @@ void PageGarph::init()
     //labelProgressText->setGeometry(200,0,160,90);
     labelProgressText->setAlignment(Qt::AlignBottom);
     labelProgressText->setStyleSheet("background-color:red; color: #6c6c6c;");
-    labelProgressText->setFixedWidth(160);
+    labelProgressText->setFixedWidth(150);
 
 
     labelProgressValue = new QLabel(this);
