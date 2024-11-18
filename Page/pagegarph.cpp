@@ -24,7 +24,7 @@ void PageGarph::init()
     labelProgressPercent = new QLabel(this);
     labelProgressPercent->setGeometry(120,40,60,60);
     labelProgressPercent->setStyleSheet("color: #000000;");
-    labelProgressPercent->setAlignment(Qt::AlignLeft);
+    labelProgressPercent->setAlignment(Qt::AlignCenter);
 
     customButtonCancel = new CustomButtonCancel(this);
     customButtonCancel->setLongWidth(true);
