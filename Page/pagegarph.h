@@ -20,6 +20,10 @@ public:
 
     QLabel *labelProgressBarBg;
     QLabel *labelProgressBar;
+
+    QLabel *labelAdcText;
+    QLabel *labelAdcRect;
+
     QLabel *labelPainter;
 
     CustomButtonCancel *customButtonCancel;

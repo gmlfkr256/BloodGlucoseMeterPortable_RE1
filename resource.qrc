@@ -101,5 +101,6 @@
         <file>Image/Default/Public/ImageMenu/menuButtonTranslation.png</file>
         <file>Image/Default/Public/ImageMenu/menuButtonUpgrade.png</file>
         <file>Image/Default/Public/ImageMenu/menuButtonUser.png</file>
+        <file>Image/Default/Public/ImageGraph/progressBar.png</file>
     </qresource>
 </RCC>

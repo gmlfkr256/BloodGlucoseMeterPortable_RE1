@@ -37,17 +37,25 @@ void PageGarph::init()
     hBoxLayoutGraph->addWidget(labelProgressText);
     hBoxLayoutGraph->addStretch();
 
+
     labelProgressBarBg = new QLabel(this);
     labelProgressBarBg->setGeometry(20,100,600,20);
-
     labelProgressBar = new QLabel(this);
     labelProgressBar->setGeometry(20,100,600,20);
+
+    labelAdcText = new QLabel(this);
+    labelAdcText->setGeometry(12,137,132,40);
+
+    labelAdcRect = new QLabel(this);
+    labelAdcRect->setGeometry(labelAdcText->geometry().x()+10,labelAdcText->geometry().y()+10,10,10);
 
     labelPainter = new QLabel(this);
     labelPainter->setGeometry(0,160,640,220);
 
     customButtonCancel = new CustomButtonCancel(this);
     customButtonCancel->setLongWidth(true);
+
+    update();
 }
 
 void PageGarph::update()
@@ -63,6 +71,11 @@ void PageGarph::update()
 
     labelProgressBarBg->setStyleSheet("background-color: #f2f2f2; border-radius:10px;");
     labelProgressBar->setStyleSheet("radius:10;");
+
+    instance.pixLoad(labelProgressBar,false,strDirPath,"/progressBar.png");
+
+    labelAdcText->setFont(textResource.getFont(PAGE_GRAPH,"labelAdcText"));
+    labelAdcText->setText(textResource.getText(PAGE_GRAPH,"labelAdcText").at(0)+"9999");
 }
 
 void PageGarph::mousePressEvent(QMouseEvent *ev)
