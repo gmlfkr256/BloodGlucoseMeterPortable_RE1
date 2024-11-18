@@ -28,7 +28,7 @@ void PageGarph::init()
 
     labelProgressValue = new QLabel(this);
     //labelProgressValue->setGeometry(10,0,140,90);
-    labelProgressValue->setStyleSheet("background-color: blue;color: #000000;");
+    labelProgressValue->setStyleSheet("background-color: blue;color: #000000; padding:0px;");
     labelProgressValue->setAlignment(Qt::AlignRight | Qt::AlignBottom);
     labelProgressValue->setFixedWidth(140);
 
