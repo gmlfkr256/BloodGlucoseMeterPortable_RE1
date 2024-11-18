@@ -12,6 +12,9 @@ public:
     QString strDirPath = "/ImageGraph";
 
     QLabel *labelGraph;
+    QLabel *labelProgressText;
+    QLabel *labelProgressValue;
+    //QLabel *labelProgressPercent;
 
     CustomButtonCancel *customButtonCancel;
 

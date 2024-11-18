@@ -10,6 +10,17 @@ void PageGarph::init()
 {
     setBgTopHide();
 
+    labelGraph = new QLabel(this);
+    labelProgressText = new QLabel(this);
+    labelProgressText->setGeometry(194,43,188,45);
+    labelProgressText->setAlignment(Qt::AlignCenter);
+    labelProgressText->setStyleSheet("color: #6c6c6c;");
+
+    labelProgressValue = new QLabel(this);
+    labelProgressValue->setGeometry(11,10,174,88);
+    labelProgressValue->setAlignment(Qt::AlignCenter);
+    labelProgressValue->setStyleSheet("color: #000000; padding: 10px");
+
     customButtonCancel = new CustomButtonCancel(this);
     customButtonCancel->setLongWidth(true);
 }
@@ -17,6 +28,9 @@ void PageGarph::init()
 void PageGarph::update()
 {
     customButtonCancel->update();
+
+    labelProgressText->setText(textResource.getText(PAGE_GRAPH,"labelProgressText").at(0));
+    labelProgressValue->setText("0%");
 }
 
 void PageGarph::mousePressEvent(QMouseEvent *ev)
