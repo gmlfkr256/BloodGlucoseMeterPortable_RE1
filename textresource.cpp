@@ -262,11 +262,21 @@ QStringList TextResource::getText(PageNum page, const QString& textName)
 QFont TextResource::getFont(PageNum page, const QString& textName)
 {
     DeviceLanguage lang = instance.getDeviceLanguage();
-    if(fontData.contains(lang) && fontData[lang].contains(page))
+
+    if (fontData.contains(lang) && fontData[lang].contains(page))
     {
-        return fontData[lang][page].value(textName,QFont("Default",12));
+        if (fontData[lang][page].contains(textName)) {
+            return fontData[lang][page].value(textName, QFont("Default", 12));
+        } else {
+            qDebug() << "getFont fail: TextName not found ->"
+                     << "Page:" << page << ", TextName:" << textName;
+        }
+    }
+    else
+    {
+        qDebug() << "getFont fail: Language or Page not found ->"
+                 << "Language:" << lang << ", Page:" << page;
     }
 
-    qDebug()<<"getFont fail";
-    return QFont("Default",12);
+    return QFont("Default", 12);
 }
