@@ -263,8 +263,10 @@ void PageGarph::mousePressEvent(QMouseEvent *ev)
 {
     if(instance.touchCheck(customButtonCancel->geometry(),ev))
     {
+#if DEVICE
         instance.sysProcAct.act = GAPI_ACT_STOP;
         instance.guiApi.glucoseSysProcAct(&instance.sysProcAct);
+#endif
         emit signalShowPageNum(PAGE_CALI_GAIN_CONFIRM);
         pageHide();
     }
