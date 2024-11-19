@@ -137,14 +137,14 @@ void TextResource::init()
     textData[Lan][PAGE_GRAPH].insert("labelLoading",QStringList{"측정 분석 중입니다"});
 
     //PAGE_CALI_GAIN_RESULT
-    fontData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(30)));
+    fontData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
     textData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText",QStringList{
                                                     "LED 감도 조절이 끝났습니다\n다음 측정 단계로 넘어가세요",
                                                     "LED 감도 조절에 실패했습니다\n다시 측정해주세요"
                                                 });
 
     //PAGE_CALI_SELECT_INFO
-    fontData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInofText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
+    fontData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInfoText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
     textData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInfoText",QStringList{
                                                     "공복 8시간 이상\n경과되었습니까?",
                                                     "식후 1시간 이상\n경과되었습니까?",
@@ -281,7 +281,7 @@ void TextResource::init()
     textData[Lan][PAGE_GRAPH].insert("labelLoading",QStringList{"Analyzing"});
 
     //Page_CALI_GAIN_RESULT
-    fontData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(30)));
+    fontData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
     textData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText",QStringList{
                                                     "LED sensitivity adjustment is complete\nProceed to the next measurement step",
                                                     "LED sensitivity adjustment failed.\nPlease measure again"
