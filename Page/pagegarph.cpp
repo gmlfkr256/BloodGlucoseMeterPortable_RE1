@@ -199,12 +199,15 @@ void PageGarph::updatePainter()
 
         //labelLoading->setText(textResource.getText(PAGE_GRAPH,"labelLoading").at(0)+QString(nDotCount/2,'.'));
 
+        /*
         int count = nDotCount/2;
         QString str;
         if(count != 0)
             str = strLoading + QString(count,'.');
 
+
         labelLoading->setText(str);
+        */
 
         nDotCount++;
         if(nDotCount >12)
