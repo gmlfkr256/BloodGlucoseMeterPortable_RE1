@@ -63,6 +63,9 @@ void MainWindow::init()
     pageCaliSelectInfo = new PageCaliSelectInfo(this);
     stackedWidget->addWidget(pageCaliSelectInfo);
 
+    pageCaliConfirm = new PageCaliConfirm(this);
+    stackedWidget->addWidget(pageCaliConfirm);
+
     comBat = new ComponentBattery(stackedWidget);
     comBle = new ComponentBluetooth(stackedWidget);
     comClock = new ComponentClock(stackedWidget);
