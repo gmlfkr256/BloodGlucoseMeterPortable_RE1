@@ -60,6 +60,7 @@ void Singleton::init()
     sysProcAct.proc = GAPI_PROC_ACT_GAIN;
     sysProcAct.user = static_cast<int>(nUserNumber);
 
+    sysProcMonInfo.valid = 1;
     //caliUserInfo
 #endif
 }

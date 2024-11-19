@@ -185,7 +185,6 @@ void PageGarph::updatePainter()
     if(instance.sysProcMonInfo.valid == 1)
     {
         nGraphPointY[49] = 200 - (200*nValue)/3300;
-        qDebug()<<nGraphPointY;
     }
 
     labelPainter->setPixmap(pixPainter);
