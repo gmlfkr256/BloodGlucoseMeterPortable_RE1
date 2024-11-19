@@ -309,4 +309,5 @@ void PageGarph::pageHide()
     nProgressValue = 0;
     nDotCount = 0;
     instance.sysProcMonInfo.completed = 0;
+    pixPainter = QPixmap();
 }
