@@ -222,10 +222,10 @@ void PageGarph::paintEvent(QPaintEvent *ev)
 
     //painter->setRenderHint(QPainter::Antialiasing,true);
 
-    /*
+
     painter->setBrush(QColor("#ffffff"));
     painter->drawRect(-1,-1,labelPainter->width()+1,labelPainter->height()+1);
-    */
+
 
     painter->setPen(pen1);
 
