@@ -39,7 +39,8 @@ void PageCaliGainResult::mousePressEvent(QMouseEvent *ev)
 {
     if(instance.touchCheck(customButtonOK->geometry(),ev))
     {
-        if(instance.getCaliGainCompleteCheck())
+        //if(instance.getCaliGainCompleteCheck())
+        if(instance.caliUserInfo.led_sense == true)
         {
             emit signalShowPageNum(PAGE_CALI_SELECT);
         }

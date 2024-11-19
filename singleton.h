@@ -208,6 +208,7 @@ public:
     TimeStatus getTimeStatus();
 
     //CaliCompleteCheck
+    void setCaliGainCompleteCheck(bool caliGainCompleteCheck = false);
     bool getCaliGainCompleteCheck();
 
     //PageSleep
