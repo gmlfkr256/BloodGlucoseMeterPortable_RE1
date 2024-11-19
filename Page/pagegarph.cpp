@@ -203,7 +203,7 @@ void PageGarph::updatePainter()
             str = strLoading + QString(count,'.');
 
         labelLoading->setText(str);
-
+        update();
 
         nDotCount++;
         if(nDotCount >12)
