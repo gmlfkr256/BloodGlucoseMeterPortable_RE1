@@ -119,7 +119,7 @@ void TextResource::init()
                                               "혈당 보정 완료입니다\n재진행하시겠습니까?"
                                           });
 
-    //Page_CALI_GAIN_CONFIRM
+    //PAGE_CALI_GAIN_CONFIRM
     fontData[Lan][PAGE_CALI_GAIN_CONFIRM].insert("labelTextGainConfirm",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
     textData[Lan][PAGE_CALI_GAIN_CONFIRM].insert("labelTextGainConfirm",QStringList{
                                                      "LED 감도 조절 단계입니다\n손가락을 움직이지 말아주세요",
@@ -136,7 +136,7 @@ void TextResource::init()
     fontData[Lan][PAGE_GRAPH].insert("labelLoading",QFont(instance.fontSuit,instance.pixelToPoint(48),QFont::Bold));
     textData[Lan][PAGE_GRAPH].insert("labelLoading",QStringList{"측정 분석 중입니다"});
 
-    //Page_CALI_GAIN_RESULT
+    //PAGE_CALI_GAIN_RESULT
     fontData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(30)));
     textData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText",QStringList{
                                                     "LED 감도 조절이 끝났습니다\n다음 측정 단계로 넘어가세요",
