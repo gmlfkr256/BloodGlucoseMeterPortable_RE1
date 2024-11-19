@@ -308,4 +308,5 @@ void PageGarph::pageHide()
     labelLoading->hide();
     nProgressValue = 0;
     nDotCount = 0;
+    instance.sysProcMonInfo.completed = 0;
 }
