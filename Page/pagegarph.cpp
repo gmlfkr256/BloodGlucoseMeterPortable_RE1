@@ -173,7 +173,6 @@ void PageGarph::updatePainter()
         nGraphPointY[i] = nGraphPointY[i+1];
     }
 
-    qDebug()<<nGraphPointY[0];
 
 #if DEVICE == false
     instance.sysProcMonInfo.adc_raw = QRandomGenerator::global()->bounded(2501);
@@ -186,6 +185,7 @@ void PageGarph::updatePainter()
     if(instance.sysProcMonInfo.valid == 1)
     {
         nGraphPointY[49] = 200 - (200*nValue)/3300;
+        qDebug()<<nGraphPointY;
     }
 
     labelPainter->setPixmap(pixPainter);
@@ -215,8 +215,6 @@ void PageGarph::updatePainter()
 void PageGarph::paintEvent(QPaintEvent *ev)
 {
     Q_UNUSED(ev);
-
-    qDebug()<<".";
 
     if (!painter->begin(&pixPainter)) {
             qWarning() << "QPainter::begin failed. Check pixPainter initialization.";
