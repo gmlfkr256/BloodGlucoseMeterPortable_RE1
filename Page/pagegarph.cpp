@@ -285,6 +285,9 @@ void PageGarph::pageShow()
     }
 
     instance.setProcCheck(true);
+
+    QPixmap pixNull;
+    labelPainter->setPixmap(pixNull);
 }
 
 void PageGarph::pageHide()
@@ -313,6 +316,4 @@ void PageGarph::pageHide()
     nDotCount = 0;
     instance.sysProcMonInfo.completed = 0;
     labelPainter->setPixmap(QPixmap());
-
-    update();
 }
