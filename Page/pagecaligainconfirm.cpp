@@ -43,6 +43,7 @@ void PageCaliGainConfirm::mousePressEvent(QMouseEvent *ev)
     {
         if(instance.getCaliGainCompleteCheck())
         {
+            qDebug()<<"emit pagecaliselect";
             emit signalShowPageNum(PAGE_CALI_SELECT);
         }
         else
