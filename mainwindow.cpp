@@ -84,6 +84,7 @@ void MainWindow::init()
         {PAGE_CALI_GAIN_RESULT, "PageCaliGainResult"},
         {PAGE_CALI_SELECT, "PageCaliSelect"},
         {PAGE_CALI_SELECT_INFO, "PageCaliSelectInfo"},
+        {PAGE_CALI_CONFIRM, "PageCaliConfirm"},
 
         {PAGE_CALIBRATION, "PageCalibration"},
         {PAGE_CALI_SELECT, "PageCaliSelect"},
@@ -132,6 +133,7 @@ void MainWindow::initConnect()
     connect(pageCaliGainResult, &PageCaliGainResult::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageCaliSelect, &PageCaliSelect::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageCaliSelectInfo, &PageCaliSelectInfo::signalShowPageNum,this,&MainWindow::setPageByPageNum);
+    connect(pageCaliConfirm, &PageCaliConfirm::signalShowPageNum,this,&MainWindow::setPageByPageNum);
 }
 
 void MainWindow::currentPageChanged(int index)
