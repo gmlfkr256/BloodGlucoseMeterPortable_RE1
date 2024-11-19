@@ -353,6 +353,17 @@ GraphMode Singleton::getGraphMode()
     return graphMode;
 }
 
+//PageCaliSelect
+void Singleton::setCaliSelectNum(CaliSelNum caliSelectNum)
+{
+    this->caliSelectNum = caliSelectNum;
+}
+
+CaliSelNum Singleton::getCaliSelectNum()
+{
+    return caliSelectNum;
+}
+
 //public
 bool Singleton::touchCheck(const QRect &rect, QMouseEvent* ev)
 {

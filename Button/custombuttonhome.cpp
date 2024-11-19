@@ -17,7 +17,7 @@ void CustomButtonHome::init()
 
 void CustomButtonHome::update()
 {
-    labelButtonHome->setFont(textResource.getFont(CUSTOM_BUTTON,"labelButtonCancel"));
+    labelButtonHome->setFont(textResource.getFont(CUSTOM_BUTTON,"labelButtonHome"));
     labelButtonHome->setText(textResource.getText(CUSTOM_BUTTON,"labelButtonHome").at(0));
 
     switch (instance.getDeviceColor())

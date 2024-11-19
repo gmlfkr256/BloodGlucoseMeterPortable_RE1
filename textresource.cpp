@@ -28,6 +28,12 @@ void TextResource::init()
     fontData[Lan][CUSTOM_BUTTON].insert("labelButtonMeasureStart",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Medium));
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonMeasureStart",QStringList{"측정시작"});
 
+    fontData[Lan][CUSTOM_BUTTON].insert("labelButtonMeasure",QFont(instance.fontSuit,instance.pixelToPoint(35),QFont::Bold));
+    textData[Lan][CUSTOM_BUTTON].insert("labelButtonMeasure",QStringList{"측정"});
+
+    fontData[Lan][CUSTOM_BUTTON].insert("labelButtonInput",QFont(instance.fontSuit,instance.pixelToPoint(35),QFont::Bold));
+    textData[Lan][CUSTOM_BUTTON].insert("labelButtonInput",QStringList{"입력"});
+
     //PAGE_PASSWORD
     fontData[Lan][PAGE_PASSWORD].insert("labelButtonNum",QFont(instance.fontSuit,instance.pixelToPoint(44),QFont::Medium));
 
@@ -133,9 +139,22 @@ void TextResource::init()
     //Page_CALI_GAIN_RESULT
     fontData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(30)));
     textData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText",QStringList{
-                                                    "LED 감도 조절이 끝났습ㅈ니다\n다음 측정 단계로 넘어가세요",
+                                                    "LED 감도 조절이 끝났습니다\n다음 측정 단계로 넘어가세요",
                                                     "LED 감도 조절에 실패했습니다\n다시 측정해주세요"
                                                 });
+
+    //PAGE_CALI_SELECT_INFO
+    fontData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInofText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
+    textData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInfoText",QStringList{
+                                                    "공복 8시간 이상\n경과되었습니까?",
+                                                    "식후 1시간 이상\n경과되었습니까?",
+                                                    "식후 1시간 30분 이상\n경과되었습니까?",
+                                                    "식후 2시간 이상\n경과되었습니까?"
+                                                });
+
+    //PAGE_CALI_CONFIRM
+    fontData[Lan][PAGE_CALI_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
+    textData[Lan][PAGE_CALI_CONFIRM].insert("labelText",QStringList{"혈당값 입력 또는 측정을\n하시겠습니까?"});
 
     //====================================================================================================================================
     //EN
@@ -152,6 +171,12 @@ void TextResource::init()
 
     fontData[Lan][CUSTOM_BUTTON].insert("labelButtonMeasureStart",QFont(instance.fontSuit,instance.pixelToPoint(35),QFont::Bold));
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonMeasureStart",QStringList{"Start"});
+
+    fontData[Lan][CUSTOM_BUTTON].insert("labelButtonMeasure",QFont(instance.fontSuit,instance.pixelToPoint(35),QFont::Bold));
+    textData[Lan][CUSTOM_BUTTON].insert("labelButtonMeasure",QStringList{"Measure"});
+
+    fontData[Lan][CUSTOM_BUTTON].insert("labelButtonInput",QFont(instance.fontSuit,instance.pixelToPoint(35),QFont::Bold));
+    textData[Lan][CUSTOM_BUTTON].insert("labelButtonInput",QStringList{"Input"});
 
     //PAGE_PASSWORD
     fontData[Lan][PAGE_PASSWORD].insert("labelButtonNum",QFont(instance.fontSuit,instance.pixelToPoint(44),QFont::Bold));
@@ -214,6 +239,8 @@ void TextResource::init()
     fontData[Lan][PAGE_SELECT].insert("labelTextTime",QFont(instance.fontSuit,instance.pixelToPoint(20),QFont::Bold));
     textData[Lan][PAGE_SELECT].insert("labelTextTime",QStringList{"Time"});
 
+    //PAGE_MENU
+    fontData[Lan][PAGE_MENU].insert("labelButtonText",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
     textData[Lan][PAGE_MENU].insert("labelButtonText", QStringList{
         "Calib\nration",
         "Range",
@@ -260,6 +287,18 @@ void TextResource::init()
                                                     "LED sensitivity adjustment failed.\nPlease measure again"
                                                 });
 
+    //PAGE_CALI_SELECT_INFO
+    fontData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInofText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
+    textData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInfoText",QStringList{
+                                                    "Has it been more than 8 hours\n since your last meal?",
+                                                    "Has it been more than 1 hour\n since your last meal?",
+                                                    "Has it been more than 1 hour\n and 30 minutes since \nyour last meal?",
+                                                    "Has it been more than 2 hours\n  since your last meal?"
+                                                });
+
+    //PAGE_CALI_CONFIRM
+    fontData[Lan][PAGE_CALI_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
+    textData[Lan][PAGE_CALI_CONFIRM].insert("labelText",QStringList{"Select input or measure"});
 
     //=====================================================================================================================================
     //JP

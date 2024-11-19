@@ -7,6 +7,8 @@
 #include "Button/custombuttoncancel.h"
 #include "Button/custombuttonhome.h"
 #include "Button/custombuttonmeasurestart.h"
+#include "Button/custombuttonmeasure.h"
+#include "Button/custombuttoninput.h"
 
 class Page : public QWidget
 {

@@ -57,6 +57,12 @@ void MainWindow::init()
     pageCaliGainResult = new PageCaliGainResult(this);
     stackedWidget->addWidget(pageCaliGainResult);
 
+    pageCaliSelect = new PageCaliSelect(this);
+    stackedWidget->addWidget(pageCaliSelect);
+
+    pageCaliSelectInfo = new PageCaliSelectInfo(this);
+    stackedWidget->addWidget(pageCaliSelectInfo);
+
     comBat = new ComponentBattery(stackedWidget);
     comBle = new ComponentBluetooth(stackedWidget);
     comClock = new ComponentClock(stackedWidget);
@@ -76,6 +82,8 @@ void MainWindow::init()
         {PAGE_CALI_GAIN_CONFIRM, "PageCaliGainConfirm"},
         {PAGE_GRAPH, "PageGraph"},
         {PAGE_CALI_GAIN_RESULT, "PageCaliGainResult"},
+        {PAGE_CALI_SELECT, "PageCaliSelect"},
+        {PAGE_CALI_SELECT_INFO, "PageCaliSelectInfo"},
 
         {PAGE_CALIBRATION, "PageCalibration"},
         {PAGE_CALI_SELECT, "PageCaliSelect"},
@@ -173,5 +181,5 @@ QString MainWindow::getPageName(PageNum pageNum)
     if(mapPageNumName.contains(pageNum))
         return mapPageNumName.value(pageNum);
     else
-        return QString("This page is empty");
+        return QString("This page is empty, pageNum:"+QString::number(pageNum));
 }

@@ -44,9 +44,11 @@ typedef enum
     PAGE_CALI_GAIN_CONFIRM,
     PAGE_GRAPH,
     PAGE_CALI_GAIN_RESULT,
+    PAGE_CALI_SELECT,
+    PAGE_CALI_SELECT_INFO,
+    PAGE_CALI_CONFIRM,
 
     PAGE_CALIBRATION,
-    PAGE_CALI_SELECT,
     PAGE_THRESHOLD,
     PAGE_HISTORY,
     PAGE_SOUND,
@@ -132,6 +134,18 @@ typedef enum
     GRAPH_MAX
 } GraphMode;
 
+Q_ENUMS(GraphMode);
+
+typedef enum
+{
+    CALI_0 = 0,
+    CALI_1,
+    CALI_2,
+    CALI_3,
+    CALI_4,
+    CALI_MAX
+} CaliSelNum;
+
 class Singleton : public QObject
 {
     Q_OBJECT
@@ -204,6 +218,10 @@ public:
     void setGraphMode(GraphMode graphMode);
     GraphMode getGraphMode();
 
+    //PageCaliSelect
+    void setCaliSelectNum(CaliSelNum caliSelectNum);
+    CaliSelNum getCaliSelectNum();
+
     //public
     bool touchCheck(const QRect &rect, QMouseEvent* ev);
     int pixelToPoint(int pixelSize);
@@ -245,6 +263,9 @@ private:
 
     //PageGraph
     GraphMode graphMode = GRAPH_MAX;
+
+    //PageCaliSelect
+    CaliSelNum caliSelectNum = CALI_0;
 };
 
 #endif // SINGLETON_H

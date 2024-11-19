@@ -20,6 +20,8 @@ void PageCaliGainResult::init()
 
 void PageCaliGainResult::update()
 {
+    customButtonOK->update();
+
     labelText->setFont(textResource.getFont(PAGE_CALI_GAIN_RESULT,"labelText"));
 
     switch (instance.sysProcMonInfo.err_code)
