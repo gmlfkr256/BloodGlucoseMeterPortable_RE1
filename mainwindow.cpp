@@ -130,6 +130,7 @@ void MainWindow::initConnect()
     connect(pageCaliGainConfirm, &PageCaliGainConfirm::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageGraph, &PageGarph::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageCaliGainResult, &PageCaliGainResult::signalShowPageNum,this,&MainWindow::setPageByPageNum);
+    connect(pageCaliSelect, &PageCaliSelect::signalShowPageNum,this,&MainWindow::setPageByPageNum);
 }
 
 void MainWindow::currentPageChanged(int index)
