@@ -313,4 +313,6 @@ void PageGarph::pageHide()
     nDotCount = 0;
     instance.sysProcMonInfo.completed = 0;
     labelPainter->setPixmap(QPixmap());
+
+    update();
 }

@@ -40,6 +40,7 @@ SOURCES += \
     Page/pagecaligainresult.cpp \
     Page/pagecaliselect.cpp \
     Page/pagecaliselectinfo.cpp \
+    Page/pagecalivalue.cpp \
     Page/pagegarph.cpp \
     Page/pagehome.cpp \
     Page/pagemenu.cpp \
@@ -77,6 +78,7 @@ HEADERS += \
     Page/pagecaligainresult.h \
     Page/pagecaliselect.h \
     Page/pagecaliselectinfo.h \
+    Page/pagecalivalue.h \
     Page/pagegarph.h \
     Page/pagehome.h \
     Page/pagemenu.h \
