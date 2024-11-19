@@ -191,7 +191,8 @@ void PageGarph::updatePainter()
 
     if(nProgressValue>=95)
     {
-        labelLoading->show();
+        if(!labelLoading->isVisible())
+            labelLoading->show();
 
         //labelLoading->setText(textResource.getText(PAGE_GRAPH,"labelLoading").at(0)+QString(nDotCount/2,'.'));
 
@@ -200,7 +201,6 @@ void PageGarph::updatePainter()
         QString str;
         if(count != 0)
             str = strLoading + QString(count,'.');
-
 
         labelLoading->setText(str);
 
@@ -216,9 +216,9 @@ void PageGarph::paintEvent(QPaintEvent *ev)
     Q_UNUSED(ev);
 
     if (!painter->begin(&pixPainter)) {
-            qWarning() << "QPainter::begin failed. Check pixPainter initialization.";
-            return;
-        }
+        qWarning() << "QPainter::begin failed. Check pixPainter initialization.";
+        return;
+    }
 
     //painter->setRenderHint(QPainter::Antialiasing,true);
 
