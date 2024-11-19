@@ -61,6 +61,7 @@ void Singleton::init()
     sysProcAct.user = static_cast<int>(nUserNumber);
 
     sysProcMonInfo.valid = 1;
+    sysProcMonInfo.err_code = GAPI_PROC_ECODE_NORMAL;
     //caliUserInfo
 #endif
 }

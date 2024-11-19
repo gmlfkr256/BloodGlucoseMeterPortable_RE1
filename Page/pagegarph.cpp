@@ -142,7 +142,7 @@ void PageGarph::updatePainter()
 
     if(nProgressValue <= 100)
     {
-        qDebug()<<"nPorgressValue: "<<nProgressValue;
+        //qDebug()<<"nPorgressValue: "<<nProgressValue;
         labelProgressValue->setText(QString::number(nProgressValue));
         if(nProgressValue>3)
             labelProgressBar->setGeometry(20,80,nProgressValue*6,20);
@@ -156,7 +156,6 @@ void PageGarph::updatePainter()
         instance.sysProcAct.act = GAPI_ACT_STOP;
         instance.guiApi.glucoseSysProcAct(&instance.sysProcAct);
 #endif
-
         pageHide();
     }
     else
@@ -196,14 +195,14 @@ void PageGarph::updatePainter()
 
         //labelLoading->setText(textResource.getText(PAGE_GRAPH,"labelLoading").at(0)+QString(nDotCount/2,'.'));
 
-
+        /*
         int count = nDotCount/2;
         QString str;
         if(count != 0)
             str = strLoading + QString(count,'.');
 
         labelLoading->setText(str);
-        update();
+        */
 
         nDotCount++;
         if(nDotCount >12)
@@ -267,7 +266,6 @@ void PageGarph::mousePressEvent(QMouseEvent *ev)
         instance.sysProcAct.act = GAPI_ACT_STOP;
         instance.guiApi.glucoseSysProcAct(&instance.sysProcAct);
 #endif
-        emit signalShowPageNum(PAGE_CALI_GAIN_CONFIRM);
         pageHide();
     }
 }
@@ -296,10 +294,11 @@ void PageGarph::pageHide()
 #if DEVICE
         instance.guiApi.glucoseSpeakerOut(GAPI_SPK_MEASURE_COMPLETED);
 #endif
-
+        emit signalShowPageNum(PAGE_CALI_GAIN_RESULT);
     }
     else
     {
+        emit signalShowPageNum(PAGE_CALI_GAIN_CONFIRM);
         labelProgressBar->setGeometry(20,80,20,20);
     }
 
