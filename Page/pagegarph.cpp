@@ -173,10 +173,7 @@ void PageGarph::updatePainter()
         nGraphPointY[i] = nGraphPointY[i+1];
     }
 
-    for(int i=0; i<49; i++)
-    {
-        nGraphPointY[i] = nGraphPointY[i+1];
-    }
+    qDebug()<<nGraphPointY[0];
 
 #if DEVICE == false
     instance.sysProcMonInfo.adc_raw = QRandomGenerator::global()->bounded(2501);
