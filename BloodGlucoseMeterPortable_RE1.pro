@@ -30,6 +30,7 @@ SOURCES += \
     Component/componentclock.cpp \
     Component/componenthome.cpp \
     Component/componentmenu.cpp \
+    Component/componentspinner.cpp \
     Component/customcomponent.cpp \
     Loadfont.cpp \
     Page/page.cpp \
@@ -67,6 +68,7 @@ HEADERS += \
     Component/componentclock.h \
     Component/componenthome.h \
     Component/componentmenu.h \
+    Component/componentspinner.h \
     Component/customcomponent.h \
     GlobalMain.h \
     Loadfont.h \

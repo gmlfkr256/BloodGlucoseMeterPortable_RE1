@@ -10,7 +10,6 @@ public:
     ComponentMenu(QWidget *parent);
     void mousePressEvent(QMouseEvent *ev) override;
 private:
-    Singleton &instance = Singleton::getInstance();
     QLabel *labelMenu;
     QString strDirPath = "/ImageComMenu";
 

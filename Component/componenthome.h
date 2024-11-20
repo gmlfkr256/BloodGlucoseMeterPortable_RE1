@@ -10,7 +10,6 @@ public:
     ComponentHome(QWidget *parent);
     void mousePressEvent(QMouseEvent *ev) override;
 private:
-    Singleton &instance = Singleton::getInstance();
     QLabel *labelHome;
 
     QString strDirPath = "/ImageComHome";

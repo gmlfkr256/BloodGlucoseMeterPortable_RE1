@@ -2,6 +2,7 @@
 #define PAGECALIVALUE_H
 
 #include "page.h"
+#include "Component/componentspinner.h"
 
 class PageCaliValue : public Page
 {
@@ -10,6 +11,8 @@ public:
     PageCaliValue(QWidget *parent);
     void mousePressEvent(QMouseEvent *ev) override;
     QString strDirPath = "/ImageCaliValue";
+
+    ComponentSpinner *componentSpinner;
 
     CustomButtonOK *customButtonOK;
     CustomButtonCancel *customButtonCancel;

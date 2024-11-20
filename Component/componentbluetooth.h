@@ -10,7 +10,6 @@ public:
     ComponentBluetooth(QWidget *parent);
     void mousePressEvent(QMouseEvent *ev) override;
 private:
-    Singleton &instance = Singleton::getInstance();
     QLabel *labelBluetoothButton;
 
     gapiBleAct_t bleAct;

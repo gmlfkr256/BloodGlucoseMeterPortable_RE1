@@ -2,12 +2,15 @@
 #define CUSTOMCOMPONENT_H
 
 #include "singleton.h"
+#include "textresource.h"
 
 class CustomComponent : public QWidget
 {
     Q_OBJECT
 public:
     CustomComponent(QWidget *parent);
+    Singleton &instance = Singleton::getInstance();
+    TextResource &textResource = TextResource::getInstance();
 
     //virtual void init() = 0;
     virtual void update() = 0;

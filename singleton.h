@@ -62,6 +62,7 @@ typedef enum
     PAGE_USER,
     PAGE_COLOR,
     CUSTOM_BUTTON,
+    CUSTOM_COMPONENT,
     PAGE_MAX
 } PageNum;
 

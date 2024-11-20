@@ -10,6 +10,7 @@ void PageCaliValue::init()
 {
     customButtonOK = new CustomButtonOK(this);
     customButtonCancel = new CustomButtonCancel(this);
+    componentSpinner = new ComponentSpinner(this);
 }
 
 void PageCaliValue::update()

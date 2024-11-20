@@ -12,7 +12,6 @@ public:
     ComponentClock(QWidget *parent);
 
 private:
-    Singleton &instance = Singleton::getInstance();
 
     QLabel *labelClock;
     QTimer *timerClock;

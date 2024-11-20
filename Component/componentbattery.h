@@ -10,7 +10,6 @@ public:
     ComponentBattery(QWidget* parent);
 
 private:
-    Singleton &instance = Singleton::getInstance();
     QLabel *labelBattery;
     QTimer *timerBattery;
     bool bIsBatteryFirstCheck = true;

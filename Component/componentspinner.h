@@ -1,0 +1,31 @@
+#ifndef COMPONENTSPINNER_H
+#define COMPONENTSPINNER_H
+
+#include "customcomponent.h"
+
+class ComponentSpinner : public CustomComponent
+{
+    Q_OBJECT
+public:
+    ComponentSpinner(QWidget *parent);
+    void mousePressEvent(QMouseEvent *ev) override;
+
+    QVBoxLayout *vBoxLayoutSpinner;
+    QLabel *labelButtonTop;
+    QLabel *labelTextValue;
+    QLabel *labelButtonBottom;
+
+    int nValue = 0;
+
+    void setValue(int nValue);
+    int getValue();
+
+    void update() override;
+    void pageShow() override;
+    void pageHide() override;
+private:
+    void init();
+    void updateValue();
+};
+
+#endif // COMPONENTSPINNER_H

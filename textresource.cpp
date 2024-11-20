@@ -34,6 +34,9 @@ void TextResource::init()
     fontData[Lan][CUSTOM_BUTTON].insert("labelButtonInput",QFont(instance.fontSuit,instance.pixelToPoint(35),QFont::Bold));
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonInput",QStringList{"입력"});
 
+    //CUSTOM_COMPONENT
+    fontData[Lan][CUSTOM_COMPONENT].insert("labelTextValue",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
+
     //PAGE_PASSWORD
     fontData[Lan][PAGE_PASSWORD].insert("labelButtonNum",QFont(instance.fontSuit,instance.pixelToPoint(44),QFont::Medium));
 
