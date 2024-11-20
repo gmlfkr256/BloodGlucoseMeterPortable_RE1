@@ -12,6 +12,7 @@ void PageCaliSelect::init()
     {
         labelSelectButton[i] = new QLabel(this);
         labelSelectText[i] = new QLabel(this);
+        labelSelectText[i]->setAlignment(Qt::AlignCenter);
         labelSelectNum[i] = new QLabel(this);
     }
 
