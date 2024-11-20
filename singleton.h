@@ -49,6 +49,7 @@ typedef enum
     PAGE_CALI_CONFIRM,
     PAGE_CALI_VALUE,
     PAGE_CALI_RESULT,
+    PAGE_CALI_RESULT_MULTI,
 
     PAGE_CALIBRATION,
     PAGE_THRESHOLD,
@@ -147,7 +148,17 @@ typedef enum
     CALI_3,
     CALI_4,
     CALI_MAX
-} CaliSelNum;
+} CaliSelIndex;
+
+Q_ENUMS(CaliSelIndex);
+
+typedef enum
+{
+    CALI_ORDER_0 = 0,
+    CALI_ORDER_1,
+    CALI_ORDER_2,
+    CALI_ORDER_MAX
+} CaliSelOrder;
 
 class Singleton : public QObject
 {
@@ -173,6 +184,8 @@ public:
     gapiLangData_t langData;
     gapiSysProcAct_t sysProcAct;
     gapiSysProcMonInfo_t sysProcMonInfo;
+
+    int caliIndexCount = 0;
 
     void init();
 
@@ -223,8 +236,14 @@ public:
     GraphMode getGraphMode();
 
     //PageCaliSelect
-    void setCaliSelectNum(CaliSelNum caliSelectNum);
-    CaliSelNum getCaliSelectNum();
+    void setCaliSelectNum(CaliSelIndex caliSelectIndex);
+    CaliSelIndex getCaliSelectNum();
+
+    //PageCaliResultMulti
+    void setCaliSelectOrder(CaliSelOrder caliSelectOrder);
+    CaliSelOrder getCaliSelectOrder();
+    void setCaliIndexConfirm(bool bConfirm);
+    bool getCaliIndexConfirm();
 
     //public
     bool touchCheck(const QRect &rect, QMouseEvent* ev);
@@ -235,6 +254,7 @@ public:
 
     void setPageNumPrev(PageNum pageNumPrev);
     PageNum getPageNumPrev();
+
 private:
     //Singleton() = default;
     explicit Singleton(QObject* parent = nullptr) : QObject(parent){init();};
@@ -269,7 +289,11 @@ private:
     GraphMode graphMode = GRAPH_MAX;
 
     //PageCaliSelect
-    CaliSelNum caliSelectNum = CALI_0;
+    CaliSelIndex caliSelectIndex = CALI_0;
+
+    //PageCaliResultMulti
+    CaliSelOrder caliSelectOrder = CALI_ORDER_0;
+    bool bCaliIndexConfirm = false;
 };
 
 #endif // SINGLETON_H

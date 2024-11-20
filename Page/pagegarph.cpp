@@ -300,11 +300,35 @@ void PageGarph::pageHide()
         if(instance.getGraphMode() == GRAPH_GAIN)
             instance.caliUserInfo.led_sense = 1;
 #endif
-        emit signalShowPageNum(PAGE_CALI_GAIN_RESULT);
+        switch (instance.getGraphMode()) {
+        case GRAPH_GAIN:
+            emit signalShowPageNum(PAGE_CALI_GAIN_RESULT);
+            break;
+        case GRAPH_CALI:
+            emit signalShowPageNum(PAGE_CALI_RESULT);
+            break;
+        case GRAPH_MEASURE:
+            break;
+        case GRAPH_MAX:
+            break;
+        }
+
     }
     else
     {
-        emit signalShowPageNum(PAGE_CALI_GAIN_CONFIRM);
+        switch (instance.getGraphMode()) {
+        case GRAPH_GAIN:
+            emit signalShowPageNum(PAGE_CALI_GAIN_CONFIRM);
+            break;
+        case GRAPH_CALI:
+            emit signalShowPageNum(PAGE_CALI_CONFIRM);
+            break;
+        case GRAPH_MEASURE:
+            break;
+        case GRAPH_MAX:
+            break;
+        }
+
         labelProgressBar->setGeometry(20,80,20,20);
     }
 

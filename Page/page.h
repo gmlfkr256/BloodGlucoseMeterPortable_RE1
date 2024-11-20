@@ -9,6 +9,7 @@
 #include "Button/custombuttonmeasurestart.h"
 #include "Button/custombuttonmeasure.h"
 #include "Button/custombuttoninput.h"
+#include "Button/custombuttonmeasurere.h"
 
 class Page : public QWidget
 {

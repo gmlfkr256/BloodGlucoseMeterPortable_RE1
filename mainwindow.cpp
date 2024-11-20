@@ -72,6 +72,9 @@ void MainWindow::init()
     pageCaliResult = new PageCaliResult(this);
     stackedWidget->addWidget(pageCaliResult);
 
+    pageCaliResultMulti = new PageCaliResultMulti(this);
+    stackedWidget->addWidget(pageCaliResultMulti);
+
     comBat = new ComponentBattery(stackedWidget);
     comBle = new ComponentBluetooth(stackedWidget);
     comClock = new ComponentClock(stackedWidget);
@@ -96,6 +99,7 @@ void MainWindow::init()
         {PAGE_CALI_CONFIRM, "PageCaliConfirm"},
         {PAGE_CALI_VALUE, "PageCaliValue"},
         {PAGE_CALI_RESULT, "PageCaliResult"},
+        {PAGE_CALI_RESULT_MULTI, "PageCaliResultMulti"},
 
         {PAGE_CALIBRATION, "PageCalibration"},
         {PAGE_CALI_SELECT, "PageCaliSelect"},

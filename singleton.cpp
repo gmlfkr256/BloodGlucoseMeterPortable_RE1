@@ -354,14 +354,35 @@ GraphMode Singleton::getGraphMode()
 }
 
 //PageCaliSelect
-void Singleton::setCaliSelectNum(CaliSelNum caliSelectNum)
+void Singleton::setCaliSelectNum(CaliSelIndex caliSelectNum)
 {
-    this->caliSelectNum = caliSelectNum;
+    this->caliSelectIndex = caliSelectNum;
 }
 
-CaliSelNum Singleton::getCaliSelectNum()
+CaliSelIndex Singleton::getCaliSelectNum()
 {
-    return caliSelectNum;
+    return caliSelectIndex;
+}
+
+//PageCaliResultMulti
+void Singleton::setCaliSelectOrder(CaliSelOrder caliSelectOrder)
+{
+    this->caliSelectOrder = caliSelectOrder;
+}
+
+CaliSelOrder Singleton::getCaliSelectOrder()
+{
+    return caliSelectOrder;
+}
+
+void Singleton::setCaliIndexConfirm(bool bConfirm)
+{
+    this->bCaliIndexConfirm = bConfirm;
+}
+
+bool Singleton::getCaliIndexConfirm()
+{
+    return bCaliIndexConfirm;
 }
 
 //public

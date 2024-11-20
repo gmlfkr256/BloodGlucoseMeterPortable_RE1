@@ -23,6 +23,7 @@ SOURCES += \
     Button/custombuttonhome.cpp \
     Button/custombuttoninput.cpp \
     Button/custombuttonmeasure.cpp \
+    Button/custombuttonmeasurere.cpp \
     Button/custombuttonmeasurestart.cpp \
     Button/custombuttonok.cpp \
     Component/componentbattery.cpp \
@@ -41,6 +42,7 @@ SOURCES += \
     Page/pagecaligainconfirm.cpp \
     Page/pagecaligainresult.cpp \
     Page/pagecaliresult.cpp \
+    Page/pagecaliresultmulti.cpp \
     Page/pagecaliselect.cpp \
     Page/pagecaliselectinfo.cpp \
     Page/pagecalivalue.cpp \
@@ -63,6 +65,7 @@ HEADERS += \
     Button/custombuttonhome.h \
     Button/custombuttoninput.h \
     Button/custombuttonmeasure.h \
+    Button/custombuttonmeasurere.h \
     Button/custombuttonmeasurestart.h \
     Button/custombuttonok.h \
     Component/componentbattery.h \
@@ -82,6 +85,7 @@ HEADERS += \
     Page/pagecaligainconfirm.h \
     Page/pagecaligainresult.h \
     Page/pagecaliresult.h \
+    Page/pagecaliresultmulti.h \
     Page/pagecaliselect.h \
     Page/pagecaliselectinfo.h \
     Page/pagecalivalue.h \

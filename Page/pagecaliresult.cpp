@@ -16,6 +16,9 @@ void PageCaliResult::init()
     labelTextHeart->setAlignment(Qt::AlignCenter);
 
     comMeasureResult = new ComponentMeasureResult(this,QRect(0,280,640,100));
+
+    customButtonOK = new CustomButtonOK(this);
+    customButtonOK->setLongWidth(true);
     update();
 }
 
@@ -27,7 +30,10 @@ void PageCaliResult::update()
 
 void PageCaliResult::mousePressEvent(QMouseEvent *ev)
 {
-
+    if(instance.touchCheck(customButtonOK->geometry(),ev))
+    {
+        emit signalShowPageNum(PAGE_CALI_RESULT_MULTI);
+    }
 }
 
 void PageCaliResult::pageShow()

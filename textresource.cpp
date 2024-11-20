@@ -34,6 +34,9 @@ void TextResource::init()
     fontData[Lan][CUSTOM_BUTTON].insert("labelButtonInput",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Medium));
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonInput",QStringList{"입력"});
 
+    fontData[Lan][CUSTOM_BUTTON].insert("labelButtonMeasureRe",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Medium));
+    textData[Lan][CUSTOM_BUTTON].insert("labelButtonMeasureRe",QStringList{"재측정"});
+
     //CUSTOM_COMPONENT
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextValue",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
 
@@ -217,6 +220,9 @@ void TextResource::init()
 
     textData[Lan][PAGE_PASSWORD].insert("labelButtonOKText",QStringList{"OK"});
     fontData[Lan][PAGE_PASSWORD].insert("labelButtonOKText",QFont(instance.fontSuit,instance.pixelToPoint(48)));
+
+    fontData[Lan][CUSTOM_BUTTON].insert("labelButtonMeasureRe",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Medium));
+    textData[Lan][CUSTOM_BUTTON].insert("labelButtonMeasureRe",QStringList{"ReMeasure"});
 
     //PAGE_PASSWORD_CONFIRM
     fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(30)));

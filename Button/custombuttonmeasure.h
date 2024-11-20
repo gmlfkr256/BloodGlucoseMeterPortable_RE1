@@ -10,6 +10,7 @@ public:
     CustomButtonMeasure(QWidget *parent);
     QLabel *labelButtonMeasure;
 
+    void setLeftButton(bool bIsLeft = false);
     void update() override;
 private:
     void init();
