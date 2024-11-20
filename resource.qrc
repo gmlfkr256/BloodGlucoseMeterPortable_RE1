@@ -107,5 +107,6 @@
         <file>Image/Default/Public/ImageCaliSelect/num02.png</file>
         <file>Image/Default/Public/ImageCaliSelect/num03.png</file>
         <file>Image/Default/Public/ImageCaliSelect/numEmpty.png</file>
+        <file>Image/Default/Public/ImageCaliResultMulti/buttonBg.png</file>
     </qresource>
 </RCC>

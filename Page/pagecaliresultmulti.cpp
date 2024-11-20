@@ -54,6 +54,11 @@ void PageCaliResultMulti::update()
         customButtonOk->show();
         customButtonMeasureRe->show();
     }
+
+    for(int i=0; i<3; i++)
+    {
+        instance.pixLoad(labelButton[i],false,strDirPath,"/buttonBg.png");
+    }
 }
 
 void PageCaliResultMulti::mousePressEvent(QMouseEvent *ev)
