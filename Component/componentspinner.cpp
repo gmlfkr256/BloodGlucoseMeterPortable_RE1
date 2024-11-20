@@ -1,8 +1,8 @@
 #include "componentspinner.h"
 
-ComponentSpinner::ComponentSpinner(QWidget *parent) : CustomComponent(parent)
+ComponentSpinner::ComponentSpinner(QWidget *parent ,QRect rect) : CustomComponent(parent)
 {
-    this->setGeometry(100,100,50,150);
+    this->setGeometry(rect);
     init();
 }
 
@@ -12,17 +12,17 @@ void ComponentSpinner::init()
 
     labelButtonTop = new QLabel(this);
     vBoxLayoutSpinner->addWidget(labelButtonTop);
-    labelButtonTop->setFixedHeight(50);
+    labelButtonTop->setFixedHeight(static_cast<int>(this->height()/3));
 
     labelTextValue = new QLabel(this);
     labelTextValue->setAlignment(Qt::AlignCenter);
     vBoxLayoutSpinner->addWidget(labelTextValue);
-    labelTextValue->setFixedHeight(50);
+    labelTextValue->setFixedHeight(static_cast<int>(this->height()/3));
     labelTextValue->setText("0");
 
     labelButtonBottom = new QLabel(this);
     vBoxLayoutSpinner->addWidget(labelButtonBottom);
-    labelButtonBottom->setFixedHeight(50);
+    labelButtonBottom->setFixedHeight(static_cast<int>(this->height()/3));
 
     update();
 }
@@ -33,11 +33,13 @@ void ComponentSpinner::update()
 
     labelButtonTop->setFont(QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
     labelButtonTop->setAlignment(Qt::AlignCenter);
-    labelButtonTop->setText("▲");
+    //labelButtonTop->setText("▲");
+    labelButtonTop->setText("+");
     labelButtonTop->setStyleSheet("color: #52d0ba;");
     labelButtonBottom->setFont(QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
     labelButtonBottom->setAlignment(Qt::AlignCenter);
-    labelButtonBottom->setText("▼");
+    //labelButtonBottom->setText("▼");
+    labelButtonBottom->setText("-");
     labelButtonBottom->setStyleSheet("color: #52d0ba;");
 
     updateValue();

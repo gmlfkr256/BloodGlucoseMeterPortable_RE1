@@ -7,7 +7,7 @@ class ComponentSpinner : public CustomComponent
 {
     Q_OBJECT
 public:
-    ComponentSpinner(QWidget *parent);
+    ComponentSpinner(QWidget *parent, QRect rect);
     void mousePressEvent(QMouseEvent *ev) override;
 
     QVBoxLayout *vBoxLayoutSpinner;

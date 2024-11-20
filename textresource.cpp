@@ -28,10 +28,10 @@ void TextResource::init()
     fontData[Lan][CUSTOM_BUTTON].insert("labelButtonMeasureStart",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Medium));
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonMeasureStart",QStringList{"측정시작"});
 
-    fontData[Lan][CUSTOM_BUTTON].insert("labelButtonMeasure",QFont(instance.fontSuit,instance.pixelToPoint(35),QFont::Bold));
+    fontData[Lan][CUSTOM_BUTTON].insert("labelButtonMeasure",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Medium));
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonMeasure",QStringList{"측정"});
 
-    fontData[Lan][CUSTOM_BUTTON].insert("labelButtonInput",QFont(instance.fontSuit,instance.pixelToPoint(35),QFont::Bold));
+    fontData[Lan][CUSTOM_BUTTON].insert("labelButtonInput",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Medium));
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonInput",QStringList{"입력"});
 
     //CUSTOM_COMPONENT

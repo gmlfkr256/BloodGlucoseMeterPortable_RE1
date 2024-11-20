@@ -12,7 +12,7 @@ public:
     void mousePressEvent(QMouseEvent *ev) override;
     QString strDirPath = "/ImageCaliValue";
 
-    ComponentSpinner *componentSpinner;
+    ComponentSpinner *componentSpinner[3];
 
     CustomButtonOK *customButtonOK;
     CustomButtonCancel *customButtonCancel;
