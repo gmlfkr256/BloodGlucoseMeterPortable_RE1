@@ -277,8 +277,6 @@ void PageGarph::pageShow()
     instance.guiApi.glucoseSysProcAct(&instance.sysProcAct);
 #endif
 
-    timerPainter->start(100);
-
     for(int &nGraphPointY : nGraphPointY)
     {
         nGraphPointY = 200;
@@ -288,6 +286,24 @@ void PageGarph::pageShow()
 
     QPixmap pixNull;
     labelPainter->setPixmap(pixNull);
+
+    switch(instance.getGraphMode())
+    {
+    case GRAPH_GAIN:
+        qDebug()<<"GraphMode: gain";
+        break;
+    case GRAPH_CALI:
+        qDebug()<<"GraphMode: cali";
+        break;
+    case GRAPH_MEASURE:
+        qDebug()<<"GraphMode: measure";
+        break;
+    case GRAPH_MAX:
+        qDebug()<<"GraphMode: max";
+        break;
+    }
+
+    timerPainter->start(100);
 }
 
 void PageGarph::pageHide()
