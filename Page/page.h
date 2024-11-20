@@ -21,7 +21,6 @@ public:
     virtual void update() = 0;
     virtual void pageShow() = 0;
     virtual void pageHide() = 0;
-    virtual ~Page() = default;
 
     void setBgTopHide();
 private:
