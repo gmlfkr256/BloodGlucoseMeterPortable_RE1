@@ -33,12 +33,13 @@ void PageCaliConfirm::mousePressEvent(QMouseEvent *ev)
 {
     if(instance.touchCheck(customButtonMeasure->geometry(),ev))
     {
-
+        instance.setGraphMode(GRAPH_CALI);
+        emit signalShowPageNum(PAGE_GRAPH);
     }
 
     if(instance.touchCheck(customButtonInput->geometry(),ev))
     {
-
+        emit signalShowPageNum(PAGE_CALI_VALUE);
     }
 }
 

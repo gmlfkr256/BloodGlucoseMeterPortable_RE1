@@ -23,6 +23,7 @@
 #include "Page/pagecaliselect.h"
 #include "Page/pagecaliselectinfo.h"
 #include "Page/pagecaliconfirm.h"
+#include "Page/pagecalivalue.h"
 
 
 class MainWindow : public QMainWindow
@@ -53,6 +54,7 @@ public:
     PageCaliSelect *pageCaliSelect;
     PageCaliSelectInfo *pageCaliSelectInfo;
     PageCaliConfirm *pageCaliConfirm;
+    PageCaliValue *pageCaliValue;
 
     QList<int> listComHiddenPageIndex;
     QMap<PageNum,QString> mapPageNumName;
