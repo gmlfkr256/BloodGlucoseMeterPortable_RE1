@@ -63,14 +63,14 @@ int ComponentSpinner::getValue()
 
 void ComponentSpinner::mousePressEvent(QMouseEvent *ev)
 {
-    if(instance.touchCheck(labelButtonTop->rect(),ev))
+    if(instance.touchCheck(labelButtonTop->geometry(),ev))
     {
         nValue++;
 
         updateValue();
     }
 
-    if(instance.touchCheck(labelButtonBottom->rect(),ev))
+    if(instance.touchCheck(labelButtonBottom->geometry(),ev))
     {
         nValue--;
 
