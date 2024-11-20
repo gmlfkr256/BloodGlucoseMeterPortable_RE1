@@ -12,6 +12,8 @@ public:
     QString strDirPath = "/ImageCaliSelect";
 
     QLabel *labelSelectButton[5];
+    QLabel *labelSelectText[5];
+    QLabel *labelSelectNum[5];
 
     void update() override;
     void pageShow() override;

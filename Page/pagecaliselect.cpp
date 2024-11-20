@@ -11,6 +11,8 @@ void PageCaliSelect::init()
     for(int i=0; i<5; i++)
     {
         labelSelectButton[i] = new QLabel(this);
+        labelSelectText[i] = new QLabel(this);
+        labelSelectNum[i] = new QLabel(this);
     }
 
     labelSelectButton[0]->setGeometry(160,90,150,180);
@@ -19,6 +21,12 @@ void PageCaliSelect::init()
     labelSelectButton[3]->setGeometry(245,280,150,180);
     labelSelectButton[4]->setGeometry(410,280,150,180);
 
+    for(int i=0; i<5; i++)
+    {
+        labelSelectText[i]->setGeometry(labelSelectButton[i]->geometry().x(),labelSelectButton[i]->y()+15,labelSelectButton[i]->width(),38);
+        labelSelectNum[i]->setGeometry(labelSelectButton[i]->geometry().x()+33,labelSelectButton[i]->y()+75,85,85);
+    }
+
     update();
 }
 
@@ -26,8 +34,23 @@ void PageCaliSelect::update()
 {
     for(int i=0; i<5; i++)
     {
-        labelSelectButton[i]->setStyleSheet("background-color: #f3f3f3; border-radius: 15px;");
+        //labelSelectButton[i]->setStyleSheet("background-color: #f3f3f3; border-radius: 15px;");
+        instance.pixLoad(labelSelectButton[i],false,strDirPath,"/buttonBg.png");
+
+        labelSelectText[i]->setFont(textResource.getFont(PAGE_CALI_SELECT,"labelSelectText"));
+        labelSelectText[i]->setStyleSheet("color: #cecece;");
+
+        if(i<2)
+            labelSelectText[i]->setText(textResource.getText(PAGE_CALI_SELECT,"labelSelectText").at(0));
+        else
+            labelSelectText[i]->setText(textResource.getText(PAGE_CALI_SELECT,"labelSelectText").at(1));
     }
+
+    instance.pixLoad(labelSelectNum[0],false,strDirPath,"/num01.png");
+    instance.pixLoad(labelSelectNum[1],false,strDirPath,"/num02.png");
+    instance.pixLoad(labelSelectNum[2],false,strDirPath,"/num01.png");
+    instance.pixLoad(labelSelectNum[3],false,strDirPath,"/num02.png");
+    instance.pixLoad(labelSelectNum[4],false,strDirPath,"/num03.png");
 }
 
 void PageCaliSelect::mousePressEvent(QMouseEvent *ev)

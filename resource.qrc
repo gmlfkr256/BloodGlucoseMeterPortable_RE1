@@ -102,5 +102,9 @@
         <file>Image/Default/Public/ImageMenu/menuButtonUpgrade.png</file>
         <file>Image/Default/Public/ImageMenu/menuButtonUser.png</file>
         <file>Image/Default/Public/ImageGraph/progressBar.png</file>
+        <file>Image/Default/Public/ImageCaliSeslect/buttonBg.png</file>
+        <file>Image/Default/Public/ImageCaliSeslect/num01.png</file>
+        <file>Image/Default/Public/ImageCaliSeslect/num02.png</file>
+        <file>Image/Default/Public/ImageCaliSeslect/num03.png</file>
     </qresource>
 </RCC>

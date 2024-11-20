@@ -1,0 +1,31 @@
+#ifndef PAGECALIRESULT_H
+#define PAGECALIRESULT_H
+
+#include "page.h"
+#include "Component/componentmeasureresult.h"
+
+class PageCaliResult : public Page
+{
+    Q_OBJECT
+public:
+    PageCaliResult(QWidget *parent);
+    void mousePressEvent(QMouseEvent *ev) override;
+
+    QLabel *labelTextValue;
+    QLabel *labelTextTemp;
+    QLabel *labelTextHeart;
+
+    ComponentMeasureResult *comMeasureResult;
+    CustomButtonOK *customButtonOK;
+
+    void update() override;
+    void pageShow() override;
+    void pageHide() override;
+private:
+    void init();
+
+signals:
+    void signalShowPageNum(PageNum pageNum);
+};
+
+#endif // PAGECALIRESULT_H

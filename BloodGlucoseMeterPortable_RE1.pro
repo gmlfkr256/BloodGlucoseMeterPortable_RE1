@@ -29,6 +29,7 @@ SOURCES += \
     Component/componentbluetooth.cpp \
     Component/componentclock.cpp \
     Component/componenthome.cpp \
+    Component/componentmeasureresult.cpp \
     Component/componentmenu.cpp \
     Component/componentspinner.cpp \
     Component/customcomponent.cpp \
@@ -39,6 +40,7 @@ SOURCES += \
     Page/pagecaliconfirm.cpp \
     Page/pagecaligainconfirm.cpp \
     Page/pagecaligainresult.cpp \
+    Page/pagecaliresult.cpp \
     Page/pagecaliselect.cpp \
     Page/pagecaliselectinfo.cpp \
     Page/pagecalivalue.cpp \
@@ -67,6 +69,7 @@ HEADERS += \
     Component/componentbluetooth.h \
     Component/componentclock.h \
     Component/componenthome.h \
+    Component/componentmeasureresult.h \
     Component/componentmenu.h \
     Component/componentspinner.h \
     Component/customcomponent.h \
@@ -78,6 +81,7 @@ HEADERS += \
     Page/pagecaliconfirm.h \
     Page/pagecaligainconfirm.h \
     Page/pagecaligainresult.h \
+    Page/pagecaliresult.h \
     Page/pagecaliselect.h \
     Page/pagecaliselectinfo.h \
     Page/pagecalivalue.h \

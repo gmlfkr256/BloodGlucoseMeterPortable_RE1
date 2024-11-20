@@ -37,6 +37,19 @@ void TextResource::init()
     //CUSTOM_COMPONENT
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextValue",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
 
+    fontData[Lan][CUSTOM_COMPONENT].insert("labelTextResult",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
+    textData[Lan][CUSTOM_COMPONENT].insert("labelTextResult",QStringList{
+                                               "측정을 성공하였습니다",     // 0
+                                               "측정시간이 초과되었습니다", // 1
+                                               "NULL_PTR",                // 2
+                                               "COUNT_ZERO",              // 3
+                                               "MALLOC_FAIL",             // 4
+                                               "NONE_GREADE",             // 5
+                                               "PARAM_FAIL",              // 6
+                                               "RESULT_FAIL",             // 7
+                                               "ECODE_MAX"
+                                           });
+
     //PAGE_PASSWORD
     fontData[Lan][PAGE_PASSWORD].insert("labelButtonNum",QFont(instance.fontSuit,instance.pixelToPoint(44),QFont::Medium));
 
@@ -145,6 +158,12 @@ void TextResource::init()
                                                     "LED 감도 조절이 끝났습니다\n다음 측정 단계로 넘어가세요",
                                                     "LED 감도 조절에 실패했습니다\n다시 측정해주세요"
                                                 });
+    //PAGE_CALI_SELECT
+    fontData[Lan][PAGE_CALI_SELECT].insert("labelSelectText",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
+    textData[Lan][PAGE_CALI_SELECT].insert("labelSelectText",QStringList{
+                                               "공복",
+                                               "식후"
+                                           });
 
     //PAGE_CALI_SELECT_INFO
     fontData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInfoText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
@@ -245,20 +264,20 @@ void TextResource::init()
     //PAGE_MENU
     fontData[Lan][PAGE_MENU].insert("labelButtonText",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
     textData[Lan][PAGE_MENU].insert("labelButtonText", QStringList{
-        "Calib\nration",
-        "Range",
-        "List",
-        "Sound",
-        "Sleep",
-        "Switch",
-        "Date",
-        "Color\nMode",
-        "Lan\nguage",
-        "Upgrade",
-        "Device\nInfo",
-        "Reset",
-        "User"
-    });
+                                        "Calib\nration",
+                                        "Range",
+                                        "List",
+                                        "Sound",
+                                        "Sleep",
+                                        "Switch",
+                                        "Date",
+                                        "Color\nMode",
+                                        "Lan\nguage",
+                                        "Upgrade",
+                                        "Device\nInfo",
+                                        "Reset",
+                                        "User"
+                                    });
 
     //PAGE_CALI_CHECK
     fontData[Lan][PAGE_CALI_CHECK].insert("labelTextCheck",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
