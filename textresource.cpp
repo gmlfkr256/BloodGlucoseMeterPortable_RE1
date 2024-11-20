@@ -308,6 +308,12 @@ void TextResource::init()
                                                     "LED sensitivity adjustment is complete\nProceed to the next measurement step",
                                                     "LED sensitivity adjustment failed.\nPlease measure again"
                                                 });
+    //PAGE_CALI_SELECT
+    fontData[Lan][PAGE_CALI_SELECT].insert("labelSelectText",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
+    textData[Lan][PAGE_CALI_SELECT].insert("labelSelectText",QStringList{
+                                               "Empty\nstomach",
+                                               "After meal"
+                                           });
 
     //PAGE_CALI_SELECT_INFO
     fontData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInofText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
