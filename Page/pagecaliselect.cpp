@@ -24,7 +24,7 @@ void PageCaliSelect::init()
 
     for(int i=0; i<5; i++)
     {
-        labelSelectText[i]->setGeometry(labelSelectButton[i]->geometry().x(),labelSelectButton[i]->y()+15,labelSelectButton[i]->width(),38);
+        labelSelectText[i]->setGeometry(labelSelectButton[i]->geometry().x(),labelSelectButton[i]->y(),labelSelectButton[i]->width(),75);
         labelSelectNum[i]->setGeometry(labelSelectButton[i]->geometry().x()+33,labelSelectButton[i]->y()+75,85,85);
     }
 
