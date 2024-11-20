@@ -103,11 +103,11 @@ void PageGarph::update()
 
     pen1.setWidth(2);
     pen1.setStyle(Qt::SolidLine);
-    pen1.setBrush(QColor("#737476"));
+    pen1.setBrush(QColor("#c7c7c7"));
 
     pen2.setWidth(3);
     pen2.setStyle(Qt::SolidLine);
-    pen2.setBrush(QColor("#c7c7c7"));
+    pen2.setBrush(QColor("#737476"));
 
     pen3.setWidth(3);
     pen3.setStyle(Qt::SolidLine);
