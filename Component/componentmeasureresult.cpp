@@ -6,6 +6,11 @@ ComponentMeasureResult::ComponentMeasureResult(QWidget *parent, QRect rect) : Cu
     init();
 }
 
+ComponentMeasureResult::ComponentMeasureResult(QWidget *parent) :CustomComponent(parent)
+{
+    init();
+}
+
 void ComponentMeasureResult::init()
 {
     labelTextResult = new QLabel(this);

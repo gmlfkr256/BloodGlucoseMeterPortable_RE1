@@ -8,14 +8,27 @@ PageCaliResult::PageCaliResult(QWidget *parent) : Page(parent)
 
 void PageCaliResult::init()
 {
+    vBoxLayoutCenter = new QVBoxLayout(this);
+
+    labelLayout = new QLabel(this);
+    labelLayout->setGeometry(0,120,640,230);
+    labelLayout->setLayout(vBoxLayoutCenter);
+
     labelTextAdc = new QLabel(this);
     labelTextAdc->setAlignment(Qt::AlignCenter);
+    vBoxLayoutCenter->addWidget(labelTextAdc);
+
     labelTextTemp = new QLabel(this);
     labelTextTemp->setAlignment(Qt::AlignCenter);
+    vBoxLayoutCenter->addWidget(labelTextTemp);
+
     labelTextHeart = new QLabel(this);
     labelTextHeart->setAlignment(Qt::AlignCenter);
+    vBoxLayoutCenter->addWidget(labelTextHeart);
 
-    comMeasureResult = new ComponentMeasureResult(this,QRect(0,280,640,100));
+    //comMeasureResult = new ComponentMeasureResult(this,QRect(0,280,640,100));
+    comMeasureResult = new ComponentMeasureResult(this);
+    vBoxLayoutCenter->addWidget(comMeasureResult);
 
     customButtonOK = new CustomButtonOK(this);
     customButtonOK->setLongWidth(true);

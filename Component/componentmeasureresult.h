@@ -3,11 +3,12 @@
 
 #include "customcomponent.h"
 
-class ComponentMeasureResult : CustomComponent
+class ComponentMeasureResult : public CustomComponent
 {
     Q_OBJECT
 public:
-    ComponentMeasureResult(QWidget *parent, QRect rect);
+    explicit ComponentMeasureResult(QWidget *parent, QRect rect);
+    ComponentMeasureResult(QWidget *parent);
 
     QLabel *labelTextResult;
 

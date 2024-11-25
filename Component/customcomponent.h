@@ -8,7 +8,7 @@ class CustomComponent : public QWidget
 {
     Q_OBJECT
 public:
-    CustomComponent(QWidget *parent);
+    explicit CustomComponent(QWidget *parent);
     Singleton &instance = Singleton::getInstance();
     TextResource &textResource = TextResource::getInstance();
 
