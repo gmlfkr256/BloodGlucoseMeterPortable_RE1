@@ -7,13 +7,10 @@ class ComponentMeasureResult : public CustomComponent
 {
     Q_OBJECT
 public:
-    explicit ComponentMeasureResult(QWidget *parent, QRect rect);
     ComponentMeasureResult(QWidget *parent);
+    explicit ComponentMeasureResult();
 
-    QLabel *labelTextResult;
-
-    void setTextResult(unsigned char errCode);
-    void setCustomGeomtry(QRect rect);
+    void setTextResult(QLabel *label,unsigned char errCode);
 
     void update() override;
     void pageShow() override;

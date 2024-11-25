@@ -1,35 +1,27 @@
 #include "componentmeasureresult.h"
 
-ComponentMeasureResult::ComponentMeasureResult(QWidget *parent, QRect rect) : CustomComponent(parent)
+ComponentMeasureResult::ComponentMeasureResult() : CustomComponent(nullptr)
 {
-    this->setGeometry(rect);
+
+}
+
+ComponentMeasureResult::ComponentMeasureResult(QWidget *parent) : CustomComponent(parent)
+{
     init();
 }
 
-ComponentMeasureResult::ComponentMeasureResult(QWidget *parent) :CustomComponent(parent)
-{
-    this->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
-    this->setStyleSheet("background-color: skyblue;");
-    init();
-}
 
 void ComponentMeasureResult::init()
 {
-    labelTextResult = new QLabel(this);
-    //labelTextResult->setGeometry(0,0,this->width(),this->height());
-    labelTextResult->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
-    labelTextResult->setAlignment(Qt::AlignCenter);
     update();
-    setTextResult(GAPI_PROC_ECODE_MAX);
 }
 
 void ComponentMeasureResult::update()
 {
-    labelTextResult->setFont(textResource.getFont(CUSTOM_COMPONENT,"labelTextResult"));
-    labelTextResult->setStyleSheet("color: #000000;");
+
 }
 
-void ComponentMeasureResult::setTextResult(unsigned char errCode)
+void ComponentMeasureResult::setTextResult(QLabel *label,unsigned char errCode)
 {
     int nGetTextNum;
     switch (static_cast<gapiProcErrCode_e>(errCode))
@@ -63,12 +55,9 @@ void ComponentMeasureResult::setTextResult(unsigned char errCode)
         break;
     }
 
-    labelTextResult->setText(textResource.getText(CUSTOM_COMPONENT,"labelTextResult").at(nGetTextNum));
-}
-
-void ComponentMeasureResult::setCustomGeomtry(QRect rect)
-{
-    this->setGeometry(rect);
+    label->setFont(textResource.getFont(CUSTOM_COMPONENT,"labelTextResult"));
+    label->setStyleSheet("color: #000000;");
+    label->setText(textResource.getText(CUSTOM_COMPONENT,"labelTextResult").at(nGetTextNum));
 }
 
 void ComponentMeasureResult::pageShow()

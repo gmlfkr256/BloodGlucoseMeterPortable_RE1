@@ -27,13 +27,14 @@ void PageCaliResult::init()
     labelTextHeart->setAlignment(Qt::AlignCenter);
     vBoxLayoutCenter->addWidget(labelTextHeart);
 
-    //comMeasureResult = new ComponentMeasureResult(this,QRect(0,280,640,100));
-    comMeasureResult = new ComponentMeasureResult(this);
-    vBoxLayoutCenter->addWidget(comMeasureResult);
+    labelTextResult = new QLabel(this);
+    labelTextResult->setAlignment(Qt::AlignCenter);
+    vBoxLayoutCenter->addWidget(labelTextResult);
 
     labelTextAdc->setStyleSheet("background-color: red;");
     labelTextTemp->setStyleSheet("background-color: blue");
     labelTextHeart->setStyleSheet("background-color: green;");
+    labelTextResult->setStyleSheet("background-color: skyblue;");
 
     customButtonOK = new CustomButtonOK(this);
     customButtonOK->setLongWidth(true);
@@ -42,8 +43,6 @@ void PageCaliResult::init()
 
 void PageCaliResult::update()
 {
-    comMeasureResult->update();
-    comMeasureResult->setTextResult(instance.sysProcMonInfo.err_code);
 
     QString strAdc, strTemp, strHeart;
     strAdc = QString::number(instance.caliUserInfo.val[static_cast<int>(instance.getCaliSelectIndex())].adc[static_cast<int>(instance.getCaliSelectOrder())]);
@@ -57,6 +56,8 @@ void PageCaliResult::update()
     labelTextHeart->setFont(textResource.getFont(PAGE_CALI_RESULT,"labelTextHeart"));
     labelTextHeart->setText(textResource.getText(PAGE_CALI_RESULT,"labelTextHeart").at(0)+strHeart);
 
+    ComponentMeasureResult componentMeasureResult;
+    componentMeasureResult.setTextResult(labelTextResult,instance.sysProcMonInfo.err_code);
 }
 
 void PageCaliResult::mousePressEvent(QMouseEvent *ev)

@@ -16,8 +16,8 @@ public:
     QLabel *labelTextAdc;
     QLabel *labelTextTemp;
     QLabel *labelTextHeart;
+    QLabel *labelTextResult;
 
-    ComponentMeasureResult *comMeasureResult;
     CustomButtonOK *customButtonOK;
 
     void update() override;
