@@ -403,14 +403,14 @@ CaliSelOrder Singleton::getCaliSelectOrder()
     return caliSelectOrder;
 }
 
-void Singleton::setCaliIndexConfirm(bool bConfirm)
+void Singleton::setCaliIndexCheck(bool bConfirm)
 {
-    this->bCaliIndexConfirm = bConfirm;
+    this->bCaliIndexCheck = bConfirm;
 }
 
-bool Singleton::getCaliIndexConfirm()
+bool Singleton::getCaliIndexCheck()
 {
-    return bCaliIndexConfirm;
+    return bCaliIndexCheck;
 }
 
 //public

@@ -244,8 +244,8 @@ public:
     //PageCaliResultMulti
     void setCaliSelectOrder(CaliSelOrder caliSelectOrder);
     CaliSelOrder getCaliSelectOrder();
-    void setCaliIndexConfirm(bool bConfirm);
-    bool getCaliIndexConfirm();
+    void setCaliIndexCheck(bool bConfirm);
+    bool getCaliIndexCheck();
 
     //public
     bool touchCheck(const QRect &rect, QMouseEvent* ev);
@@ -295,7 +295,7 @@ private:
 
     //PageCaliResultMulti
     CaliSelOrder caliSelectOrder = CALI_ORDER_0;
-    bool bCaliIndexConfirm = false;
+    bool bCaliIndexCheck = false;
 };
 
 #endif // SINGLETON_H

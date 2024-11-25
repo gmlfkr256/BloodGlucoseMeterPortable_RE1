@@ -33,8 +33,17 @@ void PageCaliConfirm::mousePressEvent(QMouseEvent *ev)
 {
     if(instance.touchCheck(customButtonMeasure->geometry(),ev))
     {
-        instance.setGraphMode(GRAPH_CALI);
-        emit signalShowPageNum(PAGE_GRAPH);
+        if(instance.caliUserInfo.val[instance.getCaliSelectIndex()].valid == 1)
+        {
+            instance.caliIndexCount = 3;
+            instance.setCaliIndexCheck(true);
+            emit signalShowPageNum(PAGE_CALI_RESULT_MULTI);
+        }
+        else
+        {
+            instance.setGraphMode(GRAPH_CALI);
+            emit signalShowPageNum(PAGE_GRAPH);
+        }
     }
 
     if(instance.touchCheck(customButtonInput->geometry(),ev))

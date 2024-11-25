@@ -29,7 +29,6 @@ void PageCaliResultMulti::init()
     customButtonOk = new CustomButtonOK(this);
     customButtonCancel = new CustomButtonCancel(this);
     customButtonMeasure = new CustomButtonMeasure(this);
-    customButtonMeasure->setLeftButton(true);
     customButtonMeasureRe = new CustomButtonMeasureRe(this);
 
     update();
@@ -42,7 +41,7 @@ void PageCaliResultMulti::update()
     customButtonMeasure->hide();
     customButtonMeasureRe->hide();
 
-    if(instance.getCaliIndexConfirm())
+    if(instance.getCaliIndexCheck())
     {
         customButtonOk->show();
         customButtonMeasureRe->show();
@@ -89,7 +88,13 @@ void PageCaliResultMulti::mousePressEvent(QMouseEvent *ev)
 {
     if(instance.touchCheck(customButtonOk->geometry(),ev))
     {
-        emit signalShowPageNum(PAGE_CALI_SELECT);
+        if(instance.getCaliIndexCheck())
+        {
+            instance.setGraphMode(GRAPH_CALI);
+            emit signalShowPageNum(PAGE_GRAPH);
+        }
+        else
+            emit signalShowPageNum(PAGE_CALI_SELECT);
     }
 
     if(instance.touchCheck(customButtonCancel->geometry(),ev))
@@ -99,11 +104,13 @@ void PageCaliResultMulti::mousePressEvent(QMouseEvent *ev)
 
     if(instance.touchCheck(customButtonMeasure->geometry(),ev))
     {
+        instance.setGraphMode(GRAPH_CALI);
         emit signalShowPageNum(PAGE_GRAPH);
     }
 
     if(instance.touchCheck(customButtonMeasureRe->geometry(),ev))
     {
+        instance.setGraphMode(GRAPH_CALI);
         emit signalShowPageNum(PAGE_GRAPH);
     }
 }
