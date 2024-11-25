@@ -9,7 +9,7 @@ ComponentMeasureResult::ComponentMeasureResult(QWidget *parent, QRect rect) : Cu
 ComponentMeasureResult::ComponentMeasureResult(QWidget *parent) :CustomComponent(parent)
 {
     this->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
-    this->setStyleSheet("background-color: skyblu;");
+    this->setStyleSheet("background-color: skyblue;");
     init();
 }
 
