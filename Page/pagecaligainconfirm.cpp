@@ -41,7 +41,7 @@ void PageCaliGainConfirm::mousePressEvent(QMouseEvent *ev)
 {
     if(instance.touchCheck(customButtonOk->geometry(),ev))
     {
-        if(instance.getCaliGainCompleteCheck())
+        if(instance.getGainCompleteCheck())
         {
             emit signalShowPageNum(PAGE_CALI_SELECT);
         }
@@ -54,7 +54,7 @@ void PageCaliGainConfirm::mousePressEvent(QMouseEvent *ev)
 
     if(instance.touchCheck(customButtonCancel->geometry(),ev))
     {
-        if(instance.getCaliGainCompleteCheck())
+        if(instance.getGainCompleteCheck())
         {
             emit signalShowPageNum(PAGE_CALI_SELECT);
         }
