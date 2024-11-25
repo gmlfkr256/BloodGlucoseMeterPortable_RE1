@@ -145,6 +145,15 @@ void TextResource::init()
                                                      "LED 감도 조절이 끝났습니다\n다음 측정 단계로 넘어가세요"
                                                  });
 
+    //PAGE_CALI_RESULT
+    fontData[Lan][PAGE_CALI_RESULT].insert("labelTextAdc",QFont(instance.fontSuit,instance.pixelToPoint(34),QFont::Bold));
+    textData[Lan][PAGE_CALI_RESULT].insert("labelTextAdc",QStringList{"A:"});
+    fontData[Lan][PAGE_CALI_RESULT].insert("labelTextTemp",QFont(instance.fontSuit,instance.pixelToPoint(34)));
+    textData[Lan][PAGE_CALI_RESULT].insert("labelTextTemp",QStringList{"T:"});
+    fontData[Lan][PAGE_CALI_RESULT].insert("labelTextHeart",QFont(instance.fontSuit,instance.pixelToPoint(34)));
+    textData[Lan][PAGE_CALI_RESULT].insert("labelTextHeart",QStringList{"H:"});
+
+
     //Page_GRAPH
     fontData[Lan][PAGE_GRAPH].insert("labelProgressText",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
     textData[Lan][PAGE_GRAPH].insert("labelProgressText",QStringList{"Complete"});

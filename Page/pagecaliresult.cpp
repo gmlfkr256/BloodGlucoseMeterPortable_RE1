@@ -18,6 +18,7 @@ void PageCaliResult::init()
     labelTextAdc->setAlignment(Qt::AlignCenter);
     vBoxLayoutCenter->addWidget(labelTextAdc);
 
+
     labelTextTemp = new QLabel(this);
     labelTextTemp->setAlignment(Qt::AlignCenter);
     vBoxLayoutCenter->addWidget(labelTextTemp);
@@ -29,6 +30,10 @@ void PageCaliResult::init()
     //comMeasureResult = new ComponentMeasureResult(this,QRect(0,280,640,100));
     comMeasureResult = new ComponentMeasureResult(this);
     vBoxLayoutCenter->addWidget(comMeasureResult);
+
+    labelTextAdc->setStyleSheet("background-color: red;");
+    labelTextTemp->setStyleSheet("background-color: blue");
+    labelTextHeart->setStyleSheet("background-color: green;");
 
     customButtonOK = new CustomButtonOK(this);
     customButtonOK->setLongWidth(true);
