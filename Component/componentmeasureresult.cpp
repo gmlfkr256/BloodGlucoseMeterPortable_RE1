@@ -14,7 +14,8 @@ ComponentMeasureResult::ComponentMeasureResult(QWidget *parent) :CustomComponent
 void ComponentMeasureResult::init()
 {
     labelTextResult = new QLabel(this);
-    labelTextResult->setGeometry(0,0,this->width(),this->height());
+    //labelTextResult->setGeometry(0,0,this->width(),this->height());
+    labelTextResult->setGeometry(this->geometry());
     labelTextResult->setAlignment(Qt::AlignCenter);
     update();
     setTextResult(GAPI_PROC_ECODE_MAX);
