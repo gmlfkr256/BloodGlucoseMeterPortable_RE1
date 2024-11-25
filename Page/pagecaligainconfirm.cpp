@@ -25,7 +25,7 @@ void PageCaliGainConfirm::update()
 
     labelTextGainConfirm->setFont(textResource.getFont(PAGE_CALI_GAIN_CONFIRM,"labelTextGainConfirm"));
 
-    if(!instance.getCaliGainCompleteCheck())
+    if(!instance.getGainCompleteCheck())
     {
         labelTextGainConfirm->setText(textResource.getText(PAGE_CALI_GAIN_CONFIRM,"labelTextGainConfirm").at(0));
     }

@@ -226,6 +226,8 @@ public:
     //CaliCompleteCheck
     void setCaliGainCompleteCheck(bool caliGainCompleteCheck = false);
     bool getCaliGainCompleteCheck();
+    bool getGainCompleteCheck();
+    bool getCaliCompleteCheck();
 
     //PageSleep
     void setSleepTime(int nSleepTime);

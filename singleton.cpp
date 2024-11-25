@@ -305,6 +305,21 @@ TimeStatus Singleton::getTimeStatus()
 }
 
 //CaliGainCompleteCheck
+
+void Singleton::setCaliGainCompleteCheck(bool caliGainCompleteCheck)
+{
+    if(caliGainCompleteCheck == true)
+    {
+        caliUserInfo.led_sense = true;
+        caliUserInfo.completed = true;
+    }
+    else
+    {
+        caliUserInfo.led_sense = false;
+        caliUserInfo.completed = false;
+    }
+}
+
 bool Singleton::getCaliGainCompleteCheck()
 {
     if(caliUserInfo.led_sense !=0 && caliUserInfo.completed != 0)
@@ -312,6 +327,19 @@ bool Singleton::getCaliGainCompleteCheck()
 
     return false;
 }
+
+bool Singleton::getGainCompleteCheck()
+{
+    return caliUserInfo.led_sense;
+}
+
+bool Singleton::getCaliCompleteCheck()
+{
+    return caliUserInfo.completed;
+}
+
+
+
 
 //PageSleep
 void Singleton::setSleepTime(int nSleepTime)
