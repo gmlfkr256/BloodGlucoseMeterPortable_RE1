@@ -8,7 +8,7 @@ ComponentMeasureResult::ComponentMeasureResult(QWidget *parent, QRect rect) : Cu
 
 ComponentMeasureResult::ComponentMeasureResult(QWidget *parent) :CustomComponent(parent)
 {
-    this->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+    //this->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
     this->setStyleSheet("background-color: skyblue;");
     init();
 }
@@ -17,6 +17,7 @@ void ComponentMeasureResult::init()
 {
     labelTextResult = new QLabel(this);
     //labelTextResult->setGeometry(0,0,this->width(),this->height());
+    labelTextResult->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
     labelTextResult->setAlignment(Qt::AlignCenter);
     update();
     setTextResult(GAPI_PROC_ECODE_MAX);
