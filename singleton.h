@@ -258,6 +258,7 @@ public:
     PageNum getPageNumPrev();
 
     void updateCaliUserInfo();
+    bool getCaliIndexCompleteCheck(int nCaliSelectIndex);
 private:
     //Singleton() = default;
     explicit Singleton(QObject* parent = nullptr) : QObject(parent){init();};

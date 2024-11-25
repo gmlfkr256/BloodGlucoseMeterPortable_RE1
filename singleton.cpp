@@ -486,3 +486,8 @@ void Singleton::updateCaliUserInfo()
 {
     guiApi.glucoseCaliGetUserInfo(&caliUserInfo);
 }
+
+bool Singleton::getCaliIndexCompleteCheck(int nCaliSelectIndex)
+{
+    return caliUserInfo.val[nCaliSelectIndex].valid;
+}
