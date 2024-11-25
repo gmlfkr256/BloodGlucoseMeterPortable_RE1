@@ -44,6 +44,11 @@ void PageCaliResultMulti::update()
 
     if(instance.getCaliIndexConfirm())
     {
+        customButtonOk->show();
+        customButtonMeasureRe->show();
+    }
+    else
+    {
         if(instance.caliIndexCount > 2)
         {
             customButtonOk->show();
@@ -55,11 +60,7 @@ void PageCaliResultMulti::update()
 
         customButtonCancel->show();
     }
-    else
-    {
-        customButtonOk->show();
-        customButtonMeasureRe->show();
-    }
+
 
     QString strAdc,strTemp,strHeart;
     strAdc = instance.caliUserInfo.val[static_cast<int>(instance.getCaliSelectIndex())].adc[instance.getCaliSelectOrder()];
