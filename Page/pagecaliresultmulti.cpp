@@ -90,6 +90,7 @@ void PageCaliResultMulti::mousePressEvent(QMouseEvent *ev)
     {
         if(instance.getCaliIndexCheck())
         {
+            instance.setCaliIndexCheck(false);
             instance.setGraphMode(GRAPH_CALI);
             emit signalShowPageNum(PAGE_GRAPH);
         }
@@ -110,6 +111,7 @@ void PageCaliResultMulti::mousePressEvent(QMouseEvent *ev)
 
     if(instance.touchCheck(customButtonMeasureRe->geometry(),ev))
     {
+        instance.setCaliIndexCheck(false);
         instance.setGraphMode(GRAPH_CALI);
         emit signalShowPageNum(PAGE_GRAPH);
     }
