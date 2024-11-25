@@ -151,6 +151,7 @@ void MainWindow::initConnect()
     connect(pageCaliConfirm, &PageCaliConfirm::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageCaliValue, &PageCaliValue::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageCaliResult, &PageCaliResult::signalShowPageNum,this,&MainWindow::setPageByPageNum);
+    connect(pageCaliResultMulti, &PageCaliResultMulti::signalShowPageNum,this,&MainWindow::setPageByPageNum);
 }
 
 void MainWindow::currentPageChanged(int index)
