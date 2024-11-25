@@ -257,6 +257,7 @@ public:
     void setPageNumPrev(PageNum pageNumPrev);
     PageNum getPageNumPrev();
 
+    void updateCaliUserInfo();
 private:
     //Singleton() = default;
     explicit Singleton(QObject* parent = nullptr) : QObject(parent){init();};

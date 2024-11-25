@@ -156,6 +156,12 @@ void PageGarph::updatePainter()
         instance.sysProcAct.act = GAPI_ACT_STOP;
 #if DEVICE
         instance.guiApi.glucoseSysProcAct(&instance.sysProcAct);
+
+        if(instance.getGraphMode() == GRAPH_CALI)
+        {
+            instance.updateCaliUserInfo();
+        }
+
 #else
         if(instance.getGraphMode() == GRAPH_CALI)
         {
@@ -168,11 +174,12 @@ void PageGarph::updatePainter()
             {
                 if(instance.caliUserInfo.val[instance.getCaliSelectIndex()].adc[i]!=0)
                     nValCount++;
+                else
+                    instance.setCaliSelectOrder(static_cast<CaliSelOrder>(i));
             }
 
             if(nValCount==3)
                 instance.caliUserInfo.val[instance.getCaliSelectIndex()].valid = 1;
-
         }
 #endif
         pageHide();
@@ -300,6 +307,16 @@ void PageGarph::pageShow()
         break;
     case GRAPH_CALI:
         qDebug()<<"pageGraph GraphMode: GRAPH_CALI";
+
+        for(int i=0; i<3; i++)
+        {
+            if(instance.caliUserInfo.val[instance.getCaliSelectIndex()].adc[i] == 0)
+            {
+                instance.setCaliSelectOrder(static_cast<CaliSelOrder>(i));
+                break;
+            }
+        }
+
         instance.sysProcAct.proc = GAPI_PROC_ACT_CALIBRATION;
         instance.sysProcAct.idx = instance.getCaliSelectIndex();
         instance.sysProcAct.cali_order = instance.getCaliSelectOrder();

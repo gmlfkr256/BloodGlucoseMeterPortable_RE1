@@ -481,3 +481,8 @@ PageNum Singleton::getPageNumPrev()
 {
     return pageNumPrev;
 }
+
+void Singleton::updateCaliUserInfo()
+{
+    guiApi.glucoseCaliGetUserInfo(&caliUserInfo);
+}
