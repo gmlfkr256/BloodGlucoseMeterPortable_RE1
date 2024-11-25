@@ -12,12 +12,18 @@ void PageCaliResultMulti::init()
     {
         labelButton[i] = new QLabel(this);
         labelButton[i]->setGeometry(10+(i*210),130,200,225);
+
         labelTextAdc[i] = new QLabel(this);
         labelTextAdc[i]->setGeometry(labelButton[i]->geometry().x(),labelButton[i]->geometry().y()+11,labelButton[i]->width(),68);
+        labelTextAdc[i]->setAlignment(Qt::AlignCenter);
+
         labelTextTemp[i] = new QLabel(this);
         labelTextTemp[i]->setGeometry(labelButton[i]->geometry().x(),labelButton[i]->geometry().y()+11+68,labelButton[i]->width(),68);
+        labelTextTemp[i]->setAlignment(Qt::AlignCenter);
+
         labelTextHeart[i] = new QLabel(this);
         labelTextHeart[i]->setGeometry(labelButton[i]->geometry().x(),labelButton[i]->geometry().y()+11+68+68,labelButton[i]->width(),68);
+        labelTextHeart[i]->setAlignment(Qt::AlignCenter);
     }
 
     customButtonOk = new CustomButtonOK(this);
@@ -103,7 +109,7 @@ void PageCaliResultMulti::mousePressEvent(QMouseEvent *ev)
 
 void PageCaliResultMulti::pageShow()
 {
-
+    update();
 }
 
 void PageCaliResultMulti::pageHide()

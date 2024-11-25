@@ -193,6 +193,12 @@ void TextResource::init()
     fontData[Lan][PAGE_CALI_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
     textData[Lan][PAGE_CALI_CONFIRM].insert("labelText",QStringList{"혈당값 입력 또는 측정을\n하시겠습니까?"});
 
+    //PAGE_CALI_RESULT_MULTI
+    fontData[Lan][PAGE_CALI_RESULT].insert("labelTextAdc",QFont(instance.fontSuit,instance.pixelToPoint(34),QFont::Bold));
+    fontData[Lan][PAGE_CALI_RESULT].insert("labelTextTemp",QFont(instance.fontSuit,instance.pixelToPoint(34)));
+    fontData[Lan][PAGE_CALI_RESULT].insert("labelTextHeart",QFont(instance.fontSuit,instance.pixelToPoint(34)));
+
+
     //====================================================================================================================================
     //EN
     Lan = EN;
