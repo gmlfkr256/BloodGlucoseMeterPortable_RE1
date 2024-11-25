@@ -14,6 +14,11 @@ void PageCaliSelect::init()
         labelSelectText[i] = new QLabel(this);
         labelSelectText[i]->setAlignment(Qt::AlignCenter);
         labelSelectNum[i] = new QLabel(this);
+
+        labelSelectTextAdc[i] = new QLabel(this);
+        labelSelectTextAdc[i]->setAlignment(Qt::AlignCenter);
+        labelSelectTextValue[i] = new QLabel(this);
+        labelSelectTextValue[i]->setAlignment(Qt::AlignCenter);
     }
 
     labelSelectButton[0]->setGeometry(160,90,150,180);
@@ -35,7 +40,6 @@ void PageCaliSelect::update()
 {
     for(int i=0; i<5; i++)
     {
-        //labelSelectButton[i]->setStyleSheet("background-color: #f3f3f3; border-radius: 15px;");
         instance.pixLoad(labelSelectButton[i],false,strDirPath,"/buttonBg.png");
 
         labelSelectText[i]->setFont(textResource.getFont(PAGE_CALI_SELECT,"labelSelectText"));
@@ -45,6 +49,11 @@ void PageCaliSelect::update()
             labelSelectText[i]->setText(textResource.getText(PAGE_CALI_SELECT,"labelSelectText").at(0));
         else
             labelSelectText[i]->setText(textResource.getText(PAGE_CALI_SELECT,"labelSelectText").at(1));
+
+        labelSelectTextAdc[i]->setFont(textResource.getFont(PAGE_CALI_SELECT,"labelSelectTextAdc"));
+        labelSelectTextAdc[i]->setStyleSheet("color: #000000;");
+        labelSelectTextValue[i]->setFont(textResource.getFont(PAGE_CALI_SELECT,"labelSelectTextValue"));
+        labelSelectTextValue[i]->setStyleSheet("color: #000000;");
     }
 
     instance.pixLoad(labelSelectNum[0],false,strDirPath,"/num01.png");
@@ -52,6 +61,41 @@ void PageCaliSelect::update()
     instance.pixLoad(labelSelectNum[2],false,strDirPath,"/num01.png");
     instance.pixLoad(labelSelectNum[3],false,strDirPath,"/num02.png");
     instance.pixLoad(labelSelectNum[4],false,strDirPath,"/num03.png");
+
+    for(int i=0; i<5; i++)
+    {
+        labelSelectText[i]->hide();
+        labelSelectNum[i]->hide();
+        labelSelectTextAdc[i]->hide();
+        labelSelectTextValue[i]->hide();
+    }
+
+    for(int i=0; i<5; i++)
+    {
+        if(instance.caliUserInfo.val[i].valid)
+        {
+            int nAdcSum = 0;
+
+            for(int j=0; j<3; j++)
+            {
+                nAdcSum += instance.caliUserInfo.val[i].adc[j];
+            }
+
+            int nAdcAvg = static_cast<int>(nAdcSum/3);
+            int nValue = instance.caliUserInfo.glucose_val[i];
+
+            labelSelectTextAdc[i]->setText(QString::number(nAdcAvg));
+            labelSelectTextValue[i]->setText(QString::number(nValue));
+
+            labelSelectTextAdc[i]->show();
+            labelSelectTextValue[i]->show();
+        }
+        else
+        {
+            labelSelectText[i]->show();
+            labelSelectNum[i]->show();
+        }
+    }
 }
 
 void PageCaliSelect::mousePressEvent(QMouseEvent *ev)

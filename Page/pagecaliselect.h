@@ -15,6 +15,9 @@ public:
     QLabel *labelSelectText[5];
     QLabel *labelSelectNum[5];
 
+    QLabel *labelSelectTextAdc[5];
+    QLabel *labelSelectTextValue[5];
+
     void update() override;
     void pageShow() override;
     void pageHide() override;

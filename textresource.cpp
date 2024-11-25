@@ -168,6 +168,9 @@ void TextResource::init()
                                                "식후"
                                            });
 
+    fontData[Lan][PAGE_CALI_SELECT].insert("labelSelectTextAdc",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
+    fontData[Lan][PAGE_CALI_SELECT].insert("labelSelectTextValue",QFont(instance.fontSuit,instance.pixelToPoint(36)));
+
     //PAGE_CALI_SELECT_INFO
     fontData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInfoText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
     textData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInfoText",QStringList{
@@ -320,6 +323,10 @@ void TextResource::init()
                                                "Empty\nstomach",
                                                "After meal"
                                            });
+
+    fontData[Lan][PAGE_CALI_SELECT].insert("labelSelectTextAdc",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
+    fontData[Lan][PAGE_CALI_SELECT].insert("labelSelectTextValue",QFont(instance.fontSuit,instance.pixelToPoint(36)));
+
 
     //PAGE_CALI_SELECT_INFO
     fontData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInofText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
