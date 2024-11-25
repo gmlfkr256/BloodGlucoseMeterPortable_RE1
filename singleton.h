@@ -236,8 +236,8 @@ public:
     GraphMode getGraphMode();
 
     //PageCaliSelect
-    void setCaliSelectNum(CaliSelIndex caliSelectIndex);
-    CaliSelIndex getCaliSelectNum();
+    void setCaliSelectIndex(CaliSelIndex caliSelectIndex);
+    CaliSelIndex getCaliSelectIndex();
 
     //PageCaliResultMulti
     void setCaliSelectOrder(CaliSelOrder caliSelectOrder);

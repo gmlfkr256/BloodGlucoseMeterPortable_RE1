@@ -11,11 +11,12 @@ public:
 
     QLabel *labelTextResult;
 
+    void setTextResult(unsigned char errCode);
+    void setCustomGeomtry(QRect rect);
+
     void update() override;
     void pageShow() override;
     void pageHide() override;
-
-    void setTextResult(unsigned char errCode);
 private:
     void init();
 };

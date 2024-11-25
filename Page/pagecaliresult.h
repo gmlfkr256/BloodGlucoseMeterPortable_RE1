@@ -11,7 +11,7 @@ public:
     PageCaliResult(QWidget *parent);
     void mousePressEvent(QMouseEvent *ev) override;
 
-    QLabel *labelTextValue;
+    QLabel *labelTextAdc;
     QLabel *labelTextTemp;
     QLabel *labelTextHeart;
 

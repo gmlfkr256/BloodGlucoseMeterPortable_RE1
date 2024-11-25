@@ -26,7 +26,7 @@ void PageCaliSelectInfo::update()
     labelSelectInfoText->setFont(textResource.getFont(PAGE_CALI_SELECT_INFO,"labelSelectInfoText"));
 
     int nSelectTextNum = 0;
-    switch(instance.getCaliSelectNum())
+    switch(instance.getCaliSelectIndex())
     {
     case CALI_0:
     case CALI_1:

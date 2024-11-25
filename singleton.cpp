@@ -354,12 +354,12 @@ GraphMode Singleton::getGraphMode()
 }
 
 //PageCaliSelect
-void Singleton::setCaliSelectNum(CaliSelIndex caliSelectNum)
+void Singleton::setCaliSelectIndex(CaliSelIndex caliSelectNum)
 {
     this->caliSelectIndex = caliSelectNum;
 }
 
-CaliSelIndex Singleton::getCaliSelectNum()
+CaliSelIndex Singleton::getCaliSelectIndex()
 {
     return caliSelectIndex;
 }

@@ -58,6 +58,11 @@ void ComponentMeasureResult::setTextResult(unsigned char errCode)
     labelTextResult->setText(textResource.getText(CUSTOM_COMPONENT,"labelTextResult").at(nGetTextNum));
 }
 
+void ComponentMeasureResult::setCustomGeomtry(QRect rect)
+{
+    this->setGeometry(rect);
+}
+
 void ComponentMeasureResult::pageShow()
 {
 

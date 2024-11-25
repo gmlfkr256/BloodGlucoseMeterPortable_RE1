@@ -55,9 +55,20 @@ void PageCaliResultMulti::update()
         customButtonMeasureRe->show();
     }
 
+    QString strAdc,strTemp,strHeart;
+    strAdc = instance.caliUserInfo.val[static_cast<int>(instance.getCaliSelectIndex())].adc[instance.getCaliSelectOrder()];
+
     for(int i=0; i<3; i++)
     {
         instance.pixLoad(labelButton[i],false,strDirPath,"/buttonBg.png");
+        if(instance.caliUserInfo.val[static_cast<int>(instance.getCaliSelectIndex())].adc[i] != 0)
+        {
+
+        }
+
+        labelTextAdc[i]->setFont(textResource.getFont(PAGE_CALI_RESULT_MULTI,"labelTextAdc"));
+        labelTextTemp[i]->setFont(textResource.getFont(PAGE_CALI_RESULT_MULTI,"labelTextTemp"));
+        labelTextHeart[i]->setFont(textResource.getFont(PAGE_CALI_RESULT_MULTI,"labelTextHeart"));
     }
 }
 
