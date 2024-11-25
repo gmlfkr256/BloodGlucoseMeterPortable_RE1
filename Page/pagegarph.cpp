@@ -138,6 +138,8 @@ void PageGarph::updatePainter()
         nProgressValue = 100;
         instance.sysProcMonInfo.completed = 1;
     }
+
+    instance.sysProcMonInfo.adc_raw = QRandomGenerator::global()->bounded(2501);
 #endif
 
     if(nProgressValue <= 100)
@@ -151,10 +153,27 @@ void PageGarph::updatePainter()
     if(instance.sysProcMonInfo.completed == 1)
     {
         bIsProcessSuccess = true;
-
-#if DEVICE
         instance.sysProcAct.act = GAPI_ACT_STOP;
+#if DEVICE
         instance.guiApi.glucoseSysProcAct(&instance.sysProcAct);
+#else
+        if(instance.getGraphMode() == GRAPH_CALI)
+        {
+            instance.caliUserInfo.val[instance.getCaliSelectIndex()].adc[instance.getCaliSelectOrder()] = instance.sysProcMonInfo.adc_raw;
+            instance.caliUserInfo.val[instance.getCaliSelectIndex()].temp[instance.getCaliSelectOrder()] = QRandomGenerator::global()->bounded(25,41);
+            instance.caliUserInfo.val[instance.getCaliSelectIndex()].hr[instance.getCaliSelectOrder()] = QRandomGenerator::global()->bounded(60,201);
+
+            int nValCount = 0;
+            for(int i=0; i<3; i++)
+            {
+                if(instance.caliUserInfo.val[instance.getCaliSelectIndex()].adc[i]!=0)
+                    nValCount++;
+            }
+
+            if(nValCount==3)
+                instance.caliUserInfo.val[instance.getCaliSelectIndex()].valid = 1;
+
+        }
 #endif
         pageHide();
     }
@@ -172,10 +191,6 @@ void PageGarph::updatePainter()
         nGraphPointY[i] = nGraphPointY[i+1];
     }
 
-
-#if DEVICE == false
-    instance.sysProcMonInfo.adc_raw = QRandomGenerator::global()->bounded(2501);
-#endif
 
     int nValue = instance.sysProcMonInfo.adc_raw;
 
@@ -272,6 +287,34 @@ void PageGarph::mousePressEvent(QMouseEvent *ev)
 
 void PageGarph::pageShow()
 {
+    instance.sysProcAct = {};
+
+    instance.sysProcAct.act = GAPI_ACT_START;
+    instance.sysProcAct.user = instance.getUserNumber();
+
+    switch(instance.getGraphMode())
+    {
+    case GRAPH_GAIN:
+        qDebug()<<"pageGraph GraphMode: GRAPH_GAIN";
+        instance.sysProcAct.proc = GAPI_PROC_ACT_GAIN;
+        break;
+    case GRAPH_CALI:
+        qDebug()<<"pageGraph GraphMode: GRAPH_CALI";
+        instance.sysProcAct.proc = GAPI_PROC_ACT_CALIBRATION;
+        instance.sysProcAct.idx = instance.getCaliSelectIndex();
+        instance.sysProcAct.cali_order = instance.getCaliSelectOrder();
+        break;
+    case GRAPH_MEASURE:
+        qDebug()<<"pageGraph GraphMode: GRAPH_MEASURE";
+        instance.sysProcAct.proc = GAPI_PROC_ACT_MEASURE;
+        instance.sysProcAct.idx = instance.getTimeStatus();
+        break;
+    case GRAPH_MAX:
+        qDebug()<<"pageGraph GraphMode: GRAPH_MAX";
+        instance.sysProcAct.proc = GAPI_PROC_ACT_MAX;
+        break;
+    }
+
 #if DEVICE
     instance.guiApi.glucoseSpeakerOut(GAPI_SPK_MEASURE_START);
     instance.guiApi.glucoseSysProcAct(&instance.sysProcAct);
@@ -302,6 +345,7 @@ void PageGarph::pageShow()
         qDebug()<<"GraphMode: max";
         break;
     }
+
 
     timerPainter->start(100);
 }
