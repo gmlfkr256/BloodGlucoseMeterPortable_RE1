@@ -61,9 +61,15 @@ void PageCaliResultMulti::update()
     for(int i=0; i<3; i++)
     {
         instance.pixLoad(labelButton[i],false,strDirPath,"/buttonBg.png");
+        labelTextAdc[i]->setText("");
+        labelTextTemp[i]->setText("");
+        labelTextHeart[i]->setText("");
+
         if(instance.caliUserInfo.val[static_cast<int>(instance.getCaliSelectIndex())].adc[i] != 0)
         {
-
+            labelTextAdc[i]->setText(QString::number(instance.caliUserInfo.val[instance.getCaliSelectIndex()].adc[i]));
+            labelTextTemp[i]->setText(QString::number(instance.caliUserInfo.val[instance.getCaliSelectIndex()].temp[i]));
+            labelTextHeart[i]->setText(QString::number(instance.caliUserInfo.val[instance.getCaliSelectIndex()].hr[i]));
         }
 
         labelTextAdc[i]->setFont(textResource.getFont(PAGE_CALI_RESULT_MULTI,"labelTextAdc"));
