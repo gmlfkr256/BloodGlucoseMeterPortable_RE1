@@ -88,6 +88,7 @@ void PageCaliResultMulti::update()
         if(instance.caliUserInfo.val[instance.getCaliSelectIndex()].adc[i]==0)
         {
             instance.setCaliSelectOrder(static_cast<CaliSelOrder>(i));
+            break;
         }
     }
 }
