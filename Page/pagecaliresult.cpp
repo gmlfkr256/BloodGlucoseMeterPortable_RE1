@@ -29,7 +29,6 @@ void PageCaliResult::init()
 
     //comMeasureResult = new ComponentMeasureResult(this,QRect(0,280,640,100));
     comMeasureResult = new ComponentMeasureResult(this);
-    comMeasureResult->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
     vBoxLayoutCenter->addWidget(comMeasureResult);
 
     labelTextAdc->setStyleSheet("background-color: red;");
