@@ -65,7 +65,7 @@ void PageGarph::init()
     customButtonCancel->setLongWidth(true);
 
     labelLoading = new QLabel(this);
-    labelLoading->setGeometry(0,160,640,220);
+    labelLoading->setGeometry(0,160,640,230);
     labelLoading->setAlignment(Qt::AlignCenter);
     labelLoading->hide();
 
