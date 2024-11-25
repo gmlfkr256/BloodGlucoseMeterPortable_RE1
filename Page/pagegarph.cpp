@@ -174,8 +174,6 @@ void PageGarph::updatePainter()
             {
                 if(instance.caliUserInfo.val[instance.getCaliSelectIndex()].adc[i]!=0)
                     nValCount++;
-                else
-                    instance.setCaliSelectOrder(static_cast<CaliSelOrder>(i));
             }
 
             if(nValCount==3)

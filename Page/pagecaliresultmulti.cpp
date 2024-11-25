@@ -82,6 +82,14 @@ void PageCaliResultMulti::update()
         labelTextTemp[i]->setFont(textResource.getFont(PAGE_CALI_RESULT_MULTI,"labelTextTemp"));
         labelTextHeart[i]->setFont(textResource.getFont(PAGE_CALI_RESULT_MULTI,"labelTextHeart"));
     }
+
+    for(int i=0; i<3; i++)
+    {
+        if(instance.caliUserInfo.val[instance.getCaliSelectIndex()].adc[i]==0)
+        {
+            instance.setCaliSelectOrder(static_cast<CaliSelOrder>(i));
+        }
+    }
 }
 
 void PageCaliResultMulti::mousePressEvent(QMouseEvent *ev)
