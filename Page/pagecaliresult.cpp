@@ -31,10 +31,9 @@ void PageCaliResult::init()
     labelTextResult->setAlignment(Qt::AlignCenter);
     vBoxLayoutCenter->addWidget(labelTextResult);
 
-    labelTextAdc->setStyleSheet("background-color: red;");
-    labelTextTemp->setStyleSheet("background-color: blue");
-    labelTextHeart->setStyleSheet("background-color: green;");
-    labelTextResult->setStyleSheet("background-color: skyblue;");
+    //labelTextAdc->setStyleSheet("background-color: red;");
+    //labelTextTemp->setStyleSheet("background-color: blue");
+    //labelTextHeart->setStyleSheet("background-color: green;");
 
     customButtonOK = new CustomButtonOK(this);
     customButtonOK->setLongWidth(true);
@@ -45,9 +44,9 @@ void PageCaliResult::update()
 {
 
     QString strAdc, strTemp, strHeart;
-    strAdc = QString::number(instance.caliUserInfo.val[static_cast<int>(instance.getCaliSelectIndex())].adc[static_cast<int>(instance.getCaliSelectOrder())]);
-    strTemp = QString::number(instance.caliUserInfo.val[static_cast<int>(instance.getCaliSelectIndex())].temp[static_cast<int>(instance.getCaliSelectOrder())]);
-    strHeart = QString::number(instance.caliUserInfo.val[static_cast<int>(instance.getCaliSelectIndex())].hr[static_cast<int>(instance.getCaliSelectOrder())]);
+    strAdc = "0";//QString::number(instance.caliUserInfo.val[static_cast<int>(instance.getCaliSelectIndex())].adc[static_cast<int>(instance.getCaliSelectOrder())]);
+    strTemp = "0";//QString::number(instance.caliUserInfo.val[static_cast<int>(instance.getCaliSelectIndex())].temp[static_cast<int>(instance.getCaliSelectOrder())]);
+    strHeart = "0";//QString::number(instance.caliUserInfo.val[static_cast<int>(instance.getCaliSelectIndex())].hr[static_cast<int>(instance.getCaliSelectOrder())]);
 
     labelTextAdc->setFont(textResource.getFont(PAGE_CALI_RESULT,"labelTextAdc"));
     labelTextAdc->setText(textResource.getText(PAGE_CALI_RESULT,"labelTextAdc").at(0)+strAdc);
