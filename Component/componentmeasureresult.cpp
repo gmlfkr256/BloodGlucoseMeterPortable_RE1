@@ -8,6 +8,7 @@ ComponentMeasureResult::ComponentMeasureResult(QWidget *parent, QRect rect) : Cu
 
 ComponentMeasureResult::ComponentMeasureResult(QWidget *parent) :CustomComponent(parent)
 {
+    this->setStyleSheet("background-color: sky;");
     init();
 }
 
