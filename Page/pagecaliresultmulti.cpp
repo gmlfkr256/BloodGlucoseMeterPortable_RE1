@@ -80,7 +80,11 @@ void PageCaliResultMulti::update()
 
     for(int i=0; i<3; i++)
     {
-        instance.pixLoad(labelButton[i],false,strDirPath,"/buttonBg.png");
+        if(instance.caliUserInfo.val[instance.getCaliSelectIndex()].adc[i] != 0)
+            instance.pixLoad(labelButton[i],false,strDirPath,"/validBg.png");
+        else
+            instance.pixLoad(labelButton[i],false,strDirPath,"/buttonBg.png");
+
         labelTextAdc[i]->setText("");
         labelTextTemp[i]->setText("");
         labelTextHeart[i]->setText("");
@@ -95,7 +99,7 @@ void PageCaliResultMulti::update()
         labelTextAdc[i]->setFont(textResource.getFont(PAGE_CALI_RESULT_MULTI,"labelTextAdc"));
         labelTextTemp[i]->setFont(textResource.getFont(PAGE_CALI_RESULT_MULTI,"labelTextTemp"));
         labelTextHeart[i]->setFont(textResource.getFont(PAGE_CALI_RESULT_MULTI,"labelTextHeart"));
-    }    
+    }
 
     for(int i=0; i<3; i++)
     {

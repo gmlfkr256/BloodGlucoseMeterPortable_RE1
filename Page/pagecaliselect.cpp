@@ -31,6 +31,9 @@ void PageCaliSelect::init()
     {
         labelSelectText[i]->setGeometry(labelSelectButton[i]->geometry().x(),labelSelectButton[i]->y(),labelSelectButton[i]->width(),75);
         labelSelectNum[i]->setGeometry(labelSelectButton[i]->geometry().x()+33,labelSelectButton[i]->y()+75,85,85);
+
+        labelSelectTextAdc[i]->setGeometry(labelSelectButton[i]->geometry().x(),labelSelectButton[i]->y()+38,labelSelectButton[i]->width(),45);
+        labelSelectTextValue[i]->setGeometry(labelSelectButton[i]->geometry().x(),labelSelectButton[i]->y()+96,labelSelectButton[i]->width(),45);
     }
 
     update();
@@ -40,7 +43,10 @@ void PageCaliSelect::update()
 {
     for(int i=0; i<5; i++)
     {
-        instance.pixLoad(labelSelectButton[i],false,strDirPath,"/buttonBg.png");
+        if(instance.getCaliIndexCompleteCheck(i))
+            instance.pixLoad(labelSelectButton[i],false,strDirPath,"/validBg.png");
+        else
+            instance.pixLoad(labelSelectButton[i],false,strDirPath,"/buttonBg.png");
 
         labelSelectText[i]->setFont(textResource.getFont(PAGE_CALI_SELECT,"labelSelectText"));
         labelSelectText[i]->setStyleSheet("color: #cecece;");
@@ -56,11 +62,11 @@ void PageCaliSelect::update()
         labelSelectTextValue[i]->setStyleSheet("color: #000000;");
     }
 
-    instance.pixLoad(labelSelectNum[0],false,strDirPath,"/num01.png");
-    instance.pixLoad(labelSelectNum[1],false,strDirPath,"/num02.png");
-    instance.pixLoad(labelSelectNum[2],false,strDirPath,"/num01.png");
-    instance.pixLoad(labelSelectNum[3],false,strDirPath,"/num02.png");
-    instance.pixLoad(labelSelectNum[4],false,strDirPath,"/num03.png");
+    QStringList listPng = {"/num01.png","/num02.png","/num01.png","/num02.png","/num03.png"};
+    for(int i=0; i<listPng.size(); i++)
+    {
+        instance.pixLoad(labelSelectNum[i],false,strDirPath,listPng.at(i));
+    }
 
     for(int i=0; i<5; i++)
     {
