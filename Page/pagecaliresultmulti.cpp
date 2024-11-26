@@ -36,6 +36,19 @@ void PageCaliResultMulti::init()
 
 void PageCaliResultMulti::update()
 {
+#if DEVICE
+#else
+    int nValiedCheckCount = 0;
+    for(int i=0; i<3; i++)
+    {
+        if(instance.caliUserInfo.val[instance.getCaliSelectIndex()].adc[i] != 0)
+            nValiedCheckCount++;
+    }
+
+    if(nValiedCheckCount == 3)
+        instance.caliUserInfo.val[instance.getCaliSelectIndex()].valid = 1;
+#endif
+
     customButtonOk->hide();
     customButtonCancel->hide();
     customButtonMeasure->hide();
@@ -60,7 +73,6 @@ void PageCaliResultMulti::update()
         customButtonCancel->show();
     }
 
-
     QString strAdc,strTemp,strHeart;
     strAdc = instance.caliUserInfo.val[static_cast<int>(instance.getCaliSelectIndex())].adc[instance.getCaliSelectOrder()];
 
@@ -81,7 +93,7 @@ void PageCaliResultMulti::update()
         labelTextAdc[i]->setFont(textResource.getFont(PAGE_CALI_RESULT_MULTI,"labelTextAdc"));
         labelTextTemp[i]->setFont(textResource.getFont(PAGE_CALI_RESULT_MULTI,"labelTextTemp"));
         labelTextHeart[i]->setFont(textResource.getFont(PAGE_CALI_RESULT_MULTI,"labelTextHeart"));
-    }
+    }    
 
     for(int i=0; i<3; i++)
     {
