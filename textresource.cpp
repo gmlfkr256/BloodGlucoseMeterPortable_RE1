@@ -40,7 +40,7 @@ void TextResource::init()
     //CUSTOM_COMPONENT
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextValue",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
 
-    fontData[Lan][CUSTOM_COMPONENT].insert("labelTextResult",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
+    fontData[Lan][CUSTOM_COMPONENT].insert("labelTextResult",QFont(instance.fontSuit,instance.pixelToPoint(36)));
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextResult",QStringList{
                                                "측정을 성공하였습니다",     // 0
                                                "측정시간이 초과되었습니다", // 1
@@ -186,12 +186,9 @@ void TextResource::init()
     textData[Lan][PAGE_CALI_CONFIRM].insert("labelText",QStringList{"혈당값 입력 또는 측정을\n하시겠습니까?"});
 
     //PAGE_CALI_RESULT
-    fontData[Lan][PAGE_CALI_RESULT].insert("labelTextAdc",QFont(instance.fontSuit,instance.pixelToPoint(34),QFont::Bold));
-    textData[Lan][PAGE_CALI_RESULT].insert("labelTextAdc",QStringList{"A:"});
-    fontData[Lan][PAGE_CALI_RESULT].insert("labelTextTemp",QFont(instance.fontSuit,instance.pixelToPoint(34)));
-    textData[Lan][PAGE_CALI_RESULT].insert("labelTextTemp",QStringList{"T:"});
-    fontData[Lan][PAGE_CALI_RESULT].insert("labelTextHeart",QFont(instance.fontSuit,instance.pixelToPoint(34)));
-    textData[Lan][PAGE_CALI_RESULT].insert("labelTextHeart",QStringList{"H:"});
+    fontData[Lan][PAGE_CALI_RESULT].insert("labelTextAdc",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
+    fontData[Lan][PAGE_CALI_RESULT].insert("labelTextTemp",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
+    fontData[Lan][PAGE_CALI_RESULT].insert("labelTextHeart",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
 
     //PAGE_CALI_RESULT_MULTI
     fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextAdc",QFont(instance.fontSuit,instance.pixelToPoint(34),QFont::Bold));
@@ -357,12 +354,9 @@ void TextResource::init()
     textData[Lan][PAGE_CALI_CONFIRM].insert("labelText",QStringList{"Select input or measure"});
 
     //PAGE_CALI_RESULT
-    fontData[Lan][PAGE_CALI_RESULT].insert("labelTextAdc",QFont(instance.fontSuit,instance.pixelToPoint(34),QFont::Bold));
-    textData[Lan][PAGE_CALI_RESULT].insert("labelTextAdc",QStringList{"A:"});
-    fontData[Lan][PAGE_CALI_RESULT].insert("labelTextTemp",QFont(instance.fontSuit,instance.pixelToPoint(34)));
-    textData[Lan][PAGE_CALI_RESULT].insert("labelTextTemp",QStringList{"T:"});
-    fontData[Lan][PAGE_CALI_RESULT].insert("labelTextHeart",QFont(instance.fontSuit,instance.pixelToPoint(34)));
-    textData[Lan][PAGE_CALI_RESULT].insert("labelTextHeart",QStringList{"H:"});
+    fontData[Lan][PAGE_CALI_RESULT].insert("labelTextAdc",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
+    fontData[Lan][PAGE_CALI_RESULT].insert("labelTextTemp",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
+    fontData[Lan][PAGE_CALI_RESULT].insert("labelTextHeart",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
 
     //PAGE_CALI_RESULT_MULTI
     fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextAdc",QFont(instance.fontSuit,instance.pixelToPoint(34),QFont::Bold));

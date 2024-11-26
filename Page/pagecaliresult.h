@@ -12,8 +12,14 @@ public:
     void mousePressEvent(QMouseEvent *ev) override;
 
     QLabel *labelTextAdc;
+    QLabel *labelTextAdcColon;
+    QLabel *labelTextAdcValue;
     QLabel *labelTextTemp;
+    QLabel *labelTextTempColon;
+    QLabel *labelTextTempValue;
     QLabel *labelTextHeart;
+    QLabel *labelTextHeartColon;
+    QLabel *labelTextHeartValue;
     QLabel *labelTextResult;
 
     CustomButtonOK *customButtonOK;
