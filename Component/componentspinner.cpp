@@ -15,17 +15,17 @@ void ComponentSpinner::init()
 
     labelButtonTop = new QLabel(this);
     vBoxLayoutSpinner->addWidget(labelButtonTop);
-    labelButtonTop->setFixedHeight(static_cast<int>(this->height()/3));
+    labelButtonTop->setFixedHeight(55);
 
     labelTextValue = new QLabel(this);
     labelTextValue->setAlignment(Qt::AlignCenter);
     vBoxLayoutSpinner->addWidget(labelTextValue);
-    labelTextValue->setFixedHeight(static_cast<int>(this->height()/3));
+    //labelTextValue->setFixedHeight(static_cast<int>(this->height()/3));
     labelTextValue->setText("0");
 
     labelButtonBottom = new QLabel(this);
     vBoxLayoutSpinner->addWidget(labelButtonBottom);
-    labelButtonBottom->setFixedHeight(static_cast<int>(this->height()/3));
+    labelButtonBottom->setFixedHeight(55);
 
     update();
 }
