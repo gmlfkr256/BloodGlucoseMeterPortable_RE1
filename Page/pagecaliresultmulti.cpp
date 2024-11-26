@@ -11,7 +11,7 @@ void PageCaliResultMulti::init()
     for(int i=0; i<3; i++)
     {
         labelButton[i] = new QLabel(this);
-        labelButton[i]->setGeometry(10+(i*210),130,200,225);
+        labelButton[i]->setGeometry(80+(i*165),141,150,180);
 
         labelTextAdc[i] = new QLabel(this);
         labelTextAdc[i]->setGeometry(labelButton[i]->geometry().x(),labelButton[i]->geometry().y()+11,labelButton[i]->width(),68);
