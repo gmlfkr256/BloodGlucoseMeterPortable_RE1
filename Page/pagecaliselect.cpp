@@ -84,6 +84,7 @@ void PageCaliSelect::update()
             int nAdcAvg = static_cast<int>(nAdcSum/3);
             int nValue = instance.caliUserInfo.glucose_val[i];
 
+            qDebug()<<"pageSelect - adc: "<<nAdcAvg<<", nValie:"<<nValue;
             labelSelectTextAdc[i]->setText(QString::number(nAdcAvg));
             labelSelectTextValue[i]->setText(QString::number(nValue));
 
