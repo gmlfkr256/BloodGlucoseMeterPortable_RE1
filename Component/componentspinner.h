@@ -12,6 +12,7 @@ public:
 
     QString strDirPath = "/ImageSpinner";
 
+    QLabel *labelSpinnerBg;
     QVBoxLayout *vBoxLayoutSpinner;
     QLabel *labelButtonTop;
     QLabel *labelTextValue;

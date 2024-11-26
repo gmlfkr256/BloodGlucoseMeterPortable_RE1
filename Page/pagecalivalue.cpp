@@ -11,8 +11,8 @@ void PageCaliValue::init()
     customButtonOK = new CustomButtonOK(this);
     customButtonCancel = new CustomButtonCancel(this);
     componentSpinner[0] = new ComponentSpinner(this,QRect(10,107,200,250));
-    componentSpinner[1] = new ComponentSpinner(this,QRect(220,90,200,250));
-    componentSpinner[2] = new ComponentSpinner(this,QRect(430,90,200,250));
+    componentSpinner[1] = new ComponentSpinner(this,QRect(220,107,200,250));
+    componentSpinner[2] = new ComponentSpinner(this,QRect(430,107,200,250));
 }
 
 void PageCaliValue::update()

@@ -8,6 +8,9 @@ ComponentSpinner::ComponentSpinner(QWidget *parent ,QRect rect) : CustomComponen
 
 void ComponentSpinner::init()
 {
+    labelSpinnerBg = new QLabel(this);
+    labelSpinnerBg->setGeometry(this->geometry());
+
     vBoxLayoutSpinner = new QVBoxLayout(this);
 
     labelButtonTop = new QLabel(this);
@@ -29,7 +32,9 @@ void ComponentSpinner::init()
 
 void ComponentSpinner::update()
 {
-    labelTextValue->setFont(QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
+    labelSpinnerBg->setStyleSheet("background-color: #f3f3f3; border-radius: 15px;");
+
+    labelTextValue->setFont(QFont(instance.fontSuit,instance.pixelToPoint(48),QFont::Bold));
 
     labelButtonTop->setFont(QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
     labelButtonTop->setAlignment(Qt::AlignCenter);
