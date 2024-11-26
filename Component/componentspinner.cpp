@@ -9,7 +9,7 @@ ComponentSpinner::ComponentSpinner(QWidget *parent ,QRect rect) : CustomComponen
 void ComponentSpinner::init()
 {
     labelSpinnerBg = new QLabel(this);
-    labelSpinnerBg->setGeometry(this->geometry());
+    labelSpinnerBg->setGeometry(0,0,this->width(),this->height());
 
     vBoxLayoutSpinner = new QVBoxLayout(this);
 
