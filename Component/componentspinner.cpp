@@ -38,14 +38,14 @@ void ComponentSpinner::update()
 
     labelButtonTop->setFont(QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
     labelButtonTop->setAlignment(Qt::AlignCenter);
-    //labelButtonTop->setText("▲");
-    labelButtonTop->setText("+");
-    labelButtonTop->setStyleSheet("color: #52d0ba;");
+    labelButtonTop->setText("▲");
+    //labelButtonTop->setText("+");
+    labelButtonTop->setStyleSheet("background-color: #ffffff; color: #52d0ba; border-radius: 10px;");
     labelButtonBottom->setFont(QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
     labelButtonBottom->setAlignment(Qt::AlignCenter);
-    //labelButtonBottom->setText("▼");
-    labelButtonBottom->setText("-");
-    labelButtonBottom->setStyleSheet("color: #52d0ba;");
+    labelButtonBottom->setText("▼");
+    //labelButtonBottom->setText("-");
+    labelButtonBottom->setStyleSheet("background-color: #ffffff; color: #52d0ba; border-radius: 10px;");
 
     updateValue();
 }
