@@ -166,8 +166,8 @@ void PageGarph::updatePainter()
         if(instance.getGraphMode() == GRAPH_CALI)
         {
             instance.caliUserInfo.val[instance.getCaliSelectIndex()].adc[instance.getCaliSelectOrder()] = instance.sysProcMonInfo.adc_raw;
-            instance.caliUserInfo.val[instance.getCaliSelectIndex()].temp[instance.getCaliSelectOrder()] = QRandomGenerator::global()->bounded(25,41);
-            instance.caliUserInfo.val[instance.getCaliSelectIndex()].hr[instance.getCaliSelectOrder()] = QRandomGenerator::global()->bounded(60,201);
+            instance.caliUserInfo.val[instance.getCaliSelectIndex()].temp[instance.getCaliSelectOrder()] = QRandomGenerator::global()->bounded(2500,4100);
+            instance.caliUserInfo.val[instance.getCaliSelectIndex()].hr[instance.getCaliSelectOrder()] = QRandomGenerator::global()->bounded(6000,20100);
 
             int nValCount = 0;
             for(int i=0; i<3; i++)
