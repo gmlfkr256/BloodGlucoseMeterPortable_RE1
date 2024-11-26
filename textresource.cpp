@@ -145,14 +145,6 @@ void TextResource::init()
                                                      "LED 감도 조절이 끝났습니다\n다음 측정 단계로 넘어가세요"
                                                  });
 
-    //PAGE_CALI_RESULT
-    fontData[Lan][PAGE_CALI_RESULT].insert("labelTextAdc",QFont(instance.fontSuit,instance.pixelToPoint(34),QFont::Bold));
-    textData[Lan][PAGE_CALI_RESULT].insert("labelTextAdc",QStringList{"A:"});
-    fontData[Lan][PAGE_CALI_RESULT].insert("labelTextTemp",QFont(instance.fontSuit,instance.pixelToPoint(34)));
-    textData[Lan][PAGE_CALI_RESULT].insert("labelTextTemp",QStringList{"T:"});
-    fontData[Lan][PAGE_CALI_RESULT].insert("labelTextHeart",QFont(instance.fontSuit,instance.pixelToPoint(34)));
-    textData[Lan][PAGE_CALI_RESULT].insert("labelTextHeart",QStringList{"H:"});
-
 
     //Page_GRAPH
     fontData[Lan][PAGE_GRAPH].insert("labelProgressText",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
@@ -193,10 +185,18 @@ void TextResource::init()
     fontData[Lan][PAGE_CALI_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
     textData[Lan][PAGE_CALI_CONFIRM].insert("labelText",QStringList{"혈당값 입력 또는 측정을\n하시겠습니까?"});
 
-    //PAGE_CALI_RESULT_MULTI
+    //PAGE_CALI_RESULT
     fontData[Lan][PAGE_CALI_RESULT].insert("labelTextAdc",QFont(instance.fontSuit,instance.pixelToPoint(34),QFont::Bold));
+    textData[Lan][PAGE_CALI_RESULT].insert("labelTextAdc",QStringList{"A:"});
     fontData[Lan][PAGE_CALI_RESULT].insert("labelTextTemp",QFont(instance.fontSuit,instance.pixelToPoint(34)));
+    textData[Lan][PAGE_CALI_RESULT].insert("labelTextTemp",QStringList{"T:"});
     fontData[Lan][PAGE_CALI_RESULT].insert("labelTextHeart",QFont(instance.fontSuit,instance.pixelToPoint(34)));
+    textData[Lan][PAGE_CALI_RESULT].insert("labelTextHeart",QStringList{"H:"});
+
+    //PAGE_CALI_RESULT_MULTI
+    fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextAdc",QFont(instance.fontSuit,instance.pixelToPoint(34),QFont::Bold));
+    fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextTemp",QFont(instance.fontSuit,instance.pixelToPoint(34)));
+    fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextHeart",QFont(instance.fontSuit,instance.pixelToPoint(34)));
 
 
     //====================================================================================================================================
@@ -365,9 +365,9 @@ void TextResource::init()
     textData[Lan][PAGE_CALI_RESULT].insert("labelTextHeart",QStringList{"H:"});
 
     //PAGE_CALI_RESULT_MULTI
-    fontData[Lan][PAGE_CALI_RESULT].insert("labelTextAdc",QFont(instance.fontSuit,instance.pixelToPoint(34),QFont::Bold));
-    fontData[Lan][PAGE_CALI_RESULT].insert("labelTextTemp",QFont(instance.fontSuit,instance.pixelToPoint(34)));
-    fontData[Lan][PAGE_CALI_RESULT].insert("labelTextHeart",QFont(instance.fontSuit,instance.pixelToPoint(34)));
+    fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextAdc",QFont(instance.fontSuit,instance.pixelToPoint(34),QFont::Bold));
+    fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextTemp",QFont(instance.fontSuit,instance.pixelToPoint(34)));
+    fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextHeart",QFont(instance.fontSuit,instance.pixelToPoint(34)));
 
     //=====================================================================================================================================
     //JP
