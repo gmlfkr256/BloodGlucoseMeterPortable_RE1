@@ -14,15 +14,15 @@ void PageCaliResultMulti::init()
         labelButton[i]->setGeometry(80+(i*165),141,150,180);
 
         labelTextAdc[i] = new QLabel(this);
-        labelTextAdc[i]->setGeometry(labelButton[i]->geometry().x(),labelButton[i]->geometry().y()+11,labelButton[i]->width(),68);
+        labelTextAdc[i]->setGeometry(labelButton[i]->geometry().x(),labelButton[i]->geometry().y()+10,labelButton[i]->width(),45);
         labelTextAdc[i]->setAlignment(Qt::AlignCenter);
 
         labelTextTemp[i] = new QLabel(this);
-        labelTextTemp[i]->setGeometry(labelButton[i]->geometry().x(),labelButton[i]->geometry().y()+11+68,labelButton[i]->width(),68);
+        labelTextTemp[i]->setGeometry(labelButton[i]->geometry().x(),labelButton[i]->geometry().y()+68,labelButton[i]->width(),45);
         labelTextTemp[i]->setAlignment(Qt::AlignCenter);
 
         labelTextHeart[i] = new QLabel(this);
-        labelTextHeart[i]->setGeometry(labelButton[i]->geometry().x(),labelButton[i]->geometry().y()+11+68+68,labelButton[i]->width(),68);
+        labelTextHeart[i]->setGeometry(labelButton[i]->geometry().x(),labelButton[i]->geometry().y()+126,labelButton[i]->width(),45);
         labelTextHeart[i]->setAlignment(Qt::AlignCenter);
     }
 
