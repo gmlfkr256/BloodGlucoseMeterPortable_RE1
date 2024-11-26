@@ -11,8 +11,6 @@ public:
     PageCaliResult(QWidget *parent);
     void mousePressEvent(QMouseEvent *ev) override;
 
-    QVBoxLayout *vBoxLayoutCenter;
-    QLabel *labelLayout;
     QLabel *labelTextAdc;
     QLabel *labelTextTemp;
     QLabel *labelTextHeart;

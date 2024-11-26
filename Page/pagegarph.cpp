@@ -139,7 +139,7 @@ void PageGarph::updatePainter()
         instance.sysProcMonInfo.completed = 1;
     }
 
-    instance.sysProcMonInfo.adc_raw = QRandomGenerator::global()->bounded(2501);
+    instance.sysProcMonInfo.adc_raw = QRandomGenerator::global()->bounded(1000,2501);
 #endif
 
     if(nProgressValue <= 100)

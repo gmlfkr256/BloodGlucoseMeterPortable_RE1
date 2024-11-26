@@ -8,32 +8,25 @@ PageCaliResult::PageCaliResult(QWidget *parent) : Page(parent)
 
 void PageCaliResult::init()
 {
-    vBoxLayoutCenter = new QVBoxLayout(this);
-
-    labelLayout = new QLabel(this);
-    labelLayout->setGeometry(0,120,640,230);
-    labelLayout->setLayout(vBoxLayoutCenter);
-
     labelTextAdc = new QLabel(this);
-    labelTextAdc->setAlignment(Qt::AlignCenter);
-    vBoxLayoutCenter->addWidget(labelTextAdc);
-
+    labelTextAdc->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+    labelTextAdc->setGeometry(250,143,200,45);
 
     labelTextTemp = new QLabel(this);
-    labelTextTemp->setAlignment(Qt::AlignCenter);
-    vBoxLayoutCenter->addWidget(labelTextTemp);
+    labelTextTemp->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+    labelTextAdc->setGeometry(250,143+45,200,45);
 
     labelTextHeart = new QLabel(this);
-    labelTextHeart->setAlignment(Qt::AlignCenter);
-    vBoxLayoutCenter->addWidget(labelTextHeart);
+    labelTextHeart->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+    labelTextHeart->setGeometry(250,143+90,200,45);
 
     labelTextResult = new QLabel(this);
     labelTextResult->setAlignment(Qt::AlignCenter);
-    vBoxLayoutCenter->addWidget(labelTextResult);
+    labelTextResult->setGeometry(0,315,640,45);
 
-    //labelTextAdc->setStyleSheet("background-color: red;");
-    //labelTextTemp->setStyleSheet("background-color: blue");
-    //labelTextHeart->setStyleSheet("background-color: green;");
+    labelTextAdc->setStyleSheet("background-color: red;");
+    labelTextTemp->setStyleSheet("background-color: blue");
+    labelTextHeart->setStyleSheet("background-color: green;");
 
     customButtonOK = new CustomButtonOK(this);
     customButtonOK->setLongWidth(true);
