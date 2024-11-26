@@ -33,7 +33,7 @@ void PageCaliConfirm::mousePressEvent(QMouseEvent *ev)
 {
     if(instance.touchCheck(customButtonMeasure->geometry(),ev))
     {
-        if(instance.getCaliIndexCheck())
+        if(instance.getCaliIndexCompleteCheck(instance.getCaliSelectIndex()))
         {
             emit signalShowPageNum(PAGE_CALI_RESULT_MULTI);
         }

@@ -109,7 +109,7 @@ void PageCaliResultMulti::update()
 
 void PageCaliResultMulti::mousePressEvent(QMouseEvent *ev)
 {
-    if(instance.touchCheck(customButtonOk->geometry(),ev))
+    if(customButtonOk->isVisible() && instance.touchCheck(customButtonOk->geometry(),ev))
     {
         qDebug()<<"multi ok";
         if(instance.getCaliIndexCompleteCheck(instance.getCaliSelectIndex()))
@@ -123,20 +123,20 @@ void PageCaliResultMulti::mousePressEvent(QMouseEvent *ev)
         }
     }
 
-    if(instance.touchCheck(customButtonCancel->geometry(),ev))
+    if(customButtonCancel->isVisible() && instance.touchCheck(customButtonCancel->geometry(),ev))
     {
         qDebug()<<"multi cancel";
         emit signalShowPageNum(PAGE_CALI_SELECT);
     }
 
-    if(instance.touchCheck(customButtonMeasure->geometry(),ev))
+    if(customButtonMeasure->isVisible() && instance.touchCheck(customButtonMeasure->geometry(),ev))
     {
         qDebug()<<"multi measure";
         instance.setGraphMode(GRAPH_CALI);
         emit signalShowPageNum(PAGE_GRAPH);
     }
 
-    if(instance.touchCheck(customButtonMeasureRe->geometry(),ev))
+    if(customButtonMeasureRe->isVisible() && instance.touchCheck(customButtonMeasureRe->geometry(),ev))
     {
         qDebug()<<"multi reMeasure";
         instance.setGraphMode(GRAPH_CALI);
