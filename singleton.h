@@ -224,10 +224,13 @@ public:
     TimeStatus getTimeStatus();
 
     //CaliCompleteCheck
+    void updateCaliUserInfo();
     void setCaliGainCompleteCheck(bool caliGainCompleteCheck = false);
     bool getCaliGainCompleteCheck();
     bool getGainCompleteCheck();
     bool getCaliCompleteCheck();
+    bool getCaliIndexCompleteCheck(int nCaliSelectIndex);
+    bool getCaliValueCompleteCheck();
 
     //PageSleep
     void setSleepTime(int nSleepTime);
@@ -257,8 +260,6 @@ public:
     void setPageNumPrev(PageNum pageNumPrev);
     PageNum getPageNumPrev();
 
-    void updateCaliUserInfo();
-    bool getCaliIndexCompleteCheck(int nCaliSelectIndex);
 private:
     //Singleton() = default;
     explicit Singleton(QObject* parent = nullptr) : QObject(parent){init();};

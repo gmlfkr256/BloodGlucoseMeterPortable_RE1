@@ -103,6 +103,14 @@ void PageCaliSelect::update()
             labelSelectNum[i]->show();
         }
     }
+
+    int nCaliIndexCount=0;
+
+    for(int i=0; i<5; i++)
+    {
+        if(instance.getCaliIndexCompleteCheck(i))
+            nCaliIndexCount++;
+    }
 }
 
 void PageCaliSelect::mousePressEvent(QMouseEvent *ev)

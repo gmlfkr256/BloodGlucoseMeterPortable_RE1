@@ -186,7 +186,16 @@ void PageSelect::mousePressEvent(QMouseEvent *ev)
 
     if(instance.touchCheck(customButtonHome->geometry(),ev))
     {
-        emit signalShowPageHome();
+        emit signalShowPageNum(PAGE_HOME);
+    }
+
+    if(instance.touchCheck(customButtonMeasureStart->geometry(),ev))
+    {
+        if(instance.getCaliGainCompleteCheck())
+        {
+            instance.setGraphMode(GRAPH_MEASURE);
+            emit signalShowPageNum(PAGE_GRAPH);
+        }
     }
 }
 

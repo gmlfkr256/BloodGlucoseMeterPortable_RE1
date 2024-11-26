@@ -306,6 +306,11 @@ TimeStatus Singleton::getTimeStatus()
 
 //CaliGainCompleteCheck
 
+void Singleton::updateCaliUserInfo()
+{
+    guiApi.glucoseCaliGetUserInfo(&caliUserInfo);
+}
+
 void Singleton::setCaliGainCompleteCheck(bool caliGainCompleteCheck)
 {
     if(caliGainCompleteCheck == true)
@@ -322,6 +327,9 @@ void Singleton::setCaliGainCompleteCheck(bool caliGainCompleteCheck)
 
 bool Singleton::getCaliGainCompleteCheck()
 {
+#if DEVICE
+    updateCaliUserInfo();
+#endif
     if(caliUserInfo.led_sense !=0 && caliUserInfo.completed != 0)
         return true;
 
@@ -330,15 +338,58 @@ bool Singleton::getCaliGainCompleteCheck()
 
 bool Singleton::getGainCompleteCheck()
 {
+#if DEVICE
+    updateCaliUserInfo();
+#endif
     return caliUserInfo.led_sense;
 }
 
 bool Singleton::getCaliCompleteCheck()
 {
+
+#if DEVICE
+    updateCaliUserInfo();
+#else
+    int nCaliIndexCount = 0;
+
+    for(int i=0; i<5; i++)
+    {
+        if(getCaliIndexCompleteCheck(i))
+            nCaliIndexCount++;
+    }
+
+    if(nCaliIndexCount == 5 && getCaliValueCompleteCheck())
+        caliUserInfo.completed = 1;
+#endif
+
     return caliUserInfo.completed;
 }
 
+bool Singleton::getCaliIndexCompleteCheck(int nCaliSelectIndex)
+{
+#if DEVICE
+    updateCaliUserInfo();
+#endif
+    return caliUserInfo.val[nCaliSelectIndex].valid;
+}
 
+bool Singleton::getCaliValueCompleteCheck()
+{
+#if DEVICE
+    updateCaliUserInfo();
+#endif
+    int nValueCount = 0;
+    for(int i=0; i<5; i++)
+    {
+        if(caliUserInfo.glucose_val[i] != 0)
+            nValueCount++;
+    }
+
+    if(nValueCount == 5)
+        return true;
+    else
+        return false;
+}
 
 
 //PageSleep
@@ -482,12 +533,5 @@ PageNum Singleton::getPageNumPrev()
     return pageNumPrev;
 }
 
-void Singleton::updateCaliUserInfo()
-{
-    guiApi.glucoseCaliGetUserInfo(&caliUserInfo);
-}
 
-bool Singleton::getCaliIndexCompleteCheck(int nCaliSelectIndex)
-{
-    return caliUserInfo.val[nCaliSelectIndex].valid;
-}
+

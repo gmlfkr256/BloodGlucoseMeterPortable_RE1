@@ -125,12 +125,14 @@ void MainWindow::init()
 void MainWindow::initConnect()
 {
     connect(stackedWidget,&QStackedWidget::currentChanged,this,&MainWindow::currentPageChanged);
+    /*
     connect(stackedWidget,&QStackedWidget::currentChanged,this,[this](int index){
         Page *currentPage = qobject_cast<Page *>(stackedWidget->widget(index));
         qDebug()<<"update() index: "<<index;
         if(currentPage)
             currentPage->update();
     });
+    */
 
     //com
     connect(comHome,&ComponentHome::singalShowPageHome,this,[this](){stackedWidget->setCurrentIndex(PAGE_HOME);});
@@ -140,7 +142,8 @@ void MainWindow::initConnect()
     connect(pagePassword,&PagePassword::signalPassword,this,[this](){stackedWidget->setCurrentIndex(PAGE_PASSWORD_CONFIRM);});
     connect(pagePasswordConfirm,&PagePasswordConfirm::signalShowPageHome,this,[this](){stackedWidget->setCurrentIndex(PAGE_HOME);});
     connect(pageHome,&PageHome::signalShowPageSelect,this,[this](){stackedWidget->setCurrentIndex(PAGE_SELECT); pageSelect->update();});
-    connect(pageSelect,&PageSelect::signalShowPageHome,this,[this](){stackedWidget->setCurrentIndex(PAGE_HOME);});
+
+    connect(pageSelect,&PageSelect::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageMenu, &PageMenu::signalShowPageNum, this,&MainWindow::setPageByPageNum);
     connect(pageCaliCheck, &PageCaliCheck::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageCaliGainConfirm, &PageCaliGainConfirm::signalShowPageNum,this,&MainWindow::setPageByPageNum);
@@ -169,13 +172,16 @@ void MainWindow::currentPageChanged(int index)
 void MainWindow::setPageByPageNum(PageNum pageNum)
 {
     qDebug() << "set pageName: "<<getPageName(pageNum);
-    if (stackedWidget && pageNum >= 0 && pageNum < stackedWidget->count()) {
+    if (stackedWidget && pageNum >= 0 && pageNum < stackedWidget->count())
+    {
         stackedWidget->setCurrentIndex(static_cast<int>(pageNum));
 
         Page *page = qobject_cast<Page*>(stackedWidget->currentWidget());
         if(page)
             page->pageShow();
-    } else {
+    }
+    else
+    {
         qDebug() << "[fail] Invalid pageNum:" << static_cast<int>(pageNum)<<" page open fail";
     }
 }

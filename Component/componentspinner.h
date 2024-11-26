@@ -10,6 +10,8 @@ public:
     ComponentSpinner(QWidget *parent, QRect rect);
     void mousePressEvent(QMouseEvent *ev) override;
 
+    QString strDirPath = "/ImageSpinner";
+
     QVBoxLayout *vBoxLayoutSpinner;
     QLabel *labelButtonTop;
     QLabel *labelTextValue;
