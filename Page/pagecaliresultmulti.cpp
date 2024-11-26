@@ -47,6 +47,8 @@ void PageCaliResultMulti::update()
 
     if(nValiedCheckCount == 3)
         instance.caliUserInfo.val[instance.getCaliSelectIndex()].valid = 1;
+
+    qDebug()<<"valid: "+QString::number(instance.caliUserInfo.val[instance.getCaliSelectIndex()].valid);
 #endif
 
     customButtonOk->hide();
