@@ -51,10 +51,6 @@ void PageCaliResult::init()
     labelTextResult->setAlignment(Qt::AlignCenter);
     labelTextResult->setGeometry(0,315,640,45);
 
-    labelTextAdc->setStyleSheet("background-color: red;");
-    labelTextTemp->setStyleSheet("background-color: blue");
-    labelTextHeart->setStyleSheet("background-color: green;");
-
     customButtonOK = new CustomButtonOK(this);
     customButtonOK->setLongWidth(true);
     update();
@@ -62,7 +58,6 @@ void PageCaliResult::init()
 
 void PageCaliResult::update()
 {
-
     QString strAdc, strTemp, strHeart;
     strAdc = QString::number(instance.caliUserInfo.val[static_cast<int>(instance.getCaliSelectIndex())].adc[static_cast<int>(instance.getCaliSelectOrder())]);
     strTemp = QString::number(instance.caliUserInfo.val[static_cast<int>(instance.getCaliSelectIndex())].temp[static_cast<int>(instance.getCaliSelectOrder())]);
