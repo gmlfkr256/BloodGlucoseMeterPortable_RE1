@@ -17,11 +17,14 @@ public:
     CustomButtonOK *customButtonOK;
     CustomButtonCancel *customButtonCancel;
 
+    int nValue = 0;
+
     void update() override;
     void pageShow() override;
     void pageHide() override;
 private:
     void init();
+    void initSpinner();
 
 signals:
     void signalShowPageNum(PageNum pageNum);

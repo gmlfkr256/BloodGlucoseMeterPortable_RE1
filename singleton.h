@@ -184,6 +184,7 @@ public:
     gapiLangData_t langData;
     gapiSysProcAct_t sysProcAct;
     gapiSysProcMonInfo_t sysProcMonInfo;
+    gapiCaliSetGlucose_t caliSetGlucose;
 
     int caliIndexCount = 0;
 
@@ -249,6 +250,9 @@ public:
     CaliSelOrder getCaliSelectOrder();
     void setCaliIndexCheck(bool bConfirm);
     bool getCaliIndexCheck();
+
+    //PageCaliValue
+    void setCaliValue(int nValue);
 
     //public
     bool touchCheck(const QRect &rect, QMouseEvent* ev);

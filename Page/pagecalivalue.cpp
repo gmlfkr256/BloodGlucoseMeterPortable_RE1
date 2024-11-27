@@ -23,12 +23,33 @@ void PageCaliValue::update()
     {
         spinner->update();
     }
+
+    initSpinner();
+}
+
+void PageCaliValue::initSpinner()
+{
+    nValue = instance.caliUserInfo.glucose_val[instance.getCaliSelectIndex()];
+
+    int nValueHan = nValue/100;
+    int nValueTen = (nValue - nValueHan*100)/10;
+    int nValueOne = nValue - nValueHan*100 - nValueTen*10;
+
+    if(nValueHan != 0)
+        componentSpinner[0]->setValue(nValueHan);
+    if(nValueTen != 0)
+        componentSpinner[1]->setValue(nValueTen);
+    if(nValueOne != 0)
+        componentSpinner[2]->setValue(nValueOne);
+
 }
 
 void PageCaliValue::mousePressEvent(QMouseEvent *ev)
 {
     if(instance.touchCheck(customButtonOK->geometry(),ev))
     {
+        nValue = componentSpinner[0]->getValue()*100 + componentSpinner[1]->getValue()*10 + componentSpinner[2]->getValue();
+        instance.setCaliValue(nValue);
         pageHide();
     }
 

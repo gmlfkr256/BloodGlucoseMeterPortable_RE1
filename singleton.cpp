@@ -464,6 +464,22 @@ bool Singleton::getCaliIndexCheck()
     return bCaliIndexCheck;
 }
 
+//PageCaliValue
+
+void Singleton::setCaliValue(int nValue)
+{
+    caliSetGlucose.user = getUserNumber();
+    caliSetGlucose.idx= getCaliSelectIndex();
+    caliSetGlucose.glucose = nValue;
+
+
+#if DEVICE
+    guiApi.glucoseCaliSetGlucoseValue(&caliSetGlucose);
+#else
+    caliUserInfo.glucose_val[getCaliSelectIndex()] = nValue;
+#endif
+}
+
 //public
 bool Singleton::touchCheck(const QRect &rect, QMouseEvent* ev)
 {
