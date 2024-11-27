@@ -70,6 +70,7 @@ void ComponentSpinner::updateValue()
 void ComponentSpinner::setValue(int nValue)
 {
     this->nValue = nValue;
+    updateValue();
 }
 
 int ComponentSpinner::getValue()
