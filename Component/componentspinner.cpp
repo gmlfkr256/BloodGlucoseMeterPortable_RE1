@@ -28,8 +28,9 @@ void ComponentSpinner::init()
     labelButtonBottom->setFixedHeight(55);
 
     labelButtonTopArrow = new QLabel(labelButtonTop);
-
+    labelButtonTopArrow->setFixedSize(30,14);
     labelButtonBottomArrow = new QLabel(labelButtonBottom);
+    labelButtonBottomArrow->setFixedSize(30,14);
 
     update();
 }
