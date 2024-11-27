@@ -331,7 +331,8 @@ bool Singleton::getCaliGainCompleteCheck()
     updateCaliUserInfo();
 #endif
     qDebug()<<"led_sense: "<<caliUserInfo.led_sense<<", completed: "<<caliUserInfo.completed;
-    if(caliUserInfo.led_sense !=0 && caliUserInfo.completed != 0)
+
+    if(getGainCompleteCheck() && getCaliCompleteCheck())
         return true;
 
     return false;
