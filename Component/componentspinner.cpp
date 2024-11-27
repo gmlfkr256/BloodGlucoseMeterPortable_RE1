@@ -27,9 +27,9 @@ void ComponentSpinner::init()
     vBoxLayoutSpinner->addWidget(labelButtonBottom);
     labelButtonBottom->setFixedHeight(55);
 
-    labelButtonTopArrow = new QLabel(this);
+    labelButtonTopArrow = new QLabel(labelButtonTop);
     labelButtonTopArrow->setGeometry(labelButtonTop->width()/2+15,labelButtonTop->height()/2-7,30,14);
-    labelButtonBottomArrow = new QLabel(this);
+    labelButtonBottomArrow = new QLabel(labelButtonBottom);
     labelButtonBottomArrow->setGeometry(labelButtonBottom->width()/2+15,labelButtonBottom->height()/2-7,30,14);
 
     update();
