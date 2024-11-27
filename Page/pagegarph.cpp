@@ -387,7 +387,6 @@ void PageGarph::pageHide()
         case GRAPH_MAX:
             break;
         }
-
     }
     else
     {
@@ -403,10 +402,9 @@ void PageGarph::pageHide()
         case GRAPH_MAX:
             break;
         }
-
-        labelProgressBar->setGeometry(20,80,20,20);
     }
 
+    labelProgressBar->setGeometry(20,80,20,20);
     bIsProcessSuccess = false;
     timerPainter->stop();
     instance.setProcCheck(false);
