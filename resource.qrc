@@ -110,5 +110,7 @@
         <file>Image/Default/Public/ImageCaliResultMulti/buttonBg.png</file>
         <file>Image/Default/Public/ImageCaliResultMulti/validBg.png</file>
         <file>Image/Default/Public/ImageCaliSelect/validBg.png</file>
+        <file>Image/Default/Public/ImageSpinner/imgArrowBottom.png</file>
+        <file>Image/Default/Public/ImageSpinner/imgArrowTop.png</file>
     </qresource>
 </RCC>

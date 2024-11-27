@@ -27,6 +27,11 @@ void ComponentSpinner::init()
     vBoxLayoutSpinner->addWidget(labelButtonBottom);
     labelButtonBottom->setFixedHeight(55);
 
+    labelButtonTopArrow = new QLabel(this);
+    labelButtonTopArrow->setGeometry(labelButtonTop->width()/2+15,labelButtonTop->height()/2-7,30,14);
+    labelButtonBottomArrow = new QLabel(this);
+    labelButtonBottomArrow->setGeometry(labelButtonBottom->width()/2+15,labelButtonBottom->height()/2-7,30,14);
+
     update();
 }
 
@@ -36,18 +41,11 @@ void ComponentSpinner::update()
 
     labelTextValue->setFont(QFont(instance.fontSuit,instance.pixelToPoint(81),QFont::Bold));
 
-    labelButtonTop->setFont(QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
-    labelButtonTop->setAlignment(Qt::AlignCenter);
-    //labelButtonTop->setText("▲");
-    //labelButtonTop->setText("+");
-    labelButtonTop->setText("^");
-    labelButtonTop->setStyleSheet("background-color: #ffffff; color: #52d0ba; border-radius: 10px;");
-    labelButtonBottom->setFont(QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
-    labelButtonBottom->setAlignment(Qt::AlignCenter);
-    //labelButtonBottom->setText("▼");
-    //labelButtonBottom->setText("-");
-    labelButtonBottom->setText("v");
-    labelButtonBottom->setStyleSheet("background-color: #ffffff; color: #52d0ba; border-radius: 10px;");
+    labelButtonTop->setStyleSheet("background-color: #ffffff; border-radius: 10px;");
+    labelButtonBottom->setStyleSheet("background-color: #ffffff; border-radius: 10px;");
+
+    instance.pixLoad(labelButtonTopArrow,false,strDirPath,"/imgArrowTop.png");
+    instance.pixLoad(labelButtonBottomArrow,false,strDirPath,"/imgArrowBottom.png");
 
     updateValue();
 }
