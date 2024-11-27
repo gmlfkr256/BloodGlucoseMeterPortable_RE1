@@ -12,7 +12,7 @@ void ComponentSpinner::init()
     labelSpinnerBg->setGeometry(0,0,this->width(),this->height());
 
     vBoxLayoutSpinner = new QVBoxLayout(this);
-    vBoxLayoutSpinner->setContentsMargins(0,0,0,0);
+    vBoxLayoutSpinner->setContentsMargins(10,10,10,10);
     vBoxLayoutSpinner->setSpacing(0);
 
     labelButtonTop = new QLabel(this);
