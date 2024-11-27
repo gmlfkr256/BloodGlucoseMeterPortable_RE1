@@ -28,9 +28,8 @@ void ComponentSpinner::init()
     labelButtonBottom->setFixedHeight(55);
 
     labelButtonTopArrow = new QLabel(labelButtonTop);
-    labelButtonTopArrow->setGeometry(labelButtonTop->width()/2,(labelButtonTop->height()-14)/2,30,14);
+
     labelButtonBottomArrow = new QLabel(labelButtonBottom);
-    labelButtonBottomArrow->setGeometry(labelButtonBottom->width()/2,(labelButtonBottom->height()-14)/2,30,14);
 
     update();
 }
@@ -46,6 +45,9 @@ void ComponentSpinner::update()
 
     instance.pixLoad(labelButtonTopArrow,false,strDirPath,"/imgArrowTop.png");
     instance.pixLoad(labelButtonBottomArrow,false,strDirPath,"/imgArrowBottom.png");
+
+    labelButtonTopArrow->setGeometry((labelButtonTop->width()-30)/2,(labelButtonTop->height()-14)/2,30,14);
+    labelButtonBottomArrow->setGeometry((labelButtonBottom->width()-30)/2,(labelButtonBottom->height()-14)/2,30,14);
 
     updateValue();
 }
