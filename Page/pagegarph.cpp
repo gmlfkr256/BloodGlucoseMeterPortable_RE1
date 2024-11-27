@@ -361,7 +361,11 @@ void PageGarph::pageShow()
         break;
     }
 
+#if DEVICE
     timerPainter->start(100);
+#else
+    timerPainter->start(50);
+#endif
 }
 
 void PageGarph::pageHide()
