@@ -238,6 +238,7 @@ void PagePassword::processOK()
 
 void PagePassword::pageShow()
 {
+    update();
     strPasswordNum.clear();
 }
 

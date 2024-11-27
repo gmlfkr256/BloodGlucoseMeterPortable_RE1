@@ -361,7 +361,6 @@ void PageGarph::pageShow()
         break;
     }
 
-
     timerPainter->start(100);
 }
 

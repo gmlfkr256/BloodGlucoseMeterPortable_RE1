@@ -128,7 +128,7 @@ void PageCaliSelect::mousePressEvent(QMouseEvent *ev)
 
 void PageCaliSelect::pageShow()
 {
-
+    update();
 }
 
 void PageCaliSelect::pageHide()

@@ -61,7 +61,7 @@ void PageCaliValue::mousePressEvent(QMouseEvent *ev)
 
 void PageCaliValue::pageShow()
 {
-
+    update();
 }
 
 void PageCaliValue::pageHide()

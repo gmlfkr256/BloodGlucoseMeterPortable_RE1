@@ -67,7 +67,7 @@ void PageCaliGainConfirm::mousePressEvent(QMouseEvent *ev)
 
 void PageCaliGainConfirm::pageShow()
 {
-
+    update();
 }
 
 void PageCaliGainConfirm::pageHide()

@@ -66,7 +66,7 @@ void PageCaliCheck::mousePressEvent(QMouseEvent *ev)
 
 void PageCaliCheck::pageShow()
 {
-
+    update();
 }
 
 void PageCaliCheck::pageHide()

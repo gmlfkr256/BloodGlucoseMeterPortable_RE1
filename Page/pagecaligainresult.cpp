@@ -55,7 +55,7 @@ void PageCaliGainResult::mousePressEvent(QMouseEvent *ev)
 
 void PageCaliGainResult::pageShow()
 {
-
+    update();
 }
 
 void PageCaliGainResult::pageHide()

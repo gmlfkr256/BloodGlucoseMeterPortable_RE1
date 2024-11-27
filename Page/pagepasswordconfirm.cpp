@@ -124,7 +124,7 @@ void PagePasswordConfirm::mousePressEvent(QMouseEvent *ev)
 
 void PagePasswordConfirm::pageShow()
 {
-
+    update();
 }
 
 void PagePasswordConfirm::pageHide()

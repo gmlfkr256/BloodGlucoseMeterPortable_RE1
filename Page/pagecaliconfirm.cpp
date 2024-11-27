@@ -52,7 +52,7 @@ void PageCaliConfirm::mousePressEvent(QMouseEvent *ev)
 
 void PageCaliConfirm::pageShow()
 {
-
+    update();
 }
 
 void PageCaliConfirm::pageHide()

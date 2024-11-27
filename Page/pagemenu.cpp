@@ -189,7 +189,7 @@ void PageMenu::mousePressEvent(QMouseEvent *ev)
 
 void PageMenu::pageShow()
 {
-
+    update();
 }
 
 void PageMenu::pageHide()

@@ -125,7 +125,7 @@ void PageHome::mousePressEvent(QMouseEvent *ev)
 
 void PageHome::pageShow()
 {
-
+    update();
 }
 
 void PageHome::pageHide()
