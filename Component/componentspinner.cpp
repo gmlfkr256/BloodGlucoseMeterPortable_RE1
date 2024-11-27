@@ -50,7 +50,7 @@ void ComponentSpinner::update()
     //labelButtonTopArrow->setGeometry((labelButtonTop->width()-30)/2,(labelButtonTop->height()-14)/2,30,14);
     labelButtonTopArrow->setGeometry(0,(labelButtonTop->height()-14)/2,30,14);
     //labelButtonBottomArrow->setGeometry((labelButtonBottom->width()-30)/2,(labelButtonBottom->height()-14)/2,30,14);
-    labelButtonBottomArrow->setGeometry((labelSpinnerBg->width()-30)/2,(labelButtonTop->height()-14)/2,30,14);
+    labelButtonBottomArrow->setGeometry((this->width()-30)/2,(labelButtonTop->height()-14)/2,30,14);
 
     resizeEvent(nullptr);
 
