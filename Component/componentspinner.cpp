@@ -34,17 +34,19 @@ void ComponentSpinner::update()
 {
     labelSpinnerBg->setStyleSheet("background-color: #f3f3f3; border-radius: 15px;");
 
-    labelTextValue->setFont(QFont(instance.fontSuit,instance.pixelToPoint(48),QFont::Bold));
+    labelTextValue->setFont(QFont(instance.fontSuit,instance.pixelToPoint(81),QFont::Bold));
 
     labelButtonTop->setFont(QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
     labelButtonTop->setAlignment(Qt::AlignCenter);
-    labelButtonTop->setText("▲");
+    //labelButtonTop->setText("▲");
     //labelButtonTop->setText("+");
+    labelButtonTop->setText("^");
     labelButtonTop->setStyleSheet("background-color: #ffffff; color: #52d0ba; border-radius: 10px;");
     labelButtonBottom->setFont(QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
     labelButtonBottom->setAlignment(Qt::AlignCenter);
-    labelButtonBottom->setText("▼");
+    //labelButtonBottom->setText("▼");
     //labelButtonBottom->setText("-");
+    labelButtonBottom->setText("v");
     labelButtonBottom->setStyleSheet("background-color: #ffffff; color: #52d0ba; border-radius: 10px;");
 
     updateValue();

@@ -15,8 +15,10 @@ public:
     QLabel *labelSpinnerBg;
     QVBoxLayout *vBoxLayoutSpinner;
     QLabel *labelButtonTop;
+    QLabel *labelButtonTopArrow;
     QLabel *labelTextValue;
     QLabel *labelButtonBottom;
+    QLabel *labelButtonBottomArrow;
 
     int nValue = 0;
 
