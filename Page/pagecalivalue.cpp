@@ -35,12 +35,9 @@ void PageCaliValue::initSpinner()
     int nValueTen = (nValue - nValueHan*100)/10;
     int nValueOne = nValue - nValueHan*100 - nValueTen*10;
 
-    if(nValueHan != 0)
-        componentSpinner[0]->setValue(nValueHan);
-    if(nValueTen != 0)
-        componentSpinner[1]->setValue(nValueTen);
-    if(nValueOne != 0)
-        componentSpinner[2]->setValue(nValueOne);
+    componentSpinner[0]->setValue(nValueHan);
+    componentSpinner[1]->setValue(nValueTen);
+    componentSpinner[2]->setValue(nValueOne);
 
 }
 
