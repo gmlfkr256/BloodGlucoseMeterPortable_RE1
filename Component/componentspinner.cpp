@@ -47,6 +47,7 @@ void ComponentSpinner::update()
     instance.pixLoad(labelButtonTopArrow,false,strDirPath,"/imgArrowTop.png");
     instance.pixLoad(labelButtonBottomArrow,false,strDirPath,"/imgArrowBottom.png");
 
+    qDebug()<<"labelButtonTop Width; "<<labelButtonTop->width()<<", height: "<<labelButtonTop->height();
     labelButtonTopArrow->setGeometry((labelButtonTop->width()-30)/2,(labelButtonTop->height()-14)/2,30,14);
     labelButtonBottomArrow->setGeometry((labelButtonBottom->width()-30)/2,(labelButtonBottom->height()-14)/2,30,14);
 
