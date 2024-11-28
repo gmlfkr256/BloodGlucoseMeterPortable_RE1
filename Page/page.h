@@ -10,6 +10,7 @@
 #include "Button/custombuttonmeasure.h"
 #include "Button/custombuttoninput.h"
 #include "Button/custombuttonmeasurere.h"
+#include "Button/custombuttonsave.h"
 
 class Page : public QWidget
 {

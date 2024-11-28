@@ -37,6 +37,9 @@ void TextResource::init()
     fontData[Lan][CUSTOM_BUTTON].insert("labelButtonMeasureRe",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Medium));
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonMeasureRe",QStringList{"재측정"});
 
+    fontData[Lan][CUSTOM_BUTTON].insert("labelButtonSave",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Medium));
+    textData[Lan][CUSTOM_BUTTON].insert("labelButtonSave",QStringList{"저장"});
+
     //CUSTOM_COMPONENT
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextValue",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
 
@@ -93,14 +96,14 @@ void TextResource::init()
                                                 });
 
     //PAGE_HOME
-    fontData[Lan][PAGE_HOME].insert("labelButtonTitle",QFont(instance.fontSuit,instance.pixelToPoint(33),QFont::Bold));
-    textData[Lan][PAGE_HOME].insert("labelButtonTitle",QStringList{"기상","조식 전","조식 후","중식 전","중식 후","석식 전","석식 후","취침"});
+    fontData[Lan][PAGE_HOME].insert("labelTextStatus",QFont(instance.fontSuit,instance.pixelToPoint(33),QFont::Bold));
+    textData[Lan][PAGE_HOME].insert("labelTextStatus",QStringList{"기상","조식 전","조식 후","중식 전","중식 후","석식 전","석식 후","취침"});
 
     fontData[Lan][PAGE_HOME].insert("labelButtonText",QFont(instance.fontSuit,instance.pixelToPoint(62),QFont::ExtraBold));
 
     //PAGE_SELECT
     fontData[Lan][PAGE_SELECT].insert("labelTextStatus",QFont(instance.fontSuit,instance.pixelToPoint(42),QFont::ExtraBold));
-    textData[Lan][PAGE_SELECT].insert("labelTextStatus",QStringList{"기상","조식 전","조식 후","중식 전","중식 후","석식 전","석식 후","취침"});
+    //textData[Lan][PAGE_SELECT].insert("labelTextStatus",QStringList{"기상","조식 전","조식 후","중식 전","중식 후","석식 전","석식 후","취침"});
 
     fontData[Lan][PAGE_SELECT].insert("labelTextStatusSub",QFont(instance.fontSuit,instance.pixelToPoint(24)));
     textData[Lan][PAGE_SELECT].insert("labelTextStatusSub",QStringList{"측정을 시작해 주세요"});
@@ -195,6 +198,13 @@ void TextResource::init()
     fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextTemp",QFont(instance.fontSuit,instance.pixelToPoint(34)));
     fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextHeart",QFont(instance.fontSuit,instance.pixelToPoint(34)));
 
+    //PAGE_RESULT
+    fontData[Lan][PAGE_RESULT].insert("labelTextMgdl",QFont(instance.fontSuit,instance.pixelToPoint(27)));
+    textData[Lan][PAGE_RESULT].insert("labelTextMgdel",QStringList{"mg/dL"});
+
+    fontData[Lan][PAGE_RESULT].insert("labelTextTime",QFont(instance.fontSuit,instance.pixelToPoint(21),QFont::Bold));
+    textData[Lan][PAGE_RESULT].insert("labelTextTime",QStringList{"측정 시각"});
+
 
     //====================================================================================================================================
     //EN
@@ -217,6 +227,12 @@ void TextResource::init()
 
     fontData[Lan][CUSTOM_BUTTON].insert("labelButtonInput",QFont(instance.fontSuit,instance.pixelToPoint(35),QFont::Bold));
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonInput",QStringList{"Input"});
+
+    fontData[Lan][CUSTOM_BUTTON].insert("labelButtonMeasureRe",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Medium));
+    textData[Lan][CUSTOM_BUTTON].insert("labelButtonMeasureRe",QStringList{"Remeasure"});
+
+    fontData[Lan][CUSTOM_BUTTON].insert("labelButtonSave",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Medium));
+    textData[Lan][CUSTOM_BUTTON].insert("labelButtonSave",QStringList{"Save"});
 
     //PAGE_PASSWORD
     fontData[Lan][PAGE_PASSWORD].insert("labelButtonNum",QFont(instance.fontSuit,instance.pixelToPoint(44),QFont::Bold));
@@ -362,6 +378,17 @@ void TextResource::init()
     fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextAdc",QFont(instance.fontSuit,instance.pixelToPoint(34),QFont::Bold));
     fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextTemp",QFont(instance.fontSuit,instance.pixelToPoint(34)));
     fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextHeart",QFont(instance.fontSuit,instance.pixelToPoint(34)));
+
+    //PAGE_RESULT
+    fontData[Lan][PAGE_RESULT].insert("labelTextMgdl",QFont(instance.fontSuit,instance.pixelToPoint(27)));
+    textData[Lan][PAGE_RESULT].insert("labelTextMgdel",QStringList{"mg/dL"});
+
+    fontData[Lan][PAGE_RESULT].insert("labelTextTime",QFont(instance.fontSuit,instance.pixelToPoint(21),QFont::Bold));
+    textData[Lan][PAGE_RESULT].insert("labelTextTime",QStringList{"Time"});
+
+    fontData[Lan][PAGE_RESULT].insert("labelTextGlucoseValue",QFont(instance.fontSuit,instance.pixelToPoint(103),QFont::ExtraBold));
+
+    fontData[Lan][PAGE_RESULT].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36)));
 
     //=====================================================================================================================================
     //JP

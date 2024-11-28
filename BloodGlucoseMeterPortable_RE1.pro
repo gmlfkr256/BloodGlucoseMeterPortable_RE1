@@ -26,6 +26,7 @@ SOURCES += \
     Button/custombuttonmeasurere.cpp \
     Button/custombuttonmeasurestart.cpp \
     Button/custombuttonok.cpp \
+    Button/custombuttonsave.cpp \
     Component/componentbattery.cpp \
     Component/componentbluetooth.cpp \
     Component/componentclock.cpp \
@@ -51,6 +52,7 @@ SOURCES += \
     Page/pagemenu.cpp \
     Page/pagepassword.cpp \
     Page/pagepasswordconfirm.cpp \
+    Page/pageresult.cpp \
     Page/pageselect.cpp \
     guiapi/guiapi.cpp \
     guiapi/vtipc.cpp \
@@ -68,6 +70,7 @@ HEADERS += \
     Button/custombuttonmeasurere.h \
     Button/custombuttonmeasurestart.h \
     Button/custombuttonok.h \
+    Button/custombuttonsave.h \
     Component/componentbattery.h \
     Component/componentbluetooth.h \
     Component/componentclock.h \
@@ -94,6 +97,7 @@ HEADERS += \
     Page/pagemenu.h \
     Page/pagepassword.h \
     Page/pagepasswordconfirm.h \
+    Page/pageresult.h \
     Page/pageselect.h \
     guiapi/gapi.h \
     guiapi/guiapi.h \

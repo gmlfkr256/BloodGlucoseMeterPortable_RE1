@@ -49,13 +49,13 @@ void PageHome::init()
         labelGroups[i].labelButton = new QLabel(this);
         labelGroups[i].labelButton->setGeometry(listRectButton.at(i));
 
-        labelGroups[i].labelButtonTitle = new QLabel(this);
-        labelGroups[i].labelButtonTitle->setGeometry(listRectTitle.at(i));
-        labelGroups[i].labelButtonTitle->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+        labelGroups[i].labelTextStatus = new QLabel(this);
+        labelGroups[i].labelTextStatus->setGeometry(listRectTitle.at(i));
+        labelGroups[i].labelTextStatus->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         if(i<4)
-            labelGroups[i].labelButtonTitle->setStyleSheet("color: #ffffff; padding-left: 10px;");
+            labelGroups[i].labelTextStatus->setStyleSheet("color: #ffffff; padding-left: 10px;");
         else
-            labelGroups[i].labelButtonTitle->setStyleSheet("color: #000000; padding-left: 10px;");
+            labelGroups[i].labelTextStatus->setStyleSheet("color: #000000; padding-left: 10px;");
 
         labelGroups[i].labelButtonImage = new QLabel(this);
         labelGroups[i].labelButtonImage->setGeometry(listRectImage.at(i));
@@ -80,8 +80,8 @@ void PageHome::update()
 
         instance.pixLoad(labelGroups[i].labelButton,false,strDirPath,pngPath);
 
-        labelGroups[i].labelButtonTitle->setFont(textResource.getFont(PAGE_HOME,"labelButtonTitle"));
-        labelGroups[i].labelButtonTitle->setText(textResource.getText(PAGE_HOME,"labelButtonTitle").at(order[i]));
+        labelGroups[i].labelTextStatus->setFont(textResource.getFont(PAGE_HOME,"labelTextStatus"));
+        labelGroups[i].labelTextStatus->setText(textResource.getText(PAGE_HOME,"labelTextStatus").at(order[i]));
 
         pngPath = "/Icon_";
         pngPath += strListBg.at(order[i]);

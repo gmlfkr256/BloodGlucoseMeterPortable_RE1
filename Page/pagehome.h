@@ -19,7 +19,7 @@ public:
     {
     public:
         QLabel *labelButton;
-        QLabel *labelButtonTitle;
+        QLabel *labelTextStatus;
         QLabel *labelButtonImage;
         QLabel *labelButtonText;
     };

@@ -26,7 +26,7 @@
 #include "Page/pagecalivalue.h"
 #include "Page/pagecaliresult.h"
 #include "Page/pagecaliresultmulti.h"
-
+#include "Page/pageresult.h"
 
 class MainWindow : public QMainWindow
 {
@@ -59,6 +59,7 @@ public:
     PageCaliValue *pageCaliValue;
     PageCaliResult *pageCaliResult;
     PageCaliResultMulti *pageCaliResultMulti;
+    PageResult *pageResult;
 
     QList<int> listComHiddenPageIndex;
     QMap<PageNum,QString> mapPageNumName;

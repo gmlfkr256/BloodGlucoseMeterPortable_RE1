@@ -75,6 +75,9 @@ void MainWindow::init()
     pageCaliResultMulti = new PageCaliResultMulti(this);
     stackedWidget->addWidget(pageCaliResultMulti);
 
+    pageResult = new PageResult(this);
+    stackedWidget->addWidget(pageResult);
+
     comBat = new ComponentBattery(stackedWidget);
     comBle = new ComponentBluetooth(stackedWidget);
     comClock = new ComponentClock(stackedWidget);
@@ -100,9 +103,8 @@ void MainWindow::init()
         {PAGE_CALI_VALUE, "PageCaliValue"},
         {PAGE_CALI_RESULT, "PageCaliResult"},
         {PAGE_CALI_RESULT_MULTI, "PageCaliResultMulti"},
+        {PAGE_RESULT,"PageResult"},
 
-        {PAGE_CALIBRATION, "PageCalibration"},
-        {PAGE_CALI_SELECT, "PageCaliSelect"},
         {PAGE_THRESHOLD, "PageThreshold"},
         {PAGE_HISTORY, "PageHistory"},
         {PAGE_SOUND, "PageSound"},
@@ -155,6 +157,7 @@ void MainWindow::initConnect()
     connect(pageCaliValue, &PageCaliValue::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageCaliResult, &PageCaliResult::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageCaliResultMulti, &PageCaliResultMulti::signalShowPageNum,this,&MainWindow::setPageByPageNum);
+    connect(pageResult, &PageResult::signalShowPageNum,this,&MainWindow::setPageByPageNum);
 }
 
 void MainWindow::currentPageChanged(int index)

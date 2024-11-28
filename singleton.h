@@ -3,6 +3,9 @@
 
 #include <GlobalMain.h>
 
+#define GLUCOSE_LOW_PLUS 5
+#define GLUCOSE_HIGH_MINUS -30
+
 typedef enum
 {
     COLOR_DEFAULT = 0,
@@ -50,8 +53,8 @@ typedef enum
     PAGE_CALI_VALUE,
     PAGE_CALI_RESULT,
     PAGE_CALI_RESULT_MULTI,
+    PAGE_RESULT,
 
-    PAGE_CALIBRATION,
     PAGE_THRESHOLD,
     PAGE_HISTORY,
     PAGE_SOUND,
@@ -177,6 +180,8 @@ public:
 
     int thresholdLow;
     int thresholdHigh;
+    const int nThresholdLimitLow = 50;
+    const int nThresholdLimitHigh = 500;
     gapiHistInfo_t histInfo;
     gapiSysUserInfo_t sysUserInfo[USER_MAX];
     gapiCaliUserInfo_t caliUserInfo;

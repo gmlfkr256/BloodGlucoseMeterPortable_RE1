@@ -98,7 +98,7 @@ void PageSelect::updateStatus()
         pngPath = "/"+QString::number(nTimeStatus)+".png";
         instance.pixLoad(labelImageTime,false,strDirPath,pngPath);
 
-        labelTextStatus->setText(textResource.getText(PAGE_SELECT,"labelTextStatus").at(nTimeStatus));
+        labelTextStatus->setText(textResource.getText(PAGE_HOME,"labelTextStatus").at(nTimeStatus));
 
         labelBgCircle->show();
         labelImageTime->show();
@@ -126,13 +126,13 @@ void PageSelect::updateStatus()
         {
         case KR:
             strResult =
-                    "<span style='font-weight:bold;'>"+textResource.getText(PAGE_SELECT,"labelTextStatus").at(nTimeStatus)+" "+"</span>" +
+                    "<span style='font-weight:bold;'>"+textResource.getText(PAGE_HOME,"labelTextStatus").at(nTimeStatus)+" "+"</span>" +
                     "<span style='font-weight:bold; "+strStyleSheetColor+"'>"+textResource.getText(PAGE_SELECT,"labelTextResult").at(bloodSugarIndex)+" "+"</span>" +
                     "<span>"+textResource.getText(PAGE_SELECT,"resultSub").at(0)+"</span>";
             break;
         case EN:
             strResult =
-                    "<span style='font-weight:bold;'>"+textResource.getText(PAGE_SELECT,"labelTextStatus").at(nTimeStatus)+": "+"</span>" +
+                    "<span style='font-weight:bold;'>"+textResource.getText(PAGE_HOME,"labelTextStatus").at(nTimeStatus)+": "+"</span>" +
                     "<span style='font-weight:bold; "+strStyleSheetColor+"'>"+textResource.getText(PAGE_SELECT,"labelTextResult").at(bloodSugarIndex)+" "+"</span>";
             break;
         case JP:
