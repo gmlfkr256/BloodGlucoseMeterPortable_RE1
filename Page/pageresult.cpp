@@ -93,14 +93,9 @@ void PageResult::setColorValue(int nGlucoseValue)
 
     BloodSugarLevel bloodSugarLevel = instance.getBloodSugarLevel(nGlucoseValue);
 
-    /*
     switch (instance.getDeviceLanguage())
     {
     case KR:
-        strResult =
-                "<span style='font-weight:bold;'>"+strTextStatus+" </span>"+
-                "<span style='font-weight:bold; "+strTextColor+"'>"+textResource.getText(PAGE_SELECT,"labelTextResult").at(bloodSugarLevel)+" </span>" +
-                ""
         break;
     case EN:
         break;
@@ -113,7 +108,7 @@ void PageResult::setColorValue(int nGlucoseValue)
     case LAN_MAX:
         break;
     }
-    */
+
 }
 
 void PageResult::pageShow()
