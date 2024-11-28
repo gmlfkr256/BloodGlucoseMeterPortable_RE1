@@ -112,7 +112,7 @@ void TextResource::init()
     fontData[Lan][PAGE_SELECT].insert("labelTextMgdl",QFont(instance.fontSuit,instance.pixelToPoint(34),QFont::ExtraBold));
     fontData[Lan][PAGE_SELECT].insert("labelTextResult",QFont(instance.fontSuit,instance.pixelToPoint(32)));
     textData[Lan][PAGE_SELECT].insert("labelTextResult",QStringList{"정상","저혈당 주의","고혈당 주의","저혈당 경고","고혈당 경고"});
-    textData[Lan][PAGE_SELECT].insert("resultSub",QStringList{"혈당입니다"});
+    textData[Lan][PAGE_SELECT].insert("resultSub",QStringList{"입니다"});
 
     fontData[Lan][PAGE_SELECT].insert("labelTextTime",QFont(instance.fontSuit,instance.pixelToPoint(20),QFont::Bold));
     textData[Lan][PAGE_SELECT].insert("labelTextTime",QStringList{"측정 시각"});
