@@ -317,7 +317,7 @@ void TextResource::init()
                                           "High Blood Sugar Warning"
                                       });
 
-    fontData[Lan][PAGE_SELECT].insert("labelTextTime",QFont(instance.fontSuit,instance.pixelToPoint(20),QFont::Bold));
+    fontData[Lan][PAGE_SELECT].insert("labelTextTime",QFont(instance.fontSuit,instance.pixelToPoint(21),QFont::Bold));
     textData[Lan][PAGE_SELECT].insert("labelTextTime",QStringList{"Time"});
 
     fontData[Lan][PAGE_SELECT].insert("labelTextIcon",QFont(instance.fontSuit,instance.pixelToPoint(23),QFont::Bold));
