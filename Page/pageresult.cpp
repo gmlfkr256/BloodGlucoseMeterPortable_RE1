@@ -119,10 +119,10 @@ void PageResult::setColorValue(int nGlucoseValue)
     labelBgGlucoseValue->setStyleSheet(strBgColor+strBgBorderRadius);
     labelProgressBar->setStyleSheet(strStyleSheetProgressBar+"border-radius: 15px;");
 
-    int nProgressBarWidth = static_cast<int>(600 * (nGlucoseValue / 400 ));
+    int nProgressBarWidth = static_cast<int>(nGlucoseValue*(600/400) );
 
-    if(nProgressBarWidth <40)
-        nProgressBarWidth = 40;
+    if(nProgressBarWidth <30)
+        nProgressBarWidth = 30;
     else if(nProgressBarWidth >600)
         nProgressBarWidth = 600;
     labelProgressBar->setFixedWidth(nProgressBarWidth);
