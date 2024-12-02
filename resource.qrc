@@ -112,5 +112,8 @@
         <file>Image/Default/Public/ImageCaliSelect/validBg.png</file>
         <file>Image/Default/Public/ImageSpinner/imgArrowBottom.png</file>
         <file>Image/Default/Public/ImageSpinner/imgArrowTop.png</file>
+        <file>Image/Default/Public/ImageResult/caution.png</file>
+        <file>Image/Default/Public/ImageResult/normal.png</file>
+        <file>Image/Default/Public/ImageResult/warning.png</file>
     </qresource>
 </RCC>

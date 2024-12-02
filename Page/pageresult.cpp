@@ -25,6 +25,11 @@ void PageResult::init()
     labelText->setGeometry(31,106,300,120);
     labelText->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
+    labelProgressBarBg = new QLabel(this);
+    labelProgressBarBg->setGeometry(20,329,600,30);
+    labelProgressBar = new QLabel(this);
+    labelProgressBar->setGeometry(20,329,600,30);
+
     customButtonSave = new CustomButtonSave(this);
     customButtonCancel = new CustomButtonCancel(this);
     update();
@@ -41,15 +46,18 @@ void PageResult::update()
 
     labelTextMgdl->setFont(textResource.getFont(PAGE_RESULT,"labelTextMgdl"));
     labelTextMgdl->setText(textResource.getText(PAGE_RESULT,"labelTextMgdl").at(0));
+    labelTextMgdl->setStyleSheet("color: #707070;");
 
     labelTextTime->setFont(textResource.getFont(PAGE_RESULT,"labelTextTime"));
     labelTextTime->setStyleSheet("border: 1px solid #707070; border-radius:20px;");
+
     QString strTime;
     strTime = textResource.getText(PAGE_RESULT,"labelTextTime").at(0)+" "
             +QString("%1:%2").arg(
                 QString::number(instance.histInfo.val[nTimeStatus].hour).rightJustified(2,'0'),
                 QString::number(instance.histInfo.val[nTimeStatus].min).rightJustified(2,'0')
                 );
+
     labelTextTime->setText(textResource.getText(PAGE_RESULT,"labelTextTime").at(0));
 
     labelText->setFont(textResource.getFont(PAGE_RESULT,"labelText"));
@@ -78,25 +86,31 @@ void PageResult::setColorValue(int nGlucoseValue)
 {
     QString strBgBorderRadius = "border-radius: 18px;";
     QString strBgColor;
+    QString strStyleSheetProgressBar;
 
     if(nGlucoseValue<=instance.nThresholdLimitLow || nGlucoseValue>=instance.nThresholdLimitHigh)
     {
         strBgColor = "background-color: #f2f2f2;";
+        strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/warning.png);";
     }
     else if(nGlucoseValue<=instance.thresholdLow || nGlucoseValue>=instance.thresholdHigh)
     {
         strBgColor = "background-color: #ffebeb;";
+        strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/caution.png);";
     }
     else if(nGlucoseValue<=instance.thresholdLow+GLUCOSE_LOW_PLUS || nGlucoseValue>=instance.thresholdHigh+GLUCOSE_HIGH_MINUS)
     {
         strBgColor = "background-color: #ffb200;";
+        strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/normal.png);";
     }
     else
     {
         strBgColor = "background-color: #edfaf8;";
     }
 
+
     labelBgGlucoseValue->setStyleSheet(strBgColor+strBgBorderRadius);
+    labelProgressBar->setStyleSheet(strStyleSheetProgressBar+"border-radius: 15px;");
 
     QString strTextStatus = textResource.getText(PAGE_HOME,"labelTextStatus").at(instance.getTimeStatus());
     QString strResult;

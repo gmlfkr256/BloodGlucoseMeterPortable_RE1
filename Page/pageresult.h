@@ -18,11 +18,17 @@ public:
     QLabel *labelText;
     QLabel *labelTextTime;
 
+    QLabel *labelProgressBarBg;
+    QLabel *labelProgressBar;
+    //QLabel *labelProgressBarTooltip;
+
     CustomButtonSave *customButtonSave;
     CustomButtonCancel *customButtonCancel;
 
     QString strTextValue;
     QString strTextColor;
+
+
 
     void update() override;
     void pageShow() override;
