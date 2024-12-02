@@ -140,8 +140,10 @@ void PageSelect::updateStatus()
         QString strResultSub = textResource.getText(PAGE_SELECT,"labelTextResultSub").at(0);
         int nResultSubIndex = 0;
 
+        /*
         strResult =  "<span style='font-weight:bold;'>"+textResource.getText(PAGE_HOME,"labelTextStatus").at(nTimeStatus)+" "+"</span>" +
                 "<span style='font-weight:bold; "+strStyleSheetColor+"'>"+textResource.getText(PAGE_SELECT,"labelTextResult").at(bloodSugarIndex)+" "+"</span>";
+        */
 
         strResult = "<span style='font-weight:bold;'>"+strResult+"</span>";
 
