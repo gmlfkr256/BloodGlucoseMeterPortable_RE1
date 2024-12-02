@@ -92,12 +92,13 @@ void PageResult::setColorValue(int nGlucoseValue)
     QString strResult;
 
     BloodSugarLevel bloodSugarLevel = instance.getBloodSugarLevel(nGlucoseValue);
+    int nBloodSugarIndex = static_cast<int>(bloodSugarLevel);
 
     strResult = "<span style='font-weight:bold;'>"+strTextStatus+" </span>";
     switch (instance.getDeviceLanguage())
     {
     case KR:
-        strResult += "<span style='font-weight:bold; "+strTextColor+"'>"+textResource.getText(PAGE_RESULT,"labelTextResult").at(bloodSugarLevel)+" </span>"
+        strResult += "<span style='font-weight:bold; "+strTextColor+"'>"+textResource.getText(PAGE_RESULT,"labelTextResult").at(nBloodSugarIndex)+" </span>"
                 +"<span style='color: #808080; '>"+textResource.getText(PAGE_RESULT,"labelTextResultSub").at(0);
         break;
     case EN:
