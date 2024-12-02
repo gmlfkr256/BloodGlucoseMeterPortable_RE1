@@ -22,6 +22,8 @@ void PageResult::init()
     labelTextTime->setAlignment(Qt::AlignCenter);
 
     labelText = new QLabel(this);
+    labelText->setGeometry(31,106,300,120);
+    labelText->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
     customButtonSave = new CustomButtonSave(this);
     customButtonCancel = new CustomButtonCancel(this);
@@ -33,14 +35,22 @@ void PageResult::update()
     customButtonSave->update();
     customButtonCancel->update();
 
+    int nTimeStatus = static_cast<int>(instance.getTimeStatus());
+
     labelTextGlucoseValue->setFont(textResource.getFont(PAGE_RESULT,"labelTextGlucoseValue"));
 
     labelTextMgdl->setFont(textResource.getFont(PAGE_RESULT,"labelTextMgdl"));
     labelTextMgdl->setText(textResource.getText(PAGE_RESULT,"labelTextMgdl").at(0));
 
     labelTextTime->setFont(textResource.getFont(PAGE_RESULT,"labelTextTime"));
-    labelTextTime->setText(textResource.getText(PAGE_RESULT,"labelTextTime").at(0));
     labelTextTime->setStyleSheet("border: 1px solid #707070; border-radius:20px;");
+    QString strTime;
+    strTime = textResource.getText(PAGE_RESULT,"labelTextTime").at(0)+" "
+            +QString("%1:%2").arg(
+                QString::number(instance.histInfo.val[nTimeStatus].hour).rightJustified(2,'0'),
+                QString::number(instance.histInfo.val[nTimeStatus].min).rightJustified(2,'0')
+                );
+    labelTextTime->setText(textResource.getText(PAGE_RESULT,"labelTextTime").at(0));
 
     labelText->setFont(textResource.getFont(PAGE_RESULT,"labelText"));
 
@@ -94,8 +104,8 @@ void PageResult::setColorValue(int nGlucoseValue)
     BloodSugarLevel bloodSugarLevel = instance.getBloodSugarLevel(nGlucoseValue);
     int nBloodSugarIndex = static_cast<int>(bloodSugarLevel);
 
-    strResult = "<span style='font-weight:bold;'>"+strTextStatus+" </span>";
-    /*
+    strResult = "<p style='font-weight:bold;'>"+strTextStatus+" </p>";
+
     switch (instance.getDeviceLanguage())
     {
     case KR:
@@ -113,7 +123,9 @@ void PageResult::setColorValue(int nGlucoseValue)
     case LAN_MAX:
         break;
     }
-    */
+
+
+    labelText->setText(strResult);
 }
 
 void PageResult::pageShow()

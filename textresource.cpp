@@ -208,6 +208,8 @@ void TextResource::init()
     fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextHeart",QFont(instance.fontSuit,instance.pixelToPoint(34)));
 
     //PAGE_RESULT
+    fontData[Lan][PAGE_RESULT].insert("labelTextGlucoseValue",QFont(instance.fontSuit,instance.pixelToPoint(103),QFont::ExtraBold));
+
     fontData[Lan][PAGE_RESULT].insert("labelTextMgdl",QFont(instance.fontSuit,instance.pixelToPoint(27)));
     textData[Lan][PAGE_RESULT].insert("labelTextMgdel",QStringList{"mg/dL"});
 
