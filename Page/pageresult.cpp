@@ -98,7 +98,7 @@ void PageResult::setColorValue(int nGlucoseValue)
     switch (instance.getDeviceLanguage())
     {
     case KR:
-        strResult += "<span style='font-weight:bold; "+strTextColor+"'>"+textResource.getText(PAGE_RESULT,"labelTextResult").at(nBloodSugarIndex)+" </span>"
+        strResult += "<span style='font-weight:bold; "+strTextColor+"'>"+textResource.getText(PAGE_RESULT,"indexResult").at(nBloodSugarIndex)+" </span>"
                 +"<span style='color: #808080; '>"+textResource.getText(PAGE_RESULT,"labelTextResultSub").at(0);
         break;
     case EN:
