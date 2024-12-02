@@ -82,6 +82,7 @@ void PageResult::update()
     labelTextGlucoseValue->setStyleSheet(strTextColor);
 
     labelProgressBarBg->setStyleSheet("background-color: #f2f2f2; border-radius: 15px;");
+    labelProgressBar->setFixedWidth(200);
 }
 
 void PageResult::setColorValue(int nGlucoseValue)
