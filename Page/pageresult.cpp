@@ -94,20 +94,21 @@ void PageResult::setColorValue(int nGlucoseValue)
     if(nGlucoseValue<=instance.nThresholdLimitLow || nGlucoseValue>=instance.nThresholdLimitHigh)
     {
         strBgColor = "background-color: #f2f2f2;";
-        strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/warning.png);";
+        strStyleSheetProgressBar = "";
     }
     else if(nGlucoseValue<=instance.thresholdLow || nGlucoseValue>=instance.thresholdHigh)
     {
         strBgColor = "background-color: #ffebeb;";
-        strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/caution.png);";
+        strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/warning.png);";
     }
     else if(nGlucoseValue<=instance.thresholdLow+GLUCOSE_LOW_PLUS || nGlucoseValue>=instance.thresholdHigh+GLUCOSE_HIGH_MINUS)
     {
         strBgColor = "background-color: #ffb200;";
-        strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/normal.png);";
+        strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/caution.png);";
     }
     else
     {
+        strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/normal.png);";
         strBgColor = "background-color: #edfaf8;";
     }
 
