@@ -169,6 +169,7 @@ void PageSelect::updateStatus()
         labelTextTime->setText(strTime);
 
         labelTextIcon->setText(textResource.getText(PAGE_SELECT,"labelTextIcon").at(bloodSugarIndex));
+        labelTextIcon->setFixedHeight(33);
 
         switch (bloodSugarLevel)
         {
