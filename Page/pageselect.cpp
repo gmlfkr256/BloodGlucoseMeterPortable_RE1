@@ -37,9 +37,11 @@ void PageSelect::init()
     //value
     labelTextStatusValue = new QLabel(this);
     labelTextStatusValue->setGeometry(0,84,640,50);
+    labelTextStatusValue->setAlignment(Qt::AlignCenter);
 
     labelTextIcon = new QLabel(this);
     labelTextIcon->setGeometry(83,214,150,33);
+    labelTextIcon->setAlignment(Qt::AlignCenter);
 
     labelTextGlucoseValue = new QLabel(this);
     labelTextGlucoseValue->setGeometry(0,149,640,162);
@@ -136,7 +138,7 @@ void PageSelect::updateStatus()
 
         strResult = textResource.getText(PAGE_SELECT,"labelTextResult").at(bloodSugarIndex);
 
-
+        /*
         strResult =  "<span style='font-weight:bold;'>"+textResource.getText(PAGE_HOME,"labelTextStatus").at(nTimeStatus)+" "+"</span>" +
                 "<span style='font-weight:bold; "+strStyleSheetColor+"'>"+textResource.getText(PAGE_SELECT,"labelTextResult").at(bloodSugarIndex)+" "+"</span>";
         switch (instance.getDeviceLanguage())
@@ -156,7 +158,7 @@ void PageSelect::updateStatus()
         case LAN_MAX:
             break;
         }
-
+        */
 
         labelTextResult->setText(strResult);
 
@@ -182,6 +184,8 @@ void PageSelect::updateStatus()
             labelTextIcon->setStyleSheet("background-color: #f70000; color: #ffffff; border-radius: 16px;");
             break;
         }
+
+        labelTextIcon->adjustSize();
 
         labelTextStatusValue->show();
         labelTextGlucoseValue->show();
