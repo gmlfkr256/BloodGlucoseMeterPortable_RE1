@@ -145,7 +145,7 @@ void PageSelect::updateStatus()
                 "<span style='font-weight:bold; "+strStyleSheetColor+"'>"+textResource.getText(PAGE_SELECT,"labelTextResult").at(bloodSugarIndex)+" "+"</span>";
         */
 
-        strResult = "<span style='font-weight:bold;'>"+strResult+"</span>";
+        strResult = "<span style='font-weight:bold;'>"+strResult+" </span>";
 
         switch (instance.getDeviceLanguage())
         {
