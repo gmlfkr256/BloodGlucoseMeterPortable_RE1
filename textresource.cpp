@@ -111,11 +111,11 @@ void TextResource::init()
     fontData[Lan][PAGE_SELECT].insert("labelTextMgdl",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::ExtraBold));
     fontData[Lan][PAGE_SELECT].insert("labelTextResult",QFont(instance.fontSuit,instance.pixelToPoint(36)));
     textData[Lan][PAGE_SELECT].insert("labelTextResult",QStringList{
-                                          "정상 혈당입니다",
-                                          "저혈당 주의입니다",
-                                          "고혈당 주의입니다",
-                                          "저혈당 경고입니다",
-                                          "고혈당 경고입니다"
+                                          "정상 혈당",
+                                          "저혈당 주의",
+                                          "고혈당 주의",
+                                          "저혈당 경고",
+                                          "고혈당 경고"
                                       });
     textData[Lan][PAGE_SELECT].insert("labelTextResultSub",QStringList{
                                           "입니다"
