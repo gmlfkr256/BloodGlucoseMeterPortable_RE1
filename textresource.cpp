@@ -300,8 +300,8 @@ void TextResource::init()
                                                 });
 
     //PAGE_HOME
-    fontData[Lan][PAGE_HOME].insert("labelButtonTitle",QFont(instance.fontSuit,instance.pixelToPoint(26),QFont::Bold));
-    textData[Lan][PAGE_HOME].insert("labelButtonTitle",QStringList{"Wake\nUp","Before\nBreakfast","After\nBreakfast","Before\nLunch","After\nLunch","Before\nDinner","After\nDinner","Bed\nTime"});
+    fontData[Lan][PAGE_HOME].insert("labelTextStatus",QFont(instance.fontSuit,instance.pixelToPoint(26),QFont::Bold));
+    textData[Lan][PAGE_HOME].insert("labelTextStatus",QStringList{"Wake\nUp","Before\nBreakfast","After\nBreakfast","Before\nLunch","After\nLunch","Before\nDinner","After\nDinner","Bed\nTime"});
 
     fontData[Lan][PAGE_HOME].insert("labelButtonText",QFont(instance.fontSuit,instance.pixelToPoint(62),QFont::ExtraBold));
 
