@@ -82,7 +82,6 @@ void PageResult::update()
     labelTextGlucoseValue->setStyleSheet(strTextColor);
 
     labelProgressBarBg->setStyleSheet("background-color: #f2f2f2; border-radius: 15px;");
-    labelProgressBar->setFixedWidth(200);
 }
 
 void PageResult::setColorValue(int nGlucoseValue)
@@ -112,9 +111,16 @@ void PageResult::setColorValue(int nGlucoseValue)
         strBgColor = "background-color: #edfaf8;";
     }
 
-
     labelBgGlucoseValue->setStyleSheet(strBgColor+strBgBorderRadius);
     labelProgressBar->setStyleSheet(strStyleSheetProgressBar+"border-radius: 15px;");
+
+    int nProgressBarWidth = static_cast<int>(600 * (nGlucoseValue / 400 ));
+
+    if(nProgressBarWidth <40)
+        nProgressBarWidth = 40;
+    else if(nProgressBarWidth >600)
+        nProgressBarWidth = 600;
+    labelProgressBar->setFixedWidth(nProgressBarWidth);
 
     QString strTextStatus = textResource.getText(PAGE_HOME,"labelTextStatus").at(instance.getTimeStatus());
     QString strResult;
