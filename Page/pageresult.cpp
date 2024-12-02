@@ -53,7 +53,6 @@ void PageResult::update()
     labelTextTime->setText(textResource.getText(PAGE_RESULT,"labelTextTime").at(0));
 
     labelText->setFont(textResource.getFont(PAGE_RESULT,"labelText"));
-    labelText->setStyleSheet("QLabel {line-height: 0.5; }");
 
     strTextColor = "color: black;";
     strTextValue = "-";
@@ -114,7 +113,7 @@ void PageResult::setColorValue(int nGlucoseValue)
                 +"<span style='color: #808080; '>"+textResource.getText(PAGE_RESULT,"indexResultSub").at(0);
         break;
     case EN:
-        strResult += "<p style='font-weight:blod; "+strTextColor+"'>"+textResource.getText(PAGE_RESULT,"indexResult").at(nBloodSugarIndex)+"</p>"
+        strResult += "<p style='font-weight:blod; "+strTextColor+" line-height: 0.5;'>"+textResource.getText(PAGE_RESULT,"indexResult").at(nBloodSugarIndex)+"</p>"
                 +"<p sytel='color: #808080; '>"+textResource.getText(PAGE_RESULT,"indexResultSub").at(nBloodSugarIndex);
         break;
     case JP:
