@@ -314,10 +314,17 @@ void TextResource::init()
     fontData[Lan][PAGE_SELECT].insert("labelTextResult",QFont(instance.fontSuit,instance.pixelToPoint(32)));
     textData[Lan][PAGE_SELECT].insert("labelTextResult", QStringList{
                                           "Normal",
-                                          "Low Blood Sugar Caution",
-                                          "High Blood Sugar Caution",
-                                          "Low Blood Sugar Warning",
-                                          "High Blood Sugar Warning"
+                                          "Caution",
+                                          "Caution",
+                                          "Warning",
+                                          "Warning"
+                                      });
+    textData[Lan][PAGE_SELECT].insert("labelTextResultSub",QStringList{
+                                          "Blood Sugar",
+                                          "Low Blood Sugar",
+                                          "High Blood Sugar",
+                                          "Low Blood Sugar",
+                                          "High Blood Sugar"
                                       });
 
     fontData[Lan][PAGE_SELECT].insert("labelTextTime",QFont(instance.fontSuit,instance.pixelToPoint(21),QFont::Bold));
