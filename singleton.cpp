@@ -507,7 +507,11 @@ QString Singleton::getTextColorGlucoseValue(int glucoseValue, bool bIsBlack)
     switch (getDeviceColor())
     {
     case COLOR_DEFAULT:
-        if(glucoseValue<=thresholdLow || glucoseValue>=thresholdHigh)
+        if(glucoseValue<=nThresholdLimitLow || glucoseValue>=nThresholdLimitHigh)
+        {
+            strColor = "color: #000000";
+        }
+        else if(glucoseValue<=thresholdLow || glucoseValue>=thresholdHigh)
         {
             strColor = "color: #f70000;";
         }
