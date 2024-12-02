@@ -136,7 +136,7 @@ void PageSelect::updateStatus()
 
         strResult = textResource.getText(PAGE_SELECT,"labelTextResult").at(bloodSugarIndex);
 
-        /*
+
         strResult =  "<span style='font-weight:bold;'>"+textResource.getText(PAGE_HOME,"labelTextStatus").at(nTimeStatus)+" "+"</span>" +
                 "<span style='font-weight:bold; "+strStyleSheetColor+"'>"+textResource.getText(PAGE_SELECT,"labelTextResult").at(bloodSugarIndex)+" "+"</span>";
         switch (instance.getDeviceLanguage())
@@ -156,7 +156,7 @@ void PageSelect::updateStatus()
         case LAN_MAX:
             break;
         }
-         */
+
 
         labelTextResult->setText(strResult);
 
