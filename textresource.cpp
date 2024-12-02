@@ -225,7 +225,7 @@ void TextResource::init()
                                           "저혈당 경고",
                                           "고혈당 경고"
                                       });
-    textData[Lan][PAGE_RESULT].insert("labelResultSub",QStringList{
+    textData[Lan][PAGE_RESULT].insert("indexResultSub",QStringList{
                                           "입니다"
                                       });
 
@@ -434,7 +434,7 @@ void TextResource::init()
                                           "Warning",
                                           "Warning"
                                       });
-    textData[Lan][PAGE_RESULT].insert("labelResultSub",QStringList{
+    textData[Lan][PAGE_RESULT].insert("indexResultSub",QStringList{
                                           "Blood Sugar",
                                           "Low Blood Sugar",
                                           "High Blood Sugar",
