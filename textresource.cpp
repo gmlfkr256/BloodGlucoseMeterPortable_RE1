@@ -306,8 +306,8 @@ void TextResource::init()
     textData[Lan][PAGE_SELECT].insert("labelTextStatusSub", QStringList{"Please start the measurement"});
 
     fontData[Lan][PAGE_SELECT].insert("labelTextStatusValue",QFont(instance.fontSuit,instance.pixelToPoint(40),QFont::Bold));
-    fontData[Lan][PAGE_SELECT].insert("labelTextGlucoseValue",QFont(instance.fontSuit,instance.pixelToPoint(131),QFont::ExtraBold));
-    fontData[Lan][PAGE_SELECT].insert("labelTextMgdl",QFont(instance.fontSuit,instance.pixelToPoint(34),QFont::ExtraBold));
+    fontData[Lan][PAGE_SELECT].insert("labelTextGlucoseValue",QFont(instance.fontSuit,instance.pixelToPoint(130),QFont::Bold));
+    fontData[Lan][PAGE_SELECT].insert("labelTextMgdl",QFont(instance.fontSuit,instance.pixelToPoint(34),QFont::Bold));
     fontData[Lan][PAGE_SELECT].insert("labelTextResult",QFont(instance.fontSuit,instance.pixelToPoint(32)));
     textData[Lan][PAGE_SELECT].insert("labelTextResult", QStringList{
                                           "Normal",
