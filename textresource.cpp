@@ -418,7 +418,7 @@ void TextResource::init()
 
     //PAGE_RESULT
     fontData[Lan][PAGE_RESULT].insert("labelTextMgdl",QFont(instance.fontSuit,instance.pixelToPoint(27)));
-    textData[Lan][PAGE_RESULT].insert("labelTextMgdel",QStringList{"mg/dL"});
+    textData[Lan][PAGE_RESULT].insert("labelTextMgdl",QStringList{"mg/dL"});
 
     fontData[Lan][PAGE_RESULT].insert("labelTextTime",QFont(instance.fontSuit,instance.pixelToPoint(21),QFont::Bold));
     textData[Lan][PAGE_RESULT].insert("labelTextTime",QStringList{"Time"});
