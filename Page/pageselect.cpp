@@ -34,20 +34,27 @@ void PageSelect::init()
     labelTextStatusSub->setGeometry(0,329,640,30);
     labelTextStatusSub->setAlignment(Qt::AlignCenter);
 
+    //value
+    labelTextStatusValue = new QLabel(this);
+    labelTextStatusValue->setGeometry(0,84,640,50);
+
+    labelTextIcon = new QLabel(this);
+    labelTextIcon->setGeometry(83,214,150,33);
+
     labelTextGlucoseValue = new QLabel(this);
-    labelTextGlucoseValue->setGeometry(0,98,376,163);
-    labelTextGlucoseValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
+    labelTextGlucoseValue->setGeometry(0,149,640,162);
+    labelTextGlucoseValue->setAlignment(Qt::AlignCenter);
 
     labelTextMgdl = new QLabel(this);
-    labelTextMgdl->setGeometry(379,189,261,43);
-    labelTextMgdl->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+    labelTextMgdl->setGeometry(446,245,100,38);
+    labelTextMgdl->setAlignment(Qt::AlignCenter);
 
     labelTextResult = new QLabel(this);
-    labelTextResult->setGeometry(0,253,640,40);
+    labelTextResult->setGeometry(0,311,640,45);
     labelTextResult->setAlignment(Qt::AlignCenter);
 
     labelTextTime = new QLabel(this);
-    labelTextTime->setGeometry(237,305,167,36);
+    labelTextTime->setGeometry(0,137,640,26);
     labelTextTime->setAlignment(Qt::AlignCenter);
 
     update();
@@ -68,9 +75,11 @@ void PageSelect::update()
     labelTextStatusSub->setFont(textResource.getFont(PAGE_SELECT,"labelTextStatusSub"));
     labelTextStatusSub->setText(textResource.getText(PAGE_SELECT,"labelTextStatusSub").at(0));
 
+    labelTextStatusValue->setFont(textResource.getFont(PAGE_SELECT,"labelTextStatusValue"));
     labelTextGlucoseValue->setFont(textResource.getFont(PAGE_SELECT,"labelTextGlucoseValue"));
     labelTextMgdl->setFont(textResource.getFont(PAGE_SELECT,"labelTextMgdl"));
     labelTextResult->setFont(textResource.getFont(PAGE_SELECT,"labelTextResult"));
+    labelTextIcon->setFont(textResource.getFont(PAGE_SELECT,"labelTextIcon"));
 
     updateStatus();
 }
@@ -86,10 +95,12 @@ void PageSelect::updateStatus()
     labelTextStatus->hide();
     labelTextStatusSub->hide();
 
+    labelTextStatusValue->hide();
     labelTextGlucoseValue->hide();
     labelTextMgdl->hide();
     labelTextResult->hide();
     labelTextTime->hide();
+    labelTextIcon->hide();
 
     if(instance.histInfo.val[nTimeStatus].valid_flag == 0)
     {
@@ -107,7 +118,8 @@ void PageSelect::updateStatus()
     }
     else
     {
-        int nTimeStatus = instance.getTimeStatus();
+        labelTextStatusValue->setText(textResource.getText(PAGE_HOME,"labelTextStatus").at(nTimeStatus));
+
         int glucoseValue = instance.histInfo.val[nTimeStatus].value;
         labelTextGlucoseValue->setText(QString::number(glucoseValue));
 
@@ -122,16 +134,15 @@ void PageSelect::updateStatus()
         BloodSugarLevel bloodSugarLevel = instance.getBloodSugarLevel(glucoseValue);
         int bloodSugarIndex = static_cast<int>(bloodSugarLevel);
 
-        strResult =  "<span style='font-weight:bold;'>"+textResource.getText(PAGE_HOME,"labelTextStatus").at(nTimeStatus)+": "+"</span>" +
+        strResult = textResource.getText(PAGE_SELECT,"labelTextResult").at(bloodSugarIndex);
+
+        /*
+        strResult =  "<span style='font-weight:bold;'>"+textResource.getText(PAGE_HOME,"labelTextStatus").at(nTimeStatus)+" "+"</span>" +
                 "<span style='font-weight:bold; "+strStyleSheetColor+"'>"+textResource.getText(PAGE_SELECT,"labelTextResult").at(bloodSugarIndex)+" "+"</span>";
         switch (instance.getDeviceLanguage())
         {
         case KR:
             strResult +=
-                    /*
-                    "<span style='font-weight:bold;'>"+textResource.getText(PAGE_HOME,"labelTextStatus").at(nTimeStatus)+" "+"</span>" +
-                    "<span style='font-weight:bold; "+strStyleSheetColor+"'>"+textResource.getText(PAGE_SELECT,"labelTextResult").at(bloodSugarIndex)+" "+"</span>" +
-                            */
                     "<span>"+textResource.getText(PAGE_SELECT,"resultSub").at(0)+"</span>";
             break;
         case EN:
@@ -145,17 +156,39 @@ void PageSelect::updateStatus()
         case LAN_MAX:
             break;
         }
+         */
+
         labelTextResult->setText(strResult);
 
-        labelTextTime->setStyleSheet("color: #777777; border: 1px solid #777777; border-radius: 18px");
+        //labelTextTime->setStyleSheet("color: #777777; border: 1px solid #777777; border-radius: 18px");
+        labelTextTime->setStyleSheet("color: #707070;");
         QString strTime;
         strTime = textResource.getText(PAGE_SELECT,"labelTextTime").at(0)+" "+QString("%1:%2").arg(QString::number(instance.histInfo.val[nTimeStatus].hour).rightJustified(2,'0'),QString::number(instance.histInfo.val[nTimeStatus].min).rightJustified(2,'0'));
         labelTextTime->setText(strTime);
 
+        labelTextIcon->setText(textResource.getText(PAGE_SELECT,"labelTextIcon").at(bloodSugarIndex));
+
+        switch (bloodSugarLevel)
+        {
+        case BLOOD_NORMAL:
+            labelTextIcon->setStyleSheet("background-color: #52d0ba; color: #ffffff; border-radius: 16px;");
+            break;
+        case BLOOD_CAUTION_LOW:
+        case BLOOD_CAUTION_HIGH:
+            labelTextIcon->setStyleSheet("background-color: #ffb200; color: #ffffff; border-radius: 16px;");
+            break;
+        case BLOOD_WARNING_LOW:
+        case BLOOD_WARNING_HIGH:
+            labelTextIcon->setStyleSheet("background-color: #f70000; color: #ffffff; border-radius: 16px;");
+            break;
+        }
+
+        labelTextStatusValue->show();
         labelTextGlucoseValue->show();
         labelTextMgdl->show();
         labelTextResult->show();
         labelTextTime->show();
+        labelTextIcon->show();
     }
 }
 

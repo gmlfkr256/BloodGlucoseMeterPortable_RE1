@@ -25,6 +25,8 @@ public:
     QLabel *labelTextStatusSub;
 
     //value
+    QLabel *labelTextStatusValue;
+    QLabel *labelTextIcon;
     QLabel *labelTextGlucoseValue;
     QLabel *labelTextMgdl;
     QLabel *labelTextResult;
