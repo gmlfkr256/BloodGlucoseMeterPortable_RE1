@@ -173,15 +173,15 @@ void PageSelect::updateStatus()
         switch (bloodSugarLevel)
         {
         case BLOOD_NORMAL:
-            labelTextIcon->setStyleSheet("background-color: #52d0ba; color: #ffffff; border-radius: 16px;");
+            labelTextIcon->setStyleSheet("background-color: #52d0ba; color: #ffffff; border-radius: 16px; padding:10px;");
             break;
         case BLOOD_CAUTION_LOW:
         case BLOOD_CAUTION_HIGH:
-            labelTextIcon->setStyleSheet("background-color: #ffb200; color: #ffffff; border-radius: 16px;");
+            labelTextIcon->setStyleSheet("background-color: #ffb200; color: #ffffff; border-radius: 16px; padding:10px;");
             break;
         case BLOOD_WARNING_LOW:
         case BLOOD_WARNING_HIGH:
-            labelTextIcon->setStyleSheet("background-color: #f70000; color: #ffffff; border-radius: 16px;");
+            labelTextIcon->setStyleSheet("background-color: #f70000; color: #ffffff; border-radius: 16px; padding:10px;");
             break;
         }
 
