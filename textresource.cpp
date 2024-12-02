@@ -117,6 +117,9 @@ void TextResource::init()
                                           "저혈당 경고입니다",
                                           "고혈당 경고입니다"
                                       });
+    textData[Lan][PAGE_SELECT].insert("labelTextResultSub",QStringList{
+                                          "입니다"
+                                      });
 
     fontData[Lan][PAGE_SELECT].insert("labelTextTime",QFont(instance.fontSuit,instance.pixelToPoint(21)));
     textData[Lan][PAGE_SELECT].insert("labelTextTime",QStringList{"측정 시각"});

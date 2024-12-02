@@ -137,17 +137,21 @@ void PageSelect::updateStatus()
         int bloodSugarIndex = static_cast<int>(bloodSugarLevel);
 
         strResult = textResource.getText(PAGE_SELECT,"labelTextResult").at(bloodSugarIndex);
+        QString strResultSub = textResource.getText(PAGE_SELECT,"labelTextResultSub").at(0);
+        int nResultSubIndex = 0;
 
-        /*
         strResult =  "<span style='font-weight:bold;'>"+textResource.getText(PAGE_HOME,"labelTextStatus").at(nTimeStatus)+" "+"</span>" +
                 "<span style='font-weight:bold; "+strStyleSheetColor+"'>"+textResource.getText(PAGE_SELECT,"labelTextResult").at(bloodSugarIndex)+" "+"</span>";
+
+        strResult = "<span style='font-weight:bold;'>"+strResult+"</span>";
+
         switch (instance.getDeviceLanguage())
         {
         case KR:
-            strResult +=
-                    "<span>"+textResource.getText(PAGE_SELECT,"resultSub").at(0)+"</span>";
+            nResultSubIndex = 0;
             break;
         case EN:
+            nResultSubIndex = bloodSugarIndex;
             break;
         case JP:
             break;
@@ -158,7 +162,9 @@ void PageSelect::updateStatus()
         case LAN_MAX:
             break;
         }
-        */
+
+        strResultSub = textResource.getText(PAGE_SELECT,"labelTextResultSub").at(nResultSubIndex);
+        strResult += strResultSub;
 
         labelTextResult->setText(strResult);
 
