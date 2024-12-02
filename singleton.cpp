@@ -15,6 +15,10 @@ void Singleton::init()
 #if DEVCIE
     updateSysUserInfo();
 #else
+
+    langData.used = EN;
+    setDeviceLanguage(langData.used);
+
     thresholdLow = 69;
     thresholdHigh = 170;
 
@@ -50,8 +54,7 @@ void Singleton::init()
         qDebug()<<sysUserInfo[i].passwd;
     }
 
-    langData.used = KR;
-    setDeviceLanguage(langData.used);
+
 
     dispData.color = COLOR_DEFAULT;
     setDeviceColor(dispData.color);
