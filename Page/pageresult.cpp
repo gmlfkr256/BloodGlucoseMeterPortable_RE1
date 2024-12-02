@@ -104,7 +104,7 @@ void PageResult::setColorValue(int nGlucoseValue)
     BloodSugarLevel bloodSugarLevel = instance.getBloodSugarLevel(nGlucoseValue);
     int nBloodSugarIndex = static_cast<int>(bloodSugarLevel);
 
-    strResult = "<p style='font-weight:bold;'>"+strTextStatus+" </p>";
+    strResult = "<p style='font-weight:bold; line-height: 0.5;'>"+strTextStatus+" </p>";
 
     switch (instance.getDeviceLanguage())
     {
