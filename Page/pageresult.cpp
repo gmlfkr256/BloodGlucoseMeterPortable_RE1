@@ -144,7 +144,7 @@ void PageResult::setColorValue(int nGlucoseValue)
         break;
     }
 
-
+    qDebug()<<strResult;
     labelText->setText(strResult);
 }
 
