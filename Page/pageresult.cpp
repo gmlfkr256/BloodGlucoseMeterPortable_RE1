@@ -128,11 +128,11 @@ void PageResult::setColorValue(int nGlucoseValue)
     {
     case KR:
         strResult += "<span style='font-weight:bold; "+strTextColor+"'>"+textResource.getText(PAGE_RESULT,"indexResult").at(nBloodSugarIndex)+" </span>"
-                +"<span style='color: #808080; '>"+textResource.getText(PAGE_RESULT,"indexResultSub").at(0);
+                +"<span style='color: #808080; '>"+textResource.getText(PAGE_RESULT,"indexResultSub").at(0)+"</span>";
         break;
     case EN:
         strResult += "<p style='font-weight:bold; "+strTextColor+" line-height: 0.5; font-size: 30px;'>"+textResource.getText(PAGE_RESULT,"indexResult").at(nBloodSugarIndex)+"</p>"
-                +"<p sytle='color: #808080; font-size: 30px;'>"+textResource.getText(PAGE_RESULT,"indexResultSub").at(nBloodSugarIndex);
+                +"<p sytle='color: #808080; font-size: 30px;'>"+textResource.getText(PAGE_RESULT,"indexResultSub").at(nBloodSugarIndex)+"</p>";
         break;
     case JP:
         break;
