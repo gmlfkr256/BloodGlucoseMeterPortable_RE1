@@ -95,6 +95,7 @@ void PageResult::setColorValue(int nGlucoseValue)
     int nBloodSugarIndex = static_cast<int>(bloodSugarLevel);
 
     strResult = "<span style='font-weight:bold;'>"+strTextStatus+" </span>";
+    /*
     switch (instance.getDeviceLanguage())
     {
     case KR:
@@ -112,7 +113,7 @@ void PageResult::setColorValue(int nGlucoseValue)
     case LAN_MAX:
         break;
     }
-
+    */
 }
 
 void PageResult::pageShow()
