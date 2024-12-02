@@ -386,6 +386,7 @@ void PageGarph::pageHide()
             emit signalShowPageNum(PAGE_CALI_RESULT);
             break;
         case GRAPH_MEASURE:
+            emit signalShowPageNum(PAGE_RESULT);
             break;
         case GRAPH_MAX:
             break;
