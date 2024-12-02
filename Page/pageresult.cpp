@@ -53,7 +53,7 @@ void PageResult::update()
     labelTextTime->setText(textResource.getText(PAGE_RESULT,"labelTextTime").at(0));
 
     labelText->setFont(textResource.getFont(PAGE_RESULT,"labelText"));
-    labelText->setStyleSheet("line-height: 0.5;");
+    labelText->setStyleSheet("QLabel {line-height: 0.5; }");
 
     strTextColor = "color: black;";
     strTextValue = "-";
