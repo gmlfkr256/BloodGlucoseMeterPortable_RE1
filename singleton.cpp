@@ -507,7 +507,7 @@ QString Singleton::getTextColorGlucoseValue(int glucoseValue, bool bIsBlack)
 
     strColorText += strColor+";";
 
-    if(bIsBlack)
+    if(bIsBlack && strColor=="#52d0ba")
         strColorText = "color: #000000;";
 
     qDebug()<<"getTextColorGluocseValue: "<<strColorText;
