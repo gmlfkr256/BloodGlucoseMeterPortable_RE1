@@ -32,6 +32,7 @@ void PageResult::init()
 
     labelProgressBarTooltip = new QLabel(this);
     labelProgressBarTooltip->setGeometry(0,297,75,23);
+    labelProgressBarTooltip->setAlignment(Qt::AlignCenter);
 
     labelProgressBarTooltipImg = new QLabel(this);
     labelProgressBarTooltipImg->setGeometry(0,0,7,5);
@@ -101,6 +102,7 @@ void PageResult::setColorValue(int nGlucoseValue)
     QString strBgColor;
     QString strStyleSheetProgressBar;
     int nIndexTooltip = 0;
+    QString strStyleSheetTooltip;
     QString strPathPngTooltip;
 
     if(nGlucoseValue<=instance.nThresholdLimitLow || nGlucoseValue>=instance.nThresholdLimitHigh)
@@ -109,6 +111,7 @@ void PageResult::setColorValue(int nGlucoseValue)
         strStyleSheetProgressBar = "";
         nIndexTooltip = 3;
         strPathPngTooltip = "/triError.png";
+
     }
     else if(nGlucoseValue<=instance.thresholdLow || nGlucoseValue>=instance.thresholdHigh)
     {
@@ -134,6 +137,8 @@ void PageResult::setColorValue(int nGlucoseValue)
 
     labelBgGlucoseValue->setStyleSheet(strBgColor+strBgBorderRadius);
     labelProgressBar->setStyleSheet(strStyleSheetProgressBar+"border-radius: 15px;");
+    strStyleSheetTooltip = instance.getBgColorGlucoseValue(nGlucoseValue) + "border-radius: 11px;";
+    labelProgressBarTooltip->setStyleSheet(strStyleSheetTooltip);
     labelProgressBarTooltip->setText(textResource.getText(PAGE_RESULT,"progressBarTooltip").at(nIndexTooltip));
     instance.pixLoad(labelProgressBarTooltipImg,false,strDirPath,strPathPngTooltip);
 
