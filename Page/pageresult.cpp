@@ -85,7 +85,7 @@ void PageResult::update()
 #if DEVICE
         nGlucoseValue = instance.sysProcMonInfo.adc_raw;
 #else
-        nGlucoseValue = 100;
+        nGlucoseValue = 200;
 #endif
         strTextValue = QString::number(nGlucoseValue);
         strTextColor = instance.getTextColorGlucoseValue(nGlucoseValue,false);
