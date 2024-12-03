@@ -125,7 +125,7 @@ void PageResult::setColorValue(int nGlucoseValue)
     }
     else if(nGlucoseValue<=instance.thresholdLow+GLUCOSE_LOW_PLUS || nGlucoseValue>=instance.thresholdHigh+GLUCOSE_HIGH_MINUS)
     {
-        strBgColor = "background-color: #ffb200;";
+        strBgColor = "background-color: #fdf6e8;";
         strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/caution.png);";
         nIndexTooltip = 1;
         strPathPngTooltip = "/triCaution.png";
@@ -139,7 +139,7 @@ void PageResult::setColorValue(int nGlucoseValue)
     }
 
     labelBgGlucoseValue->setStyleSheet(strBgColor+strBgBorderRadius);
-    labelProgressBar->setStyleSheet(strStyleSheetProgressBar+"border-radius: 15px;");
+
     strStyleSheetTooltip = instance.getBgColorGlucoseValue(nGlucoseValue) + "color: #ffffff; border-radius: 11px;";
     labelProgressBarTooltip->setStyleSheet(strStyleSheetTooltip);
     labelProgressBarTooltip->setText(textResource.getText(PAGE_RESULT,"labelProgressBarTooltip").at(nIndexTooltip));
@@ -154,6 +154,7 @@ void PageResult::setColorValue(int nGlucoseValue)
     labelProgressBar->setFixedWidth(nProgressBarWidth);
     labelProgressBarTooltip->move(labelProgressBar->x()+labelProgressBar->width()-(labelProgressBarTooltip->width()/2),297);
     labelProgressBarTooltipImg->setGeometry(labelProgressBarTooltip->x()+(labelProgressBarTooltip->width()/2)-3,labelProgressBarTooltip->y()+labelProgressBarTooltip->height(),7,5);
+    labelProgressBar->setStyleSheet(strStyleSheetProgressBar+"border-radius: 15px;");
 
     QString strTextStatus = textResource.getText(PAGE_HOME,"labelTextStatus").at(instance.getTimeStatus());
     QString strResult;
