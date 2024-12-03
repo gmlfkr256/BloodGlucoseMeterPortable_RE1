@@ -115,5 +115,9 @@
         <file>Image/Default/Public/ImageResult/caution.png</file>
         <file>Image/Default/Public/ImageResult/normal.png</file>
         <file>Image/Default/Public/ImageResult/warning.png</file>
+        <file>Image/Default/Public/ImageResult/triCaution.png</file>
+        <file>Image/Default/Public/ImageResult/triError.png</file>
+        <file>Image/Default/Public/ImageResult/triNormal.png</file>
+        <file>Image/Default/Public/ImageResult/triWarning.png</file>
     </qresource>
 </RCC>
