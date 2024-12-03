@@ -72,6 +72,9 @@ void PageResult::update()
     strTextColor = "color: black;";
     strTextValue = "-";
 
+    labelProgressBarBg->setStyleSheet("background-color: #f2f2f2; border-radius: 15px;");
+    labelProgressBarTooltip->setFont(textResource.getFont(PAGE_RESULT,"labelProgressBarTooltip"));
+
     if(instance.sysProcMonInfo.err_code != GAPI_PROC_ECODE_NORMAL)
     {
         labelBgGlucoseValue->setStyleSheet("background-color: #f2f2f2; border-radius: 18px;");
@@ -93,7 +96,7 @@ void PageResult::update()
     labelTextGlucoseValue->setText(strTextValue);
     labelTextGlucoseValue->setStyleSheet(strTextColor);
 
-    labelProgressBarBg->setStyleSheet("background-color: #f2f2f2; border-radius: 15px;");
+
 }
 
 void PageResult::setColorValue(int nGlucoseValue)
@@ -139,7 +142,7 @@ void PageResult::setColorValue(int nGlucoseValue)
     labelProgressBar->setStyleSheet(strStyleSheetProgressBar+"border-radius: 15px;");
     strStyleSheetTooltip = instance.getBgColorGlucoseValue(nGlucoseValue) + "color: #ffffff; border-radius: 11px;";
     labelProgressBarTooltip->setStyleSheet(strStyleSheetTooltip);
-    labelProgressBarTooltip->setText(textResource.getText(PAGE_RESULT,"progressBarTooltip").at(nIndexTooltip));
+    labelProgressBarTooltip->setText(textResource.getText(PAGE_RESULT,"labelProgressBarTooltip").at(nIndexTooltip));
     instance.pixLoad(labelProgressBarTooltipImg,false,strDirPath,strPathPngTooltip);
 
     int nProgressBarWidth = static_cast<int>(600*(static_cast<double>(nGlucoseValue)/400) );

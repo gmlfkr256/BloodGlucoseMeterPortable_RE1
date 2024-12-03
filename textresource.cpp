@@ -448,7 +448,8 @@ void TextResource::init()
                                           "Low Blood Sugar",
                                           "High Blood Sugar"
                                       });
-    textData[Lan][PAGE_RESULT].insert("progressBarTooltip",QStringList{
+    fontData[Lan][PAGE_RESULT].insert("labelProgressBarTooltip",QFont(instance.fontSuit,instance.pixelToPoint(16),QFont::Bold));
+    textData[Lan][PAGE_RESULT].insert("labelProgressBarTooltip",QStringList{
                                           "Normal",
                                           "Caution",
                                           "Warning",
