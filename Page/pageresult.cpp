@@ -30,6 +30,12 @@ void PageResult::init()
     labelProgressBar = new QLabel(this);
     labelProgressBar->setGeometry(20,329,600,30);
 
+    labelProgressBarTooltip = new QLabel(this);
+    labelProgressBarTooltip->setGeometry(0,297,75,23);
+
+    labelProgressBarTooltipImg = new QLabel(this);
+    labelProgressBarTooltipImg->setGeometry(0,0,7,5);
+
     customButtonSave = new CustomButtonSave(this);
     customButtonCancel = new CustomButtonCancel(this);
     update();
@@ -94,30 +100,42 @@ void PageResult::setColorValue(int nGlucoseValue)
     QString strBgBorderRadius = "border-radius: 18px;";
     QString strBgColor;
     QString strStyleSheetProgressBar;
+    int nIndexTooltip = 0;
+    QString strPathPngTooltip;
 
     if(nGlucoseValue<=instance.nThresholdLimitLow || nGlucoseValue>=instance.nThresholdLimitHigh)
     {
         strBgColor = "background-color: #f2f2f2;";
         strStyleSheetProgressBar = "";
+        nIndexTooltip = 3;
+        strPathPngTooltip = "/triError.png";
     }
     else if(nGlucoseValue<=instance.thresholdLow || nGlucoseValue>=instance.thresholdHigh)
     {
         strBgColor = "background-color: #ffebeb;";
         strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/warning.png);";
+        nIndexTooltip = 2;
+        strPathPngTooltip = "/triWarning.png";
     }
     else if(nGlucoseValue<=instance.thresholdLow+GLUCOSE_LOW_PLUS || nGlucoseValue>=instance.thresholdHigh+GLUCOSE_HIGH_MINUS)
     {
         strBgColor = "background-color: #ffb200;";
         strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/caution.png);";
+        nIndexTooltip = 1;
+        strPathPngTooltip = "/triCaution.png";
     }
     else
     {
         strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/normal.png);";
         strBgColor = "background-color: #edfaf8;";
+        nIndexTooltip = 0;
+        strPathPngTooltip = "/triNormal.png";
     }
 
     labelBgGlucoseValue->setStyleSheet(strBgColor+strBgBorderRadius);
     labelProgressBar->setStyleSheet(strStyleSheetProgressBar+"border-radius: 15px;");
+    labelProgressBarTooltip->setText(textResource.getText(PAGE_RESULT,"labelProgressBarTooltip").at(nIndexTooltip));
+    instance.pixLoad(labelProgressBarTooltipImg,false,strDirPath,strPathPngTooltip);
 
     int nProgressBarWidth = static_cast<int>(600*(static_cast<double>(nGlucoseValue)/400) );
 
@@ -126,6 +144,8 @@ void PageResult::setColorValue(int nGlucoseValue)
     else if(nProgressBarWidth >600)
         nProgressBarWidth = 600;
     labelProgressBar->setFixedWidth(nProgressBarWidth);
+    labelProgressBarTooltip->move(nProgressBarWidth,297);
+    labelProgressBarTooltipImg->setGeometry((labelProgressBarTooltip->width()/2)+3,labelProgressBarTooltip->y()+labelProgressBarTooltip->height(),7,5);
 
     QString strTextStatus = textResource.getText(PAGE_HOME,"labelTextStatus").at(instance.getTimeStatus());
     QString strResult;

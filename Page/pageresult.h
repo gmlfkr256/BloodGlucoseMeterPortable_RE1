@@ -20,15 +20,14 @@ public:
 
     QLabel *labelProgressBarBg;
     QLabel *labelProgressBar;
-    //QLabel *labelProgressBarTooltip;
+    QLabel *labelProgressBarTooltip;
+    QLabel *labelProgressBarTooltipImg;
 
     CustomButtonSave *customButtonSave;
     CustomButtonCancel *customButtonCancel;
 
     QString strTextValue;
     QString strTextColor;
-
-
 
     void update() override;
     void pageShow() override;

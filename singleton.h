@@ -264,6 +264,8 @@ public:
     int pixelToPoint(int pixelSize);
 
     QString getTextColorGlucoseValue(int glucoseValue,bool bInBlack = false);
+    QString getBgColorGlucoseValue(int glucoseValue);
+    QString getColorGlucoseValue(const int &glucoseValue);
     BloodSugarLevel getBloodSugarLevel(int glucoseValue);
 
     void setPageNumPrev(PageNum pageNumPrev);

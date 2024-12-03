@@ -502,29 +502,51 @@ int Singleton::pixelToPoint(int pixelSize)
 
 QString Singleton::getTextColorGlucoseValue(int glucoseValue, bool bIsBlack)
 {
-    QString strColor = "color: #666666;";
+    QString strColorText = "color:";
+    QString strColor = getColorGlucoseValue(glucoseValue);
+
+    strColorText += strColor;
+
+    if(bIsBlack)
+        strColorText = "color: #000000;";
+
+    qDebug()<<"getTextColorGluocseValue: "<<strColorText;
+    return strColorText;
+}
+
+QString Singleton::getBgColorGlucoseValue(int glucoseValue)
+{
+    QString strColorBg = "background-color:";
+    QString strColor = getColorGlucoseValue(glucoseValue);
+
+    strColorBg += strColor;
+
+    qDebug()<<"getBgColorGlucoseValue: "<<strColorBg;
+    return strColorBg;
+}
+
+QString Singleton::getColorGlucoseValue(const int &glucoseValue)
+{
+    QString strColor = "#666666;";
 
     switch (getDeviceColor())
     {
     case COLOR_DEFAULT:
         if(glucoseValue<=nThresholdLimitLow || glucoseValue>=nThresholdLimitHigh)
         {
-            strColor = "color: #000000;";
+            strColor = "#000000;";
         }
         else if(glucoseValue<=thresholdLow || glucoseValue>=thresholdHigh)
         {
-            strColor = "color: #f70000;";
+            strColor = "#f70000;";
         }
         else if(glucoseValue<=thresholdLow+GLUCOSE_LOW_PLUS || glucoseValue>=thresholdHigh+GLUCOSE_HIGH_MINUS)
         {
-            strColor = "color: #ffb200;";
+            strColor = "#ffb200;";
         }
         else
         {
-            if(bIsBlack)
-                strColor = "color: #000000;";
-            else
-                strColor = "color: #52d0ba;";
+            strColor = "#52d0ba;";
         }
         break;
     case COLOR_BLUE:
