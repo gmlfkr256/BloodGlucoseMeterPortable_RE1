@@ -119,7 +119,7 @@ void PageGarph::update()
     strLoading = textResource.getText(PAGE_GRAPH,"labelLoading").at(0);
     labelLoading->setText(strLoading);
     //labelLoading->setStyleSheet("background-color: #1F2025; color: white; padding-bottom: 30px;");
-    labelLoading->setStyleSheet("background-color: rgba(0,0,0,200); color: white; padding-botom: 30px;");
+    labelLoading->setStyleSheet("background-color: rgba(0,0,0,200); color: white; padding-top: 98px;");
 }
 
 void PageGarph::updatePainter()
