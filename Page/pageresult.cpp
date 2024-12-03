@@ -85,9 +85,9 @@ void PageResult::update()
 #if DEVICE
         nGlucoseValue = instance.sysProcMonInfo.adc_raw;
 #else
-        //nGlucoseValue = 100; //정상
+        nGlucoseValue = 100; //정상
         //nGlucoseValue = 160; //경고
-        nGlucoseValue = 200; //위험
+        //nGlucoseValue = 200; //위험
 
 #endif
         strTextValue = QString::number(nGlucoseValue);
