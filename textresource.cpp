@@ -229,7 +229,8 @@ void TextResource::init()
                                           "입니다"
                                       });
 
-    textData[Lan][PAGE_RESULT].insert("progressBarTooltip",QStringList{
+    fontData[Lan][PAGE_RESULT].insert("labelProgressBarTooltip",QFont(instance.fontSuit,instance.pixelToPoint(16),QFont::Bold));
+    textData[Lan][PAGE_RESULT].insert("labelProgressBarTooltip",QStringList{
                                           "정상",
                                           "주의",
                                           "경고",
