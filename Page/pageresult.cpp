@@ -150,7 +150,7 @@ void PageResult::setColorValue(int nGlucoseValue)
         nProgressBarWidth = 600;
     labelProgressBar->setFixedWidth(nProgressBarWidth);
     labelProgressBarTooltip->move(nProgressBarWidth,297);
-    labelProgressBarTooltipImg->setGeometry(labelProgressBarTooltip->x()+(labelProgressBarTooltip->width()/2),labelProgressBarTooltip->y()+labelProgressBarTooltip->height(),7,5);
+    labelProgressBarTooltipImg->setGeometry(labelProgressBarTooltip->x()+(labelProgressBarTooltip->width()/2)-3,labelProgressBarTooltip->y()+labelProgressBarTooltip->height(),7,5);
 
     QString strTextStatus = textResource.getText(PAGE_HOME,"labelTextStatus").at(instance.getTimeStatus());
     QString strResult;
