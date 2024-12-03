@@ -118,7 +118,8 @@ void PageGarph::update()
     labelLoading->setFont(textResource.getFont(PAGE_GRAPH,"labelLoading"));
     strLoading = textResource.getText(PAGE_GRAPH,"labelLoading").at(0);
     labelLoading->setText(strLoading);
-    labelLoading->setStyleSheet("background-color: #1F2025; color: white; padding-bottom: 30px;");
+    //labelLoading->setStyleSheet("background-color: #1F2025; color: white; padding-bottom: 30px;");
+    labelLoading->setStyleSheet("background-color: rgba(0,0,0,200); color: white; padding-botom: 30px;");
 }
 
 void PageGarph::updatePainter()
@@ -239,7 +240,7 @@ void PageGarph::paintEvent(QPaintEvent *ev)
         return;
     }
 
-    //painter->setRenderHint(QPainter::Antialiasing,true);
+    painter->setRenderHint(QPainter::Antialiasing,true);
 
 
     painter->setBrush(QColor("#ffffff"));

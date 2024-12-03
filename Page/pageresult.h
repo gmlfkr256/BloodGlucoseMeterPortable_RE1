@@ -22,6 +22,8 @@ public:
     QLabel *labelProgressBar;
     QLabel *labelProgressBarTooltip;
     QLabel *labelProgressBarTooltipImg;
+    QLabel *labelProgressBarTextStart;
+    QLabel *labelProgressBarTextEnd;
 
     CustomButtonSave *customButtonSave;
     CustomButtonCancel *customButtonCancel;

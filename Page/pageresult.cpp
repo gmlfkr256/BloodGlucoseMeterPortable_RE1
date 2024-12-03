@@ -37,8 +37,16 @@ void PageResult::init()
     labelProgressBarTooltipImg = new QLabel(this);
     labelProgressBarTooltipImg->setGeometry(0,0,7,5);
 
+    labelProgressBarTextStart = new QLabel(this);
+    labelProgressBarTextStart->setGeometry(31,302,10,20);
+    labelProgressBarTextStart->setAlignment(Qt::AlignCenter);
+    labelProgressBarTextEnd = new QLabel(this);
+    labelProgressBarTextEnd->setGeometry(580,302,30,20);
+    labelProgressBarTextEnd->setAlignment(Qt::AlignCenter);
+
     customButtonSave = new CustomButtonSave(this);
     customButtonCancel = new CustomButtonCancel(this);
+
     update();
 }
 
@@ -78,12 +86,17 @@ void PageResult::update()
     if(instance.sysProcMonInfo.err_code != GAPI_PROC_ECODE_NORMAL)
     {
         labelBgGlucoseValue->setStyleSheet("background-color: #f2f2f2; border-radius: 18px;");
+        ComponentMeasureResult comMeasureResult;
+        comMeasureResult.setTextResult(labelText,instance.sysProcMonInfo.err_code);
     }
     else
     {
         int nGlucoseValue;
 #if DEVICE
         nGlucoseValue = instance.sysProcMonInfo.adc_raw;
+
+        if(nGlucoseValue>999)
+            nGlucoseValue = 999;
 #else
         nGlucoseValue = 100; //정상
         //nGlucoseValue = 160; //경고
@@ -99,7 +112,10 @@ void PageResult::update()
     labelTextGlucoseValue->setText(strTextValue);
     labelTextGlucoseValue->setStyleSheet(strTextColor);
 
-
+    labelProgressBarTextStart->setStyleSheet("color: #777777;");
+    labelProgressBarTextStart->setText("0");
+    labelProgressBarTextEnd->setStyleSheet("color: #777777");
+    labelProgressBarTextEnd->setText("400");
 }
 
 void PageResult::setColorValue(int nGlucoseValue)
