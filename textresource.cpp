@@ -229,7 +229,7 @@ void TextResource::init()
                                           "입니다"
                                       });
 
-    textData[Lan][PAGE_RESULT].insert("labelProgressBarTooltip",QStringList{
+    textData[Lan][PAGE_RESULT].insert("progressBarTooltip",QStringList{
                                           "정상",
                                           "주의",
                                           "경고",
@@ -447,6 +447,12 @@ void TextResource::init()
                                           "High Blood Sugar",
                                           "Low Blood Sugar",
                                           "High Blood Sugar"
+                                      });
+    textData[Lan][PAGE_RESULT].insert("progressBarTooltip",QStringList{
+                                          "Normal",
+                                          "Caution",
+                                          "Warning",
+                                          "Error"
                                       });
 
 

@@ -134,7 +134,7 @@ void PageResult::setColorValue(int nGlucoseValue)
 
     labelBgGlucoseValue->setStyleSheet(strBgColor+strBgBorderRadius);
     labelProgressBar->setStyleSheet(strStyleSheetProgressBar+"border-radius: 15px;");
-    labelProgressBarTooltip->setText(textResource.getText(PAGE_RESULT,"labelProgressBarTooltip").at(nIndexTooltip));
+    labelProgressBarTooltip->setText(textResource.getText(PAGE_RESULT,"progressBarTooltip").at(nIndexTooltip));
     instance.pixLoad(labelProgressBarTooltipImg,false,strDirPath,strPathPngTooltip);
 
     int nProgressBarWidth = static_cast<int>(600*(static_cast<double>(nGlucoseValue)/400) );
