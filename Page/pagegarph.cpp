@@ -95,7 +95,10 @@ void PageGarph::update()
     labelProgressPercent->setFont(textResource.getFont(PAGE_GRAPH,"labelProgressPercent"));
     labelProgressPercent->setText("%");
 
-    labelProgressBarBg->setStyleSheet("background-color: #f2f2f2; border-radius:10px;");
+    //labelProgressBarBg->setStyleSheet("background-color: #f2f2f2; border-radius:10px;");
+    labelProgressBarBg->setStyleSheet("background-color: #f2f2f2; border-radius: 15px;");
+
+    /*
     labelProgressBar->setStyleSheet(
                 "QLabel {"
                 "    border-radius: 10px;"
@@ -105,7 +108,19 @@ void PageGarph::update()
                 "    background-position: center;"
                 "}"
                 );
-    labelProgressBar->setGeometry(20,80,20,20);
+                */
+    labelProgressBar->setStyleSheet(
+                "QLabel {"
+                "    border-radius: 15px;"
+                "    background-color: transparent;"  // 투명 배경 설정
+                "    background-image: url(:/Image/Default/Public/ImageGraph/progressBar.png);"
+                "    background-repeat: no-repeat;"
+                "    background-position: center;"
+                "}"
+                );
+
+    //labelProgressBar->setGeometry(20,80,20,20);
+    labelProgressBar->setGeometry(20,95,30,30);
 
     labelAdcText->setFont(textResource.getFont(PAGE_GRAPH,"labelAdcText"));
     labelAdcText->setText(textResource.getText(PAGE_GRAPH,"labelAdcText").at(0)+"9999");
@@ -165,7 +180,10 @@ void PageGarph::updatePainter()
         //qDebug()<<"nPorgressValue: "<<nProgressValue;
         labelProgressValue->setText(QString::number(nProgressValue));
         if(nProgressValue>3)
-            labelProgressBar->setGeometry(20,80,nProgressValue*6,20);
+        {
+            //labelProgressBar->setGeometry(20,80,nProgressValue*6,20);
+            labelProgressBar->setGeometry(20,95,nProgressValue*6,30);
+        }
     }
 
     if(instance.sysProcMonInfo.completed == 1)
@@ -377,7 +395,7 @@ void PageGarph::pageShow()
 #if DEVICE
     timerPainter->start(100);
 #else
-    timerPainter->start(50);
+    timerPainter->start(100);
 #endif
 }
 
@@ -421,7 +439,8 @@ void PageGarph::pageHide()
         }
     }
 
-    labelProgressBar->setGeometry(20,80,20,20);
+    //labelProgressBar->setGeometry(20,80,20,20);
+    labelProgressBar->setGeometry(20,95,30,30);
     bIsProcessSuccess = false;
     timerPainter->stop();
     instance.setProcCheck(false);
