@@ -219,7 +219,7 @@ void TextResource::init()
     fontData[Lan][PAGE_RESULT].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36)));
 
     textData[Lan][PAGE_RESULT].insert("indexResult",QStringList{
-                                          "정상",
+                                          "정상 혈당",
                                           "저혈당 주의",
                                           "고혈당 주의",
                                           "저혈당 경고",

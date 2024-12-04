@@ -217,6 +217,10 @@ void PageGarph::updatePainter()
             if(nValCount==3)
                 instance.caliUserInfo.val[instance.getCaliSelectIndex()].valid = 1;
         }
+        else if(instance.getGraphMode() == GRAPH_MEASURE)
+        {
+            instance.sysProcMonInfo.adc_raw = QRandomGenerator::global()->bounded(999);
+        }
 #endif
         pageHide();
     }
