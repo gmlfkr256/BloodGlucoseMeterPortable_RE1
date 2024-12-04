@@ -70,6 +70,7 @@ void PageGarph::init()
     {
         labelCircle[i] = new QLabel(this);
         labelCircle[i]->setGeometry(288+(i*(15+10)),228,15,15);
+        labelCircle[i]->hide();
     }
 
     update();
@@ -424,6 +425,8 @@ void PageGarph::pageHide()
     timerPainter->stop();
     instance.setProcCheck(false);
     labelLoading->hide();
+    for(int i=0; i<3; i++)
+        labelCircle[i]->hide();
     nProgressValue = 0;
     instance.sysProcMonInfo.completed = 0;
     labelPainter->setPixmap(QPixmap());
