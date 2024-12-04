@@ -19,9 +19,7 @@ void PageGarph::init()
 
     labelProgressValue = new QLabel(this);
     labelProgressValue->setFixedWidth(95);
-    //labelProgressValue->setAlignment(Qt::AlignBottom | Qt::AlignRight);
-    labelProgressValue->setAlignment(Qt::AlignBottom);
-    labelProgressValue->setContentsMargins(0,0,0,0);
+    labelProgressValue->setAlignment(Qt::AlignBottom | Qt::AlignRight);
 
     labelProgressPercent = new QLabel(this);
     labelProgressPercent->setAlignment(Qt::AlignBottom);
@@ -159,7 +157,8 @@ void PageGarph::updatePainter()
     if(nProgressValue <= 100)
     {
         //qDebug()<<"nPorgressValue: "<<nProgressValue;
-        labelProgressValue->setText(QString::number(nProgressValue));
+        //labelProgressValue->setText(QString::number(nProgressValue));
+        labelProgressValue->setText("%");
         if(nProgressValue>3)
         {
             labelProgressBar->setGeometry(20,95,nProgressValue*6,30);
