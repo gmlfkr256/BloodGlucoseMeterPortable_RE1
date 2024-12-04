@@ -234,7 +234,7 @@ void PageGarph::updatePainter()
         else
         {
             nCount++;
-            if(nCount==10)
+            if(nCount==5)
             {
                 nCurrentIndex = (nCurrentIndex+1)%3;
                 for(int i=0; i<3; i++)
