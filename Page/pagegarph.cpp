@@ -168,7 +168,7 @@ void PageGarph::updatePainter()
     {
         //qDebug()<<"nPorgressValue: "<<nProgressValue;
         labelProgressValue->setText(QString::number(nProgressValue));
-        if(nProgressValue>3)
+        if(nProgressValue>5)
         {
             labelProgressBar->setGeometry(20,95,nProgressValue*6,30);
         }
