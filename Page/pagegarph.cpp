@@ -80,19 +80,14 @@ void PageGarph::update()
     labelProgressText->setFont(textResource.getFont(PAGE_GRAPH,"labelProgressText"));
     labelProgressText->setStyleSheet("color:#808080;");
     labelProgressText->setText(textResource.getText(PAGE_GRAPH,"labelProgressText").at(0));
-    QFontMetrics metrics(labelProgressValue->font());
-    int nTextHeight = metrics.height();
-    labelProgressText->setFixedHeight(nTextHeight);
 
     labelProgressValue->setFont(textResource.getFont(PAGE_GRAPH,"labelProgressValue"));
     labelProgressValue->setStyleSheet("color:#000000;");
     labelProgressValue->setText("");
-    labelProgressValue->setFixedHeight(nTextHeight);
 
     labelProgressPercent->setFont(textResource.getFont(PAGE_GRAPH,"labelProgressPercent"));
-    labelProgressPercent->setStyleSheet("color:#000000;");
+    labelProgressPercent->setStyleSheet("color:#000000; padding-bottom:1px;");
     labelProgressPercent->setText("%");
-    labelProgressPercent->setFixedHeight(nTextHeight);
 
     labelProgressBarBg->setStyleSheet("background-color: #f2f2f2; border-radius: 15px;");
     labelProgressBar->setStyleSheet(
