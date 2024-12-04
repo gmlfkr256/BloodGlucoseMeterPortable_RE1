@@ -248,7 +248,7 @@ void PageGarph::paintEvent(QPaintEvent *ev)
 
     //painter->setBrush(QColor("#ffffff"));
     painter->setBrush(QColor("#f2f2f2"));
-    painter->drawRect(-1,-1,labelPainter->width()+1,labelPainter->height()+1);
+    painter->drawRect(-1,-1,labelPainter->width()+2,labelPainter->height()+2);
 
     painter->setPen(pen1);
 
