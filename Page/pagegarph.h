@@ -12,9 +12,6 @@ public:
     virtual void paintEvent(QPaintEvent *ev) override;
     QString strDirPath = "/ImageGraph";
 
-    QLabel *labelTop;
-    QHBoxLayout *hBoxLayoutGraph;
-
     QLabel *labelProgressText;
     QLabel *labelProgressValue;
     QLabel *labelProgressPercent;

@@ -10,27 +10,15 @@ void PageGarph::init()
 {
     setBgTopHide();
 
-    labelTop = new QLabel(this);
-    labelTop->setGeometry(20,10,620,75);
-    hBoxLayoutGraph = new QHBoxLayout(this);
-    hBoxLayoutGraph->setSpacing(0);
-    hBoxLayoutGraph->setContentsMargins(0,0,0,0);
-    labelTop->setLayout(hBoxLayoutGraph);
-
     labelProgressValue = new QLabel(this);
-    labelProgressValue->setFixedWidth(95);
-    labelProgressValue->setAlignment(Qt::AlignBottom | Qt::AlignRight);
+    labelProgressValue->setAlignment(Qt::AlignCenter);
 
     labelProgressPercent = new QLabel(this);
-    labelProgressPercent->setAlignment(Qt::AlignBottom);
+    labelProgressPercent->setAlignment(Qt::AlignCenter);
 
     labelProgressText = new QLabel(this);
-    labelProgressText->setAlignment(Qt::AlignBottom);
+    labelProgressText->setAlignment(Qt::AlignCenter);
 
-    hBoxLayoutGraph->addWidget(labelProgressValue);
-    hBoxLayoutGraph->addWidget(labelProgressPercent);
-    hBoxLayoutGraph->addWidget(labelProgressText);
-    hBoxLayoutGraph->addStretch();
 
     labelProgressBarBg = new QLabel(this);
     labelProgressBarBg->setGeometry(20,95,600,30);
@@ -78,15 +66,18 @@ void PageGarph::update()
     customButtonCancel->update();
 
     labelProgressText->setFont(textResource.getFont(PAGE_GRAPH,"labelProgressText"));
-    labelProgressText->setStyleSheet("color:#808080; padding-bottom:1px;");
+    labelProgressText->setStyleSheet("color:#808080;");
+    labelProgressText->setGeometry(99,43,178,45);
     labelProgressText->setText(textResource.getText(PAGE_GRAPH,"labelProgressText").at(0));
 
     labelProgressValue->setFont(textResource.getFont(PAGE_GRAPH,"labelProgressValue"));
     labelProgressValue->setStyleSheet("color:#000000;");
+    labelProgressValue->setGeometry(20,20,36,75);
     labelProgressValue->setText("");
 
     labelProgressPercent->setFont(textResource.getFont(PAGE_GRAPH,"labelProgressPercent"));
-    labelProgressPercent->setStyleSheet("color:#000000; padding-bottom:1px;");
+    labelProgressPercent->setStyleSheet("color:#000000;");
+    labelProgressPercent->setGeometry(56,43,38,45);
     labelProgressPercent->setText("%");
 
     labelProgressBarBg->setStyleSheet("background-color: #f2f2f2; border-radius: 15px;");
@@ -153,6 +144,25 @@ void PageGarph::updatePainter()
 
     instance.sysProcMonInfo.adc_raw = QRandomGenerator::global()->bounded(1000,2501);
 #endif
+
+    if(nProgressValue < 10)
+    {
+        labelProgressValue->setGeometry(20,20,36,75);
+        labelProgressPercent->setGeometry(56,43,38,45);
+        labelProgressText->setGeometry(99,43,178,45);
+    }
+    else if(nProgressValue < 100)
+    {
+        labelProgressValue->setGeometry(20,20,75,75);
+        labelProgressPercent->setGeometry(95,43,38,45);
+        labelProgressText->setGeometry(138,43,178,45);
+    }
+    else
+    {
+        labelProgressValue->setGeometry(20,20,103,75);
+        labelProgressPercent->setGeometry(123,43,38,45);
+        labelProgressText->setGeometry(166,43,178,45);
+    }
 
     if(nProgressValue <= 100)
     {
