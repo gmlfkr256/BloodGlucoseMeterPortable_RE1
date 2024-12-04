@@ -125,34 +125,24 @@ void PageResult::setValueUI()
         {
             strBgGlucoseValueColor = "background-color: #ffebeb;";
             strPathPngTooltip = "/triWarning.png";
-            /*
-            strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/warning.png) 0 0 0 0 stretch strech;"
-                                       "background-repeat: no-repeat;"
-                                       "background-position: center;"
-                                       "background-size: cover;";
-                                       */
             strStyleSheetProgressBar = "background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
-                                       "stop:0 #ec2c15, stop:1 #ffc94d);";
+                                       "stop:0 #ffc94d, stop:1 #ec2c15);";
             nIndexTooltip = 2;
         }
         else if(nGlucoseValue<=instance.thresholdLow+GLUCOSE_LOW_PLUS || nGlucoseValue>=instance.thresholdHigh+GLUCOSE_HIGH_MINUS)
         {
             strBgGlucoseValueColor = "background-color: #fdf6e8;";
             strPathPngTooltip = "/triCaution.png";
-            strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/caution.png) 0 0 0 0 stretch strech;"
-                                       "background-repeat: no-repeat;"
-                                       "background-position: center;"
-                                       "background-size: cover;";
+            strStyleSheetProgressBar = "background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
+                                       "stop:0 #52d0ba, stop:1 #ffc94d);";
             nIndexTooltip = 1;
         }
         else
         {
             strBgGlucoseValueColor = "background-color: #edfaf8;";
             strPathPngTooltip = "/triNormal.png";
-            strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/normal.png) 0 0 0 0 stretch strech;"
-                                       "background-repeat: no-repeat;"
-                                       "background-position: center;"
-                                       "background-size: cover;";
+            strStyleSheetProgressBar = "background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
+                                       "stop:077bdd #, stop:1 #52d0ba);";
             nIndexTooltip = 0;
         }
 
