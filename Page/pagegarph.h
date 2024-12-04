@@ -36,6 +36,7 @@ public:
     QLabel *labelLoading;
     QString strLoading;
     QLabel *labelCircle[3];
+    int nCurrentIndex = 0;
 
     CustomButtonCancel *customButtonCancel;
 

@@ -122,6 +122,11 @@ void PageGarph::update()
     strLoading = textResource.getText(PAGE_GRAPH,"labelLoading").at(0);
     labelLoading->setText(strLoading);
     labelLoading->setStyleSheet("background-color: rgba(0,0,0,200); color: white; padding-top: 50px;");
+
+    for(int i=0; i<3; i++)
+    {
+        instance.pixLoad(labelCircle[i],false,strDirPath,"/circleLoading"+QString::number(i)+".png");
+    }
 }
 
 void PageGarph::updatePainter()
@@ -220,8 +225,20 @@ void PageGarph::updatePainter()
     if(nProgressValue>=95)
     {
         if(!labelLoading->isVisible())
+        {
             labelLoading->show();
-
+            for(int i=0; i<3; i++)
+                labelCircle[i]->show();
+        }
+        else
+        {
+            nCurrentIndex = (nCurrentIndex+1)%3;
+            for(int i=0; i<3; i++)
+            {
+                int x = 288 + ((i-nCurrentIndex+3)%3)*(15+10);
+                labelCircle[i]->move(x,228);
+            }
+        }
     }
 }
 
