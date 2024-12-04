@@ -191,7 +191,7 @@ void PageResult::setValueUI()
     }
 
     labelTextGlucoseValue->setStyleSheet(strTextGlucoseValueColor);
-    labelBgGlucoseValue->setStyleSheet(strBgGlucoseValueColor+"border-raidus: 18px;");
+    labelBgGlucoseValue->setStyleSheet(strBgGlucoseValueColor+"border-radius: 18px;");
     labelProgressBarBg->setStyleSheet("background-color: #f2f2f2; border-radius: 15px;");
     labelProgressBar->setFixedWidth(nProgressBarWidth);
     labelProgressBar->setStyleSheet("");
