@@ -226,6 +226,7 @@ void PageResult::setValueUI()
 
     int nProgressBarWidth = 0;
     int nTooltipX = 0;
+    int nIndexTooltip = 0;
 
     QString strBgGlucoseValueColor = "";
     QString strPathPngTooltip = "";
@@ -243,6 +244,7 @@ void PageResult::setValueUI()
         comResult.setTextResult(labelText,instance.sysProcMonInfo.err_code);
         labelTextGlucoseValue->setText("-");
         strTextGlucoseValueColor = "color:black;";
+        nIndexTooltip = 3;
     }
     else
     {
@@ -251,18 +253,21 @@ void PageResult::setValueUI()
             strBgGlucoseValueColor = "background-color: #ffebeb;";
             strPathPngTooltip = "/triWarning.png";
             strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/warning.png) 0 0 0 0 stretch strech;";
+            nIndexTooltip = 2;
         }
         else if(nGlucoseValue<=instance.thresholdLow+GLUCOSE_LOW_PLUS || nGlucoseValue>=instance.thresholdHigh+GLUCOSE_HIGH_MINUS)
         {
             strBgGlucoseValueColor = "background-color: #fdf6e8;";
             strPathPngTooltip = "/triCaution.png";
             strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/caution.png) 0 0 0 0 stretch strech;";
+            nIndexTooltip = 1;
         }
         else
         {
             strBgGlucoseValueColor = "background-color: #edfaf8;";
             strPathPngTooltip = "/triNormal.png";
             strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/normal.png) 0 0 0 0 stretch strech;";
+            nIndexTooltip = 0;
         }
 
         nProgressBarWidth = static_cast<int>(600*(static_cast<double>(nGlucoseValue)/400));
@@ -307,7 +312,6 @@ void PageResult::setValueUI()
         labelText->setText(strLabelText);
 
         labelTextGlucoseValue->setText(QString::number(nGlucoseValue));
-
     }
 
     labelTextGlucoseValue->setStyleSheet(strTextGlucoseValueColor);
@@ -316,6 +320,7 @@ void PageResult::setValueUI()
     labelProgressBar->setStyleSheet(strStyleSheetProgressBar+"border-radius: 15px;");
     strStyleSheetTooltip = instance.getBgColorGlucoseValue(nGlucoseValue) + "color: #ffffff; border-radius: 11px;";
     labelProgressBarTooltip->setStyleSheet(strStyleSheetTooltip);
+    labelProgressBarTooltip->setText(textResource.getText(PAGE_RESULT,"labelProgressBarTooltip").at(nIndexTooltip));
     labelProgressBarTooltip->move(nTooltipX,297);
     instance.pixLoad(labelProgressBarTooltipImg,false,strDirPath,strPathPngTooltip);
     labelProgressBarTooltipImg->setGeometry(labelProgressBarTooltip->x()+(labelProgressBarTooltip->width()/2)-3,labelProgressBarTooltip->y()+labelProgressBarTooltip->height(),7,5);
