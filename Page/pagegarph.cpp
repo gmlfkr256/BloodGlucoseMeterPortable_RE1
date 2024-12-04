@@ -18,18 +18,14 @@ void PageGarph::init()
     labelTop->setLayout(hBoxLayoutGraph);
 
     labelProgressValue = new QLabel(this);
-    labelProgressValue->setStyleSheet("background-color: blue;color: #000000;");
     labelProgressValue->setFixedWidth(95);
     labelProgressValue->setAlignment(Qt::AlignBottom | Qt::AlignRight);
 
-
     labelProgressPercent = new QLabel(this);
-    labelProgressPercent->setStyleSheet("background-color: orange; color: #000000;");
     labelProgressPercent->setAlignment(Qt::AlignBottom);
 
     labelProgressText = new QLabel(this);
     labelProgressText->setAlignment(Qt::AlignBottom);
-    labelProgressText->setStyleSheet("background-color:red; color: #6c6c6c;");
 
     hBoxLayoutGraph->addWidget(labelProgressValue);
     hBoxLayoutGraph->addWidget(labelProgressPercent);
