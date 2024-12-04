@@ -276,7 +276,8 @@ void PageResult::setValueUI()
         else if(nProgressBarWidth > 600)
             nProgressBarWidth = 600;
 
-        nTooltipX = labelProgressBar->x()+labelProgressBar->width()-(labelProgressBarTooltip->width()/2);
+        nTooltipX = labelProgressBar->x()+nProgressBarWidth-(labelProgressBarTooltip->width()/2);
+
         if(nTooltipX > labelProgressBarTextEnd->x()-labelProgressBarTooltip->width())
             nTooltipX = labelProgressBarTextEnd->x()-labelProgressBarTooltip->width()-5;
         else if(nTooltipX < labelProgressBarTextStart->x()+labelProgressBarTextStart->width())
