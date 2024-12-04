@@ -363,6 +363,14 @@ void PageGarph::pageShow()
     instance.guiApi.glucoseSysProcAct(&instance.sysProcAct);
 #endif
 
+    QPixmap pixNull;
+    labelPainter->setPixmap(pixNull);
+
+    for(int &nGraphPointY : nGraphPointY)
+    {
+        nGraphPointY = 200;
+    }
+
     instance.setProcCheck(true);
 
 
@@ -450,13 +458,6 @@ void PageGarph::pageHide()
     labelProgressValue->setText("0");
     labelProgressPercent->setGeometry(56,43,38,45);
     labelProgressText->setGeometry(99,43,178,45);
-    QPixmap pixNull;
-    labelPainter->setPixmap(pixNull);
-
-    for(int &nGraphPointY : nGraphPointY)
-    {
-        nGraphPointY = 200;
-    }
 
     repaint();
 }
