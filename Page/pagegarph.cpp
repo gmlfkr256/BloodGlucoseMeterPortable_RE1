@@ -136,7 +136,7 @@ void PageGarph::updatePainter()
 #else
     nProgressValue++;
 
-    if(nProgressValue>99)
+    if(nProgressValue>=100)
     {
         nProgressValue = 100;
         instance.sysProcMonInfo.completed = 1;
