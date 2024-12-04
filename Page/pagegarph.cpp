@@ -81,11 +81,17 @@ void PageGarph::update()
     customButtonCancel->update();
 
     labelProgressText->setFont(textResource.getFont(PAGE_GRAPH,"labelProgressText"));
+    labelProgressText->setStyleSheet("color:#808080;");
     labelProgressText->setText(textResource.getText(PAGE_GRAPH,"labelProgressText").at(0));
+
     labelProgressValue->setFont(textResource.getFont(PAGE_GRAPH,"labelProgressValue"));
+    labelProgressValue->setStyleSheet("color:#000000;");
     labelProgressValue->setText("");
+
     labelProgressPercent->setFont(textResource.getFont(PAGE_GRAPH,"labelProgressPercent"));
+    labelProgressPercent->setStyleSheet("color:#000000;");
     labelProgressPercent->setText("%");
+
     labelProgressBarBg->setStyleSheet("background-color: #f2f2f2; border-radius: 15px;");
     labelProgressBar->setStyleSheet(
                 "QLabel {"
