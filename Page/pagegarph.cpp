@@ -140,7 +140,6 @@ void PageGarph::updatePainter()
     {
         nProgressValue = 100;
         instance.sysProcMonInfo.completed = 1;
-        repaint();
     }
 
     instance.sysProcMonInfo.adc_raw = QRandomGenerator::global()->bounded(1000,2501);
@@ -175,7 +174,7 @@ void PageGarph::updatePainter()
         }
     }
 
-    if(instance.sysProcMonInfo.completed == 1)
+    if(instance.sysProcMonInfo.completed == 1 && nProgressValue >=100)
     {
         QThread::msleep(3000);
         bIsProcessSuccess = true;
