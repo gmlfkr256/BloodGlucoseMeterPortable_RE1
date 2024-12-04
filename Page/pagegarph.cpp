@@ -39,12 +39,15 @@ void PageGarph::init()
     hBoxLayoutGraph->addStretch();
 
     labelProgressBarBg = new QLabel(this);
-    labelProgressBarBg->setGeometry(20,80,600,20);
+    //labelProgressBarBg->setGeometry(20,80,600,20);
+    labelProgressBarBg->setGeometry(20,95,600,30);
     labelProgressBar = new QLabel(this);
-    labelProgressBar->setGeometry(20,80,600,20);
+    //labelProgressBar->setGeometry(20,80,600,20);
+    labelProgressBar->setGeometry(20,95,600,30);
 
     labelAdcText = new QLabel(this);
-    labelAdcText->setGeometry(22,110,130,40);
+    //labelAdcText->setGeometry(22,110,130,40);
+    labelAdcText->setGeometry(20,125,130,45);
 
     labelAdcRect = new QLabel(this);
     labelAdcRect->setGeometry(labelAdcText->geometry().x()+15,labelAdcText->geometry().y()+15,10,10);
@@ -54,20 +57,29 @@ void PageGarph::init()
     connect(timerPainter,&QTimer::timeout,this,&PageGarph::updatePainter);
 
     labelPainter = new QLabel(this);
-    labelPainter->setGeometry(0,160,640,220);
+    //labelPainter->setGeometry(0,160,640,220);
+    labelPainter->setGeometry(20,170,600,200);
 
     painter = new QPainter();
 
-    pixPainter = QPixmap(640,220);
+    //pixPainter = QPixmap(640,220);
+    pixPainter = QPixmap(600,200);
     pixPainter.fill(Qt::transparent);
 
     customButtonCancel = new CustomButtonCancel(this);
     customButtonCancel->setLongWidth(true);
 
     labelLoading = new QLabel(this);
-    labelLoading->setGeometry(0,160,640,230);
+    //labelLoading->setGeometry(0,160,640,230);
+    labelLoading->setGeometry(20,170,600,200);
     labelLoading->setAlignment(Qt::AlignCenter);
     labelLoading->hide();
+
+    for(int i=0; i<3; i++)
+    {
+        labelCircle[i] = new QLabel(this);
+        labelCircle[i]->setGeometry(288+(i*(15+10)),228,15,15);
+    }
 
     update();
 }
@@ -97,13 +109,17 @@ void PageGarph::update()
 
     labelAdcText->setFont(textResource.getFont(PAGE_GRAPH,"labelAdcText"));
     labelAdcText->setText(textResource.getText(PAGE_GRAPH,"labelAdcText").at(0)+"9999");
-    labelAdcText->setStyleSheet("color: #6c6c6c; border: 1px solid #333333; border-radius: 5px; padding-left: 25px;");
+    //labelAdcText->setStyleSheet("color: #6c6c6c; border: 1px solid #333333; border-radius: 5px; padding-left: 25px;");
+    labelAdcText->setStyleSheet("color: #808080; padding-left: 25px;");
 
-    labelAdcRect->setStyleSheet("background-color: #52d0ba;");
+    //labelAdcRect->setStyleSheet("background-color: #52d0ba;");
+    labelAdcRect->setStyleSheet("background-color: #077bdd;");
 
     pen1.setWidth(2);
-    pen1.setStyle(Qt::SolidLine);
-    pen1.setBrush(QColor("#c7c7c7"));
+    //pen1.setStyle(Qt::SolidLine);
+    pen1.setStyle(Qt::DashLine);
+    //pen1.setBrush(QColor("#c7c7c7"));
+    pen1.setBrush(QColor("#c5c5c5"));
 
     pen2.setWidth(3);
     pen2.setStyle(Qt::SolidLine);
@@ -113,7 +129,8 @@ void PageGarph::update()
     pen3.setStyle(Qt::SolidLine);
     pen3.setJoinStyle(Qt::RoundJoin);
     pen3.setCapStyle(Qt::RoundCap);
-    pen3.setBrush(QColor("#52d0ba"));
+    //pen3.setBrush(QColor("#52d0ba"));
+    pen3.setBrush(QColor("#077bdd"));
 
     labelLoading->setFont(textResource.getFont(PAGE_GRAPH,"labelLoading"));
     strLoading = textResource.getText(PAGE_GRAPH,"labelLoading").at(0);
@@ -214,20 +231,6 @@ void PageGarph::updatePainter()
         if(!labelLoading->isVisible())
             labelLoading->show();
 
-        //labelLoading->setText(textResource.getText(PAGE_GRAPH,"labelLoading").at(0)+QString(nDotCount/2,'.'));
-
-        /*
-        int count = nDotCount/2;
-        QString str;
-        if(count != 0)
-            str = strLoading + QString(count,'.');
-
-        labelLoading->setText(str);
-        */
-
-        nDotCount++;
-        if(nDotCount >12)
-            nDotCount =1;
     }
 }
 
@@ -243,19 +246,28 @@ void PageGarph::paintEvent(QPaintEvent *ev)
     painter->setRenderHint(QPainter::Antialiasing,true);
 
 
-    painter->setBrush(QColor("#ffffff"));
+    //painter->setBrush(QColor("#ffffff"));
+    painter->setBrush(QColor("#f2f2f2"));
     painter->drawRect(-1,-1,labelPainter->width()+1,labelPainter->height()+1);
 
     painter->setPen(pen1);
 
+    /*
     for(int i=1; i<6; i++)
     {
         painter->drawLine(15,33*i,625,33*i);
     }
+    */
+    for(int i=1; i<4; i++)
+    {
+        painter->drawLine(0,50*i,600,50*i);
+    }
 
+    /*
     painter->setPen(pen2);
     painter->drawLine(15,0,15,203);
     painter->drawLine(15,203,625,203);
+    */
 
     painter->setPen(pen3);
 
@@ -415,7 +427,6 @@ void PageGarph::pageHide()
     instance.setProcCheck(false);
     labelLoading->hide();
     nProgressValue = 0;
-    nDotCount = 0;
     instance.sysProcMonInfo.completed = 0;
     labelPainter->setPixmap(QPixmap());
 }

@@ -35,7 +35,7 @@ public:
 
     QLabel *labelLoading;
     QString strLoading;
-    int nDotCount;
+    QLabel *labelCircle[3];
 
     CustomButtonCancel *customButtonCancel;
 
