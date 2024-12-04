@@ -176,6 +176,7 @@ void PageGarph::updatePainter()
 
     if(instance.sysProcMonInfo.completed == 1)
     {
+        QThread::msleep(3000);
         bIsProcessSuccess = true;
         instance.sysProcAct.act = GAPI_ACT_STOP;
 #if DEVICE
