@@ -288,13 +288,13 @@ void PageGarph::paintEvent(QPaintEvent *ev)
 
     int x,y,x1,y1;
 
-    x = 20;
+    x = 0;
     y = nGraphPointY[0];
-    x1 = 20;
+    x1 = 0;
 
     for(int i = 1; i<50; i++)
     {
-        x1 = x;
+        x1 = x+12;
         y1 = nGraphPointY[i];
 
         painter->drawLine(x,y,x1,y1);
