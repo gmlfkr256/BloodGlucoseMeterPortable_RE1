@@ -125,21 +125,30 @@ void PageResult::setValueUI()
         {
             strBgGlucoseValueColor = "background-color: #ffebeb;";
             strPathPngTooltip = "/triWarning.png";
-            strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/warning.png) 0 0 0 0 stretch strech;";
+            strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/warning.png) 0 0 0 0 stretch strech;"
+                                       "background-repeat: no-repeat;"
+                                       "background-position: center;"
+                                       "background-size: cover;";
             nIndexTooltip = 2;
         }
         else if(nGlucoseValue<=instance.thresholdLow+GLUCOSE_LOW_PLUS || nGlucoseValue>=instance.thresholdHigh+GLUCOSE_HIGH_MINUS)
         {
             strBgGlucoseValueColor = "background-color: #fdf6e8;";
             strPathPngTooltip = "/triCaution.png";
-            strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/caution.png) 0 0 0 0 stretch strech;";
+            strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/caution.png) 0 0 0 0 stretch strech;"
+                                       "background-repeat: no-repeat;"
+                                       "background-position: center;"
+                                       "background-size: cover;";
             nIndexTooltip = 1;
         }
         else
         {
             strBgGlucoseValueColor = "background-color: #edfaf8;";
             strPathPngTooltip = "/triNormal.png";
-            strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/normal.png) 0 0 0 0 stretch strech;";
+            strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/normal.png) 0 0 0 0 stretch strech;"
+                                       "background-repeat: no-repeat;"
+                                       "background-position: center;"
+                                       "background-size: cover;";
             nIndexTooltip = 0;
         }
 
@@ -192,6 +201,7 @@ void PageResult::setValueUI()
     labelBgGlucoseValue->setStyleSheet(strBgGlucoseValueColor+"border-raidus: 18px;");
     labelProgressBarBg->setStyleSheet("background-color: #f2f2f2; border-radius: 15px;");
     labelProgressBar->setFixedWidth(nProgressBarWidth);
+    labelProgressBar->setStyleSheet("");
     labelProgressBar->setStyleSheet(strStyleSheetProgressBar+"border-radius: 15px;");
     strStyleSheetTooltip = instance.getBgColorGlucoseValue(nGlucoseValue) + "color: #ffffff; border-radius: 11px;";
     labelProgressBarTooltip->setStyleSheet(strStyleSheetTooltip);
