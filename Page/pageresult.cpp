@@ -165,7 +165,12 @@ void PageResult::setColorValue(int nGlucoseValue)
     else if(nProgressBarWidth >600)
         nProgressBarWidth = 600;
     labelProgressBar->setFixedWidth(nProgressBarWidth);
-    labelProgressBarTooltip->move(labelProgressBar->x()+labelProgressBar->width()-(labelProgressBarTooltip->width()/2),297);
+
+    int nTooltipX = labelProgressBar->x()+labelProgressBar->width()-(labelProgressBarTooltip->width()/2);
+    if(nTooltipX>(labelProgressBarTextEnd->x()-labelProgressBarTooltip->width()))
+            nTooltipX = labelProgressBarTextEnd->x()-labelProgressBarTooltip->width()-5;
+
+    labelProgressBarTooltip->move(nTooltipX,297);
     labelProgressBarTooltipImg->setGeometry(labelProgressBarTooltip->x()+(labelProgressBarTooltip->width()/2)-3,labelProgressBarTooltip->y()+labelProgressBarTooltip->height(),7,5);
     labelProgressBar->setStyleSheet(strStyleSheetProgressBar+"border-radius: 15px;");
 
