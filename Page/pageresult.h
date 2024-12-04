@@ -28,7 +28,7 @@ public:
     CustomButtonSave *customButtonSave;
     CustomButtonCancel *customButtonCancel;
 
-    QString strTextValue;
+    //QString strTextValue;
     QString strTextColor;
 
     void update() override;
@@ -37,6 +37,7 @@ public:
 private:
     void init();
     void setColorValue(int nGlucoseValue = 0);
+    void setValueUI();
 
 signals:
     void signalShowPageNum(PageNum pageNum);
