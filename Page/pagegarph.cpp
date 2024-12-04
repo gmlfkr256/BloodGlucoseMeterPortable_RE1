@@ -166,7 +166,7 @@ void PageGarph::updatePainter()
 
     if(nProgressValue <= 100)
     {
-        //qDebug()<<"nPorgressValue: "<<nProgressValue;
+        qDebug()<<"nPorgressValue: "<<nProgressValue;
         labelProgressValue->setText(QString::number(nProgressValue));
         if(nProgressValue>5)
         {
@@ -174,7 +174,7 @@ void PageGarph::updatePainter()
         }
     }
 
-    if(instance.sysProcMonInfo.completed == 1 && nProgressValue >=100)
+    if(instance.sysProcMonInfo.completed == 1)
     {
         QThread::msleep(3000);
         bIsProcessSuccess = true;
