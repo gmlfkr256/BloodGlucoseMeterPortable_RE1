@@ -227,7 +227,6 @@ void PageGarph::updatePainter()
         nGraphPointY[i] = nGraphPointY[i+1];
     }
 
-
     int nValue = instance.sysProcMonInfo.adc_raw;
 
     labelAdcText->setText(textResource.getText(PAGE_GRAPH,"labelAdcText").at(0)+QString::number(nValue));
@@ -364,15 +363,9 @@ void PageGarph::pageShow()
     instance.guiApi.glucoseSysProcAct(&instance.sysProcAct);
 #endif
 
-    for(int &nGraphPointY : nGraphPointY)
-    {
-        nGraphPointY = 200;
-    }
-
     instance.setProcCheck(true);
 
-    QPixmap pixNull;
-    labelPainter->setPixmap(pixNull);
+
 
     switch(instance.getGraphMode())
     {
@@ -457,4 +450,13 @@ void PageGarph::pageHide()
     labelProgressValue->setText("0");
     labelProgressPercent->setGeometry(56,43,38,45);
     labelProgressText->setGeometry(99,43,178,45);
+    QPixmap pixNull;
+    labelPainter->setPixmap(pixNull);
+
+    for(int &nGraphPointY : nGraphPointY)
+    {
+        nGraphPointY = 200;
+    }
+
+    repaint();
 }
