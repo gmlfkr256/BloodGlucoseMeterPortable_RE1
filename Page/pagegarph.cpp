@@ -11,7 +11,8 @@ void PageGarph::init()
     setBgTopHide();
 
     labelTop = new QLabel(this);
-    labelTop->setGeometry(20,10,620,60);
+    //labelTop->setGeometry(20,10,620,60);
+    labelTop->setGeometry(20,20,620,75);
     hBoxLayoutGraph = new QHBoxLayout(this);
     hBoxLayoutGraph->setSpacing(0);
     hBoxLayoutGraph->setContentsMargins(0,0,0,0);
