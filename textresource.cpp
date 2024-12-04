@@ -402,7 +402,7 @@ void TextResource::init()
 
 
     //PAGE_CALI_SELECT_INFO
-    fontData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInofText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
+    fontData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInfoText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
     textData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInfoText",QStringList{
                                                     "Has it been more than 8 hours\n since your last meal?",
                                                     "Has it been more than 1 hour\n since your last meal?",

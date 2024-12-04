@@ -180,8 +180,8 @@ public:
 
     int thresholdLow;
     int thresholdHigh;
-    const int nThresholdLimitLow = 50;
-    const int nThresholdLimitHigh = 500;
+    //const int nThresholdLimitLow = 50;
+    //const int nThresholdLimitHigh = 400;
     gapiHistInfo_t histInfo;
     gapiSysUserInfo_t sysUserInfo[USER_MAX];
     gapiCaliUserInfo_t caliUserInfo;
