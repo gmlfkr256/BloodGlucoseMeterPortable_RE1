@@ -92,6 +92,7 @@ void PageGarph::update()
     labelProgressPercent->setFont(textResource.getFont(PAGE_GRAPH,"labelProgressPercent"));
     labelProgressPercent->setStyleSheet("color:#000000;");
     labelProgressPercent->setText("%");
+    labelProgressPercent->setFixedHeight(nTextHeight);
 
     labelProgressBarBg->setStyleSheet("background-color: #f2f2f2; border-radius: 15px;");
     labelProgressBar->setStyleSheet(
