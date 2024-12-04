@@ -18,7 +18,7 @@ void PageGarph::init()
     labelTop->setLayout(hBoxLayoutGraph);
 
     labelProgressValue = new QLabel(this);
-    //labelProgressValue->setFixedWidth(95);
+    labelProgressValue->setFixedWidth(95);
     labelProgressValue->setAlignment(Qt::AlignBottom | Qt::AlignRight);
 
     labelProgressPercent = new QLabel(this);
@@ -80,10 +80,14 @@ void PageGarph::update()
     labelProgressText->setFont(textResource.getFont(PAGE_GRAPH,"labelProgressText"));
     labelProgressText->setStyleSheet("color:#808080;");
     labelProgressText->setText(textResource.getText(PAGE_GRAPH,"labelProgressText").at(0));
+    QFontMetrics metrics(labelProgressValue->font());
+    int nTextHeight = metrics.height();
+    labelProgressText->setFixedHeight(nTextHeight);
 
     labelProgressValue->setFont(textResource.getFont(PAGE_GRAPH,"labelProgressValue"));
     labelProgressValue->setStyleSheet("color:#000000;");
     labelProgressValue->setText("");
+    labelProgressValue->setFixedHeight(nTextHeight);
 
     labelProgressPercent->setFont(textResource.getFont(PAGE_GRAPH,"labelProgressPercent"));
     labelProgressPercent->setStyleSheet("color:#000000;");
