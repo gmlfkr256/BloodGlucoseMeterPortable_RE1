@@ -85,7 +85,7 @@ void PageGarph::update()
     labelProgressText->setText(textResource.getText(PAGE_GRAPH,"labelProgressText").at(0));
 
     labelProgressValue->setFont(textResource.getFont(PAGE_GRAPH,"labelProgressValue"));
-    labelProgressValue->setStyleSheet("color:#000000; padding-bottom: 5px;");
+    labelProgressValue->setStyleSheet("color:#000000; padding-top: 3px;");
     labelProgressValue->setText("");
 
     labelProgressPercent->setFont(textResource.getFont(PAGE_GRAPH,"labelProgressPercent"));
