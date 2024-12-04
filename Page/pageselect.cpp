@@ -244,6 +244,10 @@ void PageSelect::mousePressEvent(QMouseEvent *ev)
             instance.setGraphMode(GRAPH_MEASURE);
             emit signalShowPageNum(PAGE_GRAPH);
         }
+        else
+        {
+            emit signalShowPageNum(PAGE_CALI_CHECK);
+        }
     }
 }
 
