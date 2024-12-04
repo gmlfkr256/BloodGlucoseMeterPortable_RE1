@@ -288,9 +288,9 @@ void PageGarph::paintEvent(QPaintEvent *ev)
 
     int x,y,x1,y1;
 
-    x = 0;
+    x = 10;
     y = nGraphPointY[0];
-    x1 = 0;
+    x1 = 10;
 
     for(int i = 1; i<50; i++)
     {
