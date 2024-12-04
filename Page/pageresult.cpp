@@ -132,20 +132,20 @@ void PageResult::setColorValue(int nGlucoseValue)
     else if(nGlucoseValue<=instance.thresholdLow || nGlucoseValue>=instance.thresholdHigh)
     {
         strBgColor = "background-color: #ffebeb;";
-        strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/warning.png);";
+        strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/warning.png) 0 0 0 0 stretch stretch;";
         nIndexTooltip = 2;
         strPathPngTooltip = "/triWarning.png";
     }
     else if(nGlucoseValue<=instance.thresholdLow+GLUCOSE_LOW_PLUS || nGlucoseValue>=instance.thresholdHigh+GLUCOSE_HIGH_MINUS)
     {
         strBgColor = "background-color: #fdf6e8;";
-        strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/caution.png);";
+        strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/caution.png) 0 0 0 0 stretch stretch;";
         nIndexTooltip = 1;
         strPathPngTooltip = "/triCaution.png";
     }
     else
     {
-        strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/normal.png);";
+        strStyleSheetProgressBar = "background-image: url(:/Image/Default/Public/ImageResult/normal.png) 0 0 0 0 stretch stretch;";
         strBgColor = "background-color: #edfaf8;";
         nIndexTooltip = 0;
         strPathPngTooltip = "/triNormal.png";
@@ -167,7 +167,7 @@ void PageResult::setColorValue(int nGlucoseValue)
     labelProgressBar->setFixedWidth(nProgressBarWidth);
     labelProgressBarTooltip->move(labelProgressBar->x()+labelProgressBar->width()-(labelProgressBarTooltip->width()/2),297);
     labelProgressBarTooltipImg->setGeometry(labelProgressBarTooltip->x()+(labelProgressBarTooltip->width()/2)-3,labelProgressBarTooltip->y()+labelProgressBarTooltip->height(),7,5);
-    labelProgressBar->setStyleSheet(strStyleSheetProgressBar+" 0 0 0 0 stretch stretch; border-radius: 15px;");
+    labelProgressBar->setStyleSheet(strStyleSheetProgressBar+"border-radius: 15px;");
 
     QString strTextStatus = textResource.getText(PAGE_HOME,"labelTextStatus").at(instance.getTimeStatus());
     QString strResult;
