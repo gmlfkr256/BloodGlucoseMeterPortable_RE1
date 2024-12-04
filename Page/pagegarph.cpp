@@ -172,6 +172,9 @@ void PageGarph::updatePainter()
         {
             labelProgressBar->setGeometry(20,95,nProgressValue*6,30);
         }
+
+        if(nProgressValue == 100)
+            repaint();
     }
 
     if(instance.sysProcMonInfo.completed == 1)
