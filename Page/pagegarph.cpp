@@ -435,6 +435,7 @@ void PageGarph::pageHide()
             emit signalShowPageNum(PAGE_CALI_CONFIRM);
             break;
         case GRAPH_MEASURE:
+            emit signalShowPageNum(PAGE_SELECT);
             break;
         case GRAPH_MAX:
             break;
@@ -452,4 +453,8 @@ void PageGarph::pageHide()
     instance.sysProcMonInfo.completed = 0;
     labelPainter->setPixmap(QPixmap());
     labelAdcText->setText(textResource.getText(PAGE_GRAPH,"labelAdcText").at(0));
+    labelProgressValue->setGeometry(20,20,36,75);
+    labelProgressValue->setText("0");
+    labelProgressPercent->setGeometry(56,43,38,45);
+    labelProgressText->setGeometry(99,43,178,45);
 }
