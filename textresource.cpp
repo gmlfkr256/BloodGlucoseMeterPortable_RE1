@@ -163,7 +163,7 @@ void TextResource::init()
     textData[Lan][PAGE_GRAPH].insert("labelProgressText",QStringList{"Complete"});
     fontData[Lan][PAGE_GRAPH].insert("labelProgressValue",QFont(instance.fontSuit,instance.pixelToPoint(60),QFont::Bold));
     fontData[Lan][PAGE_GRAPH].insert("labelProgressPercent",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
-    fontData[Lan][PAGE_GRAPH].insert("labelAdcText",QFont(instance.fontSuit,instance.pixelToPoint(21),QFont::Bold));
+    fontData[Lan][PAGE_GRAPH].insert("labelAdcText",QFont(instance.fontSuit,instance.pixelToPoint(20)));
     textData[Lan][PAGE_GRAPH].insert("labelAdcText",QStringList{"A:"});
     fontData[Lan][PAGE_GRAPH].insert("labelLoading",QFont(instance.fontSuit,instance.pixelToPoint(48),QFont::Bold));
     textData[Lan][PAGE_GRAPH].insert("labelLoading",QStringList{"측정 분석 중입니다"});
@@ -379,7 +379,7 @@ void TextResource::init()
     textData[Lan][PAGE_GRAPH].insert("labelProgressText",QStringList{"Complete"});
     fontData[Lan][PAGE_GRAPH].insert("labelProgressValue",QFont(instance.fontSuit,instance.pixelToPoint(55),QFont::Bold));
     fontData[Lan][PAGE_GRAPH].insert("labelProgressPercent",QFont(instance.fontSuit,instance.pixelToPoint(45),QFont::Bold));
-    fontData[Lan][PAGE_GRAPH].insert("labelAdcText",QFont(instance.fontSuit,instance.pixelToPoint(21),QFont::Bold));
+    fontData[Lan][PAGE_GRAPH].insert("labelAdcText",QFont(instance.fontSuit,instance.pixelToPoint(20)));
     textData[Lan][PAGE_GRAPH].insert("labelAdcText",QStringList{"A:"});
     fontData[Lan][PAGE_GRAPH].insert("labelLoading",QFont(instance.fontSuit,instance.pixelToPoint(48),QFont::Bold));
     textData[Lan][PAGE_GRAPH].insert("labelLoading",QStringList{"Analyzing"});
