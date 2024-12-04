@@ -233,11 +233,16 @@ void PageGarph::updatePainter()
         }
         else
         {
-            nCurrentIndex = (nCurrentIndex+1)%3;
-            for(int i=0; i<3; i++)
+            nCount++;
+            if(nCount==10)
             {
-                int x = 288 + ((i-nCurrentIndex+3)%3)*(15+10);
-                labelCircle[i]->move(x,228);
+                nCurrentIndex = (nCurrentIndex+1)%3;
+                for(int i=0; i<3; i++)
+                {
+                    int x = 288 + ((i-nCurrentIndex+3)%3)*(15+10);
+                    labelCircle[i]->move(x,228);
+                }
+                nCount=0;
             }
         }
     }
