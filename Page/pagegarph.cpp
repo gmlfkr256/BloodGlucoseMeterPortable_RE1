@@ -21,6 +21,7 @@ void PageGarph::init()
     labelProgressValue->setFixedWidth(95);
     //labelProgressValue->setAlignment(Qt::AlignBottom | Qt::AlignRight);
     labelProgressValue->setAlignment(Qt::AlignBottom);
+    labelProgressValue->setContentsMargins(0,0,0,0);
 
     labelProgressPercent = new QLabel(this);
     labelProgressPercent->setAlignment(Qt::AlignBottom);
