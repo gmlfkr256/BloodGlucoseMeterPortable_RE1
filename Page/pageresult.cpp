@@ -78,7 +78,6 @@ void PageResult::update()
                 QString::number(instance.sysProcMonInfo.min).rightJustified(2,'0')
                 );
 
-    instance.sysProcMonInfo.adc_raw = 58;
 #endif
     labelTextTime->setText(strTime);
     labelText->setFont(textResource.getFont(PAGE_RESULT,"labelText"));
