@@ -357,6 +357,8 @@ typedef struct gapiSysProcMonInfo_T {
 	unsigned char err_code;			// gapiProcErrCode_e
 	unsigned int adc_raw;				// glucose value for measurement
 	unsigned int g_opt;					// glucose value 2 for test
+	unsigned short hour;
+	unsigned short min;
 } __attribute__((__packed__)) gapiSysProcMonInfo_t;
 
 /*---------------------------------------------------------------------------*

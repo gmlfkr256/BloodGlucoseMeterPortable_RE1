@@ -36,7 +36,6 @@ public:
     void pageHide() override;
 private:
     void init();
-    void setColorValue(int nGlucoseValue = 0);
     void setValueUI();
 
 signals:

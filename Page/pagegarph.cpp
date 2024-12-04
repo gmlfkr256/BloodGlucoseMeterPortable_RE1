@@ -219,7 +219,7 @@ void PageGarph::updatePainter()
         }
         else if(instance.getGraphMode() == GRAPH_MEASURE)
         {
-            instance.sysProcMonInfo.adc_raw = QRandomGenerator::global()->bounded(999);
+            instance.sysProcMonInfo.adc_raw = QRandomGenerator::global()->bounded(500);
         }
 #endif
         pageHide();
@@ -268,7 +268,6 @@ void PageGarph::paintEvent(QPaintEvent *ev)
     }
 
     painter->setRenderHint(QPainter::Antialiasing,true);
-
 
     //painter->setBrush(QColor("#ffffff"));
     painter->setBrush(QColor("#f2f2f2"));
@@ -402,6 +401,10 @@ void PageGarph::pageShow()
     timerPainter->start(100);
 #else
     timerPainter->start(100);
+    QDateTime dateTimeLocal = QDateTime::currentDateTime();
+
+    instance.sysProcMonInfo.hour = dateTimeLocal.time().hour();
+    instance.sysProcMonInfo.min = dateTimeLocal.time().minute();
 #endif
 }
 
