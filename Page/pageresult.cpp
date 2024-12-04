@@ -18,11 +18,11 @@ void PageResult::init()
     labelTextMgdl->setAlignment(Qt::AlignCenter);
 
     labelTextTime = new QLabel(this);
-    labelTextTime->setGeometry(20,235,180,40);
+    labelTextTime->setGeometry(37,235,180,40);
     labelTextTime->setAlignment(Qt::AlignCenter);
 
     labelText = new QLabel(this);
-    labelText->setGeometry(31,106,300,120);
+    labelText->setGeometry(37,106,300,120);
     labelText->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
     labelProgressBarBg = new QLabel(this);
@@ -62,7 +62,7 @@ void PageResult::update()
     labelTextMgdl->setStyleSheet("color: #707070;");
 
     labelTextTime->setFont(textResource.getFont(PAGE_RESULT,"labelTextTime"));
-    labelTextTime->setStyleSheet("border: 1px solid #707070; border-radius:20px;");
+    labelTextTime->setStyleSheet("color: #707070; border: 1px solid #707070; border-radius:20px;");
 
     QString strTime;
 #if DEVICE
