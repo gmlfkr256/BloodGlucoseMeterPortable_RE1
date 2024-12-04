@@ -92,17 +92,11 @@ void PageResult::update()
     else
     {
         int nGlucoseValue;
-#if DEVICE
-        nGlucoseValue = instance.sysProcMonInfo.adc_raw;
 
+        nGlucoseValue = instance.sysProcMonInfo.adc_raw;
         if(nGlucoseValue>999)
             nGlucoseValue = 999;
-#else
-        nGlucoseValue = 100; //정상
-        //nGlucoseValue = 160; //경고
-        //nGlucoseValue = 200; //위험
 
-#endif
         strTextValue = QString::number(nGlucoseValue);
         strTextColor = instance.getTextColorGlucoseValue(nGlucoseValue,false);
         qDebug()<<"(pageResult) strTextColor: "<<strTextColor;
