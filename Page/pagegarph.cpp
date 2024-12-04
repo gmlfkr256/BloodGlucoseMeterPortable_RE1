@@ -11,7 +11,6 @@ void PageGarph::init()
     setBgTopHide();
 
     labelTop = new QLabel(this);
-    //labelTop->setGeometry(20,10,620,60);
     labelTop->setGeometry(20,10,620,75);
     hBoxLayoutGraph = new QHBoxLayout(this);
     hBoxLayoutGraph->setSpacing(0);
@@ -19,20 +18,16 @@ void PageGarph::init()
     labelTop->setLayout(hBoxLayoutGraph);
 
     labelProgressValue = new QLabel(this);
-    //labelProgressValue->setGeometry(10,0,140,90);
     labelProgressValue->setStyleSheet("background-color: blue;color: #000000;");
     labelProgressValue->setAlignment(Qt::AlignBottom | Qt::AlignRight);
     labelProgressValue->setFixedWidth(95);
 
     labelProgressPercent = new QLabel(this);
-    //labelProgressPercent->setGeometry(160,0,50,90);
     labelProgressPercent->setStyleSheet("background-color: orange; color: #000000;");
     labelProgressPercent->setAlignment(Qt::AlignBottom);
 
     labelProgressText = new QLabel(this);
-    //labelProgressText->setGeometry(200,0,160,90);
     labelProgressText->setAlignment(Qt::AlignBottom);
-    //labelProgressText->setStyleSheet("background-color:red; color: #6c6c6c; padding: 1px;");
     labelProgressText->setStyleSheet("background-color:red; color: #6c6c6c;");
 
     hBoxLayoutGraph->addWidget(labelProgressValue);
@@ -41,14 +36,11 @@ void PageGarph::init()
     hBoxLayoutGraph->addStretch();
 
     labelProgressBarBg = new QLabel(this);
-    //labelProgressBarBg->setGeometry(20,80,600,20);
     labelProgressBarBg->setGeometry(20,95,600,30);
     labelProgressBar = new QLabel(this);
-    //labelProgressBar->setGeometry(20,80,600,20);
     labelProgressBar->setGeometry(20,95,600,30);
 
     labelAdcText = new QLabel(this);
-    //labelAdcText->setGeometry(22,110,130,40);
     labelAdcText->setGeometry(20,125,130,45);
 
     labelAdcRect = new QLabel(this);
@@ -59,12 +51,10 @@ void PageGarph::init()
     connect(timerPainter,&QTimer::timeout,this,&PageGarph::updatePainter);
 
     labelPainter = new QLabel(this);
-    //labelPainter->setGeometry(0,160,640,220);
     labelPainter->setGeometry(20,170,600,200);
 
     painter = new QPainter();
 
-    //pixPainter = QPixmap(640,220);
     pixPainter = QPixmap(600,200);
     pixPainter.fill(Qt::transparent);
 
@@ -72,7 +62,6 @@ void PageGarph::init()
     customButtonCancel->setLongWidth(true);
 
     labelLoading = new QLabel(this);
-    //labelLoading->setGeometry(0,160,640,230);
     labelLoading->setGeometry(20,170,600,200);
     labelLoading->setAlignment(Qt::AlignCenter);
     labelLoading->hide();
@@ -96,21 +85,7 @@ void PageGarph::update()
     labelProgressValue->setText("");
     labelProgressPercent->setFont(textResource.getFont(PAGE_GRAPH,"labelProgressPercent"));
     labelProgressPercent->setText("%");
-
-    //labelProgressBarBg->setStyleSheet("background-color: #f2f2f2; border-radius:10px;");
     labelProgressBarBg->setStyleSheet("background-color: #f2f2f2; border-radius: 15px;");
-
-    /*
-    labelProgressBar->setStyleSheet(
-                "QLabel {"
-                "    border-radius: 10px;"
-                "    background-color: transparent;"  // 투명 배경 설정
-                "    background-image: url(:/Image/Default/Public/ImageGraph/progressBar.png);"
-                "    background-repeat: no-repeat;"
-                "    background-position: center;"
-                "}"
-                );
-                */
     labelProgressBar->setStyleSheet(
                 "QLabel {"
                 "    border-radius: 15px;"
@@ -121,21 +96,16 @@ void PageGarph::update()
                 "}"
                 );
 
-    //labelProgressBar->setGeometry(20,80,20,20);
     labelProgressBar->setGeometry(20,95,30,30);
 
     labelAdcText->setFont(textResource.getFont(PAGE_GRAPH,"labelAdcText"));
     labelAdcText->setText(textResource.getText(PAGE_GRAPH,"labelAdcText").at(0)+"9999");
-    //labelAdcText->setStyleSheet("color: #6c6c6c; border: 1px solid #333333; border-radius: 5px; padding-left: 25px;");
     labelAdcText->setStyleSheet("color: #808080; padding-left: 27px;");
 
-    //labelAdcRect->setStyleSheet("background-color: #52d0ba;");
-    labelAdcRect->setStyleSheet("background-color: #077bdd;");
+    instance.pixLoad(labelAdcRect,false,strDirPath,"/circleAdc.png");
 
     pen1.setWidth(2);
-    //pen1.setStyle(Qt::SolidLine);
     pen1.setStyle(Qt::DashLine);
-    //pen1.setBrush(QColor("#c7c7c7"));
     pen1.setBrush(QColor("#c5c5c5"));
 
     pen2.setWidth(3);
@@ -146,13 +116,11 @@ void PageGarph::update()
     pen3.setStyle(Qt::SolidLine);
     pen3.setJoinStyle(Qt::RoundJoin);
     pen3.setCapStyle(Qt::RoundCap);
-    //pen3.setBrush(QColor("#52d0ba"));
     pen3.setBrush(QColor("#077bdd"));
 
     labelLoading->setFont(textResource.getFont(PAGE_GRAPH,"labelLoading"));
     strLoading = textResource.getText(PAGE_GRAPH,"labelLoading").at(0);
     labelLoading->setText(strLoading);
-    //labelLoading->setStyleSheet("background-color: #1F2025; color: white; padding-bottom: 30px;");
     labelLoading->setStyleSheet("background-color: rgba(0,0,0,200); color: white; padding-top: 50px;");
 }
 
@@ -183,7 +151,6 @@ void PageGarph::updatePainter()
         labelProgressValue->setText(QString::number(nProgressValue));
         if(nProgressValue>3)
         {
-            //labelProgressBar->setGeometry(20,80,nProgressValue*6,20);
             labelProgressBar->setGeometry(20,95,nProgressValue*6,30);
         }
     }
@@ -269,28 +236,15 @@ void PageGarph::paintEvent(QPaintEvent *ev)
 
     painter->setRenderHint(QPainter::Antialiasing,true);
 
-    //painter->setBrush(QColor("#ffffff"));
     painter->setBrush(QColor("#f2f2f2"));
     painter->drawRect(-1,-1,labelPainter->width()+2,labelPainter->height()+2);
 
     painter->setPen(pen1);
 
-    /*
-    for(int i=1; i<6; i++)
-    {
-        painter->drawLine(15,33*i,625,33*i);
-    }
-    */
     for(int i=1; i<4; i++)
     {
         painter->drawLine(0,50*i,600,50*i);
     }
-
-    /*
-    painter->setPen(pen2);
-    painter->drawLine(15,0,15,203);
-    painter->drawLine(15,203,625,203);
-    */
 
     painter->setPen(pen3);
 
@@ -448,7 +402,6 @@ void PageGarph::pageHide()
         }
     }
 
-    //labelProgressBar->setGeometry(20,80,20,20);
     labelProgressBar->setGeometry(20,95,30,30);
     bIsProcessSuccess = false;
     timerPainter->stop();
