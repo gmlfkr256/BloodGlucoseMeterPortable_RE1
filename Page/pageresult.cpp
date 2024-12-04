@@ -55,8 +55,6 @@ void PageResult::update()
     customButtonSave->update();
     customButtonCancel->update();
 
-    int nTimeStatus = static_cast<int>(instance.getTimeStatus());
-
     labelTextGlucoseValue->setFont(textResource.getFont(PAGE_RESULT,"labelTextGlucoseValue"));
 
     labelTextMgdl->setFont(textResource.getFont(PAGE_RESULT,"labelTextMgdl"));
@@ -80,7 +78,7 @@ void PageResult::update()
                 QString::number(instance.sysProcMonInfo.min).rightJustified(2,'0')
                 );
 #endif
-    labelTextTime->setText(textResource.getText(PAGE_RESULT,"labelTextTime").at(0));
+    labelTextTime->setText(strTime);
     labelText->setFont(textResource.getFont(PAGE_RESULT,"labelText"));
 
     setValueUI();
@@ -190,6 +188,7 @@ void PageResult::setValueUI()
 
     labelTextGlucoseValue->setStyleSheet(strTextGlucoseValueColor);
     labelBgGlucoseValue->setStyleSheet(strBgGlucoseValueColor+"border-raidus: 18px;");
+    labelProgressBarBg->setStyleSheet("background-color: #f2f2f2; border-radius: 15px;");
     labelProgressBar->setFixedWidth(nProgressBarWidth);
     labelProgressBar->setStyleSheet(strStyleSheetProgressBar+"border-radius: 15px;");
     strStyleSheetTooltip = instance.getBgColorGlucoseValue(nGlucoseValue) + "color: #ffffff; border-radius: 11px;";
