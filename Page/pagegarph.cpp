@@ -294,7 +294,7 @@ void PageGarph::paintEvent(QPaintEvent *ev)
 
     for(int i = 1; i<50; i++)
     {
-        x1 = x+12;
+        x1 = x;
         y1 = nGraphPointY[i];
 
         painter->drawLine(x,y,x1,y1);
