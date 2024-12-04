@@ -94,7 +94,7 @@ void PageGarph::update()
     labelProgressBar->setGeometry(20,95,30,30);
 
     labelAdcText->setFont(textResource.getFont(PAGE_GRAPH,"labelAdcText"));
-    labelAdcText->setText(textResource.getText(PAGE_GRAPH,"labelAdcText").at(0)+"9999");
+    labelAdcText->setText(textResource.getText(PAGE_GRAPH,"labelAdcText").at(0));
     labelAdcText->setStyleSheet("color: #808080; padding-left: 27px;");
 
     instance.pixLoad(labelAdcRect,false,strDirPath,"/circleAdc.png");
@@ -452,4 +452,5 @@ void PageGarph::pageHide()
     nProgressValue = 0;
     instance.sysProcMonInfo.completed = 0;
     labelPainter->setPixmap(QPixmap());
+    labelAdcText->setText(textResource.getText(PAGE_GRAPH,"labelAdcText").at(0));
 }
