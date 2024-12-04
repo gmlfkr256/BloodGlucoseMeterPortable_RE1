@@ -18,7 +18,7 @@ void PageGarph::init()
     labelTop->setLayout(hBoxLayoutGraph);
 
     labelProgressValue = new QLabel(this);
-    labelProgressValue->setFixedWidth(95);
+    //labelProgressValue->setFixedWidth(95);
     labelProgressValue->setAlignment(Qt::AlignBottom | Qt::AlignRight);
 
     labelProgressPercent = new QLabel(this);
