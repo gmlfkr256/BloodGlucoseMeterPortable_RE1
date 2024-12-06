@@ -166,7 +166,7 @@ void PageGarph::updatePainter()
 
     if(nProgressValue <= 100)
     {
-        qDebug()<<"nPorgressValue: "<<nProgressValue;
+        //qDebug()<<"nPorgressValue: "<<nProgressValue;
         labelProgressValue->setText(QString::number(nProgressValue));
         if(nProgressValue>5)
         {
