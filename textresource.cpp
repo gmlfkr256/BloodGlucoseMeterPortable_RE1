@@ -246,7 +246,7 @@ void TextResource::init()
                                     });
 
     //PAGE_INIT_CONFIRM
-    fontData[Lan][PAGE_INIT_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(30)));
+    fontData[Lan][PAGE_INIT_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
     textData[Lan][PAGE_INIT_CONFIRM].insert("labelText",QStringList{
                                                 "전체 시스템 정보가 초기화됩니다\n초기화를 진행하시겠습니까?",
                                                 "시스템 초기화 진행 후\n시스템이 재시작합니다",
@@ -484,7 +484,7 @@ void TextResource::init()
                                     });
 
     //PAGE_INIT_CONFIRM
-    fontData[Lan][PAGE_INIT_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(30)));
+    fontData[Lan][PAGE_INIT_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
     textData[Lan][PAGE_INIT_CONFIRM].insert("labelText",QStringList{
                                                 "The entire system\ninformation will be reset.\nDo you want to proceed\nwith factory reset?",
                                                 "After system initialization,\nthe system will restart",
