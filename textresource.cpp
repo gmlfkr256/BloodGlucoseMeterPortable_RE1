@@ -239,7 +239,7 @@ void TextResource::init()
 
     //PAGE_INIT
     fontData[Lan][PAGE_INIT].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36)));
-    textData[Lan][PAGE_INIT].insert("labeltext",QStringList{
+    textData[Lan][PAGE_INIT].insert("labelText",QStringList{
                                         "전체 초기화",
                                         "블루투스 초기화",
                                         "혈당보정 초기화"
@@ -477,7 +477,7 @@ void TextResource::init()
                                       });
     //PAGE_INIT
     fontData[Lan][PAGE_INIT].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36)));
-    textData[Lan][PAGE_INIT].insert("labeltext",QStringList{
+    textData[Lan][PAGE_INIT].insert("labelText",QStringList{
                                         "Factory reset",
                                         "Bluetooth reset",
                                         "Blood sugar calibration reset"
