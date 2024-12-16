@@ -11,7 +11,7 @@ void PageInit::init()
     for(int i=0; i<3; i++)
     {
         labelText[i] = new QLabel(this);
-        labelText[i]->setGeometry(25,80*i,230,75);
+        labelText[i]->setGeometry(25,80+(i*75),230,75);
         labelArrow[i] = new QLabel(this);
         labelArrow[i]->setGeometry(labelText[i]->x()+551,labelText[i]->y(),40,73);
     }
