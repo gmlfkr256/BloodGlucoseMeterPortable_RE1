@@ -75,7 +75,7 @@ void TextResource::init()
     fontData[Lan][PAGE_PASSWORD].insert("labelButtonOKText",QFont(instance.fontSuit,instance.pixelToPoint(48)));
 
     //PAGE_PASSWORD_CONFIRM
-    fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(30)));
+    fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText",QStringList{
                                                     "로그인에 성공했습니다", //PASSWORD_STR_LOGIN_SUCCESS,
                                                     "로그인에 실패했습니다", //PASSWORD_STR_LOGIN_FAIL,
@@ -306,7 +306,7 @@ void TextResource::init()
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonMeasureRe",QStringList{"ReMeasure"});
 
     //PAGE_PASSWORD_CONFIRM
-    fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(30)));
+    fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText",QStringList{
                                                     "Login successful",                              // PASSWORD_STR_LOGIN_SUCCESS
                                                     "Login failed",                                  // PASSWORD_STR_LOGIN_FAIL
