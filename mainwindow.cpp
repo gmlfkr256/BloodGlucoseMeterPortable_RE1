@@ -133,7 +133,9 @@ void MainWindow::init()
     };
 
     HideComponents();
+#if DEVICE
     pagePassword->instance.updateSysUserInfo();
+#endif
 }
 
 void MainWindow::initConnect()
