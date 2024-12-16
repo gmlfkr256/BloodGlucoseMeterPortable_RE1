@@ -65,6 +65,7 @@ void PageResult::update()
     labelTextTime->setStyleSheet("color: #707070; border: 1px solid #707070; border-radius:20px;");
 
     QString strTime;
+    /*
 #if DEVICE
     strTime = textResource.getText(PAGE_RESULT,"labelTextTime").at(0)+" "
             +QString("%1:%2").arg(
@@ -72,13 +73,14 @@ void PageResult::update()
                 QString::number(instance.histInfo.val[instance.getTimeStatus()].min).rightJustified(2,'0')
                 );
 #else
+*/
     strTime = textResource.getText(PAGE_RESULT,"labelTextTime").at(0)+" "
             +QString("%1:%2").arg(
                 QString::number(instance.sysProcMonInfo.hour).rightJustified(2,'0'),
                 QString::number(instance.sysProcMonInfo.min).rightJustified(2,'0')
                 );
 
-#endif
+//#endif
     labelTextTime->setText(strTime);
     labelText->setFont(textResource.getFont(PAGE_RESULT,"labelText"));
 

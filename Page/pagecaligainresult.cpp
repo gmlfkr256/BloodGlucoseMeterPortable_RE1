@@ -55,6 +55,9 @@ void PageCaliGainResult::mousePressEvent(QMouseEvent *ev)
 
 void PageCaliGainResult::pageShow()
 {
+#if DEVICE
+    instance.getCaliCompleteCheck();
+#endif
     update();
 }
 
