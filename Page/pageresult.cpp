@@ -68,8 +68,8 @@ void PageResult::update()
 #if DEVICE
     strTime = textResource.getText(PAGE_RESULT,"labelTextTime").at(0)+" "
             +QString("%1:%2").arg(
-                QString::number(instance.histInfo.val[nTimeStatus].hour).rightJustified(2,'0'),
-                QString::number(instance.histInfo.val[nTimeStatus].min).rightJustified(2,'0')
+                QString::number(instance.histInfo.val[instance.getTimeStatus()].hour).rightJustified(2,'0'),
+                QString::number(instance.histInfo.val[instance.getTimeStatus()].min).rightJustified(2,'0')
                 );
 #else
     strTime = textResource.getText(PAGE_RESULT,"labelTextTime").at(0)+" "

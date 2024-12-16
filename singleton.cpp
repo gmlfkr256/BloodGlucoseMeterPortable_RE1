@@ -12,8 +12,8 @@ const QHash<unsigned int, QPair<QString, DeviceLanguage>> Singleton::hashLanguag
 void Singleton::init()
 {
 
-#if DEVCIE
-    updateSysUserInfo();
+#if DEVICE
+    //updateSysUserInfo();
 #else
 
     langData.used = KR;
@@ -67,7 +67,6 @@ void Singleton::init()
     sysProcMonInfo.err_code = GAPI_PROC_ECODE_NORMAL;
 
     setCaliGainCompleteCheck(true);
-    //caliUserInfo
 #endif
 }
 
@@ -244,7 +243,7 @@ void Singleton::setPasswordStatusPrev(PasswordStatus passwordStatus)
 
 void Singleton::updateSysUserInfo()
 {
-    for(int i=0; i<USER_MAX; i++)
+    for(int i=0; i<static_cast<int>(USER_MAX); i++)
     {
         if(guiApi.glucoseGetUserInfo(i,&sysUserInfo[i]) == GAPI_SUCCESS)
             qDebug()<<"sysUserInfo["+QString::number(i)+"] update Success";

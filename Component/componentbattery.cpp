@@ -24,12 +24,10 @@ void ComponentBattery::update()
     if(instance.getProcCheck() == true)
         return;
 
-    int result = instance.guiApi.glucoseGetBatData(&batData);
-
-    if(result == GAPI_SUCCESS)
+    if(instance.guiApi.glucoseGetBatData(&batData) == GAPI_SUCCESS)
     {
-        qDebug()<<"batDataPrev.charge: "<<batDataPrev.charge<<", batDataPrev.charging: "<<batDataPrev.charging;
-        qDebug()<<"batData.charge: "<<batData.charge<<", batData.Charging: "<<batData.charging;
+        //qDebug()<<"batDataPrev.charge: "<<batDataPrev.charge<<", batDataPrev.charging: "<<batDataPrev.charging;
+        //qDebug()<<"batData.charge: "<<batData.charge<<", batData.Charging: "<<batData.charging;
         batDataPrev = batData;
         updateUI();
     }

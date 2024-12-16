@@ -21,6 +21,10 @@ void MainWindow::initGuiApi()
 
 void MainWindow::init()
 {
+#if DEVICE
+    Singleton::getInstance().guiApi.glucoseAttach();
+#endif
+
     LoadFont loadFont;
     loadFont.Load();
 
@@ -129,6 +133,7 @@ void MainWindow::init()
     };
 
     HideComponents();
+    pagePassword->instance.updateSysUserInfo();
 }
 
 void MainWindow::initConnect()
