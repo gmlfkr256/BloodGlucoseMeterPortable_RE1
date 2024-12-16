@@ -39,7 +39,8 @@ void PageInit::update()
 
     for(int i=0; i<3; i++)
     {
-        labelLine[i]->setStyleSheet("background-color: #c5c5c5;");
+        //labelLine[i]->setStyleSheet("background-color: #c5c5c5;");
+        labelLine[i]->setStyleSheet("background-color: red;");
     }
 }
 
