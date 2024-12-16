@@ -203,6 +203,7 @@ public:
     gapiSysProcAct_t sysProcAct;
     gapiSysProcMonInfo_t sysProcMonInfo;
     gapiCaliSetGlucose_t caliSetGlucose;
+    gapiHistValue_t histValue;
 
     int caliIndexCount = 0;
 

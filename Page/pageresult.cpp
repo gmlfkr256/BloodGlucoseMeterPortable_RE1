@@ -218,6 +218,22 @@ void PageResult::mousePressEvent(QMouseEvent *ev)
 {
     if(instance.touchCheck(customButtonSave->geometry(),ev))
     {
+#if DEVCIE
+        instance.histValue.valid_flag = instance.sysProcMonInfo.valid;
+        instance.histValue.value = instance.sysProcMonInfo.adc_raw;
+        instance.histValue.hour = instance.sysProcMonInfo.hour;
+        instance.histValue.min = instance.sysProcMonInfo.min;
+
+        if(instance.sysProcMonInfo.err_code == GAPI_PROC_ECODE_NORMAL)
+            instance.guiApi.saveMeasurement(instance.getTimeStatus(),&instance.histValue);
+        else
+            qDebug()<<"result save fail - err_code:"<<instance.sysProcMonInfo.err_code;
+#else
+        instance.histInfo.val[instance.getTimeStatus()].valid_flag = 1;
+        instance.histInfo.val[instance.getTimeStatus()].value = instance.sysProcMonInfo.adc_raw;
+        instance.histInfo.val[instance.getTimeStatus()].hour = instance.sysProcMonInfo.hour;
+        instance.histInfo.val[instance.getTimeStatus()].min = instance.sysProcMonInfo.min;
+#endif
         emit signalShowPageNum(PAGE_HOME);
     }
 
