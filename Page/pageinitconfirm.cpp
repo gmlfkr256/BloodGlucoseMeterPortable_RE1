@@ -68,17 +68,41 @@ void PageInitConfirm::mousePressEvent(QMouseEvent *ev)
 #if DEVICE == true
             instance.guiApi.glucoseCaliClearUserInfo();
 #else
-            gapiCaliUserInfo_t emptyCaliUserInfo;
-            instance.caliUserInfo = emptyCaliUserInfo;
+            /*
+            typedef struct gapiCaliUserInfo_T {
+                unsigned char user;
+                unsigned char led_sense;
+                unsigned char completed;
+                unsigned char revd;
+                unsigned int glucose_val[GAPI_CALI_INDEX_MAX];
+                gapiCaliUserIdxValue_t val[GAPI_CALI_INDEX_MAX];
+            } __attribute__((__packed__)) gapiCaliUserInfo_t;
+            */
+            instance.caliUserInfo.led_sense = 0;
+            instance.caliUserInfo.completed = 0;
+            for(int i=0; i<GAPI_CALI_INDEX_MAX; i++)
+            {
+                instance.caliUserInfo.glucose_val[i] = 0;
+                instance.caliUserInfo.val[i].valid = 0;
+                for(int j=0; j<GAPI_CALI_ORDER_MAX; j++)
+                {
+                    instance.caliUserInfo.val[i].hr[j] = 0;
+                    instance.caliUserInfo.val[i].adc[j] = 0;
+                    instance.caliUserInfo.val[i].temp[j] = 0;
+                }
+            }
 #endif
             update();
             break;
         case INIT_CALI_A:
+            emit signalShowPageNum(PAGE_INIT);
             break;
         case INIT_BLUETOOTH_Q:
             instance.setInitIndex(INIT_BLUETOOTH_A);
+            update();
             break;
         case INIT_BLUETOOTH_A:
+            emit signalShowPageNum(PAGE_INIT);
             break;
         case INIT_MAX:
             break;
