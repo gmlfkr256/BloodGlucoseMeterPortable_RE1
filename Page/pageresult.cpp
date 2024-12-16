@@ -141,7 +141,7 @@ void PageResult::setValueUI()
             strBgGlucoseValueColor = "background-color: #edfaf8;";
             strPathPngTooltip = "/triNormal.png";
             strStyleSheetProgressBar = "background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
-                                       "stop:077bdd #, stop:1 #52d0ba);";
+                                       "stop:0 #077bdd , stop:1 #52d0ba);";
             nIndexTooltip = 0;
         }
 
