@@ -2,6 +2,15 @@
 #define GLOBALMAIN_H
 
 //=======================
+// Define Constants
+//=======================
+
+#define DEVICE false
+#define IMAGE_FILE_CHECK true
+#define GLUCOSE_LOW_PLUS 5
+#define GLUCOSE_HIGH_MINUS -30
+
+//=======================
 // Qt Library
 //=======================
 
@@ -43,13 +52,6 @@
 //=======================
 
 
-//=======================
-// Define Constants
-//=======================
 
-#define DEVICE true
-#define IMAGE_FILE_CHECK true
-#define GLUCOSE_LOW_PLUS 5
-#define GLUCOSE_HIGH_MINUS -30
 
 #endif // GLOBALMAIN_H
