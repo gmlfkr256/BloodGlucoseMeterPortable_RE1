@@ -173,6 +173,7 @@ void PagePassword::processOK()
 
         if(bCheckPassword)
         {
+            qDebug()<<strPasswordNum;
             if(strPasswordNum == "1111" || strPasswordNum == "2222")
                 instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_CHANGE);
             else
