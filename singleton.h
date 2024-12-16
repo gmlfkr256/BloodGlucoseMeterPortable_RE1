@@ -54,6 +54,8 @@ typedef enum
     PAGE_CALI_RESULT,
     PAGE_CALI_RESULT_MULTI,
     PAGE_RESULT,
+    PAGE_INIT,
+    PAGE_INIT_CONFIRM,
 
     PAGE_THRESHOLD,
     PAGE_HISTORY,
@@ -64,9 +66,9 @@ typedef enum
     PAGE_TRANSLATION,
     PAGE_UPGRADE,
     PAGE_DEVICEINFO,
-    PAGE_RESET,
     PAGE_USER,
     PAGE_COLOR,
+
     CUSTOM_BUTTON,
     CUSTOM_COMPONENT,
     PAGE_MAX
@@ -162,6 +164,17 @@ typedef enum
     CALI_ORDER_2,
     CALI_ORDER_MAX
 } CaliSelOrder;
+
+typedef enum
+{
+    INIT_FACTORY_Q,
+    INIT_FACTORY_A,
+    INIT_BLUETOOTH_Q,
+    INIT_BLUETOOTH_A,
+    INIT_CALI_Q,
+    INIT_CALI_A,
+    INIT_MAX
+} InitIndex;
 
 class Singleton : public QObject
 {
@@ -259,6 +272,10 @@ public:
     //PageCaliValue
     void setCaliValue(int nValue);
 
+    //PageInitConfirm
+    void setInitIndex(InitIndex initIndex);
+    InitIndex getInitIndex();
+
     //public
     bool touchCheck(const QRect &rect, QMouseEvent* ev);
     int pixelToPoint(int pixelSize);
@@ -310,6 +327,9 @@ private:
     //PageCaliResultMulti
     CaliSelOrder caliSelectOrder = CALI_ORDER_0;
     bool bCaliIndexCheck = false;
+
+    //PageInitConfirm
+    InitIndex initIndex = INIT_FACTORY_A;
 };
 
 #endif // SINGLETON_H

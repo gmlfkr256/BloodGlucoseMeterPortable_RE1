@@ -128,7 +128,7 @@ void PageMenu::update()
             PAGE_TRANSLATION,
             PAGE_UPGRADE,
             PAGE_DEVICEINFO,
-            PAGE_RESET,
+            PAGE_INIT,
             PAGE_USER
         };
         break;

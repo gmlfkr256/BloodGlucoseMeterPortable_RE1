@@ -49,6 +49,8 @@ SOURCES += \
     Page/pagecalivalue.cpp \
     Page/pagegarph.cpp \
     Page/pagehome.cpp \
+    Page/pageinit.cpp \
+    Page/pageinitconfirm.cpp \
     Page/pagemenu.cpp \
     Page/pagepassword.cpp \
     Page/pagepasswordconfirm.cpp \
@@ -94,6 +96,8 @@ HEADERS += \
     Page/pagecalivalue.h \
     Page/pagegarph.h \
     Page/pagehome.h \
+    Page/pageinit.h \
+    Page/pageinitconfirm.h \
     Page/pagemenu.h \
     Page/pagepassword.h \
     Page/pagepasswordconfirm.h \

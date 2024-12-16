@@ -1,4 +1,4 @@
-#include "textresource.h"
+﻿#include "textresource.h"
 
 TextResource& TextResource::getInstance()
 {
@@ -237,6 +237,25 @@ void TextResource::init()
                                           "에러"
                                       });
 
+    //PAGE_INIT
+    fontData[Lan][PAGE_INIT].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36)));
+    textData[Lan][PAGE_INIT].insert("labeltext",QStringList{
+                                        "전체 초기화",
+                                        "블루투스 초기화",
+                                        "혈당보정 초기화"
+                                    });
+
+    //PAGE_INIT_CONFIRM
+    fontData[Lan][PAGE_INIT_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(30)));
+    textData[Lan][PAGE_INIT_CONFIRM].insert("labelText",QStringList{
+                                                "전체 시스템 정보가 초기화됩니다\n초기화를 진행하시겠습니까?",
+                                                "시스템 초기화 진행 후\n시스템이 재시작합니다",
+                                                "블루투스\n유저 정보가 초기화됩니다\n스마트 폰과의 연결이 해제됩니다\n\n초기화를 진행하시겠습니까?",
+                                                "블루투스\n유저 정보가 초기화되었습니다",
+                                                "혈당 보정이 초기화됩니다\n혈당 보정을 초기화하시겠습니까?",
+                                                "혈당 보정이 초기화되었습니다"
+                                            });
+
     //====================================================================================================================================
     //EN
     Lan = EN;
@@ -456,6 +475,13 @@ void TextResource::init()
                                           "Warning",
                                           "Error"
                                       });
+    //PAGE_INIT
+    fontData[Lan][PAGE_INIT].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36)));
+    textData[Lan][PAGE_INIT].insert("labeltext",QStringList{
+                                        "Factory reset",
+                                        "Bluetooth reset",
+                                        "Blood sugar calibration reset"
+                                    });
 
 
     //=====================================================================================================================================

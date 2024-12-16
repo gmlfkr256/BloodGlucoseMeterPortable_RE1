@@ -120,5 +120,6 @@
         <file>Image/Default/Public/ImageGraph/circleLoading0.png</file>
         <file>Image/Default/Public/ImageGraph/circleLoading1.png</file>
         <file>Image/Default/Public/ImageGraph/circleLoading2.png</file>
+        <file>Image/Default/Public/ImageInit/arrow.png</file>
     </qresource>
 </RCC>

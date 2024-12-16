@@ -487,6 +487,17 @@ void Singleton::setCaliValue(int nValue)
 #endif
 }
 
+//PageInitConfirm
+void Singleton::setInitIndex(InitIndex initIndex)
+{
+    this->initIndex = initIndex;
+}
+
+InitIndex Singleton::getInitIndex()
+{
+    return this->initIndex;
+}
+
 //public
 bool Singleton::touchCheck(const QRect &rect, QMouseEvent* ev)
 {

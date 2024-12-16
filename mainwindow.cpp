@@ -78,6 +78,12 @@ void MainWindow::init()
     pageResult = new PageResult(this);
     stackedWidget->addWidget(pageResult);
 
+    pageInit = new PageInit(this);
+    stackedWidget->addWidget(pageInit);
+
+    pageInitConfirm = new PageInitConfirm(this);
+    stackedWidget->addWidget(pageInitConfirm);
+
     comBat = new ComponentBattery(stackedWidget);
     comBle = new ComponentBluetooth(stackedWidget);
     comClock = new ComponentClock(stackedWidget);
@@ -104,6 +110,8 @@ void MainWindow::init()
         {PAGE_CALI_RESULT, "PageCaliResult"},
         {PAGE_CALI_RESULT_MULTI, "PageCaliResultMulti"},
         {PAGE_RESULT,"PageResult"},
+        {PAGE_INIT,"PageInit"},
+        {PAGE_INIT_CONFIRM,"PageInitConfirm"},
 
         {PAGE_THRESHOLD, "PageThreshold"},
         {PAGE_HISTORY, "PageHistory"},
@@ -114,7 +122,6 @@ void MainWindow::init()
         {PAGE_TRANSLATION, "PageTranslation"},
         {PAGE_UPGRADE, "PageUpgrade"},
         {PAGE_DEVICEINFO, "PageDeviceInfo"},
-        {PAGE_RESET, "PageReset"},
         {PAGE_USER, "PageUser"},
         {PAGE_COLOR, "PageColor"},
         {CUSTOM_BUTTON, "CustomButton"},
@@ -158,6 +165,8 @@ void MainWindow::initConnect()
     connect(pageCaliResult, &PageCaliResult::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageCaliResultMulti, &PageCaliResultMulti::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageResult, &PageResult::signalShowPageNum,this,&MainWindow::setPageByPageNum);
+    connect(pageInit, &PageInit::signalShowPageNum,this,&MainWindow::setPageByPageNum);
+    connect(pageInitConfirm, &PageInitConfirm::signalShowPageNum,this,&MainWindow::setPageByPageNum);
 }
 
 void MainWindow::currentPageChanged(int index)
