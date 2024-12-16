@@ -483,6 +483,16 @@ void TextResource::init()
                                         "Blood sugar calibration reset"
                                     });
 
+    //PAGE_INIT_CONFIRM
+    fontData[Lan][PAGE_INIT_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(30)));
+    textData[Lan][PAGE_INIT_CONFIRM].insert("labelText",QStringList{
+                                                "The entire system\ninformation will be reset.\nDo you want to proceed\nwith factory reset?",
+                                                "After system initialization,\nthe system will restart",
+                                                "Bluetooth user information\nwill be initialized.\nThe connection with the\nsmartphone is disconnected.\nWould you like to reset\nBluetooth?",
+                                                "Bluetooth user information\nhas been reset",
+                                                "Blood sugar correction\nwill be reset\nDo you want to reset\nblood sugar correction?",
+                                                "Blood sugar correction\nhas been reset"
+                                            });
 
     //=====================================================================================================================================
     //JP
