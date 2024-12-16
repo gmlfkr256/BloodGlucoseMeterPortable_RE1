@@ -145,7 +145,7 @@ void MainWindow::initConnect()
 
     //com
     connect(comHome,&ComponentHome::singalShowPageHome,this,[this](){stackedWidget->setCurrentIndex(PAGE_HOME);});
-    connect(comMenu,&ComponentMenu::signalShowPageMenu,this,[this](){stackedWidget->setCurrentIndex(PAGE_MENU);});
+    connect(comMenu,&ComponentMenu::signalShowPageNum,this,&MainWindow::setPageByPageNum);
 
     //page
     connect(pagePassword,&PagePassword::signalPassword,this,[this](){stackedWidget->setCurrentIndex(PAGE_PASSWORD_CONFIRM);});

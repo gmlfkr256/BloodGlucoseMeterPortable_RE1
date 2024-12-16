@@ -189,6 +189,7 @@ void PageMenu::mousePressEvent(QMouseEvent *ev)
 
 void PageMenu::pageShow()
 {
+    selectPage = MENU_PAGE_0;
     update();
 }
 

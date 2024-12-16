@@ -20,7 +20,7 @@ public slots:
     void pageHide() override;
 
 signals:
-    void signalShowPageMenu();
+    void signalShowPageNum(PageNum pageNum);
 };
 
 #endif // COMPONENTMENU_H
