@@ -31,6 +31,9 @@ public:
 private:
     void init();
     void updateValue();
+
+signals:
+    void signalSetValue();
 };
 
 #endif // COMPONENTSPINNER_H

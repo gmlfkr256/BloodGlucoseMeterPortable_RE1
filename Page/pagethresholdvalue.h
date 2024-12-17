@@ -25,8 +25,9 @@ public:
     void pageHide() override;
 private:
     void init();
+
+private slots:
     void initSpinner();
-    void setSpinnerLimit();
 
 signals:
     void signalShowPageNum(PageNum pageNum);

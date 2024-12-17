@@ -14,6 +14,10 @@ void PageThresholdValue::init()
     componentSpinner[1] = new ComponentSpinner(this,QRect(220,107,200,250));
     componentSpinner[2] = new ComponentSpinner(this,QRect(430,107,200,250));
 
+    connect(componentSpinner[0],&ComponentSpinner::signalSetValue,this,&PageThresholdValue::initSpinner);
+    connect(componentSpinner[1],&ComponentSpinner::signalSetValue,this,&PageThresholdValue::initSpinner);
+    connect(componentSpinner[2],&ComponentSpinner::signalSetValue,this,&PageThresholdValue::initSpinner);
+
     update();
 }
 
