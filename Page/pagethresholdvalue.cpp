@@ -50,7 +50,7 @@ void PageThresholdValue::initSpinner()
 
     if(nValue<instance.nThresholdLimitLow)
         nValue = instance.nThresholdLimitLow;
-    if(nValue<instance.nThresholdLimitHigh)
+    if(nValue>instance.nThresholdLimitHigh)
         nValue = instance.nThresholdLimitHigh;
 
     int nValueHan = nValue/100;
