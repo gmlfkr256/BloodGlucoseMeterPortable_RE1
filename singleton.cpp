@@ -522,7 +522,7 @@ void Singleton::setThresholdValue(ThresholdIndex thresholdIndex, int nValue)
     glucoseLimit.low = thresholdLow;
     glucoseLimit.high = thresholdHigh;
 
-#if DEVICE == false
+#if DEVICE
     guiApi.glucoseSetGlucoseLimit(&glucoseLimit);
 #endif
 }
