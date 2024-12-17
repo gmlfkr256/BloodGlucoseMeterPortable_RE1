@@ -74,11 +74,7 @@ void PageThresholdValue::pageHide()
 
 void PageThresholdValue::mousePressEvent(QMouseEvent *ev)
 {
-    for(ComponentSpinner *spinner: componentSpinner)
-    {
-        if(instance.touchCheck(spinner->geometry(),ev))
-            initSpinner();
-    }
+    initSpinner();
 
     if(instance.touchCheck(customButtonOK->geometry(),ev))
     {
