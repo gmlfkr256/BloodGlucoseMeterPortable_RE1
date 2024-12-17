@@ -65,13 +65,13 @@ void ComponentSpinner::updateValue()
         nValue = 9;
 
     labelTextValue->setText(QString::number(nValue));
+    emit signalSetValue();
 }
 
 void ComponentSpinner::setValue(int nValue)
 {
     this->nValue = nValue;
     updateValue();
-    emit signalSetValue();
 }
 
 int ComponentSpinner::getValue()
