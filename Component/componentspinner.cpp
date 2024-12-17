@@ -65,7 +65,7 @@ void ComponentSpinner::updateValue()
         nValue = 9;
 
     labelTextValue->setText(QString::number(nValue));
-    emit signalSetValue();
+
 }
 
 void ComponentSpinner::setValue(int nValue)
@@ -87,6 +87,7 @@ void ComponentSpinner::mousePressEvent(QMouseEvent *ev)
         nValue++;
 
         updateValue();
+        emit signalSetValue();
     }
 
     if(instance.touchCheck(labelButtonBottom->geometry(),ev))
@@ -94,6 +95,7 @@ void ComponentSpinner::mousePressEvent(QMouseEvent *ev)
         nValue--;
 
         updateValue();
+        emit signalSetValue();
     }
 }
 
