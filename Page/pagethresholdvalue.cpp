@@ -13,7 +13,9 @@ void PageThresholdValue::init()
     componentSpinner[0] = new ComponentSpinner(this,QRect(10,107,200,250));
     componentSpinner[1] = new ComponentSpinner(this,QRect(220,107,200,250));
     componentSpinner[2] = new ComponentSpinner(this,QRect(430,107,200,250));
+
     update();
+    initSpinner();
 }
 
 void PageThresholdValue::update()
@@ -24,8 +26,6 @@ void PageThresholdValue::update()
     {
         spinner->update();
     }
-
-    initSpinner();
 }
 
 void PageThresholdValue::initSpinner()
@@ -44,14 +44,6 @@ void PageThresholdValue::initSpinner()
     {
         qDebug()<<"ThressHold Index Fail";
     }
-
-    if(nValue == 0)
-        return;
-
-    if(nValue<instance.nThresholdLimitLow)
-        nValue = instance.nThresholdLimitLow;
-    if(nValue>instance.nThresholdLimitHigh)
-        nValue = instance.nThresholdLimitHigh;
 
     int nValueHan = nValue/100;
     int nValueTen = (nValue - nValueHan*100)/10;
