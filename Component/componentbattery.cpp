@@ -40,7 +40,7 @@ void ComponentBattery::update()
     batData.charge = QRandomGenerator::global()->bounded(101);
     batData.charging = 1;
     updateUI();
-     qDebug()<<"batData.charge: "<<batData.charge;
+     //qDebug()<<"batData.charge: "<<batData.charge;
 #endif
 }
 
