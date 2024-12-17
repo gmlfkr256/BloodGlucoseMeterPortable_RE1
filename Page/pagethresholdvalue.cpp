@@ -13,11 +13,6 @@ void PageThresholdValue::init()
     componentSpinner[0] = new ComponentSpinner(this,QRect(10,107,200,250));
     componentSpinner[1] = new ComponentSpinner(this,QRect(220,107,200,250));
     componentSpinner[2] = new ComponentSpinner(this,QRect(430,107,200,250));
-
-    connect(componentSpinner[0],&ComponentSpinner::signalSetValue,this,&PageThresholdValue::initSpinner);
-    connect(componentSpinner[1],&ComponentSpinner::signalSetValue,this,&PageThresholdValue::initSpinner);
-    connect(componentSpinner[2],&ComponentSpinner::signalSetValue,this,&PageThresholdValue::initSpinner);
-
     update();
 }
 
@@ -29,6 +24,7 @@ void PageThresholdValue::update()
     {
         spinner->update();
     }
+
     initSpinner();
 }
 
@@ -78,6 +74,12 @@ void PageThresholdValue::pageHide()
 
 void PageThresholdValue::mousePressEvent(QMouseEvent *ev)
 {
+    for(ComponentSpinner *spinner: componentSpinner)
+    {
+        if(instance.touchCheck(spinner->geometry(),ev))
+            initSpinner();
+    }
+
     if(instance.touchCheck(customButtonOK->geometry(),ev))
     {
         nValue = componentSpinner[0]->getValue()*100 + componentSpinner[1]->getValue()*10 + componentSpinner[2]->getValue();
