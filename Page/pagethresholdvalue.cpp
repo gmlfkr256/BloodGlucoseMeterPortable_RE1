@@ -64,22 +64,40 @@ void PageThresholdValue::checkLimit()
 
     if(instance.getThresholdIndex() == THRESHOLD_LOW)
     {
-        if(nCheckValue<instance.nThresholdLimitLow)
+        if(nCheckValue<instance.nThresholdLimitLowMin)
         {
-            nCheckValue = instance.nThresholdLimitLow;
+            nCheckValue = instance.nThresholdLimitLowMin;
+        }
+        else if(nCheckValue>instance.nThresholdLimitLowMax)
+        {
+            nCheckValue = instance.nThresholdLimitLowMax;
         }
     }
     else if(instance.getThresholdIndex() == THRESHOLD_HIGH)
     {
-        if(nCheckValue>instance.nThresholdLimitHigh)
+        if(nCheckValue<instance.nThresholdLimitHighMin)
         {
-            nCheckValue = instance.nThresholdLimitHigh;
+            nCheckValue = instance.nThresholdLimitHighMin;
+        }
+        else if(nCheckValue>instance.nThresholdLimitHighMax)
+        {
+            nCheckValue = instance.nThresholdLimitHighMax;
         }
     }
     else
     {
         qDebug()<<"ThressHold checkLimit Fail";
     }
+    /*
+    if(nCheckValue<instance.nThresholdLimitLow)
+    {
+        nCheckValue = instance.nThresholdLimitLow;
+    }
+    else   if(nCheckValue>instance.nThresholdLimitHigh)
+    {
+        nCheckValue = instance.nThresholdLimitHigh;
+    }
+    */
 
     int nValueHan = nCheckValue/100;
     int nValueTen = (nCheckValue - nValueHan*100)/10;
