@@ -26,6 +26,7 @@ public:
 private:
     void init();
     void initSpinner();
+    void checkLimit();
 
 signals:
     void signalShowPageNum(PageNum pageNum);

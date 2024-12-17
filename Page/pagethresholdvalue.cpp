@@ -14,6 +14,11 @@ void PageThresholdValue::init()
     componentSpinner[1] = new ComponentSpinner(this,QRect(220,107,200,250));
     componentSpinner[2] = new ComponentSpinner(this,QRect(430,107,200,250));
 
+    for(ComponentSpinner *spinner : componentSpinner)
+    {
+        connect(spinner,&ComponentSpinner::signalSetValue,this,&PageThresholdValue::checkLimit);
+    }
+
     update();
 }
 
@@ -47,6 +52,38 @@ void PageThresholdValue::initSpinner()
     int nValueHan = nValue/100;
     int nValueTen = (nValue - nValueHan*100)/10;
     int nValueOne = nValue - nValueHan*100 - nValueTen*10;
+
+    componentSpinner[0]->setValue(nValueHan);
+    componentSpinner[1]->setValue(nValueTen);
+    componentSpinner[2]->setValue(nValueOne);
+}
+
+void PageThresholdValue::checkLimit()
+{
+    int nCheckValue = componentSpinner[0]->getValue()*100 + componentSpinner[1]->getValue()*10 + componentSpinner[2]->getValue();
+
+    if(instance.getThresholdIndex() == THRESHOLD_LOW)
+    {
+        if(nCheckValue<instance.nThresholdLimitLow)
+        {
+            nCheckValue = instance.nThresholdLimitLow;
+        }
+    }
+    else if(instance.getThresholdIndex() == THRESHOLD_HIGH)
+    {
+        if(nCheckValue>instance.nThresholdLimitHigh)
+        {
+            nCheckValue = instance.nThresholdLimitHigh;
+        }
+    }
+    else
+    {
+        qDebug()<<"ThressHold checkLimit Fail";
+    }
+
+    int nValueHan = nCheckValue/100;
+    int nValueTen = (nCheckValue - nValueHan*100)/10;
+    int nValueOne = nCheckValue - nValueHan*100 - nValueTen*10;
 
     componentSpinner[0]->setValue(nValueHan);
     componentSpinner[1]->setValue(nValueTen);

@@ -71,6 +71,7 @@ void ComponentSpinner::setValue(int nValue)
 {
     this->nValue = nValue;
     updateValue();
+    emit signalSetValue();
 }
 
 int ComponentSpinner::getValue()
