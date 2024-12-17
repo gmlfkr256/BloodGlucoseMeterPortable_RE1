@@ -15,7 +15,6 @@ void PageThresholdValue::init()
     componentSpinner[2] = new ComponentSpinner(this,QRect(430,107,200,250));
 
     update();
-    initSpinner();
 }
 
 void PageThresholdValue::update()
@@ -57,6 +56,7 @@ void PageThresholdValue::initSpinner()
 void PageThresholdValue::pageShow()
 {
     update();
+    initSpinner();
 }
 
 void PageThresholdValue::pageHide()
