@@ -56,8 +56,9 @@ typedef enum
     PAGE_RESULT,
     PAGE_INIT,
     PAGE_INIT_CONFIRM,
-
     PAGE_THRESHOLD,
+    PAGE_THRESHOLD_VALUE,
+
     PAGE_HISTORY,
     PAGE_SOUND,
     PAGE_SLEEP,
@@ -165,6 +166,8 @@ typedef enum
     CALI_ORDER_MAX
 } CaliSelOrder;
 
+Q_ENUMS(CaliSelOrder);
+
 typedef enum
 {
     INIT_FACTORY_Q,
@@ -175,6 +178,15 @@ typedef enum
     INIT_CALI_A,
     INIT_MAX
 } InitIndex;
+
+Q_ENUMS(InitIndex);
+
+typedef enum
+{
+    THRESHOLD_LOW,
+    THRESHOLD_HIGH,
+    THRESHOLD_MAX
+} ThresholdIndex;
 
 class Singleton : public QObject
 {
@@ -193,8 +205,8 @@ public:
 
     int thresholdLow;
     int thresholdHigh;
-    //const int nThresholdLimitLow = 50;
-    //const int nThresholdLimitHigh = 400;
+    const int nThresholdLimitLow = 50;
+    const int nThresholdLimitHigh = 400;
     gapiHistInfo_t histInfo;
     gapiSysUserInfo_t sysUserInfo[USER_MAX];
     gapiCaliUserInfo_t caliUserInfo;
@@ -277,6 +289,13 @@ public:
     void setInitIndex(InitIndex initIndex);
     InitIndex getInitIndex();
 
+    //PageThreshold
+    void setThresholdIndex(ThresholdIndex thresholdIndex);
+    ThresholdIndex getThresholdIndex();
+
+    //PageThresholdValue
+    void setThresholdValue(ThresholdIndex thresholdIndex, int nValue);
+
     //public
     bool touchCheck(const QRect &rect, QMouseEvent* ev);
     int pixelToPoint(int pixelSize);
@@ -331,6 +350,9 @@ private:
 
     //PageInitConfirm
     InitIndex initIndex = INIT_FACTORY_A;
+
+    //PageThreshold
+    ThresholdIndex thresHoldIndex = THRESHOLD_LOW;
 };
 
 #endif // SINGLETON_H

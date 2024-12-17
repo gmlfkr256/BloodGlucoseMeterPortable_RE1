@@ -29,6 +29,8 @@
 #include "Page/pageresult.h"
 #include "Page/pageinit.h"
 #include "Page/pageinitconfirm.h"
+#include "Page/pagethreshold.h"
+#include "Page/pagethresholdvalue.h"
 
 
 class MainWindow : public QMainWindow
@@ -65,6 +67,8 @@ public:
     PageResult *pageResult;
     PageInit *pageInit;
     PageInitConfirm *pageInitConfirm;
+    PageThreshold *pageThreshold;
+    PageThresholdValue *pageThresholdValue;
 
     QList<int> listComHiddenPageIndex;
     QMap<PageNum,QString> mapPageNumName;

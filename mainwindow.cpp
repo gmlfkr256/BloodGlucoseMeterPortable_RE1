@@ -88,6 +88,12 @@ void MainWindow::init()
     pageInitConfirm = new PageInitConfirm(this);
     stackedWidget->addWidget(pageInitConfirm);
 
+    pageThreshold = new PageThreshold(this);
+    stackedWidget->addWidget(pageThreshold);
+
+    pageThresholdValue = new PageThresholdValue(this);
+    stackedWidget->addWidget(pageThresholdValue);
+
     comBat = new ComponentBattery(stackedWidget);
     comBle = new ComponentBluetooth(stackedWidget);
     comClock = new ComponentClock(stackedWidget);
@@ -116,8 +122,9 @@ void MainWindow::init()
         {PAGE_RESULT,"PageResult"},
         {PAGE_INIT,"PageInit"},
         {PAGE_INIT_CONFIRM,"PageInitConfirm"},
-
         {PAGE_THRESHOLD, "PageThreshold"},
+        {PAGE_THRESHOLD_VALUE, "PageThresholdValue"},
+
         {PAGE_HISTORY, "PageHistory"},
         {PAGE_SOUND, "PageSound"},
         {PAGE_SLEEP, "PageSleep"},
@@ -174,6 +181,8 @@ void MainWindow::initConnect()
     connect(pageResult, &PageResult::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageInit, &PageInit::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageInitConfirm, &PageInitConfirm::signalShowPageNum,this,&MainWindow::setPageByPageNum);
+    connect(pageThreshold, &PageThreshold::signalShowPageNum,this,&MainWindow::setPageByPageNum);
+    connect(pageThresholdValue, &PageThresholdValue::signalShowPageNum,this,&MainWindow::setPageByPageNum);
 }
 
 void MainWindow::currentPageChanged(int index)

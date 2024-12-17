@@ -497,6 +497,36 @@ InitIndex Singleton::getInitIndex()
     return this->initIndex;
 }
 
+//PageThreshold
+void Singleton::setThresholdIndex(ThresholdIndex thresholdIndex)
+{
+    this->thresHoldIndex = thresholdIndex;
+}
+
+ThresholdIndex Singleton::getThresholdIndex()
+{
+    return thresHoldIndex;
+}
+
+//PageThreshold
+void Singleton::setThresholdValue(ThresholdIndex thresholdIndex, int nValue)
+{
+    if(thresholdIndex == THRESHOLD_LOW)
+        thresholdLow = nValue;
+    else if(thresholdIndex == THRESHOLD_HIGH)
+        thresholdHigh = nValue;
+    else
+        qDebug()<<"set thresholdvalue fail";
+
+    gapiGlucoseLimit_t glucoseLimit;
+    glucoseLimit.low = thresholdLow;
+    glucoseLimit.high = thresholdHigh;
+
+#if DEVICE == false
+    guiApi.glucoseSetGlucoseLimit(&glucoseLimit);
+#endif
+}
+
 //public
 bool Singleton::touchCheck(const QRect &rect, QMouseEvent* ev)
 {

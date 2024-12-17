@@ -160,7 +160,7 @@ void TextResource::init()
 
     //Page_GRAPH
     fontData[Lan][PAGE_GRAPH].insert("labelProgressText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
-    textData[Lan][PAGE_GRAPH].insert("labelProgressText",QStringList{"Complete"});
+    textData[Lan][PAGE_GRAPH].insert("labelProgressText",QStringList{"Completed"});
     fontData[Lan][PAGE_GRAPH].insert("labelProgressValue",QFont(instance.fontSuit,instance.pixelToPoint(60),QFont::Bold));
     fontData[Lan][PAGE_GRAPH].insert("labelProgressPercent",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
     fontData[Lan][PAGE_GRAPH].insert("labelAdcText",QFont(instance.fontSuit,instance.pixelToPoint(20)));
@@ -255,6 +255,17 @@ void TextResource::init()
                                                 "혈당 보정이 초기화됩니다\n혈당 보정을 초기화하시겠습니까?",
                                                 "혈당 보정이 초기화되었습니다"
                                             });
+
+    //PAGE_TRHESHOLD
+    fontData[Lan][PAGE_THRESHOLD].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36)));
+    textData[Lan][PAGE_THRESHOLD].insert("labelText",QStringList{
+                                                "저혈당",
+                                                "고혈당"
+                                         });
+    fontData[Lan][PAGE_THRESHOLD].insert("labelButton",QFont(instance.fontSuit,instance.pixelToPoint(22)));
+    textData[Lan][PAGE_THRESHOLD].insert("labelButton",QStringList{"설정"});
+
+    fontData[Lan][PAGE_THRESHOLD].insert("labelValue",QFont(instance.fontSuit,instance.pixelToPoint(48),QFont::Bold));
 
     //====================================================================================================================================
     //EN
@@ -395,7 +406,7 @@ void TextResource::init()
 
     //Page_GRAPH
     fontData[Lan][PAGE_GRAPH].insert("labelProgressText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
-    textData[Lan][PAGE_GRAPH].insert("labelProgressText",QStringList{"Complete"});
+    textData[Lan][PAGE_GRAPH].insert("labelProgressText",QStringList{"Completed"});
     fontData[Lan][PAGE_GRAPH].insert("labelProgressValue",QFont(instance.fontSuit,instance.pixelToPoint(60),QFont::Bold));
     fontData[Lan][PAGE_GRAPH].insert("labelProgressPercent",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
     fontData[Lan][PAGE_GRAPH].insert("labelAdcText",QFont(instance.fontSuit,instance.pixelToPoint(20)));
@@ -493,6 +504,17 @@ void TextResource::init()
                                                 "Blood sugar correction\nwill be reset\nDo you want to reset\nblood sugar correction?",
                                                 "Blood sugar correction\nhas been reset"
                                             });
+
+    //PAGE_TRHESHOLD
+    fontData[Lan][PAGE_THRESHOLD].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36)));
+    textData[Lan][PAGE_THRESHOLD].insert("labelText",QStringList{
+                                                "Low Blood Sugar",
+                                                "High Blood Suger"
+                                         });
+    fontData[Lan][PAGE_THRESHOLD].insert("labelButton",QFont(instance.fontSuit,instance.pixelToPoint(22)));
+    textData[Lan][PAGE_THRESHOLD].insert("labelButton",QStringList{"Set"});
+
+    fontData[Lan][PAGE_THRESHOLD].insert("labelValue",QFont(instance.fontSuit,instance.pixelToPoint(48),QFont::Bold));
 
     //=====================================================================================================================================
     //JP

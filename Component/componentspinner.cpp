@@ -78,6 +78,7 @@ int ComponentSpinner::getValue()
     return this->nValue;
 }
 
+
 void ComponentSpinner::mousePressEvent(QMouseEvent *ev)
 {
     if(instance.touchCheck(labelButtonTop->geometry(),ev))
