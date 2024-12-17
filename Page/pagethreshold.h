@@ -12,6 +12,9 @@ public:
 
     QString strDirPath = "/ImageThreshold";
 
+    QLabel *labelImgLow;
+    QLabel *labelImgHigh;
+
     QLabel *labelTextLow;
     QLabel *labelTextHigh;
 

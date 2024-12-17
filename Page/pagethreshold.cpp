@@ -8,6 +8,11 @@ PageThreshold::PageThreshold(QWidget *parent) : Page(parent)
 
 void PageThreshold::init()
 {
+    labelImgLow = new QLabel(this);
+    labelImgLow->setGeometry(0,111,640,120);
+    labelImgHigh = new QLabel(this);
+    labelImgHigh->setGeometry(0,231,640,120);
+
     labelTextLow = new QLabel(this);
     labelTextLow->setGeometry(23,115,595,105);
     labelTextLow->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
@@ -39,19 +44,26 @@ void PageThreshold::update()
     customButtonSave->update();
     customButtonCancel->update();
 
-    QString strStyleSheetlabelText = "background-color: #ffffff; color: #000000; border-radius: 15px; border: 1px solid #ebebeb; padding-left: 34px;";
-    labelTextLow->setStyleSheet(strStyleSheetlabelText);
-    labelTextHigh->setStyleSheet(strStyleSheetlabelText);
+    //QString strStyleSheetlabelText = "background-color: #ffffff; color: #000000; border-radius: 15px; border: 1px solid #ebebeb; padding-left: 34px;";
+    //labelTextLow->setStyleSheet(strStyleSheetlabelText);
+    //labelTextHigh->setStyleSheet(strStyleSheetlabelText);
+    instance.pixLoad(labelImgLow,false,strDirPath,"/valueBg.png");
+    instance.pixLoad(labelImgHigh,false,strDirPath,"/valueBg.png");
 
+    labelTextLow->setStyleSheet("padding-left: 34px;");
     labelTextLow->setFont(textResource.getFont(PAGE_THRESHOLD,"labelText"));
     labelTextLow->setText(textResource.getText(PAGE_THRESHOLD,"labelText").at(0));
+
+    labelTextHigh->setStyleSheet("padding-left: 34px;");
     labelTextHigh->setFont(textResource.getFont(PAGE_THRESHOLD,"labelText"));
     labelTextHigh->setText(textResource.getText(PAGE_THRESHOLD,"labelText").at(1));
 
     labelButtonLow->setFont(textResource.getFont(PAGE_THRESHOLD,"labelButton"));
     labelButtonLow->setText(textResource.getText(PAGE_THRESHOLD,"labelButton").at(0));
+    labelButtonLow->setStyleSheet("background-color: #000000; color: #ffffff;");
     labelButtonHigh->setFont(textResource.getFont(PAGE_THRESHOLD,"labelButton"));
     labelButtonHigh->setText(textResource.getText(PAGE_THRESHOLD,"labelButton").at(0));
+    labelButtonHigh->setStyleSheet("background-color: #000000; color: #ffffff;");
 
 #if DEVICE
     gapiGlucoseLimit_t glucoseLimit;
@@ -78,13 +90,13 @@ void PageThreshold::pageHide()
 
 void PageThreshold::mousePressEvent(QMouseEvent *ev)
 {
-    if(instance.touchCheck(labelTextLow->geometry(),ev))
+    if(instance.touchCheck(labelButtonLow->geometry(),ev))
     {
         instance.setThresholdIndex(THRESHOLD_LOW);
         emit signalShowPageNum(PAGE_THRESHOLD_VALUE);
     }
 
-    if(instance.touchCheck(labelTextHigh->geometry(),ev))
+    if(instance.touchCheck(labelButtonHigh->geometry(),ev))
     {
         instance.setThresholdIndex(THRESHOLD_HIGH);
         emit signalShowPageNum(PAGE_THRESHOLD_VALUE);
