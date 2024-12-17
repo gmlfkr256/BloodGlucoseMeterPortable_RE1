@@ -60,7 +60,7 @@ void PageThreshold::update()
 
     labelButtonLow->setFont(textResource.getFont(PAGE_THRESHOLD,"labelButton"));
     labelButtonLow->setText(textResource.getText(PAGE_THRESHOLD,"labelButton").at(0));
-    labelButtonLow->setStyleSheet("background-color: #000000; color: #ffffff;");
+    labelButtonLow->setStyleSheet("background-color: #000000; color: #ffffff; border-radius: 10px;");
     labelButtonHigh->setFont(textResource.getFont(PAGE_THRESHOLD,"labelButton"));
     labelButtonHigh->setText(textResource.getText(PAGE_THRESHOLD,"labelButton").at(0));
     labelButtonHigh->setStyleSheet("background-color: #000000; color: #ffffff;");
