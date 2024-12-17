@@ -23,11 +23,11 @@ void PageThreshold::init()
     labelButtonHigh->setAlignment(Qt::AlignCenter);
 
     labelValueLow = new QLabel(this);
-    labelValueLow->setGeometry(375,135,87,59);
-    labelValueLow->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+    labelValueLow->setGeometry(375,135,90,59);
+    labelValueLow->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
     labelValueHigh = new QLabel(this);
-    labelValueHigh->setGeometry(375,254,87,59);
-    labelValueHigh->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+    labelValueHigh->setGeometry(375,254,90,59);
+    labelValueHigh->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
 
     customButtonSave = new CustomButtonSave(this);
     customButtonCancel = new CustomButtonCancel(this);
