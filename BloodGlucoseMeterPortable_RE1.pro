@@ -56,6 +56,7 @@ SOURCES += \
     Page/pagepasswordconfirm.cpp \
     Page/pageresult.cpp \
     Page/pageselect.cpp \
+    Page/pagesound.cpp \
     Page/pagethreshold.cpp \
     Page/pagethresholdvalue.cpp \
     guiapi/guiapi.cpp \
@@ -105,6 +106,7 @@ HEADERS += \
     Page/pagepasswordconfirm.h \
     Page/pageresult.h \
     Page/pageselect.h \
+    Page/pagesound.h \
     Page/pagethreshold.h \
     Page/pagethresholdvalue.h \
     guiapi/gapi.h \

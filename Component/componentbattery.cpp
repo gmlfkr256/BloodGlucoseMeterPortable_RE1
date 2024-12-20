@@ -11,6 +11,7 @@ void ComponentBattery::init()
     labelBattery = new QLabel(this);
     labelBattery->setGeometry(0,0,this->width(),this->height());
 
+    batData.charge = 100;
     timerBattery = new QTimer(this);
     update();
     connect(timerBattery,&QTimer::timeout,this,&ComponentBattery::update);

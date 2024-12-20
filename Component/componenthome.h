@@ -20,7 +20,7 @@ public slots:
     void pageHide() override;
 
 signals:
-    void singalShowPageHome();
+    void singalShowPageNum(PageNum pageNum);
 };
 
 #endif // COMPONENTHOME_H

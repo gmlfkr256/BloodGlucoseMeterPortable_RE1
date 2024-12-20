@@ -234,7 +234,7 @@ void PagePassword::processOK()
         break;
     }
 
-    emit signalPassword();
+    emit signalShowPageNum(PAGE_PASSWORD_CONFIRM);
 }
 
 void PagePassword::pageShow()

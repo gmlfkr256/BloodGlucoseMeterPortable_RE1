@@ -94,6 +94,9 @@ void MainWindow::init()
     pageThresholdValue = new PageThresholdValue(this);
     stackedWidget->addWidget(pageThresholdValue);
 
+    pageSound = new PageSound(this);
+    stackedWidget->addWidget(pageSound);
+
     comBat = new ComponentBattery(stackedWidget);
     comBle = new ComponentBluetooth(stackedWidget);
     comClock = new ComponentClock(stackedWidget);
@@ -124,9 +127,9 @@ void MainWindow::init()
         {PAGE_INIT_CONFIRM,"PageInitConfirm"},
         {PAGE_THRESHOLD, "PageThreshold"},
         {PAGE_THRESHOLD_VALUE, "PageThresholdValue"},
+        {PAGE_SOUND, "PageSound"},
 
         {PAGE_HISTORY, "PageHistory"},
-        {PAGE_SOUND, "PageSound"},
         {PAGE_SLEEP, "PageSleep"},
         {PAGE_REVERSE, "PageReverse"},
         {PAGE_DATETIME, "PageDateTime"},
@@ -148,24 +151,15 @@ void MainWindow::init()
 void MainWindow::initConnect()
 {
     connect(stackedWidget,&QStackedWidget::currentChanged,this,&MainWindow::currentPageChanged);
-    /*
-    connect(stackedWidget,&QStackedWidget::currentChanged,this,[this](int index){
-        Page *currentPage = qobject_cast<Page *>(stackedWidget->widget(index));
-        qDebug()<<"update() index: "<<index;
-        if(currentPage)
-            currentPage->update();
-    });
-    */
 
     //com
-    connect(comHome,&ComponentHome::singalShowPageHome,this,[this](){stackedWidget->setCurrentIndex(PAGE_HOME);});
+    connect(comHome,&ComponentHome::singalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(comMenu,&ComponentMenu::signalShowPageNum,this,&MainWindow::setPageByPageNum);
 
     //page
-    connect(pagePassword,&PagePassword::signalPassword,this,[this](){stackedWidget->setCurrentIndex(PAGE_PASSWORD_CONFIRM);});
-    connect(pagePasswordConfirm,&PagePasswordConfirm::signalShowPageHome,this,[this](){stackedWidget->setCurrentIndex(PAGE_HOME);});
-    connect(pageHome,&PageHome::signalShowPageSelect,this,[this](){stackedWidget->setCurrentIndex(PAGE_SELECT); pageSelect->update();});
-
+    connect(pagePassword,&PagePassword::signalShowPageNum,this,&MainWindow::setPageByPageNum);
+    connect(pagePasswordConfirm,&PagePasswordConfirm::signalShowPageNum,this,&MainWindow::setPageByPageNum);
+    connect(pageHome,&PageHome::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageSelect,&PageSelect::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageMenu, &PageMenu::signalShowPageNum, this,&MainWindow::setPageByPageNum);
     connect(pageCaliCheck, &PageCaliCheck::signalShowPageNum,this,&MainWindow::setPageByPageNum);
@@ -183,6 +177,7 @@ void MainWindow::initConnect()
     connect(pageInitConfirm, &PageInitConfirm::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageThreshold, &PageThreshold::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageThresholdValue, &PageThresholdValue::signalShowPageNum,this,&MainWindow::setPageByPageNum);
+    connect(pageSound,&PageSound::signalShowPageNum,this,&MainWindow::setPageByPageNum);
 }
 
 void MainWindow::currentPageChanged(int index)

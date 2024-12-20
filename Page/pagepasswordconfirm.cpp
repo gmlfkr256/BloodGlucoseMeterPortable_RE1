@@ -80,12 +80,12 @@ void PagePasswordConfirm::mousePressEvent(QMouseEvent *ev)
         switch (instance.getPasswordStrStatus())
         {
         case PASSWORD_STR_LOGIN_SUCCESS:
-            emit signalShowPageHome();
+            emit signalShowPageNum(PAGE_HOME);
             break;
         case PASSWORD_STR_LOGIN_FAIL:
             break;
         case PASSWORD_STR_LOGIN_CHANGE:
-            emit signalShowPageHome();
+            emit signalShowPageNum(PAGE_HOME);
             break;
         case PASSWORD_STR_CONFIRM:
             break;

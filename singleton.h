@@ -58,9 +58,9 @@ typedef enum
     PAGE_INIT_CONFIRM,
     PAGE_THRESHOLD,
     PAGE_THRESHOLD_VALUE,
+    PAGE_SOUND,
 
     PAGE_HISTORY,
-    PAGE_SOUND,
     PAGE_SLEEP,
     PAGE_REVERSE,
     PAGE_DATETIME,
@@ -218,6 +218,7 @@ public:
     gapiSysProcMonInfo_t sysProcMonInfo;
     gapiCaliSetGlucose_t caliSetGlucose;
     gapiHistValue_t histValue;
+    gapiSpkData_t spkData;
 
     int caliIndexCount = 0;
 
@@ -252,6 +253,9 @@ public:
     //UserLogin
     void actUserLogin(int i);
     QString getStrNowUserPassword();
+
+    //PageHome
+    void getHistory(int day);
 
     //PageSelect
     void setTimeStatus(TimeStatus timeStatus);

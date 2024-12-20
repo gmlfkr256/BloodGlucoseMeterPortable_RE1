@@ -23,7 +23,7 @@ private:
     void init();
 
 signals:
-    void signalShowPageHome();
+    void signalShowPageNum(PageNum pageNum);
 };
 
 #endif // PAGEPASSWORDCONFIRM_H

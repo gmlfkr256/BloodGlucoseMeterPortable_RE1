@@ -118,13 +118,16 @@ void PageHome::mousePressEvent(QMouseEvent *ev)
         if(instance.touchCheck(labelGroups[i].labelButton->geometry(),ev))
         {
             instance.setTimeStatus(static_cast<TimeStatus>(order[i]));
-            emit signalShowPageSelect();
+            emit signalShowPageNum(PAGE_SELECT);
         }
     }
 }
 
 void PageHome::pageShow()
 {
+#if DEVICE
+    instance.getHistory(0);
+#endif
     update();
 }
 

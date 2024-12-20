@@ -33,7 +33,8 @@ private:
     void processOK();
 signals:
     void signalUserTrans();
-    void signalPassword();
+    //void signalPassword();
+    void signalShowPageNum(PageNum pageNum);
 };
 
 #endif // PAGEPASSWORD_H

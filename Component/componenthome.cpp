@@ -18,7 +18,7 @@ void ComponentHome::update()
 {
     QString pngPath;
 
-    QHash<UserNum,QString> userPngPaths =
+    QHash<UserNum,QString> userPngPaths
     {
         {USER_1, "/homeButton1.png"},
         {USER_2, "/homeButton2.png"},
@@ -35,7 +35,7 @@ void ComponentHome::mousePressEvent(QMouseEvent *ev)
 {
     if(instance.touchCheck(this->rect(),ev))
     {
-        emit singalShowPageHome();
+        emit singalShowPageNum(PAGE_HOME);
     }
 }
 

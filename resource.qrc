@@ -122,5 +122,10 @@
         <file>Image/Default/Public/ImageGraph/circleLoading2.png</file>
         <file>Image/Default/Public/ImageInit/arrow.png</file>
         <file>Image/Default/Public/ImageThreshold/valueBg.png</file>
+        <file>Image/Default/Public/ImageSound/arrowLeft.png</file>
+        <file>Image/Default/Public/ImageSound/arrowRight.png</file>
+        <file>Image/Default/Public/ImageSound/circle.png</file>
+        <file>Image/Default/Public/ImageSound/imgMax.png</file>
+        <file>Image/Default/Public/ImageSound/imgMin.png</file>
     </qresource>
 </RCC>

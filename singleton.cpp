@@ -297,6 +297,11 @@ QString Singleton::getStrNowUserPassword()
     return sysUserInfo[nUserNumber].passwd;
 }
 
+void Singleton::getHistory(int day)
+{
+    guiApi.getHistory(day,&histInfo);
+}
+
 //PageSelect
 void Singleton::setTimeStatus(TimeStatus timeStatus)
 {

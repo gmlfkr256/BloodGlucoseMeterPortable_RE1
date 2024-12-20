@@ -267,6 +267,9 @@ void TextResource::init()
 
     fontData[Lan][PAGE_THRESHOLD].insert("labelValue",QFont(instance.fontSuit,instance.pixelToPoint(48),QFont::Bold));
 
+    //PAGE_SOUND
+    fontData[Lan][PAGE_SOUND].insert("labelVolume",QFont(instance.fontSuit,instance.pixelToPoint(110),QFont::Bold));
+
     //====================================================================================================================================
     //EN
     Lan = EN;
