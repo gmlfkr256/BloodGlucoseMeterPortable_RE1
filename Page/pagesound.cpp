@@ -66,14 +66,7 @@ void PageSound::setVolume()
         instance.spkData.used = 0;
     }
 
-    if(nVolume<0)
-    {
-        nVolume = 0;
-    }
-    else if(nVolume>100)
-    {
-        nVolume = 100;
-    }
+    checkVolume();
 
     instance.spkData.vol = nVolume;
 
@@ -91,6 +84,8 @@ void PageSound::setVolumeOut()
 
 void PageSound::setScreen()
 {
+    checkVolume();
+
     labelBar->setGeometry(70,311,5*nVolume,5);
     labelCircle->move(70+labelBar->width()-9,305);
     labelVolume->setText(QString::number(nVolume));
@@ -122,6 +117,18 @@ void PageSound::pageShow()
     prevSpkData = instance.spkData;
     nVolume = instance.spkData.vol;
     update();
+}
+
+void PageSound::checkVolume()
+{
+    if(nVolume<0)
+    {
+        nVolume = 0;
+    }
+    else if(nVolume>100)
+    {
+        nVolume = 100;
+    }
 }
 
 void PageSound::pageHide()

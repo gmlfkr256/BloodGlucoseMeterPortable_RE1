@@ -40,6 +40,7 @@ private:
     void setScreen();
     void setVolumeMin();
     void setVolumeMax();
+    void checkVolume();
 
 signals:
     void signalShowPageNum(PageNum pageNum);
