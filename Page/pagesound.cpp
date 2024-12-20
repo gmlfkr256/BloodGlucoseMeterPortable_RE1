@@ -140,6 +140,9 @@ void PageSound::mousePressEvent(QMouseEvent *ev)
 {
     if(instance.touchCheck(customButtonSave->geometry(),ev))
     {
+#if DEVICE == false
+        instance.spkData.vol = nVolume;
+#endif
         pageHide();
     }
 
