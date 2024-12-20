@@ -156,7 +156,7 @@ void PageSound::mousePressEvent(QMouseEvent *ev)
     if(instance.touchCheck(labelArrowLeft->geometry(),ev))
     {
         nVolume-=5;
-        nVolume = (nVolume/10)*10;
+        nVolume = (nVolume/5)*5;
         setVolume();
         setVolumeOut();
         setScreen();
@@ -165,7 +165,7 @@ void PageSound::mousePressEvent(QMouseEvent *ev)
     if(instance.touchCheck(labelArrowRight->geometry(),ev))
     {
         nVolume+=5;
-        //nVolume = (nVolume/10)*10;
+        nVolume = (nVolume/5)*5;
         setVolume();
         setVolumeOut();
         setScreen();
