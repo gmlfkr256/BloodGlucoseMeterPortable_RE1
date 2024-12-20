@@ -191,3 +191,12 @@ void PageSound::mouseReleaseEvent(QMouseEvent *ev)
         setVolumeOut();
     }
 }
+
+void PageSound::mouseMoveEvent(QMouseEvent *ev)
+{
+    if(isBarTouch == true)
+    {
+        nVolume = (ev->x() -70)/5;
+        setScreen();
+    }
+}
