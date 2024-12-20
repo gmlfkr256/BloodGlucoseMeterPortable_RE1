@@ -67,6 +67,9 @@ void Singleton::init()
     sysProcMonInfo.err_code = GAPI_PROC_ECODE_NORMAL;
 
     setCaliGainCompleteCheck(true);
+
+    spkData.vol = 50;
+    spkData.used = 1;
 #endif
 }
 

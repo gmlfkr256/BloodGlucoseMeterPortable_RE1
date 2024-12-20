@@ -109,9 +109,6 @@ void PageSound::pageShow()
 {
 #if DEVICE
     instance.guiApi.glucoseGetSpeakerData(&instance.spkData);
-#else
-    instance.spkData.vol = 50;
-    instance.spkData.used = 1;
 #endif
 
     prevSpkData = instance.spkData;
