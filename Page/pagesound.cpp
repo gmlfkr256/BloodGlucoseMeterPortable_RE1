@@ -10,6 +10,8 @@ void PageSound::init()
 {
     labelVolume = new QLabel(this);
     labelVolume->setGeometry(0,121,640,138);
+    labelVolume->setAlignment(Qt::AlignCenter);
+
     labelArrowLeft = new QLabel(this);
     labelArrowLeft->setGeometry(135,155,70,70);
     labelArrowRight = new QLabel(this);
@@ -48,7 +50,7 @@ void PageSound::update()
     instance.pixLoad(labelImgMax,false,strDirPath,"/imgMax.png");
 
     labelBarBg->setStyleSheet("background-color: #cccccc; border-radius: 2px;");
-    labelBar->setStyleSheet("background-color: #07bdd; border-radius: 2px;");
+    labelBar->setStyleSheet("background-color: #077bdd; border-radius: 2px;");
 
     setScreen();
 }
@@ -96,7 +98,7 @@ void PageSound::setScreen()
 
 void PageSound::setVolumeMin()
 {
-    nVolume = 100;
+    nVolume = 0;
     setScreen();
     setVolume();
     setVolumeOut();
@@ -104,7 +106,7 @@ void PageSound::setVolumeMin()
 
 void PageSound::setVolumeMax()
 {
-    nVolume = 0;
+    nVolume = 100;
     setScreen();
 }
 
