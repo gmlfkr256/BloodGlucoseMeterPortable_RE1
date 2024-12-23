@@ -3,6 +3,8 @@
 
 #include "page.h"
 
+#include <QDateTimeEdit>
+
 class PageDateTime : public Page
 {
     Q_OBJECT
@@ -11,6 +13,10 @@ public:
     void mousePressEvent(QMouseEvent *ev) override;
 
     QString strDirPath = "/ImageDateTime";
+
+    QLabel *labelLayout;
+    QDateTimeEdit *dateTimeEdit;
+    QVBoxLayout *layout;
 
     CustomButtonSave *customButtonSave;
     CustomButtonCancel *customButtonCancel;

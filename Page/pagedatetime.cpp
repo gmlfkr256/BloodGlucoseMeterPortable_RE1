@@ -8,6 +8,17 @@ PageDateTime::PageDateTime(QWidget *parent) : Page(parent)
 
 void PageDateTime::init()
 {
+    labelLayout = new QLabel(this);
+    labelLayout->setGeometry(0,73,640,317);
+
+    dateTimeEdit = new QDateTimeEdit(this);
+    dateTimeEdit->setDisplayFormat("yyyy-MM-dd HH:mm");
+    dateTimeEdit->setDateTime(QDateTime::currentDateTime());
+
+    layout = new QVBoxLayout();
+    layout->addWidget(dateTimeEdit);
+    labelLayout->setLayout(layout);
+
     customButtonSave = new CustomButtonSave(this);
     customButtonCancel =new CustomButtonCancel(this);
 
