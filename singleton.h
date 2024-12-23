@@ -283,10 +283,6 @@ public:
     bool getCaliIndexCompleteCheck(int nCaliSelectIndex);
     bool getCaliValueCompleteCheck();
 
-    //PageSleep
-    void setSleepTime(int nSleepTime);
-    int getSleepTime();
-
     //PageGraph
     void setGraphMode(GraphMode graphMode);
     GraphMode getGraphMode();
@@ -350,9 +346,6 @@ private:
 
     //PagePasswordConfirm
     PasswordStrStatus passwordStrSatus = PASSWORD_STR_LOGIN_SUCCESS;
-
-    //PageSleep
-    int nSleepTime;
 
     //PageSelect
     TimeStatus timeStatus = WAKE_UP;

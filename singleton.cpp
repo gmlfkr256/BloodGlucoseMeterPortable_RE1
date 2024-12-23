@@ -290,7 +290,6 @@ void Singleton::actUserLogin(int i)
     guiApi.glucoseGetDispData(&dispData);
     guiApi.glucoseGetLangData(&langData);
 #else
-    setSleepTime(dispData.ts_timeout);
     setUserNumber(i);
     setDeviceLanguage(langData.used);
 #endif
@@ -404,18 +403,6 @@ bool Singleton::getCaliValueCompleteCheck()
         return true;
     else
         return false;
-}
-
-
-//PageSleep
-void Singleton::setSleepTime(int nSleepTime)
-{
-    this->nSleepTime = nSleepTime;
-}
-
-int Singleton::getSleepTime()
-{
-    return this->nSleepTime;
 }
 
 //PageGraph
