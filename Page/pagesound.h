@@ -2,6 +2,8 @@
 #define PAGESOUND_H
 
 #include "page.h"
+#include <QFutureWatcher>
+#include <QtConcurrent/QtConcurrent>
 
 class PageSound : public Page
 {
@@ -26,6 +28,8 @@ public:
     int nVolume;
     gapiSpkData_t prevSpkData;
     bool isBarTouch = false;
+    bool touchEnabled = true;
+    QFutureWatcher<void> *soundWatcher;
 
     CustomButtonSave *customButtonSave;
     CustomButtonCancel *customButtonCancel;

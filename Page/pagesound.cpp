@@ -3,6 +3,8 @@
 PageSound::PageSound(QWidget *parent) : Page(parent)
 {
     this->setGeometry(parent->geometry());
+    soundWatcher = new QFutureWatcher<void>(this);
+    connect(soundWatcher, &QFutureWatcher<void>::finished,this,[this](){touchEnabled = true;});
     init();
 }
 
@@ -27,9 +29,9 @@ void PageSound::init()
     labelCircle = new QLabel(this);
     labelCircle->setFixedSize(18,18);
     labelImgMin = new QLabel(this);
-    labelImgMin->setGeometry(70,273,35,35);
+    labelImgMin->setGeometry(70,266,35,35);
     labelImgMax = new QLabel(this);
-    labelImgMax->setGeometry(535,273,35,35);
+    labelImgMax->setGeometry(535,266,35,35);
 
     customButtonSave = new CustomButtonSave(this);
     customButtonCancel = new CustomButtonCancel(this);
@@ -77,8 +79,18 @@ void PageSound::setVolume()
 
 void PageSound::setVolumeOut()
 {
+    touchEnabled = false;
+
 #if DEVICE
-    instance.guiApi.glucoseSpeakerOut(GAPI_SPK_VOLUME_BEEP);
+    QtConcurrent::run([this](){
+        instance.guiApi.glucoseSpeakerOut(GAPI_SPK_VOLUME_BEEP);
+
+        QMetaObject::invokeMethod(this,[this](){touchEnabled=true;},Qt::QueuedConnection);
+    });
+#else
+    QTimer::singleShot(500, this, [this]() { // 500ms는 예제값, 소리 출력 시간을 대체
+            touchEnabled = true;
+        });
 #endif
 }
 
@@ -108,6 +120,7 @@ void PageSound::setVolumeMax()
 void PageSound::pageShow()
 {
 #if DEVICE
+    touchEnabled = true;
     instance.guiApi.glucoseGetSpeakerData(&instance.spkData);
 #endif
 
@@ -135,6 +148,9 @@ void PageSound::pageHide()
 
 void PageSound::mousePressEvent(QMouseEvent *ev)
 {
+    if(touchEnabled != true)
+        return;
+
     if(instance.touchCheck(customButtonSave->geometry(),ev))
     {
 #if DEVICE == false
