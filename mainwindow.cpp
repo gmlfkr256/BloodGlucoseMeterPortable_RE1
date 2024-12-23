@@ -246,9 +246,17 @@ bool MainWindow::eventFilter(QObject *wathced, QEvent *event)
 {
     if(event->type() == QEvent::MouseButtonPress)
     {
-        instance.nSleepTimeCount = 0;
-        qDebug()<<"MainWindow Touch Process - nSleepTimeCount: "<<instance.nSleepTimeCount;
-        return false;
+        if(wathced == this)
+        {
+            instance.nSleepTimeCount = 0;
+            qDebug()<<"MainWindow Touch Process - nSleepTimeCount: "<<instance.nSleepTimeCount;
+            return false;
+        }
+        else
+        {
+            qDebug()<<"MainWindow Not";
+        }
+
     }
 
     return QMainWindow::eventFilter(wathced, event);
