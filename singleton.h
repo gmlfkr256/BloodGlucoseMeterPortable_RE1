@@ -234,6 +234,7 @@ public:
 
     int caliIndexCount = 0;
     int nSleepTimeCount = 0;
+    bool isComMenuCheck = false;
 
     void init();
 

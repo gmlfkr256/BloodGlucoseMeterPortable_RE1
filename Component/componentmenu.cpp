@@ -24,6 +24,7 @@ void ComponentMenu::mousePressEvent(QMouseEvent* ev)
 {
     if(instance.touchCheck(this->rect(),ev))
     {
+        instance.isComMenuCheck = true;
         emit signalShowPageNum(PAGE_MENU);
     }
 }

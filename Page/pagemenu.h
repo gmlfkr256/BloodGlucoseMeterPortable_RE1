@@ -28,7 +28,6 @@ public:
     QString strButtonPathPng[6];
 
     MenuPageIndex selectPage = MENU_PAGE_0;
-    //MenuPageIndex selectPagePrev = MENU_PAGE_0;
 
     QString strPathPngSound;
     QString strPathPngDateTime;
@@ -53,23 +52,6 @@ private:
 
 signals:
     void signalShowPageNum(PageNum pageNum);
-    /*
-    void signalShowPageCalibration();
-    void signalShowPageThreshold();
-    void signalShowPageHistory();
-    void signalShowPageSound();
-    void signalShowPageSleep();
-    void signalShowPageReverse();
-
-    void signalShowPageDateTime();
-    void signalShowPageTranslation();
-    void signalShowPageUpgrade();
-    void signalShowPageDeviceInfo();
-    void signalShowPageReset();
-    void signalShowPageUser();
-
-    void signalShowPageColor();
-    */
 };
 
 #endif // PAGEMENU_H

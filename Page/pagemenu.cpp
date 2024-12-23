@@ -189,7 +189,12 @@ void PageMenu::mousePressEvent(QMouseEvent *ev)
 
 void PageMenu::pageShow()
 {
-    selectPage = MENU_PAGE_0;
+    if(instance.isComMenuCheck == true)
+    {
+        selectPage = MENU_PAGE_0;
+        instance.isComMenuCheck = false;
+    }
+
     update();
 }
 
