@@ -41,6 +41,9 @@ void PageSleep::init()
 
 void PageSleep::update()
 {
+    customButtonSave->update();
+    customButtonCancel->update();
+
     for(int i=0; i<6; i++)
     {
         labelText[i]->setFont(textResource.getFont(PAGE_SLEEP,"labelText"));

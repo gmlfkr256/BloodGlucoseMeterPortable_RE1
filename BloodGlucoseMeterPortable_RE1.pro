@@ -47,6 +47,7 @@ SOURCES += \
     Page/pagecaliselect.cpp \
     Page/pagecaliselectinfo.cpp \
     Page/pagecalivalue.cpp \
+    Page/pagedatetime.cpp \
     Page/pagegarph.cpp \
     Page/pagehome.cpp \
     Page/pageinit.cpp \
@@ -98,6 +99,7 @@ HEADERS += \
     Page/pagecaliselect.h \
     Page/pagecaliselectinfo.h \
     Page/pagecalivalue.h \
+    Page/pagedatetime.h \
     Page/pagegarph.h \
     Page/pagehome.h \
     Page/pageinit.h \

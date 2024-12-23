@@ -135,10 +135,10 @@ void MainWindow::init()
         {PAGE_THRESHOLD_VALUE, "PageThresholdValue"},
         {PAGE_SOUND, "PageSound"},
         {PAGE_SLEEP, "PageSleep"},
+        {PAGE_DATETIME, "PageDateTime"},
 
         {PAGE_HISTORY, "PageHistory"},
         {PAGE_REVERSE, "PageReverse"},
-        {PAGE_DATETIME, "PageDateTime"},
         {PAGE_TRANSLATION, "PageTranslation"},
         {PAGE_UPGRADE, "PageUpgrade"},
         {PAGE_DEVICEINFO, "PageDeviceInfo"},
@@ -185,6 +185,7 @@ void MainWindow::initConnect()
     connect(pageThresholdValue, &PageThresholdValue::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageSound,&PageSound::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageSleep,&PageSleep::signalShowPageNum,this,&MainWindow::setPageByPageNum);
+    connect(pageDateTime,&PageDateTime::signalShowPageNum,this,&MainWindow::setPageByPageNum);
 }
 
 void MainWindow::currentPageChanged(int index)

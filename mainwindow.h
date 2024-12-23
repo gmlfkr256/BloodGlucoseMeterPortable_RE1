@@ -33,6 +33,7 @@
 #include "Page/pagethresholdvalue.h"
 #include "Page/pagesound.h"
 #include "Page/pagesleep.h"
+#include "Page/pagedatetime.h"
 
 
 class MainWindow : public QMainWindow
@@ -77,6 +78,7 @@ public:
     PageThresholdValue *pageThresholdValue;
     PageSound *pageSound;
     PageSleep *pageSleep;
+    PageDateTime *pageDateTime;
 
     QList<int> listComHiddenPageIndex;
     QMap<PageNum,QString> mapPageNumName;
