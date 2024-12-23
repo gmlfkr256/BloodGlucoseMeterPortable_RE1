@@ -8,6 +8,8 @@ PageDateTime::PageDateTime(QWidget *parent) : Page(parent)
 
 void PageDateTime::init()
 {
+    customButtonSave = new CustomButtonSave(this);
+    customButtonCancel =new CustomButtonCancel(this);
 
     update();
 }
