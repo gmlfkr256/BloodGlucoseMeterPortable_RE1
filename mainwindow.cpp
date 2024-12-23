@@ -22,7 +22,8 @@ void MainWindow::initGuiApi()
 void MainWindow::init()
 {
 #if DEVICE
-    Singleton::getInstance().guiApi.glucoseAttach();
+    instance.guiApi.glucoseAttach();
+    instance.guiApi.glucoseGetDispData(&instance.dispData);
 #endif
 
     LoadFont loadFont;
@@ -147,7 +148,7 @@ void MainWindow::init()
 
     HideComponents();
 #if DEVICE
-    pagePassword->instance.updateSysUserInfo();
+    instance.updateSysUserInfo();
 #endif
 }
 
@@ -237,4 +238,12 @@ QString MainWindow::getPageName(PageNum pageNum)
         return mapPageNumName.value(pageNum);
     else
         return QString("This page is empty, pageNum:"+QString::number(pageNum));
+}
+
+void MainWindow::mousePressEvent(QMouseEvent *ev)
+{
+    Q_UNUSED(ev)
+
+    instance.nSleepTimeCount = 0;
+    qDebug()<<"touch MainWidnow - nSleepTimeCount: "<<instance.nSleepTimeCount;
 }

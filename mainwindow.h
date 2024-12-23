@@ -41,7 +41,10 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
+    void mousePressEvent(QMouseEvent *ev) override;
     ~MainWindow();
+
+    Singleton &instance = Singleton::getInstance();
 
     QStackedWidget *stackedWidget;
     ComponentBattery *comBat;

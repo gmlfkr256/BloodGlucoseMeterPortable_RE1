@@ -233,6 +233,7 @@ public:
     gapiSpkData_t spkData;
 
     int caliIndexCount = 0;
+    int nSleepTimeCount = 0;
 
     void init();
 

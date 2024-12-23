@@ -42,6 +42,16 @@ void ComponentClock::update()
     }
 
     labelClock->setText(strLocale);
+
+    instance.nSleepTimeCount++;
+
+    if(instance.dispData.ts_timeout != 0 && static_cast<unsigned int>(instance.nSleepTimeCount) > instance.dispData.ts_timeout)
+    {
+#if DEVICE
+        if(instance.guiApi.glucoseActPowerDown() == GAPI_FAIL)
+            qDebug()<<"PowerDown Fail";
+#endif
+    }
 }
 
 void ComponentClock::pageShow()
