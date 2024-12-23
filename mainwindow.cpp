@@ -103,6 +103,9 @@ void MainWindow::init()
     pageSleep = new PageSleep(this);
     stackedWidget->addWidget(pageSleep);
 
+    pageDateTime = new PageDateTime(this);
+    stackedWidget->addWidget(pageDateTime);
+
     comBat = new ComponentBattery(stackedWidget);
     comBle = new ComponentBluetooth(stackedWidget);
     comClock = new ComponentClock(stackedWidget);
