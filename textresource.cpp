@@ -270,6 +270,17 @@ void TextResource::init()
     //PAGE_SOUND
     fontData[Lan][PAGE_SOUND].insert("labelVolume",QFont(instance.fontSuit,instance.pixelToPoint(110),QFont::Bold));
 
+    //PAGE_SLEEP
+    fontData[Lan][PAGE_SLEEP].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(42),QFont::Bold));
+    textData[Lan][PAGE_SLEEP].insert("labelText",QStringList{
+                                         "30초",
+                                         "1분",
+                                         "3분",
+                                         "5분",
+                                         "10분",
+                                         "없음"
+                                     });
+
     //====================================================================================================================================
     //EN
     Lan = EN;
@@ -521,6 +532,17 @@ void TextResource::init()
 
     //PAGE_SOUND
     fontData[Lan][PAGE_SOUND].insert("labelVolume",QFont(instance.fontSuit,instance.pixelToPoint(110),QFont::Bold));
+
+    //PAGE_SLEEP
+    fontData[Lan][PAGE_SLEEP].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(42),QFont::Bold));
+    textData[Lan][PAGE_SLEEP].insert("labelText",QStringList{
+                                         "30sec",
+                                         "1min",
+                                         "3min",
+                                         "5min",
+                                         "10min",
+                                         "None"
+                                     });
 
     //=====================================================================================================================================
     //JP

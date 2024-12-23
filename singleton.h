@@ -59,9 +59,9 @@ typedef enum
     PAGE_THRESHOLD,
     PAGE_THRESHOLD_VALUE,
     PAGE_SOUND,
+    PAGE_SLEEP,
 
     PAGE_HISTORY,
-    PAGE_SLEEP,
     PAGE_REVERSE,
     PAGE_DATETIME,
     PAGE_TRANSLATION,
@@ -187,6 +187,18 @@ typedef enum
     THRESHOLD_HIGH,
     THRESHOLD_MAX
 } ThresholdIndex;
+
+Q_ENUMS(ThresholdIndex);
+
+typedef enum
+{
+    SLEEP_30S,
+    SLEEP_1M,
+    SLEEP_3M,
+    SLEEP_5M,
+    SLEEP_10M,
+    SLEEP_NONE
+} SleepIndex;
 
 class Singleton : public QObject
 {

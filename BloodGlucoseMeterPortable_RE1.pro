@@ -56,6 +56,7 @@ SOURCES += \
     Page/pagepasswordconfirm.cpp \
     Page/pageresult.cpp \
     Page/pageselect.cpp \
+    Page/pagesleep.cpp \
     Page/pagesound.cpp \
     Page/pagethreshold.cpp \
     Page/pagethresholdvalue.cpp \
@@ -106,6 +107,7 @@ HEADERS += \
     Page/pagepasswordconfirm.h \
     Page/pageresult.h \
     Page/pageselect.h \
+    Page/pagesleep.h \
     Page/pagesound.h \
     Page/pagethreshold.h \
     Page/pagethresholdvalue.h \

@@ -58,6 +58,7 @@ void Singleton::init()
 
     dispData.color = COLOR_DEFAULT;
     setDeviceColor(dispData.color);
+    dispData.ts_timeout = 0;
 
     sysProcAct.act = GAPI_ACT_START;
     sysProcAct.proc = GAPI_PROC_ACT_GAIN;
