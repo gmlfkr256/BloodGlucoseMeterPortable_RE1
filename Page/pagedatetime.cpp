@@ -27,10 +27,18 @@ void PageDateTime::pageShow()
 
 void PageDateTime::pageHide()
 {
-
+    emit signalShowPageNum(PAGE_MENU);
 }
 
 void PageDateTime::mousePressEvent(QMouseEvent *ev)
 {
+    if(instance.touchCheck(customButtonSave->geometry(),ev))
+    {
+        pageHide();
+    }
 
+    if(instance.touchCheck(customButtonCancel->geometry(),ev))
+    {
+        pageHide();
+    }
 }
