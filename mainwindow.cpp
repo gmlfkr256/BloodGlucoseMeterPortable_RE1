@@ -246,7 +246,7 @@ bool MainWindow::eventFilter(QObject *wathced, QEvent *event)
 {
     if(event->type() == QEvent::MouseButtonPress)
     {
-        if(wathced == this)
+        if(wathced == this || wathced == stackedWidget)
         {
             instance.nSleepTimeCount = 0;
             qDebug()<<"MainWindow Touch Process - nSleepTimeCount: "<<instance.nSleepTimeCount;
