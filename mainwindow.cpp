@@ -250,6 +250,8 @@ bool MainWindow::eventFilter(QObject *watched, QEvent *event)
     {
         if(!isEventHandled)
         {
+            isEventHandled = true;
+
             instance.nSleepTimeCount = 0;
             qDebug()<<"MainWindow Touch Process - nSleepTimeCount: "<<instance.nSleepTimeCount;
 
