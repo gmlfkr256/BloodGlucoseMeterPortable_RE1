@@ -51,7 +51,7 @@ void PageHome::init()
 
         labelGroups[i].labelTextStatus = new QLabel(this);
         labelGroups[i].labelTextStatus->setGeometry(listRectTitle.at(i));
-        labelGroups[i].labelTextStatus->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+        labelGroups[i].labelTextStatus->setAlignment(Qt::AlignLeft | Qt::AlignTop);
         if(i<4)
             labelGroups[i].labelTextStatus->setStyleSheet("color: #ffffff; padding-left: 10px;");
         else
