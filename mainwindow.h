@@ -41,8 +41,9 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
-    void mousePressEvent(QMouseEvent *ev) override;
     ~MainWindow();
+
+    bool eventFilter(QObject *wathced, QEvent *event);
 
     Singleton &instance = Singleton::getInstance();
 

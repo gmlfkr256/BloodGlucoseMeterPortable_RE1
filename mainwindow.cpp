@@ -7,6 +7,8 @@ MainWindow::MainWindow(QWidget* parent)
 
     init();
     initConnect();
+
+    qApp->installEventFilter(this);
 }
 
 MainWindow::~MainWindow()
@@ -240,10 +242,13 @@ QString MainWindow::getPageName(PageNum pageNum)
         return QString("This page is empty, pageNum:"+QString::number(pageNum));
 }
 
-void MainWindow::mousePressEvent(QMouseEvent *ev)
+bool MainWindow::eventFilter(QObject *wathced, QEvent *event)
 {
-    Q_UNUSED(ev)
+    if(event->type() == QEvent::MouseButtonPress)
+    {
+        instance.nSleepTimeCount = 0;
+        return false;
+    }
 
-    instance.nSleepTimeCount = 0;
-    qDebug()<<"touch MainWidnow - nSleepTimeCount: "<<instance.nSleepTimeCount;
+    return QMainWindow::eventFilter(wathced, event);
 }
