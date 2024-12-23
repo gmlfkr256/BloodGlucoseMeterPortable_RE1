@@ -97,6 +97,9 @@ void MainWindow::init()
     pageSound = new PageSound(this);
     stackedWidget->addWidget(pageSound);
 
+    pageSleep = new PageSleep(this);
+    stackedWidget->addWidget(pageSleep);
+
     comBat = new ComponentBattery(stackedWidget);
     comBle = new ComponentBluetooth(stackedWidget);
     comClock = new ComponentClock(stackedWidget);
@@ -128,9 +131,9 @@ void MainWindow::init()
         {PAGE_THRESHOLD, "PageThreshold"},
         {PAGE_THRESHOLD_VALUE, "PageThresholdValue"},
         {PAGE_SOUND, "PageSound"},
+        {PAGE_SLEEP, "PageSleep"},
 
         {PAGE_HISTORY, "PageHistory"},
-        {PAGE_SLEEP, "PageSleep"},
         {PAGE_REVERSE, "PageReverse"},
         {PAGE_DATETIME, "PageDateTime"},
         {PAGE_TRANSLATION, "PageTranslation"},
@@ -178,6 +181,7 @@ void MainWindow::initConnect()
     connect(pageThreshold, &PageThreshold::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageThresholdValue, &PageThresholdValue::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageSound,&PageSound::signalShowPageNum,this,&MainWindow::setPageByPageNum);
+    connect(pageSleep,&PageSleep::signalShowPageNum,this,&MainWindow::setPageByPageNum);
 }
 
 void MainWindow::currentPageChanged(int index)
