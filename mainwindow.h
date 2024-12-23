@@ -43,7 +43,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    bool eventFilter(QObject *wathced, QEvent *event);
+    bool eventFilter(QObject *watched, QEvent *event);
 
     Singleton &instance = Singleton::getInstance();
 

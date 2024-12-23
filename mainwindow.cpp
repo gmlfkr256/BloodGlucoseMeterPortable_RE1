@@ -242,11 +242,11 @@ QString MainWindow::getPageName(PageNum pageNum)
         return QString("This page is empty, pageNum:"+QString::number(pageNum));
 }
 
-bool MainWindow::eventFilter(QObject *wathced, QEvent *event)
+bool MainWindow::eventFilter(QObject *watched, QEvent *event)
 {
     if(event->type() == QEvent::MouseButtonPress)
     {
-        if(wathced == this)
+        if(watched == this)
         {
             instance.nSleepTimeCount = 0;
             qDebug()<<"MainWindow Touch Process - nSleepTimeCount: "<<instance.nSleepTimeCount;
@@ -255,9 +255,11 @@ bool MainWindow::eventFilter(QObject *wathced, QEvent *event)
         else
         {
             qDebug()<<"MainWindow Not";
+            qDebug() << "Watched Object Name:" << watched->objectName();
+            qDebug() << "Watched Object Type:" << watched->metaObject()->className();
         }
 
     }
 
-    return QMainWindow::eventFilter(wathced, event);
+    return QMainWindow::eventFilter(watched, event);
 }
