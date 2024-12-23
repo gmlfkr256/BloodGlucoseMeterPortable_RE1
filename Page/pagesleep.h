@@ -15,7 +15,7 @@ public:
     QLabel *labelButton[6];
     QLabel *labelText[6];
 
-    SleepIndex sleepIndex;
+    SleepIndex sleepIndex = SLEEP_30S;
     CustomButtonSave *customButtonSave;
     CustomButtonCancel *customButtonCancel;
 
