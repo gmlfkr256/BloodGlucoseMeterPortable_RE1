@@ -244,11 +244,19 @@ QString MainWindow::getPageName(PageNum pageNum)
 
 bool MainWindow::eventFilter(QObject *watched, QEvent *event)
 {
+    static bool isEventHandled = false;
+
     if(event->type() == QEvent::MouseButtonPress)
     {
-        instance.nSleepTimeCount = 0;
-        qDebug()<<"MainWindow Touch Process - nSleepTimeCount: "<<instance.nSleepTimeCount;
-        return false;
+        if(!isEventHandled)
+        {
+            instance.nSleepTimeCount = 0;
+            qDebug()<<"MainWindow Touch Process - nSleepTimeCount: "<<instance.nSleepTimeCount;
+
+            QTimer::singleShot(50,[&](){isEventHandled = false;});
+            return false;
+        }
+
 
     }
 
