@@ -254,9 +254,9 @@ bool MainWindow::eventFilter(QObject *watched, QEvent *event)
         }
         else
         {
-            qDebug()<<"MainWindow Not";
-            qDebug() << "Watched Object Name:" << watched->objectName();
-            qDebug() << "Watched Object Type:" << watched->metaObject()->className();
+            //qDebug()<<"MainWindow Not";
+            //qDebug() << "Watched Object Name:" << watched->objectName();
+            //qDebug() << "Watched Object Type:" << watched->metaObject()->className();
         }
 
     }
