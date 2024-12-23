@@ -33,6 +33,9 @@ void PageSleep::init()
     labelButton[5]->setGeometry(336,308,40,40);
     labelText[5]->setGeometry(392,302,220,52);
 
+    customButtonSave = new CustomButtonSave(this);
+    customButtonCancel = new CustomButtonCancel(this);
+
     update();
 }
 
