@@ -82,6 +82,7 @@ void PageDateTime::setDateStatus(DateStatus dateStatus)
             QDate date(comDateYear->getDateValue(),comDateMonth->getDateValue(),1);
             com->nDayMax = date.daysInMonth();
         }
+
         com->update();
     }
 }
