@@ -8,7 +8,6 @@ ComponentSpinnerDate::ComponentSpinnerDate(QWidget *parent, DateStatus dateStatu
 
 void ComponentSpinnerDate::init()
 {
-
     vBoxLayout = new QVBoxLayout(this);
     vBoxLayout->setContentsMargins(0,0,0,0);
     vBoxLayout->setSpacing(0);
@@ -32,9 +31,23 @@ void ComponentSpinnerDate::init()
 
 void ComponentSpinnerDate::update()
 {
+    labelTextTop->hide();
+    labelTextBottom->hide();
+
     labelTextTop->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelTextSub"));
     labelTextTop->setStyleSheet("color: #808080; padding-top: 14px;");
     labelTextValue->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
+    if(isSelect)
+    {
+        labelTextValue->setStyleSheet("color: #077bdd;");
+        labelTextTop->show();
+        labelTextBottom->show();
+    }
+    else
+    {
+        labelTextValue->setStyleSheet("color: #000000;");
+    }
+
     labelTextBottom->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelTextSub"));
     labelTextBottom->setStyleSheet("color: #808080; padding-bottom: 14px;");
 

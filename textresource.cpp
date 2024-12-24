@@ -57,6 +57,7 @@ void TextResource::init()
                                            });
 
     fontData[Lan][CUSTOM_COMPONENT_DATE].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(50)));
+    fontData[Lan][CUSTOM_COMPONENT_DATE].insert("labelTextSelect",QFont(instance.fontSuit,instance.pixelToPoint(50),QFont::Bold));
     fontData[Lan][CUSTOM_COMPONENT_DATE].insert("labelTextSub",QFont(instance.fontSuit,instance.pixelToPoint(40)));
 
     //PAGE_PASSWORD
