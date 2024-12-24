@@ -262,8 +262,6 @@ bool MainWindow::eventFilter(QObject *watched, QEvent *event)
             QTimer::singleShot(50,[&](){isEventHandled = false;});
             return false;
         }
-
-
     }
 
     return QMainWindow::eventFilter(watched, event);
