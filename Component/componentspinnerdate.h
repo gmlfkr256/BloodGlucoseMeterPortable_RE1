@@ -46,15 +46,16 @@ public:
     const int nMonthMin = 1;
     const int nMonthMax = 12;
     const int nDayMin = 1;
-    const int nDayMax = 31;
-    const int nHourMin = 0;
-    const int nHourMax = 23;
+    int nDayMax = 31;
+    const int nHourMin = 1;
+    const int nHourMax = 24;
     const int nMinMin = 0;
     const int nMinMax = 59;
     int nMin = 0, nMax = 0;
 
     void setValue(int nValue);
     void checkValueRange();
+    int getDateValue();
 
     void update() override;
     void pageShow() override;

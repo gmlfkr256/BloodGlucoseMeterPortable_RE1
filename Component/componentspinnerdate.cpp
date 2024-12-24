@@ -119,6 +119,11 @@ void ComponentSpinnerDate::checkValueRange()
         nValue = nMax;
 }
 
+int ComponentSpinnerDate::getDateValue()
+{
+    return nValue;
+}
+
 void ComponentSpinnerDate::pageShow()
 {
 
