@@ -29,55 +29,34 @@ void ComponentSpinnerDate::init()
 
 void ComponentSpinnerDate::update()
 {
+    labelTextTop->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
+    labelTextValue->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
+    labelTextBottom->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
+
     switch (dateStatus) {
     case DATE_YEAR:
-        labelTextTop->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
         labelTextTop->setText("2023");
-
-        labelTextValue->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
         labelTextValue->setText("2024");
-
-        labelTextBottom->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
         labelTextBottom->setText("2025");
         break;
     case DATE_MONTH:
-        labelTextTop->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
         labelTextTop->setText("11");
-
-        labelTextValue->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
         labelTextValue->setText("12");
-
-        labelTextBottom->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
         labelTextBottom->setText("1");
         break;
     case DATE_DAY:
-        labelTextTop->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
         labelTextTop->setText("23");
-
-        labelTextValue->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
         labelTextValue->setText("24");
-
-        labelTextBottom->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
         labelTextBottom->setText("25");
         break;
     case DATE_HOUR:
-        labelTextTop->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
         labelTextTop->setText("09");
-
-        labelTextValue->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
         labelTextValue->setText("10");
-
-        labelTextBottom->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
         labelTextBottom->setText("11");
         break;
     case DATE_MIN:
-        labelTextTop->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
         labelTextTop->setText("00");
-
-        labelTextValue->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
         labelTextValue->setText("01");
-
-        labelTextBottom->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
         labelTextBottom->setText("02");
         break;
     }
