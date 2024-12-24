@@ -18,12 +18,14 @@ void ComponentSpinnerDate::init()
     labelTextTop = new QLabel(this);
     labelTextTop->setFixedHeight(90);
     labelTextTop->setAlignment(Qt::AlignCenter);
+    labelTextTop->setAttribute(Qt::WA_TransparentForMouseEvents,true);
     labelTextValue = new QLabel(this);
     labelTextValue->setFixedHeight(90);
     labelTextValue->setAlignment(Qt::AlignCenter);
     labelTextBottom = new QLabel(this);
     labelTextBottom->setFixedHeight(90);
     labelTextBottom->setAlignment(Qt::AlignCenter);
+    labelTextBottom->setAttribute(Qt::WA_TransparentForMouseEvents,true);
 
     vBoxLayout->addWidget(labelTextTop);
     vBoxLayout->addWidget(labelTextValue);
@@ -179,7 +181,6 @@ void ComponentSpinnerDate::mouseReleaseEvent(QMouseEvent *ev)
 {
     Q_UNUSED(ev)
 
-    if(instance.touchCheck(labelTextTop->geometry(),ev))
     qDebug()<<"release";
     //timerPress->stop();
 }
