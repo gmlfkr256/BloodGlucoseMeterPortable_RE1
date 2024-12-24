@@ -5,7 +5,7 @@
 // Define Constants
 //=======================
 
-#define DEVICE true
+#define DEVICE false
 #define IMAGE_FILE_CHECK true
 #define GLUCOSE_LOW_PLUS 5
 #define GLUCOSE_HIGH_MINUS -30

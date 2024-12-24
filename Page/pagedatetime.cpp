@@ -102,6 +102,9 @@ void PageDateTime::changeValue()
 
 void PageDateTime::pageShow()
 {
+    for(ComponentSpinnerDate* com : listCom)
+        com->isSelect = false;
+
     comDateYear->isSelect = true;
 
     QDateTime dateTime(QDateTime::currentDateTime());
