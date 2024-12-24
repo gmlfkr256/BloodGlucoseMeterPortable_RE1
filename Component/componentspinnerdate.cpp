@@ -180,6 +180,6 @@ void ComponentSpinnerDate::mouseReleaseEvent(QMouseEvent *ev)
     Q_UNUSED(ev)
 
     qDebug()<<"release";
-    timerPress->stop();
+    //timerPress->stop();
 }
 
