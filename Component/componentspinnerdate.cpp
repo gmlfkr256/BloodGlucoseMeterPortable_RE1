@@ -114,7 +114,10 @@ void ComponentSpinnerDate::checkValueRange()
     if(nValue<nMin)
         nValue = nMin;
     if(nValue>nMax)
+    {
         nValue = nMax;
+    }
+
 }
 
 int ComponentSpinnerDate::getDateValue()
