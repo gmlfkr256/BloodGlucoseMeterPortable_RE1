@@ -36,10 +36,12 @@ void ComponentSpinnerDate::update()
     labelTextBottom->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
 
     QString strValue,strValueTop,strValueBottom;
+    bool isCheckYear = false;
 
     switch (dateStatus) {
     case DATE_YEAR:
         nValue = 2024;
+        isCheckYear = true;
         break;
     case DATE_MONTH:
         nValue = 12;
@@ -55,9 +57,19 @@ void ComponentSpinnerDate::update()
         break;
     }
 
-    strValueTop = QString::number(nValue+1);
-    strValue = QString::number(nValue);
-    strValueBottom = QString::number(nValue-1);
+    if(isCheckYear)
+    {
+        strValueTop = QString("%1").arg(nValue + 1, 4, 10, QChar('0'));
+        strValue = QString("%1").arg(nValue, 4, 10, QChar('0'));
+        strValueBottom = QString("%1").arg(nValue - 1, 4, 10, QChar('0'));
+    }
+    else
+    {
+        strValueTop = QString("%1").arg(nValue + 1, 2, 10, QChar('0'));  // 2자리 표현
+        strValue = QString("%1").arg(nValue, 2, 10, QChar('0'));
+        strValueBottom = QString("%1").arg(nValue - 1, 2, 10, QChar('0'));
+    }
+
 
     labelTextTop->setText(strValueTop);
     labelTextValue->setText(strValue);
