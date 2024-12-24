@@ -35,35 +35,33 @@ void ComponentSpinnerDate::update()
     labelTextValue->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
     labelTextBottom->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
 
+    QString strValue,strValueTop,strValueBottom;
+
     switch (dateStatus) {
     case DATE_YEAR:
-        labelTextTop->setText("2023");
-        labelTextValue->setText("2024");
-        labelTextBottom->setText("2025");
+        nValue = 2024;
         break;
     case DATE_MONTH:
-        labelTextTop->setText("11");
-        labelTextValue->setText("12");
-        labelTextBottom->setText("1");
+        nValue = 12;
         break;
     case DATE_DAY:
-        labelTextTop->setText("23");
-        labelTextValue->setText("24");
-        labelTextBottom->setText("25");
+        nValue = 24;
         break;
     case DATE_HOUR:
-        labelTextTop->setText("09");
-        labelTextValue->setText("10");
-        labelTextBottom->setText("11");
+        nValue = 10;
         break;
     case DATE_MIN:
-        labelTextTop->setText("00");
-        labelTextValue->setText("01");
-        labelTextBottom->setText("02");
+        nValue = 1;
         break;
     }
 
+    strValueTop = QString::number(nValue+1);
+    strValue = QString::number(nValue);
+    strValueBottom = QString::number(nValue-1);
 
+    labelTextTop->setText(strValueTop);
+    labelTextValue->setText(strValue);
+    labelTextBottom->setText(strValueBottom);
 }
 
 void ComponentSpinnerDate::pageShow()

@@ -30,6 +30,8 @@ public:
 
     DateStatus dateStatus;
 
+    int nValue;
+
     bool isSelect = false;
 
     const int nYearMin = 1970;
