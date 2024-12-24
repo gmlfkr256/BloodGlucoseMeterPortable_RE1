@@ -83,6 +83,8 @@ void PageDateTime::setDateStatus(DateStatus dateStatus)
 
 void PageDateTime::pageShow()
 {
+    comDateYear->isSelect = true;
+
     QDateTime dateTime(QDateTime::currentDateTime());
 
     comDateYear->setValue(dateTime.date().year());
@@ -91,7 +93,6 @@ void PageDateTime::pageShow()
     comDateHour->setValue(dateTime.time().hour());
     comDateMin->setValue(dateTime.time().minute());
 
-    comDateYear->isSelect = true;
     update();
 }
 
