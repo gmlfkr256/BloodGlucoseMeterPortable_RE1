@@ -88,12 +88,15 @@ void PageDateTime::changeValue()
     int maxDaysInMonth = date.daysInMonth();
     int currentDay = comDateDay->getDateValue();
 
-    if(currentDay == comDateDay->nDayMax)
+    bool wasLastDay = (currentDay == comDateDay->nDayMax);
+
+
+    comDateDay->nDayMax = maxDaysInMonth;
+
+    if(wasLastDay)
     {
         comDateDay->setValue(maxDaysInMonth);
     }
-
-    comDateDay->nDayMax = maxDaysInMonth;
 
     comDateDay->update();
 }
