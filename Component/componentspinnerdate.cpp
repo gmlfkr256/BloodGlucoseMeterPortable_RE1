@@ -91,5 +91,17 @@ void ComponentSpinnerDate::mousePressEvent(QMouseEvent *ev)
         isSelect = true;
         emit signalSetDateStatus(dateStatus);
     }
+
+    if(instance.touchCheck(labelTextTop->geometry(),ev))
+    {
+        nValue++;
+        update();
+    }
+
+    if(instance.touchCheck(labelTextBottom->geometry(),ev))
+    {
+        nValue--;
+        update();
+    }
 }
 
