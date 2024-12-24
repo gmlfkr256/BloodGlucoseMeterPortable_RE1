@@ -74,6 +74,39 @@ void ComponentSpinnerDate::setValue(int nValue)
     update();
 }
 
+void ComponentSpinnerDate::checkValueRange()
+{
+    int nMin = 0, nMax = 0;
+    switch (dateStatus)
+    {
+    case DATE_YEAR:
+        nMin = nYearMin;
+        nMax = nYearMax;
+        break;
+    case DATE_MONTH:
+        nMin = nMonthMin;
+        nMax = nMonthMax;
+        break;
+    case DATE_DAY:
+        nMin = nDayMin;
+        nMax = nDayMax;
+        break;
+    case DATE_HOUR:
+        nMin = nHourMin;
+        nMax = nHourMax;
+        break;
+    case DATE_MIN:
+        nMin = nMinMin;
+        nMax = nMinMax;
+        break;
+    }
+
+    if(nValue<nMin)
+        nValue = nMin;
+    if(nValue>nYearMax)
+        nValue = nMax;
+}
+
 void ComponentSpinnerDate::pageShow()
 {
 
@@ -95,12 +128,14 @@ void ComponentSpinnerDate::mousePressEvent(QMouseEvent *ev)
     if(instance.touchCheck(labelTextTop->geometry(),ev))
     {
         nValue++;
+        checkValueRange();
         update();
     }
 
     if(instance.touchCheck(labelTextBottom->geometry(),ev))
     {
         nValue--;
+        checkValueRange();
         update();
     }
 }

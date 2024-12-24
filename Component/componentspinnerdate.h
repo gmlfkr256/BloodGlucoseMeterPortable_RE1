@@ -53,6 +53,7 @@ public:
     const int nMinMax = 59;
 
     void setValue(int nValue);
+    void checkValueRange();
 
     void update() override;
     void pageShow() override;
