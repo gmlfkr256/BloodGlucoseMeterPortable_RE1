@@ -20,6 +20,7 @@ class ComponentSpinnerDate : public CustomComponent
 public:
     ComponentSpinnerDate(QWidget *parent, DateStatus dateStatus);
     void mousePressEvent(QMouseEvent *ev) override;
+    void mouseReleaseEvent(QMouseEvent *ev) override;
 
     QString strDirPath = "/ImageSpinnerDate";
 
@@ -61,8 +62,11 @@ public:
     void pageShow() override;
     void pageHide() override;
 private:
-    void init();
+    QTimer *timerPress;
+    bool isPlus = false;
 
+    void init();
+    void handleTimerPress();
 signals:
     void signalSetDateStatus(DateStatus dateStatus);
     void signalChangeValue();

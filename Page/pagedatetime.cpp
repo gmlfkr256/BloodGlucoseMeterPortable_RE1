@@ -90,7 +90,6 @@ void PageDateTime::changeValue()
 
     bool wasLastDay = (currentDay == comDateDay->nDayMax);
 
-
     comDateDay->nDayMax = maxDaysInMonth;
 
     if(wasLastDay)
