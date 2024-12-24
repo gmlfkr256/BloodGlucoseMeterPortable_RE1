@@ -36,15 +36,17 @@ void ComponentSpinnerDate::update()
 
     labelTextTop->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelTextSub"));
     labelTextTop->setStyleSheet("color: #808080; padding-top: 14px;");
-    labelTextValue->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
+
     if(isSelect)
     {
+        labelTextValue->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelTextSelect"));
         labelTextValue->setStyleSheet("color: #077bdd;");
         labelTextTop->show();
         labelTextBottom->show();
     }
     else
     {
+        labelTextValue->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
         labelTextValue->setStyleSheet("color: #000000;");
     }
 
