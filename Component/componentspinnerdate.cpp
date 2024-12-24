@@ -25,8 +25,10 @@ void ComponentSpinnerDate::init()
 
 void ComponentSpinnerDate::update()
 {
+    labelTextTop->setText("1");
     labelTextValue->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
     labelTextValue->setText("2024");
+    labelTextBottom->setText("2");
 }
 
 void ComponentSpinnerDate::pageShow()
