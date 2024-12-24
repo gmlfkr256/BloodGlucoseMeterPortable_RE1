@@ -34,6 +34,7 @@ SOURCES += \
     Component/componentmeasureresult.cpp \
     Component/componentmenu.cpp \
     Component/componentspinner.cpp \
+    Component/componentspinnerdate.cpp \
     Component/customcomponent.cpp \
     Loadfont.cpp \
     Page/page.cpp \
@@ -85,6 +86,7 @@ HEADERS += \
     Component/componentmeasureresult.h \
     Component/componentmenu.h \
     Component/componentspinner.h \
+    Component/componentspinnerdate.h \
     Component/customcomponent.h \
     GlobalMain.h \
     Loadfont.h \

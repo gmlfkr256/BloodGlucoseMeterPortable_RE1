@@ -2,8 +2,7 @@
 #define PAGEDATETIME_H
 
 #include "page.h"
-
-#include <QDateTimeEdit>
+#include "Component/componentspinnerdate.h"
 
 class PageDateTime : public Page
 {
@@ -14,9 +13,7 @@ public:
 
     QString strDirPath = "/ImageDateTime";
 
-    QLabel *labelLayout;
-    QDateTimeEdit *dateTimeEdit;
-    QVBoxLayout *layout;
+    ComponentSpinnerDate *comDateYear;
 
     CustomButtonSave *customButtonSave;
     CustomButtonCancel *customButtonCancel;

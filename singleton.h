@@ -72,6 +72,7 @@ typedef enum
 
     CUSTOM_BUTTON,
     CUSTOM_COMPONENT,
+    CUSTOM_COMPONENT_DATE,
     PAGE_MAX
 } PageNum;
 
