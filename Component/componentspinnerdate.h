@@ -30,7 +30,7 @@ public:
 
     DateStatus dateStatus;
 
-    int nValue;
+    int nValue = 0;
 
     bool isSelect = false;
 
@@ -44,6 +44,8 @@ public:
     const int nHourMax = 23;
     const int nMinMin = 0;
     const int nMinMax = 59;
+
+    void setValue(int nValue);
 
     void update() override;
     void pageShow() override;

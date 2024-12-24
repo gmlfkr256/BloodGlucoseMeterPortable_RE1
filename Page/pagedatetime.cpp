@@ -33,6 +33,14 @@ void PageDateTime::update()
 {
     customButtonSave->update();
     customButtonCancel->update();
+
+    QDateTime dateTime(QDateTime::currentDateTime());
+
+    comDateYear->setValue(dateTime.date().year());
+    comDateMonth->setValue(dateTime.date().month());
+    comDateDay->setValue(dateTime.date().day());
+    comDateHour->setValue(dateTime.time().hour());
+    comDateMin->setValue(dateTime.time().minute());
 }
 
 void PageDateTime::pageShow()

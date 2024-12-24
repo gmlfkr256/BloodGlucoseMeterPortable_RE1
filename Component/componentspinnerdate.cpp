@@ -31,29 +31,26 @@ void ComponentSpinnerDate::init()
 
 void ComponentSpinnerDate::update()
 {
-    labelTextTop->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
+    labelTextTop->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelTextSub"));
+    labelTextTop->setStyleSheet("color: #808080;");
     labelTextValue->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
-    labelTextBottom->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
+    labelTextBottom->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelTextSub"));
+    labelTextBottom->setStyleSheet("color: #808080;");
 
     QString strValue,strValueTop,strValueBottom;
     bool isCheckYear = false;
 
     switch (dateStatus) {
     case DATE_YEAR:
-        nValue = 2024;
         isCheckYear = true;
         break;
     case DATE_MONTH:
-        nValue = 12;
         break;
     case DATE_DAY:
-        nValue = 24;
         break;
     case DATE_HOUR:
-        nValue = 10;
         break;
     case DATE_MIN:
-        nValue = 1;
         break;
     }
 
@@ -64,6 +61,12 @@ void ComponentSpinnerDate::update()
     labelTextTop->setText(strValueTop);
     labelTextValue->setText(strValue);
     labelTextBottom->setText(strValueBottom);
+}
+
+void ComponentSpinnerDate::setValue(int nValue)
+{
+    this->nValue = nValue;
+    update();
 }
 
 void ComponentSpinnerDate::pageShow()
