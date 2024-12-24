@@ -9,6 +9,8 @@ ComponentSpinnerDate::ComponentSpinnerDate(QWidget *parent, DateStatus dateStatu
 void ComponentSpinnerDate::init()
 {
     vBoxLayout = new QVBoxLayout(this);
+    vBoxLayout->setContentsMargins(0,0,0,0);
+    vBoxLayout->setSpacing(0);
 
     labelTextTop = new QLabel(this);
     labelTextTop->setFixedHeight(90);
