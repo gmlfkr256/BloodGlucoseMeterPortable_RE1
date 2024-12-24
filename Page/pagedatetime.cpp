@@ -77,7 +77,7 @@ void PageDateTime::setDateStatus(DateStatus dateStatus)
         if(com->dateStatus == dateStatus)
             com->isSelect = true;
 
-        if(com->dateStatus == DATE_DAY)
+        if(com->dateStatus == DATE_DAY || com->dateStatus == DATE_YEAR || com->dateStatus == DATE_MONTH)
         {
             QDate date(comDateYear->getDateValue(),comDateMonth->getDateValue(),1);
             com->nDayMax = date.daysInMonth();
