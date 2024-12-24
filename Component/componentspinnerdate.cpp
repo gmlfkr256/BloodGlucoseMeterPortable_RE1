@@ -50,8 +50,6 @@ void ComponentSpinnerDate::update()
         labelTextValue->setStyleSheet("color: #000000;");
     }
 
-
-
     labelTextBottom->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelTextSub"));
     labelTextBottom->setStyleSheet("color: #808080; padding-bottom: 14px;");
 
@@ -63,15 +61,24 @@ void ComponentSpinnerDate::update()
 
     checkValueRange();
 
+
+
     strValueTop = QString("%1").arg(nValue + 1, isCheckYear ? 4 : 2, 10, QChar('0'));
     strValue = QString("%1").arg(nValue, isCheckYear ? 4 : 2, 10, QChar('0'));
     strValueBottom = QString("%1").arg(nValue - 1, isCheckYear ? 4 : 2, 10, QChar('0'));
 
+    if(nValue+1>nMax)
+    {
+        strValueTop = "";
+    }
+    if(nValue-1<nMin)
+    {
+        strValueBottom = "";
+    }
+
     labelTextTop->setText(strValueTop);
     labelTextValue->setText(strValue);
     labelTextBottom->setText(strValueBottom);
-
-
 }
 
 void ComponentSpinnerDate::setValue(int nValue)
@@ -82,7 +89,6 @@ void ComponentSpinnerDate::setValue(int nValue)
 
 void ComponentSpinnerDate::checkValueRange()
 {
-    int nMin = 0, nMax = 0;
     switch (dateStatus)
     {
     case DATE_YEAR:

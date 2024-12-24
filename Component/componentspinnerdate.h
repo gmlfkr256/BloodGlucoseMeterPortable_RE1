@@ -51,6 +51,7 @@ public:
     const int nHourMax = 23;
     const int nMinMin = 0;
     const int nMinMax = 59;
+    int nMin = 0, nMax = 0;
 
     void setValue(int nValue);
     void checkValueRange();
