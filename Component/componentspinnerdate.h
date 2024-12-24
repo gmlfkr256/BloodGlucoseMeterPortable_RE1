@@ -5,11 +5,11 @@
 
 typedef enum
 {
-    YEAR,
-    MONTH,
-    DAY,
-    HOUR,
-    MIN
+    DATE_YEAR,
+    DATE_MONTH,
+    DATE_DAY,
+    DATE_HOUR,
+    DATE_MIN
 } DateStatus;
 
 Q_ENUMS(DataStatus)
@@ -27,6 +27,8 @@ public:
     QLabel *labelTextTop;
     QLabel *labelTextValue;
     QLabel *labelTextBottom;
+
+    DateStatus dateStatus;
 
     bool isSelect = false;
 

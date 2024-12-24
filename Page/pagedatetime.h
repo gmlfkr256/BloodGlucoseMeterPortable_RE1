@@ -14,6 +14,10 @@ public:
     QString strDirPath = "/ImageDateTime";
 
     ComponentSpinnerDate *comDateYear;
+    ComponentSpinnerDate *comDateMonth;
+    ComponentSpinnerDate *comDateDay;
+    ComponentSpinnerDate *comDateHour;
+    ComponentSpinnerDate *comDateMin;
 
     CustomButtonSave *customButtonSave;
     CustomButtonCancel *customButtonCancel;
