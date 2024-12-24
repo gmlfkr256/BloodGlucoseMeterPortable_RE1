@@ -28,12 +28,6 @@ public:
     ComponentSpinnerDate *comDateHour;
     ComponentSpinnerDate *comDateMin;
 
-    int nYear;
-    int nMonth;
-    int nDay;
-    int nHour;
-    int nMin;
-
     CustomButtonSave *customButtonSave;
     CustomButtonCancel *customButtonCancel;
 

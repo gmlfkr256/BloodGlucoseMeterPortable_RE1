@@ -106,17 +106,11 @@ void PageDateTime::pageShow()
 
     QDateTime dateTime(QDateTime::currentDateTime());
 
-    nYear = dateTime.date().year();
-    nMonth = dateTime.date().month();
-    nDay = dateTime.date().day();
-    nHour = dateTime.time().hour();
-    nMin = dateTime.time().minute();
-
-    comDateYear->setValue(nYear);
-    comDateMonth->setValue(nMonth);
-    comDateDay->setValue(nDay);
-    comDateHour->setValue(nHour);
-    comDateMin->setValue(nMin);
+    comDateYear->setValue(dateTime.date().year());
+    comDateMonth->setValue(dateTime.date().month());
+    comDateDay->setValue(dateTime.date().day());
+    comDateHour->setValue(dateTime.time().hour());
+    comDateMin->setValue(dateTime.time().minute());
 
     update();
 }
@@ -130,6 +124,25 @@ void PageDateTime::mousePressEvent(QMouseEvent *ev)
 {
     if(instance.touchCheck(customButtonSave->geometry(),ev))
     {
+#if DEVICE == true
+        int nYear = comDateYear->getDateValue();
+        int nMonth = comDateMonth->getDateValue();
+        int nDay = comDateDay->getDateValue();
+        int nHour = comDateHour->getDateValue();
+        int nMin = comDateMin->getDateValue();
+
+        QString dateStr = QString("date %1%2%3%4%5")
+                            .arg(nMonth, 2, 10, QChar('0'))
+                            .arg(nDay, 2, 10, QChar('0'))
+                            .arg(nHour, 2, 10, QChar('0'))
+                            .arg(nMin, 2, 10, QChar('0'))
+                            .arg(nYear, 4, 10, QChar('0'));
+
+        system(dateStr.toStdString().c_str());
+
+        dateStr = "hwclock -w";
+        system(dateStr.toStdString().c_str());
+#endif
         pageHide();
     }
 
