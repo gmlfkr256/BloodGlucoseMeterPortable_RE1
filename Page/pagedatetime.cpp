@@ -22,6 +22,7 @@ void PageDateTime::init()
     labelLine[1]->setGeometry(286,183,31,90);
 
     labelColon = new QLabel(this);
+    labelColon->setGeometry(506,183,14,90);
 
     comDateYear = new ComponentSpinnerDate(this,DATE_YEAR);
     comDateYear->setGeometry(55,92,130,270);
@@ -57,6 +58,8 @@ void PageDateTime::update()
     labelLine[0]->setText("-");
     labelLine[1]->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
     labelLine[1]->setText("-");
+    labelColon->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
+    labelColon->setText(":");
 
     QDateTime dateTime(QDateTime::currentDateTime());
 
