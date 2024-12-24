@@ -103,7 +103,7 @@ void ComponentSpinnerDate::checkValueRange()
 
     if(nValue<nMin)
         nValue = nMin;
-    if(nValue>nYearMax)
+    if(nValue>nMax)
         nValue = nMax;
 }
 
