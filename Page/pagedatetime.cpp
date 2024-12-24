@@ -71,17 +71,14 @@ void PageDateTime::update()
 
 void PageDateTime::setDateStatus(DateStatus dateStatus)
 {
+    QDate date(comDateYear->getDateValue(),comDateMonth->getDateValue(),1);
+    comDateDay->nDayMax = date.daysInMonth();
+
     for(ComponentSpinnerDate* com : listCom)
     {
         com->isSelect = false;
         if(com->dateStatus == dateStatus)
             com->isSelect = true;
-
-        if(com->dateStatus == DATE_DAY || com->dateStatus == DATE_YEAR || com->dateStatus == DATE_MONTH)
-        {
-            QDate date(comDateYear->getDateValue(),comDateMonth->getDateValue(),1);
-            comDateDay->nDayMax = date.daysInMonth();
-        }
 
         com->update();
     }
