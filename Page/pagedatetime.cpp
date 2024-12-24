@@ -9,7 +9,7 @@ PageDateTime::PageDateTime(QWidget *parent) : Page(parent)
 void PageDateTime::init()
 {
     comDateYear = new ComponentSpinnerDate(this,YEAR);
-    comDateYear->setGeometry(55,92,130,90);
+    comDateYear->setGeometry(55,92,130,270);
 
     customButtonSave = new CustomButtonSave(this);
     customButtonCancel =new CustomButtonCancel(this);
