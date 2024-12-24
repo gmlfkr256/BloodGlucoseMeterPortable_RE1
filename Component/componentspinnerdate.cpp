@@ -10,15 +10,16 @@ void ComponentSpinnerDate::init()
     vBoxLayout = new QVBoxLayout(this);
 
     labelTextTop = new QLabel(this);
-    labelTextTop->setFixedHeight(30);
+    labelTextTop->setFixedHeight(90);
     labelTextValue = new QLabel(this);
-    labelTextValue->setFixedHeight(30);
+    labelTextValue->setFixedHeight(90);
     labelTextBottom = new QLabel(this);
-    labelTextBottom->setFixedHeight(30);
+    labelTextBottom->setFixedHeight(90);
 
     vBoxLayout->addWidget(labelTextTop);
     vBoxLayout->addWidget(labelTextValue);
     vBoxLayout->addWidget(labelTextBottom);
+
 
     update();
 }
