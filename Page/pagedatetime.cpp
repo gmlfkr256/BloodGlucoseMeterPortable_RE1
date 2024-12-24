@@ -72,6 +72,7 @@ void PageDateTime::update()
 
 void PageDateTime::pageShow()
 {
+    comDateYear->isSelect = true;
     update();
 }
 
