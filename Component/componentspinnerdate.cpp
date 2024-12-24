@@ -9,7 +9,6 @@ ComponentSpinnerDate::ComponentSpinnerDate(QWidget *parent, DateStatus dateStatu
 void ComponentSpinnerDate::init()
 {
     timerPress = new QTimer(this);
-    timerPress->setInterval(200);
     connect(timerPress, &QTimer::timeout,this,&ComponentSpinnerDate::handleTimerPress);
 
     vBoxLayout = new QVBoxLayout(this);
@@ -164,13 +163,13 @@ void ComponentSpinnerDate::mousePressEvent(QMouseEvent *ev)
     if(instance.touchCheck(labelTextTop->geometry(),ev))
     {
         isPlus = true;
-        timerPress->start();
+        timerPress->start(200);
     }
 
     if(instance.touchCheck(labelTextBottom->geometry(),ev))
     {
         isPlus = false;
-        timerPress->start();
+        timerPress->start(200);
     }
 }
 
