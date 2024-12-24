@@ -61,8 +61,6 @@ void ComponentSpinnerDate::update()
 
     checkValueRange();
 
-
-
     strValueTop = QString("%1").arg(nValue + 1, isCheckYear ? 4 : 2, 10, QChar('0'));
     strValue = QString("%1").arg(nValue, isCheckYear ? 4 : 2, 10, QChar('0'));
     strValueBottom = QString("%1").arg(nValue - 1, isCheckYear ? 4 : 2, 10, QChar('0'));
@@ -146,12 +144,14 @@ void ComponentSpinnerDate::mousePressEvent(QMouseEvent *ev)
     {
         nValue++;
         update();
+        emit signalChangeValue();
     }
 
     if(instance.touchCheck(labelTextBottom->geometry(),ev))
     {
         nValue--;
         update();
+        emit signalChangeValue();
     }
 }
 

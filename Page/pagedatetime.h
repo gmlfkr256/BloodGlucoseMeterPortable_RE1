@@ -28,10 +28,17 @@ public:
     ComponentSpinnerDate *comDateHour;
     ComponentSpinnerDate *comDateMin;
 
+    int nYear;
+    int nMonth;
+    int nDay;
+    int nHour;
+    int nMin;
+
     CustomButtonSave *customButtonSave;
     CustomButtonCancel *customButtonCancel;
 
     void setDateStatus(DateStatus dateStatus);
+    void changeValue();
 
     void update() override;
     void pageShow() override;

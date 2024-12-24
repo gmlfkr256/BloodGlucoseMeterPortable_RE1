@@ -44,6 +44,7 @@ void PageDateTime::init()
     for(ComponentSpinnerDate* com : listCom)
     {
         connect(com,&ComponentSpinnerDate::signalSetDateStatus,this,&PageDateTime::setDateStatus);
+        connect(com,&ComponentSpinnerDate::signalChangeValue,this,&PageDateTime::changeValue);
     }
 
     customButtonSave = new CustomButtonSave(this);
@@ -71,9 +72,6 @@ void PageDateTime::update()
 
 void PageDateTime::setDateStatus(DateStatus dateStatus)
 {
-    QDate date(comDateYear->getDateValue(),comDateMonth->getDateValue(),1);
-    comDateDay->nDayMax = date.daysInMonth();
-
     for(ComponentSpinnerDate* com : listCom)
     {
         com->isSelect = false;
@@ -84,17 +82,31 @@ void PageDateTime::setDateStatus(DateStatus dateStatus)
     }
 }
 
+void PageDateTime::changeValue()
+{
+    QDate date(comDateYear->getDateValue(),comDateMonth->getDateValue(),1);
+    comDateDay->nDayMax = date.daysInMonth();
+
+    comDateDay->update();
+}
+
 void PageDateTime::pageShow()
 {
     comDateYear->isSelect = true;
 
     QDateTime dateTime(QDateTime::currentDateTime());
 
-    comDateYear->setValue(dateTime.date().year());
-    comDateMonth->setValue(dateTime.date().month());
-    comDateDay->setValue(dateTime.date().day());
-    comDateHour->setValue(dateTime.time().hour());
-    comDateMin->setValue(dateTime.time().minute());
+    nYear = dateTime.date().year();
+    nMonth = dateTime.date().month();
+    nDay = dateTime.date().day();
+    nHour = dateTime.time().hour();
+    nMin = dateTime.time().minute();
+
+    comDateYear->setValue(nYear);
+    comDateMonth->setValue(nMonth);
+    comDateDay->setValue(nDay);
+    comDateHour->setValue(nHour);
+    comDateMin->setValue(nMin);
 
     update();
 }

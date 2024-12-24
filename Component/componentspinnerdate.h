@@ -65,6 +65,7 @@ private:
 
 signals:
     void signalSetDateStatus(DateStatus dateStatus);
+    void signalChangeValue();
 };
 
 #endif // COMPONENTSPINNERDATE_H
