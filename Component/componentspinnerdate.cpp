@@ -32,10 +32,10 @@ void ComponentSpinnerDate::init()
 void ComponentSpinnerDate::update()
 {
     labelTextTop->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelTextSub"));
-    labelTextTop->setStyleSheet("color: #808080;");
+    labelTextTop->setStyleSheet("color: #808080; padding-top: 14px;");
     labelTextValue->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
     labelTextBottom->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelTextSub"));
-    labelTextBottom->setStyleSheet("color: #808080;");
+    labelTextBottom->setStyleSheet("color: #808080; padding-bottom: 14px;");
 
     QString strValue,strValueTop,strValueBottom;
     bool isCheckYear = false;
