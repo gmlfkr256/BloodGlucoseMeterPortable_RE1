@@ -11,25 +11,31 @@ void ComponentSpinnerDate::init()
 
     labelTextTop = new QLabel(this);
     labelTextTop->setFixedHeight(90);
+    labelTextTop->setAlignment(Qt::AlignCenter);
     labelTextValue = new QLabel(this);
     labelTextValue->setFixedHeight(90);
+    labelTextValue->setAlignment(Qt::AlignCenter);
     labelTextBottom = new QLabel(this);
     labelTextBottom->setFixedHeight(90);
+    labelTextBottom->setAlignment(Qt::AlignCenter);
 
     vBoxLayout->addWidget(labelTextTop);
     vBoxLayout->addWidget(labelTextValue);
     vBoxLayout->addWidget(labelTextBottom);
-
 
     update();
 }
 
 void ComponentSpinnerDate::update()
 {
-    labelTextTop->setText("1");
+    labelTextTop->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
+    labelTextTop->setText("2023");
+
     labelTextValue->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
     labelTextValue->setText("2024");
-    labelTextBottom->setText("2");
+
+    labelTextBottom->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
+    labelTextBottom->setText("2025");
 }
 
 void ComponentSpinnerDate::pageShow()
