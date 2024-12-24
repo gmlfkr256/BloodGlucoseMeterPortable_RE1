@@ -179,6 +179,7 @@ void ComponentSpinnerDate::mouseReleaseEvent(QMouseEvent *ev)
 {
     Q_UNUSED(ev)
 
+    if(instance.touchCheck(labelTextTop->geometry(),ev))
     qDebug()<<"release";
     //timerPress->stop();
 }
