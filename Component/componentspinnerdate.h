@@ -59,6 +59,9 @@ public:
     void pageHide() override;
 private:
     void init();
+
+signals:
+    void signalSetDateStatus(DateStatus dateStatus);
 };
 
 #endif // COMPONENTSPINNERDATE_H

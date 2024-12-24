@@ -20,6 +20,8 @@ public:
     QLabel *labelLine[2];
     QLabel *labelColon;
 
+    QList<ComponentSpinnerDate*> listCom;
+
     ComponentSpinnerDate *comDateYear;
     ComponentSpinnerDate *comDateMonth;
     ComponentSpinnerDate *comDateDay;
@@ -28,6 +30,8 @@ public:
 
     CustomButtonSave *customButtonSave;
     CustomButtonCancel *customButtonCancel;
+
+    void setDateStatus(DateStatus dateStatus);
 
     void update() override;
     void pageShow() override;

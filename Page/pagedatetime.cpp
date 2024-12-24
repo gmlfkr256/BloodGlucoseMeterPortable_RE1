@@ -39,6 +39,13 @@ void PageDateTime::init()
     comDateMin = new ComponentSpinnerDate(this,DATE_MIN);
     comDateMin->setGeometry(520,92,70,270);
 
+    listCom<<comDateYear<<comDateMonth<<comDateDay<<comDateHour<<comDateMin;
+
+    for(ComponentSpinnerDate* com : listCom)
+    {
+        connect(com,&ComponentSpinnerDate::signalSetDateStatus,this,&PageDateTime::setDateStatus);
+    }
+
     customButtonSave = new CustomButtonSave(this);
     customButtonCancel =new CustomButtonCancel(this);
 
@@ -60,7 +67,22 @@ void PageDateTime::update()
     labelLine[1]->setText("-");
     labelColon->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
     labelColon->setText(":");
+}
 
+void PageDateTime::setDateStatus(DateStatus dateStatus)
+{
+    for(ComponentSpinnerDate* com : listCom)
+    {
+        com->isSelect = false;
+        if(com->dateStatus == dateStatus)
+            com->isSelect = true;
+
+        com->update();
+    }
+}
+
+void PageDateTime::pageShow()
+{
     QDateTime dateTime(QDateTime::currentDateTime());
 
     comDateYear->setValue(dateTime.date().year());
@@ -68,10 +90,7 @@ void PageDateTime::update()
     comDateDay->setValue(dateTime.date().day());
     comDateHour->setValue(dateTime.time().hour());
     comDateMin->setValue(dateTime.time().minute());
-}
 
-void PageDateTime::pageShow()
-{
     comDateYear->isSelect = true;
     update();
 }
