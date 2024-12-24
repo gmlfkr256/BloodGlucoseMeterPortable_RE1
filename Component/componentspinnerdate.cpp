@@ -160,14 +160,14 @@ void ComponentSpinnerDate::mousePressEvent(QMouseEvent *ev)
         emit signalSetDateStatus(dateStatus);
     }
 
-    if(instance.touchCheck(labelTextTop->geometry(),ev))
+    if(instance.touchCheck(labelTextTop->geometry(),ev) && labelTextTop->isVisible())
     {
         isPlus = true;
         //timerPress->start(200);
         handleTimerPress();
     }
 
-    if(instance.touchCheck(labelTextBottom->geometry(),ev))
+    if(instance.touchCheck(labelTextBottom->geometry(),ev) && labelTextBottom->isVisible())
     {
         isPlus = false;
         //timerPress->start(200);
