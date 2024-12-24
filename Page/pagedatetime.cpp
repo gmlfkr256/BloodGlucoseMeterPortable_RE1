@@ -86,12 +86,14 @@ void PageDateTime::changeValue()
 {
     QDate date(comDateYear->getDateValue(),comDateMonth->getDateValue(),1);
     int maxDaysInMonth = date.daysInMonth();
-    comDateDay->nDayMax = maxDaysInMonth;
+    int currentDay = comDateDay->getDateValue();
 
-    if(comDateDay->getDateValue() > maxDaysInMonth)
+    if(currentDay == comDateDay->nDayMax)
     {
         comDateDay->setValue(maxDaysInMonth);
     }
+
+    comDateDay->nDayMax = maxDaysInMonth;
 
     comDateDay->update();
 }
