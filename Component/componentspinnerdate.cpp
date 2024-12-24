@@ -57,19 +57,9 @@ void ComponentSpinnerDate::update()
         break;
     }
 
-    if(isCheckYear)
-    {
-        strValueTop = QString("%1").arg(nValue + 1, 4, 10, QChar('0'));
-        strValue = QString("%1").arg(nValue, 4, 10, QChar('0'));
-        strValueBottom = QString("%1").arg(nValue - 1, 4, 10, QChar('0'));
-    }
-    else
-    {
-        strValueTop = QString("%1").arg(nValue + 1, 2, 10, QChar('0'));  // 2자리 표현
-        strValue = QString("%1").arg(nValue, 2, 10, QChar('0'));
-        strValueBottom = QString("%1").arg(nValue - 1, 2, 10, QChar('0'));
-    }
-
+    strValueTop = QString("%1").arg(nValue + 1, isCheckYear ? 4 : 2, 10, QChar('0'));
+    strValue = QString("%1").arg(nValue, isCheckYear ? 4 : 2, 10, QChar('0'));
+    strValueBottom = QString("%1").arg(nValue - 1, isCheckYear ? 4 : 2, 10, QChar('0'));
 
     labelTextTop->setText(strValueTop);
     labelTextValue->setText(strValue);
