@@ -40,19 +40,8 @@ void ComponentSpinnerDate::update()
     QString strValue,strValueTop,strValueBottom;
     bool isCheckYear = false;
 
-    switch (dateStatus) {
-    case DATE_YEAR:
+    if(dateStatus == DATE_YEAR)
         isCheckYear = true;
-        break;
-    case DATE_MONTH:
-        break;
-    case DATE_DAY:
-        break;
-    case DATE_HOUR:
-        break;
-    case DATE_MIN:
-        break;
-    }
 
     strValueTop = QString("%1").arg(nValue + 1, isCheckYear ? 4 : 2, 10, QChar('0'));
     strValue = QString("%1").arg(nValue, isCheckYear ? 4 : 2, 10, QChar('0'));
