@@ -23,6 +23,13 @@ public:
 
     QString strDirPath = "/ImageSpinnerDate";
 
+    QLabel *labelBg;
+    QLabel *labelBgLineTop;
+    QLabel *labelBgLintBottom;
+
+    QLabel *labelLine[2];
+    QLabel *labelColon;
+
     QVBoxLayout *vBoxLayout;
     QLabel *labelTextTop;
     QLabel *labelTextValue;
