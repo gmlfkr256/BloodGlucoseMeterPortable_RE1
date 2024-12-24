@@ -86,6 +86,10 @@ void ComponentSpinnerDate::pageHide()
 
 void ComponentSpinnerDate::mousePressEvent(QMouseEvent *ev)
 {
-
+    if(instance.touchCheck(labelTextValue->geometry(),ev))
+    {
+        isSelect = true;
+        update();
+    }
 }
 
