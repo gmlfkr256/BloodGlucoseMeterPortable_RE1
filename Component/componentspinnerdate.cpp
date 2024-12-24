@@ -163,18 +163,12 @@ void ComponentSpinnerDate::mousePressEvent(QMouseEvent *ev)
     if(instance.touchCheck(labelTextTop->geometry(),ev))
     {
         isPlus = true;
-        nValue++;
-        update();
-        emit signalChangeValue();
         timerPress->start(200);
     }
 
     if(instance.touchCheck(labelTextBottom->geometry(),ev))
     {
         isPlus = false;
-        nValue--;
-        update();
-        emit signalChangeValue();
         timerPress->start(200);
     }
 }
