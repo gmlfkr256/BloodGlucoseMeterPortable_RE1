@@ -83,6 +83,7 @@ void PagePasswordConfirm::mousePressEvent(QMouseEvent *ev)
             emit signalShowPageNum(PAGE_HOME);
             break;
         case PASSWORD_STR_LOGIN_FAIL:
+            emit signalShowPageNum(PAGE_PASSWORD);
             break;
         case PASSWORD_STR_LOGIN_CHANGE:
             emit signalShowPageNum(PAGE_HOME);
