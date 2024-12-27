@@ -73,7 +73,7 @@ void PagePasswordConfirm::update()
     }
 
     labelTitle->setFont(textResource.getFont(PAGE_PASSWORD_CONFIRM,"labelTitle"));
-    labelTitle->setText(textResource.getText(PAGE_PASSWORD_CONFIRM,"labelText").at(nStrStatus));
+    labelTitle->setText(textResource.getText(PAGE_PASSWORD_CONFIRM,"labelTitle").at(nStrStatus));
 
     labelText->setFont(textResource.getFont(PAGE_PASSWORD_CONFIRM,"labelText"));
     labelText->setText(textResource.getText(PAGE_PASSWORD_CONFIRM,"labelText").at(nStrStatus));
