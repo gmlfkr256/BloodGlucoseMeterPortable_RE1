@@ -12,6 +12,7 @@ public:
 
     QString strDirPath = "/ImagePasswordConfirm";
 
+    QLabel *labelTitle;
     QLabel *labelText;
     CustomButtonOK *customButtonOK;
     CustomButtonCancel *customButtonCancel;

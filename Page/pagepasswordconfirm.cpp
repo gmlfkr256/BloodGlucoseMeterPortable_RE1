@@ -10,6 +10,10 @@ void PagePasswordConfirm::init()
 {
     setBgTopHide();
 
+    labelTitle = new QLabel(this);
+    labelTitle->setGeometry(0,70,640,75);
+    labelTitle->setAlignment(Qt::AlignCenter);
+
     labelText = new QLabel(this);
     labelText->setGeometry(0,100,640,280);
     labelText->setAlignment(Qt::AlignCenter);
@@ -25,7 +29,8 @@ void PagePasswordConfirm::update()
     customButtonOK->update();
     customButtonCancel->update();
 
-    switch (instance.getPasswordStrStatus())
+    PasswordStrStatus nStrStatus = instance.getPasswordStrStatus();
+    switch (nStrStatus)
     {
     case PASSWORD_STR_LOGIN_SUCCESS:
     case PASSWORD_STR_LOGIN_CHANGE:
@@ -67,8 +72,11 @@ void PagePasswordConfirm::update()
         break;
     }
 
+    labelTitle->setFont(textResource.getFont(PAGE_PASSWORD_CONFIRM,"labelTitle"));
+    labelTitle->setText(textResource.getText(PAGE_PASSWORD_CONFIRM,"labelText").at(nStrStatus));
+
     labelText->setFont(textResource.getFont(PAGE_PASSWORD_CONFIRM,"labelText"));
-    labelText->setText(textResource.getText(PAGE_PASSWORD_CONFIRM,"labelText").at(instance.getPasswordStrStatus()));
+    labelText->setText(textResource.getText(PAGE_PASSWORD_CONFIRM,"labelText").at(nStrStatus));
 }
 
 void PagePasswordConfirm::mousePressEvent(QMouseEvent *ev)
