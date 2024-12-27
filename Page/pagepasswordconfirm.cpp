@@ -119,6 +119,7 @@ void PagePasswordConfirm::mousePressEvent(QMouseEvent *ev)
     if(instance.touchCheck(customButtonCancel->geometry(),ev) && !customButtonCancel->isHidden())
     {
         qDebug()<<"customButtonCancel";
+        emit signalShowPageNum(PAGE_USERINFO);
     }
 }
 
