@@ -166,7 +166,6 @@ void PagePassword::processOK()
                 bCheckPassword = true;
                 qDebug()<<"Log in Success";
                 instance.actUserLogin(i);
-                emit signalUserTrans();
                 break;
             }
         }

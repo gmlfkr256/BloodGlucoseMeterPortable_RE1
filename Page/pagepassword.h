@@ -32,8 +32,6 @@ private:
     void updatePasswordNum();
     void processOK();
 signals:
-    void signalUserTrans();
-    //void signalPassword();
     void signalShowPageNum(PageNum pageNum);
 };
 
