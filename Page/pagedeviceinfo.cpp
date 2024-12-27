@@ -78,6 +78,7 @@ void PageDeviceInfo::update()
     for(QLabel *label : listLabelText)
     {
         label->setFont(textResource.getFont(PAGE_DEVICEINFO,"labelText"));
+        label->setStyleSheet("padding-right: 3px;");
     }
 
     for(int i=0; i<listLabelTitle.size(); i++)
