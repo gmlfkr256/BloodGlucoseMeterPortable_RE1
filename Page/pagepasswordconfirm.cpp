@@ -139,7 +139,7 @@ void PagePasswordConfirm::mousePressEvent(QMouseEvent *ev)
 #if DEVICE
             instance.guiApi.glucoseDelUserInfo(instance.getUserNumber());
 #else
-            QCoreApplication::exit(1);
+            QCoreApplication::exit(0);
 #endif
             break;
         case PASSWORD_STR_LOGOUT:
