@@ -117,7 +117,7 @@ void TextResource::init()
                                                     "비밀번호 변경이 완료되었습니다\n재로그인해주시기 바랍니다", //PASSWORD_STR_EDIT_SUCCESS,
                                                     "사용자 정보를 삭제하시겠습니까?", //PASSWORD_STR_DELETE,
                                                     "사용자 정보를 삭제할 경우\n 비밀번호와 설정이 초기화 됩니다", //PASSWORD_STR_DELETE_CONFIRM,
-                                                    "사용자 정보가 삭제되었습니다\n설정 초기화를 위해\n 재부팅이 진행됩니다", //PASSWORD_STR_DELETE_SUCCESS,
+                                                    "사용자 정보가 삭제되었습니다\n설정 초기화를 위해 재부팅이 진행됩니다", //PASSWORD_STR_DELETE_SUCCESS,
                                                     "로그아웃을 진행합니까?\n로그아웃시 재로그인해주시기 바랍니다", //PASSWORD_STR_LOGOUT,
                                                     "PASSWORD_STR_MAX" //PASSWORD_STR_MAX
                                                 });
