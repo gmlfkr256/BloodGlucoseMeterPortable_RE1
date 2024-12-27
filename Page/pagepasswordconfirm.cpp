@@ -75,7 +75,6 @@ void PagePasswordConfirm::mousePressEvent(QMouseEvent *ev)
 {
     if(instance.touchCheck(customButtonOK->geometry(),ev) && !customButtonOK->isHidden())
     {
-        qDebug()<<"customButtonOK";
         qDebug()<<"instance.getPasswordStrStatus: "<<instance.getPasswordStrStatus();
         switch (instance.getPasswordStrStatus())
         {

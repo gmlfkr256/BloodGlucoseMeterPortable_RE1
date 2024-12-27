@@ -249,8 +249,10 @@ void Singleton::updateSysUserInfo()
 {
     for(int i=0; i<static_cast<int>(USER_MAX); i++)
     {
+#if DEVICE
         if(guiApi.glucoseGetUserInfo(i,&sysUserInfo[i]) == GAPI_SUCCESS)
             qDebug()<<"sysUserInfo["+QString::number(i)+"] update Success";
+#endif
     }
 }
 
