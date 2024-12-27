@@ -114,7 +114,7 @@ void TextResource::init()
                                                     "비밀번호를 변경하시겠습니까?", //PASSWORD_STR_EDIT,
                                                     "본인 확인을 위해\n 비밀번호를 입력해주세요", //PASSWORD_STR_EDIT_CONFIRM,
                                                     "변경하실 비밀번호를 입력해주세요", //PASSWORD_STR_EDIT_CHANGE,
-                                                    "비밀번호 변경이 완료되었습니다\n재로그인해주시기 바랍니다", //PASSWORD_STR_EDIT_SUCCESS,
+                                                    "비밀번호 변경이 완료되었습니다\n다시 로그인해주시기 바랍니다", //PASSWORD_STR_EDIT_SUCCESS,
                                                     "사용자 정보를 삭제하시겠습니까?", //PASSWORD_STR_DELETE,
                                                     "사용자 정보를 삭제할 경우\n 비밀번호와 설정이 초기화 됩니다", //PASSWORD_STR_DELETE_CONFIRM,
                                                     "사용자 정보가 삭제되었습니다\n설정 초기화를 위해 재부팅이 진행됩니다", //PASSWORD_STR_DELETE_SUCCESS,
