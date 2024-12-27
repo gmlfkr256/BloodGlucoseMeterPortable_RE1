@@ -17,15 +17,23 @@ void PageDeviceInfo::init()
                <<labelDevSWVerText
               <<labelDevSerialText;
 
+    labelDevBLEVerTitle = new QLabel(this);
+    labelDevHWVerTitle = new QLabel(this);
+    labelDevSWVerTitle = new QLabel(this);
+    labelDevSerialTitle = new QLabel(this);
+
+    labelDevBLEVerText = new QLabel(this);
+    labelDevHWVerText = new QLabel(this);
+    labelDevSWVerText = new QLabel(this);
+    labelDevSerialText = new QLabel(this);
+
     for(QLabel *label : listLabelTitle)
     {
-        label = new QLabel(this);
         label->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     }
 
     for(QLabel *label : listLabelText)
     {
-        label = new QLabel(this);
         label->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
     }
 
