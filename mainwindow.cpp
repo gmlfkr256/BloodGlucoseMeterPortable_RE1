@@ -115,6 +115,9 @@ void MainWindow::init()
     pageDeviceInfo = new PageDeviceInfo(this);
     stackedWidget->addWidget(pageDeviceInfo);
 
+    pageUserInfo = new PageUserInfo(this);
+    stackedWidget->addWidget(pageUserInfo);
+
     comBat = new ComponentBattery(stackedWidget);
     comBle = new ComponentBluetooth(stackedWidget);
     comClock = new ComponentClock(stackedWidget);
@@ -151,12 +154,13 @@ void MainWindow::init()
         {PAGE_UPGRADE, "PageUpgrade"},
         {PAGE_UPGRADE_CONFIRM, "PageUpgradeConfirm"},
         {PAGE_DEVICEINFO, "PageDeviceInfo"},
+        {PAGE_USERINFO, "PageUserInfo"},
 
         {PAGE_HISTORY, "PageHistory"},
         {PAGE_REVERSE, "PageReverse"},
         {PAGE_TRANSLATION, "PageTranslation"},
-        {PAGE_USERINFO, "PageUserInfo"},
         {PAGE_COLOR, "PageColor"},
+
         {CUSTOM_BUTTON, "CustomButton"},
         {PAGE_MAX, "InvalidPage"}  // 예외 처리
     };
@@ -202,6 +206,7 @@ void MainWindow::initConnect()
     connect(pageUpgrade,&PageUpgrade::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageUpgradeConfirm,&PageUpgradeConfirm::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageDeviceInfo,&PageDeviceInfo::signalShowPageNum,this,&MainWindow::setPageByPageNum);
+    connect(pageUserInfo,&PageUserInfo::signalShowPageNum,this,&MainWindow::setPageByPageNum);
 }
 
 void MainWindow::currentPageChanged(int index)
