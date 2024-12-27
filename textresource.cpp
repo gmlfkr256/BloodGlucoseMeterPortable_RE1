@@ -66,9 +66,10 @@ void TextResource::init()
     //PAGE_PASSWORD
     fontData[Lan][PAGE_PASSWORD].insert("labelButtonNum",QFont(instance.fontSuit,instance.pixelToPoint(44),QFont::Medium));
 
-    textData[Lan][PAGE_PASSWORD].insert("labelTitle",QStringList{"로그인을 하세요","비밀번호 변경","사용자 삭제","비밀번호 확인","비밀번호 재확인","PASSWORD_MAX"});
     fontData[Lan][PAGE_PASSWORD].insert("labelTitle",QFont(instance.fontSuit,instance.pixelToPoint(40),QFont::Bold));
+    textData[Lan][PAGE_PASSWORD].insert("labelTitle",QStringList{"로그인을 하세요","비밀번호 변경","사용자 삭제","비밀번호 확인","비밀번호 재확인","PASSWORD_MAX"});
 
+    fontData[Lan][PAGE_PASSWORD].insert("labelTitleSub",QFont(instance.fontSuit,instance.pixelToPoint(30)));
     textData[Lan][PAGE_PASSWORD].insert("labelTitleSub",QStringList{
                                             "비밀번호 4자리를 눌러주세요",
                                             "변경할 번호 4자리를 눌러주세요",
@@ -77,10 +78,12 @@ void TextResource::init()
                                             "재확인을 위해 4자리를 눌러주세요",
                                             "PASSWORD_MAX"
                                         });
-    fontData[Lan][PAGE_PASSWORD].insert("labelTitleSub",QFont(instance.fontSuit,instance.pixelToPoint(30)));
 
-    textData[Lan][PAGE_PASSWORD].insert("labelButtonOKText",QStringList{"확인"});
     fontData[Lan][PAGE_PASSWORD].insert("labelButtonOKText",QFont(instance.fontSuit,instance.pixelToPoint(29)));
+    textData[Lan][PAGE_PASSWORD].insert("labelButtonOKText",QStringList{"확인"});
+
+    fontData[Lan][PAGE_PASSWORD].insert("labelButtonCancelText",QFont(instance.fontSuit,instance.pixelToPoint(29)));
+    textData[Lan][PAGE_PASSWORD].insert("labelButtonCancelText",QStringList{"취소"});
 
     //PAGE_PASSWORD_CONFIRM
     fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTitle",QFont(instance.fontSuit,instance.pixelToPoint(40),QFont::Bold));
@@ -396,9 +399,10 @@ void TextResource::init()
     //PAGE_PASSWORD
     fontData[Lan][PAGE_PASSWORD].insert("labelButtonNum",QFont(instance.fontSuit,instance.pixelToPoint(44),QFont::Bold));
 
-    textData[Lan][PAGE_PASSWORD].insert("labelTitle",QStringList{"Please log in","Edit Password","Delete User","Password Confirmation","Password Re-confirmation","PASSWORD_MAX"});
     fontData[Lan][PAGE_PASSWORD].insert("labelTitle",QFont(instance.fontSuit,instance.pixelToPoint(40),QFont::Bold));
+    textData[Lan][PAGE_PASSWORD].insert("labelTitle",QStringList{"Please log in","Edit Password","Delete User","Password Confirmation","Password Re-confirmation","PASSWORD_MAX"});
 
+    fontData[Lan][PAGE_PASSWORD].insert("labelTitleSub",QFont(instance.fontSuit,instance.pixelToPoint(30)));
     textData[Lan][PAGE_PASSWORD].insert("labelTitleSub", QStringList{
                                             "Please enter your 4-digit password",
                                             "Please enter the 4 digits to modify",
@@ -406,14 +410,33 @@ void TextResource::init()
                                             "Please re-enter the 4 digits to verify",
                                             "PASSWORD_MAX"
                                         });
-    fontData[Lan][PAGE_PASSWORD].insert("labelTitleSub",QFont(instance.fontSuit,instance.pixelToPoint(30)));
 
-    textData[Lan][PAGE_PASSWORD].insert("labelButtonOKText",QStringList{"OK"});
     fontData[Lan][PAGE_PASSWORD].insert("labelButtonOKText",QFont(instance.fontSuit,instance.pixelToPoint(29)));
+    textData[Lan][PAGE_PASSWORD].insert("labelButtonOKText",QStringList{"OK"});
 
-
+    fontData[Lan][PAGE_PASSWORD].insert("labelButtonCancelText",QFont(instance.fontSuit,instance.pixelToPoint(29)));
+    textData[Lan][PAGE_PASSWORD].insert("labelButtonCancelText",QStringList{"X"});
 
     //PAGE_PASSWORD_CONFIRM
+    fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTitle",QFont(instance.fontSuit,instance.pixelToPoint(40),QFont::Bold));
+    textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTitle",QStringList{
+                                                    "Login", //PASSWORD_STR_LOGIN_SUCCESS,
+                                                    "Login", //PASSWORD_STR_LOGIN_FAIL,
+                                                    "Login", //PASSWORD_STR_LOGIN_CHANGE,
+                                                    "Id Check", //PASSWORD_STR_CONFIRM,
+                                                    "Id Check", //PASSWORD_STR_CONFIRM_FAIL,
+                                                    "PW Check", //PASSWORD_STR_REPEAT,
+                                                    "PW Check", //PASSWORD_STR_REPEAT_FAIL,
+                                                    "PW Change", //PASSWORD_STR_EDIT,
+                                                    "PW Change", //PASSWORD_STR_EDIT_CONFIRM,
+                                                    "PW Change", //PASSWORD_STR_EDIT_CHANGE,
+                                                    "PW Change", //PASSWORD_STR_EDIT_SUCCESS,
+                                                    "Delete Info", //PASSWORD_STR_DELETE,
+                                                    "Delete Info", //PASSWORD_STR_DELETE_CONFIRM,
+                                                    "Delete Info", //PASSWORD_STR_DELETE_SUCCESS,
+                                                    "Logout", //PASSWORD_STR_LOGOUT,
+                                                    "PASSWORD_STR_MAX" //PASSWORD_STR_MAX
+                                                });
     fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText",QStringList{
                                                     "Login successful",                              // PASSWORD_STR_LOGIN_SUCCESS

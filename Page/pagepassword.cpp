@@ -52,11 +52,18 @@ void PagePassword::init()
 
     labelButtonOKText = new QLabel(this);
     labelButtonOKText->setGeometry(labelButtonOK->geometry());
-    labelButtonOKText->setStyleSheet("color: #ffffff;");
     labelButtonOKText->setAlignment(Qt::AlignCenter);
 
+    labelButtonDel = new QLabel(this);
+    labelButtonDel->setGeometry(336,152,67,47);
+
     labelButtonCancel = new QLabel(this);
-    labelButtonCancel->setGeometry(336,152,67,47);
+    labelButtonCancel->setGeometry(535,152,98,85);
+
+    labelButtonCancelText = new QLabel(this);
+    labelButtonCancelText->setGeometry(535,152,98,85);
+    labelButtonCancelText->setAlignment(Qt::AlignCenter);
+
 
     update();
 }
@@ -72,15 +79,28 @@ void PagePassword::update()
 
     instance.pixLoad(labelButtonOK,false,strDirPath,"/buttonOK.png");
 
+    labelButtonOKText->setStyleSheet("color: #ffffff;");
     labelButtonOKText->setFont(textResource.getFont(PAGE_PASSWORD,"labelButtonOKText"));
     labelButtonOKText->setText(textResource.getText(PAGE_PASSWORD,"labelButtonOKText").at(0));
 
-    instance.pixLoad(labelButtonCancel,false,strDirPath,"/buttonCancel.png");
+    instance.pixLoad(labelButtonCancel,false,strDirPath,"/buttonOK.png");
+
+    labelButtonCancelText->setStyleSheet("color: #ffffff;");
+    labelButtonCancelText->setFont(textResource.getFont(PAGE_PASSWORD,"labelButtonCancelText"));
+    labelButtonCancelText->setText(textResource.getText(PAGE_PASSWORD,"labelButtonCancelText").at(0));
+
+    instance.pixLoad(labelButtonDel,false,strDirPath,"/buttonCancel.png");
 
 
     for(QLabel *label : labelPasswordNum)
     {
         instance.pixLoad(label,false,strDirPath,"/circlePassword.png");
+    }
+
+    labelButtonCancel->hide();
+    if(instance.getPasswordStatus() != PASSWORD_LOGIN)
+    {
+        labelButtonCancel->show();
     }
 }
 
@@ -96,7 +116,7 @@ void PagePassword::mousePressEvent(QMouseEvent *ev)
         processOK();
     }
 
-    if(instance.touchCheck(labelButtonCancel->geometry(),ev))
+    if(instance.touchCheck(labelButtonDel->geometry(),ev))
     {
         strPasswordNum.chop(1);
         updatePasswordNum();
@@ -118,6 +138,10 @@ void PagePassword::mousePressEvent(QMouseEvent *ev)
         }
     }
 
+    if(instance.touchCheck(labelButtonCancel->geometry(),ev) && labelButtonCancel->isVisible())
+    {
+        emit signalShowPageNum(PAGE_MENU);
+    }
 
 }
 
