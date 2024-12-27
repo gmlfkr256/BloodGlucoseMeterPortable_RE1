@@ -82,7 +82,6 @@ void PagePassword::update()
     {
         instance.pixLoad(label,false,strDirPath,"/circlePassword.png");
     }
-    updatePasswordNum();
 }
 
 void PagePassword::mousePressEvent(QMouseEvent *ev)
@@ -241,8 +240,8 @@ void PagePassword::processOK()
 void PagePassword::pageShow()
 {
     instance.updateSysUserInfo();
-    update();
     strPasswordNum.clear();
+    update();
 }
 
 void PagePassword::pageHide()
