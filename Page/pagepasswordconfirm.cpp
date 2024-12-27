@@ -96,28 +96,56 @@ void PagePasswordConfirm::mousePressEvent(QMouseEvent *ev)
             emit signalShowPageNum(PAGE_HOME);
             break;
         case PASSWORD_STR_CONFIRM:
+            instance.setPasswordStatus(PASSWORD_CONFIRM);
+            emit signalShowPageNum(PAGE_PASSWORD);
             break;
         case PASSWORD_STR_CONFIRM_FAIL:
+            instance.setPasswordStatus(PASSWORD_CONFIRM);
+            emit signalShowPageNum(PAGE_PASSWORD);
             break;
         case PASSWORD_STR_REPEAT:
+            instance.setPasswordStatus(PASSWORD_REPEAT);
+            emit signalShowPageNum(PAGE_PASSWORD);
             break;
         case PASSWORD_STR_REPEAT_FAIL:
+            instance.setPasswordStatus(PASSWORD_REPEAT);
+            emit signalShowPageNum(PAGE_PASSWORD);
             break;
         case PASSWORD_STR_EDIT:
+            instance.setPasswordStrStatus(PASSWORD_STR_EDIT_CONFIRM);
+            update();
             break;
         case PASSWORD_STR_EDIT_CONFIRM:
+            instance.setPasswordStatus(PASSWORD_CONFIRM);
+            emit signalShowPageNum(PAGE_PASSWORD);
             break;
         case PASSWORD_STR_EDIT_CHANGE:
+            instance.setPasswordStatus(PASSWORD_EDIT);
+            emit signalShowPageNum(PAGE_PASSWORD);
             break;
         case PASSWORD_STR_EDIT_SUCCESS:
+            instance.setPasswordStatus(PASSWORD_LOGIN);
+            emit signalShowPageNum(PAGE_PASSWORD);
             break;
         case PASSWORD_STR_DELETE:
+            instance.setPasswordStrStatus(PASSWORD_STR_DELETE_CONFIRM);
+            update();
             break;
         case PASSWORD_STR_DELETE_CONFIRM:
+            instance.setPasswordStatus(PASSWORD_DELETE);
+            emit signalShowPageNum(PAGE_PASSWORD);
             break;
         case PASSWORD_STR_DELETE_SUCCESS:
+#if DEVICE
+            instance.guiApi.glucoseDelUserInfo(instance.getUserNumber());
+#endif
             break;
         case PASSWORD_STR_LOGOUT:
+#if DEVICE
+            instance.guiApi.glucoseActUserLogout(instance.getUserNumber());
+            instance.setPasswordStatus(PASSWORD_LOGIN);
+#endif
+            emit signalShowPageNum(PAGE_PASSWORD);
             break;
         case PASSWORD_STR_MAX:
             break;
