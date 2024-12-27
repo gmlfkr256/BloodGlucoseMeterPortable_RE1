@@ -34,6 +34,8 @@
 #include "Page/pagesound.h"
 #include "Page/pagesleep.h"
 #include "Page/pagedatetime.h"
+#include "Page/pageupgrade.h"
+#include "Page/pageupgradeconfirm.h"
 
 
 class MainWindow : public QMainWindow
@@ -79,6 +81,8 @@ public:
     PageSound *pageSound;
     PageSleep *pageSleep;
     PageDateTime *pageDateTime;
+    PageUpgrade *pageUpgrade;
+    PageUpgradeConfirm *pageUpgradeConfirm;
 
     QList<int> listComHiddenPageIndex;
     QMap<PageNum,QString> mapPageNumName;

@@ -61,11 +61,12 @@ typedef enum
     PAGE_SOUND,
     PAGE_SLEEP,
     PAGE_DATETIME,
+    PAGE_UPGRADE,
+    PAGE_UPGRADE_CONFIRM,
 
     PAGE_HISTORY,
     PAGE_REVERSE,
     PAGE_TRANSLATION,
-    PAGE_UPGRADE,
     PAGE_DEVICEINFO,
     PAGE_USER,
     PAGE_COLOR,
@@ -201,6 +202,17 @@ typedef enum
     SLEEP_NONE
 } SleepIndex;
 
+Q_ENUMS(SleepIndex)
+
+typedef enum
+{
+    VERSION_FW,
+    VERSION_HW,
+    VERSION_SW,
+    VERSION_BLE,
+    VERSION_SERIAL
+} VersionIndex;
+
 class Singleton : public QObject
 {
     Q_OBJECT
@@ -313,6 +325,10 @@ public:
     //PageThresholdValue
     void setThresholdValue(ThresholdIndex thresholdIndex, int nValue);
 
+    //PageUpgrade
+    void getDeviceVersion();
+    QString getDeviceVersion(VersionIndex versionIndex);
+
     //public
     bool touchCheck(const QRect &rect, QMouseEvent* ev);
     int pixelToPoint(int pixelSize);
@@ -367,6 +383,10 @@ private:
 
     //PageThreshold
     ThresholdIndex thresHoldIndex = THRESHOLD_LOW;
+
+    //PageUpgrade
+    char chFWVer[128],chHWVer[128],chBleName[128],chSerialNumber[128];
+    QString strFWVer = "test1",strHWVer = "test2",strSWVer = "test3",strBleName = "test4",strSerialNumber = "text5";
 };
 
 #endif // SINGLETON_H

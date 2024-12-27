@@ -40,6 +40,9 @@ void TextResource::init()
     fontData[Lan][CUSTOM_BUTTON].insert("labelButtonSave",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Medium));
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonSave",QStringList{"저장"});
 
+    fontData[Lan][CUSTOM_BUTTON].insert("labelButtonUpgrade",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Medium));
+    textData[Lan][CUSTOM_BUTTON].insert("labelButtonUpgrade",QStringList{"소프트웨어 업그레이드"});
+
     //CUSTOM_COMPONENT
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextValue",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
 
@@ -284,6 +287,19 @@ void TextResource::init()
                                          "10분",
                                          "없음"
                                      });
+    //PAGE_UPGRADE
+    fontData[Lan][PAGE_UPGRADE].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(42),QFont::Bold));
+    textData[Lan][PAGE_UPGRADE].insert("labelText",QStringList{"현재 버전"});
+
+    fontData[Lan][PAGE_UPGRADE].insert("labelTextVersion",QFont(instance.fontSuit,instance.pixelToPoint(55)));
+
+    //PAGE_UPGRADE_CONFIRM
+    fontData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(42),QFont::Medium));
+    textData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText",QStringList{
+                                                   "1. 장치와 PC연결\n"
+                                                   "2. 장치에 bin 파일 복사\n"
+                                                   "3. 복사 완료 후 장치 재부팅"
+                                                                   });
 
     //====================================================================================================================================
     //EN
@@ -313,6 +329,32 @@ void TextResource::init()
     fontData[Lan][CUSTOM_BUTTON].insert("labelButtonSave",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Medium));
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonSave",QStringList{"Save"});
 
+    fontData[Lan][CUSTOM_BUTTON].insert("labelButtonMeasureRe",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Medium));
+    textData[Lan][CUSTOM_BUTTON].insert("labelButtonMeasureRe",QStringList{"ReMeasure"});
+
+    fontData[Lan][CUSTOM_BUTTON].insert("labelButtonUpgrade",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Medium));
+    textData[Lan][CUSTOM_BUTTON].insert("labelButtonUpgrade",QStringList{"Software Upgrade"});
+
+    //CUSTOM_COMPONENT
+    fontData[Lan][CUSTOM_COMPONENT].insert("labelTextValue",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
+
+    fontData[Lan][CUSTOM_COMPONENT].insert("labelTextResult",QFont(instance.fontSuit,instance.pixelToPoint(36)));
+    textData[Lan][CUSTOM_COMPONENT].insert("labelTextResult",QStringList{
+                                               "Successful",     // 0
+                                               "Timeout", // 1
+                                               "NULL_PTR",                // 2
+                                               "COUNT_ZERO",              // 3
+                                               "MALLOC_FAIL",             // 4
+                                               "NONE_GREADE",             // 5
+                                               "PARAM_FAIL",              // 6
+                                               "RESULT_FAIL",             // 7
+                                               "ECODE_MAX"
+                                           });
+
+    fontData[Lan][CUSTOM_COMPONENT_DATE].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(50)));
+    fontData[Lan][CUSTOM_COMPONENT_DATE].insert("labelTextSelect",QFont(instance.fontSuit,instance.pixelToPoint(50),QFont::Bold));
+    fontData[Lan][CUSTOM_COMPONENT_DATE].insert("labelTextSub",QFont(instance.fontSuit,instance.pixelToPoint(40)));
+
     //PAGE_PASSWORD
     fontData[Lan][PAGE_PASSWORD].insert("labelButtonNum",QFont(instance.fontSuit,instance.pixelToPoint(44),QFont::Bold));
 
@@ -331,8 +373,7 @@ void TextResource::init()
     textData[Lan][PAGE_PASSWORD].insert("labelButtonOKText",QStringList{"OK"});
     fontData[Lan][PAGE_PASSWORD].insert("labelButtonOKText",QFont(instance.fontSuit,instance.pixelToPoint(29)));
 
-    fontData[Lan][CUSTOM_BUTTON].insert("labelButtonMeasureRe",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Medium));
-    textData[Lan][CUSTOM_BUTTON].insert("labelButtonMeasureRe",QStringList{"ReMeasure"});
+
 
     //PAGE_PASSWORD_CONFIRM
     fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
@@ -547,6 +588,21 @@ void TextResource::init()
                                          "10min",
                                          "None"
                                      });
+
+    //PAGE_UPGRADE
+    fontData[Lan][PAGE_UPGRADE].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(42),QFont::Bold));
+    textData[Lan][PAGE_UPGRADE].insert("labelText",QStringList{"Version"});
+
+    fontData[Lan][PAGE_UPGRADE].insert("labelTextVersion",QFont(instance.fontSuit,instance.pixelToPoint(55)));
+
+    //PAGE_UPGRADE_CONFIRM
+    fontData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(42),QFont::Medium));
+    textData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText",QStringList{
+                                                   "1. Connect the device to PC\n"
+                                                   "2. Copy bin file to the device\n"
+                                                   "3. Restart the device after\ncopying is complete"
+                                                                   });
+
 
     //=====================================================================================================================================
     //JP

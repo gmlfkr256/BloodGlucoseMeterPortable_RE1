@@ -11,6 +11,7 @@
 #include "Button/custombuttoninput.h"
 #include "Button/custombuttonmeasurere.h"
 #include "Button/custombuttonsave.h"
+#include "Button/custombuttonupgrade.h"
 
 class Page : public QWidget
 {

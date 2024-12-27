@@ -1,0 +1,59 @@
+#include "pageupgradeconfirm.h"
+
+PageUpgradeConfirm::PageUpgradeConfirm(QWidget *parent) : Page(parent)
+{
+    this->setGeometry(parent->geometry());
+    init();
+}
+
+void PageUpgradeConfirm::init()
+{
+    labelText = new QLabel(this);
+    customButtonOK = new CustomButtonOK(this);
+    customButtonCancel = new CustomButtonCancel(this);
+
+    update();
+}
+
+void PageUpgradeConfirm::update()
+{
+    customButtonOK->update();
+    customButtonCancel->update();
+
+    labelText->setFont(textResource.getFont(PAGE_UPGRADE_CONFIRM,"labelText"));
+    labelText->setText(textResource.getText(PAGE_UPGRADE_CONFIRM,"labelText").at(0));
+}
+
+void PageUpgradeConfirm::pageShow()
+{
+#if DEVICE
+    instance.guiApi.glucoseSetUpgradeStorage(GAPI_ACT_START);
+#endif
+    update();
+}
+
+void PageUpgradeConfirm::pageHide()
+{
+
+}
+
+void PageUpgradeConfirm::mousePressEvent(QMouseEvent *ev)
+{
+    if(instance.touchCheck(customButtonOK->geometry(),ev))
+    {
+#if DEVICE
+        instance.guiApi.glucoseSetUpgradeStorage(GAPI_ACT_STOP);
+        QTimer::singleShot(100,[this](){instance.guiApi.glucoseActReboot();});
+#else
+        emit signalShowPageNum(PAGE_MENU);
+#endif
+    }
+
+    if(instance.touchCheck(customButtonCancel->geometry(),ev))
+    {
+#if DEVICE
+        instance.guiApi.glucoseSetUpgradeStorage(GAPI_ACT_STOP);
+#endif
+        emit signalShowPageNum(PAGE_MENU);
+    }
+}

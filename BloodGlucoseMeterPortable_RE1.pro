@@ -27,6 +27,7 @@ SOURCES += \
     Button/custombuttonmeasurestart.cpp \
     Button/custombuttonok.cpp \
     Button/custombuttonsave.cpp \
+    Button/custombuttonupgrade.cpp \
     Component/componentbattery.cpp \
     Component/componentbluetooth.cpp \
     Component/componentclock.cpp \
@@ -62,6 +63,8 @@ SOURCES += \
     Page/pagesound.cpp \
     Page/pagethreshold.cpp \
     Page/pagethresholdvalue.cpp \
+    Page/pageupgrade.cpp \
+    Page/pageupgradeconfirm.cpp \
     guiapi/guiapi.cpp \
     guiapi/vtipc.cpp \
     main.cpp \
@@ -79,6 +82,7 @@ HEADERS += \
     Button/custombuttonmeasurestart.h \
     Button/custombuttonok.h \
     Button/custombuttonsave.h \
+    Button/custombuttonupgrade.h \
     Component/componentbattery.h \
     Component/componentbluetooth.h \
     Component/componentclock.h \
@@ -115,6 +119,8 @@ HEADERS += \
     Page/pagesound.h \
     Page/pagethreshold.h \
     Page/pagethresholdvalue.h \
+    Page/pageupgrade.h \
+    Page/pageupgradeconfirm.h \
     guiapi/gapi.h \
     guiapi/guiapi.h \
     guiapi/vtipc.h \

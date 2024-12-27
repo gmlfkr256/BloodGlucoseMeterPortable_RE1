@@ -523,6 +523,49 @@ void Singleton::setThresholdValue(ThresholdIndex thresholdIndex, int nValue)
 #endif
 }
 
+//PageUpagrde
+void Singleton::getDeviceVersion()
+{
+#if DEVICE
+   if(guiApi.getFwVersion(chFWVer,chBleName,chHWVer,chSerialNumber) == GAPI_SUCCESS)
+   {
+       strFWVer = chFWVer;
+       strHWVer = chHWVer;
+       strSWVer = chFWVer;
+       strBleName = chBleName;
+       strSerialNumber = chSerialNumber;
+       qDebug()<<"DeviceVersion get Success";
+   }
+#endif
+}
+
+QString Singleton::getDeviceVersion(VersionIndex versionIndex)
+{
+    getDeviceVersion();
+
+    switch (versionIndex)
+    {
+    case VERSION_FW:
+        return strFWVer;
+        break;
+    case VERSION_HW:
+        return strHWVer;
+        break;
+    case VERSION_SW:
+        return strSWVer;
+        break;
+    case VERSION_BLE:
+        return strBleName;
+        break;
+    case VERSION_SERIAL:
+        return strSerialNumber;
+        break;
+    default:
+        qDebug()<<"getDeviceVersion Fail";
+        return QString();
+        break;
+    }
+}
 //public
 bool Singleton::touchCheck(const QRect &rect, QMouseEvent* ev)
 {
