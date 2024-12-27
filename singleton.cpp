@@ -268,7 +268,14 @@ void Singleton::setPasswordChange(QString strPasswordChange)
 
 void Singleton::setUserPasswordChange()
 {
+#if DEVICE
     guiApi.glucoseSetUserPassword(nUserNumber,strPasswordChange.toUtf8().data());
+#else
+    sysUserInfo[getUserNumber()].passwd[15] = {0};
+
+    strncpy(sysUserInfo[getUserNumber()].passwd,strPasswordChange.toUtf8().data(),sizeof (sysUserInfo[getUserNumber()].passwd)-1);
+#endif
+
 }
 
 //PagePasswordStrStatus
