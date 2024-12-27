@@ -72,6 +72,7 @@ void PageDeviceInfo::update()
     for(QLabel *label : listLabelTitle)
     {
         label->setFont(textResource.getFont(PAGE_DEVICEINFO,"labelTitle"));
+        label->setStyleSheet("padding-left: 3px;");
     }
 
     for(QLabel *label : listLabelText)
@@ -83,6 +84,11 @@ void PageDeviceInfo::update()
     {
         listLabelTitle.at(i)->setText(textResource.getText(PAGE_DEVICEINFO,"labelTitle").at(i));
     }
+
+    labelDevBLEVerText->setText(instance.getDeviceVersion(VERSION_BLE));
+    labelDevHWVerText->setText(instance.getDeviceVersion(VERSION_HW));
+    labelDevSWVerText->setText(instance.getDeviceVersion(VERSION_SW));
+    labelDevSerialText->setText(instance.getDeviceVersion(VERSION_SERIAL));
 }
 
 void PageDeviceInfo::pageShow()
