@@ -129,5 +129,6 @@
         <file>Image/Default/Public/ImageSound/imgMin.png</file>
         <file>Image/Default/Public/ImageSleep/circleOFF.png</file>
         <file>Image/Default/Public/ImageSleep/circleON.png</file>
+        <file>Image/Default/Public/ImageUserInfo/arrow.png</file>
     </qresource>
 </RCC>

@@ -129,7 +129,7 @@ void PageMenu::update()
             PAGE_UPGRADE,
             PAGE_DEVICEINFO,
             PAGE_INIT,
-            PAGE_USER
+            PAGE_USERINFO
         };
         break;
     case MENU_PAGE_MAX:

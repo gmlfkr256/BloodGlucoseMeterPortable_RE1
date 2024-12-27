@@ -1,12 +1,12 @@
-#include "pageinit.h"
+#include "pageuserinfo.h"
 
-PageInit::PageInit(QWidget *parent) : Page(parent)
+PageUserInfo::PageUserInfo(QWidget *parent) : Page(parent)
 {
     this->setGeometry(parent->geometry());
     init();
 }
 
-void PageInit::init()
+void PageUserInfo::init()
 {
     for(int i=0; i<3; i++)
     {
@@ -15,67 +15,62 @@ void PageInit::init()
         labelText[i]->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         labelArrow[i] = new QLabel(this);
         labelArrow[i]->setGeometry(labelText[i]->x()+551,labelText[i]->y(),40,73);
-    }
-    for(int i=0; i<3; i++)
-    {
+
         labelLine[i] = new QLabel(this);
         labelLine[i]->setGeometry(labelText[i]->x(),labelText[i]->y()+labelText[i]->height()-1,labelText[i]->width(),1);
     }
 
     customButtonOK = new CustomButtonOK(this);
     customButtonOK->setLongWidth(true);
-
     update();
 }
 
-void PageInit::update()
+void PageUserInfo::update()
 {
     customButtonOK->update();
-    for(int i=0; i<3; i++)
-    {
-        labelText[i]->setFont(textResource.getFont(PAGE_INIT,"labelText"));
-        labelText[i]->setText(textResource.getText(PAGE_INIT,"labelText").at(i));
-        instance.pixLoad(labelArrow[i],false,strDirPath,"/arrow.png");
-    }
 
     for(int i=0; i<3; i++)
     {
+        labelText[i]->setFont(textResource.getFont(PAGE_USERINFO,"labelText"));
+        labelText[i]->setText(textResource.getText(PAGE_USERINFO,"labelText").at(i));
+        instance.pixLoad(labelArrow[i],false,strDirPath,"/arrow.png");
+
         labelLine[i]->setStyleSheet("background-color: #c5c5c5;");
     }
 }
 
-void PageInit::pageShow()
+void PageUserInfo::pageShow()
 {
     update();
 }
 
-void PageInit::pageHide()
+void PageUserInfo::pageHide()
 {
-
+    emit signalShowPageNum(PAGE_MENU);
 }
 
-void PageInit::mousePressEvent(QMouseEvent *ev)
+void PageUserInfo::mousePressEvent(QMouseEvent *ev)
 {
     if(instance.touchCheck(customButtonOK->geometry(),ev))
     {
-        emit signalShowPageNum(PAGE_MENU);
+        pageHide();
     }
 
     if(instance.touchCheck(labelText[0]->geometry(),ev))
     {
-        instance.setInitIndex(INIT_FACTORY_Q);
-        emit signalShowPageNum(PAGE_INIT_CONFIRM);
+        instance.setPasswordStrStatus(PASSWORD_STR_EDIT);
+        emit signalShowPageNum(PAGE_PASSWORD_CONFIRM);
     }
 
     if(instance.touchCheck(labelText[1]->geometry(),ev))
     {
-        instance.setInitIndex(INIT_BLUETOOTH_Q);
-        emit signalShowPageNum(PAGE_INIT_CONFIRM);
+        instance.setPasswordStrStatus(PASSWORD_STR_DELETE);
+        emit signalShowPageNum(PAGE_PASSWORD_CONFIRM);
     }
 
     if(instance.touchCheck(labelText[2]->geometry(),ev))
     {
-        instance.setInitIndex(INIT_CALI_Q);
-        emit signalShowPageNum(PAGE_INIT_CONFIRM);
+        instance.setPasswordStrStatus(PASSWORD_STR_LOGOUT);
+        emit signalShowPageNum(PAGE_PASSWORD_CONFIRM);
     }
 }

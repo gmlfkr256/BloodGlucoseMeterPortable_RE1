@@ -66,6 +66,7 @@ SOURCES += \
     Page/pagethresholdvalue.cpp \
     Page/pageupgrade.cpp \
     Page/pageupgradeconfirm.cpp \
+    Page/pageuserinfo.cpp \
     guiapi/guiapi.cpp \
     guiapi/vtipc.cpp \
     main.cpp \
@@ -123,6 +124,7 @@ HEADERS += \
     Page/pagethresholdvalue.h \
     Page/pageupgrade.h \
     Page/pageupgradeconfirm.h \
+    Page/pageuserinfo.h \
     guiapi/gapi.h \
     guiapi/guiapi.h \
     guiapi/vtipc.h \

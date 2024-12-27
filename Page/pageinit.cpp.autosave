@@ -31,6 +31,7 @@ void PageInit::init()
 void PageInit::update()
 {
     customButtonOK->update();
+    
     for(int i=0; i<3; i++)
     {
         labelText[i]->setFont(textResource.getFont(PAGE_INIT,"labelText"));

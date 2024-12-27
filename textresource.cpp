@@ -311,6 +311,14 @@ void TextResource::init()
 
     fontData[Lan][PAGE_DEVICEINFO].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(30)));
 
+    //PAGE_USERINFO
+    fontData[Lan][PAGE_USERINFO].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36)));
+    textData[Lan][PAGE_USERINFO].insert("labelText",QStringList{
+                                            "비밀번호 수정",
+                                            "사용자 정보 삭제",
+                                            "로그아웃"
+                                        });
+
     //====================================================================================================================================
     //EN
     Lan = EN;

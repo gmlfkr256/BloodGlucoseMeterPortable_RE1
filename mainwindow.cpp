@@ -155,7 +155,7 @@ void MainWindow::init()
         {PAGE_HISTORY, "PageHistory"},
         {PAGE_REVERSE, "PageReverse"},
         {PAGE_TRANSLATION, "PageTranslation"},
-        {PAGE_USER, "PageUser"},
+        {PAGE_USERINFO, "PageUserInfo"},
         {PAGE_COLOR, "PageColor"},
         {CUSTOM_BUTTON, "CustomButton"},
         {PAGE_MAX, "InvalidPage"}  // 예외 처리
