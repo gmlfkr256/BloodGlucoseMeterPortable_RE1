@@ -621,6 +621,24 @@ void TextResource::init()
                                                    "3. Restart the device after\ncopying is complete"
                                                });
 
+    //PAGE_DEVICEINFO
+    fontData[Lan][PAGE_DEVICEINFO].insert("labelTitle",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
+    textData[Lan][PAGE_DEVICEINFO].insert("labelTitle",QStringList{
+                                              "BLE",
+                                              "H/W ver",
+                                              "S/W ver",
+                                              "Serial"
+                                          });
+
+    fontData[Lan][PAGE_DEVICEINFO].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(30)));
+
+    //PAGE_USERINFO
+    fontData[Lan][PAGE_USERINFO].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36)));
+    textData[Lan][PAGE_USERINFO].insert("labelText",QStringList{
+                                            "Change password",
+                                            "Delete user data",
+                                            "Log out"
+                                        });
 
     //=====================================================================================================================================
     //JP

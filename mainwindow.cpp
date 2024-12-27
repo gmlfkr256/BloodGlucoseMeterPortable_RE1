@@ -38,9 +38,9 @@ void MainWindow::init()
     stackedWidget->addWidget(pagePassword);
     listComHiddenPageIndex.append(stackedWidget->indexOf(pagePassword));
 
-    pagePasswordConfirm =new PagePasswordConfirm(this);
+    pagePasswordConfirm = new PagePasswordConfirm(this);
     stackedWidget->addWidget(pagePasswordConfirm);
-    listComHiddenPageIndex.append(stackedWidget->indexOf(pagePasswordConfirm));
+    //listComHiddenPageIndex.append(stackedWidget->indexOf(pagePasswordConfirm));
 
     pageHome = new PageHome(this);
     stackedWidget->addWidget(pageHome);
