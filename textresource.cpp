@@ -266,8 +266,8 @@ void TextResource::init()
     //PAGE_TRHESHOLD
     fontData[Lan][PAGE_THRESHOLD].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36)));
     textData[Lan][PAGE_THRESHOLD].insert("labelText",QStringList{
-                                                "저혈당",
-                                                "고혈당"
+                                             "저혈당",
+                                             "고혈당"
                                          });
     fontData[Lan][PAGE_THRESHOLD].insert("labelButton",QFont(instance.fontSuit,instance.pixelToPoint(22)));
     textData[Lan][PAGE_THRESHOLD].insert("labelButton",QStringList{"설정"});
@@ -299,7 +299,17 @@ void TextResource::init()
                                                    "1. 장치와 PC연결\n"
                                                    "2. 장치에 bin 파일 복사\n"
                                                    "3. 복사 완료 후 장치 재부팅"
-                                                                   });
+                                               });
+    //PAGE_DEVICEINFO
+    fontData[Lan][PAGE_DEVICEINFO].insert("labelTitle",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
+    textData[Lan][PAGE_DEVICEINFO].insert("labelTitle",QStringList{
+                                              "BLE",
+                                              "H/W ver",
+                                              "S/W ver",
+                                              "Serial"
+                                          });
+
+    fontData[Lan][PAGE_DEVICEINFO].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(30)));
 
     //====================================================================================================================================
     //EN
@@ -567,8 +577,8 @@ void TextResource::init()
     //PAGE_TRHESHOLD
     fontData[Lan][PAGE_THRESHOLD].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36)));
     textData[Lan][PAGE_THRESHOLD].insert("labelText",QStringList{
-                                                "Low Blood Sugar",
-                                                "High Blood Suger"
+                                             "Low Blood Sugar",
+                                             "High Blood Suger"
                                          });
     fontData[Lan][PAGE_THRESHOLD].insert("labelButton",QFont(instance.fontSuit,instance.pixelToPoint(22)));
     textData[Lan][PAGE_THRESHOLD].insert("labelButton",QStringList{"Set"});
@@ -601,7 +611,7 @@ void TextResource::init()
                                                    "1. Connect the device to PC\n"
                                                    "2. Copy bin file to the device\n"
                                                    "3. Restart the device after\ncopying is complete"
-                                                                   });
+                                               });
 
 
     //=====================================================================================================================================

@@ -39,13 +39,13 @@ void PageUpgrade::pageShow()
 
 void PageUpgrade::pageHide()
 {
-
+    emit signalShowPageNum(PAGE_UPGRADE_CONFIRM);
 }
 
 void PageUpgrade::mousePressEvent(QMouseEvent *ev)
 {
     if(instance.touchCheck(customButtonUpgrade->geometry(),ev))
     {
-        emit signalShowPageNum(PAGE_UPGRADE_CONFIRM);
+        pageHide();
     }
 }

@@ -9,6 +9,7 @@ PageUpgradeConfirm::PageUpgradeConfirm(QWidget *parent) : Page(parent)
 void PageUpgradeConfirm::init()
 {
     labelText = new QLabel(this);
+    labelText->setAlignment(Qt::AlignCenter);
     customButtonOK = new CustomButtonOK(this);
     customButtonCancel = new CustomButtonCancel(this);
 
@@ -34,7 +35,7 @@ void PageUpgradeConfirm::pageShow()
 
 void PageUpgradeConfirm::pageHide()
 {
-
+    emit signalShowPageNum(PAGE_MENU);
 }
 
 void PageUpgradeConfirm::mousePressEvent(QMouseEvent *ev)
@@ -45,7 +46,7 @@ void PageUpgradeConfirm::mousePressEvent(QMouseEvent *ev)
         instance.guiApi.glucoseSetUpgradeStorage(GAPI_ACT_STOP);
         QTimer::singleShot(100,[this](){instance.guiApi.glucoseActReboot();});
 #else
-        emit signalShowPageNum(PAGE_MENU);
+        pageHide();
 #endif
     }
 
@@ -54,6 +55,6 @@ void PageUpgradeConfirm::mousePressEvent(QMouseEvent *ev)
 #if DEVICE
         instance.guiApi.glucoseSetUpgradeStorage(GAPI_ACT_STOP);
 #endif
-        emit signalShowPageNum(PAGE_MENU);
+        pageHide();
     }
 }

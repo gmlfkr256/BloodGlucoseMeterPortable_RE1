@@ -36,6 +36,7 @@
 #include "Page/pagedatetime.h"
 #include "Page/pageupgrade.h"
 #include "Page/pageupgradeconfirm.h"
+#include "Page/pagedeviceinfo.h"
 
 
 class MainWindow : public QMainWindow
@@ -83,6 +84,7 @@ public:
     PageDateTime *pageDateTime;
     PageUpgrade *pageUpgrade;
     PageUpgradeConfirm *pageUpgradeConfirm;
+    PageDeviceInfo *pageDeviceInfo;
 
     QList<int> listComHiddenPageIndex;
     QMap<PageNum,QString> mapPageNumName;
