@@ -66,12 +66,13 @@ void TextResource::init()
     //PAGE_PASSWORD
     fontData[Lan][PAGE_PASSWORD].insert("labelButtonNum",QFont(instance.fontSuit,instance.pixelToPoint(44),QFont::Medium));
 
-    textData[Lan][PAGE_PASSWORD].insert("labelTitle",QStringList{"로그인을 하세요","비밀번호 수정","사용자 삭제","비밀번호 확인","비밀번호 재확인","PASSWORD_MAX"});
+    textData[Lan][PAGE_PASSWORD].insert("labelTitle",QStringList{"로그인을 하세요","비밀번호 변경","사용자 삭제","비밀번호 확인","비밀번호 재확인","PASSWORD_MAX"});
     fontData[Lan][PAGE_PASSWORD].insert("labelTitle",QFont(instance.fontSuit,instance.pixelToPoint(40),QFont::Bold));
 
     textData[Lan][PAGE_PASSWORD].insert("labelTitleSub",QStringList{
                                             "비밀번호 4자리를 눌러주세요",
-                                            "수정할 번호 4자리를 눌러주세요",
+                                            "변경할 번호 4자리를 눌러주세요",
+                                            "비밀번호 4자리를 눌러주세요",
                                             "확인을 위해 4자리를 눌러주세요",
                                             "재확인을 위해 4자리를 눌러주세요",
                                             "PASSWORD_MAX"
