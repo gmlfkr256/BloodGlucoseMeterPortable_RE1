@@ -8,15 +8,6 @@ PageDeviceInfo::PageDeviceInfo(QWidget *parent) : Page(parent)
 
 void PageDeviceInfo::init()
 {
-    listLabelTitle<<labelDevBLEVerTitle
-                 <<labelDevHWVerTitle
-                <<labelDevSWVerTitle
-               <<labelDevSerialTitle;
-    listLabelText<<labelDevBLEVerText
-                <<labelDevHWVerText
-               <<labelDevSWVerText
-              <<labelDevSerialText;
-
     labelDevBLEVerTitle = new QLabel(this);
     labelDevHWVerTitle = new QLabel(this);
     labelDevSWVerTitle = new QLabel(this);
@@ -26,6 +17,15 @@ void PageDeviceInfo::init()
     labelDevHWVerText = new QLabel(this);
     labelDevSWVerText = new QLabel(this);
     labelDevSerialText = new QLabel(this);
+
+    listLabelTitle<<labelDevBLEVerTitle
+                 <<labelDevHWVerTitle
+                <<labelDevSWVerTitle
+               <<labelDevSerialTitle;
+    listLabelText<<labelDevBLEVerText
+                <<labelDevHWVerText
+               <<labelDevSWVerText
+              <<labelDevSerialText;
 
     for(QLabel *label : listLabelTitle)
     {
