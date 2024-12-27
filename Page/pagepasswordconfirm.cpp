@@ -145,8 +145,9 @@ void PagePasswordConfirm::mousePressEvent(QMouseEvent *ev)
         case PASSWORD_STR_LOGOUT:
 #if DEVICE
             instance.guiApi.glucoseActUserLogout(instance.getUserNumber());
-            instance.setPasswordStatus(PASSWORD_LOGIN);
+
 #endif
+            instance.setPasswordStatus(PASSWORD_LOGIN);
             emit signalShowPageNum(PAGE_PASSWORD);
             break;
         case PASSWORD_STR_MAX:
