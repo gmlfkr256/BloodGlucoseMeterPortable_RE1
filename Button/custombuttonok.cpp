@@ -20,7 +20,6 @@ void CustomButtonOK::update()
     labelButtonOk->setFont(textResource.getFont(CUSTOM_BUTTON,"labelButtonOK"));
     labelButtonOk->setText(textResource.getText(CUSTOM_BUTTON,"labelButtonOK").at(0));
 
-    qDebug()<<"customButtonOK";
     switch (instance.getDeviceColor())
     {
     case COLOR_DEFAULT:
