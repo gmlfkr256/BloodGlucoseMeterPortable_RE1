@@ -241,7 +241,6 @@ void PagePassword::pageShow()
 {
     instance.updateSysUserInfo();
     strPasswordNum.clear();
-    updatePasswordNum();
     update();
 }
 
