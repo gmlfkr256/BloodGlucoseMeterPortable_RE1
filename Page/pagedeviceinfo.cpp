@@ -87,6 +87,8 @@ void PageDeviceInfo::update()
     }
 
     labelDevBLEVerText->setText(instance.getDeviceVersion(VERSION_BLE));
+    if(labelDevBLEVerText->text().isEmpty())
+        labelDevBLEVerText->setText("HAPPYZONE-000000");
     labelDevHWVerText->setText(instance.getDeviceVersion(VERSION_HW));
     labelDevSWVerText->setText(instance.getDeviceVersion(VERSION_SW));
     labelDevSerialText->setText(instance.getDeviceVersion(VERSION_SERIAL));
