@@ -16,7 +16,12 @@ private:
     int nBatterySize = 0;
     int nBatterySizePrev = 0;
     int nBatteryCount = 0;
-    bool isUpdate = false;
+    bool bIsUpdate = false;
+
+    bool bIsBatteryAlert15 = false;
+    bool bIsBatteryAlert5 = false;
+    int nBatteyTimer15 = 0;
+    int nBatteyTimer5 = 0;
 
     gapiBatData_t batData;
     gapiBatData_t batDataPrev;
@@ -32,6 +37,9 @@ public slots:
     void updateUI();
     void pageShow() override;
     void pageHide() override;
+
+signals:
+    void signalShowPageNum(PageNum pageNum);
 };
 
 #endif // COMPONENTBATTERY_H

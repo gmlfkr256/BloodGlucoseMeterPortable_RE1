@@ -48,6 +48,53 @@ void ComponentBattery::update()
     batData.charge = QRandomGenerator::global()->bounded(101);
     batData.charging = (QRandomGenerator::global()->bounded(2) == 1);
     nBatterySize = batData.charge;
+#endif
+
+    if(batData.charging)
+    {
+        nBatteyTimer15 = 0;
+        nBatteyTimer5 =0;
+
+        bIsBatteryAlert15 = false;
+        bIsBatteryAlert5 = false;
+    }
+    else
+    {
+        if(nBatterySize <= 5)
+        {
+            nBatteyTimer15 = 0;
+            nBatteyTimer5++;
+        }
+        else if(nBatterySize <=15)
+        {
+            nBatteyTimer15++;
+            nBatteyTimer5 = 0;
+        }
+        else
+        {
+            nBatteyTimer15 = 0;
+            nBatteyTimer5 = 0;
+        }
+
+        if(nBatteyTimer15 >= 30 && !bIsBatteryAlert15)
+        {
+            bIsBatteryAlert15 = true;
+
+            if(nBatterySize > 5)
+            {
+                instance.isBatZero = false;
+                emit signalShowPageNum(PAGE_BATPOPUP);
+            }
+        }
+
+        if(nBatteyTimer5 >= 30 && !bIsBatteryAlert5)
+        {
+            bIsBatteryAlert5 = true;
+
+            instance.isBatZero = true;
+            emit signalShowPageNum(PAGE_BATPOPUP);
+        }
+    }
 
     if(nBatteryCount >= 60)
     {
@@ -55,21 +102,21 @@ void ComponentBattery::update()
         {
             if (nBatterySize > nBatterySizePrev)
             {
-                isUpdate = true;
+                bIsUpdate = true;
             }
         }
         else
         {
             if (nBatterySize < nBatterySizePrev)
             {
-                isUpdate = true;
+                bIsUpdate = true;
             }
         }
 
         nBatterySizePrev = nBatterySize;
         nBatteryCount = 0;
     }
-#endif
+
     updateUI();
 }
 
@@ -124,7 +171,7 @@ void ComponentBattery::updateUI()
             pngPathPrev = pngPath;
 
         }*/
-        if(isUpdate)
+        if(bIsUpdate)
         {
             if(nBatterySize>=90)
                 pngPath += "100";
@@ -138,7 +185,7 @@ void ComponentBattery::updateUI()
                 pngPath += "5";
 
             pngPathPrev = pngPath;
-            isUpdate = false;
+            bIsUpdate = false;
         }
         else
         {
