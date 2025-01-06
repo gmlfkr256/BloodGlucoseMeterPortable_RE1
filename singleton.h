@@ -250,6 +250,9 @@ public:
     int nSleepTimeCount = 0;
     bool isComMenuCheck = false;
     bool isBatZero = true;
+    bool isBatCharging = false;
+
+    bool isTouchCtrl = false;
 
     PageNum currentPage = PAGE_MAX;
 

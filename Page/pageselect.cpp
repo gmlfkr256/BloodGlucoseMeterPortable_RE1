@@ -208,6 +208,9 @@ void PageSelect::updateStatus()
 
 void PageSelect::mousePressEvent(QMouseEvent *ev)
 {
+    if(!instance.isTouchCtrl)
+        return;
+
     if(instance.touchCheck(labelArrowLeftTouch->geometry(),ev))
     {
         int nTimeStatus = instance.getTimeStatus();
@@ -241,8 +244,7 @@ void PageSelect::mousePressEvent(QMouseEvent *ev)
     {
         if(instance.getCaliGainCompleteCheck())
         {
-            instance.setGraphMode(GRAPH_MEASURE);
-            emit signalShowPageNum(PAGE_GRAPH);
+            pageHide();
         }
         else
         {
@@ -254,10 +256,13 @@ void PageSelect::mousePressEvent(QMouseEvent *ev)
 void PageSelect::pageShow()
 {
     update();
+    QTimer::singleShot(100,this,[this](){instance.isTouchCtrl = true;});
 }
 
 void PageSelect::pageHide()
 {
-
+    instance.isTouchCtrl = false;
+    instance.setGraphMode(GRAPH_MEASURE);
+    emit signalShowPageNum(PAGE_GRAPH);
 }
 

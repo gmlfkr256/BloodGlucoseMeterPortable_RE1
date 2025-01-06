@@ -52,14 +52,16 @@ void ComponentBattery::update()
 
     if(batData.charging)
     {
+        instance.isBatCharging = true;
         nBatteyTimer15 = 0;
-        nBatteyTimer5 =0;
+        nBatteyTimer5 = 0;
 
         bIsBatteryAlert15 = false;
         bIsBatteryAlert5 = false;
     }
     else
     {
+        instance.isBatCharging = false;
         if(nBatterySize <= 5)
         {
             nBatteyTimer15 = 0;

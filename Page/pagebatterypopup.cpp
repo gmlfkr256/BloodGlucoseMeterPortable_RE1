@@ -22,6 +22,8 @@ void PageBatteryPopup::init()
     customButtonOK = new CustomButtonOK(this);
     customButtonOK->setLongWidth(true);
 
+    timerPopup = new QTimer(this);
+    connect(timerPopup,&QTimer::timeout,this,&PageBatteryPopup::updateTimer);
     update();
 }
 
@@ -45,20 +47,40 @@ void PageBatteryPopup::update()
     }
 }
 
+void PageBatteryPopup::updateTimer()
+{
+    if(instance.isBatZero && !instance.isBatCharging)
+        nBatterySleepCount++;
+    else
+        nBatterySleepCount = 0;
+
+#if DEVICE
+    if(nBatterySleepCount>=5)
+        instance.guiApi.glucoseActPowerDown();
+#endif
+}
+
 void PageBatteryPopup::pageShow()
 {
+    nBatterySleepCount = 0;
+    if(instance.isBatZero)
+        timerPopup->start(1000);
+
     update();
 }
 
 void PageBatteryPopup::pageHide()
 {
+    if(instance.isBatCharging && timerPopup->isActive())
+        timerPopup->stop();
 
+    emit signalShowPageNum(instance.currentPage);
 }
 
 void PageBatteryPopup::mousePressEvent(QMouseEvent *ev)
 {
     if(instance.touchCheck(customButtonOK->geometry(),ev))
     {
-        emit signalShowPageNum(instance.currentPage);
+        pageHide();
     }
 }

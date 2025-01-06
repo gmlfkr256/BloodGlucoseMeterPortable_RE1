@@ -308,8 +308,12 @@ void PageGarph::paintEvent(QPaintEvent *ev)
 
 void PageGarph::mousePressEvent(QMouseEvent *ev)
 {
+    if(!instance.isTouchCtrl)
+        return;
+
     if(instance.touchCheck(customButtonCancel->geometry(),ev))
     {
+        instance.isTouchCtrl = false;
 #if DEVICE
         instance.sysProcAct.act = GAPI_ACT_STOP;
         instance.guiApi.glucoseSysProcAct(&instance.sysProcAct);
@@ -400,10 +404,14 @@ void PageGarph::pageShow()
     instance.sysProcMonInfo.hour = dateTimeLocal.time().hour();
     instance.sysProcMonInfo.min = dateTimeLocal.time().minute();
 #endif
+
+    QTimer::singleShot(100,this,[this](){instance.isTouchCtrl = true;});
 }
 
 void PageGarph::pageHide()
 {
+    instance.isTouchCtrl = false;
+
     if(bIsProcessSuccess)
     {
 #if DEVICE
