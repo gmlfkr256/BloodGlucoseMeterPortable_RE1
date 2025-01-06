@@ -31,6 +31,9 @@ void PageCaliConfirm::update()
 
 void PageCaliConfirm::mousePressEvent(QMouseEvent *ev)
 {
+    if(!instance.isTouchCtrl)
+        return;
+
     if(instance.touchCheck(customButtonMeasure->geometry(),ev))
     {
         if(instance.getCaliIndexCompleteCheck(instance.getCaliSelectIndex()))
@@ -39,8 +42,7 @@ void PageCaliConfirm::mousePressEvent(QMouseEvent *ev)
         }
         else
         {
-            instance.setGraphMode(GRAPH_CALI);
-            emit signalShowPageNum(PAGE_GRAPH);
+            pageHide();
         }
     }
 
@@ -53,11 +55,14 @@ void PageCaliConfirm::mousePressEvent(QMouseEvent *ev)
 void PageCaliConfirm::pageShow()
 {
     update();
+    QTimer::singleShot(instance.nTouchTime,this,[this](){instance.isTouchCtrl = true;});
 }
 
 void PageCaliConfirm::pageHide()
 {
-
+    instance.isTouchCtrl = false;
+    instance.setGraphMode(GRAPH_CALI);
+    emit signalShowPageNum(PAGE_GRAPH);
 }
 
 

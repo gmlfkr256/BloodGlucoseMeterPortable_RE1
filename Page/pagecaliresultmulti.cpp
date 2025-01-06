@@ -113,6 +113,9 @@ void PageCaliResultMulti::update()
 
 void PageCaliResultMulti::mousePressEvent(QMouseEvent *ev)
 {
+    if(!instance.isTouchCtrl)
+        return;
+
     if(customButtonOk->isVisible() && instance.touchCheck(customButtonOk->geometry(),ev))
     {
         qDebug()<<"multi ok";
@@ -122,8 +125,9 @@ void PageCaliResultMulti::mousePressEvent(QMouseEvent *ev)
         }
         else
         {
-            instance.setGraphMode(GRAPH_CALI);
-            emit signalShowPageNum(PAGE_GRAPH);
+            //instance.setGraphMode(GRAPH_CALI);
+            //emit signalShowPageNum(PAGE_GRAPH);
+            pageHide();
         }
     }
 
@@ -136,24 +140,27 @@ void PageCaliResultMulti::mousePressEvent(QMouseEvent *ev)
     if(customButtonMeasure->isVisible() && instance.touchCheck(customButtonMeasure->geometry(),ev))
     {
         qDebug()<<"multi measure";
-        instance.setGraphMode(GRAPH_CALI);
-        emit signalShowPageNum(PAGE_GRAPH);
+        //instance.setGraphMode(GRAPH_CALI);
+        //emit signalShowPageNum(PAGE_GRAPH);
+        pageHide();
     }
 
     if(customButtonMeasureRe->isVisible() && instance.touchCheck(customButtonMeasureRe->geometry(),ev))
     {
         qDebug()<<"multi reMeasure";
-        instance.setGraphMode(GRAPH_CALI);
-        emit signalShowPageNum(PAGE_GRAPH);
+        pageHide();
     }
 }
 
 void PageCaliResultMulti::pageShow()
 {
     update();
+    QTimer::singleShot(100,this,[this](){instance.isTouchCtrl = true;});
 }
 
 void PageCaliResultMulti::pageHide()
 {
-
+    instance.isTouchCtrl = false;
+    instance.setGraphMode(GRAPH_CALI);
+    emit signalShowPageNum(PAGE_GRAPH);
 }

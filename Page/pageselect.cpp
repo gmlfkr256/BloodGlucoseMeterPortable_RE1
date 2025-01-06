@@ -256,7 +256,7 @@ void PageSelect::mousePressEvent(QMouseEvent *ev)
 void PageSelect::pageShow()
 {
     update();
-    QTimer::singleShot(100,this,[this](){instance.isTouchCtrl = true;});
+    QTimer::singleShot(instance.nTouchTime,this,[this](){instance.isTouchCtrl = true;});
 }
 
 void PageSelect::pageHide()

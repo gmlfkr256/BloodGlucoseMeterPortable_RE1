@@ -253,6 +253,7 @@ public:
     bool isBatCharging = false;
 
     bool isTouchCtrl = false;
+    int nTouchTime = 100;
 
     PageNum currentPage = PAGE_MAX;
 
