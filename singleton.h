@@ -65,6 +65,7 @@ typedef enum
     PAGE_UPGRADE_CONFIRM,
     PAGE_DEVICEINFO,
     PAGE_USERINFO,
+    PAGE_BATPOPUP,
 
     PAGE_HISTORY,
     PAGE_REVERSE,
@@ -248,6 +249,9 @@ public:
     int caliIndexCount = 0;
     int nSleepTimeCount = 0;
     bool isComMenuCheck = false;
+    bool isBatZero = true;
+
+    PageNum currentPage = PAGE_MAX;
 
     void init();
 

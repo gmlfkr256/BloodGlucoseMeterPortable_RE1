@@ -12,14 +12,21 @@ void ComponentBattery::init()
     labelBattery->setGeometry(0,0,this->width(),this->height());
 
     batData.charge = 100;
+    batData.charging = false;
+    batDataPrev = batData;
+
+    nBatterySize = batData.charge;
+    nBatterySizePrev = batData.charge;
+
     timerBattery = new QTimer(this);
-    update();
     connect(timerBattery,&QTimer::timeout,this,&ComponentBattery::update);
     timerBattery->start(1000);
+    update();
 }
 
 void ComponentBattery::update()
 {
+    nBatteryCount++;
 
 #if DEVICE
     if(instance.getProcCheck() == true)
@@ -39,17 +46,41 @@ void ComponentBattery::update()
     }
 #else
     batData.charge = QRandomGenerator::global()->bounded(101);
-    batData.charging = 1;
+    batData.charging = (QRandomGenerator::global()->bounded(2) == 1);
+    nBatterySize = batData.charge;
+
+    if(nBatteryCount >= 60)
+    {
+        // 충전 중이면, 배터리 레벨이 증가했을 때만 아이콘 갱신
+        if (batData.charging)
+        {
+            if (nBatterySize > nBatterySizePrev)
+            {
+                isUpdate = true;
+            }
+        }
+        // 충전 중이 아니면, 배터리 레벨이 감소했을 때만 아이콘 갱신
+        else
+        {
+            if (nBatterySize < nBatterySizePrev)
+            {
+                isUpdate = true;
+            }
+        }
+
+        // “60초 전” 배터리값 업데이트
+        nBatterySizePrev = nBatterySize;
+        // 60초가 지난 후 카운터 리셋
+        nBatteryCount = 0;
+    }
     updateUI();
-     //qDebug()<<"batData.charge: "<<batData.charge;
+    //qDebug()<<"batData.charge: "<<batData.charge;
 #endif
 }
 
 void ComponentBattery::updateUI()
 {
     QString pngPath;
-
-    nBatterySize = batData.charge;
 
     pngPath = "/nBattery";
 
@@ -71,12 +102,16 @@ void ComponentBattery::updateUI()
     }
     else
     {
+        /*
         listBatterySize<<nBatterySize;
+
 
         if(listBatterySize.size()>=12)
         {
+
             int sum = std::accumulate(listBatterySize.begin(),listBatterySize.end(),0);
             int average = static_cast<int>(sum/listBatterySize.size());
+
 
             qDebug()<<"average: "<<average;
             if(average>=90)
@@ -92,6 +127,23 @@ void ComponentBattery::updateUI()
 
             listBatterySize.clear();
             pngPathPrev = pngPath;
+
+        }*/
+        if(isUpdate)
+        {
+            if(nBatterySize>=90)
+                pngPath += "100";
+            else if(nBatterySize>=60)
+                pngPath += "75";
+            else if(nBatterySize>=30)
+                pngPath += "50";
+            else if(nBatterySize>=10)
+                pngPath += "15";
+            else
+                pngPath += "5";
+
+            pngPathPrev = pngPath;
+            isUpdate = false;
         }
         else
         {

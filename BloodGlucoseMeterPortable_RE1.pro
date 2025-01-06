@@ -39,6 +39,7 @@ SOURCES += \
     Component/customcomponent.cpp \
     Loadfont.cpp \
     Page/page.cpp \
+    Page/pagebatterypopup.cpp \
     Page/pagebooting.cpp \
     Page/pagecalicheck.cpp \
     Page/pagecaliconfirm.cpp \
@@ -97,6 +98,7 @@ HEADERS += \
     GlobalMain.h \
     Loadfont.h \
     Page/page.h \
+    Page/pagebatterypopup.h \
     Page/pagebooting.h \
     Page/pagecalicheck.h \
     Page/pagecaliconfirm.h \

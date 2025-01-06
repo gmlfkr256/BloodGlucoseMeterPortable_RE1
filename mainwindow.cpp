@@ -118,6 +118,9 @@ void MainWindow::init()
     pageUserInfo = new PageUserInfo(this);
     stackedWidget->addWidget(pageUserInfo);
 
+    pageBatteryPopup = new PageBatteryPopup(this);
+    stackedWidget->addWidget(pageBatteryPopup);
+
     comBat = new ComponentBattery(stackedWidget);
     comBle = new ComponentBluetooth(stackedWidget);
     comClock = new ComponentClock(stackedWidget);
@@ -155,6 +158,7 @@ void MainWindow::init()
         {PAGE_UPGRADE_CONFIRM, "PageUpgradeConfirm"},
         {PAGE_DEVICEINFO, "PageDeviceInfo"},
         {PAGE_USERINFO, "PageUserInfo"},
+        {PAGE_BATPOPUP, "PageBatteryPopup"},
 
         {PAGE_HISTORY, "PageHistory"},
         {PAGE_REVERSE, "PageReverse"},
@@ -207,6 +211,7 @@ void MainWindow::initConnect()
     connect(pageUpgradeConfirm,&PageUpgradeConfirm::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageDeviceInfo,&PageDeviceInfo::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageUserInfo,&PageUserInfo::signalShowPageNum,this,&MainWindow::setPageByPageNum);
+    connect(pageBatteryPopup,&PageBatteryPopup::signalShowPageNum,this,&MainWindow::setPageByPageNum);
 }
 
 void MainWindow::currentPageChanged(int index)
@@ -231,6 +236,7 @@ void MainWindow::setPageByPageNum(PageNum pageNum)
         Page *page = qobject_cast<Page*>(stackedWidget->currentWidget());
         if(page)
             page->pageShow();
+
     }
     else
     {
@@ -258,6 +264,9 @@ void MainWindow::HideComponents()
 
 QString MainWindow::getPageName(PageNum pageNum)
 {
+    if(pageNum != PAGE_GRAPH || pageNum != PAGE_BATPOPUP)
+        instance.currentPage = pageNum;
+
     if(mapPageNumName.contains(pageNum))
         return mapPageNumName.value(pageNum);
     else

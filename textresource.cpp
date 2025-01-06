@@ -342,6 +342,18 @@ void TextResource::init()
                                             "로그아웃"
                                         });
 
+    //PAGE_BATPOPUP
+    fontData[Lan][PAGE_BATPOPUP].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(42),QFont::Bold));
+    textData[Lan][PAGE_BATPOPUP].insert("labelText",QStringList{
+                                            "배터리 부족",
+                                            "배터리 매우 부족"
+                                        });
+    fontData[Lan][PAGE_BATPOPUP].insert("labelTextSub",QFont(instance.fontSuit,instance.pixelToPoint(36)));
+    textData[Lan][PAGE_BATPOPUP].insert("labelTextSub",QStringList{
+                                            "충전기를 연결하세요",
+                                            "시스템을 종료합니다"
+                                        });
+
     //====================================================================================================================================
     //EN
     Lan = EN;
@@ -681,6 +693,18 @@ void TextResource::init()
                                             "Change password",
                                             "Delete user data",
                                             "Log out"
+                                        });
+
+    //PAGE_BATPOPUP
+    fontData[Lan][PAGE_BATPOPUP].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(42),QFont::Bold));
+    textData[Lan][PAGE_BATPOPUP].insert("labelText",QStringList{
+                                            "Low Battery",
+                                            "Please connect it to the charger"
+                                        });
+    fontData[Lan][PAGE_BATPOPUP].insert("labelTextSub",QFont(instance.fontSuit,instance.pixelToPoint(36)));
+    textData[Lan][PAGE_BATPOPUP].insert("labelTextSub",QStringList{
+                                            "Battery very low",
+                                            "The system is shutting down"
                                         });
 
     //=====================================================================================================================================

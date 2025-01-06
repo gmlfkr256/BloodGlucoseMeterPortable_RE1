@@ -14,6 +14,9 @@ private:
     QTimer *timerBattery;
     bool bIsBatteryFirstCheck = true;
     int nBatterySize = 0;
+    int nBatterySizePrev = 0;
+    int nBatteryCount = 0;
+    bool isUpdate = false;
 
     gapiBatData_t batData;
     gapiBatData_t batDataPrev;

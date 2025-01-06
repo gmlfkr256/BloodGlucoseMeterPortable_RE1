@@ -130,5 +130,7 @@
         <file>Image/Default/Public/ImageSleep/circleOFF.png</file>
         <file>Image/Default/Public/ImageSleep/circleON.png</file>
         <file>Image/Default/Public/ImageUserInfo/arrow.png</file>
+        <file>Image/Default/Public/ImageBatteryPopup/battery0.png</file>
+        <file>Image/Default/Public/ImageBatteryPopup/battery15.png</file>
     </qresource>
 </RCC>
