@@ -51,7 +51,6 @@ void ComponentBattery::update()
 
     if(nBatteryCount >= 60)
     {
-        // 충전 중이면, 배터리 레벨이 증가했을 때만 아이콘 갱신
         if (batData.charging)
         {
             if (nBatterySize > nBatterySizePrev)
@@ -59,7 +58,6 @@ void ComponentBattery::update()
                 isUpdate = true;
             }
         }
-        // 충전 중이 아니면, 배터리 레벨이 감소했을 때만 아이콘 갱신
         else
         {
             if (nBatterySize < nBatterySizePrev)
@@ -68,14 +66,11 @@ void ComponentBattery::update()
             }
         }
 
-        // “60초 전” 배터리값 업데이트
         nBatterySizePrev = nBatterySize;
-        // 60초가 지난 후 카운터 리셋
         nBatteryCount = 0;
     }
-    updateUI();
-    //qDebug()<<"batData.charge: "<<batData.charge;
 #endif
+    updateUI();
 }
 
 void ComponentBattery::updateUI()
