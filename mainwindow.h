@@ -40,6 +40,7 @@
 #include "Page/pageuserinfo.h"
 #include "Page/pagebatterypopup.h"
 #include "Page/pagereverse.h"
+#include "Page/pagetrans.h"
 
 
 class MainWindow : public QMainWindow
@@ -91,6 +92,7 @@ public:
     PageUserInfo *pageUserInfo;
     PageBatteryPopup *pageBatteryPopup;
     PageReverse *pageReverse;
+    PageTrans *pageTrans;
 
     QList<int> listComHiddenPageIndex;
     QMap<PageNum,QString> mapPageNumName;

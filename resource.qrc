@@ -132,5 +132,16 @@
         <file>Image/Default/Public/ImageUserInfo/arrow.png</file>
         <file>Image/Default/Public/ImageBatteryPopup/battery0.png</file>
         <file>Image/Default/Public/ImageBatteryPopup/battery15.png</file>
+        <file>Image/Default/Public/ImageReverse/handLeft.png</file>
+        <file>Image/Default/Public/ImageReverse/handLeftOn.png</file>
+        <file>Image/Default/Public/ImageReverse/handLeftPress.png</file>
+        <file>Image/Default/Public/ImageReverse/handRight.png</file>
+        <file>Image/Default/Public/ImageReverse/handRightOn.png</file>
+        <file>Image/Default/Public/ImageReverse/handRightPress.png</file>
+        <file>Image/Default/Public/ImageTrans/arrowDown.png</file>
+        <file>Image/Default/Public/ImageTrans/arrowTop.png</file>
+        <file>Image/Default/Public/ImageTrans/check.png</file>
+        <file>Image/Default/Public/ImageTrans/gradientDown.png</file>
+        <file>Image/Default/Public/ImageTrans/gradientTop.png</file>
     </qresource>
 </RCC>

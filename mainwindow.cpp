@@ -124,6 +124,9 @@ void MainWindow::init()
     pageReverse = new PageReverse(this);
     stackedWidget->addWidget(pageReverse);
 
+    pageTrans = new PageTrans(this);
+    stackedWidget->addWidget(pageTrans);
+
     comBat = new ComponentBattery(stackedWidget);
     comBle = new ComponentBluetooth(stackedWidget);
     comClock = new ComponentClock(stackedWidget);
@@ -163,9 +166,9 @@ void MainWindow::init()
         {PAGE_USERINFO, "PageUserInfo"},
         {PAGE_BATPOPUP, "PageBatteryPopup"},
         {PAGE_REVERSE, "PageReverse"},
+        {PAGE_TRANS, "PageTrans"},
 
         {PAGE_HISTORY, "PageHistory"},
-        {PAGE_TRANSLATION, "PageTranslation"},
         {PAGE_COLOR, "PageColor"},
 
         {CUSTOM_BUTTON, "CustomButton"},
@@ -185,6 +188,7 @@ void MainWindow::initConnect()
     //com
     connect(comHome,&ComponentHome::singalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(comMenu,&ComponentMenu::signalShowPageNum,this,&MainWindow::setPageByPageNum);
+    connect(comBat,&ComponentBattery::signalShowPageNum,this,&MainWindow::setPageByPageNum);
 
     //page
     connect(pagePassword,&PagePassword::signalShowPageNum,this,&MainWindow::setPageByPageNum);
@@ -216,6 +220,7 @@ void MainWindow::initConnect()
     connect(pageUserInfo,&PageUserInfo::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageBatteryPopup,&PageBatteryPopup::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageReverse,&PageReverse::signalShowPageNum,this,&MainWindow::setPageByPageNum);
+    connect(pageTrans,&PageTrans::signalShowPageNum,this,&MainWindow::setPageByPageNum);
 }
 
 void MainWindow::currentPageChanged(int index)
@@ -233,6 +238,7 @@ void MainWindow::currentPageChanged(int index)
 void MainWindow::setPageByPageNum(PageNum pageNum)
 {
     qDebug() << "set pageName: "<<getPageName(pageNum);
+
     if (stackedWidget && pageNum >= 0 && pageNum < stackedWidget->count())
     {
         stackedWidget->setCurrentIndex(static_cast<int>(pageNum));
@@ -268,7 +274,7 @@ void MainWindow::HideComponents()
 
 QString MainWindow::getPageName(PageNum pageNum)
 {
-    if(pageNum != PAGE_GRAPH || pageNum != PAGE_BATPOPUP)
+    if(pageNum != PAGE_GRAPH && pageNum != PAGE_BATPOPUP)
         instance.currentPage = pageNum;
 
     if(mapPageNumName.contains(pageNum))

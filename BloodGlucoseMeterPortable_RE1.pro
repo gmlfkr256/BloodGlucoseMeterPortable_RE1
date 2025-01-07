@@ -66,6 +66,7 @@ SOURCES += \
     Page/pagesound.cpp \
     Page/pagethreshold.cpp \
     Page/pagethresholdvalue.cpp \
+    Page/pagetrans.cpp \
     Page/pageupgrade.cpp \
     Page/pageupgradeconfirm.cpp \
     Page/pageuserinfo.cpp \
@@ -126,6 +127,7 @@ HEADERS += \
     Page/pagesound.h \
     Page/pagethreshold.h \
     Page/pagethresholdvalue.h \
+    Page/pagetrans.h \
     Page/pageupgrade.h \
     Page/pageupgradeconfirm.h \
     Page/pageuserinfo.h \

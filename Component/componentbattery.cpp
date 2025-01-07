@@ -138,7 +138,7 @@ void ComponentBattery::updateUI()
             else if(average>=30)
                 pngPath += "50";
             else if(average>=10)
-                pngPath += "10";
+                pngPath += "15";
             else
                 pngPath += "5";
 

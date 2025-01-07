@@ -125,7 +125,7 @@ void PageMenu::update()
 
         listPageNum = {
             PAGE_DATETIME,
-            PAGE_TRANSLATION,
+            PAGE_TRANS,
             PAGE_UPGRADE,
             PAGE_DEVICEINFO,
             PAGE_INIT,
