@@ -31,6 +31,7 @@ void ComponentBattery::update()
         //qDebug()<<"batDataPrev.charge: "<<batDataPrev.charge<<", batDataPrev.charging: "<<batDataPrev.charging;
         qDebug()<<"batData.charge: "<<batData.charge<<", batData.Charging: "<<batData.charging;
         nBatterySize = batData.charge;
+        updateUI();
     }
     else
     {
@@ -91,7 +92,10 @@ void ComponentBattery::update()
         }
     }
 
+
+#if DEVICE == false
     updateUI();
+#endif
 }
 
 void ComponentBattery::updateUI()
