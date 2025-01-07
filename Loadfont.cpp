@@ -8,8 +8,8 @@ LoadFont::LoadFont()
 void LoadFont::Load()
 {
     int fontId = QFontDatabase::addApplicationFont(":/Font/Suit/SUIT-Regular.ttf");
-    instance.fontSuit = QFontDatabase::applicationFontFamilies(fontId).at(0);
-
+    //instance.fontSuit = QFontDatabase::applicationFontFamilies(fontId).at(0);
+    qDebug()<<QFontDatabase::applicationFontFamilies(fontId);
     /*
     fontId = QFontDatabase::addApplicationFont(":/Font/JP/NotoSansJP-Regular.ttf");
     instance.fontJP = QFontDatabase::applicationFontFamilies(fontId).at(0);
