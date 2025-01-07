@@ -43,7 +43,7 @@ void PageTrans::init()
 
 void PageTrans::update()
 {
-    labelButton[0]->setStyleSheet("border: solid 3px #eeeeee; border-radius: 15px; padding-left: 30px;");
+    labelButton[0]->setStyleSheet("background-color: white; border: solid 3px #eeeeee; border-radius: 15px; padding-left: 30px;");
     labelButton[1]->setStyleSheet("border: solid 3px #077bdd; border-radius: 15px; padding-left: 30px;");
     labelButton[2]->setStyleSheet("border: solid 3px #eeeeee; border-radius: 15px; padding-left: 30px;");
 
