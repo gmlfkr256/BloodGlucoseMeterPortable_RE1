@@ -121,6 +121,9 @@ void MainWindow::init()
     pageBatteryPopup = new PageBatteryPopup(this);
     stackedWidget->addWidget(pageBatteryPopup);
 
+    pageReverse = new PageReverse(this);
+    stackedWidget->addWidget(pageReverse);
+
     comBat = new ComponentBattery(stackedWidget);
     comBle = new ComponentBluetooth(stackedWidget);
     comClock = new ComponentClock(stackedWidget);
@@ -159,9 +162,9 @@ void MainWindow::init()
         {PAGE_DEVICEINFO, "PageDeviceInfo"},
         {PAGE_USERINFO, "PageUserInfo"},
         {PAGE_BATPOPUP, "PageBatteryPopup"},
+        {PAGE_REVERSE, "PageReverse"},
 
         {PAGE_HISTORY, "PageHistory"},
-        {PAGE_REVERSE, "PageReverse"},
         {PAGE_TRANSLATION, "PageTranslation"},
         {PAGE_COLOR, "PageColor"},
 
@@ -212,6 +215,7 @@ void MainWindow::initConnect()
     connect(pageDeviceInfo,&PageDeviceInfo::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageUserInfo,&PageUserInfo::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageBatteryPopup,&PageBatteryPopup::signalShowPageNum,this,&MainWindow::setPageByPageNum);
+    connect(pageReverse,&PageReverse::signalShowPageNum,this,&MainWindow::setPageByPageNum);
 }
 
 void MainWindow::currentPageChanged(int index)

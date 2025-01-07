@@ -523,7 +523,7 @@ void Singleton::setThresholdValue(ThresholdIndex thresholdIndex, int nValue)
     else
         qDebug()<<"set thresholdvalue fail";
 
-    gapiGlucoseLimit_t glucoseLimit;
+    //gapiGlucoseLimit_t glucoseLimit;
     glucoseLimit.low = thresholdLow;
     glucoseLimit.high = thresholdHigh;
 

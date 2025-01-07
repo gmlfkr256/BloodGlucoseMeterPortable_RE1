@@ -245,6 +245,7 @@ public:
     gapiCaliSetGlucose_t caliSetGlucose;
     gapiHistValue_t histValue;
     gapiSpkData_t spkData;
+    gapiGlucoseLimit_t glucoseLimit;
 
     int caliIndexCount = 0;
     int nSleepTimeCount = 0;

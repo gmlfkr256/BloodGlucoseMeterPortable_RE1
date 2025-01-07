@@ -118,6 +118,13 @@ void PageReverse::mousePressEvent(QMouseEvent *ev)
 
     if(instance.touchCheck(customButtonOK->geometry(),ev))
     {
+        if(bIsReverse)
+            instance.dispData.dir = GAPI_DISP_DIR_REVERSE;
+        else
+            instance.dispData.dir = GAPI_DISP_DIR_NORMAL;
+#if DEVICE
+        instance.guiApi.glucoseSetDispData(&instance.dispData);
+#endif
         pageHide();
     }
 
