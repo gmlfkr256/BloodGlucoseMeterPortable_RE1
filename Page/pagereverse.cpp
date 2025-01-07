@@ -9,15 +9,15 @@ PageReverse::PageReverse(QWidget *parent) : Page(parent)
 void PageReverse::init()
 {
     labelButtonLeft = new QLabel(this);
-    labelButtonLeft->setGeometry(85,103,225,200);
+    labelButtonLeft->setGeometry(75,98,245,215);
     labelTextLeft = new QLabel(this);
-    labelTextLeft->setGeometry(labelButtonLeft->x(),labelButtonLeft->y()+145,225,45);
+    labelTextLeft->setGeometry(labelButtonLeft->x(),labelButtonLeft->y()+150,245,45);
     labelTextLeft->setAlignment(Qt::AlignCenter);
 
     labelButtonRight = new QLabel(this);
-    labelButtonRight->setGeometry(330,103,225,200);
+    labelButtonRight->setGeometry(320,98,245,215);
     labelTextRight = new QLabel(this);
-    labelTextRight->setGeometry(labelButtonRight->x(),labelButtonRight->y()+145,225,45);
+    labelTextRight->setGeometry(labelButtonRight->x(),labelButtonRight->y()+150,245,45);
     labelTextRight->setAlignment(Qt::AlignCenter);
 
     labelText = new QLabel(this);
