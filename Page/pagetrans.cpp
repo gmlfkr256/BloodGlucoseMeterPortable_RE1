@@ -43,9 +43,9 @@ void PageTrans::init()
 
 void PageTrans::update()
 {
-    labelButton[0]->setStyleSheet("background-color: white; border: solid 3px #eeeeee; border-radius: 15px; padding-left: 30px;");
-    labelButton[1]->setStyleSheet("background-color: white; border: solid 3px #077bdd; border-radius: 15px; padding-left: 30px;");
-    labelButton[2]->setStyleSheet("background-color: white; border: solid 3px #eeeeee; border-radius: 15px; padding-left: 30px;");
+    labelButton[0]->setStyleSheet("background-color: white; border-radius: 15px; border: solid 3px #eeeeee; padding-left: 30px;");
+    labelButton[1]->setStyleSheet("background-color: white; border-radius: 15px; border: solid 3px #077bdd; padding-left: 30px;");
+    labelButton[2]->setStyleSheet("background-color: white; border-radius: 15px; border: solid 3px #eeeeee; padding-left: 30px;");
 
     instance.pixLoad(labelArrowTop,false,strDirPath,"/arrowTop.png");
     instance.pixLoad(labelArrowDown,false,strDirPath,"/arrowDown.png");
