@@ -57,10 +57,6 @@ void PageTrans::update()
     labelButton[1]->setStyleSheet("background-color: white; border-radius: 15px; border: 3px solid #077bdd; padding-left: 30px;");
     labelButton[2]->setStyleSheet("background-color: white; border-radius: 15px; border: 3px solid #eeeeee; padding-left: 30px;");
 
-    labelButton[0]->setText("한국어");
-    labelButton[1]->setText("ENG");
-    labelButton[2]->setText("JP");
-
     instance.pixLoad(labelArrowTop,false,strDirPath,"/arrowTop.png");
     instance.pixLoad(labelArrowDown,false,strDirPath,"/arrowDown.png");
 
@@ -103,6 +99,20 @@ void PageTrans::pageHide()
 
 void PageTrans::mousePressEvent(QMouseEvent *ev)
 {
+    if(instance.touchCheck(labelArrowTop->geometry(),ev))
+    {
+        int total = LAN_MAX;
+        selectedIndex = (selectedIndex - 1 + total) % total; // 순환 감소
+        updateButton();
+    }
+
+    if(instance.touchCheck(labelArrowDown->geometry(),ev))
+    {
+        int total = LAN_MAX;
+        selectedIndex = (selectedIndex + 1) % total; // 순환 증가
+        updateButton();
+    }
+
     if(instance.touchCheck(customButtonOK->geometry(),ev))
     {
         pageHide();
