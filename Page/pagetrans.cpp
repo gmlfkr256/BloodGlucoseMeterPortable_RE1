@@ -48,7 +48,7 @@ void PageTrans::fontMapping()
     fontMap[JP] = textResource.getFont(PAGE_TRANS,"fontJP");
     fontMap[SC] = textResource.getFont(PAGE_TRANS,"fontSC");
     fontMap[TC] = textResource.getFont(PAGE_TRANS,"fontTC");
-    fontMap[ES] = textResource.getFont(PAGE_TRANS,"fontES");
+    fontMap[ES] = textResource.getFont(PAGE_TRANS,"fontSuit");
 }
 
 void PageTrans::update()
