@@ -10,7 +10,6 @@ void PageTrans::init()
 {
     labelWindow = new QLabel(this);
     labelWindow->setGeometry(0,73,640,317);
-    labelWindow->setStyleSheet("background-color: gray;");
 
     for(int i=0; i<3; i++)
     {
@@ -43,15 +42,13 @@ void PageTrans::init()
 
 void PageTrans::update()
 {
-    /*
-    labelButton[0]->setStyleSheet("background-color: white; border-radius: 15px; border: solid 3px #eeeeee; padding-left: 30px;");
-    labelButton[1]->setStyleSheet("background-color: white; border-radius: 15px; border: solid 3px #077bdd; padding-left: 30px;");
-    labelButton[2]->setStyleSheet("background-color: white; border-radius: 15px; border: solid 3px #eeeeee; padding-left: 30px;");
-    */
     labelButton[0]->setStyleSheet("background-color: white; border-radius: 15px; border: 3px solid #eeeeee; padding-left: 30px;");
     labelButton[1]->setStyleSheet("background-color: white; border-radius: 15px; border: 3px solid #077bdd; padding-left: 30px;");
     labelButton[2]->setStyleSheet("background-color: white; border-radius: 15px; border: 3px solid #eeeeee; padding-left: 30px;");
 
+    labelButton[0]->setText("한국어");
+    labelButton[1]->setText("ENG");
+    labelButton[2]->setText("JP");
 
     instance.pixLoad(labelArrowTop,false,strDirPath,"/arrowTop.png");
     instance.pixLoad(labelArrowDown,false,strDirPath,"/arrowDown.png");
