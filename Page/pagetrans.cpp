@@ -20,7 +20,7 @@ void PageTrans::init()
 
     labelButton[0]->setGeometry(40,-9,520,105);
     labelButton[1]->setGeometry(40,106,520,105);
-    labelButton[2]->setGeometry(40,294,520,105);
+    labelButton[2]->setGeometry(40,221,520,105);
 
     labelArrowTop = new QLabel(this);
     labelArrowTop->setGeometry(565,83,70,70);
