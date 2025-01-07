@@ -20,8 +20,9 @@ typedef enum
     KR = 0,
     EN,
     JP,
-    CN_GAN,
-    CN_BUN,
+    SC,
+    TC,
+    ES,
     LAN_MAX
 } DeviceLanguage;
 
@@ -228,6 +229,9 @@ public:
     DeviceLanguage deviceLanguage;
     DeviceColor deviceColor;
     QString fontSuit;
+    QString fontJP;
+    QString fontTC;
+    QString fontSC;
 
     int thresholdLow;
     int thresholdHigh;

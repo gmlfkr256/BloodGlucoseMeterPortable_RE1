@@ -27,19 +27,9 @@ void ComponentClock::update()
     QLocale clockLocale = QLocale(QLocale::English,QLocale::UnitedStates);
     QString strLocale = clockLocale.toString(localTime,"MM-dd ddd hh:mm");
 
-    switch (instance.getDeviceLanguage())
-    {
-    case KR:
-    case EN:
-        labelClock->setFont(QFont(instance.fontSuit,instance.pixelToPoint(28),QFont::Medium));
-        break;
-    case JP:
-    case CN_GAN:
-    case CN_BUN:
-        break;
-    case LAN_MAX:
-        break;
-    }
+
+    labelClock->setFont(QFont(instance.fontSuit,instance.pixelToPoint(28),QFont::Bold));
+
 
     labelClock->setText(strLocale);
 

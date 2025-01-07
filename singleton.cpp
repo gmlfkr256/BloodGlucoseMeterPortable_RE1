@@ -5,8 +5,9 @@ const QHash<unsigned int, QPair<QString, DeviceLanguage>> Singleton::hashLanguag
     { static_cast<unsigned int>(DeviceLanguage::KR), { "/KR", DeviceLanguage::KR } },
     { static_cast<unsigned int>(DeviceLanguage::EN), { "/EN", DeviceLanguage::EN } },
     { static_cast<unsigned int>(DeviceLanguage::JP), { "/JP", DeviceLanguage::JP } },
-    { static_cast<unsigned int>(DeviceLanguage::CN_GAN), { "/CN_GAN", DeviceLanguage::CN_GAN } },
-    { static_cast<unsigned int>(DeviceLanguage::CN_BUN), { "/CN_BUN", DeviceLanguage::CN_BUN } }
+    { static_cast<unsigned int>(DeviceLanguage::SC), { "/SC", DeviceLanguage::SC } },
+    { static_cast<unsigned int>(DeviceLanguage::TC), { "/TC", DeviceLanguage::TC } },
+    { static_cast<unsigned int>(DeviceLanguage::ES), { "/ES", DeviceLanguage::ES } },
 };
 
 void Singleton::init()

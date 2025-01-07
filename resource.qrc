@@ -20,16 +20,6 @@
         <file>Image/Default/Public/ImageBooting/Happyzone 01_00017.png</file>
         <file>Image/Default/Public/ImageBooting/Happyzone 01_00018.png</file>
         <file>Image/Default/Public/ImageBooting/Happyzone 01_00019.png</file>
-        <file>Font/SUIT-ttf/LICENSE</file>
-        <file>Font/SUIT-ttf/SUIT-Bold.ttf</file>
-        <file>Font/SUIT-ttf/SUIT-ExtraBold.ttf</file>
-        <file>Font/SUIT-ttf/SUIT-ExtraLight.ttf</file>
-        <file>Font/SUIT-ttf/SUIT-Heavy.ttf</file>
-        <file>Font/SUIT-ttf/SUIT-Light.ttf</file>
-        <file>Font/SUIT-ttf/SUIT-Medium.ttf</file>
-        <file>Font/SUIT-ttf/SUIT-Regular.ttf</file>
-        <file>Font/SUIT-ttf/SUIT-SemiBold.ttf</file>
-        <file>Font/SUIT-ttf/SUIT-Thin.ttf</file>
         <file>Image/Default/Public/ImageComBattery/nBattery100.png</file>
         <file>Image/Default/Public/ImageComBattery/nBattery100_Charge.png</file>
         <file>Image/Default/Public/ImageComBattery/nBattery15.png</file>
@@ -143,5 +133,17 @@
         <file>Image/Default/Public/ImageTrans/check.png</file>
         <file>Image/Default/Public/ImageTrans/gradientDown.png</file>
         <file>Image/Default/Public/ImageTrans/gradientTop.png</file>
+        <file>Font/JP/NotoSansJP-Bold.ttf</file>
+        <file>Font/JP/NotoSansJP-ExtraBold.ttf</file>
+        <file>Font/JP/NotoSansJP-Regular.ttf</file>
+        <file>Font/SC/NotoSansSC-Bold.ttf</file>
+        <file>Font/SC/NotoSansSC-ExtraBold.ttf</file>
+        <file>Font/SC/NotoSansSC-Regular.ttf</file>
+        <file>Font/Suit/SUIT-Bold.ttf</file>
+        <file>Font/Suit/SUIT-ExtraBold.ttf</file>
+        <file>Font/Suit/SUIT-Regular.ttf</file>
+        <file>Font/TC/NotoSansTC-Bold.ttf</file>
+        <file>Font/TC/NotoSansTC-ExtraBold.ttf</file>
+        <file>Font/TC/NotoSansTC-Regular.ttf</file>
     </qresource>
 </RCC>

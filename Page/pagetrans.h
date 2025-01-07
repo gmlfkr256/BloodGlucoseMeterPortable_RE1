@@ -11,6 +11,9 @@ public:
     void mousePressEvent(QMouseEvent *ev) override;
     QString strDirPath = "/ImageTrans";
 
+    int selectedIndex = 0;
+    QMap<int, QFont> fontMap;
+
     QLabel *labelWindow;
     QLabel *labelButton[3];
     QLabel *labelButtonCheck;
@@ -19,6 +22,7 @@ public:
     QLabel *labelButtonGradientTop;
     QLabel *labelButtonGradientDown;
 
+    DeviceLanguage deviceLan = KR;
     CustomButtonOK *customButtonOK;
     CustomButtonCancel *customButtonCancel;
 
@@ -27,6 +31,8 @@ public:
     void pageHide() override;
 private:
     void init();
+    void updateButton();
+    void fontMapping();
 
 signals:
     void signalShowPageNum(PageNum pageNum);

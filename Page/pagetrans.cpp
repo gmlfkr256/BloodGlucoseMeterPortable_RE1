@@ -37,7 +37,18 @@ void PageTrans::init()
     customButtonOK = new CustomButtonOK(this);
     customButtonCancel = new CustomButtonCancel(this);
 
+    fontMapping();
     update();
+}
+
+void PageTrans::fontMapping()
+{
+    fontMap[KR] = textResource.getFont(PAGE_TRANS,"fontSuit");
+    fontMap[EN] = textResource.getFont(PAGE_TRANS,"fontSuit");
+    fontMap[JP] = textResource.getFont(PAGE_TRANS,"fontJP");
+    fontMap[SC] = textResource.getFont(PAGE_TRANS,"fontSC");
+    fontMap[TC] = textResource.getFont(PAGE_TRANS,"fontTC");
+    fontMap[ES] = textResource.getFont(PAGE_TRANS,"fontES");
 }
 
 void PageTrans::update()
@@ -57,6 +68,27 @@ void PageTrans::update()
 
     instance.pixLoad(labelButtonGradientTop,false,strDirPath,"/gradientTop.png");
     instance.pixLoad(labelButtonGradientDown,false,strDirPath,"/gradientDown.png");
+
+    deviceLan = instance.getDeviceLanguage();
+
+    selectedIndex = deviceLan;
+
+    updateButton();
+}
+
+void PageTrans::updateButton()
+{
+    int total = LAN_MAX;
+    int indexPrev = (selectedIndex - 1 + total) % total;
+    int indexNext = (selectedIndex + 1) % total;
+
+    labelButton[0]->setFont(fontMap.value(indexPrev));
+    labelButton[1]->setFont(fontMap.value(selectedIndex));
+    labelButton[2]->setFont(fontMap.value(indexNext));
+
+    labelButton[0]->setText(textResource.getText(PAGE_TRANS,"lang").at(indexPrev));
+    labelButton[1]->setText(textResource.getText(PAGE_TRANS,"lang").at(selectedIndex));
+    labelButton[2]->setText(textResource.getText(PAGE_TRANS,"lang").at(indexNext));
 }
 
 void PageTrans::pageShow()

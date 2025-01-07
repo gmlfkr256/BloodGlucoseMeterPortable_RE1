@@ -157,9 +157,11 @@ void PageSelect::updateStatus()
             break;
         case JP:
             break;
-        case CN_GAN:
+        case SC:
             break;
-        case CN_BUN:
+        case TC:
+            break;
+        case ES:
             break;
         case LAN_MAX:
             break;
