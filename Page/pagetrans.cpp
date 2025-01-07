@@ -33,7 +33,7 @@ void PageTrans::init()
     labelButtonGradientTop = new QLabel(this);
     labelButtonGradientTop->setGeometry(40,73,520,96);
     labelButtonGradientDown = new QLabel(this);
-    labelButtonGradientDown->setGeometry(40,73,520,96);
+    labelButtonGradientDown->setGeometry(40,294,520,96);
 
     customButtonOK = new CustomButtonOK(this);
     customButtonCancel = new CustomButtonCancel(this);
