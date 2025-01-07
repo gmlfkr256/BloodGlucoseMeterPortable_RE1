@@ -10,7 +10,7 @@ void PageTrans::init()
 {
     labelWindow = new QLabel(this);
     labelWindow->setGeometry(0,73,640,317);
-    labelWindow->setStyleSheet("background-color: blue;");
+    labelWindow->setStyleSheet("background-color: gray;");
 
     for(int i=0; i<3; i++)
     {
