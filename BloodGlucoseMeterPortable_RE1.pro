@@ -60,6 +60,7 @@ SOURCES += \
     Page/pagepassword.cpp \
     Page/pagepasswordconfirm.cpp \
     Page/pageresult.cpp \
+    Page/pagereverse.cpp \
     Page/pageselect.cpp \
     Page/pagesleep.cpp \
     Page/pagesound.cpp \
@@ -119,6 +120,7 @@ HEADERS += \
     Page/pagepassword.h \
     Page/pagepasswordconfirm.h \
     Page/pageresult.h \
+    Page/pagereverse.h \
     Page/pageselect.h \
     Page/pagesleep.h \
     Page/pagesound.h \

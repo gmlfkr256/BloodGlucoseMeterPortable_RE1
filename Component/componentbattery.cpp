@@ -12,15 +12,11 @@ void ComponentBattery::init()
     labelBattery->setGeometry(0,0,this->width(),this->height());
 
     batData.charge = 100;
-    batData.charging = false;
-    batDataPrev = batData;
-
-    nBatterySize = batData.charge;
-    nBatterySizePrev = batData.charge;
+    nBatterySize = 100;
 
     timerBattery = new QTimer(this);
     connect(timerBattery,&QTimer::timeout,this,&ComponentBattery::update);
-    timerBattery->start(1000);
+    timerBattery->start(5000);
     update();
 }
 
@@ -35,8 +31,8 @@ void ComponentBattery::update()
     if(instance.guiApi.glucoseGetBatData(&batData) == GAPI_SUCCESS)
     {
         //qDebug()<<"batDataPrev.charge: "<<batDataPrev.charge<<", batDataPrev.charging: "<<batDataPrev.charging;
-        //qDebug()<<"batData.charge: "<<batData.charge<<", batData.Charging: "<<batData.charging;
-        batDataPrev = batData;
+        qDebug()<<"batData.charge: "<<batData.charge<<", batData.Charging: "<<batData.charging;
+        nBatterySize = batData.charge;
         updateUI();
     }
     else
@@ -78,7 +74,7 @@ void ComponentBattery::update()
             nBatteyTimer5 = 0;
         }
 
-        if(nBatteyTimer15 >= 30 && !bIsBatteryAlert15)
+        if(nBatteyTimer15 >= 6 && !bIsBatteryAlert15)
         {
             bIsBatteryAlert15 = true;
 
@@ -89,7 +85,7 @@ void ComponentBattery::update()
             }
         }
 
-        if(nBatteyTimer5 >= 30 && !bIsBatteryAlert5)
+        if(nBatteyTimer5 >= 6 && !bIsBatteryAlert5)
         {
             bIsBatteryAlert5 = true;
 
@@ -98,28 +94,7 @@ void ComponentBattery::update()
         }
     }
 
-    if(nBatteryCount >= 60)
-    {
-        if (batData.charging)
-        {
-            if (nBatterySize > nBatterySizePrev)
-            {
-                bIsUpdate = true;
-            }
-        }
-        else
-        {
-            if (nBatterySize < nBatterySizePrev)
-            {
-                bIsUpdate = true;
-            }
-        }
-
-        nBatterySizePrev = nBatterySize;
-        nBatteryCount = 0;
-    }
-
-    updateUI();
+    //updateUI();
 }
 
 void ComponentBattery::updateUI()
@@ -146,16 +121,13 @@ void ComponentBattery::updateUI()
     }
     else
     {
-        /*
         listBatterySize<<nBatterySize;
 
-
+        qDebug()<<"list:"<<listBatterySize;
         if(listBatterySize.size()>=12)
         {
-
             int sum = std::accumulate(listBatterySize.begin(),listBatterySize.end(),0);
             int average = static_cast<int>(sum/listBatterySize.size());
-
 
             qDebug()<<"average: "<<average;
             if(average>=90)
@@ -171,23 +143,6 @@ void ComponentBattery::updateUI()
 
             listBatterySize.clear();
             pngPathPrev = pngPath;
-
-        }*/
-        if(bIsUpdate)
-        {
-            if(nBatterySize>=90)
-                pngPath += "100";
-            else if(nBatterySize>=60)
-                pngPath += "75";
-            else if(nBatterySize>=30)
-                pngPath += "50";
-            else if(nBatterySize>=10)
-                pngPath += "15";
-            else
-                pngPath += "5";
-
-            pngPathPrev = pngPath;
-            bIsUpdate = false;
         }
         else
         {

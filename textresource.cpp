@@ -354,6 +354,17 @@ void TextResource::init()
                                             "시스템을 종료합니다"
                                         });
 
+    //PAGE_REVERSE
+    fontData[Lan][PAGE_REVERSE].insert("labelTextButton",QFont(instance.fontSuit,instance.pixelToPoint(36)));
+    textData[Lan][PAGE_REVERSE].insert("labelTextButton",QStringList{
+                                           "왼손",
+                                           "오른손"
+                                       });
+    fontData[Lan][PAGE_REVERSE].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36)));
+    textData[Lan][PAGE_REVERSE].insert("labelText",QStringList{
+                                           "화면전환 설정 후 재부팅 됩니다"
+                                       });
+
     //====================================================================================================================================
     //EN
     Lan = EN;
@@ -706,6 +717,18 @@ void TextResource::init()
                                             "Battery very low",
                                             "The system is shutting down"
                                         });
+
+    //PAGE_REVERSE
+    fontData[Lan][PAGE_REVERSE].insert("labelTextButton",QFont(instance.fontSuit,instance.pixelToPoint(36)));
+    textData[Lan][PAGE_REVERSE].insert("labelTextButton",QStringList{
+                                           "Left",
+                                           "Right"
+                                       });
+    fontData[Lan][PAGE_REVERSE].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36)));
+    textData[Lan][PAGE_REVERSE].insert("labelText",QStringList{
+                                           "Reset will be proceeded"
+                                       });
+
 
     //=====================================================================================================================================
     //JP

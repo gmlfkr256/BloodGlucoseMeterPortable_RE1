@@ -14,9 +14,7 @@ private:
     QTimer *timerBattery;
     bool bIsBatteryFirstCheck = true;
     int nBatterySize = 0;
-    int nBatterySizePrev = 0;
     int nBatteryCount = 0;
-    bool bIsUpdate = false;
 
     bool bIsBatteryAlert15 = false;
     bool bIsBatteryAlert5 = false;
@@ -24,7 +22,6 @@ private:
     int nBatteyTimer5 = 0;
 
     gapiBatData_t batData;
-    gapiBatData_t batDataPrev;
 
     QString strDirPath = "/ImageComBattery";
     QString pngPathPrev;
