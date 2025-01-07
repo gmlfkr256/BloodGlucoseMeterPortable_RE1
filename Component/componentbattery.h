@@ -14,7 +14,6 @@ private:
     QTimer *timerBattery;
     bool bIsBatteryFirstCheck = true;
     int nBatterySize = 0;
-    int nBatteryCount = 0;
 
     bool bIsBatteryAlert15 = false;
     bool bIsBatteryAlert5 = false;

@@ -22,8 +22,6 @@ void ComponentBattery::init()
 
 void ComponentBattery::update()
 {
-    nBatteryCount++;
-
 #if DEVICE
     if(instance.getProcCheck() == true)
         return;
