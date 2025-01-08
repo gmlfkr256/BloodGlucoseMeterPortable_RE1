@@ -2329,7 +2329,7 @@ void TextResource::init()
                                       });
 
     //PAGE_INIT
-    fontData[Lan][PAGE_INIT].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(36)));
+    fontData[Lan][PAGE_INIT].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(30)));
     textData[Lan][PAGE_INIT].insert("labelText", QStringList{
                                         "Restablecimiento de fábrica",
                                         "Restablecimiento de Bluetooth",
