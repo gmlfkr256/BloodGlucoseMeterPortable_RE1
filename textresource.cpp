@@ -2348,7 +2348,7 @@ void TextResource::init()
                                             });
 
     //PAGE_THRESHOLD
-    fontData[Lan][PAGE_THRESHOLD].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36)));
+    fontData[Lan][PAGE_THRESHOLD].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(24)));
     textData[Lan][PAGE_THRESHOLD].insert("labelText",QStringList{
                                              "Bajo nivel de azúcar en la sangre",
                                              "Alto nivel de azúcar en la sangre"
