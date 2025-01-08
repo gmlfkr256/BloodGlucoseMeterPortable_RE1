@@ -151,6 +151,7 @@ void TextResource::init()
 
     //PAGE_SELECT
     fontData[Lan][PAGE_SELECT].insert("labelTextStatus",QFont(instance.fontSuit,instance.pixelToPoint(42),QFont::ExtraBold));
+    textData[Lan][PAGE_SELECT].insert("labelTextStatus",QStringList{"기상","조식 전","조식 후","중식 전","중식 후","석식 전","석식 후","취침"});
     fontData[Lan][PAGE_SELECT].insert("labelTextStatusSub",QFont(instance.fontSuit,instance.pixelToPoint(24)));
     textData[Lan][PAGE_SELECT].insert("labelTextStatusSub",QStringList{"측정을 시작해 주세요"});
 
@@ -521,6 +522,9 @@ void TextResource::init()
 
     //PAGE_SELECT
     fontData[Lan][PAGE_SELECT].insert("labelTextStatus", QFont(instance.fontSuit, instance.pixelToPoint(42), QFont::ExtraBold));
+    textData[Lan][PAGE_SELECT].insert("labelTextStatus",QStringList{
+                                        "Wake Up","Before Breakfast","After Breakfast","Before Lunch","After Lunch","Before Dinner","After Dinner","Bed Time"});
+
     fontData[Lan][PAGE_SELECT].insert("labelTextStatusSub", QFont(instance.fontSuit, instance.pixelToPoint(24)));
     textData[Lan][PAGE_SELECT].insert("labelTextStatusSub", QStringList{"Please start the measurement"});
 
@@ -917,6 +921,16 @@ void TextResource::init()
 
     //PAGE_SELECT
     fontData[Lan][PAGE_SELECT].insert("labelTextStatus", QFont(instance.fontSuit, instance.pixelToPoint(42), QFont::ExtraBold));
+    textData[Lan][PAGE_SELECT].insert("labelTextStatus", QStringList{
+                                        "起床",            // Wake Up
+                                        "朝食前",          // Before Breakfast
+                                        "朝食後",          // After Breakfast
+                                        "昼食前",          // Before Lunch
+                                        "昼食後",          // After Lunch
+                                        "夕食前",          // Before Dinner
+                                        "夕食後",          // After Dinner
+                                        "就寝"             // Bed Time
+                                    });
     fontData[Lan][PAGE_SELECT].insert("labelTextStatusSub", QFont(instance.fontSuit, instance.pixelToPoint(24)));
     textData[Lan][PAGE_SELECT].insert("labelTextStatusSub", QStringList{"測定を開始してください"}); // Please start the measurement
 
@@ -1328,6 +1342,16 @@ void TextResource::init()
 
     //PAGE_SELECT
     fontData[Lan][PAGE_SELECT].insert("labelTextStatus", QFont(instance.fontSuit, instance.pixelToPoint(42), QFont::ExtraBold));
+    textData[Lan][PAGE_SELECT].insert("labelTextStatus", QStringList{
+                                        "起床",            // Wake Up
+                                        "早餐前",          // Before Breakfast
+                                        "早餐后",          // After Breakfast
+                                        "午餐前",          // Before Lunch
+                                        "午餐后",          // After Lunch
+                                        "晚餐前",          // Before Dinner
+                                        "晚餐后",          // After Dinner
+                                        "就寝"             // Bed Time
+                                    });
     fontData[Lan][PAGE_SELECT].insert("labelTextStatusSub", QFont(instance.fontSuit, instance.pixelToPoint(24)));
     textData[Lan][PAGE_SELECT].insert("labelTextStatusSub", QStringList{"请开始测量"}); // Please start the measurement
 
@@ -1739,6 +1763,16 @@ void TextResource::init()
 
     //PAGE_SELECT
     fontData[Lan][PAGE_SELECT].insert("labelTextStatus", QFont(instance.fontSuit, instance.pixelToPoint(42), QFont::ExtraBold));
+    textData[Lan][PAGE_SELECT].insert("labelTextStatus", QStringList{
+                                        "起床",           // Wake Up
+                                        "早餐前",         // Before Breakfast
+                                        "早餐後",         // After Breakfast
+                                        "午餐前",         // Before Lunch
+                                        "午餐後",         // After Lunch
+                                        "晚餐前",         // Before Dinner
+                                        "晚餐後",         // After Dinner
+                                        "就寢"           // Bed Time
+                                    });
     fontData[Lan][PAGE_SELECT].insert("labelTextStatusSub", QFont(instance.fontSuit, instance.pixelToPoint(24)));
     textData[Lan][PAGE_SELECT].insert("labelTextStatusSub", QStringList{"請開始測量"}); // Please start the measurement
 
@@ -2146,6 +2180,12 @@ void TextResource::init()
 
     //PAGE_SELECT
     fontData[Lan][PAGE_SELECT].insert("labelTextStatus", QFont(instance.fontSuit, instance.pixelToPoint(42), QFont::ExtraBold));
+    textData[Lan][PAGE_SELECT].insert("labelTextStatus",QStringList{
+                                        "Despertar", "Antes del desayuno", "Después del desayuno",
+                                        "Antes del almuerzo", "Después del almuerzo",
+                                        "Antes de la cena", "Después de la cena", "Hora de dormir"
+                                    });
+    //약어
     fontData[Lan][PAGE_SELECT].insert("labelTextStatusSub", QFont(instance.fontSuit, instance.pixelToPoint(24)));
     textData[Lan][PAGE_SELECT].insert("labelTextStatusSub", QStringList{"Por favor inicie la medición"});
 
