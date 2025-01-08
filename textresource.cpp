@@ -2348,13 +2348,13 @@ void TextResource::init()
                                             });
 
     //PAGE_THRESHOLD
-    fontData[Lan][PAGE_THRESHOLD].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(20)));
-    textData[Lan][PAGE_THRESHOLD].insert("labelText",QStringList{
-                                             "Bajo nivel de azúcar en la sangre",
-                                             "Alto nivel de azúcar en la sangre"
-                                         });
-    fontData[Lan][PAGE_THRESHOLD].insert("labelButton",QFont(instance.fontSuit,instance.pixelToPoint(22)));
-    textData[Lan][PAGE_THRESHOLD].insert("labelButton",QStringList{"Establecer"});
+    fontData[Lan][PAGE_THRESHOLD].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(36)));
+    textData[Lan][PAGE_THRESHOLD].insert("labelText", QStringList{
+                                                 "Azúcar baja",
+                                                 "Azúcar alta"
+                                             });
+    fontData[Lan][PAGE_THRESHOLD].insert("labelButton", QFont(instance.fontSuit, instance.pixelToPoint(22)));
+    textData[Lan][PAGE_THRESHOLD].insert("labelButton", QStringList{"Fijar"});
 
     fontData[Lan][PAGE_THRESHOLD].insert("labelValue",QFont(instance.fontSuit,instance.pixelToPoint(48),QFont::Bold));
 
