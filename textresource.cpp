@@ -564,7 +564,7 @@ void TextResource::init()
                                         "Switch",
                                         "Date",
                                         "Color\nMode",
-                                        "Lannguage",
+                                        "Language",
                                         "Upgrade",
                                         "Device\nInfo",
                                         "Reset",
