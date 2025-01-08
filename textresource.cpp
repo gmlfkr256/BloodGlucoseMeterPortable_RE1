@@ -2379,7 +2379,7 @@ void TextResource::init()
     fontData[Lan][PAGE_UPGRADE].insert("labelTextVersion",QFont(instance.fontSuit,instance.pixelToPoint(55)));
 
     //PAGE_UPGRADE_CONFIRM
-    fontData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(42),QFont::Bold));
+    fontData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(32),QFont::Bold));
     textData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText",QStringList{
                                                    "1. Conecte el dispositivo a la PC\n"
                                                    "2. Copie el archivo bin en el dispositivo\n"
