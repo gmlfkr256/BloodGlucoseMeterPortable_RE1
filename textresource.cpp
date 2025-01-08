@@ -2133,6 +2133,13 @@ void TextResource::init()
                                         "Antes del\nalmuerzo", "Después del\nalmuerzo",
                                         "Antes de la\ncena", "Después de la\ncena", "Hora de\ndormir"
                                     });
+    //약어
+    /*
+    textData[Lan][PAGE_HOME].insert("labelTextStatus", QStringList{
+        "Despertar", "A. desayuno", "D. desayuno",
+        "A. almuerzo", "D. almuerzo",
+        "A. cena", "D. cena", "Hora de dormir"});
+        */
 
 
     fontData[Lan][PAGE_HOME].insert("labelButtonText",QFont(instance.fontSuit,instance.pixelToPoint(62),QFont::ExtraBold));
