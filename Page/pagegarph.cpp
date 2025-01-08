@@ -67,7 +67,7 @@ void PageGarph::update()
 
     labelProgressText->setFont(textResource.getFont(PAGE_GRAPH,"labelProgressText"));
     labelProgressText->setStyleSheet("color:#808080;");
-    labelProgressText->setGeometry(99,43,200,45);
+    labelProgressText->setGeometry(99,43,250,45);
     labelProgressText->setText(textResource.getText(PAGE_GRAPH,"labelProgressText").at(0));
 
     labelProgressValue->setFont(textResource.getFont(PAGE_GRAPH,"labelProgressValue"));
@@ -149,19 +149,19 @@ void PageGarph::updatePainter()
     {
         labelProgressValue->setGeometry(20,20,36,75);
         labelProgressPercent->setGeometry(56,43,38,45);
-        labelProgressText->setGeometry(99,43,178,45);
+        labelProgressText->setGeometry(99,43,250,45);
     }
     else if(nProgressValue < 100)
     {
         labelProgressValue->setGeometry(20,20,75,75);
         labelProgressPercent->setGeometry(95,43,38,45);
-        labelProgressText->setGeometry(138,43,178,45);
+        labelProgressText->setGeometry(138,43,250,45);
     }
     else
     {
         labelProgressValue->setGeometry(20,20,103,75);
         labelProgressPercent->setGeometry(123,43,38,45);
-        labelProgressText->setGeometry(166,43,178,45);
+        labelProgressText->setGeometry(166,43,250,45);
     }
 
     if(nProgressValue <= 100)
