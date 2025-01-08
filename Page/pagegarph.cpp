@@ -405,6 +405,7 @@ void PageGarph::pageShow()
     instance.sysProcMonInfo.min = dateTimeLocal.time().minute();
 #endif
 
+    update();
     QTimer::singleShot(instance.nTouchTime,this,[this](){instance.isTouchCtrl = true;});
 }
 
