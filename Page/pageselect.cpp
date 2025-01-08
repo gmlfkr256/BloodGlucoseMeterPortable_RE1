@@ -114,7 +114,7 @@ void PageSelect::updateStatus()
         pngPath = "/"+QString::number(nTimeStatus)+".png";
         instance.pixLoad(labelImageTime,false,strDirPath,pngPath);
 
-        labelTextStatus->setText(textResource.getText(PAGE_HOME,"labelTextStatus").at(nTimeStatus));
+        labelTextStatus->setText(textResource.getText(PAGE_SELECT,"labelTextStatus").at(nTimeStatus));
 
         labelBgCircle->show();
         labelImageTime->show();
@@ -123,7 +123,7 @@ void PageSelect::updateStatus()
     }
     else
     {
-        labelTextStatusValue->setText(textResource.getText(PAGE_HOME,"labelTextStatus").at(nTimeStatus));
+        labelTextStatusValue->setText(textResource.getText(PAGE_SELECT,"labelTextStatus").at(nTimeStatus));
 
         int glucoseValue = instance.histInfo.val[nTimeStatus].value;
         labelTextGlucoseValue->setText(QString::number(glucoseValue));
