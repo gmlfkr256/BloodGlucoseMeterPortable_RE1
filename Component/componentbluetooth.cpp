@@ -11,6 +11,7 @@ void ComponentBluetooth::init()
     labelBluetoothButton = new QLabel(this);
     labelBluetoothButton->setGeometry(9,17,36,36);
     bleAct.act = GAPI_BLE_ACT_DISABLE;
+    bleStat.stat = GAPI_BLE_STAT_WHITE;
     update();
 }
 
