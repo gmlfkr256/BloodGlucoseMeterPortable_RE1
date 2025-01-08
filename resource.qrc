@@ -144,5 +144,7 @@
         <file>Font/TC/NotoSansTC-Bold.ttf</file>
         <file>Font/TC/NotoSansTC-ExtraBold.ttf</file>
         <file>Font/TC/NotoSansTC-Regular.ttf</file>
+        <file>Image/Default/Public/ImageMenu/menuButtonBg.png</file>
+        <file>Image/Default/Public/ImageMenu/menuButtonInit.png</file>
     </qresource>
 </RCC>
