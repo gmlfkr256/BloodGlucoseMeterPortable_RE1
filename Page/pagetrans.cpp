@@ -113,14 +113,14 @@ void PageTrans::mousePressEvent(QMouseEvent *ev)
         updateButton();
     }
 
-    if(instance.touchCheck(labelButton[0]->geometry(),ev))
+    if(instance.touchCheck(labelButtonGradientTop->geometry(),ev))
     {
         int total = LAN_MAX;
         selectedIndex = (selectedIndex - 1 + total) % total; // 순환 감소
         updateButton();
     }
 
-    if(instance.touchCheck(labelButton[2]->geometry(),ev))
+    if(instance.touchCheck(labelButtonGradientDown->geometry(),ev))
     {
         int total = LAN_MAX;
         selectedIndex = (selectedIndex + 1) % total; // 순환 증가
