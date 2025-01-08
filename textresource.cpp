@@ -2185,7 +2185,7 @@ void TextResource::init()
                                         "Antes del almuerzo", "Después del almuerzo",
                                         "Antes de la cena", "Después de la cena", "Hora de dormir"
                                     });
-    //약어
+
     fontData[Lan][PAGE_SELECT].insert("labelTextStatusSub", QFont(instance.fontSuit, instance.pixelToPoint(24)));
     textData[Lan][PAGE_SELECT].insert("labelTextStatusSub", QStringList{"Por favor inicie la medición"});
 
@@ -2264,7 +2264,7 @@ void TextResource::init()
                                                 });
 
     //PAGE_CALI_SELECT
-    fontData[Lan][PAGE_CALI_SELECT].insert("labelSelectText", QFont(instance.fontSuit, instance.pixelToPoint(20), QFont::Bold));
+    fontData[Lan][PAGE_CALI_SELECT].insert("labelSelectText", QFont(instance.fontSuit, instance.pixelToPoint(18), QFont::Bold));
     textData[Lan][PAGE_CALI_SELECT].insert("labelSelectText", QStringList{
                                                "En ayunas", "Después de comer"
                                            });
