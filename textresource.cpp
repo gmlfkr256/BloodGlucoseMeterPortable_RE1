@@ -977,8 +977,8 @@ void TextResource::init()
                                         "日付",          // Date
                                         "カラーモード",  // Color Mode
                                         "言語",          // Language
-                                        "アップグレード", // Upgrade
-                                        "デバイス情報",  // Device Info
+                                        "アップ\nグレード", // Upgrade
+                                        "デバイス\n情報",  // Device Info
                                         "リセット",      // Reset
                                         "ユーザー"       // User
                                     });
