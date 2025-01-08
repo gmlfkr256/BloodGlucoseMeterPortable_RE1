@@ -2337,15 +2337,35 @@ void TextResource::init()
                                     });
 
     //PAGE_INIT_CONFIRM
-    fontData[Lan][PAGE_INIT_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(36), QFont::Bold));
+    fontData[Lan][PAGE_INIT_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(30), QFont::Bold));
     textData[Lan][PAGE_INIT_CONFIRM].insert("labelText", QStringList{
-                                                "Toda la información del sistema\nse restablecerá.\n¿Desea proceder\ncon el restablecimiento de fábrica?",
-                                                "Después de la inicialización del sistema,\nel sistema se reiniciará",
-                                                "La información del usuario de Bluetooth\nse inicializará.\nLa conexión con el\nsmartphone se desconectará.\n¿Desea restablecer\nBluetooth?",
-                                                "La información del usuario de Bluetooth\nha sido restablecida",
-                                                "La corrección de azúcar\nse restablecerá\n¿Desea restablecer\nla corrección de azúcar?",
-                                                "La corrección de azúcar\nha sido restablecida"
-                                            });
+        "Toda la información del sistema\n"
+        "se restablecerá.\n\n"
+        "¿Desea proceder con el\n"
+        "restablecimiento de fábrica?",
+
+        "Después de la inicialización\n"
+        "del sistema,\n"
+        "el sistema se reiniciará.",
+
+        "La información del usuario de\n"
+        "Bluetooth se inicializará.\n\n"
+        "La conexión con el\n"
+        "smartphone se desconectará.\n\n"
+        "¿Desea restablecer Bluetooth?",
+
+        "La información del usuario de\n"
+        "Bluetooth ha sido restablecida.",
+
+        "La corrección de azúcar\n"
+        "se restablecerá.\n\n"
+        "¿Desea restablecer la\n"
+        "corrección de azúcar?",
+
+        "La corrección de azúcar\n"
+        "ha sido restablecida."
+    });
+
 
     //PAGE_THRESHOLD
     fontData[Lan][PAGE_THRESHOLD].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(36)));
