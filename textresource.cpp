@@ -2127,7 +2127,7 @@ void TextResource::init()
                                                     "CONTRASEÑA_STR_MAX"                                   // PASSWORD_STR_MAX
                                                 });
     //PAGE_HOME
-    fontData[Lan][PAGE_HOME].insert("labelTextStatus",QFont(instance.fontSuit,instance.pixelToPoint(20),QFont::Bold));
+    fontData[Lan][PAGE_HOME].insert("labelTextStatus",QFont(instance.fontSuit,instance.pixelToPoint(18),QFont::Bold));
     textData[Lan][PAGE_HOME].insert("labelTextStatus",QStringList{
                                         "Despertar\n", "Antes del\ndesayuno", "Después del\ndesayuno",
                                         "Antes del\nalmuerzo", "Después del\nalmuerzo",
