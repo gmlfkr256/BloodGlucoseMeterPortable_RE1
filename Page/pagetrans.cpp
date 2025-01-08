@@ -53,6 +53,9 @@ void PageTrans::fontMapping()
 
 void PageTrans::update()
 {
+    customButtonOK->update();
+    customButtonCancel->update();
+
     labelButton[0]->setStyleSheet("background-color: white; border-radius: 15px; border: 3px solid #eeeeee; padding-left: 30px;");
     labelButton[1]->setStyleSheet("background-color: white; border-radius: 15px; border: 3px solid #077bdd; padding-left: 30px;");
     labelButton[2]->setStyleSheet("background-color: white; border-radius: 15px; border: 3px solid #eeeeee; padding-left: 30px;");
