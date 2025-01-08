@@ -26,7 +26,7 @@ void ComponentBluetooth::update()
 #else
     resultBleAct = GAPI_SUCCESS;
     resultBleStat = GAPI_SUCCESS;
-    bleAct.act = GAPI_BLE_ACT_DISABLE;
+    //bleAct.act = GAPI_BLE_ACT_DISABLE;
 #endif
 
     if(resultBleAct !=GAPI_FAIL)
