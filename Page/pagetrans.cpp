@@ -115,6 +115,7 @@ void PageTrans::mousePressEvent(QMouseEvent *ev)
 
     if(instance.touchCheck(customButtonOK->geometry(),ev))
     {
+        qDebug()<<"selectedIndex: "<<selectedIndex;
         instance.setDeviceLanguage(selectedIndex);
         pageHide();
     }
