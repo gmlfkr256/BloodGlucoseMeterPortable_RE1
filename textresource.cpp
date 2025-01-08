@@ -554,7 +554,7 @@ void TextResource::init()
     textData[Lan][PAGE_SELECT].insert("labelTextIcon",QStringList{"Normal","Low","High","Low","High"});
 
     //PAGE_MENU
-    fontData[Lan][PAGE_MENU].insert("labelButtonText",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
+    fontData[Lan][PAGE_MENU].insert("labelButtonText",QFont(instance.fontSuit,instance.pixelToPoint(25),QFont::Bold));
     textData[Lan][PAGE_MENU].insert("labelButtonText", QStringList{
                                         "Calib\nration",
                                         "Range",
@@ -966,7 +966,7 @@ void TextResource::init()
                                       });
 
     //PAGE_MENU
-    fontData[Lan][PAGE_MENU].insert("labelButtonText", QFont(instance.fontSuit, instance.pixelToPoint(30), QFont::Bold));
+    fontData[Lan][PAGE_MENU].insert("labelButtonText", QFont(instance.fontSuit, instance.pixelToPoint(25), QFont::Bold));
     textData[Lan][PAGE_MENU].insert("labelButtonText", QStringList{
                                         "補正",          // Calibration
                                         "範囲",          // Range
@@ -2215,7 +2215,7 @@ void TextResource::init()
     textData[Lan][PAGE_SELECT].insert("labelTextIcon",QStringList{"Normal", "Bajo", "Alto", "Bajo", "Alto"});
 
     //PAGE_MENU
-    fontData[Lan][PAGE_MENU].insert("labelButtonText",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
+    fontData[Lan][PAGE_MENU].insert("labelButtonText",QFont(instance.fontSuit,instance.pixelToPoint(25),QFont::Bold));
     textData[Lan][PAGE_MENU].insert("labelButtonText", QStringList{
                                         "Calibra\nción",
                                         "Rango",
