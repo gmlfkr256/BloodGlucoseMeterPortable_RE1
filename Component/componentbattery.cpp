@@ -124,7 +124,7 @@ void ComponentBattery::updateUI()
     {
         listBatterySize<<nBatterySize;
 
-        qDebug()<<"list:"<<listBatterySize;
+        //qDebug()<<"list:"<<listBatterySize;
         if(listBatterySize.size()>=12)
         {
             int sum = std::accumulate(listBatterySize.begin(),listBatterySize.end(),0);
