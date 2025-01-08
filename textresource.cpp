@@ -2123,76 +2123,76 @@ void TextResource::init()
                                                     "Cerrando sesión\nPor favor vuelva a iniciar sesión",  // Logging out Please re-login
                                                     "CONTRASEÑA_STR_MAX"                                   // PASSWORD_STR_MAX
                                                 });
+    //PAGE_HOME
+    fontData[Lan][PAGE_HOME].insert("labelTextStatus",QFont(instance.fontSuit,instance.pixelToPoint(26),QFont::Bold));
+    textData[Lan][PAGE_HOME].insert("labelTextStatus",QStringList{
+                                        "Despertar\n", "Antes del\ndesayuno", "Después del\ndesayuno",
+                                        "Antes del\nalmuerzo", "Después del\nalmuerzo",
+                                        "Antes de la\ncena", "Después de la\ncena", "Hora de\ndormir"});
 
-    //PAGE_PASSWORD
-    fontData[Lan][PAGE_PASSWORD].insert("labelButtonNum", QFont(instance.fontSuit, instance.pixelToPoint(44), QFont::Bold));
+    fontData[Lan][PAGE_HOME].insert("labelButtonText",QFont(instance.fontSuit,instance.pixelToPoint(62),QFont::ExtraBold));
 
-    fontData[Lan][PAGE_PASSWORD].insert("labelTitle", QFont(instance.fontSuit, instance.pixelToPoint(40), QFont::Bold));
-    textData[Lan][PAGE_PASSWORD].insert("labelTitle", QStringList{
-                                            "Por favor inicie sesión",       // Please log in
-                                            "Editar contraseña",             // Edit Password
-                                            "Eliminar usuario",              // Delete User
-                                            "Confirmación de contraseña",    // Password Confirmation
-                                            "Reconfirmación de contraseña",  // Password Re-confirmation
-                                            "CONTRASEÑA_MAX"                 // PASSWORD_MAX
-                                        });
+    //PAGE_SELECT
+    fontData[Lan][PAGE_SELECT].insert("labelTextStatus", QFont(instance.fontSuit, instance.pixelToPoint(42), QFont::ExtraBold));
+    fontData[Lan][PAGE_SELECT].insert("labelTextStatusSub", QFont(instance.fontSuit, instance.pixelToPoint(24)));
+    textData[Lan][PAGE_SELECT].insert("labelTextStatusSub", QStringList{"Por favor inicie la medición"});
 
-    fontData[Lan][PAGE_PASSWORD].insert("labelTitleSub", QFont(instance.fontSuit, instance.pixelToPoint(30)));
-    textData[Lan][PAGE_PASSWORD].insert("labelTitleSub", QStringList{
-                                            "Por favor ingrese su contraseña de 4 dígitos",        // Please enter your 4-digit password
-                                            "Por favor ingrese los 4 dígitos para modificar",      // Please enter the 4 digits to modify
-                                            "Por favor ingrese nuevamente su contraseña de 4 dígitos", // Please enter your 4-digit password again
-                                            "Por favor confirme ingresando 4 dígitos",             // Please confirm by entering 4 digits
-                                            "Por favor vuelva a ingresar los 4 dígitos para verificar", // Please re-enter the 4 digits to verify
-                                            "CONTRASEÑA_MAX"                                       // PASSWORD_MAX
-                                        });
+    fontData[Lan][PAGE_SELECT].insert("labelTextStatusValue",QFont(instance.fontSuit,instance.pixelToPoint(40),QFont::Bold));
+    fontData[Lan][PAGE_SELECT].insert("labelTextGlucoseValue",QFont(instance.fontSuit,instance.pixelToPoint(130),QFont::Bold));
+    fontData[Lan][PAGE_SELECT].insert("labelTextMgdl",QFont(instance.fontSuit,instance.pixelToPoint(34),QFont::Bold));
+    fontData[Lan][PAGE_SELECT].insert("labelTextResult",QFont(instance.fontSuit,instance.pixelToPoint(32)));
+    textData[Lan][PAGE_SELECT].insert("labelTextResult", QStringList{
+                                          "Normal",
+                                          "Precaución",
+                                          "Precaución",
+                                          "Advertencia",
+                                          "Advertencia"
+                                      });
+    textData[Lan][PAGE_SELECT].insert("labelTextResultSub",QStringList{
+                                          "Nivel de azúcar",
+                                          "Azúcar baja en la sangre",
+                                          "Azúcar alta en la sangre",
+                                          "Azúcar baja en la sangre",
+                                          "Azúcar alta en la sangre"
+                                      });
 
-    fontData[Lan][PAGE_PASSWORD].insert("labelButtonOKText", QFont(instance.fontSuit, instance.pixelToPoint(29)));
-    textData[Lan][PAGE_PASSWORD].insert("labelButtonOKText", QStringList{"Aceptar"}); // OK
+    fontData[Lan][PAGE_SELECT].insert("labelTextTime",QFont(instance.fontSuit,instance.pixelToPoint(21),QFont::Bold));
+    textData[Lan][PAGE_SELECT].insert("labelTextTime",QStringList{"Hora"});
 
-    fontData[Lan][PAGE_PASSWORD].insert("labelButtonCancelText", QFont(instance.fontSuit, instance.pixelToPoint(29)));
-    textData[Lan][PAGE_PASSWORD].insert("labelButtonCancelText", QStringList{"Cancelar"}); // Cancel
+    fontData[Lan][PAGE_SELECT].insert("labelTextIcon",QFont(instance.fontSuit,instance.pixelToPoint(23),QFont::Bold));
+    textData[Lan][PAGE_SELECT].insert("labelTextIcon",QStringList{"Normal", "Bajo", "Alto", "Bajo", "Alto"});
 
-    //PAGE_PASSWORD_CONFIRM
-    fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTitle", QFont(instance.fontSuit, instance.pixelToPoint(40), QFont::Bold));
-    textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTitle", QStringList{
-                                                    "Iniciar sesión",                       // Login
-                                                    "Iniciar sesión",                       // Login
-                                                    "Iniciar sesión",                       // Login
-                                                    "Verificación de ID",                   // Id Check
-                                                    "Verificación de ID",                   // Id Check
-                                                    "Verificación de contraseña",           // PW Check
-                                                    "Verificación de contraseña",           // PW Check
-                                                    "Cambio de contraseña",                 // PW Change
-                                                    "Cambio de contraseña",                 // PW Change
-                                                    "Cambio de contraseña",                 // PW Change
-                                                    "Cambio de contraseña",                 // PW Change
-                                                    "Eliminar información",                 // Delete Info
-                                                    "Eliminar información",                 // Delete Info
-                                                    "Eliminar información",                 // Delete Info
-                                                    "Cerrar sesión",                        // Logout
-                                                    "CONTRASEÑA_STR_MAX"                    // PASSWORD_STR_MAX
-                                                });
+    //PAGE_MENU
+    fontData[Lan][PAGE_MENU].insert("labelButtonText",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
+    textData[Lan][PAGE_MENU].insert("labelButtonText", QStringList{
+                                        "Calibra\nción",
+                                        "Rango",
+                                        "Lista",
+                                        "Sonido",
+                                        "Dormir",
+                                        "Cambio",
+                                        "Fecha",
+                                        "Modo de\ncolor",
+                                        "Idioma",
+                                        "Actualizar",
+                                        "Info de\ndispositivo",
+                                        "Restablecer",
+                                        "Usuario"
+                                    });
 
-    fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(36), QFont::Bold));
-    textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText", QStringList{
-                                                    "Inicio de sesión exitoso",                             // Login successful
-                                                    "Inicio de sesión fallido",                             // Login failed
-                                                    "Por favor cambie su contraseña",                       // Please change your password
-                                                    "Por favor ingrese su contraseña\n para verificación",  // Please enter your password for verification
-                                                    "Las contraseñas no coinciden",                         // Passwords do not match
-                                                    "Por favor ingrese nuevamente su contraseña\n para mayor precisión", // Please enter your password again for accuracy
-                                                    "La contraseña ingresada\n no coincide con la \nanterior",           // The entered password does not match the previous password
-                                                    "¿Le gustaría \n cambiar su contraseña?",              // Would you like to change your password?
-                                                    "Por favor ingrese su contraseña\n para verificación", // Please enter your password for verification
-                                                    "Por favor ingrese la nueva contraseña",               // Please enter the new password
-                                                    "Cambio de contraseña completado\nPor favor vuelva a iniciar sesión", // Password change completed Please re-login
-                                                    "¿Desea \n eliminar la información del usuario?",      // Do you want to delete user information?
-                                                    "Eliminar la información del usuario\nrestablecerá la contraseña\ny la configuración", // Deleting user information will reset the password and settings
-                                                    "Información del usuario eliminada\nEl sistema se reiniciará\n para restablecer la configuración", // User information deleted The system will reboot to reset settings
-                                                    "Cerrando sesión\nPor favor vuelva a iniciar sesión",  // Logging out Please re-login
-                                                    "CONTRASEÑA_STR_MAX"                                   // PASSWORD_STR_MAX
-                                                });
+    //PAGE_CALI_CHECK
+    fontData[Lan][PAGE_CALI_CHECK].insert("labelTextCheck",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
+    textData[Lan][PAGE_CALI_CHECK].insert("labelTextCheck",QStringList{
+                                              "Fase de calibración\nPor favor inserte su dedo",
+                                              "Calibración completa\n¿Desea proceder de nuevo?"
+                                          });
+
+    //PAGE_CALI_GAIN_CONFIRM
+    fontData[Lan][PAGE_CALI_GAIN_CONFIRM].insert("labelTextGainConfirm",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
+    textData[Lan][PAGE_CALI_GAIN_CONFIRM].insert("labelTextGainConfirm",QStringList{
+                                                     "Paso de ajuste de sensibilidad LED\nPor favor no mueva su dedo",
+                                                     "El ajuste de sensibilidad LED\nse ha completado"
+                                                 });
 
     //Page_GRAPH
     fontData[Lan][PAGE_GRAPH].insert("labelProgressText", QFont(instance.fontSuit, instance.pixelToPoint(36), QFont::Bold));
