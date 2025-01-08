@@ -109,6 +109,8 @@ void PageResult::setValueUI()
     QString strLabelText = "";
     QString strTextGlucoseValueColor = "";
 
+    QString strTooltip;
+
     if(instance.sysProcMonInfo.err_code != GAPI_PROC_ECODE_NORMAL)
     {
         strBgGlucoseValueColor = "background-color: #f2f2f2;";
@@ -153,8 +155,13 @@ void PageResult::setValueUI()
         else if(nProgressBarWidth > 600)
             nProgressBarWidth = 600;
 
+        //
+        strTooltip = textResource.getText(PAGE_RESULT,"labelProgressBarTooltip").at(nIndexTooltip);
+        QFontMetrics metrics(labelProgressBarTooltip->font());
+        int nTextWidth = metrics.horizontalAdvance(strTooltip)+20;
+        labelProgressBarTooltip->setFixedWidth(nTextWidth);
+        //
         nTooltipX = labelProgressBar->x()+nProgressBarWidth-(labelProgressBarTooltip->width()/2);
-
         if(nTooltipX > labelProgressBarTextEnd->x()-labelProgressBarTooltip->width())
             nTooltipX = labelProgressBarTextEnd->x()-labelProgressBarTooltip->width()-5;
         else if(nTooltipX < labelProgressBarTextStart->x()+labelProgressBarTextStart->width())
@@ -197,30 +204,14 @@ void PageResult::setValueUI()
     labelProgressBar->setStyleSheet(strStyleSheetProgressBar+"border-radius: 15px;");
     strStyleSheetTooltip = instance.getBgColorGlucoseValue(nGlucoseValue) + "color: #ffffff; border-radius: 11px;";
     labelProgressBarTooltip->setStyleSheet(strStyleSheetTooltip);
-    labelProgressBarTooltip->setText(textResource.getText(PAGE_RESULT,"labelProgressBarTooltip").at(nIndexTooltip));
+
+    labelProgressBarTooltip->setText(strTooltip);
+    //labelProgressBarTooltip->setText(textResource.getText(PAGE_RESULT,"labelProgressBarTooltip").at(nIndexTooltip));
     labelProgressBarTooltip->move(nTooltipX,297);
     instance.pixLoad(labelProgressBarTooltipImg,false,strDirPath,strPathPngTooltip);
     labelProgressBarTooltipImg->setGeometry(labelProgressBarTooltip->x()+(labelProgressBarTooltip->width()/2)-3,labelProgressBarTooltip->y()+labelProgressBarTooltip->height(),7,5);
 
-    switch (instance.getDeviceLanguage())
-    {
-    case KR:
-        labelProgressBarTooltip->setFixedWidth(75);
-        break;
-    case EN:
-        break;
-    case JP:
-        break;
-    case SC:
-        break;
-    case TC:
-        break;
-    case ES:
-        labelProgressBarTooltip->setFixedWidth(150);
-        break;
-    default:
-        break;
-    }
+
 }
 
 void PageResult::pageShow()
