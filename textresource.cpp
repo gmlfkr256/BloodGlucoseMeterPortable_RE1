@@ -2136,7 +2136,7 @@ void TextResource::init()
                                         */
     //약어
     textData[Lan][PAGE_HOME].insert("labelTextStatus", QStringList{
-                                        "Despertar", "A. desayuno", "D. desa어yuno",
+                                        "Despertar", "A. desayuno", "D. desayuno",
                                         "A. almuerzo", "D. almuerzo",
                                         "A. cena", "D. cena", "Hora de dormir"});
 
