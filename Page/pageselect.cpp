@@ -64,6 +64,9 @@ void PageSelect::init()
 
 void PageSelect::update()
 {
+    customButtonHome->update();
+    customButtonMeasureStart->update();
+
     QString pngPath;
     QPixmap pixmap;
 

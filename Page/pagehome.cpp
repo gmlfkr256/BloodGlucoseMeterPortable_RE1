@@ -72,6 +72,7 @@ void PageHome::init()
 
 void PageHome::update()
 {
+
     for(int i=0; i<8; i++)
     {
         QString pngPath = "/Bg_";

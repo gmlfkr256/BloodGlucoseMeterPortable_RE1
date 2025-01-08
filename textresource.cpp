@@ -16,6 +16,23 @@ void TextResource::init()
     //KR
     //CUSTOM_BUTTON
     DeviceLanguage Lan = KR;
+
+    //PAGE_TRANS (ALL)
+    fontData[Lan][PAGE_TRANS].insert("fontSuit",QFont(instance.fontSuit,instance.pixelToPoint(36)));
+    fontData[Lan][PAGE_TRANS].insert("fontJP",QFont(instance.fontJP,instance.pixelToPoint(36)));
+    fontData[Lan][PAGE_TRANS].insert("fontSC",QFont(instance.fontSC,instance.pixelToPoint(36)));
+    fontData[Lan][PAGE_TRANS].insert("fontTC",QFont(instance.fontTC,instance.pixelToPoint(36)));
+
+    textData[Lan][PAGE_TRANS].insert("lang",QStringList{
+                                         "한국어",
+                                         "ENGLISH",
+                                         "日本語",
+                                         "繁體中文",
+                                         "简体中文",
+                                         "ESPAÑOL"
+                                     });
+
+
     fontData[Lan][CUSTOM_BUTTON].insert("labelButtonOK",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonOK",QStringList{"확인"});
 
@@ -63,20 +80,6 @@ void TextResource::init()
     fontData[Lan][CUSTOM_COMPONENT_DATE].insert("labelTextSelect",QFont(instance.fontSuit,instance.pixelToPoint(50),QFont::Bold));
     fontData[Lan][CUSTOM_COMPONENT_DATE].insert("labelTextSub",QFont(instance.fontSuit,instance.pixelToPoint(40)));
 
-    //PAGE_TRANS (ALL)
-    fontData[Lan][PAGE_TRANS].insert("fontSuit",QFont(instance.fontSuit,instance.pixelToPoint(36)));
-    fontData[Lan][PAGE_TRANS].insert("fontJP",QFont(instance.fontJP,instance.pixelToPoint(36)));
-    fontData[Lan][PAGE_TRANS].insert("fontSC",QFont(instance.fontSC,instance.pixelToPoint(36)));
-    fontData[Lan][PAGE_TRANS].insert("fontTC",QFont(instance.fontTC,instance.pixelToPoint(36)));
-
-    textData[Lan][PAGE_TRANS].insert("lang",QStringList{
-                                         "한국어",
-                                         "ENGLISH",
-                                         "日本語",
-                                         "繁體中文",
-                                         "简体中文",
-                                         "ESPAÑOL"
-                                     });
 
     //PAGE_PASSWORD
     fontData[Lan][PAGE_PASSWORD].insert("labelButtonNum",QFont(instance.fontSuit,instance.pixelToPoint(44),QFont::Bold));
