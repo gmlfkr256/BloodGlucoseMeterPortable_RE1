@@ -53,9 +53,9 @@ void PageHome::init()
         labelGroups[i].labelTextStatus->setGeometry(listRectTitle.at(i));
         labelGroups[i].labelTextStatus->setAlignment(Qt::AlignLeft | Qt::AlignTop);
         if(i<4)
-            labelGroups[i].labelTextStatus->setStyleSheet("color: #ffffff; padding-left: 10px;");
+            labelGroups[i].labelTextStatus->setStyleSheet("color: #ffffff; padding-left: 10px; padding-right: 10px;");
         else
-            labelGroups[i].labelTextStatus->setStyleSheet("color: #000000; padding-left: 10px;");
+            labelGroups[i].labelTextStatus->setStyleSheet("color: #000000; padding-left: 10px; padding-right: 10px;");
 
         labelGroups[i].labelButtonImage = new QLabel(this);
         labelGroups[i].labelButtonImage->setGeometry(listRectImage.at(i));
