@@ -174,17 +174,12 @@ void PageResult::setValueUI()
                     +"<span style='color: #808080; '>"+textResource.getText(PAGE_RESULT,"indexResultSub").at(0)+"</span>";
             break;
         case EN:
+        case JP:
+        case SC:
+        case TC:
+        case ES:
             strLabelText += "<p style='font-weight:bold; "+strTextGlucoseValueColor+" line-height: 0.5; font-size: 30px;'>"+textResource.getText(PAGE_RESULT,"indexResult").at(nBloodSugarIndex)+"</p>"
                     +"<p style='color: #808080; font-size: 30px;'>"+textResource.getText(PAGE_RESULT,"indexResultSub").at(nBloodSugarIndex)+"</p>";
-            break;
-        case JP:
-            break;
-        case SC:
-            break;
-        case TC:
-            break;
-        case ES:
-            break;
         case LAN_MAX:
             break;
         }

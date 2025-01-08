@@ -156,16 +156,11 @@ void PageSelect::updateStatus()
             nResultSubIndex = 0;
             break;
         case EN:
-            nResultSubIndex = bloodSugarIndex;
-            break;
         case JP:
-            break;
         case SC:
-            break;
         case TC:
-            break;
         case ES:
-            break;
+            nResultSubIndex = bloodSugarIndex;
         case LAN_MAX:
             break;
         }
