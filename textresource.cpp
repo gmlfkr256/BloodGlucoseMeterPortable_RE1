@@ -2217,7 +2217,7 @@ void TextResource::init()
     //PAGE_MENU
     fontData[Lan][PAGE_MENU].insert("labelButtonText",QFont(instance.fontSuit,instance.pixelToPoint(25),QFont::Bold));
     textData[Lan][PAGE_MENU].insert("labelButtonText", QStringList{
-                                        "Calibra\nción",
+                                        "Cali\nbración",
                                         "Rango",
                                         "Lista",
                                         "Sonido",
