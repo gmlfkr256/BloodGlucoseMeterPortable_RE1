@@ -13,6 +13,7 @@ void PageMenu::init()
         labelButton[i] = new QLabel(this);
         labelButtonText[i] = new QLabel(this);
         labelButtonText[i]->setAlignment(Qt::AlignCenter);
+        labelButtonImg[i] = new QLabel(this);
         if(i<3)
         {
             labelButton[i]->setGeometry(81+i*163,91,151,179);
@@ -30,15 +31,23 @@ void PageMenu::init()
                     buttonRect.width(),               // 버튼과 동일한 너비
                     64                                // 고정된 높이
                     );
+
+        buttonRect = labelButton[i]->geometry();
+        labelButtonImg[i]->setGeometry(
+                    buttonRect.x()+25,
+                    buttonRect.y()+10,
+                    100,
+                    100
+                    );
     }
 
     labelArrowLeft = new QLabel(this);
-    labelArrowLeft->setGeometry(10,256,44,44);
+    labelArrowLeft->setGeometry(7,182,55,180);
     labelArrowLeftTouch = new QLabel(this);
     labelArrowLeftTouch->setGeometry(0,73,70,407);
 
     labelArrowRight = new QLabel(this);
-    labelArrowRight->setGeometry(587,256,44,44);
+    labelArrowRight->setGeometry(578,182,55,180);
     labelArrowRightTouch = new QLabel(this);
     labelArrowRightTouch->setGeometry(570,73,70,407);
 
@@ -54,7 +63,7 @@ void PageMenu::init()
     strPathPngDeviceInfo = "/menuButtonDeviceInfo.png";
     strPathPngDebug = "/menuButtonDebug.png";
     strPathPngThreshold = "/menuButtonThreshold.png";
-    strPathPngReset = "/menuButtonReset.png";
+    strPathPngInit = "/menuButtonInit.png";
     strPathPngUser = "/menuButtonUser.png";
 
     update();
@@ -112,7 +121,7 @@ void PageMenu::update()
         strButtonPathPng[1] = strPathPngTranslation;
         strButtonPathPng[2] = strPathPngUpgrade;
         strButtonPathPng[3] = strPathPngDeviceInfo;
-        strButtonPathPng[4] = strPathPngReset;
+        strButtonPathPng[4] = strPathPngInit;
         strButtonPathPng[5] = strPathPngUser;
 
         labelButtonText[0]->setText(textResource.getText(PAGE_MENU,"labelButtonText").at(6));
@@ -137,9 +146,10 @@ void PageMenu::update()
 
     for(int i=0; i<6; i++)
     {
+        instance.pixLoad(labelButton[i],false,strDirPath,"/menuButtonBg.png");
         if(!strButtonPathPng[i].isEmpty())
         {
-            instance.pixLoad(labelButton[i],false,strDirPath,strButtonPathPng[i]);
+            instance.pixLoad(labelButtonImg[i],false,strDirPath,strButtonPathPng[i]);
         }
         else
         {

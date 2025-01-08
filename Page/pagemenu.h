@@ -24,6 +24,7 @@ public:
     QLabel *labelArrowRightTouch;
     QLabel *labelButton[6];
     QLabel *labelButtonText[6];
+    QLabel *labelButtonImg[6];
     QList<PageNum> listPageNum;
     QString strButtonPathPng[6];
 
@@ -41,7 +42,7 @@ public:
     QString strPathPngDeviceInfo;
     QString strPathPngDebug;
     QString strPathPngThreshold;
-    QString strPathPngReset;
+    QString strPathPngInit;
     QString strPathPngUser;
 
     void update() override;
