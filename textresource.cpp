@@ -17,7 +17,7 @@ void TextResource::init()
     //CUSTOM_BUTTON
     DeviceLanguage Lan = KR;
 
-    //PAGE_TRANS (ALL)
+    //PAGE_TRANS
     fontData[Lan][PAGE_TRANS].insert("fontSuit",QFont(instance.fontSuit,instance.pixelToPoint(36)));
     fontData[Lan][PAGE_TRANS].insert("fontJP",QFont(instance.fontJP,instance.pixelToPoint(36)));
     fontData[Lan][PAGE_TRANS].insert("fontSC",QFont(instance.fontSC,instance.pixelToPoint(36)));
@@ -386,6 +386,22 @@ void TextResource::init()
     //====================================================================================================================================
     //EN
     Lan = EN;
+
+    //PAGE_TRANS
+    fontData[Lan][PAGE_TRANS].insert("fontSuit",QFont(instance.fontSuit,instance.pixelToPoint(36)));
+    fontData[Lan][PAGE_TRANS].insert("fontJP",QFont(instance.fontJP,instance.pixelToPoint(36)));
+    fontData[Lan][PAGE_TRANS].insert("fontSC",QFont(instance.fontSC,instance.pixelToPoint(36)));
+    fontData[Lan][PAGE_TRANS].insert("fontTC",QFont(instance.fontTC,instance.pixelToPoint(36)));
+
+    textData[Lan][PAGE_TRANS].insert("lang",QStringList{
+                                         "한국어",
+                                         "ENGLISH",
+                                         "日本語",
+                                         "繁體中文",
+                                         "简体中文",
+                                         "ESPAÑOL"
+                                     });
+
     //CUSTOM_BUTTON
     fontData[Lan][CUSTOM_BUTTON].insert("labelButtonOK",QFont(instance.fontSuit,instance.pixelToPoint(35),QFont::Bold));
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonOK",QStringList{"OK"});
@@ -410,9 +426,6 @@ void TextResource::init()
 
     fontData[Lan][CUSTOM_BUTTON].insert("labelButtonSave",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonSave",QStringList{"Save"});
-
-    fontData[Lan][CUSTOM_BUTTON].insert("labelButtonMeasureRe",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
-    textData[Lan][CUSTOM_BUTTON].insert("labelButtonMeasureRe",QStringList{"ReMeasure"});
 
     fontData[Lan][CUSTOM_BUTTON].insert("labelButtonUpgrade",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonUpgrade",QStringList{"Software Upgrade"});
@@ -447,6 +460,7 @@ void TextResource::init()
     textData[Lan][PAGE_PASSWORD].insert("labelTitleSub", QStringList{
                                             "Please enter your 4-digit password",
                                             "Please enter the 4 digits to modify",
+                                            "Please enter your 4-digit password again",
                                             "Please confirm by entering 4 digits",
                                             "Please re-enter the 4 digits to verify",
                                             "PASSWORD_MAX"
@@ -500,7 +514,8 @@ void TextResource::init()
 
     //PAGE_HOME
     fontData[Lan][PAGE_HOME].insert("labelTextStatus",QFont(instance.fontSuit,instance.pixelToPoint(26),QFont::Bold));
-    textData[Lan][PAGE_HOME].insert("labelTextStatus",QStringList{"Wake\nUp","Before\nBreakfast","After\nBreakfast","Before\nLunch","After\nLunch","Before\nDinner","After\nDinner","Bed\nTime"});
+    textData[Lan][PAGE_HOME].insert("labelTextStatus",QStringList{
+                                        "Wake\nUp","Before\nBreakfast","After\nBreakfast","Before\nLunch","After\nLunch","Before\nDinner","After\nDinner","Bed\nTime"});
 
     fontData[Lan][PAGE_HOME].insert("labelButtonText",QFont(instance.fontSuit,instance.pixelToPoint(62),QFont::ExtraBold));
 
@@ -532,7 +547,7 @@ void TextResource::init()
     textData[Lan][PAGE_SELECT].insert("labelTextTime",QStringList{"Time"});
 
     fontData[Lan][PAGE_SELECT].insert("labelTextIcon",QFont(instance.fontSuit,instance.pixelToPoint(23),QFont::Bold));
-    textData[Lan][PAGE_SELECT].insert("labelTextIcon",QStringList{"Normal","LOW","High","Low","High"});
+    textData[Lan][PAGE_SELECT].insert("labelTextIcon",QStringList{"Normal","Low","High","Low","High"});
 
     //PAGE_MENU
     fontData[Lan][PAGE_MENU].insert("labelButtonText",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
@@ -616,13 +631,13 @@ void TextResource::init()
     fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextHeart",QFont(instance.fontSuit,instance.pixelToPoint(34)));
 
     //PAGE_RESULT
+     fontData[Lan][PAGE_RESULT].insert("labelTextGlucoseValue",QFont(instance.fontSuit,instance.pixelToPoint(103),QFont::ExtraBold));
+
     fontData[Lan][PAGE_RESULT].insert("labelTextMgdl",QFont(instance.fontSuit,instance.pixelToPoint(27)));
     textData[Lan][PAGE_RESULT].insert("labelTextMgdl",QStringList{"mg/dL"});
 
     fontData[Lan][PAGE_RESULT].insert("labelTextTime",QFont(instance.fontSuit,instance.pixelToPoint(21),QFont::Bold));
     textData[Lan][PAGE_RESULT].insert("labelTextTime",QStringList{"Time"});
-
-    fontData[Lan][PAGE_RESULT].insert("labelTextGlucoseValue",QFont(instance.fontSuit,instance.pixelToPoint(103),QFont::ExtraBold));
 
     fontData[Lan][PAGE_RESULT].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36)));
 
