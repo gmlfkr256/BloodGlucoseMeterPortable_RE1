@@ -31,7 +31,7 @@ void PageResult::init()
     labelProgressBar->setGeometry(20,329,600,30);
 
     labelProgressBarTooltip = new QLabel(this);
-    labelProgressBarTooltip->setGeometry(0,297,150,23);
+    labelProgressBarTooltip->setGeometry(0,297,75,23);
     labelProgressBarTooltip->setAlignment(Qt::AlignCenter);
 
     labelProgressBarTooltipImg = new QLabel(this);
@@ -201,6 +201,26 @@ void PageResult::setValueUI()
     labelProgressBarTooltip->move(nTooltipX,297);
     instance.pixLoad(labelProgressBarTooltipImg,false,strDirPath,strPathPngTooltip);
     labelProgressBarTooltipImg->setGeometry(labelProgressBarTooltip->x()+(labelProgressBarTooltip->width()/2)-3,labelProgressBarTooltip->y()+labelProgressBarTooltip->height(),7,5);
+
+    switch (instance.getDeviceLanguage())
+    {
+    case KR:
+        labelProgressBarTooltip->setFixedWidth(75);
+        break;
+    case EN:
+        break;
+    case JP:
+        break;
+    case SC:
+        break;
+    case TC:
+        break;
+    case ES:
+        labelProgressBarTooltip->setFixedWidth(150);
+        break;
+    default:
+        break;
+    }
 }
 
 void PageResult::pageShow()
