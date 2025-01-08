@@ -36,6 +36,11 @@ void PageCaliResultMulti::init()
 
 void PageCaliResultMulti::update()
 {
+    customButtonOk->update();
+    customButtonCancel->update();
+    customButtonMeasure->update();
+    customButtonMeasureRe->update();
+
 #if DEVICE
 #else
     int nValiedCheckCount = 0;

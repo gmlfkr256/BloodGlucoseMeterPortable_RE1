@@ -70,6 +70,7 @@ void PagePassword::init()
 
 void PagePassword::update()
 {
+
     labelTitle->setFont(textResource.getFont(PAGE_PASSWORD,"labelTitle"));
     labelTitle->setText(textResource.getText(PAGE_PASSWORD,"labelTitle").at(instance.getPasswordStatus()));
     labelTitleSub->setFont(textResource.getFont(PAGE_PASSWORD,"labelTitleSub"));

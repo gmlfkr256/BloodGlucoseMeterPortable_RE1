@@ -58,6 +58,8 @@ void PageCaliResult::init()
 
 void PageCaliResult::update()
 {
+    customButtonOK->update();
+
     QString strAdc, strTemp, strHeart;
     strAdc = QString::number(instance.caliUserInfo.val[static_cast<int>(instance.getCaliSelectIndex())].adc[static_cast<int>(instance.getCaliSelectOrder())]);
     strTemp = QString::number(instance.caliUserInfo.val[static_cast<int>(instance.getCaliSelectIndex())].temp[static_cast<int>(instance.getCaliSelectOrder())]);
