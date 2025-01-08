@@ -2212,7 +2212,7 @@ void TextResource::init()
                                                 });
 
     //PAGE_CALI_SELECT
-    fontData[Lan][PAGE_CALI_SELECT].insert("labelSelectText", QFont(instance.fontSuit, instance.pixelToPoint(30), QFont::Bold));
+    fontData[Lan][PAGE_CALI_SELECT].insert("labelSelectText", QFont(instance.fontSuit, instance.pixelToPoint(20), QFont::Bold));
     textData[Lan][PAGE_CALI_SELECT].insert("labelSelectText", QStringList{
                                                "En ayunas", "Después de comer"
                                            });
