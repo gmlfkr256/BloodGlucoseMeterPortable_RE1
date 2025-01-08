@@ -113,6 +113,20 @@ void PageTrans::mousePressEvent(QMouseEvent *ev)
         updateButton();
     }
 
+    if(instance.touchCheck(labelButton[0]->geometry(),ev))
+    {
+        int total = LAN_MAX;
+        selectedIndex = (selectedIndex - 1 + total) % total; // 순환 감소
+        updateButton();
+    }
+
+    if(instance.touchCheck(labelButton[2]->geometry(),ev))
+    {
+        int total = LAN_MAX;
+        selectedIndex = (selectedIndex + 1) % total; // 순환 증가
+        updateButton();
+    }
+
     if(instance.touchCheck(customButtonOK->geometry(),ev))
     {
         qDebug()<<"selectedIndex: "<<selectedIndex;
