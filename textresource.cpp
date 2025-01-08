@@ -721,7 +721,7 @@ void TextResource::init()
     textData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText",QStringList{
                                                    "1. Connect the device to PC\n"
                                                    "2. Copy bin file to the device\n"
-                                                   "3. Restart the device after\ncopying is complete"
+                                                   "3. Restart the device after copying\n is complete"
                                                });
 
     //PAGE_DEVICEINFO
