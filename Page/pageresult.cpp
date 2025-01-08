@@ -31,7 +31,7 @@ void PageResult::init()
     labelProgressBar->setGeometry(20,329,600,30);
 
     labelProgressBarTooltip = new QLabel(this);
-    labelProgressBarTooltip->setGeometry(0,297,75,23);
+    labelProgressBarTooltip->setGeometry(0,297,150,23);
     labelProgressBarTooltip->setAlignment(Qt::AlignCenter);
 
     labelProgressBarTooltipImg = new QLabel(this);
