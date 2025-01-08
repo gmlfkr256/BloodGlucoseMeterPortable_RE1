@@ -1173,6 +1173,7 @@ void TextResource::init()
                                            "リセットが進行します" // Reset will be proceeded
                                        });
 
+    //=====================================================================================================================================
     //SC
     Lan = SC;
 
@@ -1583,6 +1584,7 @@ void TextResource::init()
                                            "重启后设置将被重置" // Reset will be proceeded
                                        });
 
+    //=====================================================================================================================================
     //TC
     Lan = TC;
 
@@ -1989,6 +1991,7 @@ void TextResource::init()
                                            "重置將繼續進行"       // Reset will be proceeded
                                        });
 
+    //=====================================================================================================================================
     //ES
     Lan = ES;
 
@@ -2124,7 +2127,7 @@ void TextResource::init()
                                                     "CONTRASEÑA_STR_MAX"                                   // PASSWORD_STR_MAX
                                                 });
     //PAGE_HOME
-    fontData[Lan][PAGE_HOME].insert("labelTextStatus",QFont(instance.fontSuit,instance.pixelToPoint(26),QFont::Bold));
+    fontData[Lan][PAGE_HOME].insert("labelTextStatus",QFont(instance.fontSuit,instance.pixelToPoint(20),QFont::Bold));
     textData[Lan][PAGE_HOME].insert("labelTextStatus",QStringList{
                                         "Despertar\n", "Antes del\ndesayuno", "Después del\ndesayuno",
                                         "Antes del\nalmuerzo", "Después del\nalmuerzo",
