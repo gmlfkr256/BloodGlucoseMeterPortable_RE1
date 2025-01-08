@@ -26,7 +26,7 @@ void PageMenu::init()
         QRect buttonRect = labelButton[i]->geometry();
         labelButtonText[i]->setGeometry(
                     buttonRect.x(),                   // labelButton과 동일한 x 좌표
-                    buttonRect.y() + buttonRect.height() -labelButtonText[i]->height(),
+                    buttonRect.y() + buttonRect.height()-70,
                     buttonRect.width(),               // 버튼과 동일한 너비
                     64                                // 고정된 높이
                     );
