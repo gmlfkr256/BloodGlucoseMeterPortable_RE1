@@ -16,7 +16,6 @@ void PageMenu::init()
         if(i<3)
         {
             labelButton[i]->setGeometry(81+i*163,91,151,179);
-            labelButtonText[i]->setGeometry(81+i*163,212,151,38);
         }
         else
         {
