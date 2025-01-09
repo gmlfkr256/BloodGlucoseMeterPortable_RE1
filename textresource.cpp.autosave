@@ -861,7 +861,7 @@ void TextResource::init()
     textData[Lan][PAGE_PASSWORD].insert("labelButtonOKText", QStringList{"確認"}); // OK
 
     fontData[Lan][PAGE_PASSWORD].insert("labelButtonCancelText", QFont(instance.fontSuit, instance.pixelToPoint(29)));
-    textData[Lan][PAGE_PASSWORD].insert("labelButtonCancelText", QStringList{"戻る"}); // Cancel
+    textData[Lan][PAGE_PASSWORD].insert("labelButtonCancelText", QStringList{"キャンセル"}); // Cancel
 
     //PAGE_PASSWORD_CONFIRM
     fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTitle", QFont(instance.fontSuit, instance.pixelToPoint(40), QFont::Bold));
@@ -1030,10 +1030,10 @@ void TextResource::init()
     //PAGE_CALI_SELECT_INFO
     fontData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInfoText", QFont(instance.fontSuit, instance.pixelToPoint(36), QFont::Bold));
     textData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInfoText", QStringList{
-                                                    "最後の食事から8時間以上\n経過しましたか？",            // Has it been more than 8 hours since your last meal?
-                                                    "最後の食事から1時間以上\n経過しましたか？",            // Has it been more than 1 hour since your last meal?
-                                                    "最後の食事から1時間30分以上\n経過しましたか？",        // Has it been more than 1 hour and 30 minutes since your last meal?
-                                                    "最後の食事から2時間以上\n経過しましたか？"            // Has it been more than 2 hours since your last meal?
+                                                    "最後の食事から8時間以上経過しましたか？",            // Has it been more than 8 hours since your last meal?
+                                                    "最後の食事から1時間以上経過しましたか？",            // Has it been more than 1 hour since your last meal?
+                                                    "最後の食事から1時間30分以上経過しましたか？",        // Has it been more than 1 hour and 30 minutes since your last meal?
+                                                    "最後の食事から2時間以上経過しましたか？"            // Has it been more than 2 hours since your last meal?
                                                 });
 
     //PAGE_CALI_CONFIRM
