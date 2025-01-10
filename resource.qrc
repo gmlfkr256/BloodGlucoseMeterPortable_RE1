@@ -146,5 +146,9 @@
         <file>Font/TC/NotoSansTC-Regular.ttf</file>
         <file>Image/Default/Public/ImageMenu/menuButtonBg.png</file>
         <file>Image/Default/Public/ImageMenu/menuButtonInit.png</file>
+        <file>Image/Default/Public/ImageDateTime/arrowBottom.png</file>
+        <file>Image/Default/Public/ImageDateTime/arrowTop.png</file>
+        <file>Image/Default/Public/ImageDateTime/gradientBottom.png</file>
+        <file>Image/Default/Public/ImageDateTime/gradientTop.png</file>
     </qresource>
 </RCC>
