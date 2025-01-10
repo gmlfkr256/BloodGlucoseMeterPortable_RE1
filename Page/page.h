@@ -32,6 +32,9 @@ private:
 
     void init();
     void initBG();
+
+signals:
+    void signalShowPageNum(PageNum pageNum);
 };
 
 #endif // PAGE_H
