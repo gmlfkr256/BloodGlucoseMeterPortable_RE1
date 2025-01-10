@@ -12,27 +12,27 @@ void PageDateTime::init()
     labelBg->setGeometry(40,179,520,105);
 
     labelLine[0] = new QLabel(this);
-    labelLine[0]->setGeometry(185,183,31,90);
+    labelLine[0]->setGeometry(181,201,28,62);
     labelLine[1] = new QLabel(this);
-    labelLine[1]->setGeometry(286,183,31,90);
+    labelLine[1]->setGeometry(282,201,28,62);
 
     labelColon = new QLabel(this);
-    labelColon->setGeometry(506,183,14,90);
+    labelColon->setGeometry(470,201,14,62);
 
     comDateYear = new ComponentSpinnerDate(this,DATE_YEAR);
-    comDateYear->setGeometry(55,92,130,270);
+    comDateYear->setGeometry(50,74,130,315);
 
     comDateMonth = new ComponentSpinnerDate(this,DATE_MONTH);
-    comDateMonth->setGeometry(216,92,70,270);
+    comDateMonth->setGeometry(211,74,70,315);
 
     comDateDay = new ComponentSpinnerDate(this,DATE_DAY);
-    comDateDay->setGeometry(316,92,70,270);
+    comDateDay->setGeometry(311,74,70,315);
 
     comDateHour = new ComponentSpinnerDate(this,DATE_HOUR);
-    comDateHour->setGeometry(436,92,70,270);
+    comDateHour->setGeometry(405,74,70,315);
 
     comDateMin = new ComponentSpinnerDate(this,DATE_MIN);
-    comDateMin->setGeometry(520,92,70,270);
+    comDateMin->setGeometry(479,74,70,315);
 
     listCom<<comDateYear<<comDateMonth<<comDateDay<<comDateHour<<comDateMin;
 
