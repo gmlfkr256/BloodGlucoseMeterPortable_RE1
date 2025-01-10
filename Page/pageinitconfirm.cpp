@@ -61,6 +61,8 @@ void PageInitConfirm::mousePressEvent(QMouseEvent *ev)
         case INIT_FACTORY_A:
 #if DEVICE == true
             instance.guiApi.glucoseInitFactory();
+#else
+            QCoreApplication::exit(0);
 #endif
             break;
         case INIT_CALI_Q:
