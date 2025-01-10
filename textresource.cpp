@@ -1748,7 +1748,7 @@ void TextResource::init()
                                                     "密碼修改完成，請重新登入",                   // Password change completed. Please re-login
                                                     "是否刪除用戶信息？",                         // Do you want to delete user information?
                                                     "刪除用戶信息將重置密碼與設定",               // Deleting user information will reset the password and settings
-                                                    "用戶信息已刪除，系統將重啟以重置設定",        // User information deleted. The system will reboot to reset settings
+                                                    "用戶信息已刪除，\n系統將重啟以重置設定",        // User information deleted. The system will reboot to reset settings
                                                     "正在登出，請重新登入",                       // Logging out. Please re-login
                                                     "PASSWORD_STR_MAX"
                                                 });
