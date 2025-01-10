@@ -106,12 +106,23 @@ void PageHistory::changeValue()
 
 void PageHistory::pageShow()
 {
+    for(ComponentSpinnerDate* com : listCom)
+        com->isSelect = false;
+
+    comDateYear->isSelect = true;
+
+    QDateTime dateTime(QDateTime::currentDateTime());
+
+    comDateYear->setValue(dateTime.date().year());
+    comDateMonth->setValue(dateTime.date().month());
+    comDateDay->setValue(dateTime.date().day());
+
     update();
 }
 
 void PageHistory::pageHide()
 {
-
+    emit signalShowPageNum(PAGE_MENU);
 }
 
 void PageHistory::mousePressEvent(QMouseEvent *ev)
@@ -123,7 +134,7 @@ void PageHistory::mousePressEvent(QMouseEvent *ev)
 
     if(instance.touchCheck(customButtonCancel->geometry(),ev))
     {
-        emit signalShowPageNum(PAGE_MENU);
+        pageHide();
     }
 }
 
