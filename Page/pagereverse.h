@@ -33,7 +33,7 @@ private:
     void setImgHandPress();
 
 signals:
-    void signalShowPageNum(PageNum pageNum);
+    //void signalShowPageNum(PageNum pageNum);
 };
 
 #endif // PAGEREVERSE_H

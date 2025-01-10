@@ -24,7 +24,7 @@ private:
     void init();
 
 signals:
-    void signalShowPageNum(PageNum pageNum);
+    //void signalShowPageNum(PageNum pageNum);
 };
 
 #endif // PAGEPASSWORDCONFIRM_H

@@ -48,7 +48,7 @@ private:
     void updatePainter();
 
 signals:
-    void signalShowPageNum(PageNum pageNum);
+    //void signalShowPageNum(PageNum pageNum);
 };
 
 #endif // PAGEGARPH_H

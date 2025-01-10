@@ -35,7 +35,7 @@ private:
     void fontMapping();
 
 signals:
-    void signalShowPageNum(PageNum pageNum);
+    //void signalShowPageNum(PageNum pageNum);
 };
 
 #endif // PAGETRANS_H

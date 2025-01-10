@@ -47,7 +47,7 @@ private:
     void checkVolume();
 
 signals:
-    void signalShowPageNum(PageNum pageNum);
+    //void signalShowPageNum(PageNum pageNum);
 };
 
 #endif // PAGESOUND_H

@@ -40,7 +40,7 @@ private:
     void updateStatus();
 
 signals:
-    void signalShowPageNum(PageNum pageNum);
+    //void signalShowPageNum(PageNum pageNum);
 };
 
 #endif // PAGESELECT_H

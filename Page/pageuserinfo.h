@@ -24,7 +24,7 @@ public:
 private:
     void init();
 signals:
-    void signalShowPageNum(PageNum pageNum);
+    //void signalShowPageNum(PageNum pageNum);
 };
 
 #endif // PAGEUSERINFO_H

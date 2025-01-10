@@ -46,7 +46,7 @@ private:
     void init();
 
 signals:
-    void signalShowPageNum(PageNum pageNum);
+    //void signalShowPageNum(PageNum pageNum);
 };
 
 #endif // PAGEHISTORY_H

@@ -27,7 +27,7 @@ private:
     void initSpinner();
 
 signals:
-    void signalShowPageNum(PageNum pageNum);
+    //void signalShowPageNum(PageNum pageNum);
 };
 
 #endif // PAGECALIVALUE_H

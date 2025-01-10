@@ -34,7 +34,7 @@ private:
     void init();
 
 signals:
-    void signalShowPageNum(PageNum pageNum);
+    //void signalShowPageNum(PageNum pageNum);
 };
 
 #endif // PAGEDEVICEINFO_H

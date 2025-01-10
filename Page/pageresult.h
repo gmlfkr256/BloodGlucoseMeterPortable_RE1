@@ -39,7 +39,7 @@ private:
     void setValueUI();
 
 signals:
-    void signalShowPageNum(PageNum pageNum);
+    //void signalShowPageNum(PageNum pageNum);
 };
 
 #endif // PAGERESULT_H

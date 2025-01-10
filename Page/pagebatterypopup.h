@@ -28,7 +28,7 @@ private:
     void init();
     void updateTimer();
 signals:
-    void signalShowPageNum(PageNum pageNum);
+    //void signalShowPageNum(PageNum pageNum);
 };
 
 #endif // PAGEBATTERYPOPUP_H

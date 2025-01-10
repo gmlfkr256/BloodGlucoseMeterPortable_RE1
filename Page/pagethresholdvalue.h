@@ -29,7 +29,7 @@ private:
     void checkLimit();
 
 signals:
-    void signalShowPageNum(PageNum pageNum);
+    //void signalShowPageNum(PageNum pageNum);
 };
 
 #endif // PAGETHRESHOLDVALUE_H
