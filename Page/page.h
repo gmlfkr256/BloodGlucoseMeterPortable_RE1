@@ -26,6 +26,9 @@ public:
     virtual void pageHide() = 0;
 
     void setBgTopHide();
+
+signals:
+    void signalShowPageNum(PageNum pageNum);
 private:
     QLabel *labelBg;
     QLabel *labelBgTop;

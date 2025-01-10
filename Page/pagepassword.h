@@ -34,7 +34,7 @@ private:
     void updatePasswordNum();
     void processOK();
 signals:
-    void signalShowPageNum(PageNum pageNum);
+    //void signalShowPageNum(PageNum pageNum);
 };
 
 #endif // PAGEPASSWORD_H
