@@ -194,7 +194,7 @@ void MainWindow::initConnect()
     //page
     for(int i=0; i<stackedWidget->count(); i++)
     {
-        Page* page = qobject_cast<Page*>(stackedWidget->widget(i));
+        QWidget* page = stackedWidget->widget(i);
 
         connect(page,SIGNAL(signalShowPageNum),this,SLOT(setPageBytPageNum));
     }
