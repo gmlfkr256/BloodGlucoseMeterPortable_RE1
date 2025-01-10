@@ -2,7 +2,7 @@
 #define PAGEHISTORY_H
 
 #include "page.h"
-#include "Component/componentspinner.h"
+#include "Component/componentspinnerdate.h"
 
 class PageHistory : public Page
 {
@@ -10,11 +10,34 @@ class PageHistory : public Page
 public:
     PageHistory(QWidget *parent);
     void mousePressEvent(QMouseEvent *ev) override;
+    void mouseReleaseEvent(QMouseEvent *ev) override;
     QString strDirPath = "/ImageHistory";
 
+    QLabel *labelBg;
+    QLabel *labelLine[2];
+
+    QList<ComponentSpinnerDate*> listCom;
+
+    ComponentSpinnerDate *comDateYear;
+    ComponentSpinnerDate *comDateMonth;
+    ComponentSpinnerDate *comDateDay;
+
+    QLabel *labelGradientTop;
+    QLabel *labelGradientBottom;
+
+    QLabel *labelArrowTop;
+    QLabel *labelArrowBottom;
+    bool bIsArrowTouch = false;
+
+    QLabel *labelButtonToday;
+    QLabel *labelButtonDayPlus;
+    QLabel *labelButtonDayMinus;
 
     CustomButtonOK *customButtonOK;
     CustomButtonCancel *customButtonCancel;
+
+    void setDateStatus(DateStatus dateStatus);
+    void changeValue();
 
     void update() override;
     void pageShow() override;

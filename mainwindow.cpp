@@ -127,6 +127,9 @@ void MainWindow::init()
     pageTrans = new PageTrans(this);
     stackedWidget->addWidget(pageTrans);
 
+    pageHistory = new PageHistory(this);
+    stackedWidget->addWidget(pageHistory);
+
     comBat = new ComponentBattery(stackedWidget);
     comBle = new ComponentBluetooth(stackedWidget);
     comClock = new ComponentClock(stackedWidget);
@@ -189,6 +192,13 @@ void MainWindow::initConnect()
     connect(comBat,&ComponentBattery::signalShowPageNum,this,&MainWindow::setPageByPageNum);
 
     //page
+    for(int i=0; i<stackedWidget->count(); i++)
+    {
+        Page* page = qobject_cast<Page*>(stackedWidget->widget(i));
+
+        connect(page,SIGNAL(signalShowPageNum),this,SLOT(setPageBytPageNum));
+    }
+    /*
     connect(pagePassword,&PagePassword::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pagePasswordConfirm,&PagePasswordConfirm::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageHome,&PageHome::signalShowPageNum,this,&MainWindow::setPageByPageNum);
@@ -219,6 +229,8 @@ void MainWindow::initConnect()
     connect(pageBatteryPopup,&PageBatteryPopup::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageReverse,&PageReverse::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageTrans,&PageTrans::signalShowPageNum,this,&MainWindow::setPageByPageNum);
+    connect(pageHistory,&PageHistory::signalShowPageNum,this,&MainWindow::setPageByPageNum);
+    */
 }
 
 void MainWindow::currentPageChanged(int index)
