@@ -249,7 +249,6 @@ void MainWindow::setPageByPageNum(PageNum pageNum)
         Page *page = qobject_cast<Page*>(stackedWidget->currentWidget());
         if(page)
             page->pageShow();
-
     }
     else
     {
