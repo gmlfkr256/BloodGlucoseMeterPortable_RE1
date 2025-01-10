@@ -13,9 +13,12 @@ TextResource::TextResource()
 
 void TextResource::init()
 {
+    int nTextSize = 0;
+
     //KR
     //CUSTOM_BUTTON
     DeviceLanguage Lan = KR;
+    nTextSize = 36;
 
     //PAGE_TRANS
     fontData[Lan][PAGE_TRANS].insert("fontSuit",QFont(instance.fontSuit,instance.pixelToPoint(36)));
@@ -123,7 +126,7 @@ void TextResource::init()
                                                     "로그아웃", //PASSWORD_STR_LOGOUT,
                                                     "PASSWORD_STR_MAX" //PASSWORD_STR_MAX
                                                 });
-    fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
+    fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(nTextSize),QFont::Bold));
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText",QStringList{
                                                     "로그인에 성공했습니다", //PASSWORD_STR_LOGIN_SUCCESS,
                                                     "로그인에 실패했습니다", //PASSWORD_STR_LOGIN_FAIL,
@@ -1320,7 +1323,7 @@ void TextResource::init()
                                                     "密码更改完成，请重新登录",               // PASSWORD_STR_EDIT_SUCCESS
                                                     "是否删除用户信息？",                     // PASSWORD_STR_DELETE
                                                     "删除用户信息将重置密码和设置",           // PASSWORD_STR_DELETE_CONFIRM
-                                                    "用户信息已删除，系统将重启以重置设置",   // PASSWORD_STR_DELETE_SUCCESS
+                                                    "用户信息已删除，\n系统将重启以重置设置",   // PASSWORD_STR_DELETE_SUCCESS
                                                     "正在退出登录，请重新登录",               // PASSWORD_STR_LOGOUT
                                                     "PASSWORD_STR_MAX"
                                                 });
