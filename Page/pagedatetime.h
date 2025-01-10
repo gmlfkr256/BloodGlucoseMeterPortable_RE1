@@ -14,8 +14,6 @@ public:
     QString strDirPath = "/ImageDateTime";
 
     QLabel *labelBg;
-    QLabel *labelBgLineTop;
-    QLabel *labelBgLintBottom;
 
     QLabel *labelLine[2];
     QLabel *labelColon;

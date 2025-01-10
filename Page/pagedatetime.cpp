@@ -9,12 +9,7 @@ PageDateTime::PageDateTime(QWidget *parent) : Page(parent)
 void PageDateTime::init()
 {
     labelBg = new QLabel(this);
-    labelBg->setGeometry(25,183,590,90);
-
-    labelBgLineTop = new QLabel(this);
-    labelBgLineTop->setGeometry(25,183,590,1);
-    labelBgLintBottom = new QLabel(this);
-    labelBgLintBottom->setGeometry(25,272,590,1);
+    labelBg->setGeometry(40,179,520,105);
 
     labelLine[0] = new QLabel(this);
     labelLine[0]->setGeometry(185,183,31,90);
@@ -58,9 +53,7 @@ void PageDateTime::update()
     customButtonSave->update();
     customButtonCancel->update();
 
-    labelBg->setStyleSheet("background-color: #eeeeee;");
-    labelBgLineTop->setStyleSheet("background-color: #c5c5c5;");
-    labelBgLintBottom->setStyleSheet("background-color: #c5c5c5;");
+    labelBg->setStyleSheet("border: 3px solid #077bdd; border-radius: 15px;");
 
     labelLine[0]->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
     labelLine[0]->setText("-");
