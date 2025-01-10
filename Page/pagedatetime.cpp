@@ -44,8 +44,10 @@ void PageDateTime::init()
 
     labelGradientTop = new QLabel(this);
     labelGradientTop->setGeometry(40,73,520,96);
+    labelGradientTop->setAttribute(Qt::WA_TransparentForMouseEvents,true);
     labelGradientBottom = new QLabel(this);
     labelGradientBottom->setGeometry(40,294,520,96);
+    labelGradientBottom->setAttribute(Qt::WA_TransparentForMouseEvents,true);
 
     labelArrowTop = new QLabel(this);
     labelArrowTop->setGeometry(565,83,70,70);
