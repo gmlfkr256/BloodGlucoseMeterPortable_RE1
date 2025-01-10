@@ -196,7 +196,14 @@ void MainWindow::initConnect()
     {
         Page* page = qobject_cast<Page*>(stackedWidget->widget(i));
 
-        connect(page,&Page::signalShowPageNum,this,&MainWindow::setPageByPageNum);
+        if(page)
+        {
+           connect(page,&Page::signalShowPageNum,this,&MainWindow::setPageByPageNum);
+        }
+        else
+        {
+            qDebug() << "Widget at index" << i << "is not a Page instance.";
+        }
     }
     /*
     connect(pagePassword,&PagePassword::signalShowPageNum,this,&MainWindow::setPageByPageNum);
