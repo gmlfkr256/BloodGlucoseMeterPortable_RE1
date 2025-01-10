@@ -164,22 +164,37 @@ void ComponentSpinnerDate::mousePressEvent(QMouseEvent *ev)
 
     if(instance.touchCheck(labelTextTop->geometry(),ev) && labelTextTop->isVisible())
     {
-        isPlus = true;
-        handleTimerPress();
-        timerPress->start(200);
+        valuePlus();
     }
 
     if(instance.touchCheck(labelTextBottom->geometry(),ev) && labelTextBottom->isVisible())
     {
-        isPlus = false;
-        handleTimerPress();
-        timerPress->start(200);
+        valueMinus();
     }
+}
+
+void ComponentSpinnerDate::valuePlus()
+{
+    isPlus = true;
+    handleTimerPress();
+    timerPress->start(200);
+}
+
+void ComponentSpinnerDate::valueMinus()
+{
+    isPlus = false;
+    handleTimerPress();
+    timerPress->start(200);
 }
 
 void ComponentSpinnerDate::mouseReleaseEvent(QMouseEvent *ev)
 {
     Q_UNUSED(ev)
+    timeStop();
+}
+
+void ComponentSpinnerDate::timeStop()
+{
     timerPress->stop();
 }
 

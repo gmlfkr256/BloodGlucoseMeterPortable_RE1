@@ -57,6 +57,9 @@ public:
     void setValue(int nValue);
     void checkValueRange();
     int getDateValue();
+    void valuePlus();
+    void valueMinus();
+    void timeStop();
 
     void update() override;
     void pageShow() override;

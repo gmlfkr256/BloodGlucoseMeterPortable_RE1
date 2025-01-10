@@ -135,6 +135,30 @@ void PageDateTime::pageHide()
 
 void PageDateTime::mousePressEvent(QMouseEvent *ev)
 {
+    if(instance.touchCheck(labelArrowTop->geometry(),ev))
+    {
+        for(ComponentSpinnerDate* com: listCom)
+        {
+            if(com->isSelect)
+            {
+                bIsArrowTouch = true;
+                com->valuePlus();
+            }
+        }
+    }
+
+    if(instance.touchCheck(labelArrowBottom->geometry(),ev))
+    {
+        for(ComponentSpinnerDate* com: listCom)
+        {
+            if(com->isSelect)
+            {
+                bIsArrowTouch = true;
+                com->valueMinus();
+            }
+        }
+    }
+
     if(instance.touchCheck(customButtonSave->geometry(),ev))
     {
 #if DEVICE == true
@@ -162,5 +186,18 @@ void PageDateTime::mousePressEvent(QMouseEvent *ev)
     if(instance.touchCheck(customButtonCancel->geometry(),ev))
     {
         pageHide();
+    }
+}
+
+void PageDateTime::mouseReleaseEvent(QMouseEvent *ev)
+{
+    Q_UNUSED(ev)
+
+    if(bIsArrowTouch)
+    {
+        for(ComponentSpinnerDate *com : listCom)
+        {
+            com->timeStop();
+        }
     }
 }

@@ -10,6 +10,7 @@ class PageDateTime : public Page
 public:
     PageDateTime(QWidget *parent);
     void mousePressEvent(QMouseEvent *ev) override;
+    void mouseReleaseEvent(QMouseEvent *ev) override;
 
     QString strDirPath = "/ImageDateTime";
 
@@ -31,6 +32,7 @@ public:
 
     QLabel *labelArrowTop;
     QLabel *labelArrowBottom;
+    bool bIsArrowTouch = false;
 
     CustomButtonSave *customButtonSave;
     CustomButtonCancel *customButtonCancel;
