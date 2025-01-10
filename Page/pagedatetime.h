@@ -26,6 +26,12 @@ public:
     ComponentSpinnerDate *comDateHour;
     ComponentSpinnerDate *comDateMin;
 
+    QLabel *labelGradientTop;
+    QLabel *labelGradientBottom;
+
+    QLabel *labelArrowTop;
+    QLabel *labelArrowBottom;
+
     CustomButtonSave *customButtonSave;
     CustomButtonCancel *customButtonCancel;
 

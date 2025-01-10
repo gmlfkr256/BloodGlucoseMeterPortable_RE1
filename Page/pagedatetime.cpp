@@ -42,6 +42,16 @@ void PageDateTime::init()
         connect(com,&ComponentSpinnerDate::signalChangeValue,this,&PageDateTime::changeValue);
     }
 
+    labelGradientTop = new QLabel(this);
+    labelGradientTop->setGeometry(40,73,520,96);
+    labelGradientBottom = new QLabel(this);
+    labelGradientBottom->setGeometry(40,294,520,96);
+
+    labelArrowTop = new QLabel(this);
+    labelArrowTop->setGeometry(565,83,70,70);
+    labelArrowBottom = new QLabel(this);
+    labelArrowBottom->setGeometry(565,310,70,70);
+
     customButtonSave = new CustomButtonSave(this);
     customButtonCancel =new CustomButtonCancel(this);
 
@@ -61,6 +71,11 @@ void PageDateTime::update()
     labelLine[1]->setText("-");
     labelColon->setFont(textResource.getFont(CUSTOM_COMPONENT_DATE,"labelText"));
     labelColon->setText(":");
+
+    instance.pixLoad(labelGradientTop,false,strDirPath,"/gradientTop.png");
+    instance.pixLoad(labelGradientBottom,false,strDirPath,"/gradientBottom.png");
+    instance.pixLoad(labelArrowTop,false,strDirPath,"/arrowTop.png");
+    instance.pixLoad(labelArrowBottom,false,strDirPath,"/arrowBottom.png");
 }
 
 void PageDateTime::setDateStatus(DateStatus dateStatus)
