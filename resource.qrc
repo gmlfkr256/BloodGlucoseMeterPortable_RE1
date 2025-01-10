@@ -150,5 +150,9 @@
         <file>Image/Default/Public/ImageDateTime/arrowTop.png</file>
         <file>Image/Default/Public/ImageDateTime/gradientBottom.png</file>
         <file>Image/Default/Public/ImageDateTime/gradientTop.png</file>
+        <file>Image/Default/Public/ImageHistory/arrowBottom.png</file>
+        <file>Image/Default/Public/ImageHistory/arrowTop.png</file>
+        <file>Image/Default/Public/ImageHistory/gradientBottom.png</file>
+        <file>Image/Default/Public/ImageHistory/gradientTop.png</file>
     </qresource>
 </RCC>

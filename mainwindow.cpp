@@ -192,20 +192,6 @@ void MainWindow::initConnect()
     connect(comBat,&ComponentBattery::signalShowPageNum,this,&MainWindow::setPageByPageNum);
 
     //page
-    for(int i=0; i<stackedWidget->count(); i++)
-    {
-        Page* page = qobject_cast<Page*>(stackedWidget->widget(i));
-
-        if(page)
-        {
-           connect(page,&Page::signalShowPageNum,this,&MainWindow::setPageByPageNum);
-        }
-        else
-        {
-            qDebug() << "Widget at index" << i << "is not a Page instance.";
-        }
-    }
-    /*
     connect(pagePassword,&PagePassword::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pagePasswordConfirm,&PagePasswordConfirm::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageHome,&PageHome::signalShowPageNum,this,&MainWindow::setPageByPageNum);
@@ -237,7 +223,7 @@ void MainWindow::initConnect()
     connect(pageReverse,&PageReverse::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageTrans,&PageTrans::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageHistory,&PageHistory::signalShowPageNum,this,&MainWindow::setPageByPageNum);
-    */
+
 }
 
 void MainWindow::currentPageChanged(int index)
