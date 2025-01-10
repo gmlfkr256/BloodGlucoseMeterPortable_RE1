@@ -1136,7 +1136,7 @@ void TextResource::init()
     fontData[Lan][PAGE_UPGRADE].insert("labelTextVersion", QFont(instance.fontSuit, instance.pixelToPoint(55)));
 
     //PAGE_UPGRADE_CONFIRM
-    fontData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(38), QFont::Bold));
+    fontData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(34), QFont::Bold));
     textData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText", QStringList{
                                                    "1. デバイスをPCに接続\n"
                                                    "2. binファイルをデバイスにコピー\n"
