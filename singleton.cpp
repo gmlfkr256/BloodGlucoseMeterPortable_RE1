@@ -17,7 +17,7 @@ void Singleton::init()
     //updateSysUserInfo();
 #else
 
-    langData.used = JP;
+    langData.used = SC;
     setDeviceLanguage(langData.used);
 
     thresholdLow = 69;
