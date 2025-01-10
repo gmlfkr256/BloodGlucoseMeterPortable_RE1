@@ -196,14 +196,14 @@ void TextResource::init()
                                         "유저정보"});
 
     //PAGE_CALI_CEHCK
-    fontData[Lan][PAGE_CALI_CHECK].insert("labelTextCheck",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
+    fontData[Lan][PAGE_CALI_CHECK].insert("labelTextCheck",QFont(instance.fontSuit,instance.pixelToPoint(nTextSize),QFont::Bold));
     textData[Lan][PAGE_CALI_CHECK].insert("labelTextCheck",QStringList{
                                               "혈당 보정 단계입니다\n손가락을 삽입구에 넣어주세요",
                                               "혈당 보정 완료입니다\n재진행하시겠습니까?"
                                           });
 
     //PAGE_CALI_GAIN_CONFIRM
-    fontData[Lan][PAGE_CALI_GAIN_CONFIRM].insert("labelTextGainConfirm",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
+    fontData[Lan][PAGE_CALI_GAIN_CONFIRM].insert("labelTextGainConfirm",QFont(instance.fontSuit,instance.pixelToPoint(nTextSize),QFont::Bold));
     textData[Lan][PAGE_CALI_GAIN_CONFIRM].insert("labelTextGainConfirm",QStringList{
                                                      "LED 감도 조절 단계입니다\n손가락을 움직이지 말아주세요",
                                                      "LED 감도 조절이 끝났습니다\n다음 측정 단계로 넘어가세요"
@@ -221,7 +221,7 @@ void TextResource::init()
     textData[Lan][PAGE_GRAPH].insert("labelLoading",QStringList{"측정 분석 중입니다"});
 
     //PAGE_CALI_GAIN_RESULT
-    fontData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
+    fontData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(nTextSize),QFont::Bold));
     textData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText",QStringList{
                                                     "LED 감도 조절이 끝났습니다\n다음 측정 단계로 넘어가세요",
                                                     "LED 감도 조절에 실패했습니다\n다시 측정해주세요"
@@ -237,7 +237,7 @@ void TextResource::init()
     fontData[Lan][PAGE_CALI_SELECT].insert("labelSelectTextValue",QFont(instance.fontSuit,instance.pixelToPoint(36)));
 
     //PAGE_CALI_SELECT_INFO
-    fontData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInfoText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
+    fontData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInfoText",QFont(instance.fontSuit,instance.pixelToPoint(nTextSize),QFont::Bold));
     textData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInfoText",QStringList{
                                                     "공복 8시간 이상\n경과되었습니까?",
                                                     "식후 1시간 이상\n경과되었습니까?",
@@ -246,7 +246,7 @@ void TextResource::init()
                                                 });
 
     //PAGE_CALI_CONFIRM
-    fontData[Lan][PAGE_CALI_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
+    fontData[Lan][PAGE_CALI_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(nTextSize),QFont::Bold));
     textData[Lan][PAGE_CALI_CONFIRM].insert("labelText",QStringList{"혈당값 입력 또는 측정을\n하시겠습니까?"});
 
     //PAGE_CALI_RESULT
@@ -298,7 +298,7 @@ void TextResource::init()
                                     });
 
     //PAGE_INIT_CONFIRM
-    fontData[Lan][PAGE_INIT_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
+    fontData[Lan][PAGE_INIT_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(nTextSize),QFont::Bold));
     textData[Lan][PAGE_INIT_CONFIRM].insert("labelText",QStringList{
                                                 "전체 시스템 정보가 초기화됩니다\n초기화를 진행하시겠습니까?",
                                                 "시스템 초기화 진행 후\n시스템이 재시작합니다",
@@ -339,7 +339,7 @@ void TextResource::init()
     fontData[Lan][PAGE_UPGRADE].insert("labelTextVersion",QFont(instance.fontSuit,instance.pixelToPoint(55)));
 
     //PAGE_UPGRADE_CONFIRM
-    fontData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(42),QFont::Bold));
+    fontData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(nTextSize),QFont::Bold));
     textData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText",QStringList{
                                                    "1. 장치와 PC연결\n"
                                                    "2. 장치에 bin 파일 복사\n"
@@ -370,7 +370,7 @@ void TextResource::init()
                                             "배터리 부족",
                                             "배터리 매우 부족"
                                         });
-    fontData[Lan][PAGE_BATPOPUP].insert("labelTextSub",QFont(instance.fontSuit,instance.pixelToPoint(36)));
+    fontData[Lan][PAGE_BATPOPUP].insert("labelTextSub",QFont(instance.fontSuit,instance.pixelToPoint(nTextSize)));
     textData[Lan][PAGE_BATPOPUP].insert("labelTextSub",QStringList{
                                             "충전기를 연결하세요",
                                             "시스템을 종료합니다"
@@ -382,7 +382,7 @@ void TextResource::init()
                                            "왼손",
                                            "오른손"
                                        });
-    fontData[Lan][PAGE_REVERSE].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36)));
+    fontData[Lan][PAGE_REVERSE].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(nTextSize)));
     textData[Lan][PAGE_REVERSE].insert("labelText",QStringList{
                                            "화면전환 설정 후 재부팅 됩니다"
                                        });
@@ -390,6 +390,7 @@ void TextResource::init()
     //====================================================================================================================================
     //EN
     Lan = EN;
+    nTextSize = 30;
 
     //PAGE_TRANS
     fontData[Lan][PAGE_TRANS].insert("fontSuit",QFont(instance.fontSuit,instance.pixelToPoint(36)));
@@ -496,7 +497,7 @@ void TextResource::init()
                                                     "Logout", //PASSWORD_STR_LOGOUT,
                                                     "PASSWORD_STR_MAX" //PASSWORD_STR_MAX
                                                 });
-    fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
+    fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(nTextSize),QFont::Bold));
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText",QStringList{
                                                     "Login successful",                              // PASSWORD_STR_LOGIN_SUCCESS
                                                     "Login failed",                                  // PASSWORD_STR_LOGIN_FAIL
@@ -575,13 +576,13 @@ void TextResource::init()
                                     });
 
     //PAGE_CALI_CHECK
-    fontData[Lan][PAGE_CALI_CHECK].insert("labelTextCheck",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
+    fontData[Lan][PAGE_CALI_CHECK].insert("labelTextCheck",QFont(instance.fontSuit,instance.pixelToPoint(nTextSize),QFont::Bold));
     textData[Lan][PAGE_CALI_CHECK].insert("labelTextCheck",QStringList{
                                               "Calibration phase\nPlease insert your finger",
                                               "Calibration complete\nDo you want to proceed again?"
                                           });
     //Page_CALI_GAIN_CONFIRM
-    fontData[Lan][PAGE_CALI_GAIN_CONFIRM].insert("labelTextGainConfirm",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
+    fontData[Lan][PAGE_CALI_GAIN_CONFIRM].insert("labelTextGainConfirm",QFont(instance.fontSuit,instance.pixelToPoint(nTextSize),QFont::Bold));
     textData[Lan][PAGE_CALI_GAIN_CONFIRM].insert("labelTextGainConfirm",QStringList{
                                                      "LED sensitivity adjustment step\nPlease do not move your finger",
                                                      "LED sensitivity adjustment\nhas been completed"
@@ -598,7 +599,7 @@ void TextResource::init()
     textData[Lan][PAGE_GRAPH].insert("labelLoading",QStringList{"Analyzing"});
 
     //Page_CALI_GAIN_RESULT
-    fontData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
+    fontData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(nTextSize),QFont::Bold));
     textData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText",QStringList{
                                                     "LED sensitivity adjustment is complete\nProceed to the next measurement step",
                                                     "LED sensitivity adjustment failed.\nPlease measure again"
@@ -615,7 +616,7 @@ void TextResource::init()
 
 
     //PAGE_CALI_SELECT_INFO
-    fontData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInfoText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
+    fontData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInfoText",QFont(instance.fontSuit,instance.pixelToPoint(nTextSize),QFont::Bold));
     textData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInfoText",QStringList{
                                                     "Has it been more than 8 hours\n since your last meal?",
                                                     "Has it been more than 1 hour\n since your last meal?",
@@ -624,7 +625,7 @@ void TextResource::init()
                                                 });
 
     //PAGE_CALI_CONFIRM
-    fontData[Lan][PAGE_CALI_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
+    fontData[Lan][PAGE_CALI_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(nTextSize),QFont::Bold));
     textData[Lan][PAGE_CALI_CONFIRM].insert("labelText",QStringList{"Select input or measure"});
 
     //PAGE_CALI_RESULT
@@ -678,7 +679,7 @@ void TextResource::init()
                                     });
 
     //PAGE_INIT_CONFIRM
-    fontData[Lan][PAGE_INIT_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
+    fontData[Lan][PAGE_INIT_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(nTextSize),QFont::Bold));
     textData[Lan][PAGE_INIT_CONFIRM].insert("labelText",QStringList{
                                                 "The entire system\ninformation will be reset.\nDo you want to proceed\nwith factory reset?",
                                                 "After system initialization,\nthe system will restart",
@@ -720,7 +721,7 @@ void TextResource::init()
     fontData[Lan][PAGE_UPGRADE].insert("labelTextVersion",QFont(instance.fontSuit,instance.pixelToPoint(55)));
 
     //PAGE_UPGRADE_CONFIRM
-    fontData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36),QFont::Bold));
+    fontData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(nTextSize),QFont::Bold));
     textData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText",QStringList{
                                                    "1. Connect the device to PC\n"
                                                    "2. Copy bin file to the device\n"
@@ -752,7 +753,7 @@ void TextResource::init()
                                             "Low Battery",
                                             "Please connect it to the charger"
                                         });
-    fontData[Lan][PAGE_BATPOPUP].insert("labelTextSub",QFont(instance.fontSuit,instance.pixelToPoint(36)));
+    fontData[Lan][PAGE_BATPOPUP].insert("labelTextSub",QFont(instance.fontSuit,instance.pixelToPoint(nTextSize)));
     textData[Lan][PAGE_BATPOPUP].insert("labelTextSub",QStringList{
                                             "Battery very low",
                                             "The system is shutting down"
@@ -764,7 +765,7 @@ void TextResource::init()
                                            "Left",
                                            "Right"
                                        });
-    fontData[Lan][PAGE_REVERSE].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36)));
+    fontData[Lan][PAGE_REVERSE].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(nTextSize)));
     textData[Lan][PAGE_REVERSE].insert("labelText",QStringList{
                                            "Reset will be proceeded"
                                        });
@@ -773,6 +774,7 @@ void TextResource::init()
     //=====================================================================================================================================
     //JP
     Lan = JP;
+    nTextSize = 30;
 
     //PAGE_TRANS
     fontData[Lan][PAGE_TRANS].insert("fontSuit",QFont(instance.fontSuit,instance.pixelToPoint(36)));
@@ -887,7 +889,7 @@ void TextResource::init()
                                                     "PASSWORD_STR_MAX" // PASSWORD_STR_MAX
                                                 });
 
-    fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(32), QFont::Bold));
+    fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText", QStringList{
                                                     "ログイン成功",                              // PASSWORD_STR_LOGIN_SUCCESS
                                                     "ログイン失敗",                              // PASSWORD_STR_LOGIN_FAIL
@@ -987,14 +989,14 @@ void TextResource::init()
                                     });
 
     //PAGE_CALI_CHECK
-    fontData[Lan][PAGE_CALI_CHECK].insert("labelTextCheck", QFont(instance.fontSuit, instance.pixelToPoint(30), QFont::Bold));
+    fontData[Lan][PAGE_CALI_CHECK].insert("labelTextCheck", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_CALI_CHECK].insert("labelTextCheck", QStringList{
                                               "補正フェーズです\n指を挿入してください",          // Calibration phase, Please insert your finger
                                               "補正完了です\n再実行しますか？"                // Calibration complete, Do you want to proceed again?
                                           });
 
     //PAGE_CALI_GAIN_CONFIRM
-    fontData[Lan][PAGE_CALI_GAIN_CONFIRM].insert("labelTextGainConfirm", QFont(instance.fontSuit, instance.pixelToPoint(30), QFont::Bold));
+    fontData[Lan][PAGE_CALI_GAIN_CONFIRM].insert("labelTextGainConfirm", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_CALI_GAIN_CONFIRM].insert("labelTextGainConfirm", QStringList{
                                                      "LED感度調整段階です\n指を動かさないでください",    // LED sensitivity adjustment step, Please do not move your finger
                                                      "LED感度調整が完了しました"                      // LED sensitivity adjustment has been completed
@@ -1014,7 +1016,7 @@ void TextResource::init()
     textData[Lan][PAGE_GRAPH].insert("labelLoading", QStringList{"解析中"}); // Analyzing
 
     //Page_CALI_GAIN_RESULT
-    fontData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(36), QFont::Bold));
+    fontData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText", QStringList{
                                                     "LED感度調整が完了しました\n次の測定ステップに進んでください", // LED sensitivity adjustment is complete, Proceed to the next measurement step
                                                     "LED感度調整に失敗しました\n再度測定してください"          // LED sensitivity adjustment failed, Please measure again
@@ -1031,7 +1033,7 @@ void TextResource::init()
     fontData[Lan][PAGE_CALI_SELECT].insert("labelSelectTextValue", QFont(instance.fontSuit, instance.pixelToPoint(36)));
 
     //PAGE_CALI_SELECT_INFO
-    fontData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInfoText", QFont(instance.fontSuit, instance.pixelToPoint(36), QFont::Bold));
+    fontData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInfoText", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInfoText", QStringList{
                                                     "最後の食事から8時間以上\n経過しましたか？",            // Has it been more than 8 hours since your last meal?
                                                     "最後の食事から1時間以上\n経過しましたか？",            // Has it been more than 1 hour since your last meal?
@@ -1040,7 +1042,7 @@ void TextResource::init()
                                                 });
 
     //PAGE_CALI_CONFIRM
-    fontData[Lan][PAGE_CALI_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(36), QFont::Bold));
+    fontData[Lan][PAGE_CALI_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_CALI_CONFIRM].insert("labelText", QStringList{"入力または測定を選択してください"}); // Select input or measure
 
     //PAGE_CALI_RESULT
@@ -1096,7 +1098,7 @@ void TextResource::init()
                                     });
 
     //PAGE_INIT_CONFIRM
-    fontData[Lan][PAGE_INIT_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(36), QFont::Bold));
+    fontData[Lan][PAGE_INIT_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_INIT_CONFIRM].insert("labelText", QStringList{
                                                 "システム全体の情報が\nリセットされます。\n工場出荷状態に\nリセットしますか？", // The entire system information will be reset. Do you want to proceed with factory reset?
                                                 "システムの初期化後、\nシステムが再起動します",          // After system initialization, the system will restart
@@ -1139,7 +1141,7 @@ void TextResource::init()
     fontData[Lan][PAGE_UPGRADE].insert("labelTextVersion", QFont(instance.fontSuit, instance.pixelToPoint(55)));
 
     //PAGE_UPGRADE_CONFIRM
-    fontData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(34), QFont::Bold));
+    fontData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText", QStringList{
                                                    "1. デバイスをPCに接続\n"
                                                    "2. binファイルをデバイスにコピー\n"
@@ -1172,7 +1174,7 @@ void TextResource::init()
                                             "充電器を接続してください"         // Please connect it to the charger
                                         });
 
-    fontData[Lan][PAGE_BATPOPUP].insert("labelTextSub", QFont(instance.fontSuit, instance.pixelToPoint(36)));
+    fontData[Lan][PAGE_BATPOPUP].insert("labelTextSub", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize)));
     textData[Lan][PAGE_BATPOPUP].insert("labelTextSub", QStringList{
                                             "バッテリー残量が非常に少ない",       // Battery very low
                                             "システムをシャットダウンしています" // The system is shutting down
@@ -1185,7 +1187,7 @@ void TextResource::init()
                                            "右"    // Right
                                        });
 
-    fontData[Lan][PAGE_REVERSE].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(36)));
+    fontData[Lan][PAGE_REVERSE].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize)));
     textData[Lan][PAGE_REVERSE].insert("labelText", QStringList{
                                            "リセットが進行します" // Reset will be proceeded
                                        });
@@ -1193,6 +1195,7 @@ void TextResource::init()
     //=====================================================================================================================================
     //SC
     Lan = SC;
+    nTextSize = 36;
 
     //PAGE_TRANS
     fontData[Lan][PAGE_TRANS].insert("fontSuit",QFont(instance.fontSuit,instance.pixelToPoint(36)));
@@ -1308,7 +1311,7 @@ void TextResource::init()
                                                     "PASSWORD_STR_MAX"   // PASSWORD_STR_MAX
                                                 });
 
-    fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(36), QFont::Bold));
+    fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText", QStringList{
                                                     "登录成功",                               // PASSWORD_STR_LOGIN_SUCCESS
                                                     "登录失败",                               // PASSWORD_STR_LOGIN_FAIL
@@ -1408,14 +1411,14 @@ void TextResource::init()
                                     });
 
     //PAGE_CALI_CHECK
-    fontData[Lan][PAGE_CALI_CHECK].insert("labelTextCheck", QFont(instance.fontSuit, instance.pixelToPoint(30), QFont::Bold));
+    fontData[Lan][PAGE_CALI_CHECK].insert("labelTextCheck", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_CALI_CHECK].insert("labelTextCheck", QStringList{
                                               "校准阶段\n请插入手指",     // Calibration phase, Please insert your finger
                                               "校准完成\n是否重新执行？" // Calibration complete, Do you want to proceed again?
                                           });
 
     //PAGE_CALI_GAIN_CONFIRM
-    fontData[Lan][PAGE_CALI_GAIN_CONFIRM].insert("labelTextGainConfirm", QFont(instance.fontSuit, instance.pixelToPoint(30), QFont::Bold));
+    fontData[Lan][PAGE_CALI_GAIN_CONFIRM].insert("labelTextGainConfirm", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_CALI_GAIN_CONFIRM].insert("labelTextGainConfirm", QStringList{
                                                      "LED灵敏度调整阶段\n请勿移动手指", // LED sensitivity adjustment step, Please do not move your finger
                                                      "LED灵敏度调整已完成"         // LED sensitivity adjustment has been completed
@@ -1435,7 +1438,7 @@ void TextResource::init()
     textData[Lan][PAGE_GRAPH].insert("labelLoading", QStringList{"分析中"}); // Analyzing
 
     //Page_CALI_GAIN_RESULT
-    fontData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(36), QFont::Bold));
+    fontData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText", QStringList{
                                                     "LED灵敏度调整已完成\n请进行下一步测量", // LED sensitivity adjustment is complete, Proceed to the next measurement step
                                                     "LED灵敏度调整失败\n请重新测量"       // LED sensitivity adjustment failed, Please measure again
@@ -1452,7 +1455,7 @@ void TextResource::init()
     fontData[Lan][PAGE_CALI_SELECT].insert("labelSelectTextValue", QFont(instance.fontSuit, instance.pixelToPoint(36)));
 
     //PAGE_CALI_SELECT_INFO
-    fontData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInfoText", QFont(instance.fontSuit, instance.pixelToPoint(36), QFont::Bold));
+    fontData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInfoText", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInfoText", QStringList{
                                                     "距离上次进餐是否已超过8小时？",         // Has it been more than 8 hours since your last meal?
                                                     "距离上次进餐是否已超过1小时？",         // Has it been more than 1 hour since your last meal?
@@ -1461,7 +1464,7 @@ void TextResource::init()
                                                 });
 
     //PAGE_CALI_CONFIRM
-    fontData[Lan][PAGE_CALI_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(36), QFont::Bold));
+    fontData[Lan][PAGE_CALI_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_CALI_CONFIRM].insert("labelText", QStringList{"选择输入或测量"}); // Select input or measure
 
     //PAGE_CALI_RESULT
@@ -1517,7 +1520,7 @@ void TextResource::init()
                                     });
 
     //PAGE_INIT_CONFIRM
-    fontData[Lan][PAGE_INIT_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(36), QFont::Bold));
+    fontData[Lan][PAGE_INIT_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_INIT_CONFIRM].insert("labelText", QStringList{
                                                 "系统的所有信息将会被重置。\n是否继续进行出厂设置？",   // The entire system information will be reset. Do you want to proceed with factory reset?
                                                 "系统初始化后将会重新启动",                 // After system initialization, the system will restart
@@ -1560,7 +1563,7 @@ void TextResource::init()
     fontData[Lan][PAGE_UPGRADE].insert("labelTextVersion", QFont(instance.fontSuit, instance.pixelToPoint(55)));
 
     //PAGE_UPGRADE_CONFIRM
-    fontData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(42), QFont::Bold));
+    fontData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText", QStringList{
                                                    "1. 将设备连接到电脑\n"
                                                    "2. 将bin文件复制到设备\n"
@@ -1593,7 +1596,7 @@ void TextResource::init()
                                             "请连接充电器"          // Please connect it to the charger
                                         });
 
-    fontData[Lan][PAGE_BATPOPUP].insert("labelTextSub", QFont(instance.fontSuit, instance.pixelToPoint(36)));
+    fontData[Lan][PAGE_BATPOPUP].insert("labelTextSub", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize)));
     textData[Lan][PAGE_BATPOPUP].insert("labelTextSub", QStringList{
                                             "电量非常低",          // Battery very low
                                             "系统正在关闭"         // The system is shutting down
@@ -1606,7 +1609,7 @@ void TextResource::init()
                                            "右手"   // Right
                                        });
 
-    fontData[Lan][PAGE_REVERSE].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(36)));
+    fontData[Lan][PAGE_REVERSE].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize)));
     textData[Lan][PAGE_REVERSE].insert("labelText", QStringList{
                                            "重启后设置将被重置" // Reset will be proceeded
                                        });
@@ -1614,6 +1617,7 @@ void TextResource::init()
     //=====================================================================================================================================
     //TC
     Lan = TC;
+    nTextSize = 36;
 
     //PAGE_TRANS
     fontData[Lan][PAGE_TRANS].insert("fontSuit",QFont(instance.fontSuit,instance.pixelToPoint(36)));
@@ -1729,7 +1733,7 @@ void TextResource::init()
                                                     "PASSWORD_STR_MAX"
                                                 });
 
-    fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(36), QFont::Bold));
+    fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText", QStringList{
                                                     "登入成功",                                   // Login successful
                                                     "登入失敗",                                   // Login failed
@@ -1824,14 +1828,14 @@ void TextResource::init()
                                     });
 
     //PAGE_CALI_CHECK
-    fontData[Lan][PAGE_CALI_CHECK].insert("labelTextCheck", QFont(instance.fontSuit, instance.pixelToPoint(30), QFont::Bold));
+    fontData[Lan][PAGE_CALI_CHECK].insert("labelTextCheck", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_CALI_CHECK].insert("labelTextCheck", QStringList{
                                               "校準階段\n請將手指放入裝置", // Calibration phase. Please insert your finger
                                               "校準完成\n是否再次進行？"    // Calibration complete. Do you want to proceed again?
                                           });
 
     //PAGE_CALI_GAIN_CONFIRM
-    fontData[Lan][PAGE_CALI_GAIN_CONFIRM].insert("labelTextGainConfirm", QFont(instance.fontSuit, instance.pixelToPoint(30), QFont::Bold));
+    fontData[Lan][PAGE_CALI_GAIN_CONFIRM].insert("labelTextGainConfirm", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_CALI_GAIN_CONFIRM].insert("labelTextGainConfirm", QStringList{
                                                      "LED感應調整階段\n請勿移動手指", // LED sensitivity adjustment step. Please do not move your finger
                                                      "LED感應調整完成"                // LED sensitivity adjustment has been completed
@@ -1851,7 +1855,7 @@ void TextResource::init()
     textData[Lan][PAGE_GRAPH].insert("labelLoading", QStringList{"分析中"}); // Analyzing
 
     //Page_CALI_GAIN_RESULT
-    fontData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(36), QFont::Bold));
+    fontData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText", QStringList{
                                                     "LED感應調整完成\n請進入下一步測量", // LED sensitivity adjustment is complete. Proceed to the next measurement step
                                                     "LED感應調整失敗\n請重新測量"        // LED sensitivity adjustment failed. Please measure again
@@ -1868,7 +1872,7 @@ void TextResource::init()
     fontData[Lan][PAGE_CALI_SELECT].insert("labelSelectTextValue", QFont(instance.fontSuit, instance.pixelToPoint(36)));
 
     //PAGE_CALI_SELECT_INFO
-    fontData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInfoText", QFont(instance.fontSuit, instance.pixelToPoint(36), QFont::Bold));
+    fontData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInfoText", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInfoText", QStringList{
                                                     "距離上次進餐是否已超過8小時？",           // Has it been more than 8 hours since your last meal?
                                                     "距離上次進餐是否已超過1小時？",           // Has it been more than 1 hour since your last meal?
@@ -1877,7 +1881,7 @@ void TextResource::init()
                                                 });
 
     //PAGE_CALI_CONFIRM
-    fontData[Lan][PAGE_CALI_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(36), QFont::Bold));
+    fontData[Lan][PAGE_CALI_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_CALI_CONFIRM].insert("labelText", QStringList{"選擇輸入或測量"}); // Select input or measure
 
     //PAGE_CALI_RESULT
@@ -1934,7 +1938,7 @@ void TextResource::init()
                                     });
 
     //PAGE_INIT_CONFIRM
-    fontData[Lan][PAGE_INIT_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(36), QFont::Bold));
+    fontData[Lan][PAGE_INIT_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_INIT_CONFIRM].insert("labelText", QStringList{
                                                 "整個系統資訊將被重置。\n是否繼續執行出廠重置？", // The entire system information will be reset. Do you want to proceed with factory reset?
                                                 "系統初始化後，\n系統將重新啟動",            // After system initialization, the system will restart
@@ -1977,7 +1981,7 @@ void TextResource::init()
     fontData[Lan][PAGE_UPGRADE].insert("labelTextVersion", QFont(instance.fontSuit, instance.pixelToPoint(55)));
 
     //PAGE_UPGRADE_CONFIRM
-    fontData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(42), QFont::Bold));
+    fontData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText", QStringList{
                                                    "1. 將裝置連接至電腦\n"       // 1. Connect the device to PC
                                                    "2. 將bin檔案複製到裝置\n"    // 2. Copy bin file to the device
@@ -2010,7 +2014,7 @@ void TextResource::init()
                                             "請連接充電器"         // Please connect it to the charger
                                         });
 
-    fontData[Lan][PAGE_BATPOPUP].insert("labelTextSub", QFont(instance.fontSuit, instance.pixelToPoint(36)));
+    fontData[Lan][PAGE_BATPOPUP].insert("labelTextSub", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize)));
     textData[Lan][PAGE_BATPOPUP].insert("labelTextSub", QStringList{
                                             "電池電量極低",         // Battery very low
                                             "系統即將關機"         // The system is shutting down
@@ -2023,7 +2027,7 @@ void TextResource::init()
                                            "右手"      // Right
                                        });
 
-    fontData[Lan][PAGE_REVERSE].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(36)));
+    fontData[Lan][PAGE_REVERSE].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize)));
     textData[Lan][PAGE_REVERSE].insert("labelText", QStringList{
                                            "重置將繼續進行"       // Reset will be proceeded
                                        });
@@ -2031,6 +2035,7 @@ void TextResource::init()
     //=====================================================================================================================================
     //ES
     Lan = ES;
+    nTextSize = 30;
 
     //PAGE_TRANS
     fontData[Lan][PAGE_TRANS].insert("fontSuit",QFont(instance.fontSuit,instance.pixelToPoint(36)));
@@ -2144,7 +2149,7 @@ void TextResource::init()
                                                     "CONTRASEÑA_STR_MAX"                    // PASSWORD_STR_MAX
                                                 });
 
-    fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(36), QFont::Bold));
+    fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText", QStringList{
                                                     "Inicio de sesión exitoso",                             // Login successful
                                                     "Inicio de sesión fallido",                             // Login failed
@@ -2236,14 +2241,14 @@ void TextResource::init()
                                     });
 
     //PAGE_CALI_CHECK
-    fontData[Lan][PAGE_CALI_CHECK].insert("labelTextCheck",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
+    fontData[Lan][PAGE_CALI_CHECK].insert("labelTextCheck",QFont(instance.fontSuit,instance.pixelToPoint(nTextSize),QFont::Bold));
     textData[Lan][PAGE_CALI_CHECK].insert("labelTextCheck",QStringList{
                                               "Fase de calibración\nPor favor inserte su dedo",
                                               "Calibración completa\n¿Desea proceder de nuevo?"
                                           });
 
     //PAGE_CALI_GAIN_CONFIRM
-    fontData[Lan][PAGE_CALI_GAIN_CONFIRM].insert("labelTextGainConfirm",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
+    fontData[Lan][PAGE_CALI_GAIN_CONFIRM].insert("labelTextGainConfirm",QFont(instance.fontSuit,instance.pixelToPoint(nTextSize),QFont::Bold));
     textData[Lan][PAGE_CALI_GAIN_CONFIRM].insert("labelTextGainConfirm",QStringList{
                                                      "Paso de ajuste de sensibilidad LED\nPor favor no mueva su dedo",
                                                      "El ajuste de sensibilidad LED\nse ha completado"
@@ -2260,7 +2265,7 @@ void TextResource::init()
     textData[Lan][PAGE_GRAPH].insert("labelLoading", QStringList{"Analizando"});
 
     //Page_CALI_GAIN_RESULT
-    fontData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(36), QFont::Bold));
+    fontData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText", QStringList{
                                                     "El ajuste de sensibilidad del LED está completo\nProceda al siguiente paso de medición",
                                                     "El ajuste de sensibilidad del LED falló.\nPor favor, mida nuevamente"
@@ -2276,7 +2281,7 @@ void TextResource::init()
     fontData[Lan][PAGE_CALI_SELECT].insert("labelSelectTextValue", QFont(instance.fontSuit, instance.pixelToPoint(36)));
 
     //PAGE_CALI_SELECT_INFO
-    fontData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInfoText", QFont(instance.fontSuit, instance.pixelToPoint(36), QFont::Bold));
+    fontData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInfoText", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_CALI_SELECT_INFO].insert("labelSelectInfoText", QStringList{
                                                     "¿Han pasado más de 8 horas\ndesde tu última comida?",
                                                     "¿Ha pasado más de 1 hora\ndesde tu última comida?",
@@ -2285,7 +2290,7 @@ void TextResource::init()
                                                 });
 
     //PAGE_CALI_CONFIRM
-    fontData[Lan][PAGE_CALI_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(36), QFont::Bold));
+    fontData[Lan][PAGE_CALI_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_CALI_CONFIRM].insert("labelText", QStringList{"Seleccione entrada o medida"});
 
     //PAGE_CALI_RESULT
@@ -2340,7 +2345,7 @@ void TextResource::init()
                                     });
 
     //PAGE_INIT_CONFIRM
-    fontData[Lan][PAGE_INIT_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(30), QFont::Bold));
+    fontData[Lan][PAGE_INIT_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_INIT_CONFIRM].insert("labelText", QStringList{
         "Toda la información del sistema\n"
         "se restablecerá.\n\n"
@@ -2402,7 +2407,7 @@ void TextResource::init()
     fontData[Lan][PAGE_UPGRADE].insert("labelTextVersion",QFont(instance.fontSuit,instance.pixelToPoint(55)));
 
     //PAGE_UPGRADE_CONFIRM
-    fontData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(30),QFont::Bold));
+    fontData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(nTextSize),QFont::Bold));
     textData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText",QStringList{
                                                    "1. Conecte el dispositivo a la PC\n"
                                                    "2. Copie el archivo bin en el dispositivo\n"
@@ -2434,7 +2439,7 @@ void TextResource::init()
                                             "Batería baja",
                                             "Por favor conéctelo al cargador"
                                         });
-    fontData[Lan][PAGE_BATPOPUP].insert("labelTextSub",QFont(instance.fontSuit,instance.pixelToPoint(36)));
+    fontData[Lan][PAGE_BATPOPUP].insert("labelTextSub",QFont(instance.fontSuit,instance.pixelToPoint(nTextSize)));
     textData[Lan][PAGE_BATPOPUP].insert("labelTextSub",QStringList{
                                             "Batería muy baja",
                                             "El sistema se está apagando"
@@ -2446,7 +2451,7 @@ void TextResource::init()
                                            "Izquierda",
                                            "Derecha"
                                        });
-    fontData[Lan][PAGE_REVERSE].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(36)));
+    fontData[Lan][PAGE_REVERSE].insert("labelText",QFont(instance.fontSuit,instance.pixelToPoint(nTextSize)));
     textData[Lan][PAGE_REVERSE].insert("labelText",QStringList{
                                            "El reinicio se procederá"
                                        });
