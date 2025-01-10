@@ -69,9 +69,9 @@ typedef enum
     PAGE_BATPOPUP,
     PAGE_REVERSE,
     PAGE_TRANS,
-
     PAGE_HISTORY,
-    PAGE_COLOR,
+
+    //PAGE_COLOR,
 
     CUSTOM_BUTTON,
     CUSTOM_COMPONENT,

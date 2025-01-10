@@ -2125,7 +2125,7 @@ void TextResource::init()
     fontData[Lan][PAGE_PASSWORD].insert("labelButtonOKText", QFont(instance.fontSuit, instance.pixelToPoint(20)));
     textData[Lan][PAGE_PASSWORD].insert("labelButtonOKText", QStringList{"Aceptar"}); // OK
 
-    fontData[Lan][PAGE_PASSWORD].insert("labelButtonCancelText", QFont(instance.fontSuit, instance.pixelToPoint(29)));
+    fontData[Lan][PAGE_PASSWORD].insert("labelButtonCancelText", QFont(instance.fontSuit, instance.pixelToPoint(20)));
     textData[Lan][PAGE_PASSWORD].insert("labelButtonCancelText", QStringList{"Cancelar"}); // Cancel
 
     //PAGE_PASSWORD_CONFIRM

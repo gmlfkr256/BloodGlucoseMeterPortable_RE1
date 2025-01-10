@@ -167,9 +167,7 @@ void MainWindow::init()
         {PAGE_BATPOPUP, "PageBatteryPopup"},
         {PAGE_REVERSE, "PageReverse"},
         {PAGE_TRANS, "PageTrans"},
-
         {PAGE_HISTORY, "PageHistory"},
-        {PAGE_COLOR, "PageColor"},
 
         {CUSTOM_BUTTON, "CustomButton"},
         {PAGE_MAX, "InvalidPage"}  // 예외 처리
