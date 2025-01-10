@@ -2112,7 +2112,7 @@ void TextResource::init()
                                             "CONTRASEÑA_MAX"                 // PASSWORD_MAX
                                         });
 
-    fontData[Lan][PAGE_PASSWORD].insert("labelTitleSub", QFont(instance.fontSuit, instance.pixelToPoint(30)));
+    fontData[Lan][PAGE_PASSWORD].insert("labelTitleSub", QFont(instance.fontSuit, instance.pixelToPoint(24)));
     textData[Lan][PAGE_PASSWORD].insert("labelTitleSub", QStringList{
                                             "Por favor ingrese su contraseña de 4 dígitos",        // Please enter your 4-digit password
                                             "Por favor ingrese los 4 dígitos para modificar",      // Please enter the 4 digits to modify
