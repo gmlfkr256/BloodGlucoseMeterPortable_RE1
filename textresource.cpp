@@ -884,7 +884,7 @@ void TextResource::init()
                                                     "PASSWORD_STR_MAX" // PASSWORD_STR_MAX
                                                 });
 
-    fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(36), QFont::Bold));
+    fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText", QFont(instance.fontSuit, instance.pixelToPoint(32), QFont::Bold));
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText", QStringList{
                                                     "ログイン成功",                              // PASSWORD_STR_LOGIN_SUCCESS
                                                     "ログイン失敗",                              // PASSWORD_STR_LOGIN_FAIL
