@@ -1097,9 +1097,9 @@ void TextResource::init()
     textData[Lan][PAGE_INIT_CONFIRM].insert("labelText", QStringList{
                                                 "システム全体の情報が\nリセットされます。\n工場出荷状態に\nリセットしますか？", // The entire system information will be reset. Do you want to proceed with factory reset?
                                                 "システムの初期化後、\nシステムが再起動します",          // After system initialization, the system will restart
-                                                "Bluetoothのユーザー情報が初期化されます。\nスマートフォンとの接続が切断されます。\nBluetoothをリセットしますか？", // Bluetooth user information will be initialized. The connection with the smartphone is disconnected. Would you like to reset Bluetooth?
-                                                "Bluetoothのユーザー情報が初期化されました",          // Bluetooth user information has been reset
-                                                "血糖補正がリセットされます\n血糖補正をリセットしますか？", // Blood sugar correction will be reset. Do you want to reset blood sugar correction?
+                                                "Bluetoothのユーザー情報が\n初期化されます。\nスマートフォンとの接続が\n切断されます。\nBluetoothをリセットしますか？", // Bluetooth user information will be initialized. The connection with the smartphone is disconnected. Would you like to reset Bluetooth?
+                                                "Bluetoothのユーザー情報が\n初期化されました",          // Bluetooth user information has been reset
+                                                "血糖補正がリセットされます\n血糖補正を\nリセットしますか？", // Blood sugar correction will be reset. Do you want to reset blood sugar correction?
                                                 "血糖補正がリセットされました"                     // Blood sugar correction has been reset
                                             });
 
