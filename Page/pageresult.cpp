@@ -158,7 +158,8 @@ void PageResult::setValueUI()
         //
         strTooltip = textResource.getText(PAGE_RESULT,"labelProgressBarTooltip").at(nIndexTooltip);
         QFontMetrics metrics(labelProgressBarTooltip->font());
-        int nTextWidth = metrics.horizontalAdvance(strTooltip)+20;
+        //int nTextWidth = metrics.horizontalAdvance(strTooltip)+20;
+        int nTextWidth = metrics.width(strTooltip)+20;
         labelProgressBarTooltip->setFixedWidth(nTextWidth);
         //
         nTooltipX = labelProgressBar->x()+nProgressBarWidth-(labelProgressBarTooltip->width()/2);
