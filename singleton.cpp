@@ -586,12 +586,18 @@ int Singleton::pixelToPoint(int pixelSize)
 
 void Singleton::getHistory(int day)
 {
+#if DEVICE
     guiApi.getHistory(day,&histInfo);
+#else
+    Q_UNUSED(day);
+#endif
 }
 
 void Singleton::getHistoryAll()
 {
+#if DEVICE
     guiApi.getHistoryAll(hisInfo);
+#endif
 }
 
 QString Singleton::getTextColorGlucoseValue(int glucoseValue, bool bIsBlack)
