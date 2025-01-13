@@ -23,7 +23,7 @@ void ComponentClock::update()
 {
     labelClock->setFont(QFont(instance.fontSuit,instance.pixelToPoint(28),QFont::Bold));
 
-    if(!bIsHistorySelect)
+    if(!instance.bIsHistorySelect)
     {
         QDateTime localTime(QDateTime::currentDateTime());
         QString day = QDateTime::currentDateTime().toString("dd");

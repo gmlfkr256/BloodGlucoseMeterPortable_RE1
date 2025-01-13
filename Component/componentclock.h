@@ -10,7 +10,7 @@ class ComponentClock : public CustomComponent
     Q_OBJECT
 public:
     ComponentClock(QWidget *parent);
-    bool bIsHistorySelect = false;
+
 
 private:
 
