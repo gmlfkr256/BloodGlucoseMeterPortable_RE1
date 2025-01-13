@@ -175,15 +175,24 @@ void PageHistory::pageShow()
 
     QDateTime dateTime(QDateTime::currentDateTime());
 
+    if(!dateSelected.isValid())
+        dateSelected = dateTime.date();
+
+    /*
     comDateYear->setValue(dateTime.date().year());
     comDateMonth->setValue(dateTime.date().month());
     comDateDay->setValue(dateTime.date().day());
+    */
+    comDateYear->setValue(dateSelected.year());
+    comDateMonth->setValue(dateSelected.month());
+    comDateDay->setValue(dateSelected.day());
 
     update();
 }
 
 void PageHistory::pageHide()
 {
+    dateSelected = QDate(comDateYear->getDateValue(),comDateMonth->getDateValue(),comDateDay->getDateValue());
     emit signalShowPageNum(PAGE_MENU);
 }
 

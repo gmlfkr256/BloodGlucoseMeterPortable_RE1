@@ -45,6 +45,7 @@ public:
     void pageShow() override;
     void pageHide() override;
 private:
+    QDate dateSelected;
     void init();
 
 signals:
