@@ -21,27 +21,37 @@ void ComponentClock::init()
 
 void ComponentClock::update()
 {
-    QDateTime localTime(QDateTime::currentDateTime());
-    QString day = QDateTime::currentDateTime().toString("dd");
-
-    QLocale clockLocale = QLocale(QLocale::English,QLocale::UnitedStates);
-    QString strLocale = clockLocale.toString(localTime,"MM-dd ddd hh:mm");
-
-
     labelClock->setFont(QFont(instance.fontSuit,instance.pixelToPoint(28),QFont::Bold));
 
-
-    labelClock->setText(strLocale);
-
-    instance.nSleepTimeCount++;
-
-    if(instance.dispData.ts_timeout != 0 && static_cast<unsigned int>(instance.nSleepTimeCount) > instance.dispData.ts_timeout)
+    if(bIsHistorySelect)
     {
-#if DEVICE
-        if(instance.guiApi.glucoseActPowerDown() == GAPI_FAIL)
-            qDebug()<<"PowerDown Fail";
-#endif
+        QDateTime localTime(QDateTime::currentDateTime());
+        QString day = QDateTime::currentDateTime().toString("dd");
+
+        QLocale clockLocale = QLocale(QLocale::English,QLocale::UnitedStates);
+        QString strLocale = clockLocale.toString(localTime,"MM-dd ddd hh:mm");
+
+        labelClock->setText(strLocale);
+
+        instance.nSleepTimeCount++;
+
+        if(instance.dispData.ts_timeout != 0 && static_cast<unsigned int>(instance.nSleepTimeCount) > instance.dispData.ts_timeout)
+        {
+    #if DEVICE
+            if(instance.guiApi.glucoseActPowerDown() == GAPI_FAIL)
+                qDebug()<<"PowerDown Fail";
+    #endif
+        }
     }
+    else
+    {
+        QString str;
+        QString strDate = QString::number(instance.hisInfo[instance.nHisInfoSeletedIndex].date);
+
+        str = strDate.mid(0,4);
+        str+= strDate.mid(4,2);
+    }
+
 }
 
 void ComponentClock::pageShow()
