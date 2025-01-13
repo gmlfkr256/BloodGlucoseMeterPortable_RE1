@@ -36,6 +36,9 @@ public:
     void pageHide() override;
 private:
     void init();
+
+signals:
+    void signalUpdateClock();
 };
 
 #endif // PAGEHISTORYRESULT_H

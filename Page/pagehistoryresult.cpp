@@ -116,12 +116,14 @@ void PageHistoryResult::update()
 void PageHistoryResult::pageShow()
 {
     instance.bIsHistorySelect = true;
+    emit signalUpdateClock();
     update();
 }
 
 void PageHistoryResult::pageHide()
 {
     instance.bIsHistorySelect = false;
+    emit signalUpdateClock();
     emit signalShowPageNum(PAGE_HISTORY);
 }
 

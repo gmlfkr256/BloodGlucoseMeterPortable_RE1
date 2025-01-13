@@ -209,6 +209,8 @@ void MainWindow::initConnect()
             qDebug() << "Widget at index" << i << "is not a Page instance.";
         }
     }
+
+    connect(pageHistoryResult,&PageHistoryResult::signalUpdateClock,comClock,&ComponentClock::update);
     /*
     connect(pagePassword,&PagePassword::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pagePasswordConfirm,&PagePasswordConfirm::signalShowPageNum,this,&MainWindow::setPageByPageNum);
