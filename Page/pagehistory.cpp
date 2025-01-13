@@ -98,7 +98,7 @@ void PageHistory::update()
     }
 
     if(bIsHisDataValidCheck)
-        labelBg->setStyleSheet("border:3px solid #ffffff; border-radius: 15px;");
+        labelBg->setStyleSheet("border:3px solid red; border-radius: 15px;");
 
 }
 
