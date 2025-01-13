@@ -45,10 +45,13 @@ void PageHistory::init()
 
     labelButtonDayPlus = new QLabel(this);
     labelButtonDayPlus->setGeometry(474,90,148,76);
+    labelButtonDayPlus->setAlignment(Qt::AlignCenter);
     labelButtonToday = new QLabel(this);
     labelButtonToday->setGeometry(474,194,148,76);
+    labelButtonToday->setAlignment(Qt::AlignCenter);
     labelButtonDayMinus = new QLabel(this);
     labelButtonDayMinus->setGeometry(474,295,148,76);
+    labelButtonDayMinus->setAlignment(Qt::AlignCenter);
 
     customButtonOK = new CustomButtonOK(this);
     customButtonCancel = new CustomButtonCancel(this);
@@ -74,10 +77,13 @@ void PageHistory::update()
     instance.pixLoad(labelArrowBottom,false,strDirPath,"/arrowBottom.png");
 
     labelButtonDayPlus->setStyleSheet("background-color:#000000; color: #ffffff; border-radius: 10px;");
+    labelButtonDayPlus->setFont(textResource.getFont(PAGE_HISTORY,"labelButton"));
     labelButtonDayPlus->setText(textResource.getText(PAGE_HISTORY,"labelButton").at(0));
     labelButtonToday->setStyleSheet("background-color: #000000; color: #ffffff; border-radius: 10px;");
+    labelButtonToday->setFont(textResource.getFont(PAGE_HISTORY,"labelButton"));
     labelButtonToday->setText(textResource.getText(PAGE_HISTORY,"labelButton").at(1));
     labelButtonDayMinus->setStyleSheet("background-color:#000000; color: #ffffff; border-radius: 10px;");
+    labelButtonDayMinus->setFont(textResource.getFont(PAGE_HISTORY,"labelButton"));
     labelButtonDayMinus->setText(textResource.getText(PAGE_HISTORY,"labelButton").at(2));
 }
 
