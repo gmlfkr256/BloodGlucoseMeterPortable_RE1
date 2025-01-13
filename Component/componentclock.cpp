@@ -47,6 +47,8 @@ void ComponentClock::update()
     {
         QString strLocale;
         QString strDate = QString::number(instance.hisInfo[instance.nHisInfoSeletedIndex].date);
+
+        qDebug()<<"strDate: "<<strDate;
         QDate date = QDate::fromString(strDate,"yyyyMMdd");
 
         if(date.isValid())
