@@ -145,6 +145,8 @@ void PageHistory::changeValue()
     comDateYear->setValue(selectedDate.year());
     comDateMonth->setValue(selectedDate.month());
     comDateDay->update();
+
+    update();
 }
 
 void PageHistory::getHistoryAll()
