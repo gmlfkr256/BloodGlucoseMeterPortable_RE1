@@ -223,6 +223,60 @@ void PageHistory::mousePressEvent(QMouseEvent *ev)
     {
         pageHide();
     }
+
+    // 오늘 날짜로 설정
+       if (instance.touchCheck(labelButtonToday->geometry(), ev))
+       {
+           QDate currentDate = QDate::currentDate();
+           comDateYear->setValue(currentDate.year());
+           comDateMonth->setValue(currentDate.month());
+           comDateDay->setValue(currentDate.day());
+           update();
+       }
+
+       // 플러스데이 버튼
+       if (instance.touchCheck(labelButtonDayPlus->geometry(), ev))
+       {
+           QDate currentDate = QDate::currentDate();
+           QDate selectedDate(comDateYear->getDateValue(), comDateMonth->getDateValue(), comDateDay->getDateValue());
+
+           if (selectedDate.daysTo(currentDate) > 7) // 현재 날짜에서 -7일 이상
+           {
+               selectedDate = selectedDate.addDays(7);
+           }
+           else
+           {
+               selectedDate = currentDate; // 오늘로 설정
+           }
+
+           comDateYear->setValue(selectedDate.year());
+           comDateMonth->setValue(selectedDate.month());
+           comDateDay->setValue(selectedDate.day());
+           update();
+       }
+
+       // 마이너스데이 버튼
+       if (instance.touchCheck(labelButtonDayMinus->geometry(), ev))
+       {
+           QDate currentDate = QDate::currentDate();
+           QDate minDate = currentDate.addDays(-90); // -90일 기준
+           QDate limitDate = currentDate.addDays(-63); // -63일 기준
+           QDate selectedDate(comDateYear->getDateValue(), comDateMonth->getDateValue(), comDateDay->getDateValue());
+
+           if (selectedDate <= limitDate && selectedDate > minDate) // -63일 이후 && -90일 이전
+           {
+               selectedDate = minDate; // -90일로 설정
+           }
+           else if (selectedDate > minDate) // -90일 이후
+           {
+               selectedDate = selectedDate.addDays(-7);
+           }
+
+           comDateYear->setValue(selectedDate.year());
+           comDateMonth->setValue(selectedDate.month());
+           comDateDay->setValue(selectedDate.day());
+           update();
+       }
 }
 
 void PageHistory::mouseReleaseEvent(QMouseEvent *ev)
