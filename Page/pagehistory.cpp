@@ -74,8 +74,11 @@ void PageHistory::update()
     instance.pixLoad(labelArrowBottom,false,strDirPath,"/arrowBottom.png");
 
     labelButtonDayPlus->setStyleSheet("background-color:#000000; color: #ffffff; border-radius: 10px;");
+    labelButtonDayPlus->setText(textResource.getText(PAGE_HISTORY,"labelButton").at(0));
     labelButtonToday->setStyleSheet("background-color: #000000; color: #ffffff; border-radius: 10px;");
+    labelButtonToday->setText(textResource.getText(PAGE_HISTORY,"labelButton").at(1));
     labelButtonDayMinus->setStyleSheet("background-color:#000000; color: #ffffff; border-radius: 10px;");
+    labelButtonDayMinus->setText(textResource.getText(PAGE_HISTORY,"labelButton").at(2));
 }
 
 void PageHistory::setDateStatus(DateStatus dateStatus)
