@@ -46,9 +46,16 @@ void ComponentClock::update()
     else
     {
         QString strLocale;
-        QString strDate = QString::number(instance.hisInfo[instance.nHisInfoSeletedIndex].date);
+        QString strDate = QString::number(instance.hisInfo[instance.nHisInfoSelectedIndex].date);
 
-        qDebug()<<"strDate: "<<strDate;
+        if (strDate.isEmpty() || strDate.toInt() == 0) {
+            QDate currentDate = QDate::currentDate();
+            QDate calculatedDate = currentDate.addDays(-instance.nHisInfoSelectedIndex); // 전날 계산
+            strDate = calculatedDate.toString("yyyyMMdd"); // yyyyMMdd 형식으로 설정
+        }
+
+        qDebug() << "strDate: " << strDate;
+
         QDate date = QDate::fromString(strDate,"yyyyMMdd");
         QLocale clockLocale = QLocale(QLocale::English,QLocale::UnitedStates);
 

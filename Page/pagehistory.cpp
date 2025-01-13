@@ -215,7 +215,7 @@ void PageHistory::mousePressEvent(QMouseEvent *ev)
 
     if(instance.touchCheck(customButtonOK->geometry(),ev))
     {
-        instance.nHisInfoSeletedIndex = getSelectedDateIndex();
+        instance.nHisInfoSelectedIndex = getSelectedDateIndex();
         emit signalShowPageNum(PAGE_HISTORY_RESULT);
     }
 

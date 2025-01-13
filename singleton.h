@@ -262,7 +262,7 @@ public:
     bool isTouchCtrl = false;
     int nTouchTime = 100;
 
-    int nHisInfoSeletedIndex = 0;
+    int nHisInfoSelectedIndex = 0;
     bool bIsHistorySelect = false;
 
     PageNum currentPage = PAGE_MAX;
