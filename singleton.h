@@ -262,6 +262,8 @@ public:
     bool isTouchCtrl = false;
     int nTouchTime = 100;
 
+    int nHisInfoSeletedIndex = 0;
+
     PageNum currentPage = PAGE_MAX;
 
     void init();
