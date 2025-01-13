@@ -50,10 +50,11 @@ void ComponentClock::update()
 
         qDebug()<<"strDate: "<<strDate;
         QDate date = QDate::fromString(strDate,"yyyyMMdd");
+        QLocale clockLocale = QLocale(QLocale::English,QLocale::UnitedStates);
 
         if(date.isValid())
         {
-            strLocale = date.toString("MM-dd ddd");
+            strLocale = clockLocale.toString(date,"MM-dd ddd");//date.toString("MM-dd ddd");
             labelClock->setText(strLocale);
         }
         else
