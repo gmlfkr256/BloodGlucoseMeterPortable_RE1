@@ -1,12 +1,12 @@
-#include "pagehome.h"
+#include "pagehistoryresult.h"
 
-PageHome::PageHome(QWidget *parent) : Page(parent)
+PageHistoryResult::PageHistoryResult(QWidget* parent) : Page(parent)
 {
     this->setGeometry(parent->geometry());
     init();
 }
 
-void PageHome::init()
+void PageHistoryResult::init()
 {
     listRectButton.append(QRect(10,87,145,185));
     listRectButton.append(QRect(168,87,145,185));
@@ -70,7 +70,7 @@ void PageHome::init()
     update();
 }
 
-void PageHome::update()
+void PageHistoryResult::update()
 {
     for(int i=0; i<8; i++)
     {
@@ -111,27 +111,17 @@ void PageHome::update()
     }
 }
 
-void PageHome::mousePressEvent(QMouseEvent *ev)
+void PageHistoryResult::pageShow()
 {
-    for(int i=0; i<8; i++)
-    {
-        if(instance.touchCheck(labelGroups[i].labelButton->geometry(),ev))
-        {
-            instance.setTimeStatus(static_cast<TimeStatus>(order[i]));
-            emit signalShowPageNum(PAGE_SELECT);
-        }
-    }
-}
-
-void PageHome::pageShow()
-{
-#if DEVICE
-    instance.getHistory(0);
-#endif
     update();
 }
 
-void PageHome::pageHide()
+void PageHistoryResult::pageHide()
+{
+    emit signalShowPageNum(PAGE_HISTORY);
+}
+
+void PageHistoryResult::mousePressEvent(QMouseEvent *ev)
 {
 
 }

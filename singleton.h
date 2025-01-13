@@ -70,6 +70,7 @@ typedef enum
     PAGE_REVERSE,
     PAGE_TRANS,
     PAGE_HISTORY,
+    PAGE_HISTORY_RESULT,
 
     //PAGE_COLOR,
 
@@ -250,6 +251,7 @@ public:
     gapiHistValue_t histValue;
     gapiSpkData_t spkData;
     gapiGlucoseLimit_t glucoseLimit;
+    gapiHistInfo_t hisInfo[91];
 
     int caliIndexCount = 0;
     int nSleepTimeCount = 0;
@@ -295,7 +297,7 @@ public:
     QString getStrNowUserPassword();
 
     //PageHome
-    void getHistory(int day);
+
 
     //PageSelect
     void setTimeStatus(TimeStatus timeStatus);
@@ -345,6 +347,9 @@ public:
     //public
     bool touchCheck(const QRect &rect, QMouseEvent* ev);
     int pixelToPoint(int pixelSize);
+
+    void getHistory(int day);
+    void getHistoryAll();
 
     QString getTextColorGlucoseValue(int glucoseValue,bool bInBlack = false);
     QString getBgColorGlucoseValue(int glucoseValue);

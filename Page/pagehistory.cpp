@@ -72,6 +72,10 @@ void PageHistory::update()
     instance.pixLoad(labelGradientBottom,false,strDirPath,"/gradientBottom.png");
     instance.pixLoad(labelArrowTop,false,strDirPath,"/arrowTop.png");
     instance.pixLoad(labelArrowBottom,false,strDirPath,"/arrowBottom.png");
+
+    labelButtonDayPlus->setStyleSheet("background-color:#000000; color: #ffffff; border-radius: 10px;");
+    labelButtonToday->setStyleSheet("background-color: #000000; color: #ffffff; border-radius: 10px;");
+    labelButtonDayMinus->setStyleSheet("background-color:#000000; color: #ffffff; border-radius: 10px;");
 }
 
 void PageHistory::setDateStatus(DateStatus dateStatus)
@@ -88,9 +92,20 @@ void PageHistory::setDateStatus(DateStatus dateStatus)
 
 void PageHistory::changeValue()
 {
+    QDate selectedDate(comDateYear->getDateValue(),comDateMonth->getDateValue(),comDateDay->getDateValue());
+
+    QDate currentDate = QDate::currentDate();
+    QDate minDate = currentDate.addDays(-90);
+
+    if(selectedDate>currentDate)
+        selectedDate = currentDate;
+    if(selectedDate<minDate)
+        selectedDate = minDate;
+
     QDate date(comDateYear->getDateValue(),comDateMonth->getDateValue(),1);
     int maxDaysInMonth = date.daysInMonth();
-    int currentDay = comDateDay->getDateValue();
+    //int currentDay = comDateDay->getDateValue();
+    int currentDay = selectedDate.day();
 
     bool wasLastDay = (currentDay == comDateDay->nDayMax);
 
@@ -100,12 +115,23 @@ void PageHistory::changeValue()
     {
         comDateDay->setValue(maxDaysInMonth);
     }
+    else
+        comDateDay->setValue(selectedDate.day());
 
+    comDateYear->setValue(selectedDate.year());
+    comDateMonth->setValue(selectedDate.month());
     comDateDay->update();
+}
+
+void PageHistory::getHistoryAll()
+{
+    instance.getHistoryAll();
 }
 
 void PageHistory::pageShow()
 {
+    getHistoryAll();
+
     for(ComponentSpinnerDate* com : listCom)
         com->isSelect = false;
 
@@ -127,9 +153,33 @@ void PageHistory::pageHide()
 
 void PageHistory::mousePressEvent(QMouseEvent *ev)
 {
+    if(instance.touchCheck(labelArrowTop->geometry(),ev))
+    {
+        for(ComponentSpinnerDate* com: listCom)
+        {
+            if(com->isSelect)
+            {
+                bIsArrowTouch = true;
+                com->valuePlus();
+            }
+        }
+    }
+
+    if(instance.touchCheck(labelArrowBottom->geometry(),ev))
+    {
+        for(ComponentSpinnerDate* com: listCom)
+        {
+            if(com->isSelect)
+            {
+                bIsArrowTouch = true;
+                com->valueMinus();
+            }
+        }
+    }
+
     if(instance.touchCheck(customButtonOK->geometry(),ev))
     {
-
+        emit signalShowPageNum(PAGE_HISTORY_RESULT);
     }
 
     if(instance.touchCheck(customButtonCancel->geometry(),ev))
@@ -140,5 +190,13 @@ void PageHistory::mousePressEvent(QMouseEvent *ev)
 
 void PageHistory::mouseReleaseEvent(QMouseEvent *ev)
 {
+    Q_UNUSED(ev)
 
+    if(bIsArrowTouch)
+    {
+        for(ComponentSpinnerDate *com : listCom)
+        {
+            com->timeStop();
+        }
+    }
 }

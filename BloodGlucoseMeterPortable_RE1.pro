@@ -54,6 +54,7 @@ SOURCES += \
     Page/pagedeviceinfo.cpp \
     Page/pagegarph.cpp \
     Page/pagehistory.cpp \
+    Page/pagehistoryresult.cpp \
     Page/pagehome.cpp \
     Page/pageinit.cpp \
     Page/pageinitconfirm.cpp \
@@ -116,6 +117,7 @@ HEADERS += \
     Page/pagedeviceinfo.h \
     Page/pagegarph.h \
     Page/pagehistory.h \
+    Page/pagehistoryresult.h \
     Page/pagehome.h \
     Page/pageinit.h \
     Page/pageinitconfirm.h \

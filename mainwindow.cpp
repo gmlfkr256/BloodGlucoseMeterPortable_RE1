@@ -130,6 +130,9 @@ void MainWindow::init()
     pageHistory = new PageHistory(this);
     stackedWidget->addWidget(pageHistory);
 
+    pageHistoryResult = new PageHistoryResult(this);
+    stackedWidget->addWidget(pageHistoryResult);
+
     comBat = new ComponentBattery(stackedWidget);
     comBle = new ComponentBluetooth(stackedWidget);
     comClock = new ComponentClock(stackedWidget);
@@ -171,6 +174,7 @@ void MainWindow::init()
         {PAGE_REVERSE, "PageReverse"},
         {PAGE_TRANS, "PageTrans"},
         {PAGE_HISTORY, "PageHistory"},
+        {PAGE_HISTORY_RESULT, "PageHistoryResult"},
 
         {CUSTOM_BUTTON, "CustomButton"},
         {PAGE_MAX, "InvalidPage"}  // 예외 처리
@@ -237,6 +241,7 @@ void MainWindow::initConnect()
     connect(pageReverse,&PageReverse::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageTrans,&PageTrans::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageHistory,&PageHistory::signalShowPageNum,this,&MainWindow::setPageByPageNum);
+    connect(pageHistoryResult,&PageHistoryResult::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     */
 }
 

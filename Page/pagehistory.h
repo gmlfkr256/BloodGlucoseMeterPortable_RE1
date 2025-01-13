@@ -38,6 +38,7 @@ public:
 
     void setDateStatus(DateStatus dateStatus);
     void changeValue();
+    void getHistoryAll();
 
     void update() override;
     void pageShow() override;

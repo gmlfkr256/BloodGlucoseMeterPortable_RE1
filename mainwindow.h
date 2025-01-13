@@ -42,6 +42,7 @@
 #include "Page/pagereverse.h"
 #include "Page/pagetrans.h"
 #include "Page/pagehistory.h"
+#include "Page/pagehistoryresult.h"
 
 
 class MainWindow : public QMainWindow
@@ -95,6 +96,7 @@ public:
     PageReverse *pageReverse;
     PageTrans *pageTrans;
     PageHistory *pageHistory;
+    PageHistoryResult *pageHistoryResult;
 
     QList<int> listComHiddenPageIndex;
     QMap<PageNum,QString> mapPageNumName;

@@ -310,11 +310,6 @@ QString Singleton::getStrNowUserPassword()
     return sysUserInfo[nUserNumber].passwd;
 }
 
-void Singleton::getHistory(int day)
-{
-    guiApi.getHistory(day,&histInfo);
-}
-
 //PageSelect
 void Singleton::setTimeStatus(TimeStatus timeStatus)
 {
@@ -587,6 +582,16 @@ int Singleton::pixelToPoint(int pixelSize)
     float dpi = QApplication::primaryScreen()->logicalDotsPerInch();
 
     return static_cast<int>((pixelSize*72.0)/dpi);
+}
+
+void Singleton::getHistory(int day)
+{
+    guiApi.getHistory(day,&histInfo);
+}
+
+void Singleton::getHistoryAll()
+{
+    guiApi.getHistoryAll(hisInfo);
 }
 
 QString Singleton::getTextColorGlucoseValue(int glucoseValue, bool bIsBlack)

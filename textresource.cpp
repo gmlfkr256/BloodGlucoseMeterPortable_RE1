@@ -388,9 +388,17 @@ void TextResource::init()
                                            "화면전환 설정 후 재부팅 됩니다"
                                        });
 
-    //====================================================================================================================================
-    //EN
-    Lan = EN;
+    //PAGE_HISTORY
+    fontData[Lan][PAGE_HISTORY].insert("labelButton",QFont(currentFont,instance.pixelToPoint(30),QFont::Bold));
+    textData[Lan][PAGE_HISTORY].insert("labelButton",QStringList{
+                                           "+ 7일 후",
+                                           "오늘",
+                                           "- 7일 전"
+                                       });
+
+            //====================================================================================================================================
+            //EN
+            Lan = EN;
     nTextSize = 30;
     currentFont = instance.fontSuit;
 
@@ -529,7 +537,7 @@ void TextResource::init()
     //PAGE_SELECT
     fontData[Lan][PAGE_SELECT].insert("labelTextStatus", QFont(currentFont, instance.pixelToPoint(42), QFont::ExtraBold));
     textData[Lan][PAGE_SELECT].insert("labelTextStatus",QStringList{
-                                        "Wake Up","Before Breakfast","After Breakfast","Before Lunch","After Lunch","Before Dinner","After Dinner","Bed Time"});
+                                          "Wake Up","Before Breakfast","After Breakfast","Before Lunch","After Lunch","Before Dinner","After Dinner","Bed Time"});
 
     fontData[Lan][PAGE_SELECT].insert("labelTextStatusSub", QFont(currentFont, instance.pixelToPoint(24)));
     textData[Lan][PAGE_SELECT].insert("labelTextStatusSub", QStringList{"Please start the measurement"});
@@ -772,6 +780,13 @@ void TextResource::init()
                                            "Reset will be proceeded"
                                        });
 
+    //PAGE_HISTORY
+    fontData[Lan][PAGE_HISTORY].insert("labelButton",QFont(currentFont,instance.pixelToPoint(30),QFont::Bold));
+    textData[Lan][PAGE_HISTORY].insert("labelButton",QStringList{
+                                           "+ 7days",
+                                           "Today",
+                                           "- 7days"
+                                       });
 
     //=====================================================================================================================================
     //JP
@@ -930,15 +945,15 @@ void TextResource::init()
     //PAGE_SELECT
     fontData[Lan][PAGE_SELECT].insert("labelTextStatus", QFont(currentFont, instance.pixelToPoint(42), QFont::ExtraBold));
     textData[Lan][PAGE_SELECT].insert("labelTextStatus", QStringList{
-                                        "起床",            // Wake Up
-                                        "朝食前",          // Before Breakfast
-                                        "朝食後",          // After Breakfast
-                                        "昼食前",          // Before Lunch
-                                        "昼食後",          // After Lunch
-                                        "夕食前",          // Before Dinner
-                                        "夕食後",          // After Dinner
-                                        "就寝"             // Bed Time
-                                    });
+                                          "起床",            // Wake Up
+                                          "朝食前",          // Before Breakfast
+                                          "朝食後",          // After Breakfast
+                                          "昼食前",          // Before Lunch
+                                          "昼食後",          // After Lunch
+                                          "夕食前",          // Before Dinner
+                                          "夕食後",          // After Dinner
+                                          "就寝"             // Bed Time
+                                      });
     fontData[Lan][PAGE_SELECT].insert("labelTextStatusSub", QFont(currentFont, instance.pixelToPoint(24)));
     textData[Lan][PAGE_SELECT].insert("labelTextStatusSub", QStringList{"測定を開始してください"}); // Please start the measurement
 
@@ -1195,6 +1210,14 @@ void TextResource::init()
                                            "リセットが進行します" // Reset will be proceeded
                                        });
 
+    //PAGE_HISTORY
+    fontData[Lan][PAGE_HISTORY].insert("labelButton",QFont(currentFont,instance.pixelToPoint(30),QFont::Bold));
+    textData[Lan][PAGE_HISTORY].insert("labelButton",QStringList{
+                                           "+ 7日後",
+                                           "今日",
+                                           "- 7日前"
+                                       });
+
     //=====================================================================================================================================
     //SC
     Lan = SC;
@@ -1353,15 +1376,15 @@ void TextResource::init()
     //PAGE_SELECT
     fontData[Lan][PAGE_SELECT].insert("labelTextStatus", QFont(currentFont, instance.pixelToPoint(42), QFont::ExtraBold));
     textData[Lan][PAGE_SELECT].insert("labelTextStatus", QStringList{
-                                        "起床",            // Wake Up
-                                        "早餐前",          // Before Breakfast
-                                        "早餐后",          // After Breakfast
-                                        "午餐前",          // Before Lunch
-                                        "午餐后",          // After Lunch
-                                        "晚餐前",          // Before Dinner
-                                        "晚餐后",          // After Dinner
-                                        "就寝"             // Bed Time
-                                    });
+                                          "起床",            // Wake Up
+                                          "早餐前",          // Before Breakfast
+                                          "早餐后",          // After Breakfast
+                                          "午餐前",          // Before Lunch
+                                          "午餐后",          // After Lunch
+                                          "晚餐前",          // Before Dinner
+                                          "晚餐后",          // After Dinner
+                                          "就寝"             // Bed Time
+                                      });
     fontData[Lan][PAGE_SELECT].insert("labelTextStatusSub", QFont(currentFont, instance.pixelToPoint(24)));
     textData[Lan][PAGE_SELECT].insert("labelTextStatusSub", QStringList{"请开始测量"}); // Please start the measurement
 
@@ -1618,6 +1641,15 @@ void TextResource::init()
                                            "重启后设置将被重置" // Reset will be proceeded
                                        });
 
+    //PAGE_HISTORY
+    fontData[Lan][PAGE_HISTORY].insert("labelButton",QFont(currentFont,instance.pixelToPoint(30),QFont::Bold));
+    textData[Lan][PAGE_HISTORY].insert("labelButton", QStringList{
+                                           "+ 7天后",
+                                           "今天",
+                                           "- 7天前"
+                                       });
+
+
     //=====================================================================================================================================
     //TC
     Lan = TC;
@@ -1776,15 +1808,15 @@ void TextResource::init()
     //PAGE_SELECT
     fontData[Lan][PAGE_SELECT].insert("labelTextStatus", QFont(currentFont, instance.pixelToPoint(42), QFont::ExtraBold));
     textData[Lan][PAGE_SELECT].insert("labelTextStatus", QStringList{
-                                        "起床",           // Wake Up
-                                        "早餐前",         // Before Breakfast
-                                        "早餐後",         // After Breakfast
-                                        "午餐前",         // Before Lunch
-                                        "午餐後",         // After Lunch
-                                        "晚餐前",         // Before Dinner
-                                        "晚餐後",         // After Dinner
-                                        "就寢"           // Bed Time
-                                    });
+                                          "起床",           // Wake Up
+                                          "早餐前",         // Before Breakfast
+                                          "早餐後",         // After Breakfast
+                                          "午餐前",         // Before Lunch
+                                          "午餐後",         // After Lunch
+                                          "晚餐前",         // Before Dinner
+                                          "晚餐後",         // After Dinner
+                                          "就寢"           // Bed Time
+                                      });
     fontData[Lan][PAGE_SELECT].insert("labelTextStatusSub", QFont(currentFont, instance.pixelToPoint(24)));
     textData[Lan][PAGE_SELECT].insert("labelTextStatusSub", QStringList{"請開始測量"}); // Please start the measurement
 
@@ -2037,6 +2069,15 @@ void TextResource::init()
                                            "重置將繼續進行"       // Reset will be proceeded
                                        });
 
+    //PAGE_HISTORY
+    fontData[Lan][PAGE_HISTORY].insert("labelButton",QFont(currentFont,instance.pixelToPoint(30),QFont::Bold));
+    textData[Lan][PAGE_HISTORY].insert("labelButton", QStringList{
+                                           "+ 7天後",
+                                           "今天",
+                                           "- 7天前"
+                                       });
+
+
     //=====================================================================================================================================
     //ES
     Lan = ES;
@@ -2195,10 +2236,10 @@ void TextResource::init()
     //PAGE_SELECT
     fontData[Lan][PAGE_SELECT].insert("labelTextStatus", QFont(currentFont, instance.pixelToPoint(42), QFont::ExtraBold));
     textData[Lan][PAGE_SELECT].insert("labelTextStatus",QStringList{
-                                        "Despertar", "Antes del desayuno", "Después del desayuno",
-                                        "Antes del almuerzo", "Después del almuerzo",
-                                        "Antes de la cena", "Después de la cena", "Hora de dormir"
-                                    });
+                                          "Despertar", "Antes del desayuno", "Después del desayuno",
+                                          "Antes del almuerzo", "Después del almuerzo",
+                                          "Antes de la cena", "Después de la cena", "Hora de dormir"
+                                      });
 
     fontData[Lan][PAGE_SELECT].insert("labelTextStatusSub", QFont(currentFont, instance.pixelToPoint(24)));
     textData[Lan][PAGE_SELECT].insert("labelTextStatusSub", QStringList{"Por favor inicie la medición"});
@@ -2353,40 +2394,40 @@ void TextResource::init()
     //PAGE_INIT_CONFIRM
     fontData[Lan][PAGE_INIT_CONFIRM].insert("labelText", QFont(currentFont, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_INIT_CONFIRM].insert("labelText", QStringList{
-        "Toda la información del sistema\n"
-        "se restablecerá.\n\n"
-        "¿Desea proceder con el\n"
-        "restablecimiento de fábrica?",
+                                                "Toda la información del sistema\n"
+                                                "se restablecerá.\n\n"
+                                                "¿Desea proceder con el\n"
+                                                "restablecimiento de fábrica?",
 
-        "Después de la inicialización\n"
-        "del sistema,\n"
-        "el sistema se reiniciará.",
+                                                "Después de la inicialización\n"
+                                                "del sistema,\n"
+                                                "el sistema se reiniciará.",
 
-        "La información del usuario de\n"
-        "Bluetooth se inicializará.\n\n"
-        "La conexión con el\n"
-        "smartphone se desconectará.\n\n"
-        "¿Desea restablecer Bluetooth?",
+                                                "La información del usuario de\n"
+                                                "Bluetooth se inicializará.\n\n"
+                                                "La conexión con el\n"
+                                                "smartphone se desconectará.\n\n"
+                                                "¿Desea restablecer Bluetooth?",
 
-        "La información del usuario de\n"
-        "Bluetooth ha sido restablecida.",
+                                                "La información del usuario de\n"
+                                                "Bluetooth ha sido restablecida.",
 
-        "La corrección de azúcar\n"
-        "se restablecerá.\n\n"
-        "¿Desea restablecer la\n"
-        "corrección de azúcar?",
+                                                "La corrección de azúcar\n"
+                                                "se restablecerá.\n\n"
+                                                "¿Desea restablecer la\n"
+                                                "corrección de azúcar?",
 
-        "La corrección de azúcar\n"
-        "ha sido restablecida."
-    });
+                                                "La corrección de azúcar\n"
+                                                "ha sido restablecida."
+                                            });
 
 
     //PAGE_THRESHOLD
     fontData[Lan][PAGE_THRESHOLD].insert("labelText", QFont(currentFont, instance.pixelToPoint(36)));
     textData[Lan][PAGE_THRESHOLD].insert("labelText", QStringList{
-                                                 "Azúcar baja",
-                                                 "Azúcar alta"
-                                             });
+                                             "Azúcar baja",
+                                             "Azúcar alta"
+                                         });
     fontData[Lan][PAGE_THRESHOLD].insert("labelButton", QFont(currentFont, instance.pixelToPoint(22)));
     textData[Lan][PAGE_THRESHOLD].insert("labelButton", QStringList{"Fijar"});
 
@@ -2461,6 +2502,15 @@ void TextResource::init()
     textData[Lan][PAGE_REVERSE].insert("labelText",QStringList{
                                            "El reinicio se procederá"
                                        });
+
+    //PAGE_HISTORY
+    fontData[Lan][PAGE_HISTORY].insert("labelButton",QFont(currentFont,instance.pixelToPoint(30),QFont::Bold));
+    textData[Lan][PAGE_HISTORY].insert("labelButton", QStringList{
+                                           "+7 días",
+                                           "Hoy",
+                                           "-7 días"
+                                       });
+
 
 }
 
