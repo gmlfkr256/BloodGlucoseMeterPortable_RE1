@@ -24,32 +24,6 @@ void Singleton::init()
     thresholdHigh = 170;
 
     /*
-    histInfo.val[0].valid_flag = 1;
-    histInfo.val[0].value = 99;
-    histInfo.val[0].hour = 9;
-    histInfo.val[0].min = 10;
-
-    histInfo.val[1].valid_flag = 1;
-    histInfo.val[1].value = 200;
-    histInfo.val[1].hour = 11;
-    histInfo.val[1].min = 9;
-
-    histInfo.val[2].valid_flag = 1;
-    histInfo.val[2].value = 60;
-    histInfo.val[2].hour = 12;
-    histInfo.val[2].min = 0;
-
-    histInfo.val[3].valid_flag = 1;
-    histInfo.val[3].value = 160;
-    histInfo.val[3].hour = 15;
-    histInfo.val[3].min = 20;
-
-    histInfo.val[4].valid_flag = 1;
-    histInfo.val[4].value = 74;
-    histInfo.val[4].hour = 19;
-    histInfo.val[4].min = 59;
-    */
-
     QDate currentDate = QDate::currentDate();
     hisInfo[0].date = currentDate.toString("yyyyMMdd").toInt();
 
@@ -77,6 +51,54 @@ void Singleton::init()
     hisInfo[0].val[4].value = 74;
     hisInfo[0].val[4].hour = 19;
     hisInfo[0].val[4].min = 59;
+    */
+
+    QDate currentDate = QDate::currentDate();
+
+    for (int dayIndex = 0; dayIndex <= 90; ++dayIndex) // 0: 오늘, 1~90: 과거
+    {
+        // 날짜 설정
+        QDate targetDate = currentDate.addDays(-dayIndex);
+        hisInfo[dayIndex].date = targetDate.toString("yyyyMMdd").toInt();
+
+        int lastHour = 0; // 시간을 순차적으로 증가시키기 위한 변수
+
+        for (int valIndex = 0; valIndex < 8; ++valIndex) // val 0 ~ 7
+        {
+            // valid_flag 랜덤 생성 (0 또는 1)
+            hisInfo[dayIndex].val[valIndex].valid_flag = QRandomGenerator::global()->bounded(2); // 0 또는 1
+
+            if (hisInfo[dayIndex].val[valIndex].valid_flag == 1)
+            {
+                // value는 60 ~ 250 범위의 랜덤 값
+                hisInfo[dayIndex].val[valIndex].value = QRandomGenerator::global()->bounded(60, 251);
+
+                // 시간은 이전 시간 이후로 랜덤하게 증가
+                int hourIncrement = QRandomGenerator::global()->bounded(1, 4); // 1 ~ 3시간 증가
+                lastHour += hourIncrement;
+
+                // 시간과 분 설정
+                if (lastHour >= 24) // 24시간을 초과하면 마지막 시간으로 고정
+                {
+                    lastHour = 23;
+                    hisInfo[dayIndex].val[valIndex].hour = lastHour;
+                    hisInfo[dayIndex].val[valIndex].min = 59;
+                }
+                else
+                {
+                    hisInfo[dayIndex].val[valIndex].hour = lastHour;
+                    hisInfo[dayIndex].val[valIndex].min = QRandomGenerator::global()->bounded(60); // 0 ~ 59
+                }
+            }
+            else
+            {
+                // valid_flag가 0일 경우 기본값으로 초기화
+                hisInfo[dayIndex].val[valIndex].value = 0;
+                hisInfo[dayIndex].val[valIndex].hour = 0;
+                hisInfo[dayIndex].val[valIndex].min = 0;
+            }
+        }
+    }
 
     for(int i=0; i<USER_MAX; i++)
     {
@@ -562,15 +584,15 @@ void Singleton::setThresholdValue(ThresholdIndex thresholdIndex, int nValue)
 void Singleton::getDeviceVersion()
 {
 #if DEVICE
-   if(guiApi.getFwVersion(chFWVer,chBleName,chHWVer,chSerialNumber) == GAPI_SUCCESS)
-   {
-       strFWVer = chFWVer;
-       strHWVer = chHWVer;
-       strSWVer = chFWVer;
-       strBleName = chBleName;
-       strSerialNumber = chSerialNumber;
-       qDebug()<<"DeviceVersion get Success";
-   }
+    if(guiApi.getFwVersion(chFWVer,chBleName,chHWVer,chSerialNumber) == GAPI_SUCCESS)
+    {
+        strFWVer = chFWVer;
+        strHWVer = chHWVer;
+        strSWVer = chFWVer;
+        strBleName = chBleName;
+        strSerialNumber = chSerialNumber;
+        qDebug()<<"DeviceVersion get Success";
+    }
 #endif
 }
 
