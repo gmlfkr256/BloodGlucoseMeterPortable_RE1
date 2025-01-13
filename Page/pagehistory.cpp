@@ -192,7 +192,6 @@ void PageHistory::pageShow()
 
 void PageHistory::pageHide()
 {
-    dateSelected = QDate(comDateYear->getDateValue(),comDateMonth->getDateValue(),comDateDay->getDateValue());
     emit signalShowPageNum(PAGE_MENU);
 }
 
@@ -224,12 +223,14 @@ void PageHistory::mousePressEvent(QMouseEvent *ev)
 
     if(instance.touchCheck(customButtonOK->geometry(),ev))
     {
+        dateSelected = QDate(comDateYear->getDateValue(),comDateMonth->getDateValue(),comDateDay->getDateValue());
         instance.nHisInfoSelectedIndex = getSelectedDateIndex();
         emit signalShowPageNum(PAGE_HISTORY_RESULT);
     }
 
     if(instance.touchCheck(customButtonCancel->geometry(),ev))
     {
+        dateSelected = QDate();
         pageHide();
     }
 
