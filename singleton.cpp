@@ -66,7 +66,7 @@ void Singleton::init()
         for (int valIndex = 0; valIndex < 8; ++valIndex) // val 0 ~ 7
         {
             // valid_flag 랜덤 생성 (0 또는 1)
-            hisInfo[dayIndex].val[valIndex].valid_flag = QRandomGenerator::global()->bounded(2); // 0 또는 1
+            hisInfo[dayIndex].val[valIndex].valid_flag = (QRandomGenerator::global()->bounded(8) == 0) ? 1 : 0; // 0 또는 1
 
             if (hisInfo[dayIndex].val[valIndex].valid_flag == 1)
             {
