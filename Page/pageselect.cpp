@@ -107,7 +107,8 @@ void PageSelect::updateStatus()
     labelTextTime->hide();
     labelTextIcon->hide();
 
-    if(instance.histInfo.val[nTimeStatus].valid_flag == 0)
+    //if(instance.histInfo.val[nTimeStatus].valid_flag == 0)
+    if(instance.hisInfo[0].val[nTimeStatus].valid_flag == 0)
     {
         pngPath = "/bg"+QString::number(nTimeStatus)+".png";
         instance.pixLoad(labelBgCircle,false,strDirPath,pngPath);
@@ -125,7 +126,8 @@ void PageSelect::updateStatus()
     {
         labelTextStatusValue->setText(textResource.getText(PAGE_SELECT,"labelTextStatus").at(nTimeStatus));
 
-        int glucoseValue = instance.histInfo.val[nTimeStatus].value;
+        //int glucoseValue = instance.histInfo.val[nTimeStatus].value;
+        int glucoseValue = instance.hisInfo[0].val[nTimeStatus].value;
         labelTextGlucoseValue->setText(QString::number(glucoseValue));
 
         QString strStyleSheetColor = instance.getTextColorGlucoseValue(glucoseValue);
@@ -174,7 +176,8 @@ void PageSelect::updateStatus()
         labelTextTime->setFont(textResource.getFont(PAGE_SELECT,"labelTextTime"));
         labelTextTime->setStyleSheet("color: #707070;");
         QString strTime;
-        strTime = textResource.getText(PAGE_SELECT,"labelTextTime").at(0)+" "+QString("%1:%2").arg(QString::number(instance.histInfo.val[nTimeStatus].hour).rightJustified(2,'0'),QString::number(instance.histInfo.val[nTimeStatus].min).rightJustified(2,'0'));
+        //strTime = textResource.getText(PAGE_SELECT,"labelTextTime").at(0)+" "+QString("%1:%2").arg(QString::number(instance.histInfo.val[nTimeStatus].hour).rightJustified(2,'0'),QString::number(instance.histInfo.val[nTimeStatus].min).rightJustified(2,'0'));
+        strTime = textResource.getText(PAGE_SELECT,"labelTextTime").at(0)+" "+QString("%1:%2").arg(QString::number(instance.hisInfo[0].val[nTimeStatus].hour).rightJustified(2,'0'),QString::number(instance.hisInfo[0].val[nTimeStatus].min).rightJustified(2,'0'));
         labelTextTime->setText(strTime);
 
         labelTextIcon->setText(textResource.getText(PAGE_SELECT,"labelTextIcon").at(bloodSugarIndex));

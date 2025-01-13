@@ -92,14 +92,16 @@ void PageHistoryResult::update()
         labelGroups[i].labelButtonImage->hide();
         labelGroups[i].labelButtonText->hide();
 
-        if(instance.histInfo.val[order[i]].valid_flag == 0)
+        //if(instance.histInfo.val[order[i]].valid_flag == 0)
+        if(instance.hisInfo[0].val[order[i]].valid_flag == 0)
         {
             labelGroups[i].labelButtonImage->show();
         }
         else
         {
             labelGroups[i].labelButtonText->show();
-            int glucoseValue = instance.histInfo.val[order[i]].value;
+            //int glucoseValue = instance.histInfo.val[order[i]].value;
+            int glucoseValue = instance.hisInfo[0].val[order[i]].value;
 
             QString strStyleSheet;
             strStyleSheet = instance.getTextColorGlucoseValue(glucoseValue,true)+" padding-right: 5px;";

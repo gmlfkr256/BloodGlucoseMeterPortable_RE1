@@ -23,6 +23,7 @@ void Singleton::init()
     thresholdLow = 69;
     thresholdHigh = 170;
 
+    /*
     histInfo.val[0].valid_flag = 1;
     histInfo.val[0].value = 99;
     histInfo.val[0].hour = 9;
@@ -47,6 +48,32 @@ void Singleton::init()
     histInfo.val[4].value = 74;
     histInfo.val[4].hour = 19;
     histInfo.val[4].min = 59;
+    */
+
+    hisInfo[0].val[0].valid_flag = 1;
+    hisInfo[0].val[0].value = 99;
+    hisInfo[0].val[0].hour = 9;
+    hisInfo[0].val[0].min = 10;
+
+    hisInfo[0].val[1].valid_flag = 1;
+    hisInfo[0].val[1].value = 200;
+    hisInfo[0].val[1].hour = 11;
+    hisInfo[0].val[1].min = 9;
+
+    hisInfo[0].val[2].valid_flag = 1;
+    hisInfo[0].val[2].value = 60;
+    hisInfo[0].val[2].hour = 12;
+    hisInfo[0].val[2].min = 0;
+
+    hisInfo[0].val[3].valid_flag = 1;
+    hisInfo[0].val[3].value = 160;
+    hisInfo[0].val[3].hour = 15;
+    hisInfo[0].val[3].min = 20;
+
+    hisInfo[0].val[4].valid_flag = 1;
+    hisInfo[0].val[4].value = 74;
+    hisInfo[0].val[4].hour = 19;
+    hisInfo[0].val[4].min = 59;
 
     for(int i=0; i<USER_MAX; i++)
     {

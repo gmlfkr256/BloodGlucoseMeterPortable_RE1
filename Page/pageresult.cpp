@@ -239,10 +239,16 @@ void PageResult::mousePressEvent(QMouseEvent *ev)
         else
             qDebug()<<"result save fail - err_code:"<<instance.sysProcMonInfo.err_code;
 #else
+        /*
         instance.histInfo.val[instance.getTimeStatus()].valid_flag = 1;
         instance.histInfo.val[instance.getTimeStatus()].value = instance.sysProcMonInfo.adc_raw;
         instance.histInfo.val[instance.getTimeStatus()].hour = instance.sysProcMonInfo.hour;
         instance.histInfo.val[instance.getTimeStatus()].min = instance.sysProcMonInfo.min;
+        */
+        instance.hisInfo[0].val[instance.getTimeStatus()].valid_flag = 1;
+        instance.hisInfo[0].val[instance.getTimeStatus()].value = instance.sysProcMonInfo.adc_raw;
+        instance.hisInfo[0].val[instance.getTimeStatus()].hour = instance.sysProcMonInfo.hour;
+        instance.hisInfo[0].val[instance.getTimeStatus()].min = instance.sysProcMonInfo.min;
 #endif
         emit signalShowPageNum(PAGE_HOME);
     }
