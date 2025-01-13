@@ -88,10 +88,14 @@ void PageHistory::update()
 
     bool bIsHisDataValidCheck = false;
 
+    qDebug()<<"getSeletedDateIndex: "<<getSelectedDateIndex();
     for(int i=0; i<GAPI_TIME_MAX; i++)
     {
+        qDebug()<<"instance.hisInfo[getSeletedDateIndex()].val["<<i<<"].valid_flag:"<<instance.hisInfo[getSelectedDateIndex()].val[i].valid_flag;
         if(instance.hisInfo[getSelectedDateIndex()].val[i].valid_flag != 0)
+        {
             bIsHisDataValidCheck = true;
+        }
     }
 
     if(bIsHisDataValidCheck)
