@@ -125,5 +125,5 @@ void PageHistoryResult::pageHide()
 
 void PageHistoryResult::mousePressEvent(QMouseEvent *ev)
 {
-
+    pageHide();
 }
