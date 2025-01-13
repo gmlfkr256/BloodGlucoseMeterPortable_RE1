@@ -39,6 +39,7 @@ public:
     void setDateStatus(DateStatus dateStatus);
     void changeValue();
     void getHistoryAll();
+    int getSelectedDateIndex();
 
     void update() override;
     void pageShow() override;

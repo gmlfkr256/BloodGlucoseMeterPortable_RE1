@@ -85,6 +85,18 @@ void PageHistory::update()
     labelButtonDayMinus->setStyleSheet("background-color:#000000; color: #ffffff; border-radius: 10px;");
     labelButtonDayMinus->setFont(textResource.getFont(PAGE_HISTORY,"labelButton"));
     labelButtonDayMinus->setText(textResource.getText(PAGE_HISTORY,"labelButton").at(2));
+
+    bool bIsHisDataValidCheck = false;
+
+    for(int i=0; i<GAPI_TIME_MAX; i++)
+    {
+        if(instance.hisInfo[getSelectedDateIndex()].val[i].valid_flag != 0)
+            bIsHisDataValidCheck = true;
+    }
+
+    if(bIsHisDataValidCheck)
+        labelBg->setStyleSheet("border:3px solid red; border-radius: 15px;");
+
 }
 
 void PageHistory::setDateStatus(DateStatus dateStatus)
@@ -135,6 +147,16 @@ void PageHistory::changeValue()
 void PageHistory::getHistoryAll()
 {
     instance.getHistoryAll();
+}
+
+int PageHistory::getSelectedDateIndex()
+{
+    QDate currentDate = QDate::currentDate(); // 현재 날짜
+    QDate selectedDate(comDateYear->getDateValue(), comDateMonth->getDateValue(), comDateDay->getDateValue()); // 선택된 날짜
+
+    int daysDifference = currentDate.daysTo(selectedDate); // 현재 날짜 기준 차이 계산
+
+    return -daysDifference;
 }
 
 void PageHistory::pageShow()
