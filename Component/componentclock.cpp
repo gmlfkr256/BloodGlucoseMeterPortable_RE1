@@ -45,11 +45,19 @@ void ComponentClock::update()
     }
     else
     {
-        QString str;
+        QString strLocale;
         QString strDate = QString::number(instance.hisInfo[instance.nHisInfoSeletedIndex].date);
+        QDate date = QDate::fromString(strDate,"yyyyMMdd");
 
-        str = strDate.mid(0,4);
-        str+= strDate.mid(4,2);
+        if(date.isValid())
+        {
+            strLocale = date.toString("MM-dd ddd");
+            labelClock->setText(strLocale);
+        }
+        else
+        {
+            qDebug()<<"comClock history set fail";
+        }
     }
 
 }
