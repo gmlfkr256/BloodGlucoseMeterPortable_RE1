@@ -50,6 +50,9 @@ void Singleton::init()
     histInfo.val[4].min = 59;
     */
 
+    QDate currentDate = QDate::currentDate();
+    hisInfo[0].date = currentDate.toString("yyyyMMdd").toInt();
+
     hisInfo[0].val[0].valid_flag = 1;
     hisInfo[0].val[0].value = 99;
     hisInfo[0].val[0].hour = 9;
