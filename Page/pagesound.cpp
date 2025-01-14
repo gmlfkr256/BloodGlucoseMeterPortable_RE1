@@ -75,9 +75,20 @@ void PageSound::setVolume()
 #if DEVICE
     instance.guiApi.glucoseSetSpeakerData(&instance.spkData);
 #else
+    QFile file(":/Sound/beep.wav");
+    if (!file.exists()) {
+        qDebug() << "Sound file does not exist!";
+    } else {
+        qDebug() << "Sound file exists.";
+    }
+
+
     qDebug()<<"sound check";
     QSound sound(":/Sound/beep.wav");
+    qDebug() << "Playing sound...";
     sound.play();
+    qDebug() << "Sound should be playing now.";
+
 #endif
 }
 
