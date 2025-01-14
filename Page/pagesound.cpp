@@ -94,9 +94,11 @@ void PageSound::setVolumeOut()
         QMetaObject::invokeMethod(this,[this](){touchEnabled=true;},Qt::QueuedConnection);
     });
 #else
+    /*
     QTimer::singleShot(500, this, [this]() { // 500ms는 예제값, 소리 출력 시간을 대체
             touchEnabled = true;
         });
+        */
 #endif
 }
 
