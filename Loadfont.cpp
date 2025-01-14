@@ -29,6 +29,7 @@ void LoadFont::Load()
     int fontId = QFontDatabase::addApplicationFont(suitFont);
     if (fontId != -1) {
         instance.fontSuit = QFontDatabase::applicationFontFamilies(fontId).at(0);
+        qDebug()<<"Loaded fontSuit: "<<instance.fontSuit;
     } else {
         qWarning() << "Failed to load font:" << suitFont;
     }
@@ -38,6 +39,7 @@ void LoadFont::Load()
     fontId = QFontDatabase::addApplicationFont(jpFont);
     if (fontId != -1) {
         instance.fontJP = QFontDatabase::applicationFontFamilies(fontId).at(0);
+        qDebug()<<"Loaded fontJP: "<<instance.fontJP;
     } else {
         qWarning() << "Failed to load font:" << jpFont;
     }
@@ -47,6 +49,7 @@ void LoadFont::Load()
     fontId = QFontDatabase::addApplicationFont(scFont);
     if (fontId != -1) {
         instance.fontSC = QFontDatabase::applicationFontFamilies(fontId).at(0);
+        qDebug()<<"Loaded fontSC: "<<instance.fontSC;
     } else {
         qWarning() << "Failed to load font:" << scFont;
     }
@@ -56,6 +59,7 @@ void LoadFont::Load()
     fontId = QFontDatabase::addApplicationFont(tcFont);
     if (fontId != -1) {
         instance.fontTC = QFontDatabase::applicationFontFamilies(fontId).at(0);
+        qDebug()<<"Loaded fontTC: "<<instance.fontTC;
     } else {
         qWarning() << "Failed to load font:" << tcFont;
     }
