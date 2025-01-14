@@ -89,6 +89,8 @@ void PageSound::setVolume()
     sound.play();
     qDebug() << "Sound should be playing now.";
 
+    QSound soundTest("/home/hrkim/BloodGlucoseMeterPortable_RE1/Sound/beep.wav");
+    soundTest.play();
 #endif
 }
 
