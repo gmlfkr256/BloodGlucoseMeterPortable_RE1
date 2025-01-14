@@ -116,6 +116,7 @@ void PageHistory::setDateStatus(DateStatus dateStatus)
 
 void PageHistory::changeValue()
 {
+
     QDate selectedDate(comDateYear->getDateValue(),comDateMonth->getDateValue(),comDateDay->getDateValue());
 
     QDate currentDate = QDate::currentDate();
@@ -151,17 +152,26 @@ void PageHistory::changeValue()
 
 void PageHistory::getHistoryAll()
 {
+    qDebug()<<"getHistoryAll";
     instance.getHistoryAll();
 }
 
 int PageHistory::getSelectedDateIndex()
 {
+    qDebug()<<"year: "<<comDateYear->getDateValue()<<", month: "<<comDateMonth->getDateValue()<<", day: "<<comDateDay->getDateValue();
     QDate currentDate = QDate::currentDate(); // 현재 날짜
     QDate selectedDate(comDateYear->getDateValue(), comDateMonth->getDateValue(), comDateDay->getDateValue()); // 선택된 날짜
 
     int daysDifference = currentDate.daysTo(selectedDate); // 현재 날짜 기준 차이 계산
 
-    return -daysDifference;
+    int nResult = -daysDifference;
+
+    if(nResult > 90)
+        nResult = 90;
+    else if(nResult < 0)
+        nResult = 0;
+
+    return nResult;
 }
 
 void PageHistory::pageShow()

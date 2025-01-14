@@ -3,8 +3,6 @@
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent)
 {
-    initGuiApi();
-
     init();
     initConnect();
 
@@ -12,11 +10,6 @@ MainWindow::MainWindow(QWidget* parent)
 }
 
 MainWindow::~MainWindow()
-{
-
-}
-
-void MainWindow::initGuiApi()
 {
 
 }
@@ -31,107 +24,140 @@ void MainWindow::init()
     LoadFont loadFont;
     loadFont.Load();
 
+
     stackedWidget = new QStackedWidget(this);
     stackedWidget->setGeometry(this->geometry());
 
     pagePassword = new PagePassword(this);
     stackedWidget->addWidget(pagePassword);
     listComHiddenPageIndex.append(stackedWidget->indexOf(pagePassword));
+    qDebug()<<"====================== PAGE_PASSWORD";
 
     pagePasswordConfirm = new PagePasswordConfirm(this);
     stackedWidget->addWidget(pagePasswordConfirm);
     listComHiddenPageIndex.append(stackedWidget->indexOf(pagePasswordConfirm));
+    qDebug()<<"====================== PAGE_PASSWORD_CONFIRM";
 
     pageHome = new PageHome(this);
     stackedWidget->addWidget(pageHome);
+    qDebug()<<"====================== PAGE_HOME";
 
     pageSelect = new PageSelect(this);
     stackedWidget->addWidget(pageSelect);
+    qDebug()<<"====================== PAGE_SELECT";
 
     pageMenu = new PageMenu(this);
     stackedWidget->addWidget(pageMenu);
+    qDebug()<<"====================== PAGE_MENU";
 
     pageCaliCheck = new PageCaliCheck(this);
     stackedWidget->addWidget(pageCaliCheck);
+    qDebug()<<"====================== PAGE_CALI_CHECK";
 
     pageCaliGainConfirm = new PageCaliGainConfirm(this);
     stackedWidget->addWidget(pageCaliGainConfirm);
+    qDebug()<<"====================== PAGE_CALI_GAIN_CONFRIM";
 
     pageGraph = new PageGarph(this);
     stackedWidget->addWidget(pageGraph);
     listComHiddenPageIndex.append(stackedWidget->indexOf(pageGraph));
+    qDebug()<<"====================== PAGE_GRAPH";
 
     pageCaliGainResult = new PageCaliGainResult(this);
     stackedWidget->addWidget(pageCaliGainResult);
+    qDebug()<<"====================== PAGE_CALI_GAIN_RESULT";
 
     pageCaliSelect = new PageCaliSelect(this);
     stackedWidget->addWidget(pageCaliSelect);
+    qDebug()<<"====================== PAGE_CALI_SELECT";
 
     pageCaliSelectInfo = new PageCaliSelectInfo(this);
     stackedWidget->addWidget(pageCaliSelectInfo);
+    qDebug()<<"====================== PAGE_CALI_SELECT_INFO";
 
     pageCaliConfirm = new PageCaliConfirm(this);
     stackedWidget->addWidget(pageCaliConfirm);
+    qDebug()<<"====================== PAGE_CALI_CONFIRM";
 
     pageCaliValue = new PageCaliValue(this);
     stackedWidget->addWidget(pageCaliValue);
+    qDebug()<<"====================== PAGE_CALI_VALUE";
 
     pageCaliResult = new PageCaliResult(this);
     stackedWidget->addWidget(pageCaliResult);
+    qDebug()<<"====================== PAGE_CALI_RESULT";
 
     pageCaliResultMulti = new PageCaliResultMulti(this);
     stackedWidget->addWidget(pageCaliResultMulti);
+    qDebug()<<"====================== PAGE_CALI_RESULT_MULTI";
 
     pageResult = new PageResult(this);
     stackedWidget->addWidget(pageResult);
+    qDebug()<<"====================== PAGE_RESULT";
 
     pageInit = new PageInit(this);
     stackedWidget->addWidget(pageInit);
+    qDebug()<<"====================== PAGE_INIT";
 
     pageInitConfirm = new PageInitConfirm(this);
     stackedWidget->addWidget(pageInitConfirm);
+    qDebug()<<"====================== PAGE_INIT_CONFIRM";
 
     pageThreshold = new PageThreshold(this);
     stackedWidget->addWidget(pageThreshold);
+    qDebug()<<"====================== PAGE_THRESHOLD";
 
     pageThresholdValue = new PageThresholdValue(this);
     stackedWidget->addWidget(pageThresholdValue);
+    qDebug()<<"====================== PAGE_THRESHOLD_VALUE";
 
     pageSound = new PageSound(this);
     stackedWidget->addWidget(pageSound);
+    qDebug()<<"====================== PAGE_SOUND";
 
     pageSleep = new PageSleep(this);
     stackedWidget->addWidget(pageSleep);
+    qDebug()<<"====================== PAGE_SLEEP";
 
     pageDateTime = new PageDateTime(this);
     stackedWidget->addWidget(pageDateTime);
+    qDebug()<<"====================== PAGE_DATETIME";
 
     pageUpgrade = new PageUpgrade(this);
     stackedWidget->addWidget(pageUpgrade);
+    qDebug()<<"====================== PAGE_UPGRADE";
 
     pageUpgradeConfirm = new PageUpgradeConfirm(this);
     stackedWidget->addWidget(pageUpgradeConfirm);
+    qDebug()<<"====================== PAGE_UPGRADE_CONFIRM";
 
     pageDeviceInfo = new PageDeviceInfo(this);
     stackedWidget->addWidget(pageDeviceInfo);
+    qDebug()<<"====================== PAGE_DEVICE_INFO";
 
     pageUserInfo = new PageUserInfo(this);
     stackedWidget->addWidget(pageUserInfo);
+    qDebug()<<"====================== PAGE_USER_INFO";
 
     pageBatteryPopup = new PageBatteryPopup(this);
     stackedWidget->addWidget(pageBatteryPopup);
+    qDebug()<<"====================== PAGE_BATTERY_POPUP";
 
     pageReverse = new PageReverse(this);
     stackedWidget->addWidget(pageReverse);
+    qDebug()<<"====================== PAGE_REVERSE";
 
     pageTrans = new PageTrans(this);
     stackedWidget->addWidget(pageTrans);
+    qDebug()<<"====================== PAGE_TRANS";
 
     pageHistory = new PageHistory(this);
     stackedWidget->addWidget(pageHistory);
+    qDebug()<<"====================== PAGE_HISTORY";
 
     pageHistoryResult = new PageHistoryResult(this);
     stackedWidget->addWidget(pageHistoryResult);
+    qDebug()<<"====================== PAGE_HISTORY_RESULT";
 
     comBat = new ComponentBattery(stackedWidget);
     comBle = new ComponentBluetooth(stackedWidget);
@@ -202,7 +228,7 @@ void MainWindow::initConnect()
 
         if(page)
         {
-           connect(page,&Page::signalShowPageNum,this,&MainWindow::setPageByPageNum);
+            connect(page,&Page::signalShowPageNum,this,&MainWindow::setPageByPageNum);
         }
         else
         {

@@ -154,5 +154,6 @@
         <file>Image/Default/Public/ImageHistory/arrowTop.png</file>
         <file>Image/Default/Public/ImageHistory/gradientBottom.png</file>
         <file>Image/Default/Public/ImageHistory/gradientTop.png</file>
+        <file>Sound/beep.wav</file>
     </qresource>
 </RCC>

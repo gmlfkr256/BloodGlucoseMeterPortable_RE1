@@ -103,7 +103,6 @@ public:
 public slots:
      void setPageByPageNum(PageNum pageNum);
 private:
-    void initGuiApi();
     void init();
     void initConnect();
     void currentPageChanged(int index);

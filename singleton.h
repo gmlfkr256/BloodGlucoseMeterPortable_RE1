@@ -240,7 +240,6 @@ public:
     const int nThresholdLimitLowMax = 69;
     const int nThresholdLimitHighMin = 170;
     const int nThresholdLimitHighMax = 400;
-    gapiHistInfo_t histInfo;
     gapiSysUserInfo_t sysUserInfo[USER_MAX];
     gapiCaliUserInfo_t caliUserInfo;
     gapiDispData_t dispData;

@@ -639,7 +639,8 @@ int Singleton::pixelToPoint(int pixelSize)
 void Singleton::getHistory(int day)
 {
 #if DEVICE
-    guiApi.getHistory(day,&histInfo);
+    //guiApi.getHistory(day,&histInfo);
+    guiApi.getHistory(day,&hisInfo[day]);
 #else
     Q_UNUSED(day);
 #endif

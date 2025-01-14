@@ -14,8 +14,6 @@
 // Qt Library
 //=======================
 
-#include <QObject>
-#include <QCoreApplication>
 #include <QScreen>
 #include <QSplashScreen>
 #include <QTimer>
@@ -24,7 +22,6 @@
 #include <QFile>
 #include <QTextStream>
 #include <QPoint>
-#include <QWidget>
 #include <QMouseEvent>
 #include <QLabel>
 #include <QList>
