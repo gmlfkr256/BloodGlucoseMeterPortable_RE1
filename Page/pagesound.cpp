@@ -85,7 +85,7 @@ void PageSound::setVolume()
 
 void PageSound::setVolumeOut()
 {
-    touchEnabled = false;
+    //touchEnabled = false;
 
 #if DEVICE
     QtConcurrent::run([this](){
