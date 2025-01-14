@@ -344,7 +344,7 @@ bool MainWindow::eventFilter(QObject *watched, QEvent *event)
             isEventHandled = true;
 
             instance.nSleepTimeCount = 0;
-            qDebug()<<"MainWindow Touch Process - nSleepTimeCount: "<<instance.nSleepTimeCount;
+            //qDebug()<<"MainWindow Touch Process - nSleepTimeCount: "<<instance.nSleepTimeCount;
 
             QTimer::singleShot(50,[&](){isEventHandled = false;});
             return false;
