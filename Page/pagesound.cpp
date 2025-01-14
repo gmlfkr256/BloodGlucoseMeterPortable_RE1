@@ -121,6 +121,8 @@ void PageSound::setVolumeMax()
 {
     nVolume = 100;
     setScreen();
+    setVolume();
+    setVolumeOut();
 }
 
 void PageSound::pageShow()
