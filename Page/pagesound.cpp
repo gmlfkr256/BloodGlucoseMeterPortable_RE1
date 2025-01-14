@@ -77,7 +77,7 @@ void PageSound::setVolume()
 #else
     QMediaPlayer *player = new QMediaPlayer;
 
-    player->setMedia(QUrl(":/Sound/beep.wav"));
+    player->setMedia(QUrl("qrc:/Sound/beep.wav"));
     player->setVolume(50);
     player->play();
 #endif
