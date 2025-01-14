@@ -3,6 +3,7 @@
 
 #include "singleton.h"
 #include <QFontDatabase>
+#include <QDir>
 
 class LoadFont
 {
