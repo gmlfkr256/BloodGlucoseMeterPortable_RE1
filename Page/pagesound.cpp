@@ -80,11 +80,16 @@ void PageSound::setVolume()
 #if DEVICE
     instance.guiApi.glucoseSetSpeakerData(&instance.spkData);
 #else
+    /*
     QMediaPlayer *player = new QMediaPlayer;
     player->setMedia(QUrl("qrc:/Sound/beep.wav"));
 
     player->setVolume(nVolume);
     player->play();
+    */
+    instance.player.setMedia(QUrl("qrc:/Sound/beep.wav"));
+    instance.player.setVolume(nVolume);
+    instance.player.play();
 #endif
 }
 

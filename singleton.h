@@ -266,6 +266,8 @@ public:
 
     PageNum currentPage = PAGE_MAX;
 
+    QMediaPlayer player;
+
     void init();
 
     void pixLoad(QLabel* label,bool bIsLanguage = false,const QString &strDir="",const QString &strPng="");
