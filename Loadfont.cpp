@@ -30,6 +30,9 @@ void LoadFont::Load()
     if (fontId != -1) {
         instance.fontSuit = QFontDatabase::applicationFontFamilies(fontId).at(0);
         qDebug()<<"Loaded fontSuit: "<<instance.fontSuit;
+
+        QFontDatabase fontDb;
+        qDebug()<<"Available styles for font: "<<fontDb.styles(instance.fontSuit);
     } else {
         qWarning() << "Failed to load font:" << suitFont;
     }
@@ -62,16 +65,5 @@ void LoadFont::Load()
         qDebug()<<"Loaded fontTC: "<<instance.fontTC;
     } else {
         qWarning() << "Failed to load font:" << tcFont;
-    }
-
-    QFontDatabase fontDb;
-    QStringList families = fontDb.families();
-    if (!families.isEmpty()) {
-        qDebug() << "Available font families:";
-        for (const QString &family : families) {
-            qDebug() << family;
-        }
-    } else {
-        qDebug() << "No font families available.";
     }
 }
