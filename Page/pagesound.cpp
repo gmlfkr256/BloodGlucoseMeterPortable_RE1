@@ -75,22 +75,11 @@ void PageSound::setVolume()
 #if DEVICE
     instance.guiApi.glucoseSetSpeakerData(&instance.spkData);
 #else
-    QFile file(":/Sound/beep.wav");
-    if (!file.exists()) {
-        qDebug() << "Sound file does not exist!";
-    } else {
-        qDebug() << "Sound file exists.";
-    }
+    QMediaPlayer *player = new QMediaPlayer;
 
-
-    qDebug()<<"sound check";
-    QSound sound(":/Sound/beep.wav");
-    qDebug() << "Playing sound...";
-    sound.play();
-    qDebug() << "Sound should be playing now.";
-
-    QSound soundTest("/home/hrkim/BloodGlucoseMeterPortable_RE1/Sound/beep.wav");
-    soundTest.play();
+    player->setMedia(QUrl::fromLocalFile(":/Sound/beep.wav"));
+    player->setVolume(50);
+    player->play();
 #endif
 }
 
