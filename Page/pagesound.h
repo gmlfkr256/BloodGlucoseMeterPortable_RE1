@@ -34,6 +34,8 @@ public:
     CustomButtonSave *customButtonSave;
     CustomButtonCancel *customButtonCancel;
 
+    QMediaPlayer *player;
+
     void update() override;
     void pageShow() override;
     void pageHide() override;

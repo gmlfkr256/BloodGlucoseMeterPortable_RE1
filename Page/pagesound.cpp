@@ -36,6 +36,9 @@ void PageSound::init()
     customButtonSave = new CustomButtonSave(this);
     customButtonCancel = new CustomButtonCancel(this);
 
+    player = new QMediaPlayer;
+
+    player->setMedia(QUrl("qrc:/Sound/beep.wav"));
     update();
 }
 
@@ -75,9 +78,7 @@ void PageSound::setVolume()
 #if DEVICE
     instance.guiApi.glucoseSetSpeakerData(&instance.spkData);
 #else
-    QMediaPlayer *player = new QMediaPlayer;
 
-    player->setMedia(QUrl("qrc:/Sound/beep.wav"));
     player->setVolume(nVolume);
     player->play();
 #endif
