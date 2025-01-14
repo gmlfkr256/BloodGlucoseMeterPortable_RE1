@@ -1,0 +1,26 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Sound/beep_48000.wav</file>
+        <file>Sound/en_alarm_hyperglycemia.wav</file>
+        <file>Sound/en_alarm_hypoglycemia.wav</file>
+        <file>Sound/en_calibration_needed.wav</file>
+        <file>Sound/en_caution_high_blood_sugar.wav</file>
+        <file>Sound/en_caution_low_blood_sugar.wav</file>
+        <file>Sound/en_measure_completed.wav</file>
+        <file>Sound/en_measure_failed.wav</file>
+        <file>Sound/en_measure_start.wav</file>
+        <file>Sound/en_measure_stop.wav</file>
+        <file>Sound/gui_startup.wav</file>
+        <file>Sound/kr_alarm_hyperglycemia.wav</file>
+        <file>Sound/kr_alarm_hypoglycemia.wav</file>
+        <file>Sound/kr_calibration_needed.wav</file>
+        <file>Sound/kr_caution_high_blood_sugar.wav</file>
+        <file>Sound/kr_caution_low_blood_sugar.wav</file>
+        <file>Sound/kr_measure_completed.wav</file>
+        <file>Sound/kr_measure_failed.wav</file>
+        <file>Sound/kr_measure_start.wav</file>
+        <file>Sound/kr_measure_stop.wav</file>
+        <file>Sound/vlls_sleep.wav</file>
+        <file>Sound/vlls_wakeup.wav</file>
+    </qresource>
+</RCC>

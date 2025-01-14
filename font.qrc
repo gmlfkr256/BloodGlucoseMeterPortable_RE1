@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>font/JP/NotoSansJP-Bold.ttf</file>
+        <file>font/JP/NotoSansJP-ExtraBold.ttf</file>
+        <file>font/JP/NotoSansJP-Regular.ttf</file>
+        <file>font/SC/NotoSansSC-Bold.ttf</file>
+        <file>font/SC/NotoSansSC-ExtraBold.ttf</file>
+        <file>font/SC/NotoSansSC-Regular.ttf</file>
+        <file>font/Suit/SUIT-Bold.ttf</file>
+        <file>font/Suit/SUIT-ExtraBold.ttf</file>
+        <file>font/Suit/SUIT-Regular.ttf</file>
+        <file>font/TC/NotoSansTC-Bold.ttf</file>
+        <file>font/TC/NotoSansTC-ExtraBold.ttf</file>
+        <file>font/TC/NotoSansTC-Regular.ttf</file>
+    </qresource>
+</RCC>

@@ -132,18 +132,6 @@
         <file>Image/Default/Public/ImageTrans/check.png</file>
         <file>Image/Default/Public/ImageTrans/gradientDown.png</file>
         <file>Image/Default/Public/ImageTrans/gradientTop.png</file>
-        <file>Font/JP/NotoSansJP-Bold.ttf</file>
-        <file>Font/JP/NotoSansJP-ExtraBold.ttf</file>
-        <file>Font/JP/NotoSansJP-Regular.ttf</file>
-        <file>Font/SC/NotoSansSC-Bold.ttf</file>
-        <file>Font/SC/NotoSansSC-ExtraBold.ttf</file>
-        <file>Font/SC/NotoSansSC-Regular.ttf</file>
-        <file>Font/Suit/SUIT-Bold.ttf</file>
-        <file>Font/Suit/SUIT-ExtraBold.ttf</file>
-        <file>Font/Suit/SUIT-Regular.ttf</file>
-        <file>Font/TC/NotoSansTC-Bold.ttf</file>
-        <file>Font/TC/NotoSansTC-ExtraBold.ttf</file>
-        <file>Font/TC/NotoSansTC-Regular.ttf</file>
         <file>Image/Default/Public/ImageMenu/menuButtonBg.png</file>
         <file>Image/Default/Public/ImageMenu/menuButtonInit.png</file>
         <file>Image/Default/Public/ImageDateTime/arrowBottom.png</file>
@@ -154,6 +142,5 @@
         <file>Image/Default/Public/ImageHistory/arrowTop.png</file>
         <file>Image/Default/Public/ImageHistory/gradientBottom.png</file>
         <file>Image/Default/Public/ImageHistory/gradientTop.png</file>
-        <file>Sound/beep.wav</file>
     </qresource>
 </RCC>
