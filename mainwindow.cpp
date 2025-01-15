@@ -19,6 +19,8 @@ void MainWindow::init()
 #if DEVICE
     instance.guiApi.glucoseAttach();
     instance.guiApi.glucoseGetDispData(&instance.dispData);
+
+    qDebug()<<"MainWindow - instance.dispData.dir: "<<instance.dispData.dir;
 #endif
 
     LoadFont loadFont;

@@ -90,7 +90,7 @@ void PageHistory::update()
 
     for(int i=0; i<GAPI_TIME_MAX; i++)
     {
-        qDebug()<<"instance.hisInfo["<<getSelectedDateIndex()<<"].val["<<i<<"].valid_flag:"<<instance.hisInfo[getSelectedDateIndex()].val[i].valid_flag;
+        //qDebug()<<"instance.hisInfo["<<getSelectedDateIndex()<<"].val["<<i<<"].valid_flag:"<<instance.hisInfo[getSelectedDateIndex()].val[i].valid_flag;
         if(instance.hisInfo[getSelectedDateIndex()].val[i].valid_flag != 0)
         {
             bIsHisDataValidCheck = true;
@@ -158,7 +158,7 @@ void PageHistory::getHistoryAll()
 
 int PageHistory::getSelectedDateIndex()
 {
-    qDebug()<<"year: "<<comDateYear->getDateValue()<<", month: "<<comDateMonth->getDateValue()<<", day: "<<comDateDay->getDateValue();
+    //qDebug()<<"year: "<<comDateYear->getDateValue()<<", month: "<<comDateMonth->getDateValue()<<", day: "<<comDateDay->getDateValue();
     QDate currentDate = QDate::currentDate(); // 현재 날짜
     QDate selectedDate(comDateYear->getDateValue(), comDateMonth->getDateValue(), comDateDay->getDateValue()); // 선택된 날짜
 

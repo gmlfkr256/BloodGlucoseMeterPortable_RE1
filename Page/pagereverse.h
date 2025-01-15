@@ -2,6 +2,7 @@
 #define PAGEREVERSE_H
 
 #include "page.h"
+#include <QProcess>
 
 class PageReverse : public Page
 {

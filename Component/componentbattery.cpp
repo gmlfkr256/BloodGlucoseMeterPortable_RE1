@@ -28,8 +28,7 @@ void ComponentBattery::update()
 
     if(instance.guiApi.glucoseGetBatData(&batData) == GAPI_SUCCESS)
     {
-        //qDebug()<<"batDataPrev.charge: "<<batDataPrev.charge<<", batDataPrev.charging: "<<batDataPrev.charging;
-        qDebug()<<"batData.charge: "<<batData.charge<<", batData.Charging: "<<batData.charging;
+        //qDebug()<<"batData.charge: "<<batData.charge<<", batData.Charging: "<<batData.charging;
         nBatterySize = batData.charge;
         updateUI();
     }

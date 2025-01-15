@@ -26,6 +26,8 @@ void PageReverse::init()
 
     customButtonOK = new CustomButtonOK(this);
     customButtonCancel = new CustomButtonCancel(this);
+
+    update();
 }
 
 void PageReverse::update()
@@ -43,12 +45,22 @@ void PageReverse::update()
     labelText->setText(textResource.getText(PAGE_REVERSE,"labelText").at(0));
 
 #if DEVICE
-    instance.guiApi.glucoseGetDispData(&instance.dispData);
+    if(instance.guiApi.glucoseGetDispData(&instance.dispData) == GAPI_SUCCESS)
+    {
+        qDebug()<<"instance.dispData.dir: "<<instance.dispData.dir;
+    }
+    else
+    {
+        qDebug()<<"glucoseGetDispData fail";
+    }
+
 
     if(instance.dispData.dir == GAPI_DISP_DIR_NORMAL)
         bIsReverse = false;
     else
         bIsReverse = true;
+
+    qDebug()<<"bIsRevers: "<<bIsReverse;
 #endif
 
     setImgHand();
@@ -128,20 +140,35 @@ void PageReverse::mousePressEvent(QMouseEvent *ev)
         else
             instance.dispData.dir = GAPI_DISP_DIR_NORMAL;
 #if DEVICE
-        instance.guiApi.glucoseSetDispData(&instance.dispData);
+        instance.guiApi.glucoseGetDispData(&instance.dispData); // 현재 방향 가져오기
+        bool isCurrentlyReverse = (instance.dispData.dir == GAPI_DISP_DIR_REVERSE);
 
-        if(bIsReverse)
-        {
-            qputenv("QT_QPA_EGLFS_ROTATION", "270");
-            QCoreApplication::instance()->quit();
-            QProcess::startDetached(QCoreApplication::applicationFilePath());
-        }
-        else
-        {
-            qputenv("QT_QPA_EGLFS_ROTATION", "90");
-            QCoreApplication::instance()->quit();
-            QProcess::startDetached(QCoreApplication::applicationFilePath());
+        if (bIsReverse != isCurrentlyReverse)
+        { // 상태가 다를 때만 실행
+            if (bIsReverse)
+            {
+                instance.dispData.dir = GAPI_DISP_DIR_REVERSE;
+                qputenv("QT_QPA_EGLFS_ROTATION", "-90");
+                system("echo 1 > /proc/ts_rotation");
 
+            }
+            else
+            {
+                instance.dispData.dir = GAPI_DISP_DIR_NORMAL;
+                qputenv("QT_QPA_EGLFS_ROTATION", "90");
+                system("echo 0 > /proc/ts_rotation");
+
+            }
+
+            QThread::msleep(1000);
+
+            instance.guiApi.glucoseSetDispData(&instance.dispData);
+
+            instance.guiApi.glucoseDetach();
+
+            // 프로그램 재시작
+            QProcess::startDetached(QCoreApplication::applicationFilePath());
+            QCoreApplication::instance()->quit();
         }
 #endif
         pageHide();
