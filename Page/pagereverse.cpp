@@ -129,6 +129,20 @@ void PageReverse::mousePressEvent(QMouseEvent *ev)
             instance.dispData.dir = GAPI_DISP_DIR_NORMAL;
 #if DEVICE
         instance.guiApi.glucoseSetDispData(&instance.dispData);
+
+        if(bIsReverse)
+        {
+            qputenv("QT_QPA_EGLFS_ROTATION", "270");
+            QCoreApplication::instance()->quit();
+            QProcess::startDetached(QCoreApplication::applicationFilePath());
+        }
+        else
+        {
+            qputenv("QT_QPA_EGLFS_ROTATION", "90");
+            QCoreApplication::instance()->quit();
+            QProcess::startDetached(QCoreApplication::applicationFilePath());
+
+        }
 #endif
         pageHide();
     }
