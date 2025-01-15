@@ -30,9 +30,6 @@ void LoadFont::Load()
     if (fontId != -1) {
         instance.fontSuit = QFontDatabase::applicationFontFamilies(fontId).at(0);
         qDebug()<<"Loaded fontSuit: "<<instance.fontSuit;
-
-        QFontDatabase fontDb;
-        qDebug()<<"Available styles for font: "<<fontDb.styles(instance.fontSuit);
     } else {
         qWarning() << "Failed to load font:" << suitFont;
     }

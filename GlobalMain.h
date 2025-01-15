@@ -35,8 +35,6 @@
 #include <QPainter>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
-#include <QMediaPlayer>
-#include <QAudioOutput>
 
 //=======================
 // guiapi Library
