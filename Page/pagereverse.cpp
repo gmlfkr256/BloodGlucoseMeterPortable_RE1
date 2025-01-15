@@ -114,8 +114,10 @@ void PageReverse::mousePressEvent(QMouseEvent *ev)
         bIsReverse = true;
         bIsButtonTouch = true;
 
+        qDebug()<<"screen";
         QScreen *screen = QGuiApplication::primaryScreen();
         screen->setOrientationUpdateMask(Qt::PortraitOrientation);
+
         setImgHandPress();
     }
 
