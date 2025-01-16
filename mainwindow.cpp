@@ -19,6 +19,8 @@ void MainWindow::init()
 #if DEVICE
     instance.guiApi.glucoseAttach();
     instance.guiApi.glucoseGetDispData(&instance.dispData);
+    instance.guiApi.glucoseGetLangData(&instance.langData);
+    instance.setDeviceLanguage(instance.langData.used);
 
     qDebug()<<"MainWindow - instance.dispData.dir: "<<instance.dispData.dir;
 #endif

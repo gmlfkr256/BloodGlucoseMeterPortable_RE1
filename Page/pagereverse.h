@@ -3,6 +3,7 @@
 
 #include "page.h"
 #include <QProcess>
+#include <thread>
 
 class PageReverse : public Page
 {

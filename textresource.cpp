@@ -385,8 +385,9 @@ void TextResource::init()
                                        });
     fontData[Lan][PAGE_REVERSE].insert("labelText",QFont(currentFont,instance.pixelToPoint(nTextSize)));
     textData[Lan][PAGE_REVERSE].insert("labelText",QStringList{
-                                           "화면전환 설정 후 재부팅 됩니다"
+                                           "화면전환 설정 후 재시작 됩니다"
                                        });
+
 
     //PAGE_HISTORY
     fontData[Lan][PAGE_HISTORY].insert("labelButton",QFont(currentFont,instance.pixelToPoint(30),QFont::Bold));
@@ -396,9 +397,9 @@ void TextResource::init()
                                            "- 7일 전"
                                        });
 
-            //====================================================================================================================================
-            //EN
-            Lan = EN;
+    //====================================================================================================================================
+    //EN
+    Lan = EN;
     nTextSize = 30;
     currentFont = instance.fontSuit;
 
@@ -777,7 +778,7 @@ void TextResource::init()
                                        });
     fontData[Lan][PAGE_REVERSE].insert("labelText",QFont(currentFont,instance.pixelToPoint(nTextSize)));
     textData[Lan][PAGE_REVERSE].insert("labelText",QStringList{
-                                           "Reset will be proceeded"
+                                           "Reset will proceeded"
                                        });
 
     //PAGE_HISTORY
@@ -1207,7 +1208,7 @@ void TextResource::init()
 
     fontData[Lan][PAGE_REVERSE].insert("labelText", QFont(currentFont, instance.pixelToPoint(nTextSize)));
     textData[Lan][PAGE_REVERSE].insert("labelText", QStringList{
-                                           "リセットが進行します" // Reset will be proceeded
+                                           "リセットが開始されます" // Reset will be proceeded
                                        });
 
     //PAGE_HISTORY
@@ -1638,7 +1639,7 @@ void TextResource::init()
 
     fontData[Lan][PAGE_REVERSE].insert("labelText", QFont(currentFont, instance.pixelToPoint(nTextSize)));
     textData[Lan][PAGE_REVERSE].insert("labelText", QStringList{
-                                           "重启后设置将被重置" // Reset will be proceeded
+                                           "重启后将进行设置" // Reset will be proceeded
                                        });
 
     //PAGE_HISTORY
@@ -2066,8 +2067,9 @@ void TextResource::init()
 
     fontData[Lan][PAGE_REVERSE].insert("labelText", QFont(currentFont, instance.pixelToPoint(nTextSize)));
     textData[Lan][PAGE_REVERSE].insert("labelText", QStringList{
-                                           "重置將繼續進行"       // Reset will be proceeded
+                                           "重启后将继续进行"       // Reset will be proceeded
                                        });
+
 
     //PAGE_HISTORY
     fontData[Lan][PAGE_HISTORY].insert("labelButton",QFont(currentFont,instance.pixelToPoint(30),QFont::Bold));
@@ -2500,7 +2502,7 @@ void TextResource::init()
                                        });
     fontData[Lan][PAGE_REVERSE].insert("labelText",QFont(currentFont,instance.pixelToPoint(nTextSize)));
     textData[Lan][PAGE_REVERSE].insert("labelText",QStringList{
-                                           "El reinicio se procederá"
+                                           "El reinicio procederá"
                                        });
 
     //PAGE_HISTORY

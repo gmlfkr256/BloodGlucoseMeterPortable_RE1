@@ -140,38 +140,56 @@ void PageReverse::mousePressEvent(QMouseEvent *ev)
         else
             instance.dispData.dir = GAPI_DISP_DIR_NORMAL;
 #if DEVICE
+        QLabel* labelScreen = new QLabel(nullptr);
+        labelScreen->setGeometry(0,0,640,480);
+        labelScreen->setStyleSheet("background-color: black;");
+        labelScreen->setWindowFlag(Qt::Window);
+        labelScreen->show();
+        QCoreApplication::processEvents();
+
         instance.guiApi.glucoseGetDispData(&instance.dispData); // 현재 방향 가져오기
         bool isCurrentlyReverse = (instance.dispData.dir == GAPI_DISP_DIR_REVERSE);
 
         if (bIsReverse != isCurrentlyReverse)
         { // 상태가 다를 때만 실행
+
             if (bIsReverse)
             {
                 instance.dispData.dir = GAPI_DISP_DIR_REVERSE;
                 qputenv("QT_QPA_EGLFS_ROTATION", "-90");
                 system("echo 1 > /proc/ts_rotation");
-
             }
             else
             {
                 instance.dispData.dir = GAPI_DISP_DIR_NORMAL;
                 qputenv("QT_QPA_EGLFS_ROTATION", "90");
                 system("echo 0 > /proc/ts_rotation");
-
             }
 
-            QThread::msleep(1000);
+            system("sync");
 
             instance.guiApi.glucoseSetDispData(&instance.dispData);
 
             instance.guiApi.glucoseDetach();
 
+            QThread::msleep(1000);
+
             // 프로그램 재시작
-            QProcess::startDetached(QCoreApplication::applicationFilePath());
-            QCoreApplication::instance()->quit();
+
+            QTimer::singleShot(1000,[](){
+                QProcess::startDetached(QCoreApplication::applicationFilePath());
+
+                QScreen *screen = QGuiApplication::primaryScreen();
+                if(screen)
+                    screen->deleteLater();
+                QGuiApplication::sync();
+
+                QCoreApplication::instance()->quit();
+            });
+
         }
 #endif
-        pageHide();
+        //pageHide();
     }
 
     if(instance.touchCheck(customButtonCancel->geometry(),ev))
