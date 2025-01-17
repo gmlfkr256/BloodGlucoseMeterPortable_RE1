@@ -122,11 +122,12 @@ void PageHistory::update()
         comDateYear->labelTextBottom->setText("");
     }
 
-    if(selectedDate.month()>=dateCurrent.month())
+    // 월 처리 (년도 고려)
+    if ((selectedDate.year() == dateCurrent.year() && selectedDate.month() >= dateCurrent.month()) || selectedDate.year() > dateCurrent.year())
     {
         comDateMonth->labelTextTop->setText("");
     }
-    else if(selectedDate.month()<=dateMin.month())
+    else if ((selectedDate.year() == dateMin.year() && selectedDate.month() <= dateMin.month()) || selectedDate.year() < dateMin.year())
     {
         comDateMonth->labelTextBottom->setText("");
     }
