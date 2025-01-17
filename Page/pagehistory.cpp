@@ -143,7 +143,7 @@ void PageHistory::changeValue()
         comDateDay->setValue(selectedDate.day());
 
     comDateYear->setValue(selectedDate.year());
-    comDateYear->labelTextTop->hide();
+    comDateYear->labelTextTop->setText("");
     comDateMonth->setValue(selectedDate.month());
     comDateDay->update();
 
