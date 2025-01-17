@@ -100,6 +100,7 @@ void PageHistory::update()
     if(bIsHisDataValidCheck)
         labelBg->setStyleSheet("border:3px solid red; border-radius: 15px;");
 
+    updateLabelRange();
 }
 
 void PageHistory::setDateStatus(DateStatus dateStatus)
@@ -145,7 +146,6 @@ void PageHistory::changeValue()
     comDateMonth->setValue(selectedDate.month());
     comDateDay->update();
 
-    updateLabelRange();
     update();
 }
 
