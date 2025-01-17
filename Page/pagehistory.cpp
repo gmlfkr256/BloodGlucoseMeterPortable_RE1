@@ -129,7 +129,6 @@ void PageHistory::changeValue()
 
     QDate date(comDateYear->getDateValue(),comDateMonth->getDateValue(),1);
     int maxDaysInMonth = date.daysInMonth();
-    //int currentDay = comDateDay->getDateValue();
     int currentDay = selectedDate.day();
 
     bool wasLastDay = (currentDay == comDateDay->nDayMax);
@@ -144,6 +143,7 @@ void PageHistory::changeValue()
         comDateDay->setValue(selectedDate.day());
 
     comDateYear->setValue(selectedDate.year());
+    comDateYear->labelTextTop->hide();
     comDateMonth->setValue(selectedDate.month());
     comDateDay->update();
 
@@ -188,11 +188,6 @@ void PageHistory::pageShow()
     if(!dateSelected.isValid())
         dateSelected = dateTime.date();
 
-    /*
-    comDateYear->setValue(dateTime.date().year());
-    comDateMonth->setValue(dateTime.date().month());
-    comDateDay->setValue(dateTime.date().day());
-    */
     comDateYear->setValue(dateSelected.year());
     comDateMonth->setValue(dateSelected.month());
     comDateDay->setValue(dateSelected.day());
