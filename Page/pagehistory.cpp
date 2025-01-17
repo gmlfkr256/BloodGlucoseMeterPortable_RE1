@@ -173,14 +173,14 @@ void PageHistory::updateLabelRange()
         comDateYear->labelTextTop->setText(QString::number(comDateYear->getDateValue() + 1));
     }
 
-    // 월 범위 체크
+    // 월 범위 체크 (항상 두 자리 유지)
     if (comDateMonth->getDateValue() - 1 < 1 && comDateYear->getDateValue() == minDate.year())
     {
         comDateMonth->labelTextBottom->setText("");
     }
     else
     {
-        comDateMonth->labelTextBottom->setText(QString::number(comDateMonth->getDateValue() - 1));
+        comDateMonth->labelTextBottom->setText(QString("%1").arg(comDateMonth->getDateValue() - 1, 2, 10, QChar('0')));
     }
 
     if (comDateMonth->getDateValue() + 1 > 12 && comDateYear->getDateValue() == currentDate.year())
@@ -189,7 +189,7 @@ void PageHistory::updateLabelRange()
     }
     else
     {
-        comDateMonth->labelTextTop->setText(QString::number(comDateMonth->getDateValue() + 1));
+        comDateMonth->labelTextTop->setText(QString("%1").arg(comDateMonth->getDateValue() + 1, 2, 10, QChar('0')));
     }
 
     // 일 범위 체크
