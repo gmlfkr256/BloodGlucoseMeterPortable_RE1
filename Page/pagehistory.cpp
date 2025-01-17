@@ -101,7 +101,37 @@ void PageHistory::update()
         labelBg->setStyleSheet("border:3px solid red; border-radius: 15px;");
 
     QDate selectedDate(comDateYear->getDateValue(),comDateMonth->getDateValue(),comDateDay->getDateValue());
+    QDate dateCurrent = QDate::currentDate();
+    QDate dateMin = QDate::currentDate().addDays(-90);
 
+    if(selectedDate>=dateCurrent)
+    {
+        comDateDay->labelTextTop->setText("");
+    }
+    else if(selectedDate<=dateMin)
+    {
+        comDateDay->labelTextBottom->setText("");
+    }
+
+    if(selectedDate.year()>=dateCurrent.year())
+    {
+        comDateYear->labelTextTop->setText("");
+    }
+    else if(selectedDate.year()<=dateMin.year())
+    {
+        comDateYear->labelTextBottom->setText("");
+    }
+
+    if(selectedDate.month()>=dateCurrent.month())
+    {
+        comDateMonth->labelTextTop->setText("");
+    }
+    else if(selectedDate.month()<=dateMin.month())
+    {
+        comDateMonth->labelTextBottom->setText("");
+    }
+
+    /*
     if(selectedDate>=QDate::currentDate())
     {
         comDateYear->labelTextTop->setText("");
@@ -114,6 +144,7 @@ void PageHistory::update()
         comDateMonth->labelTextBottom->setText("");
         comDateDay->labelTextBottom->setText("");
     }
+    */
 }
 
 void PageHistory::setDateStatus(DateStatus dateStatus)
