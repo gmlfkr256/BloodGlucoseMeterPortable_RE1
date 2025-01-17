@@ -131,21 +131,6 @@ void PageHistory::update()
     {
         comDateMonth->labelTextBottom->setText("");
     }
-
-    /*
-    if(selectedDate>=QDate::currentDate())
-    {
-        comDateYear->labelTextTop->setText("");
-        comDateMonth->labelTextTop->setText("");
-        comDateDay->labelTextTop->setText("");
-    }
-    else if(selectedDate<=QDate::currentDate().addDays(-90))
-    {
-        comDateYear->labelTextBottom->setText("");
-        comDateMonth->labelTextBottom->setText("");
-        comDateDay->labelTextBottom->setText("");
-    }
-    */
 }
 
 void PageHistory::setDateStatus(DateStatus dateStatus)

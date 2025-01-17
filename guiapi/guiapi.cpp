@@ -1010,6 +1010,8 @@ int GuiApi::glucoseSetUserPassword (int user, char *passP)
 	fflush (fp);
 	fclose (fp);
 
+	system ("sync");
+
 	return GAPI_SUCCESS;
 }
 
@@ -1645,6 +1647,10 @@ int GuiApi::glucoseSpeakerOut (int kinds)
 		case GAPI_LANGUAGE_ENGLISH :
 			strcpy (lang_prefix, GAPI_SPK_LANG_PREFIX_ENGLISH);
 			break;
+		case GAPI_LANGUAGE_JAPANESE :
+		case GAPI_LANGUAGE_CHINESE_S :
+		case GAPI_LANGUAGE_CHINESE_T :
+		case GAPI_LANGUAGE_ESPANOL :
 		default :
 			gapiError("invalid language data: (%d)\n", lang_data.used);
 			return GAPI_FAIL;
