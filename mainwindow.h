@@ -44,6 +44,8 @@
 #include "Page/pagehistory.h"
 #include "Page/pagehistoryresult.h"
 #include "Page/pagedebug.h"
+#include "Page/pagedebugsys.h"
+#include "Page/pagedebugusb.h"
 
 
 class MainWindow : public QMainWindow
@@ -99,6 +101,8 @@ public:
     PageHistory *pageHistory;
     PageHistoryResult *pageHistoryResult;
     PageDebug *pageDebug;
+    PageDebugSys *pageDebugSys;
+    PageDebugUsb *pageDebugUsb;
 
     QList<int> listComHiddenPageIndex;
     QMap<PageNum,QString> mapPageNumName;

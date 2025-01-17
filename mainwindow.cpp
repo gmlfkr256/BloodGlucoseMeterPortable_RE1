@@ -169,6 +169,16 @@ void MainWindow::init()
     listComHiddenPageIndex.append(stackedWidget->indexOf(pageDebug));
     qDebug()<<"====================== PAGE_DEBUG";
 
+    pageDebugSys = new PageDebugSys(this);
+    stackedWidget->addWidget(pageDebugSys);
+    listComHiddenPageIndex.append(stackedWidget->indexOf(pageDebugSys));
+    qDebug()<<"====================== PAGE_DEBUG_SYS";
+
+    pageDebugUsb = new PageDebugUsb(this);
+    stackedWidget->addWidget(pageDebugUsb);
+    listComHiddenPageIndex.append(stackedWidget->indexOf(pageDebugUsb));
+
+    qDebug()<<"====================== PAGE_DEBUG_USB";
     comBat = new ComponentBattery(stackedWidget);
     comBle = new ComponentBluetooth(stackedWidget);
     comClock = new ComponentClock(stackedWidget);
@@ -212,6 +222,8 @@ void MainWindow::init()
         {PAGE_HISTORY, "PageHistory"},
         {PAGE_HISTORY_RESULT, "PageHistoryResult"},
         {PAGE_DEBUG, "PageDebug"},
+        {PAGE_DEBUG_SYS, "PageDebugSys"},
+        {PAGE_DEBUG_USB, "PageDebugUsb"},
 
         {CUSTOM_BUTTON, "CustomButton"},
         {PAGE_MAX, "InvalidPage"}  // 예외 처리

@@ -52,6 +52,8 @@ SOURCES += \
     Page/pagecalivalue.cpp \
     Page/pagedatetime.cpp \
     Page/pagedebug.cpp \
+    Page/pagedebugsys.cpp \
+    Page/pagedebugusb.cpp \
     Page/pagedeviceinfo.cpp \
     Page/pagegarph.cpp \
     Page/pagehistory.cpp \
@@ -116,6 +118,8 @@ HEADERS += \
     Page/pagecalivalue.h \
     Page/pagedatetime.h \
     Page/pagedebug.h \
+    Page/pagedebugsys.h \
+    Page/pagedebugusb.h \
     Page/pagedeviceinfo.h \
     Page/pagegarph.h \
     Page/pagehistory.h \
