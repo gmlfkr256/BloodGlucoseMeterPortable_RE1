@@ -41,6 +41,8 @@ public:
     void getHistoryAll();
     int getSelectedDateIndex();
 
+    void updateLabelRange();
+
     void update() override;
     void pageShow() override;
     void pageHide() override;
