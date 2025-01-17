@@ -121,10 +121,20 @@ void PageHistory::changeValue()
     QDate currentDate = QDate::currentDate();
     QDate minDate = currentDate.addDays(-90);
 
+    bool bIsCheckMaxDay = false;
+    bool bIsCheckMinDay = false;
+
     if(selectedDate>currentDate)
+    {
         selectedDate = currentDate;
-    if(selectedDate<minDate)
+        bIsCheckMaxDay = true;
+    }
+    else if(selectedDate<minDate)
+    {
         selectedDate = minDate;
+        bIsCheckMinDay = true;
+    }
+
 
     QDate date(comDateYear->getDateValue(),comDateMonth->getDateValue(),1);
     int maxDaysInMonth = date.daysInMonth();
@@ -144,6 +154,19 @@ void PageHistory::changeValue()
     comDateYear->setValue(selectedDate.year());
     comDateMonth->setValue(selectedDate.month());
     comDateDay->update();
+
+    if(bIsCheckMaxDay)
+    {
+        comDateYear->labelTextTop->setText("");
+        comDateMonth->labelTextTop->setText("");
+        comDateDay->labelTextTop->setText("");
+    }
+    else if(bIsCheckMinDay)
+    {
+        comDateYear->labelTextBottom->setText("");
+        comDateMonth->labelTextBottom->setText("");
+        comDateDay->labelTextBottom->setText("");
+    }
 
     update();
 }
