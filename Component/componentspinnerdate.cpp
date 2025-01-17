@@ -150,6 +150,7 @@ void ComponentSpinnerDate::setValidRange(int min, int max)
 {
     nMin = min;
     nMax = max;
+    checkValueRange();
 }
 
 bool ComponentSpinnerDate::isValueValid(int value)
