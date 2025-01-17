@@ -51,6 +51,7 @@ SOURCES += \
     Page/pagecaliselectinfo.cpp \
     Page/pagecalivalue.cpp \
     Page/pagedatetime.cpp \
+    Page/pagedebug.cpp \
     Page/pagedeviceinfo.cpp \
     Page/pagegarph.cpp \
     Page/pagehistory.cpp \
@@ -114,6 +115,7 @@ HEADERS += \
     Page/pagecaliselectinfo.h \
     Page/pagecalivalue.h \
     Page/pagedatetime.h \
+    Page/pagedebug.h \
     Page/pagedeviceinfo.h \
     Page/pagegarph.h \
     Page/pagehistory.h \

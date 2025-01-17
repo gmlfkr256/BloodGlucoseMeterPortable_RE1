@@ -69,7 +69,6 @@ void ComponentClock::update()
             qDebug()<<"comClock history set fail";
         }
     }
-
 }
 
 void ComponentClock::pageShow()
@@ -80,4 +79,13 @@ void ComponentClock::pageShow()
 void ComponentClock::pageHide()
 {
     this->hide();
+}
+
+void ComponentClock::mousePressEvent(QMouseEvent *ev)
+{
+    Q_UNUSED(ev);
+    if(instance.currentPage == PAGE_DEVICEINFO)
+    {
+
+    }
 }

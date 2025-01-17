@@ -71,6 +71,9 @@ typedef enum
     PAGE_TRANS,
     PAGE_HISTORY,
     PAGE_HISTORY_RESULT,
+    PAGE_DEBUG,
+    PAGE_DEBUG_SYS,
+    PAGE_DEBUG_USB,
 
     //PAGE_COLOR,
 

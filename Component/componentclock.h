@@ -10,7 +10,7 @@ class ComponentClock : public CustomComponent
     Q_OBJECT
 public:
     ComponentClock(QWidget *parent);
-
+    void mousePressEvent(QMouseEvent *ev) override;
 
 private:
 
