@@ -20,6 +20,7 @@ void MainWindow::init()
     instance.guiApi.glucoseAttach();
     instance.guiApi.glucoseGetDispData(&instance.dispData);
     instance.guiApi.glucoseGetLangData(&instance.langData);
+    qDebug()<<"get instance.langData.used: "<<instance.langData.used;
     instance.setDeviceLanguage(instance.langData.used);
 
     qDebug()<<"MainWindow - instance.dispData.dir: "<<instance.dispData.dir;

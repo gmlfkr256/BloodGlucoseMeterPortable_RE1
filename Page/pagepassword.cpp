@@ -107,10 +107,10 @@ void PagePassword::update()
 
 void PagePassword::mousePressEvent(QMouseEvent *ev)
 {
-    qDebug()<<"touch";
+    //qDebug()<<"touch";
     if(instance.touchCheck(labelButtonOK->geometry(),ev))
     {
-        qDebug()<<"strPasswordNum.size: "<<strPasswordNum.size();
+        //qDebug()<<"strPasswordNum.size: "<<strPasswordNum.size();
         if(strPasswordNum.size()<4)
             return;
 
@@ -150,7 +150,7 @@ void PagePassword::mouseReleaseEvent(QMouseEvent *ev)
 {
     Q_UNUSED(ev);
 
-    qDebug()<<"nCheckButtonNum: "<<nCheckButtonNum;
+    //qDebug()<<"nCheckButtonNum: "<<nCheckButtonNum;
     if(nCheckButtonNum != -1)
     {
         labelButtonNum[nCheckButtonNum]->setStyleSheet("background-color: #ffffff; color: #000000; border: 1px solid #ebebeb;");
@@ -160,7 +160,7 @@ void PagePassword::mouseReleaseEvent(QMouseEvent *ev)
 
 void PagePassword::updatePasswordNum()
 {
-    qDebug()<<"updatePasswordNum() strPasswordNum: "<<strPasswordNum;
+    //qDebug()<<"updatePasswordNum() strPasswordNum: "<<strPasswordNum;
     for(int i=0; i<4; i++)
     {
         if(labelPasswordNum[i])
@@ -180,7 +180,7 @@ void PagePassword::updatePasswordNum()
 void PagePassword::processOK()
 {
     bool bCheckPassword = false;
-    qDebug()<<"processOK() strPasswordNum: "+strPasswordNum;
+    //qDebug()<<"processOK() strPasswordNum: "+strPasswordNum;
     switch (instance.getPasswordStatus())
     {
     case PASSWORD_LOGIN:

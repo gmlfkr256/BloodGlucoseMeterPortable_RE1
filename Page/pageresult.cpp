@@ -191,7 +191,7 @@ void PageResult::setValueUI()
         case LAN_MAX:
             break;
         }
-        qDebug()<<"strLabelText: "<<strLabelText;
+        //qDebug()<<"strLabelText: "<<strLabelText;
         labelText->setText(strLabelText);
 
         labelTextGlucoseValue->setText(QString::number(nGlucoseValue));
@@ -229,7 +229,7 @@ void PageResult::mousePressEvent(QMouseEvent *ev)
 {
     if(instance.touchCheck(customButtonSave->geometry(),ev))
     {
-#if DEVCIE
+#if DEVICE
         instance.histValue.valid_flag = instance.sysProcMonInfo.valid;
         instance.histValue.value = instance.sysProcMonInfo.adc_raw;
         instance.histValue.hour = instance.sysProcMonInfo.hour;

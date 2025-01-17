@@ -27,7 +27,7 @@ void ComponentHome::update()
 
     pngPath = userPngPaths.value(instance.getUserNumber(),"/homeButton1.png");
 
-    qDebug()<<pngPath;
+    //qDebug()<<pngPath;
     instance.pixLoad(labelHome,false,strDirPath,pngPath);
 }
 

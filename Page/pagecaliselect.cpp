@@ -78,7 +78,7 @@ void PageCaliSelect::update()
 
     for(int i=0; i<5; i++)
     {
-        qDebug()<<"pageCaliSelect - caliUserInfo.val["<<i<<"].valid: "<<instance.caliUserInfo.val[i].valid;
+        //qDebug()<<"pageCaliSelect - caliUserInfo.val["<<i<<"].valid: "<<instance.caliUserInfo.val[i].valid;
         if(instance.caliUserInfo.val[i].valid)
         {
             int nAdcSum = 0;
@@ -91,7 +91,7 @@ void PageCaliSelect::update()
             int nAdcAvg = static_cast<int>(nAdcSum/3);
             int nValue = instance.caliUserInfo.glucose_val[i];
 
-            qDebug()<<"pageSelect - adc: "<<nAdcAvg<<", nValie:"<<nValue;
+            //qDebug()<<"pageSelect - adc: "<<nAdcAvg<<", nValie:"<<nValue;
             labelSelectTextAdc[i]->setText(QString::number(nAdcAvg));
             labelSelectTextValue[i]->setText(QString::number(nValue));
 

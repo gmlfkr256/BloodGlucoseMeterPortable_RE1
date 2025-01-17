@@ -132,16 +132,27 @@ int ComponentSpinnerDate::getDateValue()
 
 void ComponentSpinnerDate::handleTimerPress()
 {
-    if(isPlus)
+    if(isPlus && nValue < nMax && isValueValid(nValue+1))
     {
         nValue++;
     }
-    else
+    else if(!isPlus && nValue > nMin && isValueValid(nValue-1))
     {
         nValue--;
     }
     update();
     emit signalChangeValue();
+}
+
+void ComponentSpinnerDate::setValidRange(int min, int max)
+{
+    nMin = min;
+    nMax = max;
+}
+
+bool ComponentSpinnerDate::isValueValid(int value)
+{
+    return value >= nMin && value <= nMax;
 }
 
 void ComponentSpinnerDate::pageShow()

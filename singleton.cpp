@@ -399,7 +399,7 @@ bool Singleton::getCaliGainCompleteCheck()
 #if DEVICE
     updateCaliUserInfo();
 #endif
-    qDebug()<<"led_sense: "<<caliUserInfo.led_sense<<", completed: "<<caliUserInfo.completed;
+    //qDebug()<<"led_sense: "<<caliUserInfo.led_sense<<", completed: "<<caliUserInfo.completed;
 
     if(getGainCompleteCheck() && getCaliCompleteCheck())
         return true;
@@ -591,7 +591,7 @@ void Singleton::getDeviceVersion()
         strSWVer = chFWVer;
         strBleName = chBleName;
         strSerialNumber = chSerialNumber;
-        qDebug()<<"DeviceVersion get Success";
+        //qDebug()<<"DeviceVersion get Success";
     }
 #endif
 }
@@ -663,7 +663,7 @@ QString Singleton::getTextColorGlucoseValue(int glucoseValue, bool bIsBlack)
     if(bIsBlack && strColor=="#52d0ba")
         strColorText = "color: #000000;";
 
-    qDebug()<<"getTextColorGluocseValue: "<<strColorText;
+    //qDebug()<<"getTextColorGluocseValue: "<<strColorText;
     return strColorText;
 }
 
@@ -674,7 +674,7 @@ QString Singleton::getBgColorGlucoseValue(int glucoseValue)
 
     strColorBg += strColor+";";
 
-    qDebug()<<"getBgColorGlucoseValue: "<<strColorBg;
+    //qDebug()<<"getBgColorGlucoseValue: "<<strColorBg;
     return strColorBg;
 }
 

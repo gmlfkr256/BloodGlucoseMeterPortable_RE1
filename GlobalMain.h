@@ -10,6 +10,13 @@
 #define GLUCOSE_LOW_PLUS 5
 #define GLUCOSE_HIGH_MINUS -30
 
+#define DEBUG_FLAG_BATTERY true
+#ifdef DEBUG_FLAG_BATTERY
+    #define DEBUG_BAT(msg) qDebug() << msg
+#else
+    #define DEBUG_BAT(msg) do{} while(0)
+#endif
+
 //=======================
 // Qt Library
 //=======================

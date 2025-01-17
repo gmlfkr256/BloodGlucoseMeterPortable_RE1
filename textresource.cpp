@@ -607,7 +607,7 @@ void TextResource::init()
     fontData[Lan][PAGE_GRAPH].insert("labelAdcText",QFont(currentFont,instance.pixelToPoint(20)));
     textData[Lan][PAGE_GRAPH].insert("labelAdcText",QStringList{"A:"});
     fontData[Lan][PAGE_GRAPH].insert("labelLoading",QFont(currentFont,instance.pixelToPoint(48),QFont::Bold));
-    textData[Lan][PAGE_GRAPH].insert("labelLoading",QStringList{"Analyzing"});
+    textData[Lan][PAGE_GRAPH].insert("labelLoading",QStringList{"Being analyzed"});
 
     //Page_CALI_GAIN_RESULT
     fontData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText",QFont(currentFont,instance.pixelToPoint(nTextSize),QFont::Bold));

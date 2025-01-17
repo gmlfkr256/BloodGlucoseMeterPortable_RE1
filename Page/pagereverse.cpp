@@ -47,7 +47,7 @@ void PageReverse::update()
 #if DEVICE
     if(instance.guiApi.glucoseGetDispData(&instance.dispData) == GAPI_SUCCESS)
     {
-        qDebug()<<"instance.dispData.dir: "<<instance.dispData.dir;
+        //qDebug()<<"instance.dispData.dir: "<<instance.dispData.dir;
     }
     else
     {
@@ -60,7 +60,7 @@ void PageReverse::update()
     else
         bIsReverse = true;
 
-    qDebug()<<"bIsRevers: "<<bIsReverse;
+    //qDebug()<<"bIsRevers: "<<bIsReverse;
 #endif
 
     setImgHand();

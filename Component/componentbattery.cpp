@@ -28,7 +28,9 @@ void ComponentBattery::update()
 
     if(instance.guiApi.glucoseGetBatData(&batData) == GAPI_SUCCESS)
     {
-        //qDebug()<<"batData.charge: "<<batData.charge<<", batData.Charging: "<<batData.charging;
+
+        DEBUG_BAT("batData.charge: "<<batData.charge<<", batData.Charging: "<<batData.charging);
+
         nBatterySize = batData.charge;
         updateUI();
     }
@@ -129,7 +131,8 @@ void ComponentBattery::updateUI()
             int sum = std::accumulate(listBatterySize.begin(),listBatterySize.end(),0);
             int average = static_cast<int>(sum/listBatterySize.size());
 
-            qDebug()<<"average: "<<average;
+            DEBUG_BAT("average: "<<average);
+
             if(average>=90)
                 pngPath += "100";
             else if(average>=60)

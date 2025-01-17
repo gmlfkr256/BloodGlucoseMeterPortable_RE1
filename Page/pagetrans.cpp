@@ -136,6 +136,7 @@ void PageTrans::mousePressEvent(QMouseEvent *ev)
         instance.setDeviceLanguage(selectedIndex);
         instance.langData.used = selectedIndex;
 #if DEVICE
+        qDebug()<<"set instance.langData.used: "<<instance.langData.used;
         instance.guiApi.glucoseSetLangData(&instance.langData);
 #endif
         pageHide();
