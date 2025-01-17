@@ -73,10 +73,12 @@ void ComponentSpinnerDate::update()
     if(nValue+1>nMax)
     {
         strValueTop = "";
+        labelTextTop->hide();
     }
     if(nValue-1<nMin)
     {
         strValueBottom = "";
+        labelTextBottom->hide();
     }
 
     labelTextTop->setText(strValueTop);
