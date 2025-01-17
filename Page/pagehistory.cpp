@@ -126,6 +126,8 @@ void PageHistory::setDateStatus(DateStatus dateStatus)
 
         com->update();
     }
+
+    update();
 }
 
 void PageHistory::changeValue()
