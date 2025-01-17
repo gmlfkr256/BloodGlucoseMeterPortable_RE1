@@ -61,9 +61,6 @@ public:
     void valueMinus();
     void timeStop();
 
-    void setValidRange(int min, int max);
-    bool isValueValid(int value);
-
     void update() override;
     void pageShow() override;
     void pageHide() override;

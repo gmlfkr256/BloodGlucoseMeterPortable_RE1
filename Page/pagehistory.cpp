@@ -60,21 +60,6 @@ void PageHistory::init()
 
 void PageHistory::update()
 {
-    QDate currentDate = QDate::currentDate();
-    QDate minDate = currentDate.addDays(-90); // 과거 90일
-    QDate maxDate = currentDate;             // 오늘
-
-    // 유효 범위 계산
-    comDateYear->setValidRange(minDate.year(), maxDate.year());
-    comDateMonth->setValidRange(1, 12); // 월은 항상 1~12
-    comDateDay->setValidRange(1, maxDate.day()); // 현재 월의 최대 일 수 계산
-
-    // 각 날짜 컴포넌트 업데이트
-    for (ComponentSpinnerDate *com : listCom)
-    {
-        com->update();
-    }
-
     customButtonOK->update();
     customButtonCancel->update();
 
@@ -142,7 +127,6 @@ void PageHistory::changeValue()
     if(selectedDate<minDate)
         selectedDate = minDate;
 
-    /*
     QDate date(comDateYear->getDateValue(),comDateMonth->getDateValue(),1);
     int maxDaysInMonth = date.daysInMonth();
     //int currentDay = comDateDay->getDateValue();
@@ -162,23 +146,6 @@ void PageHistory::changeValue()
     comDateYear->setValue(selectedDate.year());
     comDateMonth->setValue(selectedDate.month());
     comDateDay->update();
-    */
-
-    QDate date(comDateYear->getDateValue(), comDateMonth->getDateValue(), 1);
-    int maxDaysInMonth = date.daysInMonth();
-
-    // 일수 범위 업데이트
-    comDateDay->setValidRange(1, maxDaysInMonth);
-
-    comDateYear->setValue(selectedDate.year());
-    comDateMonth->setValue(selectedDate.month());
-    comDateDay->setValue(selectedDate.day());
-
-    // 컴포넌트 업데이트
-    for (ComponentSpinnerDate *com : listCom)
-    {
-        com->update();
-    }
 
     update();
 }
