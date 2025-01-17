@@ -272,6 +272,7 @@ void PageHistory::mousePressEvent(QMouseEvent *ev)
             {
                 bIsArrowTouch = true;
                 com->valuePlus();
+                update();
             }
         }
     }
@@ -284,6 +285,7 @@ void PageHistory::mousePressEvent(QMouseEvent *ev)
             {
                 bIsArrowTouch = true;
                 com->valueMinus();
+                update();
             }
         }
     }
