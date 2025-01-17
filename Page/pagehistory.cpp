@@ -124,12 +124,12 @@ void PageHistory::changeValue()
     bool bIsCheckMaxDay = false;
     bool bIsCheckMinDay = false;
 
-    if(selectedDate>currentDate)
+    if(selectedDate>=currentDate)
     {
         selectedDate = currentDate;
         bIsCheckMaxDay = true;
     }
-    else if(selectedDate<minDate)
+    else if(selectedDate<=minDate)
     {
         selectedDate = minDate;
         bIsCheckMinDay = true;
