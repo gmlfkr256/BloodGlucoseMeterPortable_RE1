@@ -100,6 +100,20 @@ void PageHistory::update()
     if(bIsHisDataValidCheck)
         labelBg->setStyleSheet("border:3px solid red; border-radius: 15px;");
 
+    QDate selectedDate(comDateYear->getDateValue(),comDateMonth->getDateValue(),comDateDay->getDateValue());
+
+    if(selectedDate>QDate::currentDate())
+    {
+        comDateYear->labelTextTop->setText("");
+        comDateMonth->labelTextTop->setText("");
+        comDateDay->labelTextTop->setText("");
+    }
+    else if(selectedDate<QDate::currentDate().addDays(-90))
+    {
+        comDateYear->labelTextBottom->setText("");
+        comDateMonth->labelTextBottom->setText("");
+        comDateDay->labelTextBottom->setText("");
+    }
 }
 
 void PageHistory::setDateStatus(DateStatus dateStatus)
@@ -121,18 +135,13 @@ void PageHistory::changeValue()
     QDate currentDate = QDate::currentDate();
     QDate minDate = currentDate.addDays(-90);
 
-    bool bIsCheckMaxDay = false;
-    bool bIsCheckMinDay = false;
-
-    if(selectedDate>=currentDate)
+    if(selectedDate>currentDate)
     {
         selectedDate = currentDate;
-        bIsCheckMaxDay = true;
     }
-    else if(selectedDate<=minDate)
+    else if(selectedDate<minDate)
     {
         selectedDate = minDate;
-        bIsCheckMinDay = true;
     }
 
 
@@ -154,19 +163,6 @@ void PageHistory::changeValue()
     comDateYear->setValue(selectedDate.year());
     comDateMonth->setValue(selectedDate.month());
     comDateDay->update();
-
-    if(bIsCheckMaxDay)
-    {
-        comDateYear->labelTextTop->setText("");
-        comDateMonth->labelTextTop->setText("");
-        comDateDay->labelTextTop->setText("");
-    }
-    else if(bIsCheckMinDay)
-    {
-        comDateYear->labelTextBottom->setText("");
-        comDateMonth->labelTextBottom->setText("");
-        comDateDay->labelTextBottom->setText("");
-    }
 
     update();
 }
