@@ -80,7 +80,7 @@ void PageResult::update()
                 QString::number(instance.sysProcMonInfo.min).rightJustified(2,'0')
                 );
 
-//#endif
+    //#endif
     labelTextTime->setText(strTime);
     labelText->setFont(textResource.getFont(PAGE_RESULT,"labelText"));
 
@@ -158,8 +158,13 @@ void PageResult::setValueUI()
         //
         strTooltip = textResource.getText(PAGE_RESULT,"labelProgressBarTooltip").at(nIndexTooltip);
         QFontMetrics metrics(labelProgressBarTooltip->font());
-        //int nTextWidth = metrics.horizontalAdvance(strTooltip)+20;
-        int nTextWidth = metrics.width(strTooltip)+20;
+        int nTextWidth;
+#if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
+        nTextWidth = metrics.horizontalAdvance(strTooltip) + 20;
+#else
+        nTextWidth = metrics.width(strTooltip) + 20;
+#endif
+
         labelProgressBarTooltip->setFixedWidth(nTextWidth);
         //
         nTooltipX = labelProgressBar->x()+nProgressBarWidth-(labelProgressBarTooltip->width()/2);
