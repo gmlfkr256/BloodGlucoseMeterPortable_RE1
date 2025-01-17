@@ -145,33 +145,6 @@ void PageHistory::changeValue()
     comDateMonth->setValue(selectedDate.month());
     comDateDay->update();
 
-    // 범위를 넘어가는 경우 Label Top과 Bottom 텍스트 비우기
-    if (selectedDate.addDays(1) > currentDate) // 1일 후가 현재 날짜 초과
-    {
-        comDateDay->labelTextTop->setText("");
-        comDateMonth->labelTextTop->setText("");
-        comDateYear->labelTextTop->setText("");
-    }
-    else
-    {
-        comDateDay->labelTextTop->setText(QString::number(selectedDate.addDays(1).day()));
-        comDateMonth->labelTextTop->setText(QString::number(selectedDate.addDays(1).month()));
-        comDateYear->labelTextTop->setText(QString::number(selectedDate.addDays(1).year()));
-    }
-
-    if (selectedDate.addDays(-1) < minDate) // 1일 전이 최소 날짜 초과
-    {
-        comDateDay->labelTextBottom->setText("");
-        comDateMonth->labelTextBottom->setText("");
-        comDateYear->labelTextBottom->setText("");
-    }
-    else
-    {
-        comDateDay->labelTextBottom->setText(QString::number(selectedDate.addDays(-1).day()));
-        comDateMonth->labelTextBottom->setText(QString::number(selectedDate.addDays(-1).month()));
-        comDateYear->labelTextBottom->setText(QString::number(selectedDate.addDays(-1).year()));
-    }
-
     update();
 }
 
