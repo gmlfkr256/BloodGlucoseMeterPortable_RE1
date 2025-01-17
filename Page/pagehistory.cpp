@@ -100,7 +100,6 @@ void PageHistory::update()
     if(bIsHisDataValidCheck)
         labelBg->setStyleSheet("border:3px solid red; border-radius: 15px;");
 
-    updateLabelRange();
 }
 
 void PageHistory::setDateStatus(DateStatus dateStatus)
@@ -147,69 +146,6 @@ void PageHistory::changeValue()
     comDateDay->update();
 
     update();
-}
-
-void PageHistory::updateLabelRange()
-{
-    QDate currentDate = QDate::currentDate();
-    QDate minDate = currentDate.addDays(-90);
-
-    // 년도 범위 체크
-    if (comDateYear->getDateValue() - 1 < minDate.year())
-    {
-        comDateYear->labelTextBottom->setText("");
-    }
-    else
-    {
-        comDateYear->labelTextBottom->setText(QString::number(comDateYear->getDateValue() - 1));
-    }
-
-    if (comDateYear->getDateValue() + 1 > currentDate.year())
-    {
-        comDateYear->labelTextTop->setText("");
-    }
-    else
-    {
-        comDateYear->labelTextTop->setText(QString::number(comDateYear->getDateValue() + 1));
-    }
-
-    // 월 범위 체크 (항상 두 자리 유지)
-    if (comDateMonth->getDateValue() - 1 < 1 && comDateYear->getDateValue() == minDate.year())
-    {
-        comDateMonth->labelTextBottom->setText("");
-    }
-    else
-    {
-        comDateMonth->labelTextBottom->setText(QString("%1").arg(comDateMonth->getDateValue() - 1, 2, 10, QChar('0')));
-    }
-
-    if (comDateMonth->getDateValue() + 1 > 12 && comDateYear->getDateValue() == currentDate.year())
-    {
-        comDateMonth->labelTextTop->setText("");
-    }
-    else
-    {
-        comDateMonth->labelTextTop->setText(QString("%1").arg(comDateMonth->getDateValue() + 1, 2, 10, QChar('0')));
-    }
-
-    // 일 범위 체크
-    if (comDateDay->getDateValue() - 1 < minDate.day() && comDateMonth->getDateValue() == minDate.month() && comDateYear->getDateValue() == minDate.year())
-    {
-        comDateDay->labelTextBottom->setText("");
-    }
-    else
-    {
-        comDateDay->labelTextBottom->setText(QString::number(comDateDay->getDateValue() - 1));
-    }
-
-    if (comDateDay->getDateValue() + 1 > currentDate.day() && comDateMonth->getDateValue() == currentDate.month() && comDateYear->getDateValue() == currentDate.year())
-    {
-        comDateDay->labelTextTop->setText("");
-    }
-    else
-    {
-        comDateDay->labelTextTop->setText(QString::number(comDateDay->getDateValue() + 1));
-    }
 }
 
 void PageHistory::getHistoryAll()
@@ -272,7 +208,6 @@ void PageHistory::mousePressEvent(QMouseEvent *ev)
             {
                 bIsArrowTouch = true;
                 com->valuePlus();
-                update();
             }
         }
     }
@@ -285,7 +220,6 @@ void PageHistory::mousePressEvent(QMouseEvent *ev)
             {
                 bIsArrowTouch = true;
                 com->valueMinus();
-                update();
             }
         }
     }
