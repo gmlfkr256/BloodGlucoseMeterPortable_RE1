@@ -255,6 +255,8 @@ public:
     gapiGlucoseLimit_t glucoseLimit;
     gapiHistInfo_t hisInfo[91];
 
+    gapiSysOprData_t sysData;
+
     int caliIndexCount = 0;
     int nSleepTimeCount = 0;
     bool isComMenuCheck = false;

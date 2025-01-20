@@ -10,6 +10,13 @@ public:
     PageDebugSys(QWidget *parent);
     void mousePressEvent(QMouseEvent *ev) override;
 
+    QLabel *labelTitle;
+    QLabel *labelModeText;
+    QLabel *labelModeButton;
+
+    CustomButtonSave *customButtonSave;
+    CustomButtonCancel *customButtonCancel;
+
     void update() override;
     void pageShow() override;
     void pageHide() override;
