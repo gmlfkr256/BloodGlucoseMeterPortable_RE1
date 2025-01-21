@@ -28,6 +28,8 @@ void PageDebug::init()
     labelButtonCancel->setFont(font);
     labelButtonCancel->setText("X");
 
+
+    font = QFont(instance.fontSuit,24,QFont::Bold);
     for (int i = 0; i < 12; i++)
     {
         labelDebugMenu[i] = new QLabel(this);
