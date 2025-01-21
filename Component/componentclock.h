@@ -17,11 +17,17 @@ private:
     QLabel *labelClock;
     QTimer *timerClock;
 
+    int nDebugCount = 0;
+    int nDebugClockCount = 0;
+
     void init();
 public slots:
     void update() override;
     void pageShow() override;
     void pageHide() override;
+
+signals:
+    void signalShowPageNum(PageNum pageNum);
 };
 
 #endif // COMPONENTCLOCK_H

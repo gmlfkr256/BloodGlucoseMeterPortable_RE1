@@ -21,6 +21,16 @@ void ComponentClock::init()
 
 void ComponentClock::update()
 {
+    if(nDebugCount!=0)
+    {
+        nDebugClockCount++;
+        if(nDebugClockCount>2)
+        {
+            nDebugClockCount=0;
+            nDebugCount=0;
+        }
+    }
+
     labelClock->setFont(QFont(instance.fontSuit,instance.pixelToPoint(28),QFont::Bold));
 
     if(!instance.bIsHistorySelect)
@@ -86,6 +96,8 @@ void ComponentClock::mousePressEvent(QMouseEvent *ev)
     Q_UNUSED(ev);
     if(instance.currentPage == PAGE_DEVICEINFO)
     {
-
+        nDebugCount++;
+        if(nDebugCount>=5)
+            emit signalShowPageNum(PAGE_DEBUG);
     }
 }
