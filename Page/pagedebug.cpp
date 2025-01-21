@@ -2,6 +2,9 @@
 
 PageDebug::PageDebug(QWidget *parent) : Page(parent)
 {
+    this->setBgHide();
+    this->setBgTopHide();
+
     this->setGeometry(parent->geometry());
     this->setStyleSheet("background-color: black;");
     init();

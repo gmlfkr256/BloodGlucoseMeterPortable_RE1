@@ -26,6 +26,11 @@ void Page::setBgTopHide()
     labelBgTop->hide();
 }
 
+void Page::setBgHide()
+{
+    labelBg->hide();
+}
+
 void Page::pageShow()
 {
     this->show();
