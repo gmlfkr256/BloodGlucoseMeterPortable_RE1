@@ -2,7 +2,7 @@
 
 PageDebug::PageDebug(QWidget *parent) : Page(parent)
 {
-    this->setBgHide();
+    //this->setBgHide();
     this->setBgTopHide();
 
     this->setGeometry(parent->geometry());
