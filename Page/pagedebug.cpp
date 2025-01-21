@@ -38,8 +38,9 @@ void PageDebug::init()
         labelDebugMenu[i]->setGeometry(x, y, 140, 100);
 
         labelDebugMenu[i]->setText(QString("Label %1").arg(i + 1));
-        labelDebugMenu[i]->setStyleSheet("border: 1px solid black; background-color: gray; color: white;");
+        labelDebugMenu[i]->setStyleSheet("border: 1px solid black; background-color: rightgray; color: white;");
         labelDebugMenu[i]->setFont(font);
+        labelDebugMenu[i]->setAlignment(Qt::AlignCenter);
 
         pageNum[i] = PAGE_MAX;
     }
