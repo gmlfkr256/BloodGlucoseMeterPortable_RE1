@@ -11,7 +11,7 @@ PageDebug::PageDebug(QWidget *parent) : Page(parent)
 
 void PageDebug::init()
 {
-    font = QFont(instance.fontSuit,36,QFont::Bold);
+    font = QFont(instance.fontSuit,32,QFont::Bold);
     labelBg = new QLabel(this);
     labelBg->setGeometry(0,0,640,480);
     labelBg->setStyleSheet("background-color: black;");
@@ -42,7 +42,7 @@ void PageDebug::init()
         labelDebugMenu[i]->setGeometry(x, y, 140, 100);
 
         labelDebugMenu[i]->setText(QString("Label %1").arg(i + 1));
-        labelDebugMenu[i]->setStyleSheet("border: 1px solid black; background-color: gray; color: white;");
+        labelDebugMenu[i]->setStyleSheet("border: 1px solid white; background-color: gray; color: white;");
         labelDebugMenu[i]->setFont(font);
         labelDebugMenu[i]->setAlignment(Qt::AlignCenter);
 
@@ -51,9 +51,11 @@ void PageDebug::init()
 
     pageNum[0] = PAGE_DEBUG_SYS;
     labelDebugMenu[0]->setText("SYS");
+    labelDebugMenu[0]->setStyleSheet("border: 1px solid whtie; background-color: #007BFF; color: white;");
 
     pageNum[1] = PAGE_DEBUG_USB;
     labelDebugMenu[1]->setText("USB");
+    labelDebugMenu[1]->setStyleSheet("border: 1px solid whtie; background-color: #007BFF; color: white;");
 
     update();
 }

@@ -13,7 +13,7 @@ void PageDebugSys::init()
     labelBg->setGeometry(0,0,640,480);
     labelBg->setStyleSheet("background-color: black;");
 
-    QFont font = QFont(instance.fontSuit,36,QFont::Bold);
+    QFont font = QFont(instance.fontSuit,32,QFont::Bold);
     labelTitle = new QLabel(this);
     labelTitle->setGeometry(0,20,640,50);
     labelTitle->setStyleSheet("color: white;");
