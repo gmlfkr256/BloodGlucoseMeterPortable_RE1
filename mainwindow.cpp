@@ -243,6 +243,7 @@ void MainWindow::initConnect()
     connect(comHome,&ComponentHome::singalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(comMenu,&ComponentMenu::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(comBat,&ComponentBattery::signalShowPageNum,this,&MainWindow::setPageByPageNum);
+    connect(comClock,&ComponentClock::signalShowPageNum,this,&MainWindow::setPageByPageNum);
 
     //page
     for(int i=0; i<stackedWidget->count(); i++)
