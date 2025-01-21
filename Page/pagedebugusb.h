@@ -10,14 +10,15 @@ public:
     PageDebugUsb(QWidget *parent);
     void mousePressEvent(QMouseEvent *ev) override;
 
-    QLabel *labelTitle;
-    CustomButtonSave *customButtonSave;
-    CustomButtonCancel *customButtonCancel;
-
     int usbData = GAPI_ACT_START;
 
+    QLabel *labelBg;
+    QLabel *labelTitle;
     QLabel *labelUsbText;
     QLabel *labelUsbButton;
+
+    CustomButtonSave *customButtonSave;
+    CustomButtonCancel *customButtonCancel;
 
     void update() override;
     void pageShow() override;

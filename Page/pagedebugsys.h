@@ -10,6 +10,7 @@ public:
     PageDebugSys(QWidget *parent);
     void mousePressEvent(QMouseEvent *ev) override;
 
+    QLabel *labelBg;
     QLabel *labelTitle;
     QLabel *labelModeText;
     QLabel *labelModeButton;
