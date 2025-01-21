@@ -2,17 +2,19 @@
 
 PageDebug::PageDebug(QWidget *parent) : Page(parent)
 {
-    //this->setBgHide();
+    this->setBgHide();
     this->setBgTopHide();
 
     this->setGeometry(parent->geometry());
-    this->setStyleSheet("background-color: red;");
     init();
 }
 
 void PageDebug::init()
 {
     font = QFont(instance.fontSuit,36,QFont::Bold);
+    labelBg = new QLabel(this);
+    labelBg->setGeometry(0,0,640,480);
+    labelBg->setStyleSheet("background-color: black;");
 
     labelTitle = new QLabel(this);
     labelTitle->setGeometry(0,20,640,50);

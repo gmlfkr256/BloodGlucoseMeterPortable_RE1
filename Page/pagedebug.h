@@ -12,6 +12,7 @@ public:
     QString strDirPath = "/ImageDebug";
 
     QFont font;
+    QLabel *labelBg;
     QLabel *labelTitle;
     QLabel *labelButtonCancel;
     QLabel *labelDebugMenu[12];
