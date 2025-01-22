@@ -99,6 +99,7 @@ void PagePassword::update()
     }
 
     labelButtonCancel->hide();
+
     if(instance.getPasswordStatus() != PASSWORD_LOGIN)
     {
         labelButtonCancel->show();
