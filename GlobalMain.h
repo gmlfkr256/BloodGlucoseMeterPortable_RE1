@@ -5,12 +5,12 @@
 // Define Constants
 //=======================
 
-#define DEVICE false
+#define DEVICE true
 #define IMAGE_FILE_CHECK true
 #define GLUCOSE_LOW_PLUS 5
 #define GLUCOSE_HIGH_MINUS -30
 
-#define DEBUG_FLAG_BATTERY true
+#define DEBUG_FLAG_BATTERY false
 #ifdef DEBUG_FLAG_BATTERY
     #define DEBUG_BAT(msg) qDebug() << msg
 #else
