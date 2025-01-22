@@ -29,6 +29,7 @@ public:
     gapiSpkData_t prevSpkData;
     bool isBarTouch = false;
     bool touchEnabled = true;
+    bool bIsProcessing = false;
     QFutureWatcher<void> *soundWatcher;
 
     CustomButtonSave *customButtonSave;

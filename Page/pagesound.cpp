@@ -81,18 +81,26 @@ void PageSound::setVolume()
 
 void PageSound::setVolumeOut()
 {
+    if(!touchEnabled || bIsProcessing)
+        return;
+
     touchEnabled = false;
+    bIsProcessing = true;
 
 #if DEVICE
     QtConcurrent::run([this](){
         instance.guiApi.glucoseSpeakerOut(GAPI_SPK_VOLUME_BEEP);
 
-        QMetaObject::invokeMethod(this,[this](){touchEnabled=true;},Qt::QueuedConnection);
+        QMetaObject::invokeMethod(this,[this](){
+            touchEnabled = true;
+            bIsProcessing = false;
+        },Qt::QueuedConnection);
     });
 #else
     QTimer::singleShot(100, this, [this]() { // 500ms는 예제값, 소리 출력 시간을 대체
             touchEnabled = true;
-        });
+            bIsProcessing = false;
+    });
 
 #endif
 }
@@ -206,7 +214,7 @@ void PageSound::mousePressEvent(QMouseEvent *ev)
     if(instance.touchCheck(labelBarTouch->geometry(),ev))
     {
         isBarTouch = true;
-        nVolume = (ev->x() - 70)/5;
+        nVolume = static_cast<int>((ev->x() - 70)/5);
         setScreen();
     }
 }
