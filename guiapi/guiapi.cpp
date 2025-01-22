@@ -1648,9 +1648,17 @@ int GuiApi::glucoseSpeakerOut (int kinds)
 			strcpy (lang_prefix, GAPI_SPK_LANG_PREFIX_ENGLISH);
 			break;
 		case GAPI_LANGUAGE_JAPANESE :
+			strcpy (lang_prefix, GAPI_SPK_LANG_PREFIX_JAPANESE);
+			break;
 		case GAPI_LANGUAGE_CHINESE_S :
+			strcpy (lang_prefix, GAPI_SPK_LANG_PREFIX_CHINESE_S);
+			break;
 		case GAPI_LANGUAGE_CHINESE_T :
+			strcpy (lang_prefix, GAPI_SPK_LANG_PREFIX_CHINESE_T);
+			break;
 		case GAPI_LANGUAGE_ESPANOL :
+			strcpy (lang_prefix, GAPI_SPK_LANG_PREFIX_ESPANOL);
+			break;
 		default :
 			gapiError("invalid language data: (%d)\n", lang_data.used);
 			return GAPI_FAIL;

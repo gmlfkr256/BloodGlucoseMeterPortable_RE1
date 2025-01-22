@@ -141,6 +141,10 @@ typedef enum {
 
 #define GAPI_SPK_LANG_PREFIX_KOREAN						"kr_"
 #define GAPI_SPK_LANG_PREFIX_ENGLISH					"en_"
+#define GAPI_SPK_LANG_PREFIX_JAPANESE					"jp_"
+#define GAPI_SPK_LANG_PREFIX_CHINESE_S				"sc_"
+#define GAPI_SPK_LANG_PREFIX_CHINESE_T				"tc_"
+#define GAPI_SPK_LANG_PREFIX_ESPANOL					"es_"
 
 /*---------------------------------------------------------------------------*
  * Class                                                                     *
