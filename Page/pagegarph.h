@@ -47,6 +47,8 @@ private:
     void init();
     void updatePainter();
 
+    void initGraphPainter();
+
 signals:
     //void signalShowPageNum(PageNum pageNum);
 };
