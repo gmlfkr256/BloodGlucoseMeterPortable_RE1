@@ -324,10 +324,6 @@ void PageGarph::mousePressEvent(QMouseEvent *ev)
 
 void PageGarph::pageShow()
 {
-    pixPainter.fill(Qt::transparent);
-    initGraphPainter();
-    labelPainter->setPixmap(pixPainter);
-
     instance.sysProcAct = {};
 
     instance.sysProcAct.act = GAPI_ACT_START;
@@ -478,39 +474,41 @@ void PageGarph::pageHide()
 void PageGarph::initGraphPainter()
 {
     // pixPainter를 초기화 (배경을 투명하게 설정)
-        pixPainter.fill(Qt::transparent);
+    pixPainter.fill(Qt::transparent);
 
-        // QPainter로 초기 그래프 그리기
-        if (!painter->begin(&pixPainter))
-        {
-            qWarning() << "QPainter::begin failed. Check pixPainter initialization.";
-            return;
-        }
+    // QPainter로 초기 그래프 그리기
+    if (!painter->begin(&pixPainter))
+    {
+        qWarning() << "QPainter::begin failed. Check pixPainter initialization.";
+        return;
+    }
 
-        painter->setRenderHint(QPainter::Antialiasing, true);
+    painter->setRenderHint(QPainter::Antialiasing, true);
 
-        // 초기 배경 그리기
-        painter->setBrush(QColor("#f2f2f2"));
-        painter->drawRect(-1, -1, labelPainter->width() + 2, labelPainter->height() + 2);
+    // 초기 배경 그리기
+    painter->setBrush(QColor("#f2f2f2"));
+    painter->drawRect(-1, -1, labelPainter->width() + 2, labelPainter->height() + 2);
 
-        // 그래프 그리기: 기본 그리드
-        painter->setPen(pen1);
-        for (int i = 1; i < 4; i++)
-        {
-            painter->drawLine(0, 50 * i, 600, 50 * i);
-        }
+    // 그래프 그리기: 기본 그리드
+    painter->setPen(pen1);
+    for (int i = 1; i < 4; i++)
+    {
+        painter->drawLine(0, 50 * i, 600, 50 * i);
+    }
 
-        // 초기 데이터(평탄한 선) 그리기
-        painter->setPen(pen3);
-        int x = 5, y = 200, x1, y1;
-        for (int i = 0; i < 50; i++)
-        {
-            x1 = x + 12;
-            y1 = 200;
-            painter->drawLine(x, y, x1, y1);
-            x = x1;
-            y = y1;
-        }
+    // 초기 데이터(평탄한 선) 그리기
+    painter->setPen(pen3);
+    int x = 5, y = 200, x1, y1;
+    for (int i = 0; i < 50; i++)
+    {
+        x1 = x + 12;
+        y1 = 200;
+        painter->drawLine(x, y, x1, y1);
+        x = x1;
+        y = y1;
+    }
 
-        painter->end();
+    painter->end();
+
+    labelPainter->setPixmap(pixPainter);
 }

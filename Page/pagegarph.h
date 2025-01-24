@@ -40,14 +40,14 @@ public:
 
     bool bIsProcessSuccess = false;
 
+    void initGraphPainter();
+
     void update() override;
     void pageShow() override;
     void pageHide() override;
 private:
     void init();
     void updatePainter();
-
-    void initGraphPainter();
 
 signals:
     //void signalShowPageNum(PageNum pageNum);

@@ -330,15 +330,18 @@ void MainWindow::setPageByPageNum(PageNum pageNum)
 
         Page *page = qobject_cast<Page*>(stackedWidget->currentWidget());
 
-        if(page)
-            page->pageShow();
-
         if(pageNum == PAGE_HOME)
         {
             comHome->update();
             comBle->update();
         }
+        else if(pageNum == PAGE_GRAPH)
+        {
+            pageGraph->initGraphPainter();
+        }
 
+        if(page)
+            page->pageShow();
     }
     else
     {
