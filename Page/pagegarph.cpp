@@ -399,6 +399,14 @@ void PageGarph::pageShow()
     instance.sysProcMonInfo.min = dateTimeLocal.time().minute();
 #endif
 
+    QPixmap pixNull;
+    labelPainter->setPixmap(pixNull);
+
+    for(int &nGraphPointY : nGraphPointY)
+    {
+        nGraphPointY = 200;
+    }
+
     update();
     QTimer::singleShot(instance.nTouchTime,this,[this](){instance.isTouchCtrl = true;});
 }
@@ -462,13 +470,7 @@ void PageGarph::pageHide()
     labelProgressPercent->setGeometry(56,43,38,45);
     labelProgressText->setGeometry(99,43,178,45);
 
-    QPixmap pixNull;
-    labelPainter->setPixmap(pixNull);
 
-    for(int &nGraphPointY : nGraphPointY)
-    {
-        nGraphPointY = 200;
-    }
 
     repaint();
 }
