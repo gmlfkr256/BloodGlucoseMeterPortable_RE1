@@ -474,7 +474,7 @@ void PageGarph::pageHide()
 void PageGarph::initGraphPainter()
 {
     // pixPainter를 초기화 (배경을 투명하게 설정)
-    pixPainter.fill(Qt::transparent);
+    //pixPainter.fill(Qt::transparent);
 
     // QPainter로 초기 그래프 그리기
     if (!painter->begin(&pixPainter))
