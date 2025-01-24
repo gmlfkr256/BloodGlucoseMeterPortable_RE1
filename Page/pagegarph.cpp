@@ -324,6 +324,8 @@ void PageGarph::mousePressEvent(QMouseEvent *ev)
 
 void PageGarph::pageShow()
 {
+    labelPainter->setPixmap(pixPainter);
+
     instance.sysProcAct = {};
 
     instance.sysProcAct.act = GAPI_ACT_START;
@@ -366,8 +368,6 @@ void PageGarph::pageShow()
     instance.guiApi.glucoseSpeakerOut(GAPI_SPK_MEASURE_START);
     instance.guiApi.glucoseSysProcAct(&instance.sysProcAct);
 #endif
-
-
 
     instance.setProcCheck(true);
 
