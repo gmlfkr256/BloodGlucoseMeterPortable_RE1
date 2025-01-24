@@ -376,8 +376,7 @@ void PageGarph::pageShow()
     }
 
     instance.setProcCheck(true);
-
-
+    paintEvent(nullptr);
 
     switch(instance.getGraphMode())
     {
