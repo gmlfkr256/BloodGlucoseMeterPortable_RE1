@@ -11,7 +11,7 @@
 #define GLUCOSE_HIGH_MINUS -30
 
 #define DEBUG_FLAG_BATTERY false
-#ifdef DEBUG_FLAG_BATTERY
+#if DEBUG_FLAG_BATTERY
     #define DEBUG_BAT(msg) qDebug() << msg
 #else
     #define DEBUG_BAT(msg) do{} while(0)

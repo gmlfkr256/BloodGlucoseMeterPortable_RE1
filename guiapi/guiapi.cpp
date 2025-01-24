@@ -28,7 +28,7 @@ using namespace std;
 /*---------------------------------------------------------------------------*
  * Variables                                                                 *
  *---------------------------------------------------------------------------*/
-int g_CurrOprUser = GAPI_USER_1;
+int g_CurrOprUser = GAPI_USER_MAX;
 
 static char l_CfgBasePath[GAPI_CFG_BASE_PATH_LEN] = { 0, };
 static char l_CfgDataPath[GAPI_USER_MAX][GAPI_CFG_DATA_PATH_LEN] = { 0, };
@@ -607,6 +607,11 @@ int GuiApi::saveMeasurement (int term, gapiHistValue_t *histValP)
 		return GAPI_FAIL;
 	}
 
+	if ((g_CurrOprUser < GAPI_USER_START) || (g_CurrOprUser >= GAPI_USER_MAX)) {
+		gapiError("invalid user No (%d).\n", g_CurrOprUser);
+		return GAPI_FAIL;
+	}
+
 	// check base directory
 	if ((dir_info = opendir (l_CfgDataPath[g_CurrOprUser])) == (DIR *) NULL) {
 		gapiError("couldn't open direcotry: %s\n", l_CfgDataPath[g_CurrOprUser]);
@@ -747,6 +752,11 @@ int GuiApi::getHistory (int day, gapiHistInfo_t *rHistInfoP)
 		gapiError("invalid day(%d) info for history...\n", day);
 		return GAPI_FAIL;
 	}
+
+	if ((g_CurrOprUser < GAPI_USER_START) || (g_CurrOprUser >= GAPI_USER_MAX)) {
+		gapiError("invalid user No (%d).\n", g_CurrOprUser);
+		return GAPI_FAIL;
+	}
  
 	memset (rHistInfoP, 0, sizeof (gapiHistInfo_t));
 
@@ -826,6 +836,11 @@ int GuiApi::getHistoryAll (gapiHistInfo_t *rHistInfoP)
  
 	for (num = 0; num < GAPI_HISTORY_MAX_NUM; num++) {
 		memset (&(rHistInfoP[num]), 0, sizeof (gapiHistInfo_t));
+	}
+
+	if ((g_CurrOprUser < GAPI_USER_START) || (g_CurrOprUser >= GAPI_USER_MAX)) {
+		gapiError("invalid user No (%d).\n", g_CurrOprUser);
+		return GAPI_FAIL;
 	}
 
 	// check dir
@@ -1074,6 +1089,29 @@ int GuiApi::glucoseActUserLogin (int user)
  * PARAMETERS : 
  * RETURNS : None
  *****************************************************************************/
+int GuiApi::glucoseGetActUser (int *rUserNoP)
+{
+	if (!rUserNoP)
+		return GAPI_FAIL;
+
+	if (vtIpcProcess ((uint8_t) VTIPC_MSGID_USER_STATE_LOGIN, (uint8_t) VTIPC_MSGACT_GET, \
+		(void *)rUserNoP, sizeof (int)) != GAPI_SUCCESS)
+	{
+		gapiError("couldn't user login state.\n");
+		return GAPI_FAIL;
+	}
+
+	g_CurrOprUser = *rUserNoP;
+
+	return GAPI_SUCCESS;
+}
+
+/*****************************************************************************
+ * FUNCTION NAME : 
+ * DESCRIPTIONS : 
+ * PARAMETERS : 
+ * RETURNS : None
+ *****************************************************************************/
 int GuiApi::glucoseActUserLogout (int user)
 {
 	if ((user < GAPI_USER_1) || (user >= GAPI_USER_MAX)) {
@@ -1088,7 +1126,7 @@ int GuiApi::glucoseActUserLogout (int user)
 		return GAPI_FAIL;
 	}
 
-	g_CurrOprUser = GAPI_USER_1;
+	g_CurrOprUser = GAPI_USER_MAX;
 
 	return GAPI_SUCCESS;
 }
@@ -1377,6 +1415,13 @@ int GuiApi::glucoseGetDispData (gapiDispData_t *rDispDataP)
 	if (!rDispDataP)
 		return GAPI_FAIL;
 
+	if (g_CurrOprUser == GAPI_USER_MAX) {
+		rDispDataP->dir = GAPI_DISP_DIR_NORMAL;
+		rDispDataP->ts_timeout = GAPI_DISP_DFT_TS_TIMEOUT;
+		rDispDataP->color = GAPI_DISP_COLOR_DEFAULT;
+		return GAPI_SUCCESS;
+	}
+
 	if (vtIpcProcess ((uint8_t) VTIPC_MSGID_DISP_DATA, (uint8_t) VTIPC_MSGACT_GET, \
 		(void *)rDispDataP, sizeof (gapiDispData_t)) != GAPI_SUCCESS)
 	{
@@ -1443,6 +1488,11 @@ int GuiApi::glucoseGetLangData (gapiLangData_t *rLangDataP)
 {
 	if (!rLangDataP)
 		return GAPI_FAIL;
+
+	if (g_CurrOprUser == GAPI_USER_MAX) {
+		rLangDataP->used = GAPI_LANGUAGE_KOREAN;
+		return GAPI_SUCCESS;
+	}
 
 	if (vtIpcProcess ((uint8_t) VTIPC_MSGID_LANG_DATA, (uint8_t) VTIPC_MSGACT_GET, \
 		(void *)rLangDataP, sizeof (gapiLangData_t)) != GAPI_SUCCESS)

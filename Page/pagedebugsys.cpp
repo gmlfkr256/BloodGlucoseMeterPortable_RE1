@@ -3,7 +3,7 @@
 PageDebugSys::PageDebugSys(QWidget *parent) : Page(parent)
 {
     this->setGeometry(parent->geometry());
-    this->setStyleSheet("backgrounr-color: black;");
+    this->setStyleSheet("background-color: black;");
     init();
 }
 

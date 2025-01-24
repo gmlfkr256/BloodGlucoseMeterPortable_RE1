@@ -1,4 +1,4 @@
-#include "pagebooting.h"
+ #include "pagebooting.h"
 
 PageBooting::PageBooting(QRect windowRect) : currentFrame(0)
 {

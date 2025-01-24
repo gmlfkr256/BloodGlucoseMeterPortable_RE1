@@ -7,6 +7,20 @@ MainWindow::MainWindow(QWidget* parent)
     initConnect();
 
     qApp->installEventFilter(this);
+
+    instance.updateSysUserInfo();
+
+#if DEVICE
+    int nUser = USER_MAX;
+    instance.guiApi.glucoseGetActUser(&nUser);
+
+    if(nUser != USER_MAX)
+    {
+        qDebug()<<"userCheck";
+        instance.actUserLogin(nUser);
+        setPageByPageNum(PAGE_HOME);
+    }
+#endif
 }
 
 MainWindow::~MainWindow()
@@ -230,9 +244,6 @@ void MainWindow::init()
     };
 
     HideComponents();
-#if DEVICE
-    instance.updateSysUserInfo();
-#endif
 }
 
 void MainWindow::initConnect()
@@ -318,8 +329,15 @@ void MainWindow::setPageByPageNum(PageNum pageNum)
         stackedWidget->setCurrentIndex(static_cast<int>(pageNum));
 
         Page *page = qobject_cast<Page*>(stackedWidget->currentWidget());
+
         if(page)
             page->pageShow();
+
+        if(pageNum == PAGE_HOME)
+        {
+            comHome->update();
+            comBle->update();
+        }
 
     }
     else

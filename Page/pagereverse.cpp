@@ -45,6 +45,10 @@ void PageReverse::update()
     labelText->setText(textResource.getText(PAGE_REVERSE,"labelText").at(0));
 
 #if DEVICE
+
+    if(instance.getUserNumber() == USER_MAX)
+        return;
+
     if(instance.guiApi.glucoseGetDispData(&instance.dispData) == GAPI_SUCCESS)
     {
         //qDebug()<<"instance.dispData.dir: "<<instance.dispData.dir;
@@ -166,9 +170,9 @@ void PageReverse::mousePressEvent(QMouseEvent *ev)
                 system("echo 0 > /proc/ts_rotation");
             }
 
-            system("sync");
-
             instance.guiApi.glucoseSetDispData(&instance.dispData);
+
+            instance.bIsDetachCtrlBat = true;
 
             instance.guiApi.glucoseDetach();
 
@@ -177,12 +181,14 @@ void PageReverse::mousePressEvent(QMouseEvent *ev)
             // 프로그램 재시작
 
             QTimer::singleShot(1000,[](){
-                QProcess::startDetached(QCoreApplication::applicationFilePath());
+                QProcess::startDetached(QFileInfo(QCoreApplication::applicationFilePath()).fileName(), QStringList());
 
                 QScreen *screen = QGuiApplication::primaryScreen();
                 if(screen)
+                {
                     screen->deleteLater();
-                QGuiApplication::sync();
+                    QGuiApplication::sync();
+                }
 
                 QCoreApplication::instance()->quit();
             });

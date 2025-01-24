@@ -64,12 +64,26 @@ void PagePassword::init()
     labelButtonCancelText->setGeometry(labelButtonCancel->geometry());
     labelButtonCancelText->setAlignment(Qt::AlignCenter);
 
-
     update();
 }
 
 void PagePassword::update()
 {
+/*
+#if DEVICE
+    int user = 0; // = GAPI_USER_MAX;
+
+    instance.guiApi.glucoseGetActUser(&user);
+
+    qDebug() << "user: "<<user;
+    if(user != GAPI_USER_MAX)
+    {
+        qDebug()<<"userCheck";
+        instance.actUserLogin(user);
+        emit signalShowPageNum(PAGE_HOME);
+    }
+#endif
+*/
 
     labelTitle->setFont(textResource.getFont(PAGE_PASSWORD,"labelTitle"));
     labelTitle->setText(textResource.getText(PAGE_PASSWORD,"labelTitle").at(instance.getPasswordStatus()));
@@ -164,8 +178,10 @@ void PagePassword::updatePasswordNum()
     //qDebug()<<"updatePasswordNum() strPasswordNum: "<<strPasswordNum;
     for(int i=0; i<4; i++)
     {
+        /*
         if(labelPasswordNum[i])
             qDebug()<<i;
+        */
 
         if(i<strPasswordNum.size())
         {

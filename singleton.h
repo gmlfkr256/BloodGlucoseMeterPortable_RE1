@@ -269,6 +269,8 @@ public:
     int nHisInfoSelectedIndex = 0;
     bool bIsHistorySelect = false;
 
+    bool bIsDetachCtrlBat = false;
+
     PageNum currentPage = PAGE_MAX;
 
     void init();
@@ -382,7 +384,7 @@ private:
     bool procCheck = false;
 
     //PagePassword
-    UserNum nUserNumber = USER_1;
+    UserNum nUserNumber = USER_MAX;
     PasswordStatus passwordStatus = PASSWORD_LOGIN;
     PasswordStatus passwordStatusPrev = PASSWORD_MAX;
     QString strPasswordChange;

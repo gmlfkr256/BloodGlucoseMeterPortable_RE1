@@ -21,9 +21,19 @@ void ComponentBluetooth::update()
 
     int resultBleAct, resultBleStat;
 
+
 #if DEVICE
-    resultBleAct = instance.guiApi.glucoseGetBleAct(&bleAct);
-    resultBleStat = instance.guiApi.glucoseGetBleStat(&bleStat);
+    if(instance.getUserNumber() != USER_MAX)
+    {
+        resultBleAct = instance.guiApi.glucoseGetBleAct(&bleAct);
+        resultBleStat = instance.guiApi.glucoseGetBleStat(&bleStat);
+    }
+    else
+    {
+        bleAct.act = GAPI_BLE_ACT_DISABLE;
+        //bleStat.stat = GAPI_BLE_STAT_WHITE;
+    }
+
 #else
     resultBleAct = GAPI_SUCCESS;
     resultBleStat = GAPI_SUCCESS;

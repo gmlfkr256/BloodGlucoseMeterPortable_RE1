@@ -4,6 +4,7 @@
 #include "page.h"
 #include <QProcess>
 #include <thread>
+#include <QFileInfo>
 
 class PageReverse : public Page
 {

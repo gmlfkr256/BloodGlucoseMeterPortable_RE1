@@ -66,10 +66,13 @@ void PageThreshold::update()
     labelButtonHigh->setStyleSheet("background-color: #000000; color: #ffffff;");
 
 #if DEVICE
-    gapiGlucoseLimit_t glucoseLimit;
-    instance.guiApi.glucoseGetGlucoseLimit(&glucoseLimit);
-    instance.thresholdLow = glucoseLimit.low;
-    instance.thresholdHigh = glucoseLimit.high;
+    if(instance.getUserNumber() != USER_MAX)
+    {
+        gapiGlucoseLimit_t glucoseLimit;
+        instance.guiApi.glucoseGetGlucoseLimit(&glucoseLimit);
+        instance.thresholdLow = glucoseLimit.low;
+        instance.thresholdHigh = glucoseLimit.high;
+    }
 #endif
 
     labelValueLow->setFont(textResource.getFont(PAGE_THRESHOLD,"labelValue"));

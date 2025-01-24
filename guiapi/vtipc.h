@@ -85,6 +85,9 @@ typedef enum {
 	// for hidden config data
 	VTIPC_MSGID_SYS_MEASURE_DATA,
 
+	// user login state
+	VTIPC_MSGID_USER_STATE_LOGIN,
+
 	VTIPC_MSGID_MAX
 } vtIpcMsgId_e;
 

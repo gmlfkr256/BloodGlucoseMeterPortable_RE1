@@ -23,7 +23,7 @@ void ComponentBattery::init()
 void ComponentBattery::update()
 {
 #if DEVICE
-    if(instance.getProcCheck() == true)
+    if(instance.getProcCheck() == true || instance.bIsDetachCtrlBat)
         return;
 
     if(instance.guiApi.glucoseGetBatData(&batData) == GAPI_SUCCESS)

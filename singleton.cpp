@@ -344,15 +344,16 @@ void Singleton::setPasswordStrStatus(PasswordStrStatus passwordStrStatus)
 
 
 //UserLogin
-void Singleton::actUserLogin(int i)
+void Singleton::
+actUserLogin(int i)
 {
+    setUserNumber(i);
 #if DEVICE
     guiApi.glucoseActUserLogin(i);
     guiApi.glucoseCaliGetUserInfo(&caliUserInfo);
     guiApi.glucoseGetDispData(&dispData);
     guiApi.glucoseGetLangData(&langData);
 #else
-    setUserNumber(i);
     setDeviceLanguage(langData.used);
 #endif
 }
@@ -377,7 +378,8 @@ TimeStatus Singleton::getTimeStatus()
 
 void Singleton::updateCaliUserInfo()
 {
-    guiApi.glucoseCaliGetUserInfo(&caliUserInfo);
+    if(nUserNumber!=USER_MAX)
+        guiApi.glucoseCaliGetUserInfo(&caliUserInfo);
 }
 
 void Singleton::setCaliGainCompleteCheck(bool caliGainCompleteCheck)

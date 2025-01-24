@@ -163,6 +163,7 @@ class GuiApi {
 		int glucoseDelUserInfo (int user);
 		int glucoseActUserLogin (int user);
 		int glucoseActUserLogout (int user);
+		int glucoseGetActUser (int *rUserNoP);
 
 		int glucoseSetUpgradeStorage (int command);	// GAPI_ACT_START or GAPI_ACT_STOP
 		int glucoseGetUpgradeStorage (int *rStateP);	// GAPI_ACT_START or GAPI_ACT_STOP
