@@ -15,9 +15,11 @@ void PageSound::init()
     labelVolume->setAlignment(Qt::AlignCenter);
 
     labelArrowLeft = new QLabel(this);
-    labelArrowLeft->setGeometry(135,155,70,70);
+    //labelArrowLeft->setGeometry(135,155,70,70);
+    labelArrowLeft->setGeometry(62,155,70,70);
     labelArrowRight = new QLabel(this);
-    labelArrowRight->setGeometry(435,155,70,70);
+    //labelArrowRight->setGeometry(435,155,70,70);
+    labelArrowRight->setGeometry(508,155,70,70);
 
     labelBarBg = new QLabel(this);
     labelBarBg->setGeometry(70,311,500,5);
