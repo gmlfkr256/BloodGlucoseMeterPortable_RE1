@@ -73,7 +73,7 @@ void PageGarph::update()
     labelProgressValue->setFont(textResource.getFont(PAGE_GRAPH,"labelProgressValue"));
     labelProgressValue->setStyleSheet("color:#000000;");
     labelProgressValue->setGeometry(20,20,36,75);
-    labelProgressValue->setText("");
+    labelProgressValue->setText("0");
 
     labelProgressPercent->setFont(textResource.getFont(PAGE_GRAPH,"labelProgressPercent"));
     labelProgressPercent->setStyleSheet("color:#000000;");
@@ -94,7 +94,7 @@ void PageGarph::update()
     labelProgressBar->setGeometry(20,95,30,30);
 
     labelAdcText->setFont(textResource.getFont(PAGE_GRAPH,"labelAdcText"));
-    labelAdcText->setText(textResource.getText(PAGE_GRAPH,"labelAdcText").at(0));
+    labelAdcText->setText(textResource.getText(PAGE_GRAPH,"labelAdcText").at(0)+"0");
     labelAdcText->setStyleSheet("color: #808080; padding-left: 27px;");
 
     instance.pixLoad(labelAdcRect,false,strDirPath,"/circleAdc.png");
@@ -249,7 +249,7 @@ void PageGarph::updatePainter()
         else
         {
             nCount++;
-            if(nCount==1)
+            if(nCount>=2)
             {
                 nCurrentIndex = (nCurrentIndex+1)%3;
                 for(int i=0; i<3; i++)

@@ -352,7 +352,12 @@ actUserLogin(int i)
     guiApi.glucoseActUserLogin(i);
     guiApi.glucoseCaliGetUserInfo(&caliUserInfo);
     guiApi.glucoseGetDispData(&dispData);
+    qDebug()<<"dispData.ts_timeout: "<<dispData.ts_timeout;
     guiApi.glucoseGetLangData(&langData);
+    setDeviceLanguage(langData.used);
+    guiApi.glucoseGetGlucoseLimit(&glucoseLimit);
+    thresholdLow = glucoseLimit.low;
+    thresholdHigh = glucoseLimit.high;
 #else
     setDeviceLanguage(langData.used);
 #endif

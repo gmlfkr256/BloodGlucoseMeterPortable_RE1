@@ -1415,18 +1415,17 @@ int GuiApi::glucoseGetDispData (gapiDispData_t *rDispDataP)
 	if (!rDispDataP)
 		return GAPI_FAIL;
 
-	if (g_CurrOprUser == GAPI_USER_MAX) {
-		rDispDataP->dir = GAPI_DISP_DIR_NORMAL;
-		rDispDataP->ts_timeout = GAPI_DISP_DFT_TS_TIMEOUT;
-		rDispDataP->color = GAPI_DISP_COLOR_DEFAULT;
-		return GAPI_SUCCESS;
-	}
-
 	if (vtIpcProcess ((uint8_t) VTIPC_MSGID_DISP_DATA, (uint8_t) VTIPC_MSGACT_GET, \
 		(void *)rDispDataP, sizeof (gapiDispData_t)) != GAPI_SUCCESS)
 	{
 		gapiError("couldn't get display data.\n");
 		return GAPI_FAIL;
+	}
+
+	if (g_CurrOprUser == GAPI_USER_MAX) {
+		rDispDataP->ts_timeout = GAPI_DISP_DFT_TS_TIMEOUT;
+		rDispDataP->color = GAPI_DISP_COLOR_DEFAULT;
+		return GAPI_SUCCESS;
 	}
 
 	return GAPI_SUCCESS;

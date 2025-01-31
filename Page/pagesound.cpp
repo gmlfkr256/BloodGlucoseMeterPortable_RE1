@@ -183,19 +183,31 @@ void PageSound::mousePressEvent(QMouseEvent *ev)
         pageHide();
     }
 
-    if(instance.touchCheck(labelArrowLeft->geometry(),ev))
+    if (instance.touchCheck(labelArrowLeft->geometry(), ev))
     {
-        nVolume-=5;
-        nVolume = (nVolume/5)*5;
+        if ((nVolume - 5) % 5 == 0)
+        {
+            nVolume -= 5; // 5를 빼도 5의 배수로 유지되는 경우
+        }
+        else
+        {
+            nVolume = (nVolume / 5) * 5; // 5로 나눈 몫에 5를 곱하여 5의 배수로 만듦
+        }
         setVolume();
         setVolumeOut();
         setScreen();
     }
 
-    if(instance.touchCheck(labelArrowRight->geometry(),ev))
+    if (instance.touchCheck(labelArrowRight->geometry(), ev))
     {
-        nVolume+=5;
-        nVolume = (nVolume/5)*5;
+        if ((nVolume + 5) % 5 == 0)
+        {
+            nVolume += 5; // 5를 더해도 5의 배수로 유지되는 경우
+        }
+        else
+        {
+            nVolume = ((nVolume / 5) + 1) * 5; // 5의 배수로 올림
+        }
         setVolume();
         setVolumeOut();
         setScreen();

@@ -26,6 +26,7 @@ void PageThresholdValue::update()
 {
     customButtonOK->update();
     customButtonCancel->update();
+
     for(ComponentSpinner *spinner : componentSpinner)
     {
         spinner->update();

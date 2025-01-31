@@ -121,6 +121,9 @@ void PageResult::setValueUI()
         labelTextGlucoseValue->setText("-");
         strTextGlucoseValueColor = "color:black;";
         nIndexTooltip = 3;
+
+        labelProgressBarTooltip->hide();
+        labelProgressBarTooltipImg->hide();
     }
     else
     {
@@ -200,6 +203,9 @@ void PageResult::setValueUI()
         labelText->setText(strLabelText);
 
         labelTextGlucoseValue->setText(QString::number(nGlucoseValue));
+
+        labelProgressBarTooltip->show();
+        labelProgressBarTooltipImg->show();
     }
 
     labelTextGlucoseValue->setStyleSheet(strTextGlucoseValueColor);

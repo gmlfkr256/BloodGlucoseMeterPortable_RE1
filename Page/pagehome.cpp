@@ -105,7 +105,7 @@ void PageHome::update()
 
             QString strStyleSheet;
             strStyleSheet = instance.getTextColorGlucoseValue(glucoseValue,true)+" padding-right: 5px;";
-            qDebug()<<strStyleSheet;
+            //qDebug()<<strStyleSheet;
             labelGroups[i].labelButtonText->setStyleSheet(strStyleSheet);
             labelGroups[i].labelButtonText->setFont(textResource.getFont(PAGE_HOME,"labelButtonText"));
             labelGroups[i].labelButtonText->setText(QString::number(glucoseValue));
