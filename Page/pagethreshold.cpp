@@ -28,10 +28,10 @@ void PageThreshold::init()
     labelButtonHigh->setAlignment(Qt::AlignCenter);
 
     labelValueLow = new QLabel(this);
-    labelValueLow->setGeometry(375,135,90,59);
+    labelValueLow->setGeometry(370,135,90,59);
     labelValueLow->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
     labelValueHigh = new QLabel(this);
-    labelValueHigh->setGeometry(375,254,90,59);
+    labelValueHigh->setGeometry(370,254,90,59);
     labelValueHigh->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
 
     labelValueRangeLow = new QLabel(this);
@@ -98,9 +98,27 @@ void PageThreshold::update()
     case JP:
     case SC:
     case TC:
+        labelValueLow->setGeometry(370,135,90,59);
+        labelValueLow->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
+        labelValueHigh->setGeometry(370,254,90,59);
+        labelValueHigh->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
+
+        labelValueRangeLow->setGeometry(467,156,45,33);
+        labelValueRangeLow->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+        labelValueRangeHigh->setGeometry(467,274,45,33);
+        labelValueRangeHigh->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         break;
     case EN:
     case ES:
+        labelValueLow->setGeometry(425,135,90,59);
+        labelValueLow->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+        labelValueHigh->setGeometry(425,254,90,59);
+        labelValueHigh->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+
+        labelValueRangeLow->setGeometry(288,156,137,33);
+        labelValueRangeLow->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
+        labelValueRangeHigh->setGeometry(288,274,137,33);
+        labelValueRangeHigh->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         break;
     case LAN_MAX:
         qDebug()<<"PageThreshold Value Range init language fail";
