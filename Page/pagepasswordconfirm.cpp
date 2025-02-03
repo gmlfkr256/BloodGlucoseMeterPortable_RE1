@@ -13,9 +13,11 @@ void PagePasswordConfirm::init()
     labelTitle = new QLabel(this);
     labelTitle->setGeometry(0,70,640,75);
     labelTitle->setAlignment(Qt::AlignCenter);
+    labelTitle->hide();
 
     labelText = new QLabel(this);
-    labelText->setGeometry(0,100,640,280);
+    //labelText->setGeometry(0,100,640,280);
+    labelText->setGeometry(0,0,640,380);
     labelText->setAlignment(Qt::AlignCenter);
 
     customButtonOK = new CustomButtonOK(this);

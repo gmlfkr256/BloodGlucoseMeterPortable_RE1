@@ -303,22 +303,29 @@ void TextResource::init()
     textData[Lan][PAGE_INIT_CONFIRM].insert("labelText",QStringList{
                                                 "전체 시스템 정보가 초기화됩니다\n초기화를 진행하시겠습니까?",
                                                 "시스템 초기화 진행 후\n시스템이 재시작합니다",
-                                                "블루투스\n\n유저 정보가 초기화됩니다\n스마트 폰과의 연결이 해제됩니다\n초기화를 진행하시겠습니까?",
-                                                "블루투스\n\n유저 정보가 초기화되었습니다",
+                                                "블루투스가 초기화됩니다\n스마트 폰과의 연결이 해제됩니다\n초기화를 진행하시겠습니까?",
+                                                "유저 정보가 초기화되었습니다",
                                                 "혈당 보정이 초기화됩니다\n혈당 보정을 초기화하시겠습니까?",
                                                 "혈당 보정이 초기화되었습니다"
                                             });
 
-    //PAGE_TRHESHOLD
+    //PAGE_THRESHOLD
     fontData[Lan][PAGE_THRESHOLD].insert("labelText",QFont(currentFont,instance.pixelToPoint(36)));
     textData[Lan][PAGE_THRESHOLD].insert("labelText",QStringList{
                                              "저혈당",
                                              "고혈당"
                                          });
-    fontData[Lan][PAGE_THRESHOLD].insert("labelButton",QFont(currentFont,instance.pixelToPoint(22)));
+
+    fontData[Lan][PAGE_THRESHOLD].insert("labelButton",QFont(currentFont,instance.pixelToPoint(30),QFont::Bold));
     textData[Lan][PAGE_THRESHOLD].insert("labelButton",QStringList{"설정"});
 
     fontData[Lan][PAGE_THRESHOLD].insert("labelValue",QFont(currentFont,instance.pixelToPoint(48),QFont::Bold));
+
+    fontData[Lan][PAGE_THRESHOLD].insert("labelValueRange",QFont(currentFont,instance.pixelToPoint(26),QFont::Bold));
+    textData[Lan][PAGE_THRESHOLD].insert("labelValueRange",QStringList{
+                                             "이하",
+                                             "이상"
+                                         });
 
     //PAGE_SOUND
     fontData[Lan][PAGE_SOUND].insert("labelVolume",QFont(currentFont,instance.pixelToPoint(110),QFont::Bold));
@@ -700,16 +707,22 @@ void TextResource::init()
                                                 "Blood sugar correction\nhas been reset"
                                             });
 
-    //PAGE_TRHESHOLD
+    //PAGE_THRESHOLD
     fontData[Lan][PAGE_THRESHOLD].insert("labelText",QFont(currentFont,instance.pixelToPoint(36)));
     textData[Lan][PAGE_THRESHOLD].insert("labelText",QStringList{
                                              "Low Blood Sugar",
                                              "High Blood Suger"
                                          });
-    fontData[Lan][PAGE_THRESHOLD].insert("labelButton",QFont(currentFont,instance.pixelToPoint(22)));
+    fontData[Lan][PAGE_THRESHOLD].insert("labelButton",QFont(currentFont,instance.pixelToPoint(30),QFont::Bold));
     textData[Lan][PAGE_THRESHOLD].insert("labelButton",QStringList{"Set"});
 
     fontData[Lan][PAGE_THRESHOLD].insert("labelValue",QFont(currentFont,instance.pixelToPoint(48),QFont::Bold));
+
+    fontData[Lan][PAGE_THRESHOLD].insert("labelValueRange",QFont(currentFont,instance.pixelToPoint(26),QFont::Bold));
+    textData[Lan][PAGE_THRESHOLD].insert("labelValueRange",QStringList{
+                                             "under",
+                                             "above"
+                                         });
 
     //PAGE_SOUND
     fontData[Lan][PAGE_SOUND].insert("labelVolume",QFont(currentFont,instance.pixelToPoint(110),QFont::Bold));
@@ -736,7 +749,7 @@ void TextResource::init()
     textData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText",QStringList{
                                                    "1. Connect the device to PC\n"
                                                    "2. Copy bin file to the device\n"
-                                                   "3. Restart the device after copying\n is complete"
+                                                   "3. Restart the device after copying\n   is complete"
                                                });
 
     //PAGE_DEVICEINFO
@@ -1134,10 +1147,16 @@ void TextResource::init()
                                              "高血糖"   // High Blood Sugar
                                          });
 
-    fontData[Lan][PAGE_THRESHOLD].insert("labelButton", QFont(currentFont, instance.pixelToPoint(22)));
+    fontData[Lan][PAGE_THRESHOLD].insert("labelButton", QFont(currentFont, instance.pixelToPoint(22),QFont::Bold));
     textData[Lan][PAGE_THRESHOLD].insert("labelButton", QStringList{"設定"}); // Set
 
     fontData[Lan][PAGE_THRESHOLD].insert("labelValue", QFont(currentFont, instance.pixelToPoint(48), QFont::Bold));
+
+    fontData[Lan][PAGE_THRESHOLD].insert("labelValueRange",QFont(currentFont,instance.pixelToPoint(26),QFont::Bold));
+    textData[Lan][PAGE_THRESHOLD].insert("labelValueRange",QStringList{
+                                             "以下",
+                                             "以上"
+                                         });
 
     //PAGE_SOUND
     fontData[Lan][PAGE_SOUND].insert("labelVolume", QFont(currentFont, instance.pixelToPoint(110), QFont::Bold));
@@ -1164,7 +1183,7 @@ void TextResource::init()
     textData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText", QStringList{
                                                    "1. デバイスをPCに接続\n"
                                                    "2. binファイルをデバイスにコピー\n"
-                                                   "3. コピー完了後、\nデバイスを再起動"
+                                                   "3. コピー完了後、デバイスを再起動"
                                                }); // 1. Connect the device to PC, 2. Copy bin file to the device, 3. Restart the device after copying is complete
 
     //PAGE_DEVICEINFO
@@ -1565,10 +1584,16 @@ void TextResource::init()
                                              "高血糖"     // High Blood Sugar
                                          });
 
-    fontData[Lan][PAGE_THRESHOLD].insert("labelButton", QFont(currentFont, instance.pixelToPoint(22)));
+    fontData[Lan][PAGE_THRESHOLD].insert("labelButton", QFont(currentFont, instance.pixelToPoint(22),QFont::Bold));
     textData[Lan][PAGE_THRESHOLD].insert("labelButton", QStringList{"设置"}); // Set
 
     fontData[Lan][PAGE_THRESHOLD].insert("labelValue", QFont(currentFont, instance.pixelToPoint(48), QFont::Bold));
+
+    fontData[Lan][PAGE_THRESHOLD].insert("labelValueRange",QFont(currentFont,instance.pixelToPoint(26),QFont::Bold));
+    textData[Lan][PAGE_THRESHOLD].insert("labelValueRange",QStringList{
+                                             "以下",
+                                             "以上"
+                                         });
 
     //PAGE_SOUND
     fontData[Lan][PAGE_SOUND].insert("labelVolume", QFont(currentFont, instance.pixelToPoint(110), QFont::Bold));
@@ -1993,10 +2018,16 @@ void TextResource::init()
                                              "高血糖"  // High Blood Sugar
                                          });
 
-    fontData[Lan][PAGE_THRESHOLD].insert("labelButton", QFont(currentFont, instance.pixelToPoint(22)));
+    fontData[Lan][PAGE_THRESHOLD].insert("labelButton", QFont(currentFont, instance.pixelToPoint(22),QFont::Bold));
     textData[Lan][PAGE_THRESHOLD].insert("labelButton", QStringList{"設定"}); // Set
 
     fontData[Lan][PAGE_THRESHOLD].insert("labelValue", QFont(currentFont, instance.pixelToPoint(48), QFont::Bold));
+
+    fontData[Lan][PAGE_THRESHOLD].insert("labelValueRange",QFont(currentFont,instance.pixelToPoint(26),QFont::Bold));
+    textData[Lan][PAGE_THRESHOLD].insert("labelValueRange",QStringList{
+                                             "以下",
+                                             "以上"
+                                         });
 
     //PAGE_SOUND
     fontData[Lan][PAGE_SOUND].insert("labelVolume", QFont(currentFont, instance.pixelToPoint(110), QFont::Bold));
@@ -2430,10 +2461,16 @@ void TextResource::init()
                                              "Azúcar baja",
                                              "Azúcar alta"
                                          });
-    fontData[Lan][PAGE_THRESHOLD].insert("labelButton", QFont(currentFont, instance.pixelToPoint(22)));
+    fontData[Lan][PAGE_THRESHOLD].insert("labelButton", QFont(currentFont, instance.pixelToPoint(22),QFont::Bold));
     textData[Lan][PAGE_THRESHOLD].insert("labelButton", QStringList{"Fijar"});
 
     fontData[Lan][PAGE_THRESHOLD].insert("labelValue",QFont(currentFont,instance.pixelToPoint(48),QFont::Bold));
+
+    fontData[Lan][PAGE_THRESHOLD].insert("labelValueRange",QFont(currentFont,instance.pixelToPoint(26),QFont::Bold));
+    textData[Lan][PAGE_THRESHOLD].insert("labelValueRange",QStringList{
+                                             "Menos de",
+                                             "Más de"
+                                         });
 
     //PAGE_SOUND
     fontData[Lan][PAGE_SOUND].insert("labelVolume",QFont(currentFont,instance.pixelToPoint(110),QFont::Bold));
@@ -2460,7 +2497,7 @@ void TextResource::init()
     textData[Lan][PAGE_UPGRADE_CONFIRM].insert("labelText",QStringList{
                                                    "1. Conecte el dispositivo a la PC\n"
                                                    "2. Copie el archivo bin en el dispositivo\n"
-                                                   "3. Reinicie el dispositivo después de que\nla copia esté completa"
+                                                   "3. Reinicie el dispositivo después de que\n   la copia esté completa"
                                                });
 
     //PAGE_DEVICEINFO

@@ -24,6 +24,9 @@ public:
     QLabel *labelValueLow;
     QLabel *labelValueHigh;
 
+    QLabel *labelValueRangeLow;
+    QLabel *labelValueRangeHigh;
+
     CustomButtonSave *customButtonSave;
     CustomButtonCancel *customButtonCancel;
 

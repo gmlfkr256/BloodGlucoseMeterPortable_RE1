@@ -34,6 +34,13 @@ void PageThreshold::init()
     labelValueHigh->setGeometry(375,254,90,59);
     labelValueHigh->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
 
+    labelValueRangeLow = new QLabel(this);
+    labelValueRangeLow->setGeometry(467,156,45,33);
+    labelValueRangeLow->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+    labelValueRangeHigh = new QLabel(this);
+    labelValueRangeHigh->setGeometry(467,274,45,33);
+    labelValueRangeHigh->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+
     customButtonSave = new CustomButtonSave(this);
     customButtonCancel = new CustomButtonCancel(this);
     update();
@@ -63,7 +70,7 @@ void PageThreshold::update()
     labelButtonLow->setStyleSheet("background-color: #000000; color: #ffffff; border-radius: 10px;");
     labelButtonHigh->setFont(textResource.getFont(PAGE_THRESHOLD,"labelButton"));
     labelButtonHigh->setText(textResource.getText(PAGE_THRESHOLD,"labelButton").at(0));
-    labelButtonHigh->setStyleSheet("background-color: #000000; color: #ffffff;");
+    labelButtonHigh->setStyleSheet("background-color: #000000; color: #ffffff; border-radius: 10px;");
 
 #if DEVICE
     if(instance.getUserNumber() != USER_MAX)
@@ -79,6 +86,26 @@ void PageThreshold::update()
     labelValueHigh->setFont(textResource.getFont(PAGE_THRESHOLD,"labelValue"));
     labelValueLow->setText(QString::number(instance.thresholdLow));
     labelValueHigh->setText(QString::number(instance.thresholdHigh));
+
+    labelValueRangeLow->setFont(textResource.getFont(PAGE_THRESHOLD,"labelValueRange"));
+    labelValueRangeLow->setText(textResource.getText(PAGE_THRESHOLD,"labelValueRange").at(0));
+    labelValueRangeHigh->setFont(textResource.getFont(PAGE_THRESHOLD,"labelValueRange"));
+    labelValueRangeHigh->setText(textResource.getText(PAGE_THRESHOLD,"labelValueRange").at(1));
+
+    switch (instance.getDeviceLanguage())
+    {
+    case KR:
+    case JP:
+    case SC:
+    case TC:
+        break;
+    case EN:
+    case ES:
+        break;
+    case LAN_MAX:
+        qDebug()<<"PageThreshold Value Range init language fail";
+        break;
+    }
 }
 
 void PageThreshold::pageShow()

@@ -39,7 +39,7 @@ void ComponentClock::update()
         QString day = QDateTime::currentDateTime().toString("dd");
 
         QLocale clockLocale = QLocale(QLocale::English,QLocale::UnitedStates);
-        QString strLocale = clockLocale.toString(localTime,"MM-dd ddd hh:mm");
+        QString strLocale = clockLocale.toString(localTime,"MM-dd  ddd   hh:mm");
 
         labelClock->setText(strLocale);
 
@@ -64,14 +64,14 @@ void ComponentClock::update()
             strDate = calculatedDate.toString("yyyyMMdd"); // yyyyMMdd 형식으로 설정
         }
 
-        qDebug() << "strDate: " << strDate;
+        //qDebug() << "strDate: " << strDate;
 
         QDate date = QDate::fromString(strDate,"yyyyMMdd");
         QLocale clockLocale = QLocale(QLocale::English,QLocale::UnitedStates);
 
         if(date.isValid())
         {
-            strLocale = clockLocale.toString(date,"MM-dd ddd");//date.toString("MM-dd ddd");
+            strLocale = clockLocale.toString(date,"MM-dd  ddd");//date.toString("MM-dd ddd");
             labelClock->setText(strLocale);
         }
         else

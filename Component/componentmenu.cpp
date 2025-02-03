@@ -22,6 +22,9 @@ void ComponentMenu::update()
 
 void ComponentMenu::mousePressEvent(QMouseEvent* ev)
 {
+    if(instance.currentPage==PAGE_HISTORY_RESULT)
+        return;
+
     if(instance.touchCheck(this->rect(),ev))
     {
         instance.isComMenuCheck = true;

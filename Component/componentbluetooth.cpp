@@ -39,7 +39,7 @@ void ComponentBluetooth::update()
     resultBleStat = GAPI_SUCCESS;
 #endif
 
-    if(resultBleAct !=GAPI_FAIL)
+    if(resultBleAct != GAPI_FAIL)
     {
         switch (bleAct.act)
         {
@@ -85,8 +85,12 @@ void ComponentBluetooth::update()
 
 void ComponentBluetooth::mousePressEvent(QMouseEvent* ev)
 {
+    if(instance.currentPage==PAGE_HISTORY_RESULT)
+        return;
+
     if(instance.touchCheck(this->rect(),ev))
     {
+        //qDebug()<<"comBluetooth";
         switch (bleAct.act)
         {
         case GAPI_BLE_ACT_DISABLE:
@@ -99,11 +103,13 @@ void ComponentBluetooth::mousePressEvent(QMouseEvent* ev)
             break;
         }
 
-        update();
+
 #if DEVICE
         if(instance.guiApi.glucoseSetBleAct(&bleAct)==GAPI_FAIL)
             qDebug()<<"glucoseSetBleActFail";
 #endif
+        update();
+
     }
 }
 

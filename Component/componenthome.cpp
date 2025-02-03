@@ -9,7 +9,7 @@ ComponentHome::ComponentHome(QWidget *parent) : CustomComponent(parent)
 void ComponentHome::init()
 {
     labelHome = new QLabel(this);
-    labelHome->setGeometry(14,18,37,42);
+    labelHome->setGeometry(14,15,40,40);
 
     update();
 }
@@ -33,6 +33,9 @@ void ComponentHome::update()
 
 void ComponentHome::mousePressEvent(QMouseEvent *ev)
 {
+    if(instance.currentPage==PAGE_HISTORY_RESULT)
+        return;
+
     if(instance.touchCheck(this->rect(),ev))
     {
         emit singalShowPageNum(PAGE_HOME);
