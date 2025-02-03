@@ -309,7 +309,7 @@ void TextResource::init()
                                                 "혈당 보정이 초기화되었습니다"
                                             });
 
-    //PAGE_THRESHOLD
+
     fontData[Lan][PAGE_THRESHOLD].insert("labelText",QFont(currentFont,instance.pixelToPoint(36)));
     textData[Lan][PAGE_THRESHOLD].insert("labelText",QStringList{
                                              "저혈당",
@@ -321,7 +321,7 @@ void TextResource::init()
 
     fontData[Lan][PAGE_THRESHOLD].insert("labelValue",QFont(currentFont,instance.pixelToPoint(48),QFont::Bold));
 
-    fontData[Lan][PAGE_THRESHOLD].insert("labelValueRange",QFont(currentFont,instance.pixelToPoint(26),QFont::Bold));
+    fontData[Lan][PAGE_THRESHOLD].insert("labelValueRange",QFont(currentFont,instance.pixelToPoint(26)));
     textData[Lan][PAGE_THRESHOLD].insert("labelValueRange",QStringList{
                                              "이하",
                                              "이상"
@@ -707,7 +707,7 @@ void TextResource::init()
                                                 "Blood sugar correction\nhas been reset"
                                             });
 
-    //PAGE_THRESHOLD
+
     fontData[Lan][PAGE_THRESHOLD].insert("labelText",QFont(currentFont,instance.pixelToPoint(36)));
     textData[Lan][PAGE_THRESHOLD].insert("labelText",QStringList{
                                              "Low Blood Sugar",
@@ -718,7 +718,7 @@ void TextResource::init()
 
     fontData[Lan][PAGE_THRESHOLD].insert("labelValue",QFont(currentFont,instance.pixelToPoint(48),QFont::Bold));
 
-    fontData[Lan][PAGE_THRESHOLD].insert("labelValueRange",QFont(currentFont,instance.pixelToPoint(26),QFont::Bold));
+    fontData[Lan][PAGE_THRESHOLD].insert("labelValueRange",QFont(currentFont,instance.pixelToPoint(26)));
     textData[Lan][PAGE_THRESHOLD].insert("labelValueRange",QStringList{
                                              "under",
                                              "above"
@@ -1140,7 +1140,7 @@ void TextResource::init()
                                                 "血糖補正がリセットされました"                     // Blood sugar correction has been reset
                                             });
 
-    //PAGE_THRESHOLD
+
     fontData[Lan][PAGE_THRESHOLD].insert("labelText", QFont(currentFont, instance.pixelToPoint(36)));
     textData[Lan][PAGE_THRESHOLD].insert("labelText", QStringList{
                                              "低血糖",  // Low Blood Sugar
@@ -1152,7 +1152,7 @@ void TextResource::init()
 
     fontData[Lan][PAGE_THRESHOLD].insert("labelValue", QFont(currentFont, instance.pixelToPoint(48), QFont::Bold));
 
-    fontData[Lan][PAGE_THRESHOLD].insert("labelValueRange",QFont(currentFont,instance.pixelToPoint(26),QFont::Bold));
+    fontData[Lan][PAGE_THRESHOLD].insert("labelValueRange",QFont(currentFont,instance.pixelToPoint(26)));
     textData[Lan][PAGE_THRESHOLD].insert("labelValueRange",QStringList{
                                              "以下",
                                              "以上"
@@ -1577,7 +1577,7 @@ void TextResource::init()
                                                 "血糖校正已被重置"                       // Blood sugar correction has been reset
                                             });
 
-    //PAGE_THRESHOLD
+
     fontData[Lan][PAGE_THRESHOLD].insert("labelText", QFont(currentFont, instance.pixelToPoint(36)));
     textData[Lan][PAGE_THRESHOLD].insert("labelText", QStringList{
                                              "低血糖",    // Low Blood Sugar
@@ -1589,7 +1589,7 @@ void TextResource::init()
 
     fontData[Lan][PAGE_THRESHOLD].insert("labelValue", QFont(currentFont, instance.pixelToPoint(48), QFont::Bold));
 
-    fontData[Lan][PAGE_THRESHOLD].insert("labelValueRange",QFont(currentFont,instance.pixelToPoint(26),QFont::Bold));
+    fontData[Lan][PAGE_THRESHOLD].insert("labelValueRange",QFont(currentFont,instance.pixelToPoint(26)));
     textData[Lan][PAGE_THRESHOLD].insert("labelValueRange",QStringList{
                                              "以下",
                                              "以上"
@@ -2011,7 +2011,7 @@ void TextResource::init()
                                                 "血糖校正已被重置"                           // Blood sugar correction has been reset
                                             });
 
-    //PAGE_THRESHOLD
+
     fontData[Lan][PAGE_THRESHOLD].insert("labelText", QFont(currentFont, instance.pixelToPoint(36)));
     textData[Lan][PAGE_THRESHOLD].insert("labelText", QStringList{
                                              "低血糖", // Low Blood Sugar
@@ -2023,7 +2023,7 @@ void TextResource::init()
 
     fontData[Lan][PAGE_THRESHOLD].insert("labelValue", QFont(currentFont, instance.pixelToPoint(48), QFont::Bold));
 
-    fontData[Lan][PAGE_THRESHOLD].insert("labelValueRange",QFont(currentFont,instance.pixelToPoint(26),QFont::Bold));
+    fontData[Lan][PAGE_THRESHOLD].insert("labelValueRange",QFont(currentFont,instance.pixelToPoint(26)));
     textData[Lan][PAGE_THRESHOLD].insert("labelValueRange",QStringList{
                                              "以下",
                                              "以上"
@@ -2466,7 +2466,7 @@ void TextResource::init()
 
     fontData[Lan][PAGE_THRESHOLD].insert("labelValue",QFont(currentFont,instance.pixelToPoint(48),QFont::Bold));
 
-    fontData[Lan][PAGE_THRESHOLD].insert("labelValueRange",QFont(currentFont,instance.pixelToPoint(26),QFont::Bold));
+    fontData[Lan][PAGE_THRESHOLD].insert("labelValueRange",QFont(currentFont,instance.pixelToPoint(26)));
     textData[Lan][PAGE_THRESHOLD].insert("labelValueRange",QStringList{
                                              "Menos de",
                                              "Más de"
