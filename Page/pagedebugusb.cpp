@@ -44,27 +44,23 @@ void PageDebugUsb::init()
 void PageDebugUsb::update()
 {
 #if DEVICE
-    if(instance.guiApi.glucoseGetGdataStorage(&usbData))
-    {
-        switch (usbData)
-        {
-        case GAPI_ACT_START:
-            labelUsbButton->setText("Connect");
-            labelUsbButton->setStyleSheet("background-color: red; color: white;");
-            break;
-        case GAPI_ACT_STOP:
-            labelUsbButton->setText("DisConnect");
-            labelUsbButton->setStyleSheet("background-color: white; color: black;");
-            break;
-        default:
-            labelUsbButton->setText("Connect Info Fail");
+    if(!bIsGetUsbData)
+        return;
 
-            break;
-        }
-    }
-    else
+    switch (usbData)
     {
-        labelUsbButton->setText("USB Get Fail");
+    case GAPI_ACT_START:
+        labelUsbButton->setText("Connect");
+        labelUsbButton->setStyleSheet("background-color: red; color: white;");
+        break;
+    case GAPI_ACT_STOP:
+        labelUsbButton->setText("DisConnect");
+        labelUsbButton->setStyleSheet("background-color: white; color: black;");
+        break;
+    default:
+        labelUsbButton->setText("Connect Info Fail");
+
+        break;
     }
 #else
     labelUsbButton->setText("Not Device");
@@ -73,6 +69,16 @@ void PageDebugUsb::update()
 
 void PageDebugUsb::pageShow()
 {
+    if(instance.guiApi.glucoseGetGdataStorage(&usbData) == GAPI_SUCCESS)
+    {
+        bIsGetUsbData = true;
+    }
+    else
+    {
+        bIsGetUsbData = false;
+        labelUsbButton->setText("USB Get Fail");
+    }
+
     update();
 }
 
@@ -86,7 +92,8 @@ void PageDebugUsb::mousePressEvent(QMouseEvent *ev)
     if(instance.touchCheck(customButtonSave->geometry(),ev))
     {
 #if DEVICE
-        instance.guiApi.glucoseSetGdataStorage(usbData);
+        if(bIsGetUsbData)
+            instance.guiApi.glucoseSetGdataStorage(usbData);
 #endif
         pageHide();
     }

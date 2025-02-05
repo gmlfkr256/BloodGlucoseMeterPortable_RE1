@@ -10,6 +10,7 @@ public:
     PageDebugUsb(QWidget *parent);
     void mousePressEvent(QMouseEvent *ev) override;
 
+    bool bIsGetUsbData = false;
     int usbData = GAPI_ACT_START;
 
     QLabel *labelBg;
