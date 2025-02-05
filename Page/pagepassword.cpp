@@ -58,7 +58,7 @@ void PagePassword::init()
     labelButtonDel->setGeometry(336,152,67,47);
 
     labelButtonCancel = new QLabel(this);
-    labelButtonCancel->setGeometry(535,133,98,85);
+    labelButtonCancel->setGeometry(560,26,50,50);
 
     labelButtonCancelText = new QLabel(this);
     labelButtonCancelText->setGeometry(labelButtonCancel->geometry());
