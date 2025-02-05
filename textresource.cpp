@@ -2187,8 +2187,8 @@ void TextResource::init()
                                             "Por favor inicie sesión",       // Please log in
                                             "Editar contraseña",             // Edit Password
                                             "Eliminar usuario",              // Delete User
-                                            "Confirmación de contraseña",    // Password Confirmation
-                                            "Reconfirmación de contraseña",  // Password Re-confirmation
+                                            "Confirmar contraseña",    // Password Confirmation
+                                            "Reingresar contraseña",  // Password Re-confirmation
                                             "CONTRASEÑA_MAX"                 // PASSWORD_MAX
                                         });
 

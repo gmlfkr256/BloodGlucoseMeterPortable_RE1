@@ -103,9 +103,9 @@ void PageThreshold::update()
         labelValueHigh->setGeometry(370,254,90,59);
         labelValueHigh->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
 
-        labelValueRangeLow->setGeometry(467,156,45,33);
+        labelValueRangeLow->setGeometry(467,156,45,38);
         labelValueRangeLow->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-        labelValueRangeHigh->setGeometry(467,274,45,33);
+        labelValueRangeHigh->setGeometry(467,274,45,38);
         labelValueRangeHigh->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         break;
     case EN:

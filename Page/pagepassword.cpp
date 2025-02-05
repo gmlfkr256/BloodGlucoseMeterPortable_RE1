@@ -98,13 +98,15 @@ void PagePassword::update()
     labelButtonOKText->setFont(textResource.getFont(PAGE_PASSWORD,"labelButtonOKText"));
     labelButtonOKText->setText(textResource.getText(PAGE_PASSWORD,"labelButtonOKText").at(0));
 
-    instance.pixLoad(labelButtonCancel,false,strDirPath,"/buttonOK.png");
+    instance.pixLoad(labelButtonCancel,false,strDirPath,"/buttonCancel.png");
 
+    /*
     labelButtonCancelText->setStyleSheet("color: #ffffff;");
     labelButtonCancelText->setFont(textResource.getFont(PAGE_PASSWORD,"labelButtonCancelText"));
     labelButtonCancelText->setText(textResource.getText(PAGE_PASSWORD,"labelButtonCancelText").at(0));
+    */
 
-    instance.pixLoad(labelButtonDel,false,strDirPath,"/buttonCancel.png");
+    instance.pixLoad(labelButtonDel,false,strDirPath,"/buttonDelete.png");
 
 
     for(QLabel *label : labelPasswordNum)
