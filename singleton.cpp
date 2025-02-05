@@ -23,9 +23,7 @@ void Singleton::init()
     thresholdLow = 69;
     thresholdHigh = 170;
 
-    /*
-    QDate currentDate = QDate::currentDate();
-    hisInfo[0].date = currentDate.toString("yyyyMMdd").toInt();
+    hisInfo[0].date = 20250205;//QDate::currentDate().toString("yyyyMMdd").toInt();
 
     hisInfo[0].val[0].valid_flag = 1;
     hisInfo[0].val[0].value = 99;
@@ -51,11 +49,12 @@ void Singleton::init()
     hisInfo[0].val[4].value = 74;
     hisInfo[0].val[4].hour = 19;
     hisInfo[0].val[4].min = 59;
-    */
+
+
 
     QDate currentDate = QDate::currentDate();
 
-    for (int dayIndex = 0; dayIndex <= 90; ++dayIndex) // 0: 오늘, 1~90: 과거
+    for (int dayIndex = 1; dayIndex <= 90; ++dayIndex) // 0: 오늘, 1~90: 과거
     {
         // 날짜 설정
         QDate targetDate = currentDate.addDays(-dayIndex);
