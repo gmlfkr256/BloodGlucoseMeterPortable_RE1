@@ -96,7 +96,7 @@ void PageResult::setValueUI()
 {
     int nGlucoseValue = instance.sysProcMonInfo.adc_raw;
 #if !DEVICE
-    nGlucoseValue = 74;
+    nGlucoseValue = 220;
 #endif
     if(nGlucoseValue>999)
         nGlucoseValue = 999;
