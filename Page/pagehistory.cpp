@@ -297,7 +297,7 @@ void PageHistory::mousePressEvent(QMouseEvent *ev)
     }
 
     // 오늘 날짜로 설정
-    if (instance.touchCheck(labelButtonToday->geometry(), ev))
+    if (instance.touchCheck(labelButtonToday->geometry(), ev) && labelButtonToday->isVisible())
     {
         QDate currentDate = QDate::currentDate();
         comDateYear->setValue(currentDate.year());
@@ -307,7 +307,7 @@ void PageHistory::mousePressEvent(QMouseEvent *ev)
     }
 
     // 플러스데이 버튼
-    if (instance.touchCheck(labelButtonDayPlus->geometry(), ev))
+    if (instance.touchCheck(labelButtonDayPlus->geometry(), ev) && labelButtonDayPlus->isVisible())
     {
         QDate currentDate = QDate::currentDate();
         QDate selectedDate(comDateYear->getDateValue(), comDateMonth->getDateValue(), comDateDay->getDateValue());
@@ -328,7 +328,7 @@ void PageHistory::mousePressEvent(QMouseEvent *ev)
     }
 
     // 마이너스데이 버튼
-    if (instance.touchCheck(labelButtonDayMinus->geometry(), ev))
+    if (instance.touchCheck(labelButtonDayMinus->geometry(), ev) && labelButtonDayMinus->isVisible())
     {
         QDate currentDate = QDate::currentDate();
         QDate minDate = currentDate.addDays(-90); // -90일 기준
