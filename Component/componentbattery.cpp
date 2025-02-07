@@ -95,10 +95,7 @@ void ComponentBattery::update()
         }
     }
 
-
-#if DEVICE == false
     updateUI();
-#endif
 }
 
 void ComponentBattery::updateUI()

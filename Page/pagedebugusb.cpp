@@ -76,7 +76,7 @@ void PageDebugUsb::pageShow()
     else
     {
         bIsGetUsbData = false;
-        labelUsbButton->setText("USB Get Fail");
+        labelUsbButton->setText("USB Fail");
     }
 
     update();

@@ -43,22 +43,18 @@ void PageDebugSys::init()
 void PageDebugSys::update()
 {
 #if DEVICE
-    if(instance.guiApi.glucoseGetSysOprData(&instance.sysData) == GAPI_SUCCESS)
+    if(!bIsGetSysData)
+        return;
+
+    if(instance.sysData.opr_mode == 0)
     {
-        if(instance.sysData.opr_mode == 0)
-        {
-            labelModeButton->setText("Normal");
-            labelModeButton->setStyleSheet("background-color: white; color: black;");
-        }
-        else if(instance.sysData.opr_mode == 1)
-        {
-            labelModeButton->setText("Test");
-            labelModeButton->setStyleSheet("background-color: red; color: white;");
-        }
+        labelModeButton->setText("Normal");
+        labelModeButton->setStyleSheet("background-color: white; color: black;");
     }
-    else
+    else if(instance.sysData.opr_mode == 1)
     {
-        labelModeButton->setText("SysData Get Fail");
+        labelModeButton->setText("Test");
+        labelModeButton->setStyleSheet("background-color: red; color: white;");
     }
 #else
     labelModeButton->setText("Not Device");
@@ -68,6 +64,15 @@ void PageDebugSys::update()
 
 void PageDebugSys::pageShow()
 {
+    if(instance.guiApi.glucoseGetSysOprData(&instance.sysData) == GAPI_SUCCESS)
+    {
+        bIsGetSysData = true;
+    }
+    else
+    {
+        bIsGetSysData = false;
+        labelModeButton->setText("SYS Fail");
+    }
     update();
 }
 
