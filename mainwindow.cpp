@@ -21,6 +21,9 @@ MainWindow::MainWindow(QWidget* parent)
         setPageByPageNum(PAGE_HOME);
     }
 #endif
+
+    instance.isBatZero = false;
+    setPageByPageNum(PAGE_BATPOPUP);
 }
 
 MainWindow::~MainWindow()
