@@ -40,9 +40,8 @@ void ComponentBattery::update()
         return;
     }
 #else
-    //batData.charge = 100;
+    batData.charge = 100;
     //batData.charge = QRandomGenerator::global()->bounded(101);
-    batData.charge = QRandomGenerator::global()->bounded(15);
     batData.charging = 0;//(QRandomGenerator::global()->bounded(2) == 1);
     nBatterySize = batData.charge;
 #endif
