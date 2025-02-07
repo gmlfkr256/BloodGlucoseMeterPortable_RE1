@@ -219,6 +219,8 @@ typedef enum
     VERSION_SERIAL
 } VersionIndex;
 
+Q_ENUMS(VersionIndex)
+
 class Singleton : public QObject
 {
     Q_OBJECT

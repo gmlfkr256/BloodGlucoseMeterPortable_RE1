@@ -697,7 +697,7 @@ QString Singleton::getColorGlucoseValue(const int &glucoseValue)
         }
         else if(glucoseValue<=thresholdLow+GLUCOSE_LOW_PLUS || glucoseValue>=thresholdHigh+GLUCOSE_HIGH_MINUS)
         {
-            strColor = "#ffb200";
+            strColor = "#ff6f00";//"#ffb200";
         }
         else
         {
