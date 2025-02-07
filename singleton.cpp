@@ -52,8 +52,6 @@ void Singleton::init()
     hisInfo[0].val[4].min = 59;
     */
 
-
-
     QDate currentDate = QDate::currentDate();
 
     for (int dayIndex = 1; dayIndex <= 90; ++dayIndex) // 0: 오늘, 1~90: 과거
