@@ -413,7 +413,11 @@ private:
 
     //PageUpgrade
     char chFWVer[128],chHWVer[128],chBleName[128],chSerialNumber[128];
-    QString strFWVer = "test1",strHWVer = "test2",strSWVer = "test3",strBleName = "test4",strSerialNumber = "text5";
+    QString strFWVer = "test1";
+    QString strHWVer = "4.0";//"test2";
+    QString strSWVer = "2.3;2.1;1.2.1";//test3";
+    QString strBleName = "HAPPYZONE-007AB0";//"test4";
+    QString strSerialNumber = "PGM900-2105-0000004";//"text5";
 };
 
 #endif // SINGLETON_H
