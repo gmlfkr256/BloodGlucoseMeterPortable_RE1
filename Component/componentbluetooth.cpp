@@ -55,8 +55,7 @@ void ComponentBluetooth::update()
                     pngPath = "/Bluetooth_On.png";
                     break;
                 case GAPI_BLE_STAT_BLUE:
-                    //pngPath = "/Bluetooth_Pairing.png";
-                    pngPath = "/Bluetooth_On.png";
+                    pngPath = "/Bluetooth_Pairing.png";
                     break;
                 case GAPI_BLE_STAT_MAX:
                     break;
