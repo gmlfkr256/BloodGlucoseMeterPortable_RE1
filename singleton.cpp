@@ -25,7 +25,7 @@ void Singleton::init()
 
     hisInfo[0].date = 20250205;//QDate::currentDate().toString("yyyyMMdd").toInt();
 
-
+    /*
     hisInfo[0].val[0].valid_flag = 1;
     hisInfo[0].val[0].value = 69;
     hisInfo[0].val[0].hour = 7;
@@ -50,6 +50,7 @@ void Singleton::init()
     hisInfo[0].val[4].value = 250;
     hisInfo[0].val[4].hour = 19;
     hisInfo[0].val[4].min = 59;
+    */
 
 
 
