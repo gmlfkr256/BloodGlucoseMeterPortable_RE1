@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget* parent)
     }
 #endif
 
-    instance.isBatZero = true;
+    instance.isBatZero = false;
     setPageByPageNum(PAGE_BATPOPUP);
 }
 
