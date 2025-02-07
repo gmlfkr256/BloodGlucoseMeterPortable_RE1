@@ -143,5 +143,7 @@
         <file>Image/Default/Public/ImageHistory/gradientBottom.png</file>
         <file>Image/Default/Public/ImageHistory/gradientTop.png</file>
         <file>Image/Default/Public/ImagePassword/buttonDelete.png</file>
+        <file>Image/Default/Public/ImageHistory/dataCheckOff.png</file>
+        <file>Image/Default/Public/ImageHistory/dataCheckOn.png</file>
     </qresource>
 </RCC>

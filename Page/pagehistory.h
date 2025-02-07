@@ -29,6 +29,8 @@ public:
     QLabel *labelArrowBottom;
     bool bIsArrowTouch = false;
 
+    QLabel *labelDataCheck;
+
     QLabel *labelButtonToday;
     QLabel *labelButtonDayPlus;
     QLabel *labelButtonDayMinus;

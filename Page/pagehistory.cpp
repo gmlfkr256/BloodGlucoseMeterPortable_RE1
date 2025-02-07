@@ -39,9 +39,14 @@ void PageHistory::init()
     labelGradientBottom->setGeometry(40,294,350,96);
 
     labelArrowTop = new QLabel(this);
-    labelArrowTop->setGeometry(395,83,70,70);
+    //labelArrowTop->setGeometry(395,83,70,70);
+    labelArrowTop->setGeometry(565,83,70,70);
     labelArrowBottom = new QLabel(this);
-    labelArrowBottom->setGeometry(395,310,70,70);
+    //labelArrowBottom->setGeometry(395,310,70,70);
+    labelArrowBottom->setGeometry(565,310,70,70);
+
+    labelDataCheck = new QLabel(this);
+    labelDataCheck->setGeometry(440,197,70,70);
 
     labelButtonDayPlus = new QLabel(this);
     labelButtonDayPlus->setGeometry(474,90,148,76);
@@ -52,6 +57,10 @@ void PageHistory::init()
     labelButtonDayMinus = new QLabel(this);
     labelButtonDayMinus->setGeometry(474,295,148,76);
     labelButtonDayMinus->setAlignment(Qt::AlignCenter);
+
+    labelButtonDayPlus->hide();
+    labelButtonToday->hide();
+    labelButtonDayMinus->hide();
 
     customButtonOK = new CustomButtonOK(this);
     customButtonCancel = new CustomButtonCancel(this);
@@ -76,6 +85,7 @@ void PageHistory::update()
     instance.pixLoad(labelArrowTop,false,strDirPath,"/arrowTop.png");
     instance.pixLoad(labelArrowBottom,false,strDirPath,"/arrowBottom.png");
 
+    /*
     labelButtonDayPlus->setStyleSheet("background-color:#000000; color: #ffffff; border-radius: 10px;");
     labelButtonDayPlus->setFont(textResource.getFont(PAGE_HISTORY,"labelButton"));
     labelButtonDayPlus->setText(textResource.getText(PAGE_HISTORY,"labelButton").at(0));
@@ -85,6 +95,8 @@ void PageHistory::update()
     labelButtonDayMinus->setStyleSheet("background-color:#000000; color: #ffffff; border-radius: 10px;");
     labelButtonDayMinus->setFont(textResource.getFont(PAGE_HISTORY,"labelButton"));
     labelButtonDayMinus->setText(textResource.getText(PAGE_HISTORY,"labelButton").at(2));
+    */
+
 
     bool bIsHisDataValidCheck = false;
 
@@ -97,8 +109,17 @@ void PageHistory::update()
         }
     }
 
+    /*
     if(bIsHisDataValidCheck)
         labelBg->setStyleSheet("border:3px solid red; border-radius: 15px;");
+    */
+
+    if(bIsHisDataValidCheck)
+        instance.pixLoad(labelDataCheck,false,strDirPath,"/dataCheckOn.png");
+    else
+        instance.pixLoad(labelDataCheck,false,strDirPath,"/dataCheckOff.png");
+
+
 
     QDate selectedDate(comDateYear->getDateValue(),comDateMonth->getDateValue(),comDateDay->getDateValue());
     QDate dateCurrent = QDate::currentDate();
