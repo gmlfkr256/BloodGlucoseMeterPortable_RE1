@@ -17,9 +17,10 @@ void PageCaliResult::init()
     labelTextAdcColon->setGeometry(285,143,10,45);
 
     labelTextAdcValue = new QLabel(this);
-    labelTextAdcValue->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-    labelTextAdcValue->setGeometry(300,143,110,45);
-
+    //labelTextAdcValue->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+    labelTextAdcValue->setAlignment(Qt::AlignCenter);
+    //labelTextAdcValue->setGeometry(300,143,110,45);
+    labelTextAdcValue->setGeometry(0,143,640,45);
 
     labelTextTemp = new QLabel(this);
     labelTextTemp->setAlignment(Qt::AlignCenter);
@@ -30,9 +31,10 @@ void PageCaliResult::init()
     labelTextTempColon->setGeometry(285,188,10,45);
 
     labelTextTempValue = new QLabel(this);
-    labelTextTempValue->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-    labelTextTempValue->setGeometry(300,188,110,45);
-
+    //labelTextTempValue->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+    labelTextTempValue->setAlignment(Qt::AlignCenter);
+    //labelTextTempValue->setGeometry(300,188,110,45);
+    labelTextTempValue->setGeometry(0,188,640,45);
 
     labelTextHeart = new QLabel(this);
     labelTextHeart->setAlignment(Qt::AlignCenter);
@@ -43,8 +45,10 @@ void PageCaliResult::init()
     labelTextHeartColon->setGeometry(285,233,10,45);
 
     labelTextHeartValue = new QLabel(this);
-    labelTextHeartValue->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-    labelTextHeartValue->setGeometry(300,233,110,45);
+    //labelTextHeartValue->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+    labelTextHeartValue->setAlignment(Qt::AlignCenter);
+    //labelTextHeartValue->setGeometry(300,233,110,45);
+    labelTextHeartValue->setGeometry(0,233,640,45);
 
 
     labelTextResult = new QLabel(this);
