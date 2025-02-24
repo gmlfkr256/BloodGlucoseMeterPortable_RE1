@@ -114,13 +114,15 @@ void PageResult::setValueUI()
 
     QString strTooltip;
 
+    ComponentMeasureResult comResult;
+    comResult.setTextResult(nullptr,instance.sysProcMonInfo.err_code);
+
     if(instance.sysProcMonInfo.err_code != GAPI_PROC_ECODE_NORMAL)
     {
         strBgGlucoseValueColor = "background-color: #f2f2f2;";
         nTooltipX = 320 - (labelProgressBarTooltip->width()/2);
         strPathPngTooltip = "/triError.png";
-        ComponentMeasureResult comResult;
-        comResult.setTextResult(labelText,instance.sysProcMonInfo.err_code);
+
         labelTextGlucoseValue->setText("-");
         strTextGlucoseValueColor = "color:black;";
         nIndexTooltip = 3;

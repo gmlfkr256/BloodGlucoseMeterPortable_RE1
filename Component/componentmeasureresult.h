@@ -11,6 +11,7 @@ public:
     explicit ComponentMeasureResult();
 
     void setTextResult(QLabel *label,unsigned char errCode);
+    void setResultSpk(unsigned char errCode);
 
     void update() override;
     void pageShow() override;

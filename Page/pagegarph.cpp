@@ -414,7 +414,7 @@ void PageGarph::pageHide()
     if(bIsProcessSuccess)
     {
 #if DEVICE
-        instance.guiApi.glucoseSpeakerOut(GAPI_SPK_MEASURE_COMPLETED);
+        //instance.guiApi.glucoseSpeakerOut(GAPI_SPK_MEASURE_COMPLETED);
 #else
         if(instance.getGraphMode() == GRAPH_GAIN)
             instance.caliUserInfo.led_sense = 1;

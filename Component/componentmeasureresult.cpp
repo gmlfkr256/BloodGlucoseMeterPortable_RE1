@@ -55,9 +55,29 @@ void ComponentMeasureResult::setTextResult(QLabel *label,unsigned char errCode)
         break;
     }
 
-    label->setFont(textResource.getFont(CUSTOM_COMPONENT,"labelTextResult"));
-    label->setStyleSheet("color: #808080;");
-    label->setText(textResource.getText(CUSTOM_COMPONENT,"labelTextResult").at(nGetTextNum));
+    if(label != nullptr)
+    {
+        label->setFont(textResource.getFont(CUSTOM_COMPONENT,"labelTextResult"));
+        label->setStyleSheet("color: #808080;");
+        label->setText(textResource.getText(CUSTOM_COMPONENT,"labelTextResult").at(nGetTextNum));
+    }
+
+#if DEVICE
+    setResultSpk(errCode);
+#endif
+}
+
+void ComponentMeasureResult::setResultSpk(unsigned char errCode)
+{
+    qDebug()<<"setResultSpk";
+    if(static_cast<gapiProcErrCode_e>(errCode) == GAPI_PROC_ECODE_NORMAL)
+    {
+        instance.guiApi.glucoseSpeakerOut(GAPI_SPK_MEASURE_COMPLETED);
+    }
+    else
+    {
+        instance.guiApi.glucoseSpeakerOut(GAPI_SPK_MEASURE_FAIL);
+    }
 }
 
 void ComponentMeasureResult::pageShow()
