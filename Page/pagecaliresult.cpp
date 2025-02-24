@@ -66,26 +66,26 @@ void PageCaliResult::update()
     strHeart = QString::number(instance.caliUserInfo.val[static_cast<int>(instance.getCaliSelectIndex())].hr[static_cast<int>(instance.getCaliSelectOrder())]);
 
     QFont fontLabelTextAdc = textResource.getFont(PAGE_CALI_RESULT,"labelTextAdc");
-    labelTextAdc->setFont(fontLabelTextAdc);
-    labelTextAdc->setText("A");
-    labelTextAdcColon->setFont(fontLabelTextAdc);
-    labelTextAdcColon->setText(":");
+    //labelTextAdc->setFont(fontLabelTextAdc);
+    //labelTextAdc->setText("A");
+    //labelTextAdcColon->setFont(fontLabelTextAdc);
+    //labelTextAdcColon->setText(":");
     labelTextAdcValue->setFont(fontLabelTextAdc);
     labelTextAdcValue->setText(strAdc);
 
     QFont fontLabelTextTemp = textResource.getFont(PAGE_CALI_RESULT,"labelTextTemp");
-    labelTextTemp->setFont(fontLabelTextTemp);
-    labelTextTemp->setText("T");
-    labelTextTempColon->setFont(fontLabelTextTemp);
-    labelTextTempColon->setText(":");
+    //labelTextTemp->setFont(fontLabelTextTemp);
+    //labelTextTemp->setText("T");
+    //labelTextTempColon->setFont(fontLabelTextTemp);
+    //labelTextTempColon->setText(":");
     labelTextTempValue->setFont(fontLabelTextTemp);
     labelTextTempValue->setText(strTemp);
 
     QFont fontLabelTextHeart = textResource.getFont(PAGE_CALI_RESULT,"labelTextHeart");
-    labelTextHeart->setFont(fontLabelTextHeart);
-    labelTextHeart->setText("H");
-    labelTextHeartColon->setFont(fontLabelTextHeart);
-    labelTextHeartColon->setText(":");
+    //labelTextHeart->setFont(fontLabelTextHeart);
+    //labelTextHeart->setText("H");
+    //labelTextHeartColon->setFont(fontLabelTextHeart);
+    //labelTextHeartColon->setText(":");
     labelTextHeartValue->setFont(fontLabelTextHeart);
     labelTextHeartValue->setText(strHeart);
 
