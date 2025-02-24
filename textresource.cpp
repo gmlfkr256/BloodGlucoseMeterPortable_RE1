@@ -213,7 +213,7 @@ void TextResource::init()
 
     //Page_GRAPH
     fontData[Lan][PAGE_GRAPH].insert("labelProgressText",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
-    textData[Lan][PAGE_GRAPH].insert("labelProgressText",QStringList{"Completed"});
+    textData[Lan][PAGE_GRAPH].insert("labelProgressText",QStringList{"completed"});
     fontData[Lan][PAGE_GRAPH].insert("labelProgressValue",QFont(currentFont,instance.pixelToPoint(60),QFont::Bold));
     fontData[Lan][PAGE_GRAPH].insert("labelProgressPercent",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
     fontData[Lan][PAGE_GRAPH].insert("labelAdcText",QFont(currentFont,instance.pixelToPoint(20)));
