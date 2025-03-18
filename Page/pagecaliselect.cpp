@@ -44,7 +44,7 @@ void PageCaliSelect::update()
     for(int i=0; i<5; i++)
     {
         if(instance.getCaliIndexCompleteCheck(i))
-            instance.pixLoad(labelSelectButton[i],false,strDirPath,"/validBg.png");
+            instance.pixLoad(labelSelectButton[i],false,strDirPath,"/validCheck.png");//instance.pixLoad(labelSelectButton[i],false,strDirPath,"/validBg.png");
         else
             instance.pixLoad(labelSelectButton[i],false,strDirPath,"/buttonBg.png");
 
@@ -95,7 +95,7 @@ void PageCaliSelect::update()
             labelSelectTextAdc[i]->setText(QString::number(nAdcAvg));
             labelSelectTextValue[i]->setText(QString::number(nValue));
 
-            labelSelectTextAdc[i]->show();
+            //labelSelectTextAdc[i]->show();
             labelSelectTextValue[i]->show();
         }
         else

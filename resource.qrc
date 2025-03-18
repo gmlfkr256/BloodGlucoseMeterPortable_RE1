@@ -145,5 +145,6 @@
         <file>Image/Default/Public/ImagePassword/buttonDelete.png</file>
         <file>Image/Default/Public/ImageHistory/dataCheckOff.png</file>
         <file>Image/Default/Public/ImageHistory/dataCheckOn.png</file>
+        <file>Image/Default/Public/ImageCaliSelect/validCheck.png</file>
     </qresource>
 </RCC>
