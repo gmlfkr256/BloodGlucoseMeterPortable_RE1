@@ -86,7 +86,7 @@ void PageCaliResultMulti::update()
     for(int i=0; i<3; i++)
     {
         if(instance.caliUserInfo.val[instance.getCaliSelectIndex()].adc[i] != 0)
-            instance.pixLoad(labelButton[i],false,strDirPath,"/validBg.png");
+            instance.pixLoad(labelButton[i],false,strDirPath,"/validCheck.png");//instance.pixLoad(labelButton[i],false,strDirPath,"/validBg.png");
         else
             instance.pixLoad(labelButton[i],false,strDirPath,"/buttonBg.png");
 
@@ -96,9 +96,9 @@ void PageCaliResultMulti::update()
 
         if(instance.caliUserInfo.val[static_cast<int>(instance.getCaliSelectIndex())].adc[i] != 0)
         {
-            labelTextAdc[i]->setText(QString::number(instance.caliUserInfo.val[instance.getCaliSelectIndex()].adc[i]));
-            labelTextTemp[i]->setText(QString::number(instance.caliUserInfo.val[instance.getCaliSelectIndex()].temp[i]));
-            labelTextHeart[i]->setText(QString::number(instance.caliUserInfo.val[instance.getCaliSelectIndex()].hr[i]));
+            //labelTextAdc[i]->setText(QString::number(instance.caliUserInfo.val[instance.getCaliSelectIndex()].adc[i]));
+            //labelTextTemp[i]->setText(QString::number(instance.caliUserInfo.val[instance.getCaliSelectIndex()].temp[i]));
+            //labelTextHeart[i]->setText(QString::number(instance.caliUserInfo.val[instance.getCaliSelectIndex()].hr[i]));
         }
 
         labelTextAdc[i]->setFont(textResource.getFont(PAGE_CALI_RESULT_MULTI,"labelTextAdc"));
