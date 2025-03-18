@@ -53,7 +53,8 @@ void PageCaliResult::init()
 
     labelTextResult = new QLabel(this);
     labelTextResult->setAlignment(Qt::AlignCenter);
-    labelTextResult->setGeometry(0,315,640,45);
+    //labelTextResult->setGeometry(0,315,640,45);
+    labelTextResult->setGeometry(0,70,640,320);
 
     customButtonOK = new CustomButtonOK(this);
     customButtonOK->setLongWidth(true);
@@ -74,24 +75,24 @@ void PageCaliResult::update()
     //labelTextAdc->setText("A");
     //labelTextAdcColon->setFont(fontLabelTextAdc);
     //labelTextAdcColon->setText(":");
-    labelTextAdcValue->setFont(fontLabelTextAdc);
-    labelTextAdcValue->setText(strAdc);
+    //labelTextAdcValue->setFont(fontLabelTextAdc);
+    //labelTextAdcValue->setText(strAdc);
 
     QFont fontLabelTextTemp = textResource.getFont(PAGE_CALI_RESULT,"labelTextTemp");
     //labelTextTemp->setFont(fontLabelTextTemp);
     //labelTextTemp->setText("T");
     //labelTextTempColon->setFont(fontLabelTextTemp);
     //labelTextTempColon->setText(":");
-    labelTextTempValue->setFont(fontLabelTextTemp);
-    labelTextTempValue->setText(strTemp);
+    //labelTextTempValue->setFont(fontLabelTextTemp);
+    //labelTextTempValue->setText(strTemp);
 
     QFont fontLabelTextHeart = textResource.getFont(PAGE_CALI_RESULT,"labelTextHeart");
     //labelTextHeart->setFont(fontLabelTextHeart);
     //labelTextHeart->setText("H");
     //labelTextHeartColon->setFont(fontLabelTextHeart);
     //labelTextHeartColon->setText(":");
-    labelTextHeartValue->setFont(fontLabelTextHeart);
-    labelTextHeartValue->setText(strHeart);
+    //labelTextHeartValue->setFont(fontLabelTextHeart);
+    //labelTextHeartValue->setText(strHeart);
 
     ComponentMeasureResult componentMeasureResult;
     componentMeasureResult.setTextResult(labelTextResult,instance.sysProcMonInfo.err_code);
