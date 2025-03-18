@@ -19,6 +19,7 @@ void PageCaliSelect::init()
         labelSelectTextAdc[i]->setAlignment(Qt::AlignCenter);
         labelSelectTextValue[i] = new QLabel(this);
         labelSelectTextValue[i]->setAlignment(Qt::AlignCenter);
+        labelSelectTextValue[i]->setStyleSheet("color: white;");
     }
 
     labelSelectButton[0]->setGeometry(160,90,150,180);
@@ -33,7 +34,8 @@ void PageCaliSelect::init()
         labelSelectNum[i]->setGeometry(labelSelectButton[i]->geometry().x()+33,labelSelectButton[i]->y()+75,85,85);
 
         labelSelectTextAdc[i]->setGeometry(labelSelectButton[i]->geometry().x(),labelSelectButton[i]->y()+38,labelSelectButton[i]->width(),45);
-        labelSelectTextValue[i]->setGeometry(labelSelectButton[i]->geometry().x(),labelSelectButton[i]->y()+96,labelSelectButton[i]->width(),45);
+        //labelSelectTextValue[i]->setGeometry(labelSelectButton[i]->geometry().x(),labelSelectButton[i]->y()+96,labelSelectButton[i]->width(),45);
+        labelSelectTextValue[i]->setGeometry(labelSelectButton[i]->geometry().x(),labelSelectButton[i]->y()+125,labelSelectButton[i]->width(),45);
     }
 
     update();
