@@ -19,7 +19,7 @@ void PageCaliSelect::init()
         labelSelectTextAdc[i]->setAlignment(Qt::AlignCenter);
         labelSelectTextValue[i] = new QLabel(this);
         labelSelectTextValue[i]->setAlignment(Qt::AlignCenter);
-        labelSelectTextValue[i]->setStyleSheet("color: white;");
+        //labelSelectTextValue[i]->setStyleSheet("color: white;");
     }
 
     labelSelectButton[0]->setGeometry(160,90,150,180);
@@ -61,7 +61,8 @@ void PageCaliSelect::update()
         labelSelectTextAdc[i]->setFont(textResource.getFont(PAGE_CALI_SELECT,"labelSelectTextAdc"));
         labelSelectTextAdc[i]->setStyleSheet("color: #000000;");
         labelSelectTextValue[i]->setFont(textResource.getFont(PAGE_CALI_SELECT,"labelSelectTextValue"));
-        labelSelectTextValue[i]->setStyleSheet("color: #000000;");
+        //labelSelectTextValue[i]->setStyleSheet("color: #000000;");
+        labelSelectTextValue[i]->setStyleSheet("color:white;");
     }
 
     QStringList listPng = {"/num01.png","/num02.png","/num01.png","/num02.png","/num03.png"};
