@@ -116,8 +116,7 @@ void PageResult::setValueUI()
 
     ComponentMeasureResult comResult;
     instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_TIMEOUT;
-    comResult.setTextResult(nullptr,instance.sysProcMonInfo.err_code);
-
+    comResult.setTextResult(labelText,instance.sysProcMonInfo.err_code);
 
     if(instance.sysProcMonInfo.err_code != GAPI_PROC_ECODE_NORMAL)
     {
