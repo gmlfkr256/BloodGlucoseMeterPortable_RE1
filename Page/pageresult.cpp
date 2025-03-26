@@ -25,6 +25,10 @@ void PageResult::init()
     labelText->setGeometry(37,106,300,120);
     labelText->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
+    labelTextFail = new QLabel(this);
+    labelTextFail->setGeometry(0,73,640,317);
+    labelTextFail->setAlignment(Qt::AlignCenter);
+
     labelProgressBarBg = new QLabel(this);
     labelProgressBarBg->setGeometry(20,329,600,30);
     labelProgressBar = new QLabel(this);
@@ -114,12 +118,9 @@ void PageResult::setValueUI()
 
     QString strTooltip;
 
-    ComponentMeasureResult comResult;
-    instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_TIMEOUT;
-    comResult.setTextResult(labelText,instance.sysProcMonInfo.err_code);
-
     if(instance.sysProcMonInfo.err_code != GAPI_PROC_ECODE_NORMAL)
     {
+        /*
         strBgGlucoseValueColor = "background-color: #f2f2f2;";
         nTooltipX = 320 - (labelProgressBarTooltip->width()/2);
         strPathPngTooltip = "/triError.png";
@@ -130,6 +131,10 @@ void PageResult::setValueUI()
 
         labelProgressBarTooltip->hide();
         labelProgressBarTooltipImg->hide();
+        */
+        ComponentMeasureResult comResult;
+        instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_TIMEOUT;
+        comResult.setTextResult(labelTextFail,instance.sysProcMonInfo.err_code);
     }
     else
     {
