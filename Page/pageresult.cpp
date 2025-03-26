@@ -117,7 +117,8 @@ void PageResult::setValueUI()
     ComponentMeasureResult comResult;
     comResult.setTextResult(nullptr,instance.sysProcMonInfo.err_code);
 
-    if(instance.sysProcMonInfo.err_code != GAPI_PROC_ECODE_NORMAL)
+
+    if(true)//instance.sysProcMonInfo.err_code != GAPI_PROC_ECODE_NORMAL)
     {
         strBgGlucoseValueColor = "background-color: #f2f2f2;";
         nTooltipX = 320 - (labelProgressBarTooltip->width()/2);

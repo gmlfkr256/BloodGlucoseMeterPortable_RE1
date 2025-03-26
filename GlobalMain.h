@@ -9,7 +9,7 @@
 #define IMAGE_FILE_CHECK true
 #define GLUCOSE_LOW_PLUS 5
 #define GLUCOSE_HIGH_MINUS -30
-#define DEVICE_CALI false
+#define DEVICE_CALI true
 
 #define DEBUG_FLAG_BATTERY false
 #if DEBUG_FLAG_BATTERY
