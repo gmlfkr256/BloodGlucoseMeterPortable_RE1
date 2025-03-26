@@ -419,18 +419,27 @@ void PageGarph::pageHide()
         if(instance.getGraphMode() == GRAPH_GAIN)
             instance.caliUserInfo.led_sense = 1;
 #endif
-        switch (instance.getGraphMode()) {
-        case GRAPH_GAIN:
-            emit signalShowPageNum(PAGE_CALI_GAIN_RESULT);
-            break;
-        case GRAPH_CALI:
-            emit signalShowPageNum(PAGE_CALI_RESULT);
-            break;
-        case GRAPH_MEASURE:
-            emit signalShowPageNum(PAGE_RESULT);
-            break;
-        case GRAPH_MAX:
-            break;
+        instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_TIMEOUT;
+        if(instance.sysProcMonInfo.err_code != GAPI_PROC_ECODE_NORMAL)
+        {
+            emit signalShowPageNum(PAGE_RESULT_FAIL);
+        }
+        else
+        {
+            switch (instance.getGraphMode())
+            {
+            case GRAPH_GAIN:
+                emit signalShowPageNum(PAGE_CALI_GAIN_RESULT);
+                break;
+            case GRAPH_CALI:
+                emit signalShowPageNum(PAGE_CALI_RESULT);
+                break;
+            case GRAPH_MEASURE:
+                emit signalShowPageNum(PAGE_RESULT);
+                break;
+            case GRAPH_MAX:
+                break;
+            }
         }
     }
     else

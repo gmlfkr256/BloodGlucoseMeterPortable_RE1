@@ -74,6 +74,7 @@ typedef enum
     PAGE_DEBUG,
     PAGE_DEBUG_SYS,
     PAGE_DEBUG_USB,
+    PAGE_RESULT_FAIL,
 
     //PAGE_COLOR,
 

@@ -25,10 +25,6 @@ void PageResult::init()
     labelText->setGeometry(37,106,300,120);
     labelText->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
-    labelTextFail = new QLabel(this);
-    labelTextFail->setGeometry(0,73,640,317);
-    labelTextFail->setAlignment(Qt::AlignCenter);
-
     labelProgressBarBg = new QLabel(this);
     labelProgressBarBg->setGeometry(20,329,600,30);
     labelProgressBar = new QLabel(this);
@@ -118,107 +114,84 @@ void PageResult::setValueUI()
 
     QString strTooltip;
 
-    instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_TIMEOUT;
 
-    if(instance.sysProcMonInfo.err_code != GAPI_PROC_ECODE_NORMAL)
+    if(nGlucoseValue<=instance.thresholdLow || nGlucoseValue>=instance.thresholdHigh)
     {
-        /*
-        strBgGlucoseValueColor = "background-color: #f2f2f2;";
-        nTooltipX = 320 - (labelProgressBarTooltip->width()/2);
-        strPathPngTooltip = "/triError.png";
-
-        labelTextGlucoseValue->setText("-");
-        strTextGlucoseValueColor = "color:black;";
-        nIndexTooltip = 3;
-
-        labelProgressBarTooltip->hide();
-        labelProgressBarTooltipImg->hide();
-        */
-        ComponentMeasureResult comResult;
-        comResult.setTextResult(labelTextFail,instance.sysProcMonInfo.err_code);
+        strBgGlucoseValueColor = "background-color: #ffebeb;";
+        strPathPngTooltip = "/triWarning.png";
+        strStyleSheetProgressBar = "background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
+                                   "stop:0 #ffc94d, stop:1 #ec2c15);";
+        nIndexTooltip = 2;
+    }
+    else if(nGlucoseValue<=instance.thresholdLow+GLUCOSE_LOW_PLUS || nGlucoseValue>=instance.thresholdHigh+GLUCOSE_HIGH_MINUS)
+    {
+        strBgGlucoseValueColor = "background-color: #fdf6e8;";
+        strPathPngTooltip = "/triCaution.png";
+        strStyleSheetProgressBar = "background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
+                                   "stop:0 #52d0ba, stop:1 #ffc94d);";
+        nIndexTooltip = 1;
     }
     else
     {
-        if(nGlucoseValue<=instance.thresholdLow || nGlucoseValue>=instance.thresholdHigh)
-        {
-            strBgGlucoseValueColor = "background-color: #ffebeb;";
-            strPathPngTooltip = "/triWarning.png";
-            strStyleSheetProgressBar = "background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
-                                       "stop:0 #ffc94d, stop:1 #ec2c15);";
-            nIndexTooltip = 2;
-        }
-        else if(nGlucoseValue<=instance.thresholdLow+GLUCOSE_LOW_PLUS || nGlucoseValue>=instance.thresholdHigh+GLUCOSE_HIGH_MINUS)
-        {
-            strBgGlucoseValueColor = "background-color: #fdf6e8;";
-            strPathPngTooltip = "/triCaution.png";
-            strStyleSheetProgressBar = "background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
-                                       "stop:0 #52d0ba, stop:1 #ffc94d);";
-            nIndexTooltip = 1;
-        }
-        else
-        {
-            strBgGlucoseValueColor = "background-color: #edfaf8;";
-            strPathPngTooltip = "/triNormal.png";
-            strStyleSheetProgressBar = "background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
-                                       "stop:0 #077bdd , stop:1 #52d0ba);";
-            nIndexTooltip = 0;
-        }
+        strBgGlucoseValueColor = "background-color: #edfaf8;";
+        strPathPngTooltip = "/triNormal.png";
+        strStyleSheetProgressBar = "background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
+                                   "stop:0 #077bdd , stop:1 #52d0ba);";
+        nIndexTooltip = 0;
+    }
 
-        nProgressBarWidth = static_cast<int>(600*(static_cast<double>(nGlucoseValue)/400));
-        if(nProgressBarWidth < 30)
-            nProgressBarWidth = 30;
-        else if(nProgressBarWidth > 600)
-            nProgressBarWidth = 600;
+    nProgressBarWidth = static_cast<int>(600*(static_cast<double>(nGlucoseValue)/400));
+    if(nProgressBarWidth < 30)
+        nProgressBarWidth = 30;
+    else if(nProgressBarWidth > 600)
+        nProgressBarWidth = 600;
 
-        //
-        strTooltip = textResource.getText(PAGE_RESULT,"labelProgressBarTooltip").at(nIndexTooltip);
-        QFontMetrics metrics(labelProgressBarTooltip->font());
-        int nTextWidth;
+    //
+    strTooltip = textResource.getText(PAGE_RESULT,"labelProgressBarTooltip").at(nIndexTooltip);
+    QFontMetrics metrics(labelProgressBarTooltip->font());
+    int nTextWidth;
 #if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
-        nTextWidth = metrics.horizontalAdvance(strTooltip) + 20;
+    nTextWidth = metrics.horizontalAdvance(strTooltip) + 20;
 #else
-        nTextWidth = metrics.width(strTooltip) + 20;
+    nTextWidth = metrics.width(strTooltip) + 20;
 #endif
 
-        labelProgressBarTooltip->setFixedWidth(nTextWidth);
-        //
-        nTooltipX = labelProgressBar->x()+nProgressBarWidth-(labelProgressBarTooltip->width()/2);
-        if(nTooltipX > labelProgressBarTextEnd->x()-labelProgressBarTooltip->width())
-            nTooltipX = labelProgressBarTextEnd->x()-labelProgressBarTooltip->width()-5;
-        else if(nTooltipX < labelProgressBarTextStart->x()+labelProgressBarTextStart->width())
-            nTooltipX = labelProgressBarTextStart->x()+labelProgressBarTextStart->width()+5;
+    labelProgressBarTooltip->setFixedWidth(nTextWidth);
+    //
+    nTooltipX = labelProgressBar->x()+nProgressBarWidth-(labelProgressBarTooltip->width()/2);
+    if(nTooltipX > labelProgressBarTextEnd->x()-labelProgressBarTooltip->width())
+        nTooltipX = labelProgressBarTextEnd->x()-labelProgressBarTooltip->width()-5;
+    else if(nTooltipX < labelProgressBarTextStart->x()+labelProgressBarTextStart->width())
+        nTooltipX = labelProgressBarTextStart->x()+labelProgressBarTextStart->width()+5;
 
-        QString strTextStatus = textResource.getText(PAGE_HOME,"labelTextStatus").at(instance.getTimeStatus());
-        BloodSugarLevel bloodSugarLevel = instance.getBloodSugarLevel(nGlucoseValue);
-        int nBloodSugarIndex = static_cast<int>(bloodSugarLevel);
-        strLabelText = "<p style='font-weight:bold; line-height: 0.7;'>"+strTextStatus+" </p>";
+    QString strTextStatus = textResource.getText(PAGE_HOME,"labelTextStatus").at(instance.getTimeStatus());
+    BloodSugarLevel bloodSugarLevel = instance.getBloodSugarLevel(nGlucoseValue);
+    int nBloodSugarIndex = static_cast<int>(bloodSugarLevel);
+    strLabelText = "<p style='font-weight:bold; line-height: 0.7;'>"+strTextStatus+" </p>";
 
-        strTextGlucoseValueColor = instance.getTextColorGlucoseValue(nGlucoseValue,false);
+    strTextGlucoseValueColor = instance.getTextColorGlucoseValue(nGlucoseValue,false);
 
-        switch (instance.getDeviceLanguage())
-        {
-        case KR:
-            strLabelText += "<span style='font-weight:bold; "+strTextGlucoseValueColor+"'>"+textResource.getText(PAGE_RESULT,"indexResult").at(nBloodSugarIndex)+" </span>"
-                    +"<span style='color: #808080; '>"+textResource.getText(PAGE_RESULT,"indexResultSub").at(0)+"</span>";
-            break;
-        case EN:
-        case JP:
-        case SC:
-        case TC:
-        case ES:
-            strLabelText += "<p style='font-weight:bold; "+strTextGlucoseValueColor+" line-height: 0.5; font-size: 30px;'>"+textResource.getText(PAGE_RESULT,"indexResult").at(nBloodSugarIndex)+"</p>"
-                    +"<p style='color: #808080; font-size: 30px;'>"+textResource.getText(PAGE_RESULT,"indexResultSub").at(nBloodSugarIndex)+"</p>";
-        case LAN_MAX:
-            break;
-        }
-        //qDebug()<<"strLabelText: "<<strLabelText;
-        labelText->setText(strLabelText);
-
-        labelTextGlucoseValue->setText(QString::number(nGlucoseValue));
-
-        labelProgressBarTooltip->show();
-        labelProgressBarTooltipImg->show();
+    switch (instance.getDeviceLanguage())
+    {
+    case KR:
+        strLabelText += "<span style='font-weight:bold; "+strTextGlucoseValueColor+"'>"+textResource.getText(PAGE_RESULT,"indexResult").at(nBloodSugarIndex)+" </span>"
+                +"<span style='color: #808080; '>"+textResource.getText(PAGE_RESULT,"indexResultSub").at(0)+"</span>";
+        break;
+    case EN:
+    case JP:
+    case SC:
+    case TC:
+    case ES:
+        strLabelText += "<p style='font-weight:bold; "+strTextGlucoseValueColor+" line-height: 0.5; font-size: 30px;'>"+textResource.getText(PAGE_RESULT,"indexResult").at(nBloodSugarIndex)+"</p>"
+                +"<p style='color: #808080; font-size: 30px;'>"+textResource.getText(PAGE_RESULT,"indexResultSub").at(nBloodSugarIndex)+"</p>";
+    case LAN_MAX:
+        break;
     }
+    //qDebug()<<"strLabelText: "<<strLabelText;
+    labelText->setText(strLabelText);
+
+    labelTextGlucoseValue->setText(QString::number(nGlucoseValue));
+
 
     labelTextGlucoseValue->setStyleSheet(strTextGlucoseValueColor);
     labelBgGlucoseValue->setStyleSheet(strBgGlucoseValueColor+"border-radius: 18px;");

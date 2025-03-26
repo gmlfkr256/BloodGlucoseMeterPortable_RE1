@@ -17,7 +17,6 @@ public:
     QLabel *labelTextMgdl;
     QLabel *labelText;
     QLabel *labelTextTime;
-    QLabel *labelTextFail;
 
     QLabel *labelProgressBarBg;
     QLabel *labelProgressBar;
