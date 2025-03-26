@@ -58,7 +58,7 @@ void ComponentMeasureResult::setTextResult(QLabel *label,unsigned char errCode)
     if(label != nullptr)
     {
         label->setFont(textResource.getFont(CUSTOM_COMPONENT,"labelTextResult"));
-        label->setStyleSheet("color: #808080;");
+        label->setStyleSheet("background-color: white; color: #808080;");
         label->setText(textResource.getText(CUSTOM_COMPONENT,"labelTextResult").at(nGetTextNum));
     }
 
