@@ -67,7 +67,7 @@ void TextResource::init()
     //CUSTOM_COMPONENT
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextValue",QFont(currentFont,instance.pixelToPoint(30),QFont::Bold));
 
-    fontData[Lan][CUSTOM_COMPONENT].insert("labelTextResult",QFont(currentFont,instance.pixelToPoint(42)));
+    fontData[Lan][CUSTOM_COMPONENT].insert("labelTextResult",QFont(currentFont,instance.pixelToPoint(42),QFont::Bold));
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextResult",QStringList{
                                                "측정에 성공하였습니다",     // 0
                                                "측정시간이 초과되었습니다", // 1
