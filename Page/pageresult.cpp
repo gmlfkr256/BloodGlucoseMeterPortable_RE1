@@ -118,6 +118,8 @@ void PageResult::setValueUI()
 
     QString strTooltip;
 
+    instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_TIMEOUT;
+
     if(instance.sysProcMonInfo.err_code != GAPI_PROC_ECODE_NORMAL)
     {
         /*
@@ -133,7 +135,6 @@ void PageResult::setValueUI()
         labelProgressBarTooltipImg->hide();
         */
         ComponentMeasureResult comResult;
-        instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_TIMEOUT;
         comResult.setTextResult(labelTextFail,instance.sysProcMonInfo.err_code);
     }
     else
