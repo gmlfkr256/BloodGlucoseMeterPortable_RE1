@@ -441,7 +441,7 @@ void PageGarph::pageHide()
         if(instance.sysProcMonInfo.err_code != GAPI_PROC_ECODE_NORMAL)
         {
 #if DEVICE == false
-            instance.caliUserInfo.val[instance.getCaliSelectIndex()].valid = 0;
+        instance.caliUserInfo.val[instance.getCaliSelectIndex()].adc[instance.getCaliSelectOrder()]=0;
 #endif
             emit signalShowPageNum(PAGE_RESULT_FAIL);
         }
