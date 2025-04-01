@@ -337,7 +337,6 @@ void MainWindow::setPageByPageNum(PageNum pageNum)
     if (stackedWidget && pageNum >= 0 && pageNum < stackedWidget->count())
     {
         stackedWidget->setCurrentIndex(static_cast<int>(pageNum));
-        //instance.setPageNumPrev(pageNum);
 
         Page *page = qobject_cast<Page*>(stackedWidget->currentWidget());
 

@@ -39,7 +39,6 @@ void PageResultFail::mousePressEvent(QMouseEvent *ev)
 {
     if(instance.touchCheck(customButtonOK->geometry(),ev))
     {
-        qDebug()<<"PAGE_NUM:"<<instance.getPageNumPrev();
-        emit signalShowPageNum(instance.getPageNumPrev());
+        emit signalShowPageNum(instance.currentPage);
     }
 }

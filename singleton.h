@@ -369,9 +369,6 @@ public:
     QString getColorGlucoseValue(const int &glucoseValue);
     BloodSugarLevel getBloodSugarLevel(int glucoseValue);
 
-    void setPageNumPrev(PageNum pageNumPrev);
-    PageNum getPageNumPrev();
-
     void setUpgradeErrCode(int errCode);
     gapiUpgradeErrCode_e getUpgradeErrCode();
 
@@ -385,8 +382,6 @@ private:
     QString strImgPathLan = "/KR";
 
     static const QHash<unsigned int, QPair<QString, DeviceLanguage>> hashLanguage;
-
-    PageNum pageNumPrev = PAGE_MAX;
 
     bool procCheck = false;
 
