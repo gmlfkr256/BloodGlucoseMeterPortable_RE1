@@ -324,7 +324,13 @@ void PageGarph::mousePressEvent(QMouseEvent *ev)
 
 void PageGarph::pageShow()
 {
-    instance.setPageNumPrev(instance.currentPage);
+    if(instance.currentPage == PAGE_CALI_GAIN_CONFIRM)
+        instance.setPageNumPrev(PAGE_CALI_CHECK);
+    else
+        instance.setPageNumPrev(instance.currentPage);
+    //else if(instance.currentPage == PAGE_CALI_CONFIRM)
+
+
 
     instance.sysProcAct = {};
 
@@ -424,11 +430,12 @@ void PageGarph::pageHide()
 
 
         // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_NORMAL;
-        instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_NO_FINGER;
+        // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_NO_FINGER;
         // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_SENSOR_FAIL;
         // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_LED_FAIL;
         // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_ANALYSIS_FAIL;
         // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_DATA_ERROR;
+        instance.sysProcMonInfo.err_code = QRandomGenerator::global()->bounded(2);
 
         if(instance.sysProcMonInfo.err_code != GAPI_PROC_ECODE_NORMAL)
         {
