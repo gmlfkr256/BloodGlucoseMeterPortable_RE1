@@ -426,6 +426,7 @@ void PageGarph::pageHide()
 #else
         if(instance.getGraphMode() == GRAPH_GAIN)
             instance.caliUserInfo.led_sense = 1;
+
 #endif
 
 
@@ -439,6 +440,9 @@ void PageGarph::pageHide()
 
         if(instance.sysProcMonInfo.err_code != GAPI_PROC_ECODE_NORMAL)
         {
+#if DEVICE == false
+            instance.caliUserInfo.val[instance.getCaliSelectIndex()].valid = 0;
+#endif
             emit signalShowPageNum(PAGE_RESULT_FAIL);
         }
         else
