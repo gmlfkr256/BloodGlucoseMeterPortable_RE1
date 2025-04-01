@@ -22,6 +22,7 @@ void ComponentUpgradeResult::update()
 
 void ComponentUpgradeResult::setTextResult(QLabel *label, unsigned char errCode)
 {
+    qDebug()<<"UpgradeResult errCode: "<<errCode;
     int nGetTextNum;
 
     switch (static_cast<gapiUpgradeErrCode_e>(errCode))
