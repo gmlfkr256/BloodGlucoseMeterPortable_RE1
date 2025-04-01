@@ -421,8 +421,13 @@ void PageGarph::pageHide()
 #endif
 
 
-        //instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_LED_FAIL;
-        instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_DATA_ERROR;
+        // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_NORMAL;
+         instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_NO_FINGER;
+        // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_SENSOR_FAIL;
+        // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_LED_FAIL;
+        // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_ANALYSIS_FAIL;
+        // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_DATA_ERROR;
+
         if(instance.sysProcMonInfo.err_code != GAPI_PROC_ECODE_NORMAL)
         {
             emit signalShowPageNum(PAGE_RESULT_FAIL);
