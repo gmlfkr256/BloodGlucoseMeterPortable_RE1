@@ -424,7 +424,7 @@ void PageGarph::pageHide()
 
 
         // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_NORMAL;
-        //instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_NO_FINGER;
+         instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_NO_FINGER;
         // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_SENSOR_FAIL;
         // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_LED_FAIL;
         // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_ANALYSIS_FAIL;
