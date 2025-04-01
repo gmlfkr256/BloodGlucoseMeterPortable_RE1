@@ -22,7 +22,7 @@ void PageUpagradeFail::update()
     customButtonOK->update();
 
     ComponentUpgradeResult comResult;
-    //comResult.setTextResult(labelText,instance.)
+    comResult.setTextResult(labelText,instance.getUpgradeErrCode());
 }
 
 void PageUpagradeFail::pageShow()
