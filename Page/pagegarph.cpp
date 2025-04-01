@@ -428,8 +428,6 @@ void PageGarph::pageHide()
             instance.caliUserInfo.led_sense = 1;
 
 #endif
-
-
         // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_NORMAL;
         // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_NO_FINGER;
         // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_SENSOR_FAIL;
@@ -441,7 +439,7 @@ void PageGarph::pageHide()
         if(instance.sysProcMonInfo.err_code != GAPI_PROC_ECODE_NORMAL)
         {
 #if DEVICE == false
-        instance.caliUserInfo.val[instance.getCaliSelectIndex()].adc[instance.getCaliSelectOrder()]=0;
+            instance.caliUserInfo.val[instance.getCaliSelectIndex()].adc[instance.getCaliSelectOrder()]=0;
 #endif
             emit signalShowPageNum(PAGE_RESULT_FAIL);
         }
@@ -465,6 +463,7 @@ void PageGarph::pageHide()
     }
     else
     {
+        /*
         switch (instance.getGraphMode()) {
         case GRAPH_GAIN:
             emit signalShowPageNum(PAGE_CALI_GAIN_CONFIRM);
@@ -478,6 +477,8 @@ void PageGarph::pageHide()
         case GRAPH_MAX:
             break;
         }
+        */
+        emit signalShowPageNum(instance.getPageNumPrev());
     }
 
     labelProgressBar->setGeometry(20,95,30,30);
