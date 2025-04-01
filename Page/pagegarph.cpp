@@ -324,6 +324,8 @@ void PageGarph::mousePressEvent(QMouseEvent *ev)
 
 void PageGarph::pageShow()
 {
+    instance.setPageNumPrev(instance.currentPage);
+
     instance.sysProcAct = {};
 
     instance.sysProcAct.act = GAPI_ACT_START;

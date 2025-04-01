@@ -727,6 +727,16 @@ BloodSugarLevel Singleton::getBloodSugarLevel(int glucoseValue)
         return BLOOD_NORMAL;
 }
 
+void Singleton::setPageNumPrev(PageNum pageNumPrev)
+{
+    this->pageNumPrev = pageNumPrev;
+}
+
+PageNum Singleton::getPageNumPrev()
+{
+    return pageNumPrev;
+}
+
 void Singleton::setUpgradeErrCode(int errCode)
 {
     upgradeErrCode = static_cast<gapiUpgradeErrCode_e>(errCode);
