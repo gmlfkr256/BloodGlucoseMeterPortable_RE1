@@ -23,7 +23,10 @@ void PageCaliGainResult::update()
     customButtonOK->update();
 
     labelText->setFont(textResource.getFont(PAGE_CALI_GAIN_RESULT,"labelText"));
+    ComponentMeasureResult comResult;
+    comResult.setTextResult(labelText,instance.sysProcMonInfo.err_code);
 
+    /*
     switch (instance.sysProcMonInfo.err_code)
     {
     case GAPI_PROC_ECODE_NORMAL:
@@ -33,6 +36,7 @@ void PageCaliGainResult::update()
         labelText->setText(textResource.getText(PAGE_CALI_GAIN_RESULT,"labelText").at(1));
         break;
     }
+    */
 }
 
 void PageCaliGainResult::mousePressEvent(QMouseEvent *ev)

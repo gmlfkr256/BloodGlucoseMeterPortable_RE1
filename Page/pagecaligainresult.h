@@ -2,6 +2,7 @@
 #define PAGECALIGAINRESULT_H
 
 #include "page.h"
+#include "Component/componentmeasureresult.h"
 
 class PageCaliGainResult : public Page
 {

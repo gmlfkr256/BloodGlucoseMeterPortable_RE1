@@ -24,6 +24,7 @@ void ComponentMeasureResult::update()
 void ComponentMeasureResult::setTextResult(QLabel *label,unsigned char errCode)
 {
     int nGetTextNum;
+    /*
     switch (static_cast<gapiProcErrCode_e>(errCode))
     {
     case GAPI_PROC_ECODE_NORMAL:
@@ -53,6 +54,34 @@ void ComponentMeasureResult::setTextResult(QLabel *label,unsigned char errCode)
     case GAPI_PROC_ECODE_MAX:
         nGetTextNum = 8;
         break;
+    }
+    */
+    switch(static_cast<gapiProcErrCode_e>(errCode))
+    {
+    case GAPI_PROC_ECODE_NORMAL:
+        nGetTextNum = 0;
+        break;
+    case GAPI_PROC_ECODE_NO_FINGER:
+        nGetTextNum = 1;
+        break;
+    case GAPI_PROC_ECODE_SENSOR_FAIL:
+        nGetTextNum = 2;
+        break;
+    case GAPI_PROC_ECODE_LED_FAIL:
+        nGetTextNum = 3;
+        break;
+    case GAPI_PROC_ECODE_ANALYSIS_FAIL:
+        nGetTextNum = 4;
+        break;
+    case GAPI_PROC_ECODE_DATA_ERROR:
+        nGetTextNum = 5;
+        break;
+    case GAPI_PROC_ECODE_MAX:
+        nGetTextNum = 6;
+        break;
+    default:
+        nGetTextNum = 7;
+        qDebug()<<"measureResult errCode fail";
     }
 
     if(label != nullptr)

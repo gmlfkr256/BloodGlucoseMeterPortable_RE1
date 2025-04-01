@@ -75,6 +75,7 @@ typedef enum
     PAGE_DEBUG_SYS,
     PAGE_DEBUG_USB,
     PAGE_RESULT_FAIL,
+    PAGE_UPGRADE_FAIL,
 
     //PAGE_COLOR,
 
@@ -371,6 +372,9 @@ public:
     void setPageNumPrev(PageNum pageNumPrev);
     PageNum getPageNumPrev();
 
+    void setUpgradeErrCode(int errCode);
+    gapiUpgradeErrCode_e getUpgradeErrCode();
+
 private:
     //Singleton() = default;
     explicit Singleton(QObject* parent = nullptr) : QObject(parent){init();};
@@ -421,6 +425,8 @@ private:
     QString strSWVer = "2.3;2.1;1.2.1";//test3";
     QString strBleName = "HAPPYZONE-007AB0";//"test4";
     QString strSerialNumber = "PGM900-2105-0000004";//"text5";
+
+    gapiUpgradeErrCode_e upgradeErrCode;
 };
 
 #endif // SINGLETON_H

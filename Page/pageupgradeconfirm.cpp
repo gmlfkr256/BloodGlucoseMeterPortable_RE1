@@ -45,7 +45,21 @@ void PageUpgradeConfirm::mousePressEvent(QMouseEvent *ev)
     {
 #if DEVICE
         instance.guiApi.glucoseSetUpgradeStorage(GAPI_ACT_STOP);
-        QTimer::singleShot(100,[this](){instance.guiApi.glucoseActReboot();});
+        QTimer::singleShot(100,[this](){
+            int checkResult;
+            //instance.guiApi.glucoseActReboot();
+            instance.guiApi.glucoseChkUpgradeStorage(&checkResult);
+
+            if(checkResult == GAPI_UPGRADE_ECODE_NORMAL)
+            {
+                instance.guiApi.glucoseActReboot();
+            }
+            else
+            {
+                instance.setUpgradeErrCode(checkResult);
+                emit signalShowPageNum(PAGE_UPGRADE_FAIL);
+            }
+        });
 #else
         pageHide();
 #endif

@@ -47,6 +47,7 @@
 #include "Page/pagedebugsys.h"
 #include "Page/pagedebugusb.h"
 #include "Page/pageresultfail.h"
+#include "Page/pageupagradefail.h"
 
 
 class MainWindow : public QMainWindow
@@ -105,6 +106,7 @@ public:
     PageDebugSys *pageDebugSys;
     PageDebugUsb *pageDebugUsb;
     PageResultFail *pageResultFail;
+    PageUpagradeFail *pageUpgradeFail;
 
     QList<int> listComHiddenPageIndex;
     QMap<PageNum,QString> mapPageNumName;

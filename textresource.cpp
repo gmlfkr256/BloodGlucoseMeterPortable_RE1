@@ -70,14 +70,23 @@ void TextResource::init()
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextResult",QFont(currentFont,instance.pixelToPoint(42),QFont::Bold));
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextResult",QStringList{
                                                "측정에 성공하였습니다",     // 0
-                                               "측정시간이 초과되었습니다", // 1
-                                               "NULL_PTR",                // 2
-                                               "COUNT_ZERO",              // 3에
-                                               "MALLOC_FAIL",             // 4
-                                               "NONE_GREADE",             // 5
-                                               "PARAM_FAIL",              // 6
-                                               "RESULT_FAIL",             // 7
-                                               "ECODE_MAX"
+                                               "손가락을 인식하지 못했습니다\n다시 측정해 주세요", // 1
+                                               "기기에 문제가 발생했습니다\n고객센터로 문의해 주세요",                // 2
+                                               "기기에 문제가 발생했습니다\n고객센터로 문의해 주세요",              // 3
+                                               "측정 결과를 분석할 수 없습니다\n다시 측정해 주세요",             // 4
+                                               "측정된 데이터에 오류가 있습니다\n다시 측정해 주세요",             // 5
+                                               "측정에 실패했습니다\n고객센터로 문의해 주세요",              // 6
+                                               "오류 측정에 실패했습니다\n고객센터로 문의해 주세요"             // 7
+                                           });
+
+    fontData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade",QFont(currentFont,instance.pixelToPoint(42),QFont::Bold));
+    textData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade",QStringList{
+                                               "업그레이드에 성공하였습니다", // 0
+                                               "업그레이드가 실패했습니다\n고객센터에 문의해 주세요", //1
+                                               "업그레이드 파일이 보이지 않습니다\n파일을 다시 확인해 주세요", //2
+                                               "업그레이드 파일에 문제가 있습니다\n새 파일로 다시 시도해 주세요", //3
+                                               "업그레이드용 파일이 아닙니다\n올바른 파일인지 확인해 주세요", //4
+                                               "업그레이드가 실패했습니다\n고객센터에 문의해 주세요" //5
                                            });
 
     fontData[Lan][CUSTOM_COMPONENT_DATE].insert("labelText",QFont(currentFont,instance.pixelToPoint(50)));
@@ -457,16 +466,25 @@ void TextResource::init()
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextValue",QFont(currentFont,instance.pixelToPoint(30),QFont::Bold));
 
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextResult",QFont(currentFont,instance.pixelToPoint(36)));
-    textData[Lan][CUSTOM_COMPONENT].insert("labelTextResult",QStringList{
-                                               "Successful",     // 0
-                                               "Timeout", // 1
-                                               "NULL_PTR",                // 2
-                                               "COUNT_ZERO",              // 3
-                                               "MALLOC_FAIL",             // 4
-                                               "NONE_GREADE",             // 5
-                                               "PARAM_FAIL",              // 6
-                                               "RESULT_FAIL",             // 7
-                                               "ECODE_MAX"
+    textData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QStringList{
+                                               "Measurement was successful.",     // 0
+                                               "Finger not detected.\nPlease try measuring again.", // 1
+                                               "A problem occurred with the device.\nPlease contact customer support.", // 2
+                                               "A problem occurred with the device.\nPlease contact customer support.", // 3
+                                               "Unable to analyze the measurement result.\nPlease try again.", // 4
+                                               "There is an error in the measured data.\nPlease try again.", // 5
+                                               "Measurement failed.\nPlease contact customer support.", // 6
+                                               "Error measurement failed.\nPlease contact customer support." // 7
+                                           });
+
+    fontData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QFont(currentFont, instance.pixelToPoint(42), QFont::Bold));
+    textData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QStringList{
+                                               "Upgrade completed successfully.", // 0
+                                               "Upgrade failed.\nPlease contact customer support.", // 1
+                                               "Upgrade file not found.\nPlease check the file again.", // 2
+                                               "There is a problem with the upgrade file.\nPlease try again with a new file.", // 3
+                                               "This is not a valid upgrade file.\nPlease check if the file is correct.", // 4
+                                               "Upgrade failed.\nPlease contact customer support." // 5
                                            });
 
     fontData[Lan][CUSTOM_COMPONENT_DATE].insert("labelText",QFont(currentFont,instance.pixelToPoint(50)));
@@ -855,16 +873,26 @@ void TextResource::init()
 
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QFont(currentFont, instance.pixelToPoint(36)));
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QStringList{
-                                               "成功しました",       // 0: Successful
-                                               "タイムアウト",       // 1: Timeout
-                                               "NULL_PTR",         // 2
-                                               "COUNT_ZERO",       // 3
-                                               "MALLOC_FAIL",      // 4
-                                               "NONE_GRADE",       // 5
-                                               "PARAM_FAIL",       // 6
-                                               "RESULT_FAIL",      // 7
-                                               "ECODE_MAX"         // 8
+                                               "測定に成功しました。",     // 0
+                                               "指を認識できませんでした。\nもう一度測定してください。", // 1
+                                               "デバイスに問題が発生しました。\nカスタマーサポートにお問い合わせください。", // 2
+                                               "デバイスに問題が発生しました。\nカスタマーサポートにお問い合わせください。", // 3
+                                               "測定結果を解析できませんでした。\nもう一度測定してください。", // 4
+                                               "測定データにエラーがあります。\nもう一度測定してください。", // 5
+                                               "測定に失敗しました。\nカスタマーサポートにお問い合わせください。", // 6
+                                               "エラー測定に失敗しました。\nカスタマーサポートにお問い合わせください。" // 7
                                            });
+
+    fontData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QFont(currentFont, instance.pixelToPoint(42), QFont::Bold));
+    textData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QStringList{
+                                               "アップグレードに成功しました。", // 0
+                                               "アップグレードに失敗しました。\nカスタマーサポートにお問い合わせください。", // 1
+                                               "アップグレードファイルが見つかりません。\nファイルを再確認してください。", // 2
+                                               "アップグレードファイルに問題があります。\n新しいファイルで再試行してください。", // 3
+                                               "アップグレード用のファイルではありません。\n正しいファイルか確認してください。", // 4
+                                               "アップグレードに失敗しました。\nカスタマーサポートにお問い合わせください。" // 5
+                                           });
+
 
     //CUSTOM_COMPONENT_DATE
     fontData[Lan][CUSTOM_COMPONENT_DATE].insert("labelText", QFont(currentFont, instance.pixelToPoint(50)));
@@ -1290,17 +1318,26 @@ void TextResource::init()
     //CUSTOM_COMPONENT
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextValue", QFont(currentFont, instance.pixelToPoint(30), QFont::Bold));
 
-    fontData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QFont(currentFont, instance.pixelToPoint(36)));
+    fontData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QFont(currentFont, instance.pixelToPoint(42)));
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QStringList{
-                                               "成功",       // Successful
-                                               "超时",       // Timeout
-                                               "NULL_PTR",  // NULL_PTR
-                                               "COUNT_ZERO",// COUNT_ZERO
-                                               "MALLOC_FAIL",// MALLOC_FAIL
-                                               "NONE_GRADE",// NONE_GRADE
-                                               "PARAM_FAIL",// PARAM_FAIL
-                                               "RESULT_FAIL",// RESULT_FAIL
-                                               "ECODE_MAX"  // ECODE_MAX
+                                               "测量成功。",     // 0
+                                               "未检测到手指。\n请重新测量。", // 1
+                                               "设备出现问题。\n请联系客服。", // 2
+                                               "设备出现问题。\n请联系客服。", // 3
+                                               "无法分析测量结果。\n请重新测量。", // 4
+                                               "测量数据有误。\n请重新测量。", // 5
+                                               "测量失败。\n请联系客服。", // 6
+                                               "错误测量失败。\n请联系客服。" // 7
+                                           });
+
+    fontData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QFont(currentFont, instance.pixelToPoint(42), QFont::Bold));
+    textData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QStringList{
+                                               "升级成功。", // 0
+                                               "升级失败。\n请联系客服。", // 1
+                                               "未找到升级文件。\n请重新检查文件。", // 2
+                                               "升级文件有问题。\n请使用新文件重试。", // 3
+                                               "此文件不是有效的升级文件。\n请确认文件是否正确。", // 4
+                                               "升级失败。\n请联系客服。" // 5
                                            });
 
     //CUSTOM_COMPONENT_DATE
@@ -1730,16 +1767,26 @@ void TextResource::init()
 
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QFont(currentFont, instance.pixelToPoint(36)));
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QStringList{
-                                               "成功",         // Successful
-                                               "超時",         // Timeout
-                                               "NULL_PTR",    // NULL_PTR
-                                               "COUNT_ZERO",  // COUNT_ZERO
-                                               "MALLOC_FAIL", // MALLOC_FAIL
-                                               "NONE_GRADE",  // NONE_GRADE
-                                               "PARAM_FAIL",  // PARAM_FAIL
-                                               "RESULT_FAIL", // RESULT_FAIL
-                                               "ECODE_MAX"    // ECODE_MAX
+                                               "測量成功。",     // 0
+                                               "未偵測到手指。\n請重新測量。", // 1
+                                               "設備發生問題。\n請聯繫客服。", // 2
+                                               "設備發生問題。\n請聯繫客服。", // 3
+                                               "無法分析測量結果。\n請重新測量。", // 4
+                                               "測量數據有誤。\n請重新測量。", // 5
+                                               "測量失敗。\n請聯繫客服。", // 6
+                                               "錯誤測量失敗。\n請聯繫客服。" // 7
                                            });
+
+    fontData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QFont(currentFont, instance.pixelToPoint(42), QFont::Bold));
+    textData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QStringList{
+                                               "升級成功。", // 0
+                                               "升級失敗。\n請聯繫客服。", // 1
+                                               "找不到升級檔案。\n請重新檢查檔案。", // 2
+                                               "升級檔案有問題。\n請使用新檔案重試。", // 3
+                                               "此檔案不是有效的升級檔案。\n請確認是否正確。", // 4
+                                               "升級失敗。\n請聯繫客服。" // 5
+                                           });
+
 
     //CUSTOM_COMPONENT_DATE
     fontData[Lan][CUSTOM_COMPONENT_DATE].insert("labelText", QFont(currentFont, instance.pixelToPoint(50)));
@@ -2164,16 +2211,27 @@ void TextResource::init()
 
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QFont(currentFont, instance.pixelToPoint(36)));
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QStringList{
-                                               "Exitoso",      // Successful
-                                               "Tiempo agotado", // Timeout
-                                               "NULL_PTR",     // NULL_PTR (일반적으로 번역하지 않음)
-                                               "COUNT_ZERO",   // COUNT_ZERO (일반적으로 번역하지 않음)
-                                               "MALLOC_FAIL",  // MALLOC_FAIL (일반적으로 번역하지 않음)
-                                               "NONE_GREADE",  // NONE_GREADE (일반적으로 번역하지 않음)
-                                               "PARAM_FAIL",   // PARAM_FAIL (일반적으로 번역하지 않음)
-                                               "RESULT_FAIL",  // RESULT_FAIL (일반적으로 번역하지 않음)
-                                               "ECODE_MAX"     // ECODE_MAX (일반적으로 번역하지 않음)
+                                               "Medición exitosa.",     // 0
+                                               "No se detectó el dedo.\nInténtelo de nuevo.", // 1
+                                               "Error del dispositivo.\nContacte soporte.", // 2
+                                               "Error del dispositivo.\nContacte soporte.", // 3
+                                               "No se pudo analizar.\nInténtelo de nuevo.", // 4
+                                               "Error en los datos.\nInténtelo de nuevo.", // 5
+                                               "Fallo en la medición.\nContacte soporte.", // 6
+                                               "Error al medir.\nContacte soporte." // 7
                                            });
+
+    fontData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QFont(currentFont, instance.pixelToPoint(42), QFont::Bold));
+    textData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QStringList{
+                                               "Actualización completada.", // 0
+                                               "Falló la actualización.\nContacte soporte.", // 1
+                                               "Archivo no encontrado.\nRevise el archivo.", // 2
+                                               "Archivo con errores.\nUse uno nuevo.", // 3
+                                               "Archivo inválido.\nVerifique si es correcto.", // 4
+                                               "Falló la actualización.\nContacte soporte." // 5
+                                           });
+
+
 
     fontData[Lan][CUSTOM_COMPONENT_DATE].insert("labelText", QFont(currentFont, instance.pixelToPoint(50)));
     fontData[Lan][CUSTOM_COMPONENT_DATE].insert("labelTextSelect", QFont(currentFont, instance.pixelToPoint(50), QFont::Bold));

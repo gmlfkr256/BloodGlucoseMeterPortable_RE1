@@ -146,6 +146,16 @@ typedef enum {
 #define GAPI_SPK_LANG_PREFIX_CHINESE_T				"tc_"
 #define GAPI_SPK_LANG_PREFIX_ESPANOL					"es_"
 
+// upgrade exit code: do NOT modify
+typedef enum {
+	GAPI_UPGRADE_ECODE_NORMAL = 0,
+	GAPI_UPGRADE_ECODE_FAILURE,
+	GAPI_UPGRADE_ECODE_NO_FILE,
+	GAPI_UPGRADE_ECODE_INVALID_FILE,
+	GAPI_UPGRADE_ECODE_NOT_UPFILE,
+	GAPI_UPGRADE_ECODE_MAX
+} gapiUpgradeErrCode_e;
+
 /*---------------------------------------------------------------------------*
  * Class                                                                     *
  *---------------------------------------------------------------------------*/
@@ -168,6 +178,7 @@ class GuiApi {
 		int glucoseSetUpgradeStorage (int command);	// GAPI_ACT_START or GAPI_ACT_STOP
 		int glucoseGetUpgradeStorage (int *rStateP);	// GAPI_ACT_START or GAPI_ACT_STOP
 		int glucoseSetUpgradeCancel (void);
+		int glucoseChkUpgradeStorage (int *rEcodeP);
 		int glucoseSetGdataStorage (int command);		// GAPI_ACT_START or GAPI_ACT_STOP
 		int glucoseGetGdataStorage (int *rStateP);		// GAPI_ACT_START or GAPI_ACT_STOP
 		int glucoseSetAdcChData (gapiAdcChData_t *chDataP);

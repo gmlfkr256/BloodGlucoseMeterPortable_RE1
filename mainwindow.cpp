@@ -197,6 +197,10 @@ void MainWindow::init()
     stackedWidget->addWidget(pageResultFail);
     qDebug()<<"====================== PAGE_RESULT_FAIL";
 
+    pageUpgradeFail = new PageUpagradeFail(this);
+    stackedWidget->addWidget(pageUpgradeFail);
+    qDebug()<<"====================== PAGE_UPGRADE_FAIL";
+
     comBat = new ComponentBattery(stackedWidget);
     comBle = new ComponentBluetooth(stackedWidget);
     comClock = new ComponentClock(stackedWidget);
@@ -243,6 +247,7 @@ void MainWindow::init()
         {PAGE_DEBUG_SYS, "PageDebugSys"},
         {PAGE_DEBUG_USB, "PageDebugUsb"},
         {PAGE_RESULT_FAIL, "PageResultFail"},
+        {PAGE_UPGRADE_FAIL, "PageUpgradeFail"},
 
         {CUSTOM_BUTTON, "CustomButton"},
         {PAGE_MAX, "InvalidPage"}  // 예외 처리

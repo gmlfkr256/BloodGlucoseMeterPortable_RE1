@@ -36,6 +36,7 @@ SOURCES += \
     Component/componentmenu.cpp \
     Component/componentspinner.cpp \
     Component/componentspinnerdate.cpp \
+    Component/componentupgraderesult.cpp \
     Component/customcomponent.cpp \
     Loadfont.cpp \
     Page/page.cpp \
@@ -73,6 +74,7 @@ SOURCES += \
     Page/pagethreshold.cpp \
     Page/pagethresholdvalue.cpp \
     Page/pagetrans.cpp \
+    Page/pageupagradefail.cpp \
     Page/pageupgrade.cpp \
     Page/pageupgradeconfirm.cpp \
     Page/pageuserinfo.cpp \
@@ -102,6 +104,7 @@ HEADERS += \
     Component/componentmenu.h \
     Component/componentspinner.h \
     Component/componentspinnerdate.h \
+    Component/componentupgraderesult.h \
     Component/customcomponent.h \
     GlobalMain.h \
     Loadfont.h \
@@ -140,6 +143,7 @@ HEADERS += \
     Page/pagethreshold.h \
     Page/pagethresholdvalue.h \
     Page/pagetrans.h \
+    Page/pageupagradefail.h \
     Page/pageupgrade.h \
     Page/pageupgradeconfirm.h \
     Page/pageuserinfo.h \

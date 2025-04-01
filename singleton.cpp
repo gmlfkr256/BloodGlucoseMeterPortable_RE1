@@ -737,5 +737,13 @@ PageNum Singleton::getPageNumPrev()
     return pageNumPrev;
 }
 
+void Singleton::setUpgradeErrCode(int errCode)
+{
+    upgradeErrCode = static_cast<gapiUpgradeErrCode_e>(errCode);
+}
 
+gapiUpgradeErrCode_e Singleton::getUpgradeErrCode()
+{
+    return upgradeErrCode;
+}
 
