@@ -39,6 +39,7 @@ void PageUpagradeFail::mousePressEvent(QMouseEvent *ev)
 {
     if(instance.touchCheck(customButtonOK->geometry(),ev))
     {
+        qDebug()<<"up touch";
         pageHide();
     }
 }
