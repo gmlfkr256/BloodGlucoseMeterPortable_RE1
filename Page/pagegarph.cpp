@@ -419,7 +419,7 @@ void PageGarph::pageHide()
         //instance.guiApi.glucoseSpeakerOut(GAPI_SPK_MEASURE_COMPLETED);
 #else
         if(instance.getGraphMode() == GRAPH_GAIN)
-            instance.caliUserInfo.led_sense = 1;
+            instance.caliUserInfo.led_sense = 0;
 #endif
 
 
