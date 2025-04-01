@@ -35,7 +35,7 @@ void PageCaliSelect::init()
 
         labelSelectTextAdc[i]->setGeometry(labelSelectButton[i]->geometry().x(),labelSelectButton[i]->y()+38,labelSelectButton[i]->width(),45);
         //labelSelectTextValue[i]->setGeometry(labelSelectButton[i]->geometry().x(),labelSelectButton[i]->y()+96,labelSelectButton[i]->width(),45);
-        labelSelectTextValue[i]->setGeometry(labelSelectButton[i]->geometry().x(),labelSelectButton[i]->y()+125,labelSelectButton[i]->width(),45);
+        labelSelectTextValue[i]->setGeometry(labelSelectButton[i]->geometry().x(),labelSelectButton[i]->y()+120,labelSelectButton[i]->width(),45);
     }
 
     update();

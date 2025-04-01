@@ -33,13 +33,13 @@ void ComponentUpgradeResult::setTextResult(QLabel *label, unsigned char errCode)
     case GAPI_UPGRADE_ECODE_FAILURE:
         nGetTextNum = 1;
         break;
-    case GAPI_UPGRADE_ECODE_NOT_UPFILE:
+    case GAPI_UPGRADE_ECODE_NO_FILE:
         nGetTextNum = 2;
         break;
     case GAPI_UPGRADE_ECODE_INVALID_FILE:
         nGetTextNum = 3;
         break;
-    case GAPI_UPGRADE_ECODE_NO_FILE:
+    case GAPI_UPGRADE_ECODE_NOT_UPFILE:
         nGetTextNum = 4;
         break;
     case GAPI_UPGRADE_ECODE_MAX:

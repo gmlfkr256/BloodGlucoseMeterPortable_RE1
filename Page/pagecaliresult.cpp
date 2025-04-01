@@ -54,7 +54,7 @@ void PageCaliResult::init()
     labelTextResult = new QLabel(this);
     labelTextResult->setAlignment(Qt::AlignCenter);
     //labelTextResult->setGeometry(0,315,640,45);
-    labelTextResult->setGeometry(0,70,640,320);
+    labelTextResult->setGeometry(0,73,640,317);
 
     customButtonOK = new CustomButtonOK(this);
     customButtonOK->setLongWidth(true);

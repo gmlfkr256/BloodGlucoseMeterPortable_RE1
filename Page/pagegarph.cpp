@@ -416,7 +416,7 @@ void PageGarph::pageHide()
 #else
         if(instance.getGraphMode() == GRAPH_GAIN)
             instance.caliUserInfo.led_sense = 1;
-
+        instance.sysProcMonInfo.err_code = QRandomGenerator::global()->bounded(2);
 #endif
         // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_NORMAL;
         // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_NO_FINGER;
@@ -424,7 +424,7 @@ void PageGarph::pageHide()
         // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_LED_FAIL;
         // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_ANALYSIS_FAIL;
         // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_DATA_ERROR;
-        instance.sysProcMonInfo.err_code = QRandomGenerator::global()->bounded(2);
+
 
         if(instance.sysProcMonInfo.err_code != GAPI_PROC_ECODE_NORMAL)
         {
