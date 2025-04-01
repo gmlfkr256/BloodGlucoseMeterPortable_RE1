@@ -419,9 +419,10 @@ void PageGarph::pageHide()
         if(instance.getGraphMode() == GRAPH_GAIN)
             instance.caliUserInfo.led_sense = 1;
 #endif
-        //instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_TIMEOUT;
 
-        instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_LED_FAIL;
+
+        //instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_LED_FAIL;
+        instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_DATA_ERROR;
         if(instance.sysProcMonInfo.err_code != GAPI_PROC_ECODE_NORMAL)
         {
             emit signalShowPageNum(PAGE_RESULT_FAIL);
