@@ -195,16 +195,6 @@ void PageGarph::updatePainter()
             instance.caliUserInfo.val[instance.getCaliSelectIndex()].adc[instance.getCaliSelectOrder()] = instance.sysProcMonInfo.adc_raw;
             instance.caliUserInfo.val[instance.getCaliSelectIndex()].temp[instance.getCaliSelectOrder()] = QRandomGenerator::global()->bounded(2500,4100);
             instance.caliUserInfo.val[instance.getCaliSelectIndex()].hr[instance.getCaliSelectOrder()] = QRandomGenerator::global()->bounded(6000,20100);
-
-            int nValCount = 0;
-            for(int i=0; i<3; i++)
-            {
-                if(instance.caliUserInfo.val[instance.getCaliSelectIndex()].adc[i]!=0)
-                    nValCount++;
-            }
-
-            if(nValCount==3)
-                instance.caliUserInfo.val[instance.getCaliSelectIndex()].valid = 1;
         }
         else if(instance.getGraphMode() == GRAPH_MEASURE)
         {
@@ -439,7 +429,10 @@ void PageGarph::pageHide()
         if(instance.sysProcMonInfo.err_code != GAPI_PROC_ECODE_NORMAL)
         {
 #if DEVICE == false
-            instance.caliUserInfo.val[instance.getCaliSelectIndex()].adc[instance.getCaliSelectOrder()]=0;
+            if(instance.getGraphMode() == GRAPH_CALI)
+            {
+                instance.caliUserInfo.val[instance.getCaliSelectIndex()].adc[instance.getCaliSelectOrder()]=0;
+            }
 #endif
             emit signalShowPageNum(PAGE_RESULT_FAIL);
         }
@@ -459,6 +452,19 @@ void PageGarph::pageHide()
             case GRAPH_MAX:
                 break;
             }
+        }
+
+        if(instance.getGraphMode() == GRAPH_CALI)
+        {
+            int nValCount = 0;
+            for(int i=0; i<3; i++)
+            {
+                if(instance.caliUserInfo.val[instance.getCaliSelectIndex()].adc[i]!=0)
+                    nValCount++;
+            }
+
+            if(nValCount==3)
+                instance.caliUserInfo.val[instance.getCaliSelectIndex()].valid = 1;
         }
     }
     else
@@ -496,8 +502,6 @@ void PageGarph::pageHide()
     labelProgressValue->setText("0");
     labelProgressPercent->setGeometry(56,43,38,45);
     labelProgressText->setGeometry(99,43,178,45);
-
-
 
     repaint();
 }
