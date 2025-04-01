@@ -419,12 +419,12 @@ void PageGarph::pageHide()
         //instance.guiApi.glucoseSpeakerOut(GAPI_SPK_MEASURE_COMPLETED);
 #else
         if(instance.getGraphMode() == GRAPH_GAIN)
-            instance.caliUserInfo.led_sense = 0;
+            instance.caliUserInfo.led_sense = 1;
 #endif
 
 
         // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_NORMAL;
-         instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_NO_FINGER;
+        instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_NO_FINGER;
         // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_SENSOR_FAIL;
         // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_LED_FAIL;
         // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_ANALYSIS_FAIL;
