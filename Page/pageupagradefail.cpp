@@ -27,7 +27,7 @@ void PageUpagradeFail::update()
 
 void PageUpagradeFail::pageShow()
 {
-
+    update();
 }
 
 void PageUpagradeFail::pageHide()
