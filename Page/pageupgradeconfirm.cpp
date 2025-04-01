@@ -61,7 +61,7 @@ void PageUpgradeConfirm::mousePressEvent(QMouseEvent *ev)
             }
         });
 #else
-        instance.setUpgradeErrCode(GAPI_UPGRADE_ECODE_FAILURE);
+        instance.setUpgradeErrCode(1);
         emit signalShowPageNum(PAGE_UPGRADE_FAIL);
 #endif
     }
