@@ -454,6 +454,7 @@ void PageGarph::pageHide()
             }
         }
 
+#if DEVICE == false
         if(instance.getGraphMode() == GRAPH_CALI)
         {
             int nValCount = 0;
@@ -466,6 +467,7 @@ void PageGarph::pageHide()
             if(nValCount==3)
                 instance.caliUserInfo.val[instance.getCaliSelectIndex()].valid = 1;
         }
+#endif
     }
     else
     {
