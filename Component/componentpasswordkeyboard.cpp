@@ -75,7 +75,35 @@ void ComponentPasswordKeyboard::pageHide()
 
 void ComponentPasswordKeyboard::mousePressEvent(QMouseEvent *ev)
 {
-    Q_UNUSED(ev);
+    if(instance.touchCheck(labelFunction[0]->geometry(),ev))
+    {
+        nFunctionNum = 0;
+        update();
+    }
+
+    if(instance.touchCheck(labelFunction[1]->geometry(),ev))
+    {
+        nFunctionNum = 4;
+        update();
+    }
+
+    if(instance.touchCheck(labelFunction[2]->geometry(),ev))
+    {
+        nFunctionNum = 5;
+        update();
+    }
+
+    if(instance.touchCheck(labelFunction[3]->geometry(),ev))
+    {
+        nFunctionNum = 6;
+        update();
+    }
+
+    if(instance.touchCheck(labelFunction[4]->geometry(),ev))
+    {
+        nFunctionNum = 7;
+        update();
+    }
 }
 
 void ComponentPasswordKeyboard::mouseReleaseEvent(QMouseEvent *ev)
