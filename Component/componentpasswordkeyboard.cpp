@@ -38,6 +38,7 @@ void ComponentPasswordKeyboard::init()
 
 void ComponentPasswordKeyboard::update()
 {
+    /*
     if(!keyBoardIndex->mapKey.contains(nFunctionNum))
     {
         qDebug()<<"Invalid nFunctionNum: "<<nFunctionNum;
@@ -48,6 +49,7 @@ void ComponentPasswordKeyboard::update()
     {
         labelButton[i]->setText(keyBoardIndex->mapKey[nFunctionNum].at(i));
     }
+    */
 }
 
 void ComponentPasswordKeyboard::pageShow()
