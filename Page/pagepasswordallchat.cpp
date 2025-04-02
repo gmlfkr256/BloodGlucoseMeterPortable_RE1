@@ -38,6 +38,8 @@ void PagePasswordAllChat::init()
     labelButtonCancelText->setGeometry(labelButtonCancel->geometry());
     labelButtonCancelText->setAlignment(Qt::AlignCenter);
 
+    comKeyboard = new ComponentPasswordKeyboard(this);
+
     update();
 }
 

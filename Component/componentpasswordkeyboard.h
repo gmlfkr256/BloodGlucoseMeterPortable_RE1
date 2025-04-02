@@ -13,6 +13,9 @@ public:
 
     QString strDirPath = "/ImageComponentPasswordKeyBoard";
 
+    QLabel *labelFunction[3];
+    QLabel *labelButton[10];
+
     void update() override;
     void pageShow() override;
     void pageHide() override;

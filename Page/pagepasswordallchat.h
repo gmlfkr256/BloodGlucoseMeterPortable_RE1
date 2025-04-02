@@ -2,6 +2,7 @@
 #define PAGEPASSWORDALLCHAT_H
 
 #include "page.h"
+#include "Component/componentpasswordkeyboard.h"
 
 class PagePasswordAllChat : public Page
 {
@@ -9,6 +10,8 @@ class PagePasswordAllChat : public Page
 public:
     PagePasswordAllChat(QWidget *parent);
     void mousePressEvent(QMouseEvent *ev) override;
+
+    QString strDirPath = "/ImagePasswordAllChat";
 
     QLabel* labelTitle;
     QLabel* labelTitleSub;
@@ -24,7 +27,8 @@ public:
     QLabel* labelButtonCancel;
     QLabel* labelButtonCancelText;
 
-    QString strDirPath = "/ImagePasswordAllChat";
+    ComponentPasswordKeyboard *comKeyboard;
+
     void update() override;
     void pageShow() override;
     void pageHide() override;
