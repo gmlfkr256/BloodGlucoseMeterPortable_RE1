@@ -126,7 +126,7 @@ void ComponentPasswordKeyboard::mousePressEvent(QMouseEvent *ev)
         {
             if(instance.touchCheck(labelButton[i]->geometry(),ev))
             {
-                if(strKey.size()<13)
+                if(strKey.size()<12)
                     strKey += keyBoardIndex->mapKey[nFunctionNum].at(i);
 
                 qDebug()<<strKey;
