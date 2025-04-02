@@ -64,7 +64,7 @@ void ComponentPasswordKeyboard::init()
     {
         label->setFont(textResource.getFont(PAGE_PASSWORD,"labelButtonNum"));
         label->setAlignment(Qt::AlignCenter);
-        label->setStyleSheet("background-color: #177bdd; border: 1px solid #ebebeb;");
+        label->setStyleSheet("background-color: #177bdd; border: 1px solid #888888;");
     }
 
     keyBoardIndex = new KeyBoardIndex(this);
