@@ -42,7 +42,7 @@ public:
 
     QLabel *labelFunction[3];
     QLabel *labelButton[10];
-    KeyBoardIndex keyBoardIndex;
+    KeyBoardIndex *keyBoardIndex;
     int nFunctionNum = 0;
 
     void update() override;
