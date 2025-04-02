@@ -126,10 +126,10 @@ void ComponentPasswordKeyboard::mousePressEvent(QMouseEvent *ev)
         {
             if(instance.touchCheck(labelButton[i]->geometry(),ev))
             {
-                QString str;
-                str = keyBoardIndex->mapKey[nFunctionNum].at(i);
-                qDebug()<<str;
-                emit signalKeyClick(str);
+
+                strKey += keyBoardIndex->mapKey[nFunctionNum].at(i);
+                qDebug()<<strKey;
+                emit signalKeyClick(strKey);
             }
         }
     }

@@ -45,6 +45,7 @@ public:
     QLabel *labelButton[10];
     KeyBoardIndex *keyBoardIndex;
     int nFunctionNum = 0;
+    QString strKey = "";
 
     void update() override;
     void pageShow() override;
