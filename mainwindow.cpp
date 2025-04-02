@@ -43,9 +43,13 @@ void MainWindow::init()
     LoadFont loadFont;
     loadFont.Load();
 
-
     stackedWidget = new QStackedWidget(this);
     stackedWidget->setGeometry(this->geometry());
+
+    pagePasswordAllChat = new PagePasswordAllChat(this);
+    stackedWidget->addWidget(pagePasswordAllChat);
+    listComHiddenPageIndex.append(stackedWidget->indexOf(pagePasswordAllChat));
+    qDebug()<<"====================== PAGE_PASSWORD_ALLCHAT";
 
     pagePassword = new PagePassword(this);
     stackedWidget->addWidget(pagePassword);
@@ -211,6 +215,7 @@ void MainWindow::init()
 
     mapPageNumName =
     {
+        {PAGE_PASSWORD_ALLCHAT, "PagePasswordAllCaht"},
         {PAGE_PASSWORD, "PagePassword"},
         {PAGE_PASSWORD_CONFIRM, "PagePasswordConfirm"},
         {PAGE_HOME, "PageHome"},

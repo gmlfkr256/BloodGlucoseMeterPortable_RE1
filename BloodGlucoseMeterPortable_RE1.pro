@@ -34,6 +34,7 @@ SOURCES += \
     Component/componenthome.cpp \
     Component/componentmeasureresult.cpp \
     Component/componentmenu.cpp \
+    Component/componentpasswordkeyboard.cpp \
     Component/componentspinner.cpp \
     Component/componentspinnerdate.cpp \
     Component/componentupgraderesult.cpp \
@@ -64,6 +65,7 @@ SOURCES += \
     Page/pageinitconfirm.cpp \
     Page/pagemenu.cpp \
     Page/pagepassword.cpp \
+    Page/pagepasswordallchat.cpp \
     Page/pagepasswordconfirm.cpp \
     Page/pageresult.cpp \
     Page/pageresultfail.cpp \
@@ -102,6 +104,7 @@ HEADERS += \
     Component/componenthome.h \
     Component/componentmeasureresult.h \
     Component/componentmenu.h \
+    Component/componentpasswordkeyboard.h \
     Component/componentspinner.h \
     Component/componentspinnerdate.h \
     Component/componentupgraderesult.h \
@@ -133,6 +136,7 @@ HEADERS += \
     Page/pageinitconfirm.h \
     Page/pagemenu.h \
     Page/pagepassword.h \
+    Page/pagepasswordallchat.h \
     Page/pagepasswordconfirm.h \
     Page/pageresult.h \
     Page/pageresultfail.h \

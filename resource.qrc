@@ -147,5 +147,10 @@
         <file>Image/Default/Public/ImageHistory/dataCheckOn.png</file>
         <file>Image/Default/Public/ImageCaliSelect/validCheck.png</file>
         <file>Image/Default/Public/ImageCaliResultMulti/validCheck.png</file>
+        <file>Image/Default/Public/ImagePasswordAllChat/buttonCancel.png</file>
+        <file>Image/Default/Public/ImagePasswordAllChat/buttonDelete.png</file>
+        <file>Image/Default/Public/ImagePasswordAllChat/buttonOK.png</file>
+        <file>Image/Default/Public/ImagePasswordAllChat/circlePassword.png</file>
+        <file>Image/Default/Public/ImagePasswordAllChat/passwordNumBg.png</file>
     </qresource>
 </RCC>

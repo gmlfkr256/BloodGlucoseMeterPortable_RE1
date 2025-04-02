@@ -39,7 +39,8 @@ Q_ENUMS(UserNum)
 
 typedef enum
 {
-    PAGE_PASSWORD = 0,
+    PAGE_PASSWORD_ALLCHAT = 0,
+    PAGE_PASSWORD, //= 0,
     PAGE_PASSWORD_CONFIRM,
     PAGE_HOME,
     PAGE_SELECT,

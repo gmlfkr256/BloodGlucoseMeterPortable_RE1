@@ -48,6 +48,7 @@
 #include "Page/pagedebugusb.h"
 #include "Page/pageresultfail.h"
 #include "Page/pageupagradefail.h"
+#include "Page/pagepasswordallchat.h"
 
 
 class MainWindow : public QMainWindow
@@ -107,6 +108,7 @@ public:
     PageDebugUsb *pageDebugUsb;
     PageResultFail *pageResultFail;
     PageUpagradeFail *pageUpgradeFail;
+    PagePasswordAllChat *pagePasswordAllChat;
 
     QList<int> listComHiddenPageIndex;
     QMap<PageNum,QString> mapPageNumName;
