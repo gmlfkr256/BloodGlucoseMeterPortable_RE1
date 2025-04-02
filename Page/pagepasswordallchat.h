@@ -35,6 +35,10 @@ public:
     void pageHide() override;
 private:
     void init();
+    void initConnect();
+
+public slots:
+    void updatePassword(QString strKey);
 
 signals:
 

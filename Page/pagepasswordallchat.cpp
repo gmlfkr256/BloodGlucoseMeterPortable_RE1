@@ -54,7 +54,19 @@ void PagePasswordAllChat::init()
 
     comKeyboard = new ComponentPasswordKeyboard(this);
 
+    initConnect();
+
     update();
+}
+
+void PagePasswordAllChat::initConnect()
+{
+    connect(comKeyboard,&ComponentPasswordKeyboard::signalKeyClick,this,&PagePasswordAllChat::updatePassword);
+}
+
+void PagePasswordAllChat::updatePassword(QString strKey)
+{
+    labelPasswordBg->setText(strKey);
 }
 
 void PagePasswordAllChat::update()
