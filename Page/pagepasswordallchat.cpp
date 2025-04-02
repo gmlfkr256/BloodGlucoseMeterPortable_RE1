@@ -19,6 +19,11 @@ void PagePasswordAllChat::init()
     labelTitleSub->setAlignment(Qt::AlignCenter);
     labelTitleSub->setStyleSheet("color: #808080");
 
+    labelButtonHide = new QLabel(this);
+    labelButtonHide->setText("V");
+    labelButtonHide->setStyleSheet("background-color:red; color: white;");
+    //labelButtonHide->setGeometry()
+
     labelPasswordBg = new QLabel(this);
     labelPasswordBg->setGeometry(116,133,303,85);
 

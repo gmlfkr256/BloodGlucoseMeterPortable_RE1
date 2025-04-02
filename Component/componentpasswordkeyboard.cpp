@@ -129,6 +129,7 @@ void ComponentPasswordKeyboard::mousePressEvent(QMouseEvent *ev)
                 QString str;
                 str = keyBoardIndex->mapKey[nFunctionNum].at(i);
                 qDebug()<<str;
+                emit signalKeyClick(str);
             }
         }
     }

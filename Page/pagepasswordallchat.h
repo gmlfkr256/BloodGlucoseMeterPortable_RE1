@@ -13,19 +13,20 @@ public:
 
     QString strDirPath = "/ImagePasswordAllChat";
 
-    QLabel* labelTitle;
-    QLabel* labelTitleSub;
-    QLabel* labelPasswordBg;
-    QLabel* labelPasswordNum[4];
+    QLabel *labelTitle;
+    QLabel *labelTitleSub;
+    QLabel *labelButtonHide;
+    QLabel *labelPasswordBg;
+    QLabel *labelPasswordNum[4];
     QString strPasswordNum;
     int nCheckButtonNum = -1;
-    QLabel* labelButtonNum[10];
+    QLabel *labelButtonNum[10];
 
-    QLabel* labelButtonOK;
-    QLabel* labelButtonOKText;
-    QLabel* labelButtonDel;
-    QLabel* labelButtonCancel;
-    QLabel* labelButtonCancelText;
+    QLabel *labelButtonOK;
+    QLabel *labelButtonOKText;
+    QLabel *labelButtonDel;
+    QLabel *labelButtonCancel;
+    QLabel *labelButtonCancelText;
 
     ComponentPasswordKeyboard *comKeyboard;
 

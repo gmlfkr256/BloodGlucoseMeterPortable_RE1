@@ -52,6 +52,7 @@ public:
 private:
     void init();
 signals:
+    void signalKeyClick(QString &strKey);
 };
 
 #endif // COMPONENTPASSWORDKEYBOARD_H
