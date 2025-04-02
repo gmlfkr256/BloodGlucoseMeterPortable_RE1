@@ -11,7 +11,7 @@ void ComponentPasswordKeyboard::init()
     for(int i=0; i<5; i++)
     {
         labelFunction[i] = new QLabel(this);
-        labelFunction[i]->setStyleSheet("background-color: #ffffff; border: 1px solid #ebebeb;");
+        labelFunction[i]->setStyleSheet("background-color: #E0F7FA; border: 1px solid #ebebeb;");
         labelFunction[i]->setFont(textResource.getFont(PAGE_PASSWORD,"labelButtonNum"));
         labelFunction[i]->setAlignment(Qt::AlignCenter);
 
