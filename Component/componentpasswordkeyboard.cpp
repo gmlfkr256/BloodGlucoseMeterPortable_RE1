@@ -19,10 +19,10 @@ void ComponentPasswordKeyboard::init()
     }
 
     labelFunction[0]->setText("0");
-    labelFunction[1]->setText("aA");
-    labelFunction[2]->setText("kK");
-    labelFunction[3]->setText("uU");
-    labelFunction[4]->setText("!-:");
+    labelFunction[1]->setText("a A");
+    labelFunction[2]->setText("k K");
+    labelFunction[3]->setText("u U");
+    labelFunction[4]->setText("! - :");
 
 
     for(int i=0; i<10; i++)
