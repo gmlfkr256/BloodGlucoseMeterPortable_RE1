@@ -18,7 +18,7 @@ void ComponentPasswordKeyboard::init()
         labelFunction[i]->setGeometry(i*128,0,128,80);
     }
 
-    labelFunction[0]->setText("0-9");
+    labelFunction[0]->setText("0·9");
     labelFunction[1]->setText("a A");
     labelFunction[2]->setText("k K");
     labelFunction[3]->setText("u U");
