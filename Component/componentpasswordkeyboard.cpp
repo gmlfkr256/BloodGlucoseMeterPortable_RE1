@@ -119,6 +119,19 @@ void ComponentPasswordKeyboard::mousePressEvent(QMouseEvent *ev)
             nFunctionNum = 7;
         update();
     }
+
+    if(instance.touchCheck(QRect(0,80,640,160),ev))
+    {
+        for(int i=0; i<10; i++)
+        {
+            if(instance.touchCheck(labelButton[i]->geometry(),ev))
+            {
+                QString str;
+                str = keyBoardIndex->mapKey[nFunctionNum].at(i);
+                qDebug()<<str;
+            }
+        }
+    }
 }
 
 void ComponentPasswordKeyboard::mouseReleaseEvent(QMouseEvent *ev)
