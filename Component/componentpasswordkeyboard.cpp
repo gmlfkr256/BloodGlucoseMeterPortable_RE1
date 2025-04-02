@@ -13,7 +13,7 @@ void ComponentPasswordKeyboard::init()
         labelFunction[i] = new QLabel(this);
         labelFunction[i]->setStyleSheet("background-color: #ffffff; border: 1px solid #ebebeb;");
 
-        labelFunction[i]->setGeometry(i*213,0,213,80);
+        labelFunction[i]->setGeometry(i*213+1,0,213,80);
     }
 
     for(int i=0; i<10; i++)
