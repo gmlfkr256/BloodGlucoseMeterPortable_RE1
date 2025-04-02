@@ -4,12 +4,13 @@
 #include "customcomponent.h"
 #include <QMap>
 
-class KeyBoardIndex
+class KeyBoardIndex : public QObject
 {
+    Q_OBJECT
 public:
     QMap<int, QStringList> mapKey;
 
-    KeyBoardIndex() {
+    KeyBoardIndex(QObject *parent): QObject(parent) {
         // 0: 숫자 0~9
         mapKey[0] = QStringList({"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"});
 

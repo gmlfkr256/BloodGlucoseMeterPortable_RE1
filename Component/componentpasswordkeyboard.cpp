@@ -31,7 +31,7 @@ void ComponentPasswordKeyboard::init()
         }
     }
 
-    keyBoardIndex = new KeyBoardIndex();
+    keyBoardIndex = new KeyBoardIndex(this);
 
     update();
 }
