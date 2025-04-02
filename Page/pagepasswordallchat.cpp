@@ -31,6 +31,9 @@ void PagePasswordAllChat::init()
     labelButtonDel = new QLabel(this);
     labelButtonDel->setGeometry(336,152,67,47);
 
+    labelButtonCancel = new QLabel(this);
+    labelButtonCancel->setGeometry(560,26,50,50);
+
     labelButtonCancelText = new QLabel(this);
     labelButtonCancelText->setGeometry(labelButtonCancel->geometry());
     labelButtonCancelText->setAlignment(Qt::AlignCenter);
