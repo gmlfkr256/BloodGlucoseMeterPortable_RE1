@@ -27,7 +27,8 @@ void PagePasswordAllChat::init()
     labelPasswordBg = new QLabel(this);
     labelPasswordBg->setGeometry(116,133,303,85);
     labelPasswordBg->setFont(textResource.getFont(PAGE_PASSWORD,"labelButtonNum"));
-    labelPasswordBg->setText("123456789012");
+    //labelPasswordBg->setText("123456789012");
+    labelPasswordBg->setText("@@@@@@@@@@@@");
     labelPasswordBg->setAlignment(Qt::AlignCenter);
     labelPasswordBg->setStyleSheet("color: black;");
 
