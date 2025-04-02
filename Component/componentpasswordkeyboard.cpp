@@ -100,6 +100,7 @@ void ComponentPasswordKeyboard::pageHide()
 
 void ComponentPasswordKeyboard::mousePressEvent(QMouseEvent *ev)
 {
+    /*
     if(instance.touchCheck(labelFunction[0]->geometry(),ev))
     {
         nFunctionNum = 0;
@@ -144,6 +145,15 @@ void ComponentPasswordKeyboard::mousePressEvent(QMouseEvent *ev)
             nFunctionNum = 7;
         update();
     }
+    */
+
+    for(int i=0; i<5; i++)
+    {
+        if(instance.touchCheck(labelFunction[i]->geometry(),ev))
+        {
+            setFunctionNumBytButton(i);
+        }
+    }
 
     if(instance.touchCheck(QRect(0,80,640,160),ev))
     {
@@ -155,7 +165,7 @@ void ComponentPasswordKeyboard::mousePressEvent(QMouseEvent *ev)
                     strKey += keyBoardIndex->mapKey[nFunctionNum].at(i);
 
                 qDebug()<<strKey;
-                emit signalKeyClick(getDispalyText());
+                emit signalKeyClick(getDisplayText());
             }
         }
     }
@@ -168,7 +178,7 @@ void ComponentPasswordKeyboard::mousePressEvent(QMouseEvent *ev)
     if(instance.touchCheck(labelButtonShowHide->geometry(),ev))
     {
         bIsShowAll = !bIsShowAll;
-        emit signalKeyClick(getDispalyText());
+        emit signalKeyClick(getDisplayText());
     }
 }
 
@@ -177,11 +187,11 @@ void ComponentPasswordKeyboard::deleteLastKey()
     if(!strKey.isEmpty())
     {
         strKey.chop(1);
-        emit signalKeyClick(getDispalyText());
+        emit signalKeyClick(getDisplayText());
     }
 }
 
-QString ComponentPasswordKeyboard::getDispalyText()
+QString ComponentPasswordKeyboard::getDisplayText()
 {
     if(bIsShowAll)
         return strKey;
@@ -192,6 +202,35 @@ QString ComponentPasswordKeyboard::getDispalyText()
     QString strMasked(strKey.size()-1, QChar('*'));
     strMasked += strKey.right(1);
     return strMasked;
+}
+
+void ComponentPasswordKeyboard::setFunctionNumBytButton(int nIndex)
+{
+    switch (nIndex)
+    {
+    case 0:
+        nFunctionNum = 0;
+        break;
+    case 1:
+        nFunctionNum = (nFunctionNum == 4) ? 1 : 4;
+        break;
+    case 2:
+        nFunctionNum = (nFunctionNum == 5) ? 2 : 5;
+        break;
+    case 3:
+        nFunctionNum = (nFunctionNum == 6) ? 3 : 6;
+        break;
+    case 4:
+        if (nFunctionNum == 7)
+            nFunctionNum = 8;
+        else if (nFunctionNum == 8)
+            nFunctionNum = 9;
+        else
+            nFunctionNum = 7;
+        break;
+    }
+
+    update();
 }
 
 void ComponentPasswordKeyboard::mouseReleaseEvent(QMouseEvent *ev)

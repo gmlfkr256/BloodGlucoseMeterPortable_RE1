@@ -58,7 +58,8 @@ public slots:
     void deleteLastKey();
 private:
     void init();
-    QString getDispalyText();
+    QString getDisplayText();
+    void setFunctionNumBytButton(int nIndex);
 signals:
     void signalKeyClick(QString strKey);
 
