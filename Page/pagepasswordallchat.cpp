@@ -59,7 +59,7 @@ void PagePasswordAllChat::update()
     labelTitleSub->setFont(textResource.getFont(PAGE_PASSWORD,"labelTitleSub"));
     labelTitleSub->setText(textResource.getText(PAGE_PASSWORD,"labelTitleSub").at(instance.getPasswordStatus()));
 
-    instance.pixLoad(labelPasswordBg,false,strDirPath,"/passwordNumBg.png");
+    //instance.pixLoad(labelPasswordBg,false,strDirPath,"/passwordNumBg.png");
 
     instance.pixLoad(labelButtonOK,false,strDirPath,"/buttonOK.png");
 
