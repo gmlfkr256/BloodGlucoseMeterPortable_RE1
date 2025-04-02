@@ -12,7 +12,7 @@ void ComponentPasswordKeyboard::init()
     {
         labelFunction[i] = new QLabel(this);
         labelFunction[i]->setStyleSheet("background-color: #ffffff; border: 1px solid #ebebeb;");
-        labelFunction[i]->setFont(textResource.getFont(PAGE_PASSWORD,"labelButtnNum"));
+        labelFunction[i]->setFont(textResource.getFont(PAGE_PASSWORD,"labelButtonNum"));
         labelFunction[i]->setAlignment(Qt::AlignCenter);
 
         labelFunction[i]->setGeometry(i*128,0,128,80);
@@ -28,7 +28,7 @@ void ComponentPasswordKeyboard::init()
     {
         labelButton[i] = new QLabel(this);
         labelButton[i]->setStyleSheet("background-color: #ffffff; border: 1px solid #ebebeb;");
-        labelButton[i]->setFont(textResource.getFont(PAGE_PASSWORD,"labelButtoNum"));
+        labelButton[i]->setFont(textResource.getFont(PAGE_PASSWORD,"labelButtonNum"));
         labelButton[i]->setAlignment(Qt::AlignCenter);
 
         if(i<5)
