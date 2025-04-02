@@ -30,10 +30,15 @@ void ComponentPasswordKeyboard::init()
             labelButton[i]->setGeometry((i-5)*128,160,128,80);
         }
     }
+
+    update();
 }
 
 void ComponentPasswordKeyboard::update()
 {
+    if(!keyBoardIndex.mapKey.contains(nFunctionNum))
+        return;
+
     for(int i=0; i<10; i++)
     {
         labelButton[i]->setText(keyBoardIndex.mapKey[nFunctionNum][i]);
