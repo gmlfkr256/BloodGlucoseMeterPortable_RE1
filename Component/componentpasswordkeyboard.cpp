@@ -37,7 +37,10 @@ void ComponentPasswordKeyboard::init()
 void ComponentPasswordKeyboard::update()
 {
     if(!keyBoardIndex.mapKey.contains(nFunctionNum))
+    {
+        qDebug()<<"Invalid nFunctionNum: "<<nFunctionNum;
         return;
+    }
 
     for(int i=0; i<10; i++)
     {
