@@ -136,6 +136,15 @@ void ComponentPasswordKeyboard::mousePressEvent(QMouseEvent *ev)
     }
 }
 
+void ComponentPasswordKeyboard::deleteLastKey()
+{
+    if(!strKey.isEmpty())
+    {
+        strKey.chop(1);
+        emit signalKeyClick(strKey);
+    }
+}
+
 void ComponentPasswordKeyboard::mouseReleaseEvent(QMouseEvent *ev)
 {
     Q_UNUSED(ev);

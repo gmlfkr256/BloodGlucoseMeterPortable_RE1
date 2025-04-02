@@ -50,10 +50,13 @@ public:
     void update() override;
     void pageShow() override;
     void pageHide() override;
+public slots:
+    void deleteLastKey();
 private:
     void init();
 signals:
-    void signalKeyClick(QString &strKey);
+    void signalKeyClick(QString strKey);
+
 };
 
 #endif // COMPONENTPASSWORDKEYBOARD_H

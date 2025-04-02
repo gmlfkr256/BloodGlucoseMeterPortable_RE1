@@ -62,6 +62,7 @@ void PagePasswordAllChat::init()
 void PagePasswordAllChat::initConnect()
 {
     connect(comKeyboard,&ComponentPasswordKeyboard::signalKeyClick,this,&PagePasswordAllChat::updatePassword);
+    connect(this,&PagePasswordAllChat::signalPasswordDel,comKeyboard,&ComponentPasswordKeyboard::deleteLastKey);
 }
 
 void PagePasswordAllChat::updatePassword(QString strKey)
@@ -112,7 +113,10 @@ void PagePasswordAllChat::pageHide()
 
 void PagePasswordAllChat::mousePressEvent(QMouseEvent *ev)
 {
-    Q_UNUSED(ev);
+    if(instance.touchCheck(labelButtonDel->geometry(),ev))
+    {
+        emit signalPasswordDel();
+    }
 }
 
 

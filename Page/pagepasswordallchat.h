@@ -41,7 +41,7 @@ public slots:
     void updatePassword(QString strKey);
 
 signals:
-
+    void signalPasswordDel();
 };
 
 #endif // PAGEPASSWORDALLCHAT_H
