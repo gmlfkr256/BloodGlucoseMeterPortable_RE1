@@ -41,7 +41,7 @@ public:
 
     QString strDirPath = "/ImageComponentPasswordKeyBoard";
 
-    QLabel *labelFunction[3];
+    QLabel *labelFunction[5];
     QLabel *labelButton[10];
     KeyBoardIndex *keyBoardIndex;
     int nFunctionNum = 0;

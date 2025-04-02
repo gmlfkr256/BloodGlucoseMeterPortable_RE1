@@ -8,12 +8,12 @@ ComponentPasswordKeyboard::ComponentPasswordKeyboard(QWidget *parent) : CustomCo
 
 void ComponentPasswordKeyboard::init()
 {
-    for(int i=0; i<3; i++)
+    for(int i=0; i<5; i++)
     {
         labelFunction[i] = new QLabel(this);
         labelFunction[i]->setStyleSheet("background-color: #ffffff; border: 1px solid #ebebeb;");
 
-        labelFunction[i]->setGeometry(i*213,0,213,80);
+        labelFunction[i]->setGeometry(i*128,0,128,80);
     }
 
     for(int i=0; i<10; i++)
