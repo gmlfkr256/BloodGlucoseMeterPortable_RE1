@@ -39,6 +39,7 @@ void PagePasswordAllChat::init()
 
     labelButtonOK = new QLabel(this);
     labelButtonOK->setGeometry(427,133,98,85);
+    labelButtonOK->hide();
     labelButtonOKText = new QLabel(this);
     labelButtonOKText->setGeometry(labelButtonOK->geometry());
     labelButtonOKText->setAlignment(Qt::AlignCenter);
