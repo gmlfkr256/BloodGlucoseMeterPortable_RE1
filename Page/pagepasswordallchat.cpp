@@ -35,7 +35,7 @@ void PagePasswordAllChat::init()
     labelPasswordBg->setFont(font);
     labelPasswordBg->setText("@@@@@@@@@@@@");
     labelPasswordBg->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-    labelPasswordBg->setStyleSheet("color: black; border: 1px solid black; border-radius:5px;");
+    labelPasswordBg->setStyleSheet("color: black; border: 1px solid black; border-radius:5px; padding-left: 10px;");
 
     labelButtonOK = new QLabel(this);
     labelButtonOK->setGeometry(427,133,98,85);
