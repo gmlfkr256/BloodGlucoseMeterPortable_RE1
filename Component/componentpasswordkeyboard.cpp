@@ -83,25 +83,40 @@ void ComponentPasswordKeyboard::mousePressEvent(QMouseEvent *ev)
 
     if(instance.touchCheck(labelFunction[1]->geometry(),ev))
     {
-        nFunctionNum = 4;
+        if(nFunctionNum == 4)
+            nFunctionNum = 1;
+        else
+            nFunctionNum = 4;
+
         update();
     }
 
     if(instance.touchCheck(labelFunction[2]->geometry(),ev))
     {
-        nFunctionNum = 5;
+        if(nFunctionNum == 5)
+            nFunctionNum = 2;
+        else
+            nFunctionNum = 5;
         update();
     }
 
     if(instance.touchCheck(labelFunction[3]->geometry(),ev))
     {
-        nFunctionNum = 6;
+        if(nFunctionNum == 6)
+            nFunctionNum = 3;
+        else
+            nFunctionNum = 6;
         update();
     }
 
     if(instance.touchCheck(labelFunction[4]->geometry(),ev))
     {
-        nFunctionNum = 7;
+        if(nFunctionNum == 7)
+            nFunctionNum = 8;
+        else if(nFunctionNum == 8)
+            nFunctionNum = 9;
+        else
+            nFunctionNum = 7;
         update();
     }
 }
