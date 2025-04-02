@@ -23,6 +23,7 @@ void PagePasswordAllChat::init()
     labelButtonHide->setText("V");
     labelButtonHide->setStyleSheet("background-color:red; color: white;");
     //labelButtonHide->setGeometry()
+    labelButtonHide->hide();
 
     labelPasswordBg = new QLabel(this);
     //labelPasswordBg->setGeometry(116,133,303,85);

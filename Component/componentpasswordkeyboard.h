@@ -12,7 +12,7 @@ public:
 
     KeyBoardIndex(QObject *parent): QObject(parent) {
         // 0: 숫자 0~9
-        mapKey[0] = QStringList({"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"});
+        mapKey[0] = QStringList({"0","1", "2", "3", "4", "5", "6", "7", "8", "9"});
 
         // 1~3: 대문자 A-Z (26자 → 3그룹: 10 + 10 + 6)
         mapKey[1] = QStringList({"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"});
