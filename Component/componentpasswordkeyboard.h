@@ -43,6 +43,9 @@ public:
 
     QLabel *labelFunction[5];
     QLabel *labelButton[10];
+    QLabel *labelButtonDel;
+    QLabel *labelButtonShowHide;
+    QLabel *labelButtonOK;
     KeyBoardIndex *keyBoardIndex;
     int nFunctionNum = 0;
     QString strKey = "";

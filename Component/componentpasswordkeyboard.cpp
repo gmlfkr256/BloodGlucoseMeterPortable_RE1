@@ -15,7 +15,8 @@ void ComponentPasswordKeyboard::init()
         labelFunction[i]->setFont(textResource.getFont(PAGE_PASSWORD,"labelButtonNum"));
         labelFunction[i]->setAlignment(Qt::AlignCenter);
 
-        labelFunction[i]->setGeometry(i*128,0,128,80);
+        //labelFunction[i]->setGeometry(i*128,0,128,80);
+        labelFunction[i]->setGeometry(i*106,0,106,80);
     }
 
     labelFunction[0]->setText("0·9");
@@ -34,12 +35,36 @@ void ComponentPasswordKeyboard::init()
 
         if(i<5)
         {
-            labelButton[i]->setGeometry(i*128,80,128,80);
+            //labelButton[i]->setGeometry(i*128,80,128,80);
+            labelButton[i]->setGeometry(i*106,80,106,80);
         }
         else
         {
-            labelButton[i]->setGeometry((i-5)*128,160,128,80);
+            //labelButton[i]->setGeometry((i-5)*128,160,128,80);
+            labelButton[i]->setGeometry((i-5)*106,160,106,80);
         }
+    }
+
+    QList<QLabel*> labelList;
+
+    labelButtonDel = new QLabel(this);
+    labelButtonDel->setGeometry(530,0,110,80);
+    labelButtonDel->setText("Del");
+    labelList.append(labelButtonDel);
+    labelButtonShowHide = new QLabel(this);
+    labelButtonShowHide->setGeometry(530,80,110,80);
+    labelButtonShowHide->setText("Eye");
+    labelList.append(labelButtonShowHide);
+    labelButtonOK = new QLabel(this);
+    labelButtonOK->setGeometry(530,160,110,80);
+    labelButtonOK->setText("OK");
+    labelList.append(labelButtonOK);
+
+    for(QLabel *label : labelList)
+    {
+        label->setFont(textResource.getFont(PAGE_PASSWORD,"labelButtonNum"));
+        label->setAlignment(Qt::AlignCenter);
+        label->setStyleSheet("background-color: #177bdd; border: 1px solid #ebebeb;");
     }
 
     keyBoardIndex = new KeyBoardIndex(this);
@@ -133,6 +158,11 @@ void ComponentPasswordKeyboard::mousePressEvent(QMouseEvent *ev)
                 emit signalKeyClick(strKey);
             }
         }
+    }
+
+    if(instance.touchCheck(labelButtonDel->geometry(),ev))
+    {
+        deleteLastKey();
     }
 }
 

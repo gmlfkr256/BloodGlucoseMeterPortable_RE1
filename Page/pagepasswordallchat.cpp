@@ -27,7 +27,7 @@ void PagePasswordAllChat::init()
 
     labelPasswordBg = new QLabel(this);
     //labelPasswordBg->setGeometry(116,133,303,85);
-    labelPasswordBg->setGeometry(10,133,410,85);
+    labelPasswordBg->setGeometry(20,133,600,85);
     labelPasswordBg->setFont(textResource.getFont(PAGE_PASSWORD,"labelButtonNum"));
     //labelPasswordBg->setText("123456789012");
     QFont font = labelPasswordBg->font();
@@ -42,9 +42,11 @@ void PagePasswordAllChat::init()
     labelButtonOKText = new QLabel(this);
     labelButtonOKText->setGeometry(labelButtonOK->geometry());
     labelButtonOKText->setAlignment(Qt::AlignCenter);
+    labelButtonOKText->hide();
 
     labelButtonDel = new QLabel(this);
     labelButtonDel->setGeometry(336,152,67,47);
+    labelButtonDel->hide();
 
     labelButtonCancel = new QLabel(this);
     labelButtonCancel->setGeometry(560,26,50,50);
