@@ -44,7 +44,7 @@ void ComponentPasswordKeyboard::update()
 
     for(int i=0; i<10; i++)
     {
-        labelButton[i]->setText(keyBoardIndex.mapKey[nFunctionNum][i]);
+        labelButton[i]->setText(keyBoardIndex.mapKey[nFunctionNum].at(i));
     }
 }
 
