@@ -34,6 +34,10 @@ int main(int argc, char* argv[])
 
     delete pageBooting;
     w.show();
+#if DEVICE == false
+    w.raise();
+    w.activateWindow();
+#endif
 
     return a.exec();
 }
