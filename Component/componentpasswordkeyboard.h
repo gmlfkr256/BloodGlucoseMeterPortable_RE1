@@ -49,6 +49,7 @@ public:
     KeyBoardIndex *keyBoardIndex;
     int nFunctionNum = 0;
     QString strKey = "";
+    bool bIsShowAll = false;
 
     void update() override;
     void pageShow() override;
@@ -57,6 +58,7 @@ public slots:
     void deleteLastKey();
 private:
     void init();
+    QString getDispalyText();
 signals:
     void signalKeyClick(QString strKey);
 

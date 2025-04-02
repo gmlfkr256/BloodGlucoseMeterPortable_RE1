@@ -155,7 +155,7 @@ void ComponentPasswordKeyboard::mousePressEvent(QMouseEvent *ev)
                     strKey += keyBoardIndex->mapKey[nFunctionNum].at(i);
 
                 qDebug()<<strKey;
-                emit signalKeyClick(strKey);
+                emit signalKeyClick(getDispalyText());
             }
         }
     }
@@ -164,6 +164,12 @@ void ComponentPasswordKeyboard::mousePressEvent(QMouseEvent *ev)
     {
         deleteLastKey();
     }
+
+    if(instance.touchCheck(labelButtonShowHide->geometry(),ev))
+    {
+        bIsShowAll = !bIsShowAll;
+        emit signalKeyClick(getDispalyText());
+    }
 }
 
 void ComponentPasswordKeyboard::deleteLastKey()
@@ -171,8 +177,21 @@ void ComponentPasswordKeyboard::deleteLastKey()
     if(!strKey.isEmpty())
     {
         strKey.chop(1);
-        emit signalKeyClick(strKey);
+        emit signalKeyClick(getDispalyText());
     }
+}
+
+QString ComponentPasswordKeyboard::getDispalyText()
+{
+    if(bIsShowAll)
+        return strKey;
+
+    if(strKey.isEmpty())
+        return QString();
+
+    QString strMasked(strKey.size()-1, QChar('*'));
+    strMasked += strKey.right(1);
+    return strMasked;
 }
 
 void ComponentPasswordKeyboard::mouseReleaseEvent(QMouseEvent *ev)
