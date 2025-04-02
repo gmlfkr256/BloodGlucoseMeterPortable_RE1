@@ -30,7 +30,7 @@ void PagePasswordAllChat::init()
     labelPasswordBg->setFont(textResource.getFont(PAGE_PASSWORD,"labelButtonNum"));
     //labelPasswordBg->setText("123456789012");
     QFont font = labelPasswordBg->font();
-    font.setPointSize(30);
+    font.setPointSize(instance.pixelToPoint(30));
     labelPasswordBg->setFont(font);
     labelPasswordBg->setText("@@@@@@@@@@@@");
     labelPasswordBg->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
