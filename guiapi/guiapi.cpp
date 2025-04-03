@@ -1037,6 +1037,25 @@ int GuiApi::glucoseChkAdminPassword (char *pwdP, int pwdLen, int *rResultP)
  * PARAMETERS : 
  * RETURNS : None
  *****************************************************************************/
+int GuiApi::glucoseInitAdminPassword (void)
+{
+	char cmd[128], passwd[32] = { 0, };
+
+	// set to default admin password
+	setDefaultAdminPasswd (passwd);
+	sprintf (cmd, "echo \"%s\" | base64 > %s/%s; sync", passwd, l_CfgBasePath, \
+		GAPI_ADMIN_PASSWD_FNAME);
+	system (cmd);
+
+	return GAPI_SUCCESS;
+}
+
+/*****************************************************************************
+ * FUNCTION NAME : 
+ * DESCRIPTIONS : 
+ * PARAMETERS : 
+ * RETURNS : None
+ *****************************************************************************/
 int GuiApi::glucoseGetUserInfo (int user, gapiSysUserInfo_t *rUserP)
 {
 	char fname[128], buf[80];

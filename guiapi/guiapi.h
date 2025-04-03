@@ -183,6 +183,7 @@ class GuiApi {
 
 		int glucoseSetAdminPassword (char *pwdP, int pwdLen, int *rEcodeP);
 		int glucoseChkAdminPassword (char *pwdP, int pwdLen, int *rResultP);
+		int glucoseInitAdminPassword (void);
 		int glucoseGetUserInfo (int user, gapiSysUserInfo_t *rUserP);
 		int glucoseSetUserPassword (int user, char *passP);
 		int glucoseDelUserInfo (int user);
