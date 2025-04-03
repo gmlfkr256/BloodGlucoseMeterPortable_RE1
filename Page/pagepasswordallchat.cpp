@@ -123,7 +123,6 @@ void PagePasswordAllChat::mousePressEvent(QMouseEvent *ev)
 
 void PagePasswordAllChat::checkLogin()
 {
-    instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
     emit signalShowPageNum(PAGE_PASSWORD_CONFIRM);
 }
 
