@@ -27,7 +27,7 @@ void PagePasswordAllChat::init()
 
     labelPasswordBg = new QLabel(this);
     //labelPasswordBg->setGeometry(116,133,303,85);
-    labelPasswordBg->setGeometry(40,133,540,85);
+    labelPasswordBg->setGeometry(40,133,560,85);
     labelPasswordBg->setFont(textResource.getFont(PAGE_PASSWORD,"labelButtonNum"));
     //labelPasswordBg->setText("123456789012");
     QFont font = labelPasswordBg->font();
