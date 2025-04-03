@@ -53,7 +53,6 @@ void ComponentPasswordKeyboard::init()
     labelList.append(labelButtonDel);
     labelButtonCancel = new QLabel(this);
     labelButtonCancel->setGeometry(530,80,110,80);
-    labelButtonCancel->setText("◀");
     labelList.append(labelButtonCancel);
     labelButtonOK = new QLabel(this);
     labelButtonOK->setGeometry(530,160,110,80);
@@ -86,6 +85,14 @@ void ComponentPasswordKeyboard::update()
         labelButton[i]->setText(keyBoardIndex->mapKey[nFunctionNum].at(i));
     }
 
+    if(instance.getPasswordStatus() != PASSWORD_LOGIN)
+    {
+        labelButtonCancel->setText("◀");
+    }
+    else
+    {
+        labelButtonCancel->setText("");
+    }
 }
 
 void ComponentPasswordKeyboard::pageShow()
@@ -131,10 +138,9 @@ void ComponentPasswordKeyboard::mousePressEvent(QMouseEvent *ev)
 
     if(instance.touchCheck(labelButtonCancel->geometry(),ev))
     {
-        /*
-        bIsShowAll = !bIsShowAll;
-        emit signalKeyClick(getDisplayText());
-        */
+        if(instance.getPasswordStatus()!= PASSWORD_LOGIN)
+            return;
+
         emit signalCancel();
     }
 
