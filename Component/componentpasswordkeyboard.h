@@ -51,6 +51,8 @@ public:
     QString strKey = "";
     bool bIsShowAll = false;
 
+    void clearKey();
+
     void update() override;
     void pageShow() override;
     void pageHide() override;

@@ -315,5 +315,9 @@ void ComponentPasswordKeyboard::processOK()
     emit signalCheckLogin();
 }
 
-
+void ComponentPasswordKeyboard::clearKey()
+{
+    strKey.clear();
+    emit signalKeyClick(getDisplayText());
+}
 
