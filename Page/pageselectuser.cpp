@@ -8,6 +8,8 @@ PageSelectUser::PageSelectUser(QWidget *parent) : Page(parent)
 
 void PageSelectUser::init()
 {
+    setBgTopHide();
+
     labelTitle = new QLabel(this);
     labelTitle->setGeometry(0,30,640,50);
     labelTitle->setAlignment(Qt::AlignCenter);
