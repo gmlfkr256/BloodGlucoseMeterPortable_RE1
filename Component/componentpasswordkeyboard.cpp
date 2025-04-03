@@ -51,10 +51,10 @@ void ComponentPasswordKeyboard::init()
     labelButtonDel->setGeometry(530,0,110,80);
     labelButtonDel->setText("<<");
     labelList.append(labelButtonDel);
-    labelButtonShowHide = new QLabel(this);
-    labelButtonShowHide->setGeometry(530,80,110,80);
-    labelButtonShowHide->setText("✓");
-    labelList.append(labelButtonShowHide);
+    labelButtonCancel = new QLabel(this);
+    labelButtonCancel->setGeometry(530,80,110,80);
+    labelButtonCancel->setText("◀");
+    labelList.append(labelButtonCancel);
     labelButtonOK = new QLabel(this);
     labelButtonOK->setGeometry(530,160,110,80);
     labelButtonOK->setText("▶");
@@ -129,10 +129,13 @@ void ComponentPasswordKeyboard::mousePressEvent(QMouseEvent *ev)
         deleteLastKey();
     }
 
-    if(instance.touchCheck(labelButtonShowHide->geometry(),ev))
+    if(instance.touchCheck(labelButtonCancel->geometry(),ev))
     {
+        /*
         bIsShowAll = !bIsShowAll;
         emit signalKeyClick(getDisplayText());
+        */
+        emit signalCancel();
     }
 
     if(instance.touchCheck(labelButtonOK->geometry(),ev))
@@ -321,3 +324,8 @@ void ComponentPasswordKeyboard::clearKey()
     emit signalKeyClick(getDisplayText());
 }
 
+void ComponentPasswordKeyboard::functionShowHide()
+{
+    bIsShowAll = !bIsShowAll;
+    emit signalKeyClick(getDisplayText());
+}

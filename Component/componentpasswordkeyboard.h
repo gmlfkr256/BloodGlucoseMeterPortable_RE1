@@ -44,7 +44,7 @@ public:
     QLabel *labelFunction[5];
     QLabel *labelButton[10];
     QLabel *labelButtonDel;
-    QLabel *labelButtonShowHide;
+    QLabel *labelButtonCancel;
     QLabel *labelButtonOK;
     KeyBoardIndex *keyBoardIndex;
     int nFunctionNum = 0;
@@ -58,6 +58,7 @@ public:
     void pageHide() override;
 public slots:
     void deleteLastKey();
+    void functionShowHide();
 private:
     void init();
     QString getDisplayText();
@@ -66,6 +67,7 @@ private:
 signals:
     void signalKeyClick(QString strKey);
     void signalCheckLogin();
+    void signalCancel();
 };
 
 #endif // COMPONENTPASSWORDKEYBOARD_H

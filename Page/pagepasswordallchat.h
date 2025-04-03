@@ -15,12 +15,13 @@ public:
 
     QLabel *labelTitle;
     QLabel *labelTitleSub;
-    QLabel *labelButtonHide;
     QLabel *labelPasswordBg;
     QLabel *labelPasswordNum[4];
     QString strPasswordNum;
     int nCheckButtonNum = -1;
     QLabel *labelButtonNum[10];
+
+    QLabel *labelButtonShowHide;
 
     ComponentPasswordKeyboard *comKeyboard;
 
@@ -37,6 +38,7 @@ public slots:
 
 signals:
     void signalPasswordDel();
+    void signalPasswordShowHide();
 };
 
 #endif // PAGEPASSWORDALLCHAT_H

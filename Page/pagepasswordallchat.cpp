@@ -19,12 +19,6 @@ void PagePasswordAllChat::init()
     labelTitleSub->setAlignment(Qt::AlignCenter);
     labelTitleSub->setStyleSheet("color: #808080");
 
-    labelButtonHide = new QLabel(this);
-    labelButtonHide->setText("V");
-    labelButtonHide->setStyleSheet("background-color:red; color: white;");
-    //labelButtonHide->setGeometry()
-    labelButtonHide->hide();
-
     labelPasswordBg = new QLabel(this);
     //labelPasswordBg->setGeometry(116,133,303,85);
     labelPasswordBg->setGeometry(40,133,560,85);
@@ -36,6 +30,12 @@ void PagePasswordAllChat::init()
     //labelPasswordBg->setText("@@@@@@@@@@@@");
     labelPasswordBg->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     labelPasswordBg->setStyleSheet("color: black; border: 1px solid black; border-radius:5px; padding-left: 10px;");
+
+    labelButtonShowHide = new QLabel(this);
+    labelButtonShowHide->setGeometry(515,133,85,85);
+    labelButtonShowHide->setStyleSheet("color: black;");
+    labelButtonShowHide->setAlignment(Qt::AlignCenter);
+    labelButtonShowHide->setText("✓");
 
     comKeyboard = new ComponentPasswordKeyboard(this);
 
@@ -49,6 +49,7 @@ void PagePasswordAllChat::initConnect()
     connect(comKeyboard,&ComponentPasswordKeyboard::signalKeyClick,this,&PagePasswordAllChat::updatePassword);
     connect(this,&PagePasswordAllChat::signalPasswordDel,comKeyboard,&ComponentPasswordKeyboard::deleteLastKey);
     connect(comKeyboard,&ComponentPasswordKeyboard::signalCheckLogin,this,&PagePasswordAllChat::checkLogin);
+    connect(this,&PagePasswordAllChat::signalPasswordShowHide,comKeyboard,&ComponentPasswordKeyboard::functionShowHide);
 }
 
 void PagePasswordAllChat::updatePassword(QString strKey)
@@ -78,7 +79,10 @@ void PagePasswordAllChat::pageHide()
 
 void PagePasswordAllChat::mousePressEvent(QMouseEvent *ev)
 {
-
+    if(instance.touchCheck(labelButtonShowHide->geometry(),ev))
+    {
+        emit signalPasswordShowHide();
+    }
 }
 
 void PagePasswordAllChat::checkLogin()
