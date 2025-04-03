@@ -90,6 +90,7 @@ void ComponentPasswordKeyboard::update()
 
 void ComponentPasswordKeyboard::pageShow()
 {
+    strKey = "";
     update();
 }
 

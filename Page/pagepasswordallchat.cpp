@@ -108,7 +108,7 @@ void PagePasswordAllChat::update()
 
 void PagePasswordAllChat::pageShow()
 {
-    labelPasswordBg->setText("");
+    //labelPasswordBg->setText("");
     update();
 }
 
