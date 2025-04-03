@@ -117,7 +117,12 @@ void PagePasswordAllChat::pageHide()
 
 void PagePasswordAllChat::mousePressEvent(QMouseEvent *ev)
 {
-
+    if(instance.touchCheck(labelButtonOK->geometry(),ev))
+    {
+        instance.actUserLogin(0);
+        instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
+        emit signalShowPageNum(PAGE_PASSWORD_CONFIRM);
+    }
 }
 
 
