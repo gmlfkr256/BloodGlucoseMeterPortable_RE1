@@ -108,7 +108,11 @@ void PagePasswordConfirm::mousePressEvent(QMouseEvent *ev)
 #endif
             break;
         case PASSWORD_STR_LOGIN_FAIL:
+#if NEW_PASSWORD
+            emit signalShowPageNum(PAGE_PASSWORD_ALLCHAT);
+#else
             emit signalShowPageNum(PAGE_PASSWORD);
+#endif
             break;
         case PASSWORD_STR_LOGIN_CHANGE:
             emit signalShowPageNum(PAGE_HOME);

@@ -321,13 +321,21 @@ void Singleton::setPasswordChange(QString strPasswordChange)
 void Singleton::setUserPasswordChange()
 {
 #if DEVICE
-    guiApi.glucoseSetUserPassword(nUserNumber,strPasswordChange.toUtf8().data());
+    QByteArray baKey = strPasswordChange.toUtf8();
+
+    #if NEW_PASSWORD
+        int nErrCode = 0;
+        guiApi.glucoseSetAdminPassword(baKey.data(), baKey.size(), &nErrCode);
+        setPasswordErrCode(nErrCode);
+    #else
+        guiApi.glucoseSetUserPassword(nUserNumber, baKey.data());
+    #endif
+
 #else
-    sysUserInfo[getUserNumber()].passwd[15] = {0};
-
-    strncpy(sysUserInfo[getUserNumber()].passwd,strPasswordChange.toUtf8().data(),sizeof (sysUserInfo[getUserNumber()].passwd)-1);
+    memset(sysUserInfo[getUserNumber()].passwd, 0, sizeof(sysUserInfo[getUserNumber()].passwd));
+    strncpy(sysUserInfo[getUserNumber()].passwd, strPasswordChange.toUtf8().data(),
+            sizeof(sysUserInfo[getUserNumber()].passwd) - 1);
 #endif
-
 }
 
 //PagePasswordStrStatus
@@ -343,8 +351,7 @@ void Singleton::setPasswordStrStatus(PasswordStrStatus passwordStrStatus)
 
 
 //UserLogin
-void Singleton::
-actUserLogin(int i)
+void Singleton::actUserLogin(int i)
 {
     setUserNumber(i);
 #if DEVICE

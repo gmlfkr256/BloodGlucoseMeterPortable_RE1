@@ -198,45 +198,121 @@ void ComponentPasswordKeyboard::setFunctionNumBytButton(int nIndex)
 
 void ComponentPasswordKeyboard::processOK()
 {
-    bool bIsCheckPassword = false;
-
     int nErrCode = GAPI_PASSWD_ECODE_MAX;
-
     QByteArray baKey = strKey.toUtf8();
+    QString strPwd = QString::fromUtf8(baKey);
 
     switch (instance.getPasswordStatus())
     {
     case PASSWORD_LOGIN:
-        if(instance.guiApi.glucoseChkAdminPassword(baKey.data(),baKey.size(),&nErrCode) == GAPI_SUCCESS)
+#if DEVICE
+        if(instance.guiApi.glucoseChkAdminPassword(baKey.data(), baKey.size(), &nErrCode) == GAPI_SUCCESS)
         {
             if(nErrCode == GAPI_PASSWD_ECODE_NORMAL)
-            {
                 instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
-            }
             else
-            {
                 instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
-
-            }
         }
         else
         {
-            qDebug() << "glucoseCheckAdminPassword Fail";
+            qDebug() << "glucoseChkAdminPassword Fail";
             instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
         }
-
+#else
+        // 테스트 환경 시나리오별 강제 분기
+        if(strPwd == "1111") {
+            nErrCode = GAPI_PASSWD_ECODE_NORMAL;
+            instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
+        }
+        else if(strPwd == "sh") {
+            nErrCode = GAPI_PASSWD_ECODE_SHORT_LEN;
+            instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
+        }
+        else if(strPwd == "no") {
+            nErrCode = GAPI_PASSWD_ECODE_NO_NUMBER;
+            instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
+        }
+        else if(strPwd == "al") {
+            nErrCode = GAPI_PASSWD_ECODE_NO_ALPHABET;
+            instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
+        }
+        else if(strPwd == "sp") {
+            nErrCode = GAPI_PASSWD_ECODE_NO_SPECIAL;
+            instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
+        }
+        else {
+            nErrCode = GAPI_PASSWD_ECODE_MAX;
+            instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
+        }
+#endif
+        // 에러코드는 DEVICE/비DEVICE 공통 저장
         instance.setPasswordErrCode(nErrCode);
         break;
+
+    case PASSWORD_EDIT:
+        instance.setPasswordStatusPrev(PASSWORD_EDIT);
+        instance.setPasswordChange(strPwd);
+        instance.setPasswordStrStatus(PASSWORD_STR_REPEAT);
+        break;
+
+    case PASSWORD_DELETE:
+        if(instance.getStrNowUserPassword() == strPwd)
+        {
+            instance.setPasswordStatusPrev(PASSWORD_DELETE);
+            instance.setPasswordStrStatus(PASSWORD_STR_REPEAT);
+        }
+        else
+        {
+            instance.setPasswordStrStatus(PASSWORD_STR_CONFIRM_FAIL);
+        }
+        break;
+
+    case PASSWORD_REPEAT:
+        switch (instance.getPasswordStatusPrev())
+        {
+        case PASSWORD_EDIT:
+            if(instance.getPasswordChage() == strPwd)
+            {
+                instance.setPasswordStrStatus(PASSWORD_STR_EDIT_SUCCESS);
+                instance.setUserPasswordChange();
+            }
+            else
+            {
+                instance.setPasswordStrStatus(PASSWORD_STR_REPEAT_FAIL);
+            }
+            break;
+
+        case PASSWORD_DELETE:
+            if(instance.getStrNowUserPassword() == strPwd)
+                instance.setPasswordStrStatus(PASSWORD_STR_DELETE_SUCCESS);
+            else
+                instance.setPasswordStrStatus(PASSWORD_STR_REPEAT_FAIL);
+            break;
+
+        default:
+            instance.setPasswordStrStatus(PASSWORD_STR_MAX);
+            break;
+        }
+        break;
+    case PASSWORD_CONFIRM:
+        if(instance.getStrNowUserPassword() == strPwd)
+            instance.setPasswordStrStatus(PASSWORD_STR_EDIT_CHANGE);
+        else
+            instance.setPasswordStrStatus(PASSWORD_STR_CONFIRM_FAIL);
+        break;
+
+
     case PASSWORD_MAX:
         instance.setPasswordStrStatus(PASSWORD_STR_MAX);
         break;
+
     default:
-        qDebug()<< "keyboard check instance.getPasswordStatus range over";
+        qDebug() << "keyboard check instance.getPasswordStatus range over";
         break;
     }
 
-    //instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
     emit signalCheckLogin();
 }
+
 
 
