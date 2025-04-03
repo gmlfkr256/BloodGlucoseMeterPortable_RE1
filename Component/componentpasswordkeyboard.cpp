@@ -304,13 +304,13 @@ void ComponentPasswordKeyboard::processOK()
             break;
         }
         break;
+
     case PASSWORD_CONFIRM:
         if(instance.getStrNowUserPassword() == strPwd)
             instance.setPasswordStrStatus(PASSWORD_STR_EDIT_CHANGE);
         else
             instance.setPasswordStrStatus(PASSWORD_STR_CONFIRM_FAIL);
         break;
-
 
     case PASSWORD_MAX:
         instance.setPasswordStrStatus(PASSWORD_STR_MAX);
