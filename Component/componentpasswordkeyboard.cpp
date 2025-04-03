@@ -136,10 +136,13 @@ void ComponentPasswordKeyboard::mousePressEvent(QMouseEvent *ev)
 
     if(instance.touchCheck(labelButtonOK->geometry(),ev))
     {
-        //instance.actUserLogin(0);
-        instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
-        emit signalCheckLogin();
+        processOK();
     }
+}
+
+void ComponentPasswordKeyboard::mouseReleaseEvent(QMouseEvent *ev)
+{
+    Q_UNUSED(ev);
 }
 
 void ComponentPasswordKeyboard::deleteLastKey()
@@ -193,7 +196,47 @@ void ComponentPasswordKeyboard::setFunctionNumBytButton(int nIndex)
     update();
 }
 
-void ComponentPasswordKeyboard::mouseReleaseEvent(QMouseEvent *ev)
+void ComponentPasswordKeyboard::processOK()
 {
-    Q_UNUSED(ev);
+    bool bIsCheckPassword = false;
+
+    int nErrCode = GAPI_PASSWD_ECODE_MAX;
+
+    QByteArray baKey = strKey.toUtf8();
+
+    switch (instance.getPasswordStatus())
+    {
+    case PASSWORD_LOGIN:
+        if(instance.guiApi.glucoseChkAdminPassword(baKey.data(),baKey.size(),&nErrCode) == GAPI_SUCCESS)
+        {
+            if(nErrCode == GAPI_PASSWD_ECODE_NORMAL)
+            {
+                instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
+            }
+            else
+            {
+                instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
+
+            }
+        }
+        else
+        {
+            qDebug() << "glucoseCheckAdminPassword Fail";
+            instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
+        }
+
+        instance.setPasswordErrCode(nErrCode);
+        break;
+    case PASSWORD_MAX:
+        instance.setPasswordStrStatus(PASSWORD_STR_MAX);
+        break;
+    default:
+        qDebug()<< "keyboard check instance.getPasswordStatus range over";
+        break;
+    }
+
+    //instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
+    emit signalCheckLogin();
 }
+
+

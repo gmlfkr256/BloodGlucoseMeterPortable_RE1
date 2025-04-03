@@ -60,6 +60,7 @@ private:
     void init();
     QString getDisplayText();
     void setFunctionNumBytButton(int nIndex);
+    void processOK();
 signals:
     void signalKeyClick(QString strKey);
     void signalCheckLogin();

@@ -78,7 +78,19 @@ void PagePasswordConfirm::update()
     labelTitle->setText(textResource.getText(PAGE_PASSWORD_CONFIRM,"labelTitle").at(nStrStatus));
 
     labelText->setFont(textResource.getFont(PAGE_PASSWORD_CONFIRM,"labelText"));
+
+#if NEW_PASSWORD
+    if(nStrStatus == PASSWORD_STR_LOGIN_FAIL)
+    {
+        labelText->setText(textResource.getText(PAGE_PASSWORD_CONFIRM,"labelTextError").at(instance.getPasswordErrCode()));
+    }
+    else
+    {
+        labelText->setText(textResource.getText(PAGE_PASSWORD_CONFIRM,"labelText").at(nStrStatus));
+    }
+#else
     labelText->setText(textResource.getText(PAGE_PASSWORD_CONFIRM,"labelText").at(nStrStatus));
+#endif
 }
 
 void PagePasswordConfirm::mousePressEvent(QMouseEvent *ev)

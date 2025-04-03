@@ -33,7 +33,7 @@ void PagePasswordAllChat::init()
     QFont font = labelPasswordBg->font();
     font.setPointSize(instance.pixelToPoint(40));
     labelPasswordBg->setFont(font);
-    labelPasswordBg->setText("@@@@@@@@@@@@");
+    //labelPasswordBg->setText("@@@@@@@@@@@@");
     labelPasswordBg->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     labelPasswordBg->setStyleSheet("color: black; border: 1px solid black; border-radius:5px; padding-left: 10px;");
 

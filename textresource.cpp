@@ -156,6 +156,15 @@ void TextResource::init()
                                                     "PASSWORD_STR_MAX" //PASSWORD_STR_MAX
                                                 });
 
+    textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTextError",QStringList{
+                                                    "로그인에 성공했습니다", // GAPI_PASSWD_ECODE_NORMAL
+                                                    "비밀번호가 너무 짧습니다", // GAPI_PASSWD_ECODE_SHORT_LEN
+                                                    "숫자가 포함되어야 합니다", // GAPI_PASSWD_ECODE_NO_NUMBER
+                                                    "알파벳이 포함되어야 합니다", // GAPI_PASSWD_ECODE_NO_ALPHABET
+                                                    "특수문자가 포함되어야 합니다", // GAPI_PASSWD_ECODE_NO_SPECTAL
+                                                    "알 수 없는 오류입니다", // GAPI_PASSWD_ECODE_MAX
+                                                });
+
     //PAGE_SELECT_USER
     fontData[Lan][PAGE_SELECT_USER].insert("labelTitle",QFont(currentFont, instance.pixelToPoint(44),QFont::Bold));
     textData[Lan][PAGE_SELECT_USER].insert("labelTitle",QStringList{"사용자를 선택해주세요"});

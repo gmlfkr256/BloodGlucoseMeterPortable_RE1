@@ -747,3 +747,13 @@ gapiUpgradeErrCode_e Singleton::getUpgradeErrCode()
     return upgradeErrCode;
 }
 
+void Singleton::setPasswordErrCode(int errCode)
+{
+    passwordErrCode = static_cast<gapiPasswordErrCode_e>(errCode);
+}
+
+gapiPasswordErrCode_e Singleton::getPasswordErrCode()
+{
+    return passwordErrCode;
+}
+

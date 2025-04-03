@@ -377,6 +377,9 @@ public:
     void setUpgradeErrCode(int errCode);
     gapiUpgradeErrCode_e getUpgradeErrCode();
 
+    void setPasswordErrCode(int errCode);
+    gapiPasswordErrCode_e getPasswordErrCode();
+
 private:
     //Singleton() = default;
     explicit Singleton(QObject* parent = nullptr) : QObject(parent){init();};
@@ -429,6 +432,7 @@ private:
     QString strSerialNumber = "PGM900-2105-0000004";//"text5";
 
     gapiUpgradeErrCode_e upgradeErrCode;
+    gapiPasswordErrCode_e passwordErrCode;
 };
 
 #endif // SINGLETON_H
