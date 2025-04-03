@@ -51,6 +51,7 @@ void PagePasswordAllChat::initConnect()
     connect(this,&PagePasswordAllChat::signalPasswordDel,comKeyboard,&ComponentPasswordKeyboard::deleteLastKey);
     connect(comKeyboard,&ComponentPasswordKeyboard::signalCheckLogin,this,&PagePasswordAllChat::checkLogin);
     connect(this,&PagePasswordAllChat::signalPasswordShowHide,comKeyboard,&ComponentPasswordKeyboard::functionShowHide);
+    connect(comKeyboard,&ComponentPasswordKeyboard::signalCancel,this,&PagePasswordAllChat::pageHide);
 }
 
 void PagePasswordAllChat::updatePassword(QString strKey)
@@ -75,7 +76,7 @@ void PagePasswordAllChat::pageShow()
 
 void PagePasswordAllChat::pageHide()
 {
-
+    emit signalShowPageNum(instance.getPageNumPrev());
 }
 
 void PagePasswordAllChat::mousePressEvent(QMouseEvent *ev)
