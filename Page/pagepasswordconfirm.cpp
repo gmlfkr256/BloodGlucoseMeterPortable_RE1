@@ -154,7 +154,11 @@ void PagePasswordConfirm::mousePressEvent(QMouseEvent *ev)
 
 #endif
             instance.setPasswordStatus(PASSWORD_LOGIN);
+#if NEW_PASSWORD
+            emit signalShowPageNum(PAGE_PASSWORD_ALLCHAT);
+#else
             emit signalShowPageNum(PAGE_PASSWORD);
+#endif
             break;
         case PASSWORD_STR_MAX:
             break;
