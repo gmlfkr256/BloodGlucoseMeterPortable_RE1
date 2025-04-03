@@ -49,15 +49,15 @@ void ComponentPasswordKeyboard::init()
 
     labelButtonDel = new QLabel(this);
     labelButtonDel->setGeometry(530,0,110,80);
-    labelButtonDel->setText("Del");
+    labelButtonDel->setText("<<");
     labelList.append(labelButtonDel);
     labelButtonShowHide = new QLabel(this);
     labelButtonShowHide->setGeometry(530,80,110,80);
-    labelButtonShowHide->setText("Eye");
+    labelButtonShowHide->setText("✓");
     labelList.append(labelButtonShowHide);
     labelButtonOK = new QLabel(this);
     labelButtonOK->setGeometry(530,160,110,80);
-    labelButtonOK->setText("OK");
+    labelButtonOK->setText("▶");
     labelList.append(labelButtonOK);
 
     for(QLabel *label : labelList)
