@@ -119,19 +119,35 @@ void PagePasswordConfirm::mousePressEvent(QMouseEvent *ev)
             break;
         case PASSWORD_STR_CONFIRM:
             instance.setPasswordStatus(PASSWORD_CONFIRM);
+#if NEW_PASSWORD
+            emit signalShowPageNum(PAGE_PASSWORD_ALLCHAT);
+#else
             emit signalShowPageNum(PAGE_PASSWORD);
+#endif
             break;
         case PASSWORD_STR_CONFIRM_FAIL:
             instance.setPasswordStatus(PASSWORD_CONFIRM);
+#if NEW_PASSWORD
+            emit signalShowPageNum(PAGE_PASSWORD_ALLCHAT);
+#else
             emit signalShowPageNum(PAGE_PASSWORD);
+#endif
             break;
         case PASSWORD_STR_REPEAT:
             instance.setPasswordStatus(PASSWORD_REPEAT);
+#if NEW_PASSWORD
+            emit signalShowPageNum(PAGE_PASSWORD_ALLCHAT);
+#else
             emit signalShowPageNum(PAGE_PASSWORD);
+#endif
             break;
         case PASSWORD_STR_REPEAT_FAIL:
             instance.setPasswordStatus(PASSWORD_REPEAT);
+#if NEW_PASSWORD
+            emit signalShowPageNum(PAGE_PASSWORD_ALLCHAT);
+#else
             emit signalShowPageNum(PAGE_PASSWORD);
+#endif
             break;
         case PASSWORD_STR_EDIT:
             instance.setPasswordStrStatus(PASSWORD_STR_EDIT_CONFIRM);
@@ -139,15 +155,27 @@ void PagePasswordConfirm::mousePressEvent(QMouseEvent *ev)
             break;
         case PASSWORD_STR_EDIT_CONFIRM:
             instance.setPasswordStatus(PASSWORD_CONFIRM);
+#if NEW_PASSWORD
+            emit signalShowPageNum(PAGE_PASSWORD_ALLCHAT);
+#else
             emit signalShowPageNum(PAGE_PASSWORD);
+#endif
             break;
         case PASSWORD_STR_EDIT_CHANGE:
             instance.setPasswordStatus(PASSWORD_EDIT);
+#if NEW_PASSWORD
+            emit signalShowPageNum(PAGE_PASSWORD_ALLCHAT);
+#else
             emit signalShowPageNum(PAGE_PASSWORD);
+#endif
             break;
         case PASSWORD_STR_EDIT_SUCCESS:
             instance.setPasswordStatus(PASSWORD_LOGIN);
+#if NEW_PASSWORD
+            emit signalShowPageNum(PAGE_PASSWORD_ALLCHAT);
+#else
             emit signalShowPageNum(PAGE_PASSWORD);
+#endif
             break;
         case PASSWORD_STR_DELETE:
             instance.setPasswordStrStatus(PASSWORD_STR_DELETE_CONFIRM);
@@ -155,7 +183,11 @@ void PagePasswordConfirm::mousePressEvent(QMouseEvent *ev)
             break;
         case PASSWORD_STR_DELETE_CONFIRM:
             instance.setPasswordStatus(PASSWORD_DELETE);
+#if NEW_PASSWORD
+            emit signalShowPageNum(PAGE_PASSWORD_ALLCHAT);
+#else
             emit signalShowPageNum(PAGE_PASSWORD);
+#endif
             break;
         case PASSWORD_STR_DELETE_SUCCESS:
 #if DEVICE
