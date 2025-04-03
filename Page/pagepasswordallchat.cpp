@@ -22,7 +22,7 @@ void PagePasswordAllChat::init()
     labelPasswordBg = new QLabel(this);
     //labelPasswordBg->setGeometry(116,133,303,85);
     labelPasswordBg->setGeometry(40,133,560,85);
-    labelPasswordBg->setFont(textResource.getFont(PAGE_PASSWORD,"labelButtonNum"));
+    labelPasswordBg->setFont(textResource.getFont(PAGE_PASSWORD_ALLCHAT,"labelButtonNum"));
     //labelPasswordBg->setText("123456789012");
     QFont font = labelPasswordBg->font();
     font.setPointSize(instance.pixelToPoint(40));
@@ -36,6 +36,7 @@ void PagePasswordAllChat::init()
     labelButtonShowHide->setStyleSheet("color: black;");
     labelButtonShowHide->setAlignment(Qt::AlignCenter);
     labelButtonShowHide->setText("✓");
+    labelButtonShowHide->setFont(textResource.getFont(PAGE_PASSWORD_ALLCHAT,"labelButtonNum"));
 
     comKeyboard = new ComponentPasswordKeyboard(this);
 
