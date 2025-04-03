@@ -39,6 +39,7 @@ private:
 
 public slots:
     void updatePassword(QString strKey);
+    void checkLogin();
 
 signals:
     void signalPasswordDel();

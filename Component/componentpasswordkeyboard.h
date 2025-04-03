@@ -62,7 +62,7 @@ private:
     void setFunctionNumBytButton(int nIndex);
 signals:
     void signalKeyClick(QString strKey);
-
+    void signalCheckLogin();
 };
 
 #endif // COMPONENTPASSWORDKEYBOARD_H

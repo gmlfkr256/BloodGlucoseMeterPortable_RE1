@@ -133,6 +133,13 @@ void ComponentPasswordKeyboard::mousePressEvent(QMouseEvent *ev)
         bIsShowAll = !bIsShowAll;
         emit signalKeyClick(getDisplayText());
     }
+
+    if(instance.touchCheck(labelButtonOK->geometry(),ev))
+    {
+        instance.actUserLogin(0);
+        instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
+        emit signalCheckLogin();
+    }
 }
 
 void ComponentPasswordKeyboard::deleteLastKey()
