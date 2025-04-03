@@ -16,7 +16,7 @@ void PageSelectUser::init()
     for(int i=0; i<USER_MAX; i++)
     {
         labelUser[i] = new QLabel(this);
-        labelUser[i]->setStyleSheet("background-color: #dddddd; color: white;");
+        labelUser[i]->setStyleSheet("background-color: #dddddd; color: white; border: 1px solid black;");
         labelUser[i]->setAlignment(Qt::AlignCenter);
     }
 
@@ -27,7 +27,7 @@ void PageSelectUser::init()
     }
     if(labelUser[1]!=nullptr)
     {
-        labelUser[1]->setGeometry(320,98,24,215);
+        labelUser[1]->setGeometry(320,98,245,215);
         labelUser[1]->setText("User 2");
     }
 
