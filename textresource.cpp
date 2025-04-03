@@ -116,6 +116,24 @@ void TextResource::init()
     fontData[Lan][PAGE_PASSWORD].insert("labelButtonCancelText",QFont(currentFont,instance.pixelToPoint(29)));
     textData[Lan][PAGE_PASSWORD].insert("labelButtonCancelText",QStringList{"취소"});
 
+    //PAGE_PASSWORD_ALLCHAT
+    fontData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelButtonNum",QFont(currentFont,instance.pixelToPoint(44),QFont::Bold));
+
+    fontData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitle",QFont(currentFont,instance.pixelToPoint(40),QFont::Bold));
+    textData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitle",QStringList{"로그인을 하세요","비밀번호 변경","사용자 삭제","비밀번호 확인","비밀번호 재확인","PASSWORD_MAX"});
+
+    fontData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitleSub",QFont(currentFont,instance.pixelToPoint(30)));
+    textData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitleSub",QStringList{
+                                            "비밀번호 4자리를 눌러주세요",
+                                            "변경할 번호 4자리를 눌러주세요",
+                                            "비밀번호 4자리를 눌러주세요",
+                                            "확인을 위해 4자리를 눌러주세요",
+                                            "재확인을 위해 4자리를 눌러주세요",
+                                            "PASSWORD_MAX"
+                                        });
+
+
+
     //PAGE_PASSWORD_CONFIRM
     fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTitle",QFont(currentFont,instance.pixelToPoint(40),QFont::Bold));
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTitle",QStringList{

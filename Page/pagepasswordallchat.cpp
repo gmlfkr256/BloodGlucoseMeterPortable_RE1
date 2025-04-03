@@ -37,25 +37,6 @@ void PagePasswordAllChat::init()
     labelPasswordBg->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     labelPasswordBg->setStyleSheet("color: black; border: 1px solid black; border-radius:5px; padding-left: 10px;");
 
-    labelButtonOK = new QLabel(this);
-    labelButtonOK->setGeometry(427,133,98,85);
-    labelButtonOK->hide();
-    labelButtonOKText = new QLabel(this);
-    labelButtonOKText->setGeometry(labelButtonOK->geometry());
-    labelButtonOKText->setAlignment(Qt::AlignCenter);
-    labelButtonOKText->hide();
-
-    labelButtonDel = new QLabel(this);
-    labelButtonDel->setGeometry(336,152,67,47);
-    labelButtonDel->hide();
-
-    labelButtonCancel = new QLabel(this);
-    labelButtonCancel->setGeometry(560,26,50,50);
-
-    labelButtonCancelText = new QLabel(this);
-    labelButtonCancelText->setGeometry(labelButtonCancel->geometry());
-    labelButtonCancelText->setAlignment(Qt::AlignCenter);
-
     comKeyboard = new ComponentPasswordKeyboard(this);
 
     initConnect();
@@ -77,33 +58,10 @@ void PagePasswordAllChat::updatePassword(QString strKey)
 
 void PagePasswordAllChat::update()
 {
-    labelTitle->setFont(textResource.getFont(PAGE_PASSWORD,"labelTitle"));
-    labelTitle->setText(textResource.getText(PAGE_PASSWORD,"labelTitle").at(instance.getPasswordStatus()));
-    labelTitleSub->setFont(textResource.getFont(PAGE_PASSWORD,"labelTitleSub"));
-    labelTitleSub->setText(textResource.getText(PAGE_PASSWORD,"labelTitleSub").at(instance.getPasswordStatus()));
-
-    //instance.pixLoad(labelPasswordBg,false,strDirPath,"/passwordNumBg.png");
-
-    instance.pixLoad(labelButtonOK,false,strDirPath,"/buttonOK.png");
-
-    labelButtonOKText->setStyleSheet("color: #ffffff;");
-    labelButtonOKText->setFont(textResource.getFont(PAGE_PASSWORD,"labelButtonOKText"));
-    labelButtonOKText->setText(textResource.getText(PAGE_PASSWORD,"labelButtonOKText").at(0));
-
-    instance.pixLoad(labelButtonCancel,false,strDirPath,"/buttonCancel.png");
-
-    instance.pixLoad(labelButtonDel,false,strDirPath,"/buttonDelete.png");
-
-
-
-    if(instance.getPasswordStatus() != PASSWORD_LOGIN)
-    {
-        labelButtonCancel->show();
-    }
-    else
-    {
-        labelButtonCancel->hide();
-    }
+    labelTitle->setFont(textResource.getFont(PAGE_PASSWORD_ALLCHAT,"labelTitle"));
+    labelTitle->setText(textResource.getText(PAGE_PASSWORD_ALLCHAT,"labelTitle").at(instance.getPasswordStatus()));
+    labelTitleSub->setFont(textResource.getFont(PAGE_PASSWORD_ALLCHAT,"labelTitleSub"));
+    labelTitleSub->setText(textResource.getText(PAGE_PASSWORD_ALLCHAT,"labelTitleSub").at(instance.getPasswordStatus()));
 }
 
 void PagePasswordAllChat::pageShow()

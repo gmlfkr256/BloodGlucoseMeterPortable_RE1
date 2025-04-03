@@ -22,12 +22,6 @@ public:
     int nCheckButtonNum = -1;
     QLabel *labelButtonNum[10];
 
-    QLabel *labelButtonOK;
-    QLabel *labelButtonOKText;
-    QLabel *labelButtonDel;
-    QLabel *labelButtonCancel;
-    QLabel *labelButtonCancelText;
-
     ComponentPasswordKeyboard *comKeyboard;
 
     void update() override;
