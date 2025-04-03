@@ -230,7 +230,7 @@ void ComponentPasswordKeyboard::processOK()
         }
 #else
         // 테스트 환경 시나리오별 강제 분기
-        if(strPwd == "1111") {
+        if(strPwd == instance.sysUserInfo[0].passwd) {
             nErrCode = GAPI_PASSWD_ECODE_NORMAL;
             instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
         }

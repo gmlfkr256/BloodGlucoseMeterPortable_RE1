@@ -323,18 +323,25 @@ void Singleton::setUserPasswordChange()
 #if DEVICE
     QByteArray baKey = strPasswordChange.toUtf8();
 
-    #if NEW_PASSWORD
-        int nErrCode = 0;
-        guiApi.glucoseSetAdminPassword(baKey.data(), baKey.size(), &nErrCode);
-        setPasswordErrCode(nErrCode);
-    #else
-        guiApi.glucoseSetUserPassword(nUserNumber, baKey.data());
-    #endif
+#if NEW_PASSWORD
+    int nErrCode = 0;
+    guiApi.glucoseSetAdminPassword(baKey.data(), baKey.size(), &nErrCode);
+    setPasswordErrCode(nErrCode);
+#else
+    guiApi.glucoseSetUserPassword(nUserNumber, baKey.data());
+#endif
 
+#else
+#if NEW_PASSWORD
+    memset(sysUserInfo[0].passwd, 0, sizeof(sysUserInfo[0].passwd));
+    strncpy(sysUserInfo[0].passwd, strPasswordChange.toUtf8().data(),
+            sizeof(sysUserInfo[0].passwd) - 1);
 #else
     memset(sysUserInfo[getUserNumber()].passwd, 0, sizeof(sysUserInfo[getUserNumber()].passwd));
     strncpy(sysUserInfo[getUserNumber()].passwd, strPasswordChange.toUtf8().data(),
             sizeof(sysUserInfo[getUserNumber()].passwd) - 1);
+#endif
+
 #endif
 }
 
