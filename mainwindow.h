@@ -49,6 +49,7 @@
 #include "Page/pageresultfail.h"
 #include "Page/pageupagradefail.h"
 #include "Page/pagepasswordallchat.h"
+#include "Page/pageselectuser.h"
 
 
 class MainWindow : public QMainWindow
@@ -109,6 +110,7 @@ public:
     PageResultFail *pageResultFail;
     PageUpagradeFail *pageUpgradeFail;
     PagePasswordAllChat *pagePasswordAllChat;
+    PageSelectUser *pageSelectUser;
 
     QList<int> listComHiddenPageIndex;
     QMap<PageNum,QString> mapPageNumName;

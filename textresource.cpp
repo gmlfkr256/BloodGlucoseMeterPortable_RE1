@@ -1415,6 +1415,12 @@ void TextResource::init()
                                                     "PASSWORD_STR_MAX"
                                                 });
 
+    //PAGE_SELECT_USER
+    fontData[Lan][PAGE_SELECT_USER].insert("labelTitle",QFont(currentFont, instance.pixelToPoint(44),QFont::Bold));
+    textData[Lan][PAGE_SELECT_USER].insert("labelTitle",QStringList{"사용자를 선택해주세요"});
+
+    fontData[Lan][PAGE_SELECT_USER].insert("labelUser",QFont(currentFont, instance.pixelToPoint(50),QFont::Bold));
+
     //PAGE_HOME
     fontData[Lan][PAGE_HOME].insert("labelTextStatus", QFont(currentFont, instance.pixelToPoint(26), QFont::Bold));
     textData[Lan][PAGE_HOME].insert("labelTextStatus", QStringList{
@@ -1711,6 +1717,7 @@ void TextResource::init()
                                            "今天",
                                            "- 7天前"
                                        });
+
 
 
     //=====================================================================================================================================

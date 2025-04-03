@@ -12,6 +12,9 @@ public:
 
     QString strDirPath = "/ImageSelectUser";
 
+    QLabel *labelTitle;
+    QLabel *labelUser[USER_MAX];
+
     void update() override;
     void pageShow() override;
     void pageHide() override;

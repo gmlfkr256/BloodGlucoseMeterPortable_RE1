@@ -61,6 +61,11 @@ void MainWindow::init()
     listComHiddenPageIndex.append(stackedWidget->indexOf(pagePasswordConfirm));
     qDebug()<<"====================== PAGE_PASSWORD_CONFIRM";
 
+    pageSelectUser = new PageSelectUser(this);
+    stackedWidget->addWidget(pageSelectUser);
+    listComHiddenPageIndex.append(stackedWidget->indexOf(pageSelectUser));
+    qDebug()<<"====================== PAGE_SELECT_USER";
+
     pageHome = new PageHome(this);
     stackedWidget->addWidget(pageHome);
     qDebug()<<"====================== PAGE_HOME";
@@ -218,6 +223,7 @@ void MainWindow::init()
         {PAGE_PASSWORD_ALLCHAT, "PagePasswordAllCaht"},
         {PAGE_PASSWORD, "PagePassword"},
         {PAGE_PASSWORD_CONFIRM, "PagePasswordConfirm"},
+        {PAGE_SELECT_USER, "PageSelectUser"},
         {PAGE_HOME, "PageHome"},
         {PAGE_SELECT, "PageSelect"},
         {PAGE_MENU, "PageMenu"},
