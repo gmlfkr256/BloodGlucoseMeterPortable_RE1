@@ -50,6 +50,7 @@ static int massStorageAct (int cmd, const char *devNameP, char *mntPathP);
 static int getMountPath (const char *devNameP, char *rMountPathP);
 static int clearUserInfoFile (int user, char *fnameP);
 static int clearHistoryInfo (int user);
+static int setDefaultAdminPasswd (char *rPasswdP);
 static int systemReboot (void);
 
 extern int vtIpcProcess (uint8_t msgId, uint8_t msgAct, void *dataP, int dLen);
@@ -424,6 +425,36 @@ static int clearHistoryInfo (int user)
 	// make a default user info file
 	sprintf (cmd, "%s/%s", l_CfgDataPath[user], GAPI_SYS_USER_INFO_FNAME);
 	clearUserInfoFile (user, cmd);
+
+	return GAPI_SUCCESS;
+}
+
+/*****************************************************************************
+ * FUNCTION NAME : 
+ * DESCRIPTIONS : 
+ * PARAMETERS : 
+ * RETURNS : None
+ *****************************************************************************/
+static int setDefaultAdminPasswd (char *rPasswdP)
+{
+	char fname[128], buf[80], *str;
+	FILE *fp;
+
+	if (!rPasswdP)
+		return GAPI_FAIL;
+
+	sprintf (fname, "%s/%s/%s", l_CfgBasePath, GAPI_SYS_VDATA_BASE_DNAME, \
+		GAPI_SYS_SERIAL_NUM_FNAME);
+
+	if ((fp = fopen (fname, "r")) != (FILE *) NULL) {
+		fgets (buf, sizeof (buf), fp);
+		fclose (fp);
+		buf[strlen (buf) - 1] = '\0';		// remove '\n'
+
+		if ((str = strrchr (buf, '-')) != (char *) NULL) {
+			sprintf (rPasswdP, "VT%s", str);
+		}
+	}
 
 	return GAPI_SUCCESS;
 }
@@ -893,6 +924,109 @@ int GuiApi::getHistoryAll (gapiHistInfo_t *rHistInfoP)
 		}
 	}
 	closedir (dir_info);
+
+	return GAPI_SUCCESS;
+}
+
+/*****************************************************************************
+ * FUNCTION NAME : 
+ * DESCRIPTIONS : 
+ * PARAMETERS : 
+ * RETURNS : None
+ *****************************************************************************/
+int GuiApi::glucoseSetAdminPassword (char *pwdP, int pwdLen, int *rEcodeP)
+{
+	uint8_t i, cnt_num, cnt_alpha;
+
+	if (!pwdP || !rEcodeP)
+		return GAPI_FAIL;
+
+	if (pwdLen < GAPI_ADMIN_PASSWD_MIN_LEN) {
+		*rEcodeP = GAPI_PASSWD_ECODE_SHORT_LEN;
+		goto ret;
+	}
+
+	// check digit
+	cnt_num = 0;
+	for (i = 0; i < pwdLen; i++) {
+		if (isdigit (pwdP[i]) != 0)
+			cnt_num++;
+	}
+
+	if (cnt_num == 0) {
+		*rEcodeP = GAPI_PASSWD_ECODE_NO_NUMBER;
+		goto ret;
+	}
+
+	// check alphabet
+	cnt_alpha = 0;
+	for (i = 0; i < pwdLen; i++) {
+		if (isalpha (pwdP[i]) != 0)
+			cnt_alpha++;
+	}
+
+	if (cnt_alpha == 0) {
+		*rEcodeP = GAPI_PASSWD_ECODE_NO_ALPHABET;
+		goto ret;
+	}
+
+	// check special
+	if ((cnt_num + cnt_alpha) >= pwdLen) {
+		*rEcodeP = GAPI_PASSWD_ECODE_NO_SPECIAL;
+		goto ret;
+	}
+
+	// save password
+	{
+		char cmd[128];
+
+		sprintf (cmd, "echo \"%s\" | base64 > %s/%s", \
+			pwdP, l_CfgBasePath, GAPI_ADMIN_PASSWD_FNAME);
+		system (cmd);
+	}
+	*rEcodeP = GAPI_PASSWD_ECODE_NORMAL;
+
+ret:
+	return GAPI_SUCCESS;
+}
+
+/*****************************************************************************
+ * FUNCTION NAME : 
+ * DESCRIPTIONS : 
+ * PARAMETERS : 
+ * RETURNS : None
+ *****************************************************************************/
+int GuiApi::glucoseChkAdminPassword (char *pwdP, int pwdLen, int *rResultP)
+{
+	FILE *fp;
+	char fname[128], str[32] = { 0, };
+
+	if (!pwdP || !rResultP)
+		return GAPI_FAIL;
+
+	// get passwd data
+	sprintf (fname, "%s/%s", l_CfgBasePath, GAPI_ADMIN_PASSWD_FNAME);
+	if ((fp = fopen (fname, "r")) == (FILE *) NULL) {
+		gapiError("couldn't the open password file (%s)\n", fname);
+		return GAPI_FAIL;
+	}
+	fscanf (fp, "%s", str);
+	fclose (fp);
+
+	sprintf (fname, "echo \"%s\" | base64 --decode", str);
+	memset (str, 0, sizeof (str));
+
+	if ((fp = popen (fname, "r")) != (FILE *) NULL) {
+		fscanf (fp, "%s", str);
+		pclose (fp);
+	}
+
+	if (!strcmp (str, pwdP)) {
+		*rResultP = GAPI_SUCCESS;
+	}
+	else {
+		*rResultP = GAPI_FAIL;
+	}
 
 	return GAPI_SUCCESS;
 }
@@ -1936,6 +2070,16 @@ int GuiApi::glucoseInitFactory (void)
 		clearHistoryInfo (user);
 	}
 
+	// set to default admin password
+	{
+		char cmd[128], passwd[32] = { 0, };
+
+		setDefaultAdminPasswd (passwd);
+		sprintf (cmd, "echo \"%s\" | base64 > %s/%s; sync", passwd, l_CfgBasePath, \
+			GAPI_ADMIN_PASSWD_FNAME);
+		system (cmd);
+	}
+
 	// reboot
 	return (systemReboot ());
 }
@@ -2503,6 +2647,16 @@ int GuiApi::glucoseAttach (void)
 
 	buf[strlen (buf) - 1] = '\0';		// remove '\n'
 	strcpy (l_CfgUpgradePath, buf);
+
+	// check admin password file
+	sprintf (buf, "%s/%s", l_CfgBasePath, GAPI_ADMIN_PASSWD_FNAME);
+	if (access (buf, F_OK) != 0) {
+		char passwd[32] = { 0, };
+
+		setDefaultAdminPasswd (passwd);
+		sprintf (temp, "echo \"%s\" | base64 > %s; sync", passwd, buf);
+		system (temp);
+	}
 
 	return (vtIpcProbe ());
 }

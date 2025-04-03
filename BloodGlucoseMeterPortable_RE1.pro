@@ -71,6 +71,7 @@ SOURCES += \
     Page/pageresultfail.cpp \
     Page/pagereverse.cpp \
     Page/pageselect.cpp \
+    Page/pageselectuser.cpp \
     Page/pagesleep.cpp \
     Page/pagesound.cpp \
     Page/pagethreshold.cpp \
@@ -142,6 +143,7 @@ HEADERS += \
     Page/pageresultfail.h \
     Page/pagereverse.h \
     Page/pageselect.h \
+    Page/pageselectuser.h \
     Page/pagesleep.h \
     Page/pagesound.h \
     Page/pagethreshold.h \
