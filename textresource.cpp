@@ -156,6 +156,12 @@ void TextResource::init()
                                                     "PASSWORD_STR_MAX" //PASSWORD_STR_MAX
                                                 });
 
+    //PAGE_SELECT_USER
+    fontData[Lan][PAGE_SELECT_USER].insert("labelTitle",QFont(currentFont, instance.pixelToPoint(44),QFont::Bold));
+    textData[Lan][PAGE_SELECT_USER].insert("labelTitle",QStringList{"사용자를 선택해주세요"});
+
+    fontData[Lan][PAGE_SELECT_USER].insert("labelUser",QFont(currentFont, instance.pixelToPoint(50),QFont::Bold));
+
     //PAGE_HOME
     fontData[Lan][PAGE_HOME].insert("labelTextStatus",QFont(currentFont,instance.pixelToPoint(33),QFont::Bold));
     textData[Lan][PAGE_HOME].insert("labelTextStatus",QStringList{"기상","조식 전","조식 후","중식 전","중식 후","석식 전","석식 후","취침"});
@@ -1411,15 +1417,10 @@ void TextResource::init()
                                                     "是否删除用户信息？",                     // PASSWORD_STR_DELETE
                                                     "删除用户信息将重置密码和设置",           // PASSWORD_STR_DELETE_CONFIRM
                                                     "用户信息已删除，\n系统将重启以重置设置",   // PASSWORD_STR_DELETE_SUCCESS
-                                                    "正在退出登录，请重新登录",               // PASSWORD_STR_LOGOUT
+                                                    "正在退出登录，请重요新登录",               // PASSWORD_STR_LOGOUT
                                                     "PASSWORD_STR_MAX"
                                                 });
 
-    //PAGE_SELECT_USER
-    fontData[Lan][PAGE_SELECT_USER].insert("labelTitle",QFont(currentFont, instance.pixelToPoint(44),QFont::Bold));
-    textData[Lan][PAGE_SELECT_USER].insert("labelTitle",QStringList{"사용자를 선택해주세요"});
-
-    fontData[Lan][PAGE_SELECT_USER].insert("labelUser",QFont(currentFont, instance.pixelToPoint(50),QFont::Bold));
 
     //PAGE_HOME
     fontData[Lan][PAGE_HOME].insert("labelTextStatus", QFont(currentFont, instance.pixelToPoint(26), QFont::Bold));
