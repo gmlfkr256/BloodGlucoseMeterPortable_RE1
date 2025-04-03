@@ -225,19 +225,19 @@ void ComponentPasswordKeyboard::processOK()
             nErrCode = GAPI_PASSWD_ECODE_NORMAL;
             instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
         }
-        else if(strPwd == "sh") {
+        else if(strPwd == "00") {
             nErrCode = GAPI_PASSWD_ECODE_SHORT_LEN;
             instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
         }
-        else if(strPwd == "no") {
+        else if(strPwd == "11") {
             nErrCode = GAPI_PASSWD_ECODE_NO_NUMBER;
             instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
         }
-        else if(strPwd == "al") {
+        else if(strPwd == "22") {
             nErrCode = GAPI_PASSWD_ECODE_NO_ALPHABET;
             instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
         }
-        else if(strPwd == "sp") {
+        else if(strPwd == "33") {
             nErrCode = GAPI_PASSWD_ECODE_NO_SPECIAL;
             instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
         }
