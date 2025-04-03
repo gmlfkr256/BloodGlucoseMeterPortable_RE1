@@ -260,7 +260,7 @@ void MainWindow::init()
 
     HideComponents();
 
-    setPageByPageNum(PAGE_PASSWORD);
+    //setPageByPageNum(PAGE_PASSWORD);
 }
 
 void MainWindow::initConnect()

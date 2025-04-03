@@ -107,7 +107,7 @@ void PagePasswordAllChat::update()
 
 void PagePasswordAllChat::pageShow()
 {
-
+    update();
 }
 
 void PagePasswordAllChat::pageHide()
@@ -117,10 +117,7 @@ void PagePasswordAllChat::pageHide()
 
 void PagePasswordAllChat::mousePressEvent(QMouseEvent *ev)
 {
-    if(instance.touchCheck(labelButtonDel->geometry(),ev))
-    {
-        emit signalPasswordDel();
-    }
+
 }
 
 
