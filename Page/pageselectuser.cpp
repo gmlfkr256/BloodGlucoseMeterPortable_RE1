@@ -64,7 +64,7 @@ void PageSelectUser::mousePressEvent(QMouseEvent *ev)
         if(instance.touchCheck(labelUser[i]->geometry(),ev))
         {
             instance.actUserLogin(i);
-            emit signalShowPageNum(PAGE_MENU);
+            emit signalShowPageNum(PAGE_HOME);
         }
     }
 }
