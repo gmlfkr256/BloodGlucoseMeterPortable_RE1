@@ -208,6 +208,8 @@ void PagePasswordConfirm::mousePressEvent(QMouseEvent *ev)
             emit signalShowPageNum(PAGE_PASSWORD);
 #endif
             break;
+        case PASSWORD_STR_INIT:
+            instance.setPasswordStatus(PASSWORD_INIT);
         case PASSWORD_STR_MAX:
             break;
         }

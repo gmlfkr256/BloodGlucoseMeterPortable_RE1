@@ -120,7 +120,7 @@ void TextResource::init()
     fontData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelButtonNum",QFont(currentFont,instance.pixelToPoint(44),QFont::Bold));
 
     fontData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitle",QFont(currentFont,instance.pixelToPoint(40),QFont::Bold));
-    textData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitle",QStringList{"로그인을 하세요","비밀번호 변경","사용자 삭제","비밀번호 확인","비밀번호 재확인","PASSWORD_MAX"});
+    textData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitle",QStringList{"로그인을 하세요","비밀번호 변경","사용자 삭제","비밀번호 확인","비밀번호 재확인","비밀번호 초기화","PASSWORD_MAX"});
 
     fontData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitleSub",QFont(currentFont,instance.pixelToPoint(30)));
     textData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitleSub",QStringList{
@@ -152,6 +152,7 @@ void TextResource::init()
                                                     "사용자 정보 삭제", //PASSWORD_STR_DELETE_CONFIRM,
                                                     "사용자 정보 삭제", //PASSWORD_STR_DELETE_SUCCESS,
                                                     "로그아웃", //PASSWORD_STR_LOGOUT,
+                                                    "비빌번호 초기화", //PASSWORD_STR_INIT,
                                                     "PASSWORD_STR_MAX" //PASSWORD_STR_MAX
                                                 });
     fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText",QFont(currentFont,instance.pixelToPoint(nTextSize),QFont::Bold));
@@ -171,6 +172,7 @@ void TextResource::init()
                                                     "사용자 정보를 삭제할 경우\n 비밀번호와 설정이 초기화 됩니다", //PASSWORD_STR_DELETE_CONFIRM,
                                                     "사용자 정보가 삭제되었습니다\n설정 초기화를 위해 재부팅이 진행됩니다", //PASSWORD_STR_DELETE_SUCCESS,
                                                     "로그아웃을 진행합니까?\n로그아웃시 다시 로그인해주시기 바랍니다", //PASSWORD_STR_LOGOUT,
+                                                    "비밀번호를 초기화하시겠습니까?", //PASSWORD_STR_INIT,
                                                     "PASSWORD_STR_MAX" //PASSWORD_STR_MAX
                                                 });
 

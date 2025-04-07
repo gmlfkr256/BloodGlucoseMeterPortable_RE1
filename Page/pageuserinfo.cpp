@@ -80,7 +80,8 @@ void PageUserInfo::mousePressEvent(QMouseEvent *ev)
 #if NEW_PASSWORD
     if(instance.touchCheck(labelText[1]->geometry(),ev))
     {
-
+        instance.setPasswordStrStatus(PASSWORD_STR_INIT);
+        emit signalShowPageNum(PAGE_PASSWORD_CONFIRM);
     }
 #endif
 
