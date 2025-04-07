@@ -214,6 +214,7 @@ void ComponentPasswordKeyboard::processOK()
     case PASSWORD_LOGIN:
         qDebug()<<"keyboard: login";
 #if DEVICE
+        /*
         if(instance.guiApi.glucoseChkAdminPassword(baKey.data(), baKey.size(), &nErrCode) == GAPI_SUCCESS)
         {
             qDebug() << "glucoseCheckAdminPassword Success";
@@ -233,9 +234,10 @@ void ComponentPasswordKeyboard::processOK()
             qDebug() << "glucoseChkAdminPassword Fail";
             instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
         }
+        */
 #else
         // 테스트 환경 시나리오별 강제 분기
-        if(strPwd == instance.sysUserInfo[0].passwd || strPwd == instance.sysUserInfo[1].passwd) {
+        if(strPwd == instance.sysUserInfo[instance.getUserNumber()].passwd) {
             nErrCode = GAPI_PASSWD_ECODE_NORMAL;
             instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
         }
