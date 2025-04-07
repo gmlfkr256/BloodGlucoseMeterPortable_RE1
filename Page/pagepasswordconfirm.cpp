@@ -212,6 +212,25 @@ void PagePasswordConfirm::mousePressEvent(QMouseEvent *ev)
             instance.setPasswordStrStatus(PASSWORD_STR_INIT_CONFIRM);
             update();
             break;
+        case PASSWORD_STR_INIT_CONFIRM:
+            instance.setPasswordStatus(PASSWORD_INIT);
+#if NEW_PASSWORD
+            emit signalShowPageNum(PAGE_PASSWORD_ALLCHAT);
+#else
+            emit signalShowPageNum(PAGE_PASSWORD);
+#endif
+            break;
+        case PASSWORD_STR_INIT_SUCCESS:
+#if DEVICE
+            instance.guiApi.glucoseInitAdminPassword();
+#endif
+            instance.setPasswordStatus(PASSWORD_LOGIN);
+#if NEW_PASSWORD
+            emit signalShowPageNum(PAGE_PASSWORD_ALLCHAT);
+#else
+            emit signalShowPageNum(PAGE_PASSWORD);
+#endif
+            break;
         case PASSWORD_STR_MAX:
             break;
         }

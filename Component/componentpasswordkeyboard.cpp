@@ -298,7 +298,12 @@ void ComponentPasswordKeyboard::processOK()
             else
                 instance.setPasswordStrStatus(PASSWORD_STR_REPEAT_FAIL);
             break;
-
+        case PASSWORD_INIT:
+            if(instance.getStrNowUserPassword() == strPwd)
+                instance.setPasswordStrStatus(PASSWORD_STR_INIT_SUCCESS);
+            else
+                instance.setPasswordStrStatus(PASSWORD_STR_REPEAT_FAIL);
+            break;
         default:
             instance.setPasswordStrStatus(PASSWORD_STR_MAX);
             break;
@@ -312,6 +317,17 @@ void ComponentPasswordKeyboard::processOK()
             instance.setPasswordStrStatus(PASSWORD_STR_CONFIRM_FAIL);
         break;
 
+    case PASSWORD_INIT:
+        if(instance.getStrNowUserPassword() == strPwd)
+        {
+            instance.setPasswordStatusPrev(PASSWORD_INIT);
+            instance.setPasswordStrStatus(PASSWORD_STR_REPEAT);
+        }
+        else
+        {
+            instance.setPasswordStrStatus(PASSWORD_STR_CONFIRM_FAIL);
+        }
+        break;
     case PASSWORD_MAX:
         instance.setPasswordStrStatus(PASSWORD_STR_MAX);
         break;
