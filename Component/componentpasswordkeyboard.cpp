@@ -205,7 +205,7 @@ void ComponentPasswordKeyboard::setFunctionNumBytButton(int nIndex)
 
 void ComponentPasswordKeyboard::processOK()
 {
-    bool bIsCheckPassword = false;
+
     int nErrCode = PASSWORD_ECODE_NORMAL;
 
     switch (instance.getPasswordStatus())
@@ -213,6 +213,7 @@ void ComponentPasswordKeyboard::processOK()
     case PASSWORD_LOGIN:
         qDebug()<<"keyboard: login";
 #if DEVICE
+        bool bIsCheckPassword = false;
         if(strKey == instance.sysUserInfo[instance.getUserNumber()].passwd)
         {
             bIsCheckPassword = true;
