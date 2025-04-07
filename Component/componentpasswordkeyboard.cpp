@@ -136,7 +136,7 @@ void ComponentPasswordKeyboard::mousePressEvent(QMouseEvent *ev)
         deleteLastKey();
     }
 
-    if(instance.touchCheck(labelButtonCancel->geometry(),ev) && !labelButtonCancel->isHidden())
+    if(instance.touchCheck(labelButtonCancel->geometry(),ev) && !(labelButtonCancel->text()==""))
     {
         emit signalCancel();
     }
