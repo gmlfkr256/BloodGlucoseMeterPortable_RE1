@@ -227,6 +227,15 @@ typedef enum
     VERSION_SERIAL
 } VersionIndex;
 
+typedef enum {
+    PASSWORD_ECODE_NORMAL = 0,
+    PASSWORD_ECODE_SHORT_LEN,
+    PASSWORD_ECODE_NO_NUMBER,
+    PASSWORD_ECODE_NO_ALPHABET,
+    PASSWORD_ECODE_NO_SPECIAL,
+    PASSWORD_ECODE_MAX
+} PasswordErrIndex;
+
 Q_ENUMS(VersionIndex)
 
 class Singleton : public QObject
