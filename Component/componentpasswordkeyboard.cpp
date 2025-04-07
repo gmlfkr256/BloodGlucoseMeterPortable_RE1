@@ -235,9 +235,15 @@ void ComponentPasswordKeyboard::processOK()
 #else
         // 테스트 환경 시나리오별 강제 분기
         if(strKey == instance.sysUserInfo[instance.getUserNumber()].passwd) {
-            nErrCode = PASSWORD_ECODE_NORMAL;
+            //nErrCode = PASSWORD_ECODE_NORMAL;
             instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
         }
+        else
+        {
+            instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
+        }
+
+        /*
         else if(strKey == "00") {
             nErrCode = PASSWORD_ECODE_SHORT_LEN;
             instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
@@ -258,8 +264,10 @@ void ComponentPasswordKeyboard::processOK()
             nErrCode = PASSWORD_ECODE_MAX;
             instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
         }
-
         instance.setPasswordErrCode(nErrCode);
+        */
+
+
 #endif
         break;
 
