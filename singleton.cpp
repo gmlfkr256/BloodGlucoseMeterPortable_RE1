@@ -762,10 +762,10 @@ gapiUpgradeErrCode_e Singleton::getUpgradeErrCode()
 
 void Singleton::setPasswordErrCode(int errCode)
 {
-    passwordErrCode = static_cast<gapiPasswordErrCode_e>(errCode);
+    passwordErrCode = static_cast<PasswordErrIndex>(errCode);
 }
 
-gapiPasswordErrCode_e Singleton::getPasswordErrCode()
+PasswordErrIndex Singleton::getPasswordErrCode()
 {
     return passwordErrCode;
 }

@@ -85,7 +85,7 @@ void PagePasswordConfirm::update()
 
 #if NEW_PASSWORD
 
-    if(instance.getPasswordErrCode() != GAPI_PASSWD_ECODE_NORMAL)
+    if(instance.getPasswordErrCode() != PASSWORD_ECODE_NORMAL)
     {
         qDebug()<<"getPasswordErrCode: "<<instance.getPasswordErrCode();
         labelText->setText(textResource.getText(PAGE_PASSWORD_CONFIRM,"labelTextError").at(instance.getPasswordErrCode()));

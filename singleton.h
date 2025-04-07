@@ -391,7 +391,7 @@ public:
     gapiUpgradeErrCode_e getUpgradeErrCode();
 
     void setPasswordErrCode(int errCode);
-    gapiPasswordErrCode_e getPasswordErrCode();
+    PasswordErrIndex getPasswordErrCode();
 
 private:
     //Singleton() = default;
@@ -445,7 +445,7 @@ private:
     QString strSerialNumber = "PGM900-2105-0000004";//"text5";
 
     gapiUpgradeErrCode_e upgradeErrCode = GAPI_UPGRADE_ECODE_NORMAL;
-    gapiPasswordErrCode_e passwordErrCode = GAPI_PASSWD_ECODE_NORMAL;
+    PasswordErrIndex passwordErrCode = PASSWORD_ECODE_NORMAL;
 };
 
 #endif // SINGLETON_H
