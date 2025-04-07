@@ -273,6 +273,7 @@ void PagePassword::processOK()
             instance.setPasswordStrStatus(PASSWORD_STR_CONFIRM_FAIL);
         break;
     case PASSWORD_MAX:
+    default:
         instance.setPasswordStrStatus(PASSWORD_STR_MAX);
         break;
     }

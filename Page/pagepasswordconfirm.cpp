@@ -32,6 +32,7 @@ void PagePasswordConfirm::update()
     customButtonCancel->update();
 
     PasswordStrStatus nStrStatus = instance.getPasswordStrStatus();
+
     switch (nStrStatus)
     {
     case PASSWORD_STR_LOGIN_SUCCESS:
@@ -43,6 +44,7 @@ void PagePasswordConfirm::update()
     case PASSWORD_STR_EDIT_CHANGE:
     case PASSWORD_STR_EDIT_SUCCESS:
     case PASSWORD_STR_DELETE_SUCCESS:
+    case PASSWORD_STR_INIT_SUCCESS:
         customButtonCancel->hide();
         customButtonOK->setLongWidth(true);
         break;
@@ -51,6 +53,8 @@ void PagePasswordConfirm::update()
     case PASSWORD_STR_EDIT_CONFIRM:
     case PASSWORD_STR_DELETE:
     case PASSWORD_STR_DELETE_CONFIRM:
+    case PASSWORD_STR_INIT:
+    case PASSWORD_STR_INIT_CONFIRM:
         customButtonCancel->show();
         customButtonOK->setLongWidth(false);
 
@@ -80,12 +84,15 @@ void PagePasswordConfirm::update()
     labelText->setFont(textResource.getFont(PAGE_PASSWORD_CONFIRM,"labelText"));
 
 #if NEW_PASSWORD
-    if(nStrStatus == PASSWORD_STR_LOGIN_FAIL)
+
+    if(instance.getPasswordErrCode() != GAPI_PASSWD_ECODE_NORMAL)
     {
+        qDebug()<<"getPasswordErrCode: "<<instance.getPasswordErrCode();
         labelText->setText(textResource.getText(PAGE_PASSWORD_CONFIRM,"labelTextError").at(instance.getPasswordErrCode()));
     }
     else
     {
+
         labelText->setText(textResource.getText(PAGE_PASSWORD_CONFIRM,"labelText").at(nStrStatus));
     }
 #else
@@ -253,6 +260,7 @@ void PagePasswordConfirm::mousePressEvent(QMouseEvent *ev)
 
 void PagePasswordConfirm::pageShow()
 {
+    qDebug()<<"PagePasswordConfirm pageShow()";
     update();
 }
 

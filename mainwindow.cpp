@@ -220,10 +220,10 @@ void MainWindow::init()
 
     mapPageNumName =
     {
+        {PAGE_SELECT_USER, "PageSelectUser"},
         {PAGE_PASSWORD_ALLCHAT, "PagePasswordAllCaht"},
         {PAGE_PASSWORD, "PagePassword"},
         {PAGE_PASSWORD_CONFIRM, "PagePasswordConfirm"},
-        {PAGE_SELECT_USER, "PageSelectUser"},
         {PAGE_HOME, "PageHome"},
         {PAGE_SELECT, "PageSelect"},
         {PAGE_MENU, "PageMenu"},

@@ -136,11 +136,8 @@ void ComponentPasswordKeyboard::mousePressEvent(QMouseEvent *ev)
         deleteLastKey();
     }
 
-    if(instance.touchCheck(labelButtonCancel->geometry(),ev))
+    if(instance.touchCheck(labelButtonCancel->geometry(),ev) && !labelButtonCancel->isHidden())
     {
-        if(instance.getPasswordStatus() == PASSWORD_LOGIN)
-            return;
-
         emit signalCancel();
     }
 
@@ -215,13 +212,21 @@ void ComponentPasswordKeyboard::processOK()
     switch (instance.getPasswordStatus())
     {
     case PASSWORD_LOGIN:
+        qDebug()<<"keyboard: login";
 #if DEVICE
         if(instance.guiApi.glucoseChkAdminPassword(baKey.data(), baKey.size(), &nErrCode) == GAPI_SUCCESS)
         {
-            if(nErrCode == GAPI_PASSWD_ECODE_NORMAL)
+            qDebug() << "glucoseCheckAdminPassword Success";
+            if(nErrCode == GAPI_SUCCESS)
+            {
                 instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
+            }
             else
+            {
                 instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
+            }
+
+            qDebug() << "nErrCode: " << nErrCode;
         }
         else
         {
@@ -230,7 +235,7 @@ void ComponentPasswordKeyboard::processOK()
         }
 #else
         // 테스트 환경 시나리오별 강제 분기
-        if(strPwd == instance.sysUserInfo[0].passwd) {
+        if(strPwd == instance.sysUserInfo[0].passwd || strPwd == instance.sysUserInfo[1].passwd) {
             nErrCode = GAPI_PASSWD_ECODE_NORMAL;
             instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
         }
@@ -255,8 +260,6 @@ void ComponentPasswordKeyboard::processOK()
             instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
         }
 #endif
-        // 에러코드는 DEVICE/비DEVICE 공통 저장
-        instance.setPasswordErrCode(nErrCode);
         break;
 
     case PASSWORD_EDIT:

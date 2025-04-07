@@ -39,10 +39,10 @@ Q_ENUMS(UserNum)
 
 typedef enum
 {
-    PAGE_PASSWORD_ALLCHAT = 0,
+    PAGE_SELECT_USER = 0,
+    PAGE_PASSWORD_ALLCHAT,
     PAGE_PASSWORD, //= 0,
     PAGE_PASSWORD_CONFIRM,
-    PAGE_SELECT_USER,
     PAGE_HOME,
     PAGE_SELECT,
     PAGE_MENU,
@@ -435,8 +435,8 @@ private:
     QString strBleName = "HAPPYZONE-007AB0";//"test4";
     QString strSerialNumber = "PGM900-2105-0000004";//"text5";
 
-    gapiUpgradeErrCode_e upgradeErrCode;
-    gapiPasswordErrCode_e passwordErrCode;
+    gapiUpgradeErrCode_e upgradeErrCode = GAPI_UPGRADE_ECODE_NORMAL;
+    gapiPasswordErrCode_e passwordErrCode = GAPI_PASSWD_ECODE_NORMAL;
 };
 
 #endif // SINGLETON_H
