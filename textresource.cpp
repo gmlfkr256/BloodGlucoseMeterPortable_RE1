@@ -173,6 +173,8 @@ void TextResource::init()
                                                     "사용자 정보가 삭제되었습니다\n설정 초기화를 위해 재부팅이 진행됩니다", //PASSWORD_STR_DELETE_SUCCESS,
                                                     "로그아웃을 진행합니까?\n로그아웃시 다시 로그인해주시기 바랍니다", //PASSWORD_STR_LOGOUT,
                                                     "비밀번호를 초기화하시겠습니까?", //PASSWORD_STR_INIT,
+                                                    "비밀번호를 초기화할 경우\n 비밀번호가 초기 설정 상태가 됩니다", //PASSWORD_STR_INIT_CONFIRM,
+                                                    "비밀번호가 초기화되었습니다", //PASSWORD_STR_INIT_SUCCESS,
                                                     "PASSWORD_STR_MAX" //PASSWORD_STR_MAX
                                                 });
 
