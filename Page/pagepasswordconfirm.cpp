@@ -223,6 +223,14 @@ void PagePasswordConfirm::mousePressEvent(QMouseEvent *ev)
         case PASSWORD_STR_INIT_SUCCESS:
 #if DEVICE
             instance.guiApi.glucoseInitAdminPassword();
+#else
+            for(int i=0; i<USER_MAX; i++)
+            {
+                //"1111","2222"
+                QString password = QString::number(i+1).repeated(4);
+                qstrncpy(instance.sysUserInfo[i].passwd,password.toUtf8().constData(),sizeof (instance.sysUserInfo[i].passwd));
+                qDebug()<<instance.sysUserInfo[i].passwd;
+            }
 #endif
             instance.setPasswordStatus(PASSWORD_LOGIN);
 #if NEW_PASSWORD

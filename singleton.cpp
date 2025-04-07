@@ -101,12 +101,11 @@ void Singleton::init()
 
     for(int i=0; i<USER_MAX; i++)
     {
+        //"1111","2222"
         QString password = QString::number(i+1).repeated(4);
         qstrncpy(sysUserInfo[i].passwd,password.toUtf8().constData(),sizeof (sysUserInfo[i].passwd));
         qDebug()<<sysUserInfo[i].passwd;
     }
-
-
 
     dispData.color = COLOR_DEFAULT;
     setDeviceColor(dispData.color);
