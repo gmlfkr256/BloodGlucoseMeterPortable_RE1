@@ -138,7 +138,7 @@ void ComponentPasswordKeyboard::mousePressEvent(QMouseEvent *ev)
 
     if(instance.touchCheck(labelButtonCancel->geometry(),ev))
     {
-        if(instance.getPasswordStatus()!= PASSWORD_LOGIN)
+        if(instance.getPasswordStatus() == PASSWORD_LOGIN)
             return;
 
         emit signalCancel();
