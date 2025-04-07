@@ -76,7 +76,7 @@ void PagePasswordAllChat::pageShow()
 
 void PagePasswordAllChat::pageHide()
 {
-    emit signalShowPageNum(instance.getPageNumPrev());
+    emit signalShowPageNum(PAGE_MENU);
 }
 
 void PagePasswordAllChat::mousePressEvent(QMouseEvent *ev)
