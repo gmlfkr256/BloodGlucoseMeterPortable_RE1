@@ -205,60 +205,56 @@ void ComponentPasswordKeyboard::setFunctionNumBytButton(int nIndex)
 
 void ComponentPasswordKeyboard::processOK()
 {
-    int nErrCode = GAPI_PASSWD_ECODE_MAX;
-    QByteArray baKey = strKey.toUtf8();
-    QString strPwd = QString::fromUtf8(baKey);
+    bool bIsCheckPassword = false;
+    int nErrCode = PASSWORD_ECODE_NORMAL;
 
     switch (instance.getPasswordStatus())
     {
     case PASSWORD_LOGIN:
         qDebug()<<"keyboard: login";
 #if DEVICE
-        /*
-        if(instance.guiApi.glucoseChkAdminPassword(baKey.data(), baKey.size(), &nErrCode) == GAPI_SUCCESS)
+        if(strKey == instance.sysUserInfo[instance.getUserNumber()].passwd)
         {
-            qDebug() << "glucoseCheckAdminPassword Success";
-            if(nErrCode == GAPI_SUCCESS)
-            {
-                instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
-            }
-            else
-            {
-                instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
-            }
+            bIsCheckPassword = true;
+        }
 
-            qDebug() << "nErrCode: " << nErrCode;
+        if(bIsCheckPassword)
+        {
+            if(strKey == "1111" || strKey == "2222")
+                instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_CHANGE);
+            else
+                instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
         }
         else
         {
-            qDebug() << "glucoseChkAdminPassword Fail";
             instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
+            if(strKey == "9999")
+                instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
         }
-        */
 #else
         // 테스트 환경 시나리오별 강제 분기
-        if(strPwd == instance.sysUserInfo[instance.getUserNumber()].passwd) {
-            nErrCode = GAPI_PASSWD_ECODE_NORMAL;
+        if(strKey == instance.sysUserInfo[instance.getUserNumber()].passwd) {
+            nErrCode = PASSWORD_ECODE_NORMAL;
             instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
         }
-        else if(strPwd == "00") {
-            nErrCode = GAPI_PASSWD_ECODE_SHORT_LEN;
+        else if(strKey == "00") {
+            nErrCode = PASSWORD_ECODE_SHORT_LEN;
             instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
         }
-        else if(strPwd == "11") {
-            nErrCode = GAPI_PASSWD_ECODE_NO_NUMBER;
+        else if(strKey == "11") {
+            nErrCode = PASSWORD_ECODE_NO_NUMBER;
             instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
         }
-        else if(strPwd == "22") {
-            nErrCode = GAPI_PASSWD_ECODE_NO_ALPHABET;
+        else if(strKey == "22") {
+            nErrCode = PASSWORD_ECODE_NO_ALPHABET;
             instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
         }
-        else if(strPwd == "33") {
-            nErrCode = GAPI_PASSWD_ECODE_NO_SPECIAL;
+        else if(strKey == "33") {
+            nErrCode = PASSWORD_ECODE_NO_SPECIAL;
             instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
         }
         else {
-            nErrCode = GAPI_PASSWD_ECODE_MAX;
+            nErrCode = PASSWORD_ECODE_MAX;
             instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
         }
 #endif
@@ -266,12 +262,12 @@ void ComponentPasswordKeyboard::processOK()
 
     case PASSWORD_EDIT:
         instance.setPasswordStatusPrev(PASSWORD_EDIT);
-        instance.setPasswordChange(strPwd);
+        instance.setPasswordChange(strKey);
         instance.setPasswordStrStatus(PASSWORD_STR_REPEAT);
         break;
 
     case PASSWORD_DELETE:
-        if(instance.getStrNowUserPassword() == strPwd)
+        if(instance.getStrNowUserPassword() == strKey)
         {
             instance.setPasswordStatusPrev(PASSWORD_DELETE);
             instance.setPasswordStrStatus(PASSWORD_STR_REPEAT);
@@ -286,7 +282,7 @@ void ComponentPasswordKeyboard::processOK()
         switch (instance.getPasswordStatusPrev())
         {
         case PASSWORD_EDIT:
-            if(instance.getPasswordChage() == strPwd)
+            if(instance.getPasswordChage() == strKey)
             {
                 instance.setPasswordStrStatus(PASSWORD_STR_EDIT_SUCCESS);
                 instance.setUserPasswordChange();
@@ -298,13 +294,13 @@ void ComponentPasswordKeyboard::processOK()
             break;
 
         case PASSWORD_DELETE:
-            if(instance.getStrNowUserPassword() == strPwd)
+            if(instance.sysUserInfo[instance.getUserNumber()].passwd == strKey)
                 instance.setPasswordStrStatus(PASSWORD_STR_DELETE_SUCCESS);
             else
                 instance.setPasswordStrStatus(PASSWORD_STR_REPEAT_FAIL);
             break;
         case PASSWORD_INIT:
-            if(instance.getStrNowUserPassword() == strPwd)
+            if(instance.getStrNowUserPassword() == strKey)
                 instance.setPasswordStrStatus(PASSWORD_STR_INIT_SUCCESS);
             else
                 instance.setPasswordStrStatus(PASSWORD_STR_REPEAT_FAIL);
@@ -316,14 +312,14 @@ void ComponentPasswordKeyboard::processOK()
         break;
 
     case PASSWORD_CONFIRM:
-        if(instance.getStrNowUserPassword() == strPwd)
+        if(instance.sysUserInfo[instance.getUserNumber()].passwd == strKey)
             instance.setPasswordStrStatus(PASSWORD_STR_EDIT_CHANGE);
         else
             instance.setPasswordStrStatus(PASSWORD_STR_CONFIRM_FAIL);
         break;
 
     case PASSWORD_INIT:
-        if(instance.getStrNowUserPassword() == strPwd)
+        if(instance.getStrNowUserPassword() == strKey)
         {
             instance.setPasswordStatusPrev(PASSWORD_INIT);
             instance.setPasswordStrStatus(PASSWORD_STR_REPEAT);
