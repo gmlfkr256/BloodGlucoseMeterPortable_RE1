@@ -258,6 +258,8 @@ void ComponentPasswordKeyboard::processOK()
             nErrCode = PASSWORD_ECODE_MAX;
             instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
         }
+
+        instance.setPasswordErrCode(nErrCode);
 #endif
         break;
 
