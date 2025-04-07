@@ -209,7 +209,9 @@ void PagePasswordConfirm::mousePressEvent(QMouseEvent *ev)
 #endif
             break;
         case PASSWORD_STR_INIT:
-            instance.setPasswordStatus(PASSWORD_INIT);
+            instance.setPasswordStrStatus(PASSWORD_STR_INIT_CONFIRM);
+            update();
+            break;
         case PASSWORD_STR_MAX:
             break;
         }
