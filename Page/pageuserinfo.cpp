@@ -8,7 +8,7 @@ PageUserInfo::PageUserInfo(QWidget *parent) : Page(parent)
 
 void PageUserInfo::init()
 {
-    for(int i=0; i<3; i++)
+    for(int i=0; i<4; i++)
     {
         labelText[i] = new QLabel(this);
         labelText[i]->setGeometry(25,80+(i*75),590,75);
@@ -20,6 +20,8 @@ void PageUserInfo::init()
         labelLine[i]->setGeometry(labelText[i]->x(),labelText[i]->y()+labelText[i]->height()-1,labelText[i]->width(),1);
     }
 
+
+
     customButtonOK = new CustomButtonOK(this);
     customButtonOK->setLongWidth(true);
     update();
@@ -29,7 +31,7 @@ void PageUserInfo::update()
 {
     customButtonOK->update();
 
-    for(int i=0; i<3; i++)
+    for(int i=0; i<4; i++)
     {
         labelText[i]->setFont(textResource.getFont(PAGE_USERINFO,"labelText"));
         labelText[i]->setText(textResource.getText(PAGE_USERINFO,"labelText").at(i));
@@ -37,6 +39,19 @@ void PageUserInfo::update()
 
         labelLine[i]->setStyleSheet("background-color: #c5c5c5;");
     }
+
+#if !NEW_PASSWORD
+        labelText[1]->hide();
+        labelArrow[1]->hide();
+        labelArrow[1]->hide();
+
+        labelText[3]->setGeometry(labelText[2]->geometry());
+        labelArrow[3]->setGeometry(labelText[2]->geometry());
+        labelLine[3]->setGeometry(labelText[2]->geometry());
+        labelText[2]->setGeometry(labelText[1]->geometry());
+        labelArrow[2]->setGeometry(labelText[1]->geometry());
+        labelLine[2]->setGeometry(labelText[1]->geometry());
+#endif
 }
 
 void PageUserInfo::pageShow()
@@ -62,13 +77,20 @@ void PageUserInfo::mousePressEvent(QMouseEvent *ev)
         emit signalShowPageNum(PAGE_PASSWORD_CONFIRM);
     }
 
+#if NEW_PASSWORD
     if(instance.touchCheck(labelText[1]->geometry(),ev))
+    {
+
+    }
+#endif
+
+    if(instance.touchCheck(labelText[2]->geometry(),ev))
     {
         instance.setPasswordStrStatus(PASSWORD_STR_DELETE);
         emit signalShowPageNum(PAGE_PASSWORD_CONFIRM);
     }
 
-    if(instance.touchCheck(labelText[2]->geometry(),ev))
+    if(instance.touchCheck(labelText[3]->geometry(),ev))
     {
         instance.setPasswordStrStatus(PASSWORD_STR_LOGOUT);
         emit signalShowPageNum(PAGE_PASSWORD_CONFIRM);

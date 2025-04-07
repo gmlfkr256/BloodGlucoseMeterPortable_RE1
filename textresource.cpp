@@ -410,6 +410,7 @@ void TextResource::init()
     fontData[Lan][PAGE_USERINFO].insert("labelText",QFont(currentFont,instance.pixelToPoint(36)));
     textData[Lan][PAGE_USERINFO].insert("labelText",QStringList{
                                             "비밀번호 변경",
+                                            "비밀번호 초기화",
                                             "사용자 정보 삭제",
                                             "로그아웃"
                                         });

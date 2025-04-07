@@ -12,9 +12,9 @@ public:
 
     QString strDirPath = "/ImageUserInfo";
 
-    QLabel *labelText[3];
-    QLabel *labelArrow[3];
-    QLabel *labelLine[3];
+    QLabel *labelText[4];
+    QLabel *labelArrow[4];
+    QLabel *labelLine[4];
 
     CustomButtonOK *customButtonOK;
 
