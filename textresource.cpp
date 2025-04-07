@@ -154,7 +154,9 @@ void TextResource::init()
                                                     "사용자 정보 삭제", //PASSWORD_STR_DELETE_CONFIRM,
                                                     "사용자 정보 삭제", //PASSWORD_STR_DELETE_SUCCESS,
                                                     "로그아웃", //PASSWORD_STR_LOGOUT,
-                                                    "비빌번호 초기화", //PASSWORD_STR_INIT,
+                                                    "비밀번호 초기화", //PASSWORD_STR_INIT,
+                                                    "비밀번호 초기화", //PASSWORD_STR_INIT_CONFIRM,
+                                                    "비밀번호 초기화", //PASSWORD_STR_SUCCESS,
                                                     "PASSWORD_STR_MAX" //PASSWORD_STR_MAX
                                                 });
     fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText",QFont(currentFont,instance.pixelToPoint(nTextSize),QFont::Bold));
