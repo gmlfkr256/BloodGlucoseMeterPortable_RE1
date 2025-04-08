@@ -70,9 +70,9 @@ void PageSelectUser::mousePressEvent(QMouseEvent *ev)
         {
             //instance.actUserLogin(i);
             instance.setUserNumber(i);
-            emit signalShowPageNum(PAGE_PASSWORD_ALLCHAT);
             nLabelNumber = i;
             instance.pixLoad(labelUserImg[i],false,strDirPath,"/buttonUser"+QString::number(i)+"press.png");
+            emit signalShowPageNum(PAGE_PASSWORD_ALLCHAT);
         }
     }
 }
