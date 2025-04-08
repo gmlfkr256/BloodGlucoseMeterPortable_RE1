@@ -71,7 +71,7 @@ void PageSelectUser::mousePressEvent(QMouseEvent *ev)
             //instance.actUserLogin(i);
             instance.setUserNumber(i);
             nLabelNumber = i;
-            instance.pixLoad(labelUserImg[i],false,strDirPath,"/buttonUser"+QString::number(i)+"press.png");
+            instance.pixLoad(labelUserImg[i],false,strDirPath,"/buttonUser"+QString::number(i)+"Press.png");
 
             QTimer::singleShot(100,this,[=](){emit signalShowPageNum(PAGE_PASSWORD_ALLCHAT);});
         }
