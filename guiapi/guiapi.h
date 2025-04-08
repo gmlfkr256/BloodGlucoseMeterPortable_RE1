@@ -156,19 +156,6 @@ typedef enum {
 	GAPI_UPGRADE_ECODE_MAX
 } gapiUpgradeErrCode_e;
 
-#define GAPI_ADMIN_PASSWD_MIN_LEN				8
-#define GAPI_ADMIN_PASSWD_FNAME					"admin_passwd"
-
-// check password
-typedef enum {
-	GAPI_PASSWD_ECODE_NORMAL = 0,
-	GAPI_PASSWD_ECODE_SHORT_LEN,
-	GAPI_PASSWD_ECODE_NO_NUMBER,
-	GAPI_PASSWD_ECODE_NO_ALPHABET,
-	GAPI_PASSWD_ECODE_NO_SPECIAL,
-	GAPI_PASSWD_ECODE_MAX
-} gapiPasswordErrCode_e;
-
 /*---------------------------------------------------------------------------*
  * Class                                                                     *
  *---------------------------------------------------------------------------*/
@@ -181,11 +168,9 @@ class GuiApi {
 		int getHistory (int day, gapiHistInfo_t *rHistInfoP);
 		int getHistoryAll (gapiHistInfo_t *rHistInfoP);
 
-		int glucoseSetAdminPassword (char *pwdP, int pwdLen, int *rEcodeP);
-		int glucoseChkAdminPassword (char *pwdP, int pwdLen, int *rResultP);
-		int glucoseInitAdminPassword (void);
 		int glucoseGetUserInfo (int user, gapiSysUserInfo_t *rUserP);
 		int glucoseSetUserPassword (int user, char *passP);
+		int glucoseInitUserPassword (int user);
 		int glucoseDelUserInfo (int user);
 		int glucoseActUserLogin (int user);
 		int glucoseActUserLogout (int user);

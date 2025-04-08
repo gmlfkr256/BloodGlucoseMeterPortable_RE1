@@ -83,8 +83,6 @@ typedef enum {
 	GAPI_USER_MAX
 } gapiUserNum_e;
 
-#define GAPI_USER_PWD_DEFAULT_LEN			4
-
 #define GAPI_USER_PWD_SIZE						16
 #define GAPI_USER_APP_NAME_SIZE				32
 #define GAPI_USER_APP_SUBINFO_SIZE		8
