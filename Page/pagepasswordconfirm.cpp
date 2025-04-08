@@ -146,7 +146,8 @@ void PagePasswordConfirm::mousePressEvent(QMouseEvent *ev)
         case PASSWORD_STR_REPEAT_FAIL:
             instance.setPasswordStatus(PASSWORD_REPEAT);
 #if NEW_PASSWORD
-            emit signalShowPageNum(PAGE_PASSWORD_ALLCHAT);
+            //emit signalShowPageNum(PAGE_PASSWORD_ALLCHAT);
+            emit signalShowPageNum(PAGE_USERINFO);
 #else
             emit signalShowPageNum(PAGE_PASSWORD);
 #endif
@@ -223,7 +224,7 @@ void PagePasswordConfirm::mousePressEvent(QMouseEvent *ev)
             break;
         case PASSWORD_STR_INIT_SUCCESS:
 #if DEVICE
-            instance.guiApi.glucoseInitAdminPassword();
+            //instance.guiApi.glucoseInitAdminPassword();
 #else
             for(int i=0; i<USER_MAX; i++)
             {
