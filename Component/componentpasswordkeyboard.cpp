@@ -62,7 +62,7 @@ void ComponentPasswordKeyboard::init()
 
     labelButtonDelImg = new QLabel(this);
     labelButtonDelImg->setGeometry(labelButtonDel->geometry());
-    labelButtonCancel = new QLabel(this);
+    labelButtonCancelImg = new QLabel(this);
     labelButtonCancelImg->setGeometry(labelButtonCancel->geometry());
     labelButtonOKImg = new QLabel(this);
     labelButtonOKImg->setGeometry(labelButtonOK->geometry());
