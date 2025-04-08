@@ -115,6 +115,8 @@ void ComponentPasswordKeyboard::mousePressEvent(QMouseEvent *ev)
         if(instance.touchCheck(labelFunction[i]->geometry(),ev))
         {
             setFunctionNumBytButton(i);
+            labelFunction[i]->setStyleSheet(bIsKeyPress(true,KEY_FUNC_TOP));
+            nLabelIndex = i;
         }
     }
 
@@ -127,6 +129,8 @@ void ComponentPasswordKeyboard::mousePressEvent(QMouseEvent *ev)
                 if(strKey.size()<12)
                     strKey += keyBoardIndex->mapKey[nFunctionNum].at(i);
 
+                labelButton[i]->setStyleSheet(bIsKeyPress(true,KEY_FUNC_NORMAL));
+                nLabelIndex = i+5;
                 qDebug()<<strKey;
                 emit signalKeyClick(getDisplayText());
             }
@@ -135,23 +139,48 @@ void ComponentPasswordKeyboard::mousePressEvent(QMouseEvent *ev)
 
     if(instance.touchCheck(labelButtonDel->geometry(),ev))
     {
+        labelButtonDel->setStyleSheet(bIsKeyPress(true,KEY_FUNC_RIGHT));
+        nLabelIndex = 15;
         deleteLastKey();
     }
 
     if(instance.touchCheck(labelButtonCancel->geometry(),ev))
     {
+        labelButtonCancel->setStyleSheet(bIsKeyPress(true,KEY_FUNC_RIGHT));
+        nLabelIndex = 16;
         emit signalCancel();
     }
 
     if(instance.touchCheck(labelButtonOK->geometry(),ev))
     {
+        labelButtonOK->setStyleSheet(bIsKeyPress(true,KEY_FUNC_RIGHT));
+        nLabelIndex = 17;
         processOK();
     }
 }
 
 void ComponentPasswordKeyboard::mouseReleaseEvent(QMouseEvent *ev)
 {
-    Q_UNUSED(ev);
+    if(nLabelIndex < 5)
+    {
+        if(labelFunction[nLabelIndex])
+        {
+            labelFunction[nLabelIndex]->setStyleSheet(bIsKeyPress(false,KEY_FUNC_TOP));
+        }
+    }
+    else if(nLabelIndex < 15)
+    {
+        if(labelButton[nLabelIndex-5])
+        {
+            labelButton[nLabelIndex-5]->setStyleSheet(bIsKeyPress(false,KEY_FUNC_NORMAL));
+        }
+    }
+    else if(nLabelIndex == 15)
+        labelButtonDel->setStyleSheet(bIsKeyPress(false,KEY_FUNC_RIGHT));
+    else if(nLabelIndex == 16)
+        labelButtonCancel->setStyleSheet(bIsKeyPress(false,KEY_FUNC_RIGHT));
+    else if(nLabelIndex == 17)
+        labelButtonOK->setStyleSheet(bIsKeyPress(false,KEY_FUNC_RIGHT));
 }
 
 void ComponentPasswordKeyboard::deleteLastKey()

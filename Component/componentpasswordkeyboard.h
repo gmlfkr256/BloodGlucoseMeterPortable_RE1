@@ -61,6 +61,7 @@ public:
     int nFunctionNum = 0;
     QString strKey = "";
     bool bIsShowAll = false;
+    int nLabelIndex = -1;
 
     void clearKey();
 
