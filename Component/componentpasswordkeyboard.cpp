@@ -397,8 +397,9 @@ void ComponentPasswordKeyboard::clearKey()
 
 void ComponentPasswordKeyboard::functionShowHide()
 {
-    bIsShowAll = !bIsShowAll;
     emit signalKeyClick(getDisplayText());
+    emit signalUpdateShowHide(bIsShowAll);
+    bIsShowAll = !bIsShowAll;
 }
 
 bool ComponentPasswordKeyboard::bIsPasswordValid(const QString strKey)

@@ -82,6 +82,7 @@ signals:
     void signalKeyClick(QString strKey);
     void signalCheckLogin();
     void signalCancel();
+    void signalUpdateShowHide(bool);
 };
 
 #endif // COMPONENTPASSWORDKEYBOARD_H
