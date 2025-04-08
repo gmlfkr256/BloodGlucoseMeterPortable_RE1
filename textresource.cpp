@@ -125,12 +125,12 @@ void TextResource::init()
 
     fontData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitleSub",QFont(currentFont,instance.pixelToPoint(30)));
     textData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitleSub",QStringList{
-                                                    "비밀번호를 입력해 주세요",
-                                                    "변경할 비밀번호를 입력해 주세요",
-                                                    "비밀번호를 입력해 주세요",
-                                                    "확인을 위해 비밀번호를 입력해 주세요",
-                                                    "재확인을 위해 비밀번호를 입력해 주세요",
-                                                    "현재 비밀번호를 눌러주세요",
+                                                    "비밀번호를 입력해주세요",
+                                                    "변경할 비밀번호를 입력해주세요",
+                                                    "비밀번호를 입력해주세요",
+                                                    "확인을 위해 비밀번호를 입력해주세요",
+                                                    "재확인을 위해 비밀번호를 입력해주세요",
+                                                    "현재 비밀번호를 입력해주세요",
                                                     "PASSWORD_MAX"
                                                 });
 
@@ -170,13 +170,13 @@ void TextResource::init()
                                                     "입력된 비밀번호가\n 이전 비밀번호와 일치하지 않습니다", //PASSWORD_STR_REPEAT_FAIL,
                                                     "비밀번호를 변경하시겠습니까?", //PASSWORD_STR_EDIT,
                                                     "본인 확인을 위해\n 비밀번호를 입력해주세요", //PASSWORD_STR_EDIT_CONFIRM,
-                                                    "변경하실 비밀번호를 입력해주세요", //PASSWORD_STR_EDIT_CHANGE,
+                                                    "숫자,영문,특수문자가 포함된 비밀번호를 입력해주세요", //PASSWORD_STR_EDIT_CHANGE,
                                                     "비밀번호 변경이 완료되었습니다\n다시 로그인해주시기 바랍니다", //PASSWORD_STR_EDIT_SUCCESS,
                                                     "사용자 정보를 삭제하시겠습니까?", //PASSWORD_STR_DELETE,
                                                     "사용자 정보를 삭제할 경우\n 비밀번호와 설정이 초기화 됩니다", //PASSWORD_STR_DELETE_CONFIRM,
                                                     "사용자 정보가 삭제되었습니다\n설정 초기화를 위해 재부팅이 진행됩니다", //PASSWORD_STR_DELETE_SUCCESS,
                                                     "로그아웃을 진행합니까?\n로그아웃시 다시 로그인해주시기 바랍니다", //PASSWORD_STR_LOGOUT,
-                                                    "비밀번호를 초기화하시겠습니까?", //PASSWORD_STR_INIT,
+                                                    "비밀번호를 초기화하시겠습니까?", //PASSWORD_STR_INIT,요
                                                     "비밀번호를 초기화할 경우\n 비밀번호가 초기 설정 상태가 됩니다", //PASSWORD_STR_INIT_CONFIRM,
                                                     "비밀번호가 초기화되었습니다", //PASSWORD_STR_INIT_SUCCESS,
                                                     "PASSWORD_STR_MAX" //PASSWORD_STR_MAX
