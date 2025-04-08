@@ -161,6 +161,8 @@ void ComponentPasswordKeyboard::mousePressEvent(QMouseEvent *ev)
 
 void ComponentPasswordKeyboard::mouseReleaseEvent(QMouseEvent *ev)
 {
+    Q_UNUSED(ev)
+
     if(nLabelIndex < 5)
     {
         if(labelFunction[nLabelIndex])
