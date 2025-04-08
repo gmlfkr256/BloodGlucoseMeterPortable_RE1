@@ -69,6 +69,7 @@ void PagePasswordAllChat::update()
 
 void PagePasswordAllChat::pageShow()
 {
+    instance.updateSysUserInfo();
     comKeyboard->clearKey();
     updatePassword("");
     update();

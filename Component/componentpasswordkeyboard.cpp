@@ -254,18 +254,28 @@ void ComponentPasswordKeyboard::processOK()
         if(bIsCheckPassword)
         {
             instance.actUserLogin(instance.getUserNumber());
-            if(strKey == "1111" || strKey == "2222")
-                instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_CHANGE);
-            else
-            {
-                instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
-            }
+            instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
+
         }
         else
         {
             instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
-            if(strKey == "9999")
-                instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
+            if(strKey == "9999" || strKey == "1111" || strKey == "2222")
+            {
+                if(strKey == "2222")
+                {
+                    instance.actUserLogin(1);
+                }
+                else
+                {
+                    instance.actUserLogin(0);
+                }
+
+                if(strKey == "1111" || strKey == "2222")
+                    instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_CHANGE);
+                else
+                    instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
+            }
         }
 #else
         // 테스트 환경 시나리오별 강제 분기
@@ -392,7 +402,9 @@ void ComponentPasswordKeyboard::processOK()
 void ComponentPasswordKeyboard::clearKey()
 {
     strKey.clear();
+    bIsShowAll = false;
     emit signalKeyClick(getDisplayText());
+    emit signalUpdateShowHide(bIsShowAll);
 }
 
 void ComponentPasswordKeyboard::functionShowHide()
