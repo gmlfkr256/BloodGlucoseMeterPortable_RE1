@@ -20,10 +20,8 @@ void PagePasswordAllChat::init()
     labelTitleSub->setStyleSheet("color: #808080");
 
     labelPasswordBg = new QLabel(this);
-    //labelPasswordBg->setGeometry(116,133,303,85);
     labelPasswordBg->setGeometry(40,133,560,85);
     labelPasswordBg->setFont(textResource.getFont(PAGE_PASSWORD_ALLCHAT,"labelButtonNum"));
-    //labelPasswordBg->setText("123456789012");
     QFont font = labelPasswordBg->font();
     font.setPointSize(instance.pixelToPoint(40));
     labelPasswordBg->setFont(font);
@@ -33,16 +31,17 @@ void PagePasswordAllChat::init()
 
     labelButtonShowHide = new QLabel(this);
     labelButtonShowHide->setGeometry(515,133,85,85);
-    labelButtonShowHide->setStyleSheet("color: black;");
-    labelButtonShowHide->setAlignment(Qt::AlignCenter);
-    labelButtonShowHide->setText("✓");
-    labelButtonShowHide->setFont(textResource.getFont(PAGE_PASSWORD_ALLCHAT,"labelButtonNum"));
+    //labelButtonShowHide->setStyleSheet("color: black;");
+    //labelButtonShowHide->setAlignment(Qt::AlignCenter);
+    //labelButtonShowHide->setText("✓");
+    //labelButtonShowHide->setFont(textResource.getFont(PAGE_PASSWORD_ALLCHAT,"labelButtonNum"));
 
     comKeyboard = new ComponentPasswordKeyboard(this);
 
     initConnect();
 
     update();
+    updateShowHide();
 }
 
 void PagePasswordAllChat::initConnect()
@@ -95,6 +94,7 @@ void PagePasswordAllChat::mousePressEvent(QMouseEvent *ev)
     if(instance.touchCheck(labelButtonShowHide->geometry(),ev))
     {
         emit signalPasswordShowHide();
+
     }
 }
 
@@ -103,4 +103,15 @@ void PagePasswordAllChat::checkLogin()
     emit signalShowPageNum(PAGE_PASSWORD_CONFIRM);
 }
 
+void PagePasswordAllChat::updateShowHide(bool bIsShow)
+{
+    if(bIsShow)
+    {
+        instance.pixLoad(labelButtonShowHide,false,strDirPath,"/buttonShow.png");
+    }
+    else
+    {
+        instance.pixLoad(labelButtonShowHide,false,strDirPath,"/buttonHide.png");
+    }
+}
 
