@@ -51,6 +51,7 @@ void PagePasswordAllChat::initConnect()
     connect(comKeyboard,&ComponentPasswordKeyboard::signalCheckLogin,this,&PagePasswordAllChat::checkLogin);
     connect(this,&PagePasswordAllChat::signalPasswordShowHide,comKeyboard,&ComponentPasswordKeyboard::functionShowHide);
     connect(comKeyboard,&ComponentPasswordKeyboard::signalCancel,this,&PagePasswordAllChat::pageHide);
+    connect(comKeyboard,&ComponentPasswordKeyboard::signalUpdateShowHide,this,&PagePasswordAllChat::updateShowHide);
 }
 
 void PagePasswordAllChat::updatePassword(QString strKey)
