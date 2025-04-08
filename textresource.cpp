@@ -125,11 +125,11 @@ void TextResource::init()
 
     fontData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitleSub",QFont(currentFont,instance.pixelToPoint(30)));
     textData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitleSub",QStringList{
-                                                    "비밀번호 4자리를 눌러주세요",
-                                                    "변경할 번호 4자리를 눌러주세요",
-                                                    "비밀번호 4자리를 눌러주세요",
-                                                    "확인을 위해 4자리를 눌러주세요",
-                                                    "재확인을 위해 4자리를 눌러주세요",
+                                                    "비밀번호를 입력해 주세요",
+                                                    "변경할 비밀번호를 입력해 주세요",
+                                                    "비밀번호를 입력해 주세요",
+                                                    "확인을 위해 비밀번호를 입력해 주세요",
+                                                    "재확인을 위해 비밀번호를 입력해 주세요",
                                                     "현재 비밀번호를 눌러주세요",
                                                     "PASSWORD_MAX"
                                                 });
