@@ -85,14 +85,7 @@ void ComponentPasswordKeyboard::update()
         labelButton[i]->setText(keyBoardIndex->mapKey[nFunctionNum].at(i));
     }
 
-    if(instance.getPasswordStatus() != PASSWORD_LOGIN)
-    {
-        labelButtonCancel->setText("◀");
-    }
-    else
-    {
-        labelButtonCancel->setText("");
-    }
+    labelButtonCancel->setText("◀");
 }
 
 void ComponentPasswordKeyboard::pageShow()
