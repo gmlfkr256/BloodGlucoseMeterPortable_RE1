@@ -11,9 +11,9 @@ void PageSelectUser::init()
     setBgTopHide();
 
     labelTitle = new QLabel(this);
-    labelTitle->setGeometry(0,30,640,50);
+    labelTitle->setGeometry(154,325,332,45);
     labelTitle->setAlignment(Qt::AlignCenter);
-    labelTitle->setStyleSheet("color: #000000;");
+    labelTitle->setStyleSheet("color: #808080;");
 
     for(int i=0; i<USER_MAX; i++)
     {
