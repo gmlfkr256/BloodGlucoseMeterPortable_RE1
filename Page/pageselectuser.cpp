@@ -79,10 +79,14 @@ void PageSelectUser::mousePressEvent(QMouseEvent *ev)
 void PageSelectUser::mouseReleaseEvent(QMouseEvent *ev)
 {
     Q_UNUSED(ev)
-    if(nLabelNumber!=-1)
+    if(nLabelNumber!=-1 && !bIsOneClick)
     {
         instance.pixLoad(labelUserImg[nLabelNumber],false,strDirPath,"/buttonUser"+QString::number(nLabelNumber)+".png");
         nLabelNumber = -1;
-        QTimer::singleShot(300,this,[=](){emit signalShowPageNum(PAGE_PASSWORD_ALLCHAT);});
+        bIsOneClick = true;
+        QTimer::singleShot(300,this,[=](){
+            emit signalShowPageNum(PAGE_PASSWORD_ALLCHAT);
+            bIsOneClick = false;
+        });
     }
 }

@@ -17,6 +17,7 @@ public:
     QLabel *labelUserImg[USER_MAX];
     QLabel *labelUserText[USER_MAX];
     int nLabelNumber = -1;
+    bool bIsOneClick = false;
 
     void update() override;
     void pageShow() override;
