@@ -72,8 +72,6 @@ void PageSelectUser::mousePressEvent(QMouseEvent *ev)
             instance.setUserNumber(i);
             nLabelNumber = i;
             instance.pixLoad(labelUserImg[i],false,strDirPath,"/buttonUser"+QString::number(i)+"Press.png");
-
-            QTimer::singleShot(100,this,[=](){emit signalShowPageNum(PAGE_PASSWORD_ALLCHAT);});
         }
     }
 }
@@ -85,5 +83,6 @@ void PageSelectUser::mouseReleaseEvent(QMouseEvent *ev)
     {
         instance.pixLoad(labelUserImg[nLabelNumber],false,strDirPath,"/buttonUser"+QString::number(nLabelNumber)+".png");
         nLabelNumber = -1;
+        QTimer::singleShot(300,this,[=](){emit signalShowPageNum(PAGE_PASSWORD_ALLCHAT);});
     }
 }
