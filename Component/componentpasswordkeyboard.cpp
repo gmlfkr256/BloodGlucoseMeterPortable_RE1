@@ -370,29 +370,22 @@ bool ComponentPasswordKeyboard::bIsPasswordValid(const QString strKey)
         instance.setPasswordErrCode(PASSWORD_ECODE_RANGE_LEN);
         bIsValid = false;
     }
-
-    // 숫자 체크
-    if (!strKey.contains(QRegExp("[0-9]")))
+    else if (!strKey.contains(QRegExp("[0-9]"))) // 숫자 체크
     {
         instance.setPasswordErrCode(PASSWORD_ECODE_NO_NUMBER);
         bIsValid = false;
     }
-
-    // 영문자 체크
-    if (!strKey.contains(QRegExp("[A-Za-z]")))
+    else if (!strKey.contains(QRegExp("[A-Za-z]"))) // // 영문자 체크
     {
         instance.setPasswordErrCode(PASSWORD_ECODE_NO_ALPHABET);
         bIsValid = false;
     }
-
-    // 특수문자 체크 (기호 범위: !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~ )
-    if (!strKey.contains(QRegExp("[^A-Za-z0-9]")))
+    else if (!strKey.contains(QRegExp("[^A-Za-z0-9]"))) // 특수문자 체크 (기호 범위: !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~ )
     {
         instance.setPasswordErrCode(PASSWORD_ECODE_NO_SPECIAL);
         bIsValid = false;
     }
-
-    if(instance.getPasswordChage() != strKey)
+    else if(instance.getPasswordChage() != strKey)
     {
         instance.setPasswordErrCode(PASSWORD_ECODE_NO_MATCH);
         bIsValid = false;
