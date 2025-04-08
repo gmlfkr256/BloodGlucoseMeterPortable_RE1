@@ -371,17 +371,17 @@ bool ComponentPasswordKeyboard::bIsPasswordValid(const QString strKey)
         bIsValid = false;
     }
 
-    // 영문자 체크
-    if (!strKey.contains(QRegExp("[A-Za-z]")))
-    {
-        instance.setPasswordErrCode(PASSWORD_ECODE_NO_ALPHABET);
-        bIsValid = false;
-    }
-
     // 숫자 체크
     if (!strKey.contains(QRegExp("[0-9]")))
     {
         instance.setPasswordErrCode(PASSWORD_ECODE_NO_NUMBER);
+        bIsValid = false;
+    }
+
+    // 영문자 체크
+    if (!strKey.contains(QRegExp("[A-Za-z]")))
+    {
+        instance.setPasswordErrCode(PASSWORD_ECODE_NO_ALPHABET);
         bIsValid = false;
     }
 
