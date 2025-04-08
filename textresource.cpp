@@ -118,7 +118,7 @@ void TextResource::init()
     textData[Lan][PAGE_PASSWORD].insert("labelButtonCancelText",QStringList{"취소"});
 
     //PAGE_PASSWORD_ALLCHAT
-    fontData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelButtonNum",QFont(currentFont,instance.pixelToPoint(44),QFont::Bold));
+    fontData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelButtonNum",QFont(currentFont,instance.pixelToPoint(44)));
 
     fontData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitle",QFont(currentFont,instance.pixelToPoint(40),QFont::Bold));
     textData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitle",QStringList{"로그인을 하세요","비밀번호 변경","사용자 삭제","비밀번호 확인","비밀번호 재확인","비밀번호 초기화","PASSWORD_MAX"});

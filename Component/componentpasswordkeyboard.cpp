@@ -69,7 +69,7 @@ void ComponentPasswordKeyboard::init()
 
     for(QLabel *label : labelList)
     {
-        label->setFont(textResource.getFont(PAGE_PASSWORD,"labelButtonNum"));
+        label->setFont(textResource.getFont(PAGE_PASSWORD_ALLCHAT,"labelButtonNum"));
         label->setAlignment(Qt::AlignCenter);
         label->setStyleSheet(bIsKeyPress(false,KEY_FUNC_RIGHT));
     }
