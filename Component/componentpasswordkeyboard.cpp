@@ -12,7 +12,7 @@ void ComponentPasswordKeyboard::init()
     {
         labelFunction[i] = new QLabel(this);
         labelFunction[i]->setStyleSheet(bIsKeyPress(false,KEY_FUNC_TOP));
-        labelFunction[i]->setFont(textResource.getFont(PAGE_PASSWORD,"labelButtonNum"));
+        labelFunction[i]->setFont(textResource.getFont(PAGE_PASSWORD_ALLCHAT,"labelButtonNum"));
         labelFunction[i]->setAlignment(Qt::AlignCenter);
 
         //labelFunction[i]->setGeometry(i*128,0,128,80);
@@ -30,7 +30,7 @@ void ComponentPasswordKeyboard::init()
     {
         labelButton[i] = new QLabel(this);
         labelButton[i]->setStyleSheet(bIsKeyPress(false,KEY_FUNC_NORMAL));
-        labelButton[i]->setFont(textResource.getFont(PAGE_PASSWORD,"labelButtonNum"));
+        labelButton[i]->setFont(textResource.getFont(PAGE_PASSWORD_ALLCHAT,"labelButtonNum"));
         labelButton[i]->setAlignment(Qt::AlignCenter);
 
         if(i<5)
@@ -49,15 +49,15 @@ void ComponentPasswordKeyboard::init()
 
     labelButtonDel = new QLabel(this);
     labelButtonDel->setGeometry(530,0,110,80);
-    labelButtonDel->setText("<<");
+    //labelButtonDel->setText("<<");
     labelList.append(labelButtonDel);
     labelButtonCancel = new QLabel(this);
     labelButtonCancel->setGeometry(530,80,110,80);
-    labelButtonCancel->setText("◀");
+    //labelButtonCancel->setText("◀");
     labelList.append(labelButtonCancel);
     labelButtonOK = new QLabel(this);
     labelButtonOK->setGeometry(530,160,110,80);
-    labelButtonOK->setText("▶");
+    //labelButtonOK->setText("▶");
     labelList.append(labelButtonOK);
 
     labelButtonDelImg = new QLabel(this);
@@ -81,6 +81,9 @@ void ComponentPasswordKeyboard::init()
 
 void ComponentPasswordKeyboard::update()
 {
+    instance.pixLoad(labelButtonDelImg,false,strDirPath,"/buttonDel.png");
+    instance.pixLoad(labelButtonCancelImg,false,strDirPath,"/buttonCancel.png");
+    instance.pixLoad(labelButtonOKImg,false,strDirPath,"/buttonOK.png");
 
     if(!keyBoardIndex->mapKey.contains(nFunctionNum))
     {
