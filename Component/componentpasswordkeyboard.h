@@ -31,6 +31,14 @@ public:
     }
 };
 
+typedef enum
+{
+    KEY_FUNC_NORMAL = 0,
+    KEY_FUNC_TOP,
+    KEY_FUNC_RIGHT,
+    KEY_FUNC_MAX
+} KeyboradType;
+
 class ComponentPasswordKeyboard : public CustomComponent
 {
     Q_OBJECT
@@ -39,13 +47,16 @@ public:
     void mousePressEvent(QMouseEvent *ev) override;
     void mouseReleaseEvent(QMouseEvent *ev) override;
 
-    QString strDirPath = "/ImageComponentPasswordKeyBoard";
+    QString strDirPath = "/ImageComPasswordKeyBoard";
 
     QLabel *labelFunction[5];
     QLabel *labelButton[10];
     QLabel *labelButtonDel;
+    QLabel *labelButtonDelImg;
     QLabel *labelButtonCancel;
+    QLabel *labelButtonCancelImg;
     QLabel *labelButtonOK;
+    QLabel *labelButtonOKImg;
     KeyBoardIndex *keyBoardIndex;
     int nFunctionNum = 0;
     QString strKey = "";
@@ -65,6 +76,7 @@ private:
     void setFunctionNumBytButton(int nIndex);
     void processOK();
     bool bIsPasswordValid(const QString strKey);
+    QString bIsKeyPress(bool bIsPress = false, KeyboradType keyType = KEY_FUNC_MAX);
 signals:
     void signalKeyClick(QString strKey);
     void signalCheckLogin();

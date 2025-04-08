@@ -184,7 +184,7 @@ void TextResource::init()
 
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTextError",QStringList{
                                                     "비밀번호가 설정되었습니다", // GAPI_PASSWD_ECODE_NORMAL
-                                                    "비밀번호를 8~12자리여야 합니다", // GAPI_PAS다SWD_ECODE_RANGE_LEN
+                                                    "비밀번호를 8~12 자리여야 합니다", // GAPI_PAS다SWD_ECODE_RANGE_LEN
                                                     "숫자가 포함되어야 합니다", // GAPI_PASSWD_ECODE_NO_NUMBER
                                                     "알파벳이 포함되어야 합니다", // GAPI_PASSWD_ECODE_NO_ALPHABET
                                                     "특수문자가 포함되어야 합니다", // GAPI_PASSWD_ECODE_NO_SPECTAL

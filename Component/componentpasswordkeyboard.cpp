@@ -11,7 +11,7 @@ void ComponentPasswordKeyboard::init()
     for(int i=0; i<5; i++)
     {
         labelFunction[i] = new QLabel(this);
-        labelFunction[i]->setStyleSheet("background-color: #E0F7FA; border: 1px solid #888888;");
+        labelFunction[i]->setStyleSheet(bIsKeyPress(false,KEY_FUNC_TOP));
         labelFunction[i]->setFont(textResource.getFont(PAGE_PASSWORD,"labelButtonNum"));
         labelFunction[i]->setAlignment(Qt::AlignCenter);
 
@@ -19,17 +19,17 @@ void ComponentPasswordKeyboard::init()
         labelFunction[i]->setGeometry(i*106,0,106,80);
     }
 
-    labelFunction[0]->setText("0·9");
-    labelFunction[1]->setText("a A");
-    labelFunction[2]->setText("k K");
-    labelFunction[3]->setText("u U");
-    labelFunction[4]->setText("! - :");
+    labelFunction[0]->setText("123");
+    labelFunction[1]->setText("aA");
+    labelFunction[2]->setText("kK");
+    labelFunction[3]->setText("uU");
+    labelFunction[4]->setText(".,?!");
 
 
     for(int i=0; i<10; i++)
     {
         labelButton[i] = new QLabel(this);
-        labelButton[i]->setStyleSheet("background-color: #ffffff; border: 1px solid #ebebeb;");
+        labelButton[i]->setStyleSheet(bIsKeyPress(false,KEY_FUNC_NORMAL));
         labelButton[i]->setFont(textResource.getFont(PAGE_PASSWORD,"labelButtonNum"));
         labelButton[i]->setAlignment(Qt::AlignCenter);
 
@@ -53,17 +53,25 @@ void ComponentPasswordKeyboard::init()
     labelList.append(labelButtonDel);
     labelButtonCancel = new QLabel(this);
     labelButtonCancel->setGeometry(530,80,110,80);
+    labelButtonCancel->setText("◀");
     labelList.append(labelButtonCancel);
     labelButtonOK = new QLabel(this);
     labelButtonOK->setGeometry(530,160,110,80);
     labelButtonOK->setText("▶");
     labelList.append(labelButtonOK);
 
+    labelButtonDelImg = new QLabel(this);
+    labelButtonDelImg->setGeometry(labelButtonDel->geometry());
+    labelButtonCancel = new QLabel(this);
+    labelButtonCancelImg->setGeometry(labelButtonCancel->geometry());
+    labelButtonOKImg = new QLabel(this);
+    labelButtonOKImg->setGeometry(labelButtonOK->geometry());
+
     for(QLabel *label : labelList)
     {
         label->setFont(textResource.getFont(PAGE_PASSWORD,"labelButtonNum"));
         label->setAlignment(Qt::AlignCenter);
-        label->setStyleSheet("background-color: #177bdd; border: 1px solid #888888;");
+        label->setStyleSheet(bIsKeyPress(false,KEY_FUNC_RIGHT));
     }
 
     keyBoardIndex = new KeyBoardIndex(this);
@@ -84,8 +92,6 @@ void ComponentPasswordKeyboard::update()
     {
         labelButton[i]->setText(keyBoardIndex->mapKey[nFunctionNum].at(i));
     }
-
-    labelButtonCancel->setText("◀");
 }
 
 void ComponentPasswordKeyboard::pageShow()
@@ -397,4 +403,46 @@ bool ComponentPasswordKeyboard::bIsPasswordValid(const QString strKey)
     }
 
     return bIsValid;
+}
+
+QString ComponentPasswordKeyboard::bIsKeyPress(bool bIsPress, KeyboradType keyType)
+{
+    QString strStyleSheet = "";
+    switch (keyType)
+    {
+    case KEY_FUNC_NORMAL:
+        if(!bIsPress)
+        {
+            strStyleSheet = "background-color: #ffffff; border: 1px solid #ebebeb;";
+        }
+        else
+        {
+            strStyleSheet = "background-color: #efefef; border: 1px solid #ebebeb;";
+        }
+        break;
+    case KEY_FUNC_TOP:
+        if(!bIsPress)
+        {
+            strStyleSheet = "background-color: #e1f0ff; border: 1px solid #ebebeb;";
+        }
+        else
+        {
+            strStyleSheet = "background-color: #efefef; border: 1px solid #ebebeb;";
+        }
+        break;
+    case KEY_FUNC_RIGHT:
+        if(!bIsPress)
+        {
+            strStyleSheet = "background-color: #177bdd; border: 1px solid #ebebeb;";
+        }
+        else
+        {
+            strStyleSheet = "background-color: #efefef; border: 1px solid #ebebeb;";
+        }
+        break;
+    case KEY_FUNC_MAX:
+        break;
+    }
+
+    return strStyleSheet;
 }

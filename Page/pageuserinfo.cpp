@@ -20,8 +20,6 @@ void PageUserInfo::init()
         labelLine[i]->setGeometry(labelText[i]->x(),labelText[i]->y()+labelText[i]->height()-1,labelText[i]->width(),1);
     }
 
-
-
     customButtonOK = new CustomButtonOK(this);
     customButtonOK->setLongWidth(true);
     update();

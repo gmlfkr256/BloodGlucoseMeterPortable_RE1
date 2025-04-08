@@ -89,6 +89,7 @@ void PagePasswordConfirm::update()
     {
         qDebug()<<"getPasswordErrCode: "<<instance.getPasswordErrCode();
         labelText->setText(textResource.getText(PAGE_PASSWORD_CONFIRM,"labelTextError").at(instance.getPasswordErrCode()));
+        instance.setPasswordErrCode(PASSWORD_ECODE_NORMAL);
     }
     else
     {
