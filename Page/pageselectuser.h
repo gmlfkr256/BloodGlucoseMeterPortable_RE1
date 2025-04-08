@@ -9,11 +9,14 @@ class PageSelectUser : public Page
 public:
     PageSelectUser(QWidget *parent);
     void mousePressEvent(QMouseEvent *ev) override;
+    void mouseReleaseEvent(QMouseEvent *ev) override;
 
     QString strDirPath = "/ImageSelectUser";
 
     QLabel *labelTitle;
-    QLabel *labelUser[USER_MAX];
+    QLabel *labelUserImg[USER_MAX];
+    QLabel *labelUserText[USER_MAX];
+    int nLabelNumber = -1;
 
     void update() override;
     void pageShow() override;

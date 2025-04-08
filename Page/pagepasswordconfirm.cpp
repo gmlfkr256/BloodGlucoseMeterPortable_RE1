@@ -226,6 +226,8 @@ void PagePasswordConfirm::mousePressEvent(QMouseEvent *ev)
         case PASSWORD_STR_INIT_SUCCESS:
 #if DEVICE
             //instance.guiApi.glucoseInitAdminPassword();
+            instance.guiApi.glucoseInitUserPassword(instance.getUserNumber());
+            instance.updateSysUserInfo();
 #else
             for(int i=0; i<USER_MAX; i++)
             {

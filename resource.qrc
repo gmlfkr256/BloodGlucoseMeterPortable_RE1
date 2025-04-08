@@ -152,5 +152,9 @@
         <file>Image/Default/Public/ImageComPasswordKeyBoard/buttonOK.png</file>
         <file>Image/Default/Public/ImagePasswordAllChat/buttonHide.png</file>
         <file>Image/Default/Public/ImagePasswordAllChat/buttonShow.png</file>
+        <file>Image/Default/Public/ImageSelectUser/buttonUser0.png</file>
+        <file>Image/Default/Public/ImageSelectUser/buttonUser0Press.png</file>
+        <file>Image/Default/Public/ImageSelectUser/buttonUser1.png</file>
+        <file>Image/Default/Public/ImageSelectUser/buttonUser1Press.png</file>
     </qresource>
 </RCC>

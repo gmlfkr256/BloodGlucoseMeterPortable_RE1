@@ -117,6 +117,12 @@ void TextResource::init()
     fontData[Lan][PAGE_PASSWORD].insert("labelButtonCancelText",QFont(currentFont,instance.pixelToPoint(29)));
     textData[Lan][PAGE_PASSWORD].insert("labelButtonCancelText",QStringList{"취소"});
 
+    //PAGE_SELECT_USER
+    fontData[Lan][PAGE_SELECT_USER].insert("labelTitle",QFont(currentFont, instance.pixelToPoint(36)));
+    textData[Lan][PAGE_SELECT_USER].insert("labelTitle",QStringList{"사용자를 선택해주세요"});
+
+    fontData[Lan][PAGE_SELECT_USER].insert("labelUserText",QFont(currentFont, instance.pixelToPoint(36)));
+
     //PAGE_PASSWORD_ALLCHAT
     fontData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelButtonNum",QFont(currentFont,instance.pixelToPoint(44)));
 
@@ -191,12 +197,6 @@ void TextResource::init()
                                                     "비밀번호가 일치하지 않습니다", // GAPI_PASSWD_ECODE_NO_MATCH
                                                     "알 수 없는 오류입니다", // GAPI_PASSWD_ECODE_MAX
                                                 });
-
-    //PAGE_SELECT_USER
-    fontData[Lan][PAGE_SELECT_USER].insert("labelTitle",QFont(currentFont, instance.pixelToPoint(44),QFont::Bold));
-    textData[Lan][PAGE_SELECT_USER].insert("labelTitle",QStringList{"사용자를 선택해주세요"});
-
-    fontData[Lan][PAGE_SELECT_USER].insert("labelUser",QFont(currentFont, instance.pixelToPoint(50),QFont::Bold));
 
     //PAGE_HOME
     fontData[Lan][PAGE_HOME].insert("labelTextStatus",QFont(currentFont,instance.pixelToPoint(33),QFont::Bold));

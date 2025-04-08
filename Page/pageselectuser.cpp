@@ -17,21 +17,23 @@ void PageSelectUser::init()
 
     for(int i=0; i<USER_MAX; i++)
     {
-        labelUser[i] = new QLabel(this);
-        labelUser[i]->setStyleSheet("background-color: #dddddd; color: white; border: 1px solid black;");
-        labelUser[i]->setAlignment(Qt::AlignCenter);
+        labelUserImg[i] = new QLabel(this);
+        labelUserText[i] = new QLabel(this);
+        labelUserText[i]->setAlignment(Qt::AlignCenter);
+        labelUserText[i]->setStyleSheet("color:#000000;");
+
+        if(i==0)
+        {
+            labelUserImg[0]->setGeometry(75,98,245,215);
+            labelUserText[0]->setGeometry(140,248,116,45);
+        }
+        else if(i==1)
+        {
+            labelUserImg[1]->setGeometry(320,98,245,215);
+            labelUserText[1]->setGeometry(382,248,122,45);
+        }
     }
 
-    if(labelUser[0]!=nullptr)
-    {
-        labelUser[0]->setGeometry(75,98,245,215);
-        labelUser[0]->setText("User 1");
-    }
-    if(labelUser[1]!=nullptr)
-    {
-        labelUser[1]->setGeometry(320,98,245,215);
-        labelUser[1]->setText("User 2");
-    }
 
     update();
 }
@@ -43,12 +45,14 @@ void PageSelectUser::update()
 
     for(int i=0; i<USER_MAX; i++)
     {
-        labelUser[i]->setFont(textResource.getFont(PAGE_SELECT_USER,"labelUser"));
+        labelUserText[i]->setFont(textResource.getFont(PAGE_SELECT_USER,"labelUserText"));
+        instance.pixLoad(labelUserImg[i],false,strDirPath,"/buttonUser"+QString::number(i)+".png");
     }
 }
 
 void PageSelectUser::pageShow()
 {
+    nLabelNumber = -1;
     update();
 }
 
@@ -61,11 +65,23 @@ void PageSelectUser::mousePressEvent(QMouseEvent *ev)
 {
     for(int i=0; i<USER_MAX; i++)
     {
-        if(instance.touchCheck(labelUser[i]->geometry(),ev))
+        if(instance.touchCheck(labelUserImg[i]->geometry(),ev))
         {
             //instance.actUserLogin(i);
             instance.setUserNumber(i);
             emit signalShowPageNum(PAGE_PASSWORD_ALLCHAT);
+            nLabelNumber = i;
+            instance.pixLoad(labelUserImg[i],false,strDirPath,"/buttonUser"+QString::number(i)+"press.png");
         }
+    }
+}
+
+void PageSelectUser::mouseReleaseEvent(QMouseEvent *ev)
+{
+    Q_UNUSED(ev)
+    if(nLabelNumber!=-1)
+    {
+        instance.pixLoad(labelUserImg[nLabelNumber],false,strDirPath,"/buttonUser"+QString::number(nLabelNumber)+".png");
+        nLabelNumber = -1;
     }
 }
