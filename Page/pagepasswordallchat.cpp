@@ -76,7 +76,18 @@ void PagePasswordAllChat::pageShow()
 
 void PagePasswordAllChat::pageHide()
 {
-    emit signalShowPageNum(PAGE_MENU);
+    PageNum pageNum = PAGE_MAX;
+
+    if(instance.getPasswordStatus() == PASSWORD_LOGIN)
+    {
+        pageNum = PAGE_SELECT_USER;
+    }
+    else
+    {
+        pageNum = PAGE_USERINFO;
+    }
+
+    emit signalShowPageNum(pageNum);
 }
 
 void PagePasswordAllChat::mousePressEvent(QMouseEvent *ev)
