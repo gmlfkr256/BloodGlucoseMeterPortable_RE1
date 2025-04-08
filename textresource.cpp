@@ -183,11 +183,12 @@ void TextResource::init()
                                                 });
 
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTextError",QStringList{
-                                                    "로그인에 성공했습니다", // GAPI_PASSWD_ECODE_NORMAL
-                                                    "비밀번호가 너무 짧습니다", // GAPI_PASSWD_ECODE_SHORT_LEN
+                                                    "비밀번호가 설정되었습니다", // GAPI_PASSWD_ECODE_NORMAL
+                                                    "비밀번호를 8~12자리여야 합니다", // GAPI_PAS다SWD_ECODE_RANGE_LEN
                                                     "숫자가 포함되어야 합니다", // GAPI_PASSWD_ECODE_NO_NUMBER
                                                     "알파벳이 포함되어야 합니다", // GAPI_PASSWD_ECODE_NO_ALPHABET
                                                     "특수문자가 포함되어야 합니다", // GAPI_PASSWD_ECODE_NO_SPECTAL
+                                                    "비밀번호가 일치하지 않습니다", // GAPI_PASSWD_ECODE_NO_MATCH
                                                     "알 수 없는 오류입니다", // GAPI_PASSWD_ECODE_MAX
                                                 });
 

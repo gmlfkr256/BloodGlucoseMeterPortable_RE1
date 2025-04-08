@@ -205,15 +205,14 @@ void ComponentPasswordKeyboard::setFunctionNumBytButton(int nIndex)
 
 void ComponentPasswordKeyboard::processOK()
 {
-
-    int nErrCode = PASSWORD_ECODE_NORMAL;
-
+#if DEVICE
+    bool bIsCheckPassword = false;
+#endif
     switch (instance.getPasswordStatus())
     {
     case PASSWORD_LOGIN:
         qDebug()<<"keyboard: login";
 #if DEVICE
-        bool bIsCheckPassword = false;
         if(strKey == instance.sysUserInfo[instance.getUserNumber()].passwd)
         {
             bIsCheckPassword = true;
@@ -221,10 +220,13 @@ void ComponentPasswordKeyboard::processOK()
 
         if(bIsCheckPassword)
         {
+            instance.actUserLogin(instance.getUserNumber());
             if(strKey == "1111" || strKey == "2222")
                 instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_CHANGE);
             else
+            {
                 instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
+            }
         }
         else
         {
@@ -234,6 +236,7 @@ void ComponentPasswordKeyboard::processOK()
         }
 #else
         // 테스트 환경 시나리오별 강제 분기
+        //int nErrCode = PASSWORD_ECODE_NORMAL;
         if(strKey == instance.sysUserInfo[instance.getUserNumber()].passwd) {
             //nErrCode = PASSWORD_ECODE_NORMAL;
             instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
@@ -293,8 +296,9 @@ void ComponentPasswordKeyboard::processOK()
         switch (instance.getPasswordStatusPrev())
         {
         case PASSWORD_EDIT:
-            if(instance.getPasswordChage() == strKey)
+            if(bIsPasswordValid(strKey))
             {
+
                 instance.setPasswordStrStatus(PASSWORD_STR_EDIT_SUCCESS);
                 instance.setUserPasswordChange();
             }
@@ -362,4 +366,49 @@ void ComponentPasswordKeyboard::functionShowHide()
 {
     bIsShowAll = !bIsShowAll;
     emit signalKeyClick(getDisplayText());
+}
+
+bool ComponentPasswordKeyboard::bIsPasswordValid(const QString strKey)
+{
+    bool bIsValid = true;
+
+    if(strKey.length() < 8 || strKey.length() > 12)
+    {
+        instance.setPasswordErrCode(PASSWORD_ECODE_RANGE_LEN);
+        bIsValid = false;
+    }
+
+    // 영문자 체크
+    if (!strKey.contains(QRegExp("[A-Za-z]")))
+    {
+        instance.setPasswordErrCode(PASSWORD_ECODE_NO_ALPHABET);
+        bIsValid = false;
+    }
+
+    // 숫자 체크
+    if (!strKey.contains(QRegExp("[0-9]")))
+    {
+        instance.setPasswordErrCode(PASSWORD_ECODE_NO_NUMBER);
+        bIsValid = false;
+    }
+
+    // 특수문자 체크 (기호 범위: !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~ )
+    if (!strKey.contains(QRegExp("[^A-Za-z0-9]")))
+    {
+        instance.setPasswordErrCode(PASSWORD_ECODE_NO_SPECIAL);
+        bIsValid = false;
+    }
+
+    if(instance.getPasswordChage() != strKey)
+    {
+        instance.setPasswordErrCode(PASSWORD_ECODE_NO_MATCH);
+        bIsValid = false;
+    }
+
+    if (bIsValid)
+    {
+        instance.setPasswordErrCode(PASSWORD_ECODE_NORMAL);
+    }
+
+    return bIsValid;
 }

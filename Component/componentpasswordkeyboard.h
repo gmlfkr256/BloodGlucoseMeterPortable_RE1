@@ -64,6 +64,7 @@ private:
     QString getDisplayText();
     void setFunctionNumBytButton(int nIndex);
     void processOK();
+    bool bIsPasswordValid(const QString strKey);
 signals:
     void signalKeyClick(QString strKey);
     void signalCheckLogin();

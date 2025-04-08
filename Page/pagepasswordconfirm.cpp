@@ -92,7 +92,6 @@ void PagePasswordConfirm::update()
     }
     else
     {
-
         labelText->setText(textResource.getText(PAGE_PASSWORD_CONFIRM,"labelText").at(nStrStatus));
     }
 #else

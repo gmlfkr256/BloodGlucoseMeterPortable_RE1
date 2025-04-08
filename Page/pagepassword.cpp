@@ -69,7 +69,7 @@ void PagePassword::init()
 
 void PagePassword::update()
 {
-/*
+    /*
 #if DEVICE
     int user = 0; // = GAPI_USER_MAX;
 
@@ -113,13 +113,6 @@ void PagePassword::update()
     {
         instance.pixLoad(label,false,strDirPath,"/circlePassword.png");
     }
-
-    labelButtonCancel->hide();
-
-    if(instance.getPasswordStatus() != PASSWORD_LOGIN)
-    {
-        labelButtonCancel->show();
-    }
 }
 
 void PagePassword::mousePressEvent(QMouseEvent *ev)
@@ -158,7 +151,14 @@ void PagePassword::mousePressEvent(QMouseEvent *ev)
 
     if(instance.touchCheck(labelButtonCancel->geometry(),ev) && labelButtonCancel->isVisible())
     {
-        emit signalShowPageNum(PAGE_MENU);
+        if(instance.getPasswordStatus() == PASSWORD_LOGIN)
+        {
+            emit signalShowPageNum(PAGE_SELECT_USER);
+        }
+        else
+        {
+            emit signalShowPageNum(PAGE_USERINFO);
+        }
     }
 
 }
