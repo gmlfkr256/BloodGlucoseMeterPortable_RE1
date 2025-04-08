@@ -122,6 +122,7 @@ void TextResource::init()
     textData[Lan][PAGE_SELECT_USER].insert("labelTitle",QStringList{"사용자를 선택해주세요"});
 
     fontData[Lan][PAGE_SELECT_USER].insert("labelUserText",QFont(currentFont, instance.pixelToPoint(36)));
+    textData[Lan][PAGE_SELECT_USER].insert("labelUserText",QStringList{"사용자 1","사용자 2"});
 
     //PAGE_PASSWORD_ALLCHAT
     fontData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelButtonNum",QFont(currentFont,instance.pixelToPoint(44)));

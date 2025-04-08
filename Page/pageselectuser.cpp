@@ -46,6 +46,7 @@ void PageSelectUser::update()
     for(int i=0; i<USER_MAX; i++)
     {
         labelUserText[i]->setFont(textResource.getFont(PAGE_SELECT_USER,"labelUserText"));
+        labelUserText[i]->setText(textResource.getText(PAGE_SELECT_USER,"labelUserText").at(i));
         instance.pixLoad(labelUserImg[i],false,strDirPath,"/buttonUser"+QString::number(i)+".png");
     }
 }
