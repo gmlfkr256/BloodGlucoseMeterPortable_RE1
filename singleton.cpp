@@ -14,7 +14,7 @@ void Singleton::init()
 {
 
 #if DEVICE
-    //updateSysUserInfo();
+    updateSysUserInfo();
 #else
 
     langData.used = KR;

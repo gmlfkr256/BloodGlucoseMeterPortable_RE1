@@ -63,6 +63,7 @@ public:
     bool eventFilter(QObject *watched, QEvent *event);
 
     Singleton &instance = Singleton::getInstance();
+    TextResource &textResource = TextResource::getInstance();
 
     QStackedWidget *stackedWidget;
     ComponentBattery *comBat;

@@ -11,7 +11,7 @@ void PageSelectUser::init()
     setBgTopHide();
 
     labelTitle = new QLabel(this);
-    labelTitle->setGeometry(154,325,332,45);
+    labelTitle->setGeometry(0,325,640,45);
     labelTitle->setAlignment(Qt::AlignCenter);
     labelTitle->setStyleSheet("color: #808080;");
 
@@ -25,12 +25,12 @@ void PageSelectUser::init()
         if(i==0)
         {
             labelUserImg[0]->setGeometry(75,98,245,215);
-            labelUserText[0]->setGeometry(140,248,116,45);
+            labelUserText[0]->setGeometry(75,248,245,45);
         }
         else if(i==1)
         {
             labelUserImg[1]->setGeometry(320,98,245,215);
-            labelUserText[1]->setGeometry(382,248,122,45);
+            labelUserText[1]->setGeometry(320,248,245,45);
         }
     }
 
@@ -53,6 +53,7 @@ void PageSelectUser::update()
 
 void PageSelectUser::pageShow()
 {
+    instance.updateSysUserInfo();
     nLabelNumber = -1;
     update();
 }

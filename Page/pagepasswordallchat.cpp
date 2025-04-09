@@ -25,16 +25,11 @@ void PagePasswordAllChat::init()
     QFont font = labelPasswordBg->font();
     font.setPointSize(instance.pixelToPoint(40));
     labelPasswordBg->setFont(font);
-    //labelPasswordBg->setText("@@@@@@@@@@@@");
     labelPasswordBg->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     labelPasswordBg->setStyleSheet("color: black; border: 1px solid black; border-radius:5px; padding-left: 10px;");
 
     labelButtonShowHide = new QLabel(this);
     labelButtonShowHide->setGeometry(515,133,85,85);
-    //labelButtonShowHide->setStyleSheet("color: black;");
-    //labelButtonShowHide->setAlignment(Qt::AlignCenter);
-    //labelButtonShowHide->setText("✓");
-    //labelButtonShowHide->setFont(textResource.getFont(PAGE_PASSWORD_ALLCHAT,"labelButtonNum"));
 
     comKeyboard = new ComponentPasswordKeyboard(this);
 

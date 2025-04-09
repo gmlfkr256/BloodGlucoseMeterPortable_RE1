@@ -37,6 +37,7 @@ void TextResource::init()
                                      });
 
 
+    //CUSTOM_BUTTON
     fontData[Lan][CUSTOM_BUTTON].insert("labelButtonOK",QFont(currentFont,instance.pixelToPoint(30),QFont::Bold));
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonOK",QStringList{"확인"});
 
@@ -76,7 +77,7 @@ void TextResource::init()
                                                "측정 결과를 분석할 수 없습니다\n다시 측정해 주세요",             // 4
                                                "측정된 데이터에 오류가 있습니다\n다시 측정해 주세요",             // 5
                                                "측정에 실패했습니다\n고객센터로 문의해 주세요",              // 6
-                                               "오류 측정에 실패했습니다\n고객센터로 문의해 주세요"             // 7
+                                               "오류. 측정에 실패했습니다\n고객센터로 문의해 주세요"             // 7
                                            });
 
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade",QFont(currentFont,instance.pixelToPoint(42),QFont::Bold));
@@ -231,6 +232,7 @@ void TextResource::init()
 
     fontData[Lan][PAGE_SELECT].insert("labelTextIcon",QFont(currentFont,instance.pixelToPoint(23),QFont::Bold));
     textData[Lan][PAGE_SELECT].insert("labelTextIcon",QStringList{"정상","저혈당","고혈당","저혈당","고혈당"});
+
     //PAGE_MENU
     fontData[Lan][PAGE_MENU].insert("labelButtonText",QFont(currentFont,instance.pixelToPoint(30),QFont::Bold));
     textData[Lan][PAGE_MENU].insert("labelButtonText",QStringList{
@@ -518,7 +520,7 @@ void TextResource::init()
                                                "Unable to analyze the measurement result.\nPlease try again.", // 4
                                                "There is an error in the measured data.\nPlease try again.", // 5
                                                "Measurement failed.\nPlease contact customer support.", // 6
-                                               "Error measurement failed.\nPlease contact customer support." // 7
+                                               "Error. Measurement failed.\nPlease contact customer support." // 7
                                            });
 
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QFont(currentFont, instance.pixelToPoint(42), QFont::Bold));
@@ -557,6 +559,38 @@ void TextResource::init()
     fontData[Lan][PAGE_PASSWORD].insert("labelButtonCancelText",QFont(currentFont,instance.pixelToPoint(29)));
     textData[Lan][PAGE_PASSWORD].insert("labelButtonCancelText",QStringList{"X"});
 
+    //PAGE_SELECT_USER
+    fontData[Lan][PAGE_SELECT_USER].insert("labelTitle", QFont(currentFont, instance.pixelToPoint(36)));
+    textData[Lan][PAGE_SELECT_USER].insert("labelTitle", QStringList{"Please select a user"});
+
+    fontData[Lan][PAGE_SELECT_USER].insert("labelUserText", QFont(currentFont, instance.pixelToPoint(36)));
+    textData[Lan][PAGE_SELECT_USER].insert("labelUserText", QStringList{"User 1", "User 2"});
+
+    //PAGE_PASSWORD_ALLCHAT
+    fontData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelButtonNum", QFont(currentFont, instance.pixelToPoint(44)));
+
+    fontData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitle", QFont(currentFont, instance.pixelToPoint(40), QFont::Bold));
+    textData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitle", QStringList{
+                                                    "Please log in",
+                                                    "Change Password",
+                                                    "Delete User",
+                                                    "Password Confirmation",
+                                                    "Password Re-confirmation",
+                                                    "Password Reset",
+                                                    "PASSWORD_MAX"
+                                                });
+
+    fontData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitleSub", QFont(currentFont, instance.pixelToPoint(30)));
+    textData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitleSub", QStringList{
+                                                    "Please enter your password",
+                                                    "Please enter the new password",
+                                                    "Please enter your password",
+                                                    "Please enter your password for confirmation",
+                                                    "Please re-enter your password",
+                                                    "Please enter your current password",
+                                                    "PASSWORD_MAX"
+                                                });
+
     //PAGE_PASSWORD_CONFIRM
     fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTitle",QFont(currentFont,instance.pixelToPoint(40),QFont::Bold));
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTitle",QStringList{
@@ -575,6 +609,9 @@ void TextResource::init()
                                                     "Delete Info", //PASSWORD_STR_DELETE_CONFIRM,
                                                     "Delete Info", //PASSWORD_STR_DELETE_SUCCESS,
                                                     "Logout", //PASSWORD_STR_LOGOUT,
+                                                    "Reset Password", //PASSWORD_STR_INIT,
+                                                    "Reset Password", //PASSWORD_STR_INIT_CONFIRM,
+                                                    "Reset Password", //PASSWORD_STR_INIT
                                                     "PASSWORD_STR_MAX" //PASSWORD_STR_MAX
                                                 });
     fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText",QFont(currentFont,instance.pixelToPoint(nTextSize),QFont::Bold));
@@ -594,8 +631,22 @@ void TextResource::init()
                                                     "Deleting user information\n will reset the password\n and settings", // PASSWORD_STR_DELETE_CONFIRM
                                                     "User information deleted\nThe system will reboot\n to reset settings", // PASSWORD_STR_DELETE_SUCCESS
                                                     "Logging out\nPlease re-login",                  // PASSWORD_STR_LOGOUT
+                                                    "Do you want to reset\n the password", // PASSWORD_STR_INIT
+                                                    "Resetting will restore the password\n to its default value", // PASSWORD_STR_INIT_CONFIRM
+                                                    "Password has been reset", // PASSWORD_STR_INIT_SUCCESS
                                                     "PASSWORD_STR_MAX"                                      // PASSWORD_STR_MAX
                                                 });
+
+    textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTextError", QStringList{
+                                                    "Password has been set",                          // GAPI_PASSWD_ECODE_NORMAL
+                                                    "Password must be\n 8 to 12 characters long",       // GAPI_PASSWD_ECODE_RANGE_LEN
+                                                    "Password must include\n at least one number",      // GAPI_PASSWD_ECODE_NO_NUMBER
+                                                    "Password must include\n at least one letter",      // GAPI_PASSWD_ECODE_NO_ALPHABET
+                                                    "Password must include\n at least one special character", // GAPI_PASSWD_ECODE_NO_SPECTAL
+                                                    "Passwords do not match",                         // GAPI_PASSWD_ECODE_NO_MATCH
+                                                    "Unknown error",                                   // GAPI_PASSWD_ECODE_MAX
+                                                });
+
 
     //PAGE_HOME
     fontData[Lan][PAGE_HOME].insert("labelTextStatus",QFont(currentFont,instance.pixelToPoint(26),QFont::Bold));
@@ -829,6 +880,7 @@ void TextResource::init()
     fontData[Lan][PAGE_USERINFO].insert("labelText",QFont(currentFont,instance.pixelToPoint(36)));
     textData[Lan][PAGE_USERINFO].insert("labelText",QStringList{
                                             "Change password",
+                                            "Reset password",
                                             "Delete user data",
                                             "Log out"
                                         });
@@ -927,7 +979,7 @@ void TextResource::init()
                                                "エラー測定に失敗しました。\nカスタマーサポートにお問い合わせください。" // 7
                                            });
 
-    fontData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QFont(currentFont, instance.pixelToPoint(42), QFont::Bold));
+    fontData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QFont(currentFont, instance.pixelToPoint(36), QFont::Bold));
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QStringList{
                                                "アップグレードに成功しました。", // 0
                                                "アップグレードに失敗しました。\nカスタマーサポートにお問い合わせください。", // 1
@@ -972,6 +1024,38 @@ void TextResource::init()
     fontData[Lan][PAGE_PASSWORD].insert("labelButtonCancelText", QFont(currentFont, instance.pixelToPoint(29)));
     textData[Lan][PAGE_PASSWORD].insert("labelButtonCancelText", QStringList{"戻る"}); // Cancel
 
+    //PAGE_SELECT_USER
+    fontData[Lan][PAGE_SELECT_USER].insert("labelTitle", QFont(currentFont, instance.pixelToPoint(36)));
+    textData[Lan][PAGE_SELECT_USER].insert("labelTitle", QStringList{"ユーザーを選択してください"});
+
+    fontData[Lan][PAGE_SELECT_USER].insert("labelUserText", QFont(currentFont, instance.pixelToPoint(36)));
+    textData[Lan][PAGE_SELECT_USER].insert("labelUserText", QStringList{"ユーザー1", "ユーザー2"});
+
+    //PAGE_PASSWORD_ALLCHAT
+    fontData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelButtonNum", QFont(currentFont, instance.pixelToPoint(44)));
+
+    fontData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitle", QFont(currentFont, instance.pixelToPoint(40), QFont::Bold));
+    textData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitle", QStringList{
+                                                    "ログインしてください",
+                                                    "パスワードの変更",
+                                                    "ユーザー削除",
+                                                    "パスワード確認",
+                                                    "パスワード再確認",
+                                                    "パスワード初期化",
+                                                    "PASSWORD_MAX"
+                                                });
+
+    fontData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitleSub", QFont(currentFont, instance.pixelToPoint(30)));
+    textData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitleSub", QStringList{
+                                                    "パスワードを入力してください",
+                                                    "新しいパスワードを入力してください",
+                                                    "パスワードを入力してください",
+                                                    "確認のためにパスワードを入力してください",
+                                                    "再確認のためにパスワードを入力してください",
+                                                    "現在のパスワードを入力してください",
+                                                    "PASSWORD_MAX"
+                                                });
+
     //PAGE_PASSWORD_CONFIRM
     fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTitle", QFont(currentFont, instance.pixelToPoint(40), QFont::Bold));
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTitle", QStringList{
@@ -990,6 +1074,9 @@ void TextResource::init()
                                                     "情報削除", // PASSWORD_STR_DELETE_CONFIRM
                                                     "情報削除", // PASSWORD_STR_DELETE_SUCCESS
                                                     "ログアウト", // PASSWORD_STR_LOGOUT
+                                                    "パスワード初期化",     // PASSWORD_STR_INIT
+                                                    "パスワード初期化",     // PASSWORD_STR_INIT_CONFIRM
+                                                    "パスワード初期化",     // PASSWORD_STR_SUCCESS
                                                     "PASSWORD_STR_MAX" // PASSWORD_STR_MAX
                                                 });
 
@@ -1010,7 +1097,20 @@ void TextResource::init()
                                                     "ユーザー情報を削除すると\nパスワードと設定がリセットされます", // PASSWORD_STR_DELETE_CONFIRM
                                                     "ユーザー情報が削除されました\n設定をリセットするため再起動します", // PASSWORD_STR_DELETE_SUCCESS
                                                     "ログアウトしますか？\n再度ログインしてください",             // PASSWORD_STR_LOGOUT
+                                                    "パスワードを初期化しますか？", // PASSWORD_STR_INIT
+                                                    "初期化すると、パスワードは\n初期設定に戻ります", // PASSWORD_STR_INIT_CONFRIM
+                                                    "パスワードが初期化されました", // PASSWORD_STR_INIT_SUCCESS
                                                     "PASSWORD_STR_MAX"                             // PASSWORD_STR_MAX
+                                                });
+
+    textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTextError", QStringList{
+                                                    "パスワードが設定されました", // GAPI_PASSWD_ECODE_NORMAL
+                                                    "パスワードは\n8～12文字である必要があります", // GAPI_PASSWD_ECODE_RANGE_LEN
+                                                    "パスワードには\n数字を含めてください", // GAPI_PASSWD_ECODE_NO_NUMBER
+                                                    "パスワードには\n英字を含めてください", // GAPI_PASSWD_ECODE_NO_ALPHABET
+                                                    "パスワードには\n記号を含めてください", // GAPI_PASSWD_ECODE_NO_SPECTAL
+                                                    "パスワードが一致しません", // GAPI_PASSWD_ECODE_NO_MATCH
+                                                    "不明なエラーが発生しました" // GAPI_PASSWD_ECODE_MAX
                                                 });
 
     //PAGE_HOME
@@ -1273,6 +1373,7 @@ void TextResource::init()
     fontData[Lan][PAGE_USERINFO].insert("labelText", QFont(currentFont, instance.pixelToPoint(36)));
     textData[Lan][PAGE_USERINFO].insert("labelText", QStringList{
                                             "パスワードを変更する",   // Change password
+                                            "パスワードをリセット", // reset password
                                             "ユーザーデータを削除する", // Delete user data
                                             "ログアウト"             // Log out
                                         });
@@ -1418,6 +1519,38 @@ void TextResource::init()
     fontData[Lan][PAGE_PASSWORD].insert("labelButtonCancelText", QFont(currentFont, instance.pixelToPoint(29)));
     textData[Lan][PAGE_PASSWORD].insert("labelButtonCancelText", QStringList{"取消"}); // Cancel
 
+    //PAGE_SELECT_USER
+    fontData[Lan][PAGE_SELECT_USER].insert("labelTitle", QFont(currentFont, instance.pixelToPoint(36)));
+    textData[Lan][PAGE_SELECT_USER].insert("labelTitle", QStringList{"请选择用户"});
+
+    fontData[Lan][PAGE_SELECT_USER].insert("labelUserText", QFont(currentFont, instance.pixelToPoint(36)));
+    textData[Lan][PAGE_SELECT_USER].insert("labelUserText", QStringList{"用户1", "用户2"});
+
+    //PAGE_PASSWORD_ALLCHAT
+    fontData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelButtonNum", QFont(currentFont, instance.pixelToPoint(44)));
+
+    fontData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitle", QFont(currentFont, instance.pixelToPoint(40), QFont::Bold));
+    textData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitle", QStringList{
+                                                    "请登录",
+                                                    "更改密码",
+                                                    "删除用户",
+                                                    "确认密码",
+                                                    "再次确认密码",
+                                                    "重置密码",
+                                                    "PASSWORD_MAX"
+                                                });
+
+    fontData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitleSub", QFont(currentFont, instance.pixelToPoint(30)));
+    textData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitleSub", QStringList{
+                                                    "请输入密码",
+                                                    "请输入新的密码",
+                                                    "请输入密码",
+                                                    "请输入确认密码",
+                                                    "请再次输入密码",
+                                                    "请输入当前密码",
+                                                    "PASSWORD_MAX"
+                                                });
+
     //PAGE_PASSWORD_CONFIRM
     fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTitle", QFont(currentFont, instance.pixelToPoint(40), QFont::Bold));
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTitle", QStringList{
@@ -1436,6 +1569,9 @@ void TextResource::init()
                                                     "删除信息确认",      // PASSWORD_STR_DELETE_CONFIRM
                                                     "信息删除成功",      // PASSWORD_STR_DELETE_SUCCESS
                                                     "退出登录",          // PASSWORD_STR_LOGOUT
+                                                    "重置密码",    // PASSWORD_STR_INIT
+                                                    "重置密码",    // PASSWORD_STR_INIT_CONFIRM
+                                                    "重置密码",    // PASSWORD_STR_SUCCESS
                                                     "PASSWORD_STR_MAX"   // PASSWORD_STR_MAX
                                                 });
 
@@ -1456,7 +1592,20 @@ void TextResource::init()
                                                     "删除用户信息将重置密码和设置",           // PASSWORD_STR_DELETE_CONFIRM
                                                     "用户信息已删除，\n系统将重启以重置设置",   // PASSWORD_STR_DELETE_SUCCESS
                                                     "正在退出登录，请重요新登录",               // PASSWORD_STR_LOGOUT
+                                                    "是否要重置密码？", // PASSWORD_STR_INIT
+                                                    "重置后密码将恢复为\n默认设置", // PASSWORD_STR_INIT_CONFIRM
+                                                    "密码已重置", // PASSWORD_STR_INIT_SUCCESS
                                                     "PASSWORD_STR_MAX"
+                                                });
+
+    textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTextError", QStringList{
+                                                    "密码已设置", // GAPI_PASSWD_ECODE_NORMAL
+                                                    "密码长度必须为\n8到12个字符", // GAPI_PASSWD_ECODE_RANGE_LEN
+                                                    "密码必须包含\n至少一个数字", // GAPI_PASSWD_ECODE_NO_NUMBER
+                                                    "密码必须包含\n至少一个字母", // GAPI_PASSWD_ECODE_NO_ALPHABET
+                                                    "密码必须包含\n至少一个特殊字符", // GAPI_PASSWD_ECODE_NO_SPECTAL
+                                                    "密码不一致", // GAPI_PASSWD_ECODE_NO_MATCH
+                                                    "发生未知错误" // GAPI_PASSWD_ECODE_MAX
                                                 });
 
 
@@ -1720,6 +1869,7 @@ void TextResource::init()
     fontData[Lan][PAGE_USERINFO].insert("labelText", QFont(currentFont, instance.pixelToPoint(36)));
     textData[Lan][PAGE_USERINFO].insert("labelText", QStringList{
                                             "修改密码",     // Change password
+                                            "重置密码", // reset password
                                             "删除用户数据", // Delete user data
                                             "注销登录"      // Log out
                                         });
@@ -1868,6 +2018,38 @@ void TextResource::init()
     fontData[Lan][PAGE_PASSWORD].insert("labelButtonCancelText", QFont(currentFont, instance.pixelToPoint(29)));
     textData[Lan][PAGE_PASSWORD].insert("labelButtonCancelText", QStringList{"取消"}); // Cancel
 
+    //PAGE_SELECT_USER
+    fontData[Lan][PAGE_SELECT_USER].insert("labelTitle", QFont(currentFont, instance.pixelToPoint(36)));
+    textData[Lan][PAGE_SELECT_USER].insert("labelTitle", QStringList{"請選擇使用者"});
+
+    fontData[Lan][PAGE_SELECT_USER].insert("labelUserText", QFont(currentFont, instance.pixelToPoint(36)));
+    textData[Lan][PAGE_SELECT_USER].insert("labelUserText", QStringList{"使用者1", "使用者2"});
+
+    //PAGE_PASSWORD_ALLCHAT
+    fontData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelButtonNum", QFont(currentFont, instance.pixelToPoint(44)));
+
+    fontData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitle", QFont(currentFont, instance.pixelToPoint(40), QFont::Bold));
+    textData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitle", QStringList{
+                                                    "請登入",
+                                                    "變更密碼",
+                                                    "刪除使用者",
+                                                    "確認密碼",
+                                                    "再次確認密碼",
+                                                    "重設密碼",
+                                                    "PASSWORD_MAX"
+                                                });
+
+    fontData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitleSub", QFont(currentFont, instance.pixelToPoint(30)));
+    textData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitleSub", QStringList{
+                                                    "請輸入密碼",
+                                                    "請輸入新密碼",
+                                                    "請輸入密碼",
+                                                    "請輸入確認密碼",
+                                                    "請再次輸入密碼",
+                                                    "請輸入目前的密碼",
+                                                    "PASSWORD_MAX"
+                                                });
+
     //PAGE_PASSWORD_CONFIRM
     fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTitle", QFont(currentFont, instance.pixelToPoint(40), QFont::Bold));
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTitle", QStringList{
@@ -1886,6 +2068,9 @@ void TextResource::init()
                                                     "刪除信息",       // Delete Info (PASSWORD_STR_DELETE_CONFIRM)
                                                     "刪除信息",       // Delete Info (PASSWORD_STR_DELETE_SUCCESS)
                                                     "登出",          // Logout
+                                                    "重設密碼",    // PASSWORD_STR_INIT
+                                                    "重設密碼",    // PASSWORD_STR_INIT_CONFIRM
+                                                    "重設密碼",    // PASSWORD_STR_SUCCESS
                                                     "PASSWORD_STR_MAX"
                                                 });
 
@@ -1906,7 +2091,20 @@ void TextResource::init()
                                                     "刪除用戶信息將重置密碼與設定",               // Deleting user information will reset the password and settings
                                                     "用戶信息已刪除，\n系統將重啟以重置設定",        // User information deleted. The system will reboot to reset settings
                                                     "正在登出，請重新登入",                       // Logging out. Please re-login
+                                                    "您要重設密碼嗎？", // PASSWORD_STR_INIT
+                                                    "重設後，密碼將恢復為\n預設值", // PASSWORD_STR_INIT_CONFRIM
+                                                    "密碼已重設", // PASSWORD_STR_INIT_SUCCESS
                                                     "PASSWORD_STR_MAX"
+                                                });
+
+    textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTextError", QStringList{
+                                                    "密碼已設定", // GAPI_PASSWD_ECODE_NORMAL
+                                                    "密碼長度必須為\n8到12個字元", // GAPI_PASSWD_ECODE_RANGE_LEN
+                                                    "密碼必須包含\n至少一個數字", // GAPI_PASSWD_ECODE_NO_NUMBER
+                                                    "密碼必須包含\n至少一個英文字母", // GAPI_PASSWD_ECODE_NO_ALPHABET
+                                                    "密碼必須包含\n至少一個特殊字元", // GAPI_PASSWD_ECODE_NO_SPECTAL
+                                                    "密碼不相符", // GAPI_PASSWD_ECODE_NO_MATCH
+                                                    "發生未知錯誤" // GAPI_PASSWD_ECODE_MAX
                                                 });
 
     //PAGE_HOME
@@ -2165,6 +2363,7 @@ void TextResource::init()
     fontData[Lan][PAGE_USERINFO].insert("labelText", QFont(currentFont, instance.pixelToPoint(36)));
     textData[Lan][PAGE_USERINFO].insert("labelText", QStringList{
                                             "更改密碼",    // Change password
+                                            "重設密碼", // reset password
                                             "刪除用戶數據", // Delete user data
                                             "登出"         // Log out
                                         });
@@ -2312,6 +2511,38 @@ void TextResource::init()
     fontData[Lan][PAGE_PASSWORD].insert("labelButtonCancelText", QFont(currentFont, instance.pixelToPoint(20)));
     textData[Lan][PAGE_PASSWORD].insert("labelButtonCancelText", QStringList{"Cancelar"}); // Cancel
 
+    //PAGE_SELECT_USER
+    fontData[Lan][PAGE_SELECT_USER].insert("labelTitle", QFont(currentFont, instance.pixelToPoint(36)));
+    textData[Lan][PAGE_SELECT_USER].insert("labelTitle", QStringList{"Seleccione un usuario"});
+
+    fontData[Lan][PAGE_SELECT_USER].insert("labelUserText", QFont(currentFont, instance.pixelToPoint(28)));
+    textData[Lan][PAGE_SELECT_USER].insert("labelUserText", QStringList{"Usuario 1", "Usuario 2"});
+
+    //PAGE_PASSWORD_ALLCHAT
+    fontData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelButtonNum", QFont(currentFont, instance.pixelToPoint(44)));
+
+    fontData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitle", QFont(currentFont, instance.pixelToPoint(40), QFont::Bold));
+    textData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitle", QStringList{
+                                                    "Iniciar sesión",
+                                                    "Cambiar contraseña",
+                                                    "Eliminar usuario",
+                                                    "Confirmar contraseña",
+                                                    "Reconfirmar contraseña",
+                                                    "Restablecer contraseña",
+                                                    "PASSWORD_MAX"
+                                                });
+
+    fontData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitleSub", QFont(currentFont, instance.pixelToPoint(30)));
+    textData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitleSub", QStringList{
+                                                    "Por favor ingrese la contraseña",
+                                                    "Ingrese la nueva contraseña",
+                                                    "Por favor ingrese la contraseña",
+                                                    "Ingrese la contraseña para confirmar",
+                                                    "Ingrese la contraseña nuevamente",
+                                                    "Ingrese su contraseña actual",
+                                                    "PASSWORD_MAX"
+                                                });
+
     //PAGE_PASSWORD_CONFIRM
     fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTitle", QFont(currentFont, instance.pixelToPoint(40), QFont::Bold));
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTitle", QStringList{
@@ -2330,6 +2561,9 @@ void TextResource::init()
                                                     "Eliminar información",                 // Delete Info
                                                     "Eliminar información",                 // Delete Info
                                                     "Cerrar sesión",                        // Logout
+                                                    "Restablecer contraseña",    // PASSWORD_STR_INIT
+                                                    "Restablecer contraseña",    // PASSWORD_STR_INIT_CONFIRM
+                                                    "Restablecer contraseña",    // PASSWORD_STR_SUCCESS
                                                     "CONTRASEÑA_STR_MAX"                    // PASSWORD_STR_MAX
                                                 });
 
@@ -2350,8 +2584,22 @@ void TextResource::init()
                                                     "Eliminar la información del usuario\nrestablecerá la contraseña\ny la configuración", // Deleting user information will reset the password and settings
                                                     "Información del usuario eliminada\nEl sistema se reiniciará\n para restablecer la configuración", // User information deleted The system will reboot to reset settings
                                                     "Cerrando sesión\nPor favor vuelva a iniciar sesión",  // Logging out Please re-login
+                                                    "¿Desea restablecer la contraseña?", // PASSWORD_STR_INIT
+                                                    "Restablecer la contraseña\nla devolverá a los valores por defecto", // PASSWORD_STR_INIT_CONFIRM
+                                                    "La contraseña ha sido restablecida", // PASSWORD_STR_INIT_SUCCESS
                                                     "CONTRASEÑA_STR_MAX"                                   // PASSWORD_STR_MAX
                                                 });
+
+    textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTextError", QStringList{
+                                                    "La contraseña ha sido establecida", // GAPI_PASSWD_ECODE_NORMAL
+                                                    "La contraseña debe tener entre\n8 y 12 caracteres", // GAPI_PASSWD_ECODE_RANGE_LEN
+                                                    "La contraseña debe incluir\nal menos un número", // GAPI_PASSWD_ECODE_NO_NUMBER
+                                                    "La contraseña debe incluir\nal menos una letra", // GAPI_PASSWD_ECODE_NO_ALPHABET
+                                                    "La contraseña debe incluir\nal menos un carácter especial", // GAPI_PASSWD_ECODE_NO_SPECTAL
+                                                    "Las contraseñas no coinciden", // GAPI_PASSWD_ECODE_NO_MATCH
+                                                    "Error desconocido" // GAPI_PASSWD_ECODE_MAX
+                                                });
+
     //PAGE_HOME
     fontData[Lan][PAGE_HOME].insert("labelTextStatus",QFont(currentFont,instance.pixelToPoint(18),QFont::Bold));
     textData[Lan][PAGE_HOME].insert("labelTextStatus",QStringList{
@@ -2619,6 +2867,7 @@ void TextResource::init()
     fontData[Lan][PAGE_USERINFO].insert("labelText",QFont(currentFont,instance.pixelToPoint(36)));
     textData[Lan][PAGE_USERINFO].insert("labelText",QStringList{
                                             "Cambiar contraseña",
+                                            "Restablecer la contraseña", // reset password
                                             "Eliminar datos de usuario",
                                             "Cerrar sesión"
                                         });

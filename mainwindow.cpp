@@ -37,6 +37,7 @@ void MainWindow::init()
     qDebug()<<"get instance.langData.used: "<<instance.langData.used;
     instance.setDeviceLanguage(instance.langData.used);
 
+    QThread::msleep(300);
     qDebug()<<"MainWindow - instance.dispData.dir: "<<instance.dispData.dir;
 #endif
 
@@ -266,7 +267,9 @@ void MainWindow::init()
 
     HideComponents();
 
-#if !NEW_PASSWORD
+#if NEW_PASSWORD
+    setPageByPageNum(PAGE_SELECT_USER);
+#else
     setPageByPageNum(PAGE_PASSWORD);
 #endif
 }
