@@ -625,7 +625,7 @@ void TextResource::init()
                                                     "The entered password\n does not match the \nprevious password", // PASSWORD_STR_REPEAT_FAIL
                                                     "Would you like \nto change your password?",     // PASSWORD_STR_EDIT
                                                     "Please enter your password\n for verification", // PASSWORD_STR_EDIT_CONFIRM
-                                                    "Please enter a new password\n\nYour password must be at least 8 characters long \nand include a number\n a letter (A-Z) and a symbol (e.g. .,?!)",  // PASSWORD_STR_EDIT_CHANGE
+                                                    "Please enter a new password\n\nYour password must\nbe at least 8 characters long and include a number\n a letter (A-Z) and a symbol (e.g. .,?!)",  // PASSWORD_STR_EDIT_CHANGE
                                                     "Password change completed\nPlease re-login",    // PASSWORD_STR_EDIT_SUCCESS
                                                     "Do you want to\n delete user information?",     // PASSWORD_STR_DELETE
                                                     "Deleting user information\n will reset the password\n and settings", // PASSWORD_STR_DELETE_CONFIRM
