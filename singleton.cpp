@@ -99,6 +99,12 @@ void Singleton::init()
         }
     }
 
+#if NEW_PASSWORD
+    QString password = "u1-0000001";
+    qstrncpy(sysUserInfo[0].passwd,password.toUtf8().constData(),sizeof (sysUserInfo[0].passwd));
+    password = "u2-0000001";
+    qstrncpy(sysUserInfo[1].passwd,password.toUtf8().constData(),sizeof (sysUserInfo[1].passwd));
+#else
     for(int i=0; i<USER_MAX; i++)
     {
         //"1111","2222"
@@ -106,6 +112,7 @@ void Singleton::init()
         qstrncpy(sysUserInfo[i].passwd,password.toUtf8().constData(),sizeof (sysUserInfo[i].passwd));
         qDebug()<<sysUserInfo[i].passwd;
     }
+#endif
 
     dispData.color = COLOR_DEFAULT;
     setDeviceColor(dispData.color);
