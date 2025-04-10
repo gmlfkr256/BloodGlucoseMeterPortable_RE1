@@ -192,8 +192,8 @@ void TextResource::init()
 
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTextError",QStringList{
                                                     "비밀번호가 설정되었습니다", // GAPI_PASSWD_ECODE_NORMAL
-                                                    "비밀번호를 8~12 자리여야 합니다", // GAPI_PAS다SWD_ECODE_RANGE_LEN
-                                                    "숫자가 포함되어야 합니다", // GAPI_PASSWD_ECODE_NO_NUMBER
+                                                    "비밀번호는 8~12 자리여야 합니다", // GAPI_PAS다SWD_ECODE_RANGE_LEN
+                                                    "비밀번호에는 숫자가 포함되어야 합니다", // GAPI_PASSWD_ECODE_NO_NUMBER
                                                     "영문자(A-Z)가 포함되어야 합니다", // GAPI_PASSWD_ECODE_NO_ALPHABET
                                                     "기호(.,?! 등)가 포함되어야 합니다", // GAPI_PASSWD_ECODE_NO_SPECTAL
                                                     "비밀번호가 일치하지 않습니다", // GAPI_PASSWD_ECODE_NO_MATCH
@@ -616,35 +616,35 @@ void TextResource::init()
                                                 });
     fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText",QFont(currentFont,instance.pixelToPoint(nTextSize),QFont::Bold));
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText",QStringList{
-                                                    "Login successful",                              // PASSWORD_STR_LOGIN_SUCCESS
-                                                    "Login failed",                                  // PASSWORD_STR_LOGIN_FAIL
-                                                    "Please change your password",                   // PASSWORD_STR_LOGIN_CHANGE
-                                                    "Please enter your password\n for verification", // PASSWORD_STR_CONFIRM
-                                                    "Passwords do not match",                        // PASSWORD_STR_CONFIRM_FAIL
-                                                    "Please enter your password\n again for accuracy", // PASSWORD_STR_REPEAT
-                                                    "The entered password\n does not match the \nprevious password", // PASSWORD_STR_REPEAT_FAIL
-                                                    "Would you like \nto change your password?",     // PASSWORD_STR_EDIT
-                                                    "Please enter your password\n for verification", // PASSWORD_STR_EDIT_CONFIRM
-                                                    "Please enter a new password\n\nmin. 8 characters, number\nletter, symbol like .,?!", // PASSWORD_STR_EDIT_CHANGE
-                                                    "Password change completed\nPlease re-login",    // PASSWORD_STR_EDIT_SUCCESS
-                                                    "Do you want to\n delete user information?",     // PASSWORD_STR_DELETE
-                                                    "Deleting user information\n will reset the password\n and settings", // PASSWORD_STR_DELETE_CONFIRM
-                                                    "User information deleted\nThe system will reboot\n to reset settings", // PASSWORD_STR_DELETE_SUCCESS
-                                                    "Logging out\nPlease re-login",                  // PASSWORD_STR_LOGOUT
-                                                    "Do you want to reset\n the password", // PASSWORD_STR_INIT
-                                                    "Resetting will restore the password\n to its default value", // PASSWORD_STR_INIT_CONFIRM
-                                                    "Password has been reset", // PASSWORD_STR_INIT_SUCCESS
-                                                    "PASSWORD_STR_MAX"                                      // PASSWORD_STR_MAX
+                                                    "Login successful",
+                                                    "Login failed",
+                                                    "Please change your password",
+                                                    "Please enter your password\nfor verification",
+                                                    "Passwords do not match",
+                                                    "Please enter your password again\nfor accuracy",
+                                                    "The entered password does not match\nthe previous password",
+                                                    "Would you like to change\nyour password?",
+                                                    "Please enter your password\nfor verification",
+                                                    "Please enter a new password\n\nMin. 8 characters, including number,\nletter, and symbol like .,?!",
+                                                    "Password changed\nPlease log in again",
+                                                    "Do you want to delete\nuser information?",
+                                                    "Deleting user information will reset\nthe password and settings",
+                                                    "User information deleted\nThe system will reboot to reset settings",
+                                                    "Logging out\nPlease log in again",
+                                                    "Do you want to reset\nyour password?",
+                                                    "Resetting will restore the password\nto its default value",
+                                                    "Password has been reset",
+                                                    "PASSWORD_STR_MAX"
                                                 });
 
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTextError", QStringList{
-                                                    "Password has been set",                          // GAPI_PASSWD_ECODE_NORMAL
-                                                    "Password must be\n 8 to 12 characters long",       // GAPI_PASSWD_ECODE_RANGE_LEN
-                                                    "Password must include\n at least one number",      // GAPI_PASSWD_ECODE_NO_NUMBER
-                                                    "Password must include\n at least one letter",      // GAPI_PASSWD_ECODE_NO_ALPHABET
-                                                    "Password must include\n at least one special character", // GAPI_PASSWD_ECODE_NO_SPECTAL
-                                                    "Passwords do not match",                         // GAPI_PASSWD_ECODE_NO_MATCH
-                                                    "Unknown error",                                   // GAPI_PASSWD_ECODE_MAX
+                                                    "Password has been set",                                      // GAPI_PASSWD_ECODE_NORMAL
+                                                    "Password must be\n8 to 12 characters long",                   // GAPI_PASSWD_ECODE_RANGE_LEN
+                                                    "Password must include\nat least one number",                  // GAPI_PASSWD_ECODE_NO_NUMBER
+                                                    "Password must include\nat least one letter (A-Z)",            // GAPI_PASSWD_ECODE_NO_ALPHABET
+                                                    "Password must include\nat least one symbol (e.g. .,?!)",      // GAPI_PASSWD_ECODE_NO_SPECTAL
+                                                    "Passwords do not match",                                     // GAPI_PASSWD_ECODE_NO_MATCH
+                                                    "An unknown error has occurred",                              // GAPI_PASSWD_ECODE_MAX
                                                 });
 
 
@@ -1082,35 +1082,35 @@ void TextResource::init()
 
     fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText", QFont(currentFont, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText", QStringList{
-                                                    "ログイン成功",                              // PASSWORD_STR_LOGIN_SUCCESS
-                                                    "ログイン失敗",                              // PASSWORD_STR_LOGIN_FAIL
-                                                    "パスワードを変更してください",                // PASSWORD_STR_LOGIN_CHANGE
-                                                    "本人確認のために\nパスワードを入力してください", // PASSWORD_STR_CONFIRM
-                                                    "パスワードが一致しません",                   // PASSWORD_STR_CONFIRM_FAIL
-                                                    "正確な確認のために\nもう一度パスワードを入力してください", // PASSWORD_STR_REPEAT
-                                                    "入力されたパスワードが\n以前のパスワードと一致しません",   // PASSWORD_STR_REPEAT_FAIL
-                                                    "パスワードを変更しますか？",                // PASSWORD_STR_EDIT
-                                                    "本人確認のために\nパスワードを入力してください", // PASSWORD_STR_EDIT_CONFIRM
-                                                    "新しいパスワードを入力してください",          // PASSWORD_STR_EDIT_CHANGE
-                                                    "パスワード変更が完了しました\n再度ログインしてください",   // PASSWORD_STR_EDIT_SUCCESS
-                                                    "ユーザー情報を削除しますか？",              // PASSWORD_STR_DELETE
-                                                    "ユーザー情報を削除すると\nパスワードと設定がリセットされます", // PASSWORD_STR_DELETE_CONFIRM
-                                                    "ユーザー情報が削除されました\n設定をリセットするため再起動します", // PASSWORD_STR_DELETE_SUCCESS
-                                                    "ログアウトしますか？\n再度ログインしてください",             // PASSWORD_STR_LOGOUT
-                                                    "パスワードを初期化しますか？", // PASSWORD_STR_INIT
-                                                    "初期化すると、パスワードは\n初期設定に戻ります", // PASSWORD_STR_INIT_CONFRIM
-                                                    "パスワードが初期化されました", // PASSWORD_STR_INIT_SUCCESS
-                                                    "PASSWORD_STR_MAX"                             // PASSWORD_STR_MAX
+                                                    "ログイン成功",
+                                                    "ログイン失敗",
+                                                    "パスワードを変更してください",
+                                                    "本人確認のために\nパスワードを入力してください",
+                                                    "パスワードが一致しません",
+                                                    "もう一度パスワードを\n入力してください",
+                                                    "入力されたパスワードが以前のパスワードと\n一致しません",
+                                                    "パスワードを変更しますか？",
+                                                    "本人確認のために\nパスワードを入力してください",
+                                                    "新しいパスワードを入力してください\n\n8文字以上で、数字、英字、記号（例：.,?!）を含めてください",
+                                                    "パスワード変更が完了しました\n再度ログインしてください",
+                                                    "ユーザー情報を削除しますか？",
+                                                    "ユーザー情報を削除すると\nパスワードと設定がリセットされます",
+                                                    "ユーザー情報が削除されました\n設定リセットのため、システムを再起動します",
+                                                    "ログアウトしますか？\nログアウト後は再度ログインしてください",
+                                                    "パスワードを初期化しますか？",
+                                                    "初期化すると、パスワードは\n初期設定に戻ります",
+                                                    "パスワードが初期化されました",
+                                                    "PASSWORD_STR_MAX"                          // PASSWORD_STR_MAX
                                                 });
 
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTextError", QStringList{
-                                                    "パスワードが設定されました", // GAPI_PASSWD_ECODE_NORMAL
-                                                    "パスワードは\n8～12文字である必要があります", // GAPI_PASSWD_ECODE_RANGE_LEN
-                                                    "パスワードには\n数字を含めてください", // GAPI_PASSWD_ECODE_NO_NUMBER
-                                                    "パスワードには\n英字を含めてください", // GAPI_PASSWD_ECODE_NO_ALPHABET
-                                                    "パスワードには\n記号を含めてください", // GAPI_PASSWD_ECODE_NO_SPECTAL
-                                                    "パスワードが一致しません", // GAPI_PASSWD_ECODE_NO_MATCH
-                                                    "不明なエラーが発生しました" // GAPI_PASSWD_ECODE_MAX
+                                                    "パスワードが設定されました",
+                                                    "パスワードは\n8〜12文字である必要があります",
+                                                    "パスワードには\n数字を1つ以上含めてください",
+                                                    "パスワードには\n英字（A〜Z）を1つ以上含めてください",
+                                                    "パスワードには\n記号（例：.,?!）を1つ以上含めてください",
+                                                    "パスワードが一致しません",
+                                                    "不明なエラーが発生しました",
                                                 });
 
     //PAGE_HOME
@@ -1577,35 +1577,35 @@ void TextResource::init()
 
     fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText", QFont(currentFont, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText", QStringList{
-                                                    "登录成功",                               // PASSWORD_STR_LOGIN_SUCCESS
-                                                    "登录失败",                               // PASSWORD_STR_LOGIN_FAIL
-                                                    "请更改您的密码",                         // PASSWORD_STR_LOGIN_CHANGE
-                                                    "请输入密码以验证身份",                   // PASSWORD_STR_CONFIRM
-                                                    "密码不匹配",                             // PASSWORD_STR_CONFIRM_FAIL
-                                                    "请再次输入您的密码以确认",               // PASSWORD_STR_REPEAT
-                                                    "输入的密码与之前的密码不匹配",           // PASSWORD_STR_REPEAT_FAIL
-                                                    "是否要更改您的密码？",                   // PASSWORD_STR_EDIT
-                                                    "请输入密码以确认身份",                   // PASSWORD_STR_EDIT_CONFIRM
-                                                    "请输入新密码",                           // PASSWORD_STR_EDIT_CHANGE
-                                                    "密码更改完成，请重新登录",               // PASSWORD_STR_EDIT_SUCCESS
-                                                    "是否删除用户信息？",                     // PASSWORD_STR_DELETE
-                                                    "删除用户信息将重置密码和设置",           // PASSWORD_STR_DELETE_CONFIRM
-                                                    "用户信息已删除，\n系统将重启以重置设置",   // PASSWORD_STR_DELETE_SUCCESS
-                                                    "正在退出登录，请重요新登录",               // PASSWORD_STR_LOGOUT
-                                                    "是否要重置密码？", // PASSWORD_STR_INIT
-                                                    "重置后密码将恢复为\n默认设置", // PASSWORD_STR_INIT_CONFIRM
-                                                    "密码已重置", // PASSWORD_STR_INIT_SUCCESS
+                                                    "登录成功",
+                                                    "登录失败",
+                                                    "请更改您的密码",
+                                                    "请输入密码以验证身份",
+                                                    "密码不匹配",
+                                                    "请再次输入您的密码以确认",
+                                                    "输入的密码与之前的密码不匹配",
+                                                    "是否要更改您的密码？",
+                                                    "请输入密码以确认身份",
+                                                    "请输入新密码\n\n至少包含8个字符、数字、字母和符号（例如：.,?!）",
+                                                    "密码更改完成，请重新登录",
+                                                    "是否删除用户信息？",
+                                                    "删除用户信息将重置密码和设置",
+                                                    "用户信息已删除。\n系统将重新启动以重置设置",
+                                                    "正在退出登录，请重新登录",
+                                                    "是否要重置密码？",
+                                                    "重置后密码将恢复为\n默认设置",
+                                                    "密码已重置",
                                                     "PASSWORD_STR_MAX"
                                                 });
 
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTextError", QStringList{
-                                                    "密码已设置", // GAPI_PASSWD_ECODE_NORMAL
-                                                    "密码长度必须为\n8到12个字符", // GAPI_PASSWD_ECODE_RANGE_LEN
-                                                    "密码必须包含\n至少一个数字", // GAPI_PASSWD_ECODE_NO_NUMBER
-                                                    "密码必须包含\n至少一个字母", // GAPI_PASSWD_ECODE_NO_ALPHABET
-                                                    "密码必须包含\n至少一个特殊字符", // GAPI_PASSWD_ECODE_NO_SPECTAL
-                                                    "密码不一致", // GAPI_PASSWD_ECODE_NO_MATCH
-                                                    "发生未知错误" // GAPI_PASSWD_ECODE_MAX
+                                                    "密码已设置",
+                                                    "密码长度必须为\n8到12个字符",
+                                                    "密码必须包含\n至少一个数字",
+                                                    "密码必须包含\n至少一个字母（A-Z）",
+                                                    "密码必须包含\n至少一个符号（例如：.,?!）",
+                                                    "两次输入的密码不一致",
+                                                    "发生未知错误",
                                                 });
 
 
@@ -2076,35 +2076,35 @@ void TextResource::init()
 
     fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText", QFont(currentFont, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText", QStringList{
-                                                    "登入成功",                                   // Login successful
-                                                    "登入失敗",                                   // Login failed
-                                                    "請修改您的密碼",                             // Please change your password
-                                                    "請輸入密碼以進行驗證",                       // Please enter your password for verification
-                                                    "密碼不一致",                                 // Passwords do not match
-                                                    "請再次輸入您的密碼以確認",                   // Please enter your password again for accuracy
-                                                    "輸入的密碼與之前的密碼不一致",               // The entered password does not match the previous password
-                                                    "是否修改您的密碼？",                         // Would you like to change your password?
-                                                    "請輸入密碼以進行驗證",                       // Please enter your password for verification
-                                                    "請輸入新的密碼",                             // Please enter the new password
-                                                    "密碼修改完成，請重新登入",                   // Password change completed. Please re-login
-                                                    "是否刪除用戶信息？",                         // Do you want to delete user information?
-                                                    "刪除用戶信息將重置密碼與設定",               // Deleting user information will reset the password and settings
-                                                    "用戶信息已刪除，\n系統將重啟以重置設定",        // User information deleted. The system will reboot to reset settings
-                                                    "正在登出，請重新登入",                       // Logging out. Please re-login
-                                                    "您要重設密碼嗎？", // PASSWORD_STR_INIT
-                                                    "重設後，密碼將恢復為\n預設值", // PASSWORD_STR_INIT_CONFRIM
-                                                    "密碼已重設", // PASSWORD_STR_INIT_SUCCESS
+                                                    "登入成功",
+                                                    "登入失敗",
+                                                    "請修改您的密碼",
+                                                    "請輸入密碼以進行驗證",
+                                                    "密碼不一致",
+                                                    "請再次輸入您的密碼以確認",
+                                                    "輸入的密碼與之前的密碼不一致",
+                                                    "是否修改您的密碼？",
+                                                    "請輸入密碼以進行驗證",
+                                                    "請輸入新密碼\n\n至少包含8個字元、數字、字母和符號（例如：.,?!）",
+                                                    "密碼修改完成，請重新登入",
+                                                    "是否刪除使用者資訊？",
+                                                    "刪除使用者資訊將重置密碼和設定",
+                                                    "使用者資訊已刪除。\n系統將重新啟動以重置設定",
+                                                    "正在登出，請重新登入",
+                                                    "您要重設密碼嗎？",
+                                                    "重設後，密碼將恢復為\n預設值",
+                                                    "密碼已重設",
                                                     "PASSWORD_STR_MAX"
                                                 });
 
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTextError", QStringList{
-                                                    "密碼已設定", // GAPI_PASSWD_ECODE_NORMAL
-                                                    "密碼長度必須為\n8到12個字元", // GAPI_PASSWD_ECODE_RANGE_LEN
-                                                    "密碼必須包含\n至少一個數字", // GAPI_PASSWD_ECODE_NO_NUMBER
-                                                    "密碼必須包含\n至少一個英文字母", // GAPI_PASSWD_ECODE_NO_ALPHABET
-                                                    "密碼必須包含\n至少一個特殊字元", // GAPI_PASSWD_ECODE_NO_SPECTAL
-                                                    "密碼不相符", // GAPI_PASSWD_ECODE_NO_MATCH
-                                                    "發生未知錯誤" // GAPI_PASSWD_ECODE_MAX
+                                                    "密碼已設定",
+                                                    "密碼長度必須為\n8到12個字元",
+                                                    "密碼必須包含\n至少一個數字",
+                                                    "密碼必須包含\n至少一個字母（A-Z）",
+                                                    "密碼必須包含\n至少一個符號（例如：.,?!）",
+                                                    "兩次輸入的密碼不一致",
+                                                    "發生未知錯誤",
                                                 });
 
     //PAGE_HOME
@@ -2534,12 +2534,12 @@ void TextResource::init()
 
     fontData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitleSub", QFont(currentFont, instance.pixelToPoint(30)));
     textData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitleSub", QStringList{
-                                                    "Por favor ingrese la contraseña",
-                                                    "Ingrese la nueva contraseña",
-                                                    "Por favor ingrese la contraseña",
-                                                    "Ingrese la contraseña para confirmar",
-                                                    "Ingrese la contraseña nuevamente",
-                                                    "Ingrese su contraseña actual",
+                                                    "Ingresar contraseña",
+                                                    "Ingresar nueva contraseña",
+                                                    "Ingresar contraseña",
+                                                    "Contraseña para verificación",
+                                                    "Ingresar nuevamente",
+                                                    "Contraseña actual",
                                                     "PASSWORD_MAX"
                                                 });
 
@@ -2569,35 +2569,35 @@ void TextResource::init()
 
     fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText", QFont(currentFont, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelText", QStringList{
-                                                    "Inicio de sesión exitoso",                             // Login successful
-                                                    "Inicio de sesión fallido",                             // Login failed
-                                                    "Por favor cambie su contraseña",                       // Please change your password
-                                                    "Por favor ingrese su contraseña\n para verificación",  // Please enter your password for verification
-                                                    "Las contraseñas no coinciden",                         // Passwords do not match
-                                                    "Por favor ingrese nuevamente su contraseña\n para mayor precisión", // Please enter your password again for accuracy
-                                                    "La contraseña ingresada\n no coincide con la \nanterior",           // The entered password does not match the previous password
-                                                    "¿Le gustaría \n cambiar su contraseña?",              // Would you like to change your password?
-                                                    "Por favor ingrese su contraseña\n para verificación", // Please enter your password for verification
-                                                    "Por favor ingrese la nueva contraseña",               // Please enter the new password
-                                                    "Cambio de contraseña completado\nPor favor vuelva a iniciar sesión", // Password change completed Please re-login
-                                                    "¿Desea \n eliminar la información del usuario?",      // Do you want to delete user information?
-                                                    "Eliminar la información del usuario\nrestablecerá la contraseña\ny la configuración", // Deleting user information will reset the password and settings
-                                                    "Información del usuario eliminada\nEl sistema se reiniciará\n para restablecer la configuración", // User information deleted The system will reboot to reset settings
-                                                    "Cerrando sesión\nPor favor vuelva a iniciar sesión",  // Logging out Please re-login
-                                                    "¿Desea restablecer la contraseña?", // PASSWORD_STR_INIT
-                                                    "Restablecer la contraseña\nla devolverá a los valores por defecto", // PASSWORD_STR_INIT_CONFIRM
-                                                    "La contraseña ha sido restablecida", // PASSWORD_STR_INIT_SUCCESS
-                                                    "CONTRASEÑA_STR_MAX"                                   // PASSWORD_STR_MAX
+                                                    "Inicio de sesión exitoso",                                                        // 로그인에 성공했습니다
+                                                    "Inicio de sesión fallido",                                                        // 로그인에 실패했습니다
+                                                    "Por favor cambie su contraseña",                                                  // 비밀번호를 변경해주시기 바랍니다
+                                                    "Por favor ingrese su contraseña\npara verificación",                              // 본인 확인을 위해 비밀번호를 입력해주세요
+                                                    "Las contraseñas no coinciden",                                                    // 비밀번호가 일치하지 않습니다
+                                                    "Por favor ingrese nuevamente su contraseña\npara mayor precisión",                // 정확한 확인을 위해 비밀번호를 한번 더 입력해주세요
+                                                    "La contraseña ingresada\nno coincide con la anterior",                            // 입력된 비밀번호가 이전 비밀번호와 일치하지 않습니다
+                                                    "¿Le gustaría cambiar su contraseña?",                                             // 비밀번호를 변경하시겠습니까?
+                                                    "Por favor ingrese su contraseña\npara verificación",                              // 본인 확인을 위해 비밀번호를 입력해주세요 (중복 → 유지 or 제거 결정)
+                                                    "Nueva contraseña\n\nmín. 8 caracteres, número\nletra y símbolo como .,?!",        // 변경하실 비밀번호를 입력해주세요
+                                                    "Cambio de contraseña completado\nPor favor vuelva a iniciar sesión",              // 비밀번호 변경이 완료되었습니다
+                                                    "¿Desea eliminar la información del usuario?",                                     // 사용자 정보를 삭제하시겠습니까?
+                                                    "Eliminar la información del usuario\nrestablecerá la contraseña\ny la configuración", // 사용자 정보를 삭제할 경우 비밀번호와 설정이 초기화 됩니다
+                                                    "Información del usuario eliminada\nEl sistema se reiniciará\npara restablecer la configuración", // 사용자 정보가 삭제되었습니다
+                                                    "Cerrando sesión\nPor favor vuelva a iniciar sesión",                              // 로그아웃을 진행합니까? (→ 원문과 조금 어색함)
+                                                    "¿Desea restablecer la contraseña?",                                               // 비밀번호를 초기화하시겠습니까?
+                                                    "Restablecer la contraseña\nla devolverá a los valores por defecto",               // 비밀번호를 초기화할 경우 비밀번호가 초기 설정 상태가 됩니다
+                                                    "La contraseña ha sido restablecida",                                              // 비밀번호가 초기화되었습니다
+                                                    "CONTRASEÑA_STR_MAX"                                              // PASSWORD_STR_MAX
                                                 });
 
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTextError", QStringList{
-                                                    "La contraseña ha sido establecida", // GAPI_PASSWD_ECODE_NORMAL
-                                                    "La contraseña debe tener entre\n8 y 12 caracteres", // GAPI_PASSWD_ECODE_RANGE_LEN
-                                                    "La contraseña debe incluir\nal menos un número", // GAPI_PASSWD_ECODE_NO_NUMBER
-                                                    "La contraseña debe incluir\nal menos una letra", // GAPI_PASSWD_ECODE_NO_ALPHABET
-                                                    "La contraseña debe incluir\nal menos un carácter especial", // GAPI_PASSWD_ECODE_NO_SPECTAL
-                                                    "Las contraseñas no coinciden", // GAPI_PASSWD_ECODE_NO_MATCH
-                                                    "Error desconocido" // GAPI_PASSWD_ECODE_MAX
+                                                    "La contraseña ha sido establecida",
+                                                    "La contraseña debe tener\nentre 8 y 12 caracteres",
+                                                    "La contraseña debe incluir\nal menos un número",
+                                                    "La contraseña debe incluir\nal menos una letra (A-Z)",
+                                                    "La contraseña debe incluir\nal menos un símbolo (por ejemplo: .,?!)",
+                                                    "Las contraseñas no coinciden",
+                                                    "Se ha producido un error desconocido",
                                                 });
 
     //PAGE_HOME
