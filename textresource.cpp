@@ -186,7 +186,7 @@ void TextResource::init()
                                                     "로그아웃을 진행합니까?\n로그아웃시 다시 로그인해주시기 바랍니다", //PASSWORD_STR_LOGOUT,
                                                     "비밀번호를 초기화하시겠습니까?", //PASSWORD_STR_INIT,
                                                     "비밀번호를 초기화할 경우\n 비밀번호가 초기 설정 상태가 됩니다", //PASSWORD_STR_INIT_CONFIRM,
-                                                    "비밀번호가 초기화되었습니다", //PASSWORD_STR_INIT_SUCCESS,
+                                                    "비밀번호가 초기화되었습니다", //PASSWORD_STR_INIT_SUCCESS,가
                                                     "PASSWORD_STR_MAX" //PASSWORD_STR_MAX
                                                 });
 
@@ -194,7 +194,7 @@ void TextResource::init()
                                                     "비밀번호가 설정되었습니다", // GAPI_PASSWD_ECODE_NORMAL
                                                     "비밀번호를 8~12 자리여야 합니다", // GAPI_PAS다SWD_ECODE_RANGE_LEN
                                                     "숫자가 포함되어야 합니다", // GAPI_PASSWD_ECODE_NO_NUMBER
-                                                    "영문자(A-Z)이 포함되어야 합니다", // GAPI_PASSWD_ECODE_NO_ALPHABET
+                                                    "영문자(A-Z)가 포함되어야 합니다", // GAPI_PASSWD_ECODE_NO_ALPHABET
                                                     "기호(.,?! 등)가 포함되어야 합니다", // GAPI_PASSWD_ECODE_NO_SPECTAL
                                                     "비밀번호가 일치하지 않습니다", // GAPI_PASSWD_ECODE_NO_MATCH
                                                     "알 수 없는 오류입니다", // GAPI_PASSWD_ECODE_MAX
