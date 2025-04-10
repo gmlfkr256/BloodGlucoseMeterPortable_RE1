@@ -191,13 +191,14 @@ void TextResource::init()
                                                 });
 
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTextError",QStringList{
-                                                    "비밀번호가 설정되었습니다", // GAPI_PASSWD_ECODE_NORMAL
-                                                    "비밀번호는 8~12 자리여야 합니다", // GAPI_PAS다SWD_ECODE_RANGE_LEN
-                                                    "비밀번호에는 숫자가 포함되어야 합니다", // GAPI_PASSWD_ECODE_NO_NUMBER
-                                                    "영문자(A-Z)가 포함되어야 합니다", // GAPI_PASSWD_ECODE_NO_ALPHABET
-                                                    "기호(.,?! 등)가 포함되어야 합니다", // GAPI_PASSWD_ECODE_NO_SPECTAL
-                                                    "비밀번호가 일치하지 않습니다", // GAPI_PASSWD_ECODE_NO_MATCH
-                                                    "알 수 없는 오류입니다", // GAPI_PASSWD_ECODE_MAX
+                                                    "비밀번호가 설정되었습니다", // PASSWORD_ECODE_NORMAL
+                                                    "비밀번호는 8~12 자리여야 합니다", // PASSWORD_ECODE_RANGE_LEN
+                                                    "숫자가 포함되어야 합니다", // PASSWORD_ECODE_NO_NUMBER
+                                                    "영문자(A-Z)가 포함되어야 합니다", // PASSWORD_ECODE_NO_ALPHABET
+                                                    "기호(.,?! 등)가 포함되어야 합니다", // PASSWORD_ECODE_NO_SPECTAL
+                                                    "비밀번호가 일치하지 않습니다", // PASSWORD_ECODE_NO_MATCH
+                                                    "허용하지 않는 비밀번호입니다", // PASSWORD_ECODE_ERROR
+                                                    "알 수 없는 오류입니다", // PASSWORD_ECODE_MAX
                                                 });
 
     //PAGE_HOME
@@ -638,13 +639,14 @@ void TextResource::init()
                                                 });
 
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTextError", QStringList{
-                                                    "Password has been set",                                      // GAPI_PASSWD_ECODE_NORMAL
-                                                    "Password must be\n8 to 12 characters long",                   // GAPI_PASSWD_ECODE_RANGE_LEN
-                                                    "Password must include\nat least one number",                  // GAPI_PASSWD_ECODE_NO_NUMBER
-                                                    "Password must include\nat least one letter (A-Z)",            // GAPI_PASSWD_ECODE_NO_ALPHABET
-                                                    "Password must include\nat least one symbol (e.g. .,?!)",      // GAPI_PASSWD_ECODE_NO_SPECTAL
-                                                    "Passwords do not match",                                     // GAPI_PASSWD_ECODE_NO_MATCH
-                                                    "An unknown error has occurred",                              // GAPI_PASSWD_ECODE_MAX
+                                                    "Password has been set",                                      // PASSWORD_ECODE_NORMAL
+                                                    "Password must be\n8 to 12 characters long",                   // PASSWORD_ECODE_RANGE_LEN
+                                                    "Password must include\nat least one number",                  // PASSWORD_ECODE_NO_NUMBER
+                                                    "Password must include\nat least one letter (A-Z)",            // PASSWORD_ECODE_NO_ALPHABET
+                                                    "Password must include\nat least one symbol (e.g. .,?!)",      // PASSWORD_ECODE_NO_SPECTAL
+                                                    "Passwords do not match",                                     // PASSWORD_ECODE_NO_MATCH
+                                                    "password is not allowed",                                    // PASSWORD_ECODE_ERROR
+                                                    "An unknown error has occurred",                              // PASSWORD_ECODE_MAX
                                                 });
 
 
@@ -1110,6 +1112,7 @@ void TextResource::init()
                                                     "パスワードには\n英字（A〜Z）を1つ以上含めてください",
                                                     "パスワードには\n記号（例：.,?!）を1つ以上含めてください",
                                                     "パスワードが一致しません",
+                                                    "このパスワードは使用できません",
                                                     "不明なエラーが発生しました",
                                                 });
 
@@ -1605,9 +1608,9 @@ void TextResource::init()
                                                     "密码必须包含\n至少一个字母（A-Z）",
                                                     "密码必须包含\n至少一个符号（例如：.,?!）",
                                                     "两次输入的密码不一致",
+                                                    "此密碼不被允許使用",
                                                     "发生未知错误",
                                                 });
-
 
     //PAGE_HOME
     fontData[Lan][PAGE_HOME].insert("labelTextStatus", QFont(currentFont, instance.pixelToPoint(26), QFont::Bold));
@@ -2104,6 +2107,7 @@ void TextResource::init()
                                                     "密碼必須包含\n至少一個字母（A-Z）",
                                                     "密碼必須包含\n至少一個符號（例如：.,?!）",
                                                     "兩次輸入的密碼不一致",
+                                                    "此密码不被允许使用",
                                                     "發生未知錯誤",
                                                 });
 
@@ -2597,6 +2601,7 @@ void TextResource::init()
                                                     "La contraseña debe incluir\nal menos una letra (A-Z)",
                                                     "La contraseña debe incluir\nal menos un símbolo (por ejemplo: .,?!)",
                                                     "Las contraseñas no coinciden",
+                                                    "Esta contraseña no está permitida"
                                                     "Se ha producido un error desconocido",
                                                 });
 

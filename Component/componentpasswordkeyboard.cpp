@@ -444,6 +444,10 @@ bool ComponentPasswordKeyboard::bIsPasswordValid(const QString strKey)
         instance.setPasswordErrCode(PASSWORD_ECODE_NO_SPECIAL);
         bIsValid = false;
     }
+    else if (instance.sysUserInfo[0].passwd == strKey || instance.sysUserInfo[1].passwd == strKey)
+    {
+        instance.setPasswordErrCode(PASSWORD_ECODE_ERROR);
+    }
 
     if (bIsValid)
     {
