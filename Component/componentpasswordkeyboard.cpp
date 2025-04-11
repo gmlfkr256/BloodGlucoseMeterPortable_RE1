@@ -424,7 +424,11 @@ void ComponentPasswordKeyboard::functionShowHide()
 bool ComponentPasswordKeyboard::bIsPasswordValid(const QString strKey)
 {
     qDebug()<<"bIsPasswordValid - strKey: "<<strKey;
+    qDebug() << "strKey length:" << strKey.length();
+    qDebug() << "sysUserInfo[0] length:" << QString::fromLatin1(instance.sysUserInfo[0].passwd).length();
     qDebug()<<"sysUserInfo[0]: "<<QString::fromLatin1(instance.sysUserInfo[0].passwd);
+    qDebug() << "strKey HEX:" << strKey.toUtf8().toHex();
+    qDebug() << "sysUserInfo[0] HEX:" << QByteArray(instance.sysUserInfo[0].passwd, GAPI_USER_PWD_SIZE).toHex();
     qDebug()<<"sysUserInfo[1]: "<<instance.sysUserInfo[1].passwd;
 
     bool bIsValid = true;
