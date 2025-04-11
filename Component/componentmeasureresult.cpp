@@ -100,6 +100,9 @@ void ComponentMeasureResult::setTextResult(QLabel *label,unsigned char errCode)
 void ComponentMeasureResult::setResultSpk(unsigned char errCode)
 {
     qDebug()<<"setResultSpk";
+    if(instance.bIsStart)
+        return;
+
     if(static_cast<gapiProcErrCode_e>(errCode) == GAPI_PROC_ECODE_NORMAL)
     {
         instance.guiApi.glucoseSpeakerOut(GAPI_SPK_MEASURE_COMPLETED);

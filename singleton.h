@@ -257,6 +257,7 @@ public:
     QString fontJP;
     QString fontTC;
     QString fontSC;
+    bool bIsStart = true;
 
     int thresholdLow;
     int thresholdHigh;

@@ -21,6 +21,7 @@ MainWindow::MainWindow(QWidget* parent)
         setPageByPageNum(PAGE_HOME);
     }
 #endif
+    instance.bIsStart = true;
 }
 
 MainWindow::~MainWindow()
