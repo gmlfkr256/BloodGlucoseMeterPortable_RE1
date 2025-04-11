@@ -2923,6 +2923,7 @@ QStringList TextResource::getText(PageNum page, const QString& textName)
     return QStringList{"EMPTY"};
 }
 
+/*
 QFont TextResource::getFont(PageNum page, const QString& textName)
 {
     DeviceLanguage lang = instance.getDeviceLanguage();
@@ -2944,3 +2945,34 @@ QFont TextResource::getFont(PageNum page, const QString& textName)
 
     return QFont("Default", 12);
 }
+*/
+
+QFont TextResource::getFont(PageNum page, const QString& textName)
+{
+    DeviceLanguage lang = instance.getDeviceLanguage();
+
+    QFont font("Default", 12); // 기본값
+
+    if (fontData.contains(lang) && fontData[lang].contains(page))
+    {
+        if (fontData[lang][page].contains(textName)) {
+            font = fontData[lang][page].value(textName);
+        } else {
+            qDebug() << "getFont fail: TextName not found ->"
+                     << "Page:" << page << ", TextName:" << textName;
+        }
+    }
+    else
+    {
+        qDebug() << "getFont fail: Language or Page not found ->"
+                 << "Language:" << lang << ", Page:" << page;
+    }
+
+    // 💡 여기서 폰트 렌더링 설정 추가
+    font.setHintingPreference(QFont::PreferFullHinting);
+    font.setStyleStrategy(QFont::PreferAntialias);
+    //font.setPointSize(12); // 혹은 필요에 따라 고정 크기
+
+    return font;
+}
+
