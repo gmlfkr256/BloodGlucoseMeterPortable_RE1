@@ -247,7 +247,7 @@ void ComponentPasswordKeyboard::processOK()
     case PASSWORD_LOGIN:
         qDebug()<<"keyboard: login";
 #if DEVICE
-        if(strKey == QString::fromLatin1(instance.sysUserInfo[instance.getUserNumber()].passwd))
+        if(strKey == instance.sysUserInfo[instance.getUserNumber()].passwd)
         {
             bIsCheckPassword = true;
         }
@@ -454,7 +454,7 @@ bool ComponentPasswordKeyboard::bIsPasswordValid(const QString strKey)
         instance.setPasswordErrCode(PASSWORD_ECODE_NO_SPECIAL);
         bIsValid = false;
     }
-    else if (strKey == QString::fromLatin1(instance.sysUserInfo[0].passwd) || strKey == QString::fromLatin1(instance.sysUserInfo[1].passwd))
+    else if (strKey == QString(instance.sysUserInfo[0].passwd) || strKey == QString(instance.sysUserInfo[1].passwd))
     {
         instance.setPasswordErrCode(PASSWORD_ECODE_ERROR);
     }
