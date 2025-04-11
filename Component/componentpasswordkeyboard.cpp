@@ -454,7 +454,7 @@ bool ComponentPasswordKeyboard::bIsPasswordValid(const QString strKey)
         instance.setPasswordErrCode(PASSWORD_ECODE_NO_SPECIAL);
         bIsValid = false;
     }
-    else if (strKey == QString(instance.sysUserInfo[0].passwd) || strKey == QString(instance.sysUserInfo[1].passwd))
+    else if (strKey == QString::fromLatin1(instance.sysUserInfo[0].passwd, ::strnlen(instance.sysUserInfo[0].passwd, GAPI_USER_PWD_SIZE)) || strKey == QString::fromLatin1(instance.sysUserInfo[0].passwd, ::strnlen(instance.sysUserInfo[1].passwd, GAPI_USER_PWD_SIZE)))
     {
         instance.setPasswordErrCode(PASSWORD_ECODE_ERROR);
     }
