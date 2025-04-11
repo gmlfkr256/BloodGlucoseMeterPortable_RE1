@@ -417,6 +417,10 @@ void ComponentPasswordKeyboard::functionShowHide()
 
 bool ComponentPasswordKeyboard::bIsPasswordValid(const QString strKey)
 {
+    qDebug()<<"bIsPasswordValid - strKey: "<<strKey;
+    qDebug()<<"sysUserInfo[0]: "<<instance.sysUserInfo[0].passwd;
+    qDebug()<<"sysUserInfo[1]: "<<instance.sysUserInfo[1].passwd;
+
     bool bIsValid = true;
 
     if(instance.getPasswordChage() != strKey)
