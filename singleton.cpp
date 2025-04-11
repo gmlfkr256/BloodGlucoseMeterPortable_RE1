@@ -762,3 +762,12 @@ PasswordErrIndex Singleton::getPasswordErrCode()
     return passwordErrCode;
 }
 
+bool Singleton::isPasswordEqual(const char* pszRaw, int nSize, const QString& strInput)
+{
+    if (!pszRaw || nSize <= 0)
+        return false;
+
+    int nActualLen = strnlen(pszRaw, nSize); // 널 종료 고려
+    QString strFromRaw = QString::fromLatin1(pszRaw, nActualLen);
+    return strFromRaw == strInput;
+}

@@ -395,6 +395,7 @@ public:
     void setPasswordErrCode(int errCode);
     PasswordErrIndex getPasswordErrCode();
 
+    bool isPasswordEqual(const char* pazRaw, int nSize, const QString& strInput);
 private:
     //Singleton() = default;
     explicit Singleton(QObject* parent = nullptr) : QObject(parent){init();};
