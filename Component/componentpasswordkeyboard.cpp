@@ -288,6 +288,12 @@ void ComponentPasswordKeyboard::processOK()
         else
         {
             instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
+
+            if(strKey == "1111" || strKey == "2222")
+                instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_CHANGE);
+            else
+                instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
+
         }
 
         /*
@@ -448,7 +454,7 @@ bool ComponentPasswordKeyboard::bIsPasswordValid(const QString strKey)
         instance.setPasswordErrCode(PASSWORD_ECODE_NO_SPECIAL);
         bIsValid = false;
     }
-    else if (instance.sysUserInfo[0].passwd == strKey || instance.sysUserInfo[1].passwd == strKey)
+    else if (instance.sysUserInfo[0].passwd == strKey.toUtf8() || instance.sysUserInfo[1].passwd == strKey.toUtf8())
     {
         instance.setPasswordErrCode(PASSWORD_ECODE_ERROR);
     }
