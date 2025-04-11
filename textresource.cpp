@@ -2972,6 +2972,8 @@ QFont TextResource::getFont(PageNum page, const QString& textName)
     font.setHintingPreference(QFont::PreferFullHinting);
     font.setStyleStrategy(QFont::PreferAntialias);
     //font.setPointSize(12); // 혹은 필요에 따라 고정 크기
+    QFontInfo info(font);
+    qDebug()<<"Actual font family in use: "<<info.family();
 
     return font;
 }
