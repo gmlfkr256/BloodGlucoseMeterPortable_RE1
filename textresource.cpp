@@ -2957,6 +2957,8 @@ QFont TextResource::getFont(PageNum page, const QString& textName)
     {
         if (fontData[lang][page].contains(textName)) {
             font = fontData[lang][page].value(textName);
+            QFontInfo fontInfo(font);
+            qDebug() << "fontInfo: "<< fontInfo.family();
         } else {
             qDebug() << "getFont fail: TextName not found ->"
                      << "Page:" << page << ", TextName:" << textName;

@@ -46,6 +46,7 @@ void MainWindow::init()
     loadFont.Load();
     instance.setDeviceLanguage(instance.langData.used);
 
+    /*
     QLabel* pLabel = new QLabel("폰트 테스트입니다. 12345 ABCDE ñáéóú");
     QFont oFont("Noto Sans KR");
     oFont.setPointSize(16);
@@ -54,7 +55,7 @@ void MainWindow::init()
 
     qDebug() << "라벨 폰트 패밀리:" << pLabel->font().family();
     qDebug() << "라벨 폰트 info:" << pLabel->fontInfo().family();
-
+    */
 
     stackedWidget = new QStackedWidget(this);
     stackedWidget->setGeometry(this->geometry());
