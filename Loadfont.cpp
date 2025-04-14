@@ -12,9 +12,9 @@ void LoadFont::Load()
     QString fontPath = QDir(executablePath).filePath("font"); // "font" 디렉토리 경로
 
     // SUIT-Regular.ttf 로드
-    //QString suitFont = QDir(fontPath).filePath("Suit/SUIT-Regular.ttf");
+    QString suitFont = QDir(fontPath).filePath("Suit/SUIT-Regular.ttf");
     QString font = QDir(fontPath).filePath("KR/NotoSansKR-Regular.ttf");
-    int fontId = QFontDatabase::addApplicationFont(font);
+    int fontId = QFontDatabase::addApplicationFont(suitFont);//font);
     if (fontId != -1) {
         instance.fontSuit = QFontDatabase::applicationFontFamilies(fontId).at(0);
         qDebug()<<"Loaded fontSuit: "<<instance.fontSuit;
