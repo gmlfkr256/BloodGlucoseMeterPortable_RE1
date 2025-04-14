@@ -266,7 +266,6 @@ void Singleton::setDeviceLanguage(unsigned int nLanguage)
         case TC:
             QApplication::setFont(fontTC);
             break;
-
         }
     }
     else
