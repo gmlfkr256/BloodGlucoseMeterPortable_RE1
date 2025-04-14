@@ -2973,7 +2973,7 @@ QFont TextResource::getFont(PageNum page, const QString& textName)
     font.setStyleStrategy(QFont::PreferAntialias);
     //font.setStyleStrategy(QFont::NoFontMerging);
     QFontInfo info(font);
-    //qDebug()<<"Actual font family in use: "<<info.family();
+    qDebug()<<"Actual font family in use: "<<info.family();
 
     return font;
 }
