@@ -10,11 +10,11 @@ public:
 
     QStringList getText(PageNum page, const QString& textName);
     QFont getFont(PageNum page, const QString& textName);
+    void init();
 
 private:
     Singleton &instance = Singleton::getInstance();
     TextResource();
-    void init();
 
     QMap<DeviceLanguage, QMap<PageNum, QMap<QString, QStringList>>> textData;
     QMap<DeviceLanguage, QMap<PageNum, QMap<QString, QFont>>> fontData;

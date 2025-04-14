@@ -45,7 +45,7 @@ void MainWindow::init()
     LoadFont loadFont;
     loadFont.Load();
     instance.setDeviceLanguage(instance.langData.used);
-    instance.init();
+    textResource.init();
 
     /*
     QLabel* pLabel = new QLabel("폰트 테스트입니다. 12345 ABCDE ñáéóú");

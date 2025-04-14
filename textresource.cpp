@@ -8,7 +8,7 @@ TextResource& TextResource::getInstance()
 
 TextResource::TextResource()
 {
-    init();
+    //init();
 }
 
 void TextResource::init()
