@@ -359,7 +359,7 @@ void ComponentPasswordKeyboard::processOK()
             break;
 
         case PASSWORD_DELETE:
-            if(instance.sysUserInfo[instance.getUserNumber()].passwd == strKey)
+            if(instance.isPasswordEqual(instance.sysUserInfo[instance.getUserNumber()].passwd,GAPI_USER_PWD_SIZE,strKey))
                 instance.setPasswordStrStatus(PASSWORD_STR_DELETE_SUCCESS);
             else
                 instance.setPasswordStrStatus(PASSWORD_STR_REPEAT_FAIL);
@@ -461,6 +461,7 @@ bool ComponentPasswordKeyboard::bIsPasswordValid(const QString strKey)
     else if (instance.isPasswordEqual(instance.sysUserInfo[0].passwd,GAPI_USER_PWD_SIZE,strKey) || instance.isPasswordEqual(instance.sysUserInfo[1].passwd,GAPI_USER_PWD_SIZE,strKey))
     {
         instance.setPasswordErrCode(PASSWORD_ECODE_ERROR);
+        bIsValid = false;
     }
 
     if (bIsValid)
