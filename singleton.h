@@ -399,7 +399,7 @@ public:
     bool isPasswordEqual(const char* pazRaw, int nSize, const QString& strInput);
 private:
     //Singleton() = default;
-    explicit Singleton(QObject* parent = nullptr) : QObject(parent){init();};
+    explicit Singleton(QObject* parent = nullptr) : QObject(parent){/*init();*/};
     ~Singleton() = default;
 
     QString strImgRoot = ":/Image";
