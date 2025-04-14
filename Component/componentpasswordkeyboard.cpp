@@ -281,7 +281,7 @@ void ComponentPasswordKeyboard::processOK()
 #else
         // 테스트 환경 시나리오별 강제 분기
         //int nErrCode = PASSWORD_ECODE_NORMAL;
-        if(strKey == instance.sysUserInfo[instance.getUserNumber()].passwd) {
+        if(instance.isPasswordEqual(instance.sysUserInfo[instance.getUserNumber()].passwd,GAPI_USER_PWD_SIZE,strKey)) {
             //nErrCode = PASSWORD_ECODE_NORMAL;
             instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
         }
