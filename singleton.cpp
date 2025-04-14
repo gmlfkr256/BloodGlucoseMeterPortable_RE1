@@ -272,6 +272,8 @@ void Singleton::setDeviceLanguage(unsigned int nLanguage)
     {
         qWarning() << "Invalid language code";
     }
+
+    qDebug()<<" setFont: "<< QApplication::font().family();
 }
 
 UserNum Singleton::getUserNumber()
