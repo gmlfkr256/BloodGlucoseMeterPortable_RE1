@@ -63,4 +63,11 @@ void LoadFont::Load()
     } else {
         qWarning() << "Failed to load font:" << tcFont;
     }
+
+    QStringList families = QFontDatabase().families();
+    qDebug()<<"===================================";
+    qDebug()<<"familes list";
+    for(const QString& name : families)
+        qDebug()<< name;
+    qDebug()<<"==================================";
 }

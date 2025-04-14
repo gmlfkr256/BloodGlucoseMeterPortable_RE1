@@ -643,7 +643,9 @@ bool Singleton::touchCheck(const QRect &rect, QMouseEvent* ev)
 int Singleton::pixelToPoint(int pixelSize)
 {
     float dpi = QApplication::primaryScreen()->logicalDotsPerInch();
-
+#if DEVICE
+    //dpi = 110.0f;
+#endif
     return static_cast<int>((pixelSize*72.0)/dpi);
 }
 

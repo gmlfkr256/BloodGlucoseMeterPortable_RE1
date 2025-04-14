@@ -247,7 +247,7 @@ void ComponentPasswordKeyboard::processOK()
     case PASSWORD_LOGIN:
         qDebug()<<"keyboard: login";
 #if DEVICE
-        if(strKey == instance.sysUserInfo[instance.getUserNumber()].passwd)
+        if(instance.isPasswordEqual(instance.sysUserInfo[instance.getUserNumber()].passwd,GAPI_USER_PWD_SIZE,strKey))//if(strKey == instance.sysUserInfo[instance.getUserNumber()].passwd)
         {
             bIsCheckPassword = true;
         }

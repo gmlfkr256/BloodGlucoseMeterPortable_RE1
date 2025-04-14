@@ -19,10 +19,6 @@ int main(int argc, char* argv[])
 {
     QApplication a(argc, argv);
 
-    float dpi = QGuiApplication::primaryScreen()->logicalDotsPerInch();
-    float physicalDpi = QGuiApplication::primaryScreen()->physicalDotsPerInch();
-    qDebug() << "logical DPI:" << dpi << ", physical DPI:" << physicalDpi;
-
     // 주 화면 정보 가져오기
     QScreen* screen = qApp->primaryScreen();
     QRect windowRect = getInitialWindowRect(screen);
