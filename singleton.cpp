@@ -18,7 +18,6 @@ void Singleton::init()
 #else
 
     langData.used = KR;
-    setDeviceLanguage(langData.used);
 
     thresholdLow = 69;
     thresholdHigh = 170;

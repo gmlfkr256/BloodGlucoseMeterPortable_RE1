@@ -44,6 +44,7 @@ void MainWindow::init()
 
     LoadFont loadFont;
     loadFont.Load();
+    instance.setDeviceLanguage(instance.langData.used);
 
     stackedWidget = new QStackedWidget(this);
     stackedWidget->setGeometry(this->geometry());
