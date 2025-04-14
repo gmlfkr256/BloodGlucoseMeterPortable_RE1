@@ -2909,6 +2909,11 @@ void TextResource::init()
                                        });
 
 
+    for(const auto& textName : fontData[KR][PAGE_PASSWORD].keys())
+    {
+        QFont font = fontData[KR][PAGE_PASSWORD][textName];
+        qDebug() <<"TextName: "<< textName << "->" << QFontInfo(font).family();
+    }
 }
 
 QStringList TextResource::getText(PageNum page, const QString& textName)
