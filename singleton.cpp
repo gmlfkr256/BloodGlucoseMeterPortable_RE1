@@ -769,7 +769,13 @@ bool Singleton::isPasswordEqual(const char* pszRaw, int nSize, const QString& st
     if (!pszRaw || nSize <= 0)
         return false;
 
-    int nActualLen = strnlen(pszRaw, nSize); // 널 종료 고려
-    QString strFromRaw = QString::fromLatin1(pszRaw, nActualLen);
+    // strnlen은 널 종료가 없으면 nSize 전부 스캔하므로, 반드시 널 종료된 데이터여야 함
+    int nActualLen = strnlen(pszRaw, nSize);
+    QString strFromRaw = QString::fromLatin1(pszRaw, nActualLen).trimmed();
+
+    // 디버깅을 위해 로그 추가
+    qDebug() << "Comparing password:" << strFromRaw << "vs" << strInput;
+
     return strFromRaw == strInput;
 }
+
