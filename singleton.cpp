@@ -249,6 +249,25 @@ void Singleton::setDeviceLanguage(unsigned int nLanguage)
         strImgPathLan = pair.first;
         deviceLanguage = pair.second;
         qDebug() << "Language set to:" << strImgPathLan;
+
+        switch (nLanguage)
+        {
+        case KR:
+        case EN:
+        case ES:
+            QApplication::setFont(fontSuit);
+            break;
+        case JP:
+            QApplication::setFont(fontJP);
+            break;
+        case SC:
+            QApplication::setFont(fontSC);
+            break;
+        case TC:
+            QApplication::setFont(fontTC);
+            break;
+
+        }
     }
     else
     {
