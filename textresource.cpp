@@ -2971,7 +2971,7 @@ QFont TextResource::getFont(PageNum page, const QString& textName)
     // 💡 여기서 폰트 렌더링 설정 추가
     font.setHintingPreference(QFont::PreferFullHinting);
     font.setStyleStrategy(QFont::PreferAntialias);
-    //font.setStyleStrategy(QFont::NoFontMerging);
+    font.setStyleStrategy(QFont::NoFontMerging);
     QFontInfo info(font);
     qDebug()<<"Actual font family in use: "<<info.family();
 
