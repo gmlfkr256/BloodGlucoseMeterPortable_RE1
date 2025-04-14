@@ -7,19 +7,6 @@ LoadFont::LoadFont()
 
 void LoadFont::Load()
 {
-    /*
-    int fontId = QFontDatabase::addApplicationFont(":/font/Suit/SUIT-Regular.ttf");
-    instance.fontSuit = QFontDatabase::applicationFontFamilies(fontId).at(0);
-
-    fontId = QFontDatabase::addApplicationFont(":/font/JP/NotoSansJP-Regular.ttf");
-    instance.fontJP = QFontDatabase::applicationFontFamilies(fontId).at(0);
-
-    fontId = QFontDatabase::addApplicationFont(":/font/SC/NotoSansSC-Regular.ttf");
-    instance.fontSC = QFontDatabase::applicationFontFamilies(fontId).at(0);
-
-    fontId = QFontDatabase::addApplicationFont(":/font/TC/NotoSansTC-Regular.ttf");
-    instance.fontTC = QFontDatabase::applicationFontFamilies(fontId).at(0);
-    */
     // 실행 파일 경로 얻기
     QString executablePath = QCoreApplication::applicationDirPath();
     QString fontPath = QDir(executablePath).filePath("font"); // "font" 디렉토리 경로
@@ -31,6 +18,8 @@ void LoadFont::Load()
     if (fontId != -1) {
         instance.fontSuit = QFontDatabase::applicationFontFamilies(fontId).at(0);
         qDebug()<<"Loaded fontSuit: "<<instance.fontSuit;
+        QStringList styles = QFontDatabase().styles("Noto Sans KR");
+        qDebug()<<"Noto Sans KR : "<<styles;
     } else {
         qWarning() << "Failed to load font:" << font;
     }
