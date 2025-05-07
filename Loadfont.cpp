@@ -13,7 +13,7 @@ void LoadFont::Load()
 
     // SUIT-Regular.ttf 로드
     QString suitFont = QDir(fontPath).filePath("Suit/SUIT-Regular.ttf");
-    QString font = QDir(fontPath).filePath("KR/NotoSansKR-Regular.ttf");
+    //QString font = QDir(fontPath).filePath("KR/NotoSansKR-Regular.ttf");
     int fontId = QFontDatabase::addApplicationFont(suitFont);//font);
     if (fontId != -1) {
         instance.fontSuit = QFontDatabase::applicationFontFamilies(fontId).at(0);
@@ -21,7 +21,7 @@ void LoadFont::Load()
         QStringList styles = QFontDatabase().styles("Noto Sans KR");
         qDebug()<<"Noto Sans KR : "<<styles;
     } else {
-        qWarning() << "Failed to load font:" << font;
+        qWarning() << "Failed to load font:" << suitFont;
     }
 
     // NotoSansJP-Regular.ttf 로드

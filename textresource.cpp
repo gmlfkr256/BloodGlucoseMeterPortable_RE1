@@ -424,7 +424,7 @@ void TextResource::init()
     textData[Lan][PAGE_USERINFO].insert("labelText",QStringList{
                                             "비밀번호 변경",
                                             "비밀번호 초기화",
-                                            "사용자 정보 삭제",
+                                            "혈당 기록 삭제",
                                             "로그아웃"
                                         });
 
@@ -883,7 +883,7 @@ void TextResource::init()
     textData[Lan][PAGE_USERINFO].insert("labelText",QStringList{
                                             "Change password",
                                             "Reset password",
-                                            "Delete user data",
+                                            "Delete Blood Sugar Record",
                                             "Log out"
                                         });
 
@@ -1377,7 +1377,7 @@ void TextResource::init()
     textData[Lan][PAGE_USERINFO].insert("labelText", QStringList{
                                             "パスワードを変更する",   // Change password
                                             "パスワードをリセット", // reset password
-                                            "ユーザーデータを削除する", // Delete user data
+                                            "血糖記録を削除", // Delete user data
                                             "ログアウト"             // Log out
                                         });
 
@@ -1873,7 +1873,7 @@ void TextResource::init()
     textData[Lan][PAGE_USERINFO].insert("labelText", QStringList{
                                             "修改密码",     // Change password
                                             "重置密码", // reset password
-                                            "删除用户数据", // Delete user data
+                                            "删除血糖记录", // Delete user data
                                             "注销登录"      // Log out
                                         });
 
@@ -2368,7 +2368,7 @@ void TextResource::init()
     textData[Lan][PAGE_USERINFO].insert("labelText", QStringList{
                                             "更改密碼",    // Change password
                                             "重設密碼", // reset password
-                                            "刪除用戶數據", // Delete user data
+                                            "刪除血糖記錄", // Delete user data
                                             "登出"         // Log out
                                         });
 
@@ -2873,7 +2873,7 @@ void TextResource::init()
     textData[Lan][PAGE_USERINFO].insert("labelText",QStringList{
                                             "Cambiar contraseña",
                                             "Restablecer la contraseña", // reset password
-                                            "Eliminar datos de usuario",
+                                            "Eliminar glucosa registrada",
                                             "Cerrar sesión"
                                         });
 
@@ -2979,8 +2979,8 @@ QFont TextResource::getFont(PageNum page, const QString& textName)
     font.setHintingPreference(QFont::PreferFullHinting);
     font.setStyleStrategy(QFont::PreferAntialias);
     //font.setStyleStrategy(QFont::NoFontMerging);
-    QFontInfo info(font);
-    qDebug()<<"Actual font family in use: "<<info.family();
+    //QFontInfo info(font);
+    //qDebug()<<"Actual font family in use: "<<info.family();
     //qDebug()<<"Current QSS: "<< qApp->styleSheet();
     return font;
 }
