@@ -798,3 +798,26 @@ bool Singleton::isPasswordEqual(const char* pszRaw, int nSize, const QString& st
     return strFromRaw == strInput;
 }
 
+// 🔹 시그널-safe 플래그 설정
+void Singleton::setBleConnectedFlag(sig_atomic_t val)
+{
+    bleConnectedFlag = val;
+}
+
+// 🔹 현재 플래그 값 가져오기
+sig_atomic_t Singleton::getBleConnectedFlag() const
+{
+    return bleConnectedFlag;
+}
+
+// 🔹 BLE 연결 여부 확인 (0이면 연결됨으로 간주)
+bool Singleton::isBleConnected() const
+{
+    return bleConnectedFlag == 0;
+}
+
+// 🔹 플래그 초기화 (다시 대기 상태로)
+void Singleton::resetBleConnectedFlag()
+{
+    bleConnectedFlag = 1;
+}

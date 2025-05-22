@@ -43,6 +43,14 @@ void ComponentClock::update()
 
         labelClock->setText(strLocale);
 
+        if(instance.isBleConnected())
+        {
+            qDebug()<< "SIGUSR1 received, ble connected";
+            instance.nSleepTimeCount = 0;
+            instance.resetBleConnectedFlag();
+            qDebug()<< "nSleepTimeCoutn: "<< instance.nSleepTimeCount;
+        }
+
         instance.nSleepTimeCount++;
 
         if(instance.dispData.ts_timeout != 0 && static_cast<unsigned int>(instance.nSleepTimeCount) > instance.dispData.ts_timeout)

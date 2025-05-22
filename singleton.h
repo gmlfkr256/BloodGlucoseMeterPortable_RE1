@@ -2,6 +2,7 @@
 #define SINGLETON_H
 
 #include <GlobalMain.h>
+#include <csignal>
 
 #define GLUCOSE_LOW_PLUS 5
 #define GLUCOSE_HIGH_MINUS -30
@@ -397,6 +398,12 @@ public:
     PasswordErrIndex getPasswordErrCode();
 
     bool isPasswordEqual(const char* pazRaw, int nSize, const QString& strInput);
+
+    // 🔹 시그널 플래그 조작 함수
+    void setBleConnectedFlag(sig_atomic_t val);     // 핸들러에서 호출
+    sig_atomic_t getBleConnectedFlag() const;
+    bool isBleConnected() const;                    // 플래그 == 0 ?
+    void resetBleConnectedFlag();                   // 0 → 1로 복구
 private:
     //Singleton() = default;
     explicit Singleton(QObject* parent = nullptr) : QObject(parent){init();};
@@ -450,6 +457,8 @@ private:
 
     gapiUpgradeErrCode_e upgradeErrCode = GAPI_UPGRADE_ECODE_NORMAL;
     PasswordErrIndex passwordErrCode = PASSWORD_ECODE_NORMAL;
+
+    volatile sig_atomic_t bleConnectedFlag = 1;
 };
 
 #endif // SINGLETON_H

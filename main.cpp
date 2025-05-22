@@ -3,6 +3,22 @@
 #include <QApplication>
 #include "singleton.h"
 #include "Page/pagebooting.h"
+#include <signal.h>
+
+void handleSigusr1(int) {
+    Singleton::getInstance().setBleConnectedFlag(0);  // 플래그만 설정
+}
+
+void installSignalHandler() {
+    struct sigaction sa;
+    sa.sa_handler = handleSigusr1;
+    sigemptyset(&sa.sa_mask);
+    sa.sa_flags = SA_RESTART;  // 시스템콜 중단 방지
+
+    if (sigaction(SIGUSR1, &sa, nullptr) < 0) {
+        perror("sigaction");
+    }
+}
 
 QRect getInitialWindowRect(QScreen* screen) {
 #if DEVICE == false
@@ -18,6 +34,8 @@ QRect getInitialWindowRect(QScreen* screen) {
 int main(int argc, char* argv[])
 {
     QApplication a(argc, argv);
+
+    installSignalHandler();
 
     // 주 화면 정보 가져오기
     QScreen* screen = qApp->primaryScreen();

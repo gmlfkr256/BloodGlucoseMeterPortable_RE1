@@ -49,7 +49,7 @@ static int chkSpeakerProcess (void);
 static int massStorageAct (int cmd, const char *devNameP, char *mntPathP);
 static int getMountPath (const char *devNameP, char *rMountPathP);
 static int clearUserInfoFile (int user, char *fnameP);
-static int clearHistoryInfo (int user);
+static int clearHistoryInfo (int user, int uInfoClear);
 static int systemReboot (void);
 
 extern int vtIpcProcess (uint8_t msgId, uint8_t msgAct, void *dataP, int dLen);
@@ -409,9 +409,11 @@ static int clearUserInfoFile (int user, char *fnameP)
 		return GAPI_FAIL;
 	}
 
-	fprintf (fp, "%s,1,111111\n", passwd);
+	fprintf (fp, "%s,1,%s\n", passwd, GAPI_SYS_BLE_DFT_UNAME);
 	fflush (fp);
 	fclose (fp);
+
+	system ("sync");
 
 	return GAPI_SUCCESS;
 }
@@ -422,7 +424,7 @@ static int clearUserInfoFile (int user, char *fnameP)
  * PARAMETERS : 
  * RETURNS : None
  *****************************************************************************/
-static int clearHistoryInfo (int user)
+static int clearHistoryInfo (int user, int uInfoClear)
 {
 	struct stat finfo;
 	char cmd[128];
@@ -437,13 +439,26 @@ static int clearHistoryInfo (int user)
 		return GAPI_FAIL;
 	}
 
-	// delete history
-	sprintf (cmd, "rm -f %s/*; sync", l_CfgDataPath[user]);
-	system (cmd);
+	if (uInfoClear) {
+		// delete history
+		sprintf (cmd, "rm -f %s/*", l_CfgDataPath[user]);
+		system (cmd);
 
-	// make a default user info file
-	sprintf (cmd, "%s/%s", l_CfgDataPath[user], GAPI_SYS_USER_INFO_FNAME);
-	clearUserInfoFile (user, cmd);
+		// make a default user info file
+		sprintf (cmd, "%s/%s", l_CfgDataPath[user], GAPI_SYS_USER_INFO_FNAME);
+		clearUserInfoFile (user, cmd);
+	}
+	else {
+		sprintf (cmd, "cp %s/%s /tmp", l_CfgDataPath[user], GAPI_SYS_USER_INFO_FNAME);
+		system (cmd);
+
+		// delete history
+		sprintf (cmd, "rm -f %s/*", l_CfgDataPath[user]);
+		system (cmd);
+
+		sprintf (cmd, "cp /tmp/%s %s; sync", GAPI_SYS_USER_INFO_FNAME, l_CfgDataPath[user]);
+		system (cmd);
+	}
 
 	return GAPI_SUCCESS;
 }
@@ -1080,15 +1095,17 @@ int GuiApi::glucoseDelUserInfo (int user)
 		return GAPI_FAIL;
 	}
 
+	/*** IKSONG 250507
 	if (vtIpcProcess ((uint8_t) VTIPC_MSGID_USER_DELETE, (uint8_t) VTIPC_MSGACT_SET, \
 		(void *)&user, sizeof (int)) != GAPI_SUCCESS)
 	{
 		gapiError("couldn't delete user (%d)\n", user);
 		return GAPI_FAIL;
 	}
+	***/
 
-	// clear history & user data
-	clearHistoryInfo (user);
+	// clear history
+	clearHistoryInfo (user, 0);
 
 	// reboot
 	return (systemReboot ());
@@ -1970,7 +1987,7 @@ int GuiApi::glucoseInitFactory (void)
 
 	// clear history & user data
 	for (user = GAPI_USER_START; user < GAPI_USER_MAX; user++) {
-		clearHistoryInfo (user);
+		clearHistoryInfo (user, 1);
 	}
 
 	// reboot

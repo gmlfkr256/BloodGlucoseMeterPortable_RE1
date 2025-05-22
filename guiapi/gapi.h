@@ -61,6 +61,7 @@
 // BLE name file
 #define GAPI_SYS_BLE_LOCAL_PREFIX			"HAPPYZONE"
 #define	GAPI_SYS_BLE_LOCAL_FNAME			"/tmp/ble_localname"
+#define	GAPI_SYS_BLE_DFT_UNAME				"111111"
 
 // user directory prefix
 #define GAPI_SYS_USER_DIR_PREFIX			"user_"
@@ -500,6 +501,7 @@ typedef enum {
 	GAPI_HWTEST_ITEM_MOT_DEPTH,
 	GAPI_HWTEST_ITEM_MOT_UP,
 	GAPI_HWTEST_ITEM_MOT_DOWN,
+	GAPI_HWTEST_ITEM_LED_SET,
 	GAPI_HWTEST_ITEM_MAX
 } gapiHwTestActItem_e;
 
