@@ -21,6 +21,14 @@ void ComponentClock::init()
 
 void ComponentClock::update()
 {
+    if(instance.isBleConnected())
+    {
+        qDebug()<< "SIGUSR1 received, ble connected";
+        instance.nSleepTimeCount = 0;
+        instance.resetBleConnectedFlag();
+        qDebug()<< "nSleepTimeCoutn: "<< instance.nSleepTimeCount;
+    }
+
     if(nDebugCount!=0)
     {
         nDebugClockCount++;
@@ -42,14 +50,6 @@ void ComponentClock::update()
         QString strLocale = clockLocale.toString(localTime,"MM-dd  ddd   hh:mm");
 
         labelClock->setText(strLocale);
-
-        if(instance.isBleConnected())
-        {
-            qDebug()<< "SIGUSR1 received, ble connected";
-            instance.nSleepTimeCount = 0;
-            instance.resetBleConnectedFlag();
-            qDebug()<< "nSleepTimeCoutn: "<< instance.nSleepTimeCount;
-        }
 
         instance.nSleepTimeCount++;
 

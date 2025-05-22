@@ -801,6 +801,7 @@ bool Singleton::isPasswordEqual(const char* pszRaw, int nSize, const QString& st
 // 🔹 시그널-safe 플래그 설정
 void Singleton::setBleConnectedFlag(sig_atomic_t val)
 {
+    qDebug() << "[SIGNAL] setBleConnectedFlag called with" << val;
     bleConnectedFlag = val;
 }
 
