@@ -18,6 +18,8 @@ void installSignalHandler() {
     if (sigaction(SIGUSR1, &sa, nullptr) < 0) {
         perror("sigaction");
     }
+
+    qDebug()<<"== install Signal Handler ==";
 }
 
 QRect getInitialWindowRect(QScreen* screen) {
