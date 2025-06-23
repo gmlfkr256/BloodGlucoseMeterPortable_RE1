@@ -23,11 +23,13 @@ void ComponentClock::update()
 {
     if(instance.isBleConnected())
     {
-        qDebug()<< "SIGUSR1 received, ble connected";
+        qDebug()<< "SIGUSR2 received, ble connected";
         instance.nSleepTimeCount = 0;
         instance.resetBleConnectedFlag();
-        qDebug()<< "nSleepTimeCoutn: "<< instance.nSleepTimeCount;
+        qDebug()<< "reset - nSleepTimeCount: "<< instance.nSleepTimeCount;
     }
+
+    //qDebug()<<"nSleepTimeCout: "<<instance.nSleepTimeCount;
 
     if(nDebugCount!=0)
     {

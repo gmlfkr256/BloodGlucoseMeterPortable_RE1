@@ -195,7 +195,7 @@ void PageReverse::mousePressEvent(QMouseEvent *ev)
 
             // 프로그램 재시작
 
-            QTimer::singleShot(1000,[this](){
+            QTimer::singleShot(1000,[](){
                 QProcess::startDetached(QFileInfo(QCoreApplication::applicationFilePath()).fileName(), QStringList());
 
                 QScreen *screen = QGuiApplication::primaryScreen();
@@ -206,7 +206,6 @@ void PageReverse::mousePressEvent(QMouseEvent *ev)
 
                 }
 
-                this->labelScreen->deleteLater();
                 QCoreApplication::instance()->quit();
             });
 

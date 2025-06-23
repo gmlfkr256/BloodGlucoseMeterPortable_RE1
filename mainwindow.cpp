@@ -314,6 +314,7 @@ void MainWindow::initConnect()
     }
 
     connect(pageHistoryResult,&PageHistoryResult::signalUpdateClock,comClock,&ComponentClock::update);
+    connect(pageReverse,&PageReverse::signalComHide,this,&MainWindow::HideComponents);
     /*
     connect(pagePassword,&PagePassword::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pagePasswordConfirm,&PagePasswordConfirm::signalShowPageNum,this,&MainWindow::setPageByPageNum);

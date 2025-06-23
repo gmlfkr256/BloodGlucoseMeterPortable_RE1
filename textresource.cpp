@@ -158,9 +158,9 @@ void TextResource::init()
                                                     "비밀번호 변경", //PASSWORD_STR_EDIT_CONFIRM,
                                                     "비밀번호 변경", //PASSWORD_STR_EDIT_CHANGE,
                                                     "비밀번호 변경", //PASSWORD_STR_EDIT_SUCCESS,
-                                                    "사용자 정보 삭제", //PASSWORD_STR_DELETE,
-                                                    "사용자 정보 삭제", //PASSWORD_STR_DELETE_CONFIRM,
-                                                    "사용자 정보 삭제", //PASSWORD_STR_DELETE_SUCCESS,
+                                                    "혈당 기록 삭제", //PASSWORD_STR_DELETE,
+                                                    "혈당 기록 삭제", //PASSWORD_STR_DELETE_CONFIRM,
+                                                    "혈당 기록 삭제", //PASSWORD_STR_DELETE_SUCCESS,
                                                     "로그아웃", //PASSWORD_STR_LOGOUT,
                                                     "비밀번호 초기화", //PASSWORD_STR_INIT,
                                                     "비밀번호 초기화", //PASSWORD_STR_INIT_CONFIRM,
@@ -180,9 +180,9 @@ void TextResource::init()
                                                     "본인 확인을 위해\n 비밀번호를 입력해주세요", //PASSWORD_STR_EDIT_CONFIRM,
                                                     "변경하실 비밀번호를 입력해주세요\n\n 8자이상, 숫자,\n 영문자(A-Z), 기호(.,?! 등)\n\n반드시 포함되어야 합니다", //PASSWORD_STR_EDIT_CHANGE,
                                                     "비밀번호 변경이 완료되었습니다\n다시 로그인해주시기 바랍니다", //PASSWORD_STR_EDIT_SUCCESS,
-                                                    "사용자 정보를 삭제하시겠습니까?", //PASSWORD_STR_DELETE,
-                                                    "사용자 정보를 삭제할 경우\n 비밀번호와 설정이 초기화 됩니다", //PASSWORD_STR_DELETE_CONFIRM,
-                                                    "사용자 정보가 삭제되었습니다\n설정 초기화를 위해 재부팅이 진행됩니다", //PASSWORD_STR_DELETE_SUCCESS,
+                                                    "혈당 기록을 삭제하시겠습니까?", //PASSWORD_STR_DELETE,
+                                                    "혈당 기록을 삭제할 경우\n 기록, 비밀번호, 설정이 초기화 됩니다", //PAS이SWORD_STR_DELETE_CONFIRM,
+                                                    "혈당 기록이 삭제되었습니다\n설정 초기화를 위해 재부팅이 진행됩니다", //PASSWORD_STR_DELETE_SUCCESS,
                                                     "로그아웃을 진행합니까?\n로그아웃시 다시 로그인해주시기 바랍니다", //PASSWORD_STR_LOGOUT,
                                                     "비밀번호를 초기화하시겠습니까?", //PASSWORD_STR_INIT,
                                                     "비밀번호를 초기화할 경우\n 비밀번호가 초기 설정 상태가 됩니다", //PASSWORD_STR_INIT_CONFIRM,
@@ -574,7 +574,7 @@ void TextResource::init()
     textData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitle", QStringList{
                                                     "Please log in",
                                                     "Change Password",
-                                                    "Delete User",
+                                                    "Delete Record",
                                                     "Password Confirmation",
                                                     "Password Re-confirmation",
                                                     "Password Reset",
@@ -606,9 +606,9 @@ void TextResource::init()
                                                     "PW Change", //PASSWORD_STR_EDIT_CONFIRM,
                                                     "PW Change", //PASSWORD_STR_EDIT_CHANGE,
                                                     "PW Change", //PASSWORD_STR_EDIT_SUCCESS,
-                                                    "Delete Info", //PASSWORD_STR_DELETE,
-                                                    "Delete Info", //PASSWORD_STR_DELETE_CONFIRM,
-                                                    "Delete Info", //PASSWORD_STR_DELETE_SUCCESS,
+                                                    "Delete Record", //PASSWORD_STR_DELETE,
+                                                    "Delete Record", //PASSWORD_STR_DELETE_CONFIRM,
+                                                    "Delete Record", //PASSWORD_STR_DELETE_SUCCESS,
                                                     "Logout", //PASSWORD_STR_LOGOUT,
                                                     "Reset Password", //PASSWORD_STR_INIT,
                                                     "Reset Password", //PASSWORD_STR_INIT_CONFIRM,
@@ -628,9 +628,9 @@ void TextResource::init()
                                                     "Please enter your password\nfor verification",
                                                     "Please enter a new password\n\nMin. 8 characters, including number,\nletter, and symbol like .,?!",
                                                     "Password changed\nPlease log in again",
-                                                    "Do you want to delete\nuser information?",
-                                                    "Deleting user information will reset\nthe password and settings",
-                                                    "User information deleted\nThe system will reboot to reset settings",
+                                                    "Do you want to delete\nthe record?", //"Do you want to delete\nuser information?",
+                                                    "Password and settings\nwill be reset as well",//"Deleting user information will reset\nthe password and settings",
+                                                    "Record deleted\nSystem rebooting",//"User information deleted\nThe system will reboot to reset settings",
                                                     "Logging out\nPlease log in again",
                                                     "Do you want to reset\nyour password?",
                                                     "Resetting will restore the password\nto its default value",
@@ -1040,7 +1040,7 @@ void TextResource::init()
     textData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitle", QStringList{
                                                     "ログインしてください",
                                                     "パスワードの変更",
-                                                    "ユーザー削除",
+                                                    "記録を削除",
                                                     "パスワード確認",
                                                     "パスワード再確認",
                                                     "パスワード初期化",
@@ -1072,9 +1072,9 @@ void TextResource::init()
                                                     "PW変更",  // PASSWORD_STR_EDIT_CONFIRM
                                                     "PW変更",  // PASSWORD_STR_EDIT_CHANGE
                                                     "PW変更",  // PASSWORD_STR_EDIT_SUCCESS
-                                                    "情報削除", // PASSWORD_STR_DELETE
-                                                    "情報削除", // PASSWORD_STR_DELETE_CONFIRM
-                                                    "情報削除", // PASSWORD_STR_DELETE_SUCCESS
+                                                    "血糖記録を削除",//"記録を削除", // PASSWORD_STR_DELETE
+                                                    "血糖記録を削除",//"記録を削除", // PASSWORD_STR_DELETE_CONFIRM
+                                                    "血糖記録を削除",//"記録を削除", // PASSWORD_STR_DELETE_SUCCESS
                                                     "ログアウト", // PASSWORD_STR_LOGOUT
                                                     "パスワード初期化",     // PASSWORD_STR_INIT
                                                     "パスワード初期化",     // PASSWORD_STR_INIT_CONFIRM
@@ -1095,9 +1095,9 @@ void TextResource::init()
                                                     "本人確認のために\nパスワードを入力してください",
                                                     "新しいパスワードを入力してください\n\n8文字以上で、数字、英字、記号（例：.,?!）を含めてください",
                                                     "パスワード変更が完了しました\n再度ログインしてください",
-                                                    "ユーザー情報を削除しますか？",
-                                                    "ユーザー情報を削除すると\nパスワードと設定がリセットされます",
-                                                    "ユーザー情報が削除されました\n設定リセットのため、システムを再起動します",
+                                                    "血糖記録を削除しますか？", //"ユーザー情報を削除しますか？",
+                                                    "血糖記録を削除すると、\nパスワードと設定が初期化されます", //"ユーザー情報を削除すると\nパスワードと設定がリセットされます",
+                                                    "血糖記録が削除されました。\n設定を初期化するため、\nシステムを再起動します", //"ユーザー情報が削除されました\n設定リセットのため、システムを再起動します",
                                                     "ログアウトしますか？\nログアウト後は再度ログインしてください",
                                                     "パスワードを初期化しますか？",
                                                     "初期化すると、パスワードは\n初期設定に戻ります",
@@ -1536,7 +1536,7 @@ void TextResource::init()
     textData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitle", QStringList{
                                                     "请登录",
                                                     "更改密码",
-                                                    "删除用户",
+                                                    "删除血糖记录", //"删除用户",
                                                     "确认密码",
                                                     "再次确认密码",
                                                     "重置密码",
@@ -1568,9 +1568,9 @@ void TextResource::init()
                                                     "密码更改确认",      // PASSWORD_STR_EDIT_CONFIRM
                                                     "密码更改中",        // PASSWORD_STR_EDIT_CHANGE
                                                     "密码更改完成",      // PASSWORD_STR_EDIT_SUCCESS
-                                                    "删除信息",          // PASSWORD_STR_DELETE
-                                                    "删除信息确认",      // PASSWORD_STR_DELETE_CONFIRM
-                                                    "信息删除成功",      // PASSWORD_STR_DELETE_SUCCESS
+                                                    "删除血糖记录", //"删除信息",          // PASSWORD_STR_DELETE
+                                                    "删除血糖记录确认",//"删除信息确认",      // PASSWORD_STR_DELETE_CONFIRM
+                                                    "血糖记录删除成功", //"信息删除成功",      // PASSWORD_STR_DELETE_SUCCESS
                                                     "退出登录",          // PASSWORD_STR_LOGOUT
                                                     "重置密码",    // PASSWORD_STR_INIT
                                                     "重置密码",    // PASSWORD_STR_INIT_CONFIRM
@@ -1591,9 +1591,9 @@ void TextResource::init()
                                                     "请输入密码以确认身份",
                                                     "请输入新密码\n\n至少包含8个字符、数字、字母和符号（例如：.,?!）",
                                                     "密码更改完成，请重新登录",
-                                                    "是否删除用户信息？",
-                                                    "删除用户信息将重置密码和设置",
-                                                    "用户信息已删除。\n系统将重新启动以重置设置",
+                                                    "是否删除血糖记录？", //"是否删除用户信息？",
+                                                    "删除血糖记录将重置密码和设置",//"删除用户信息将重置密码和设置",
+                                                    "血糖记录已删除。\n系统将重新启动以重置设置", //"用户信息已删除。\n系统将重新启动以重置设置",
                                                     "正在退出登录，请重新登录",
                                                     "是否要重置密码？",
                                                     "重置后密码将恢复为\n默认设置",
@@ -2035,7 +2035,7 @@ void TextResource::init()
     textData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitle", QStringList{
                                                     "請登入",
                                                     "變更密碼",
-                                                    "刪除使用者",
+                                                    "刪除血糖記錄", //"刪除使用者",
                                                     "確認密碼",
                                                     "再次確認密碼",
                                                     "重設密碼",
@@ -2067,9 +2067,9 @@ void TextResource::init()
                                                     "修改密碼",       // PW Change (PASSWORD_STR_EDIT_CONFIRM)
                                                     "修改密碼",       // PW Change (PASSWORD_STR_EDIT_CHANGE)
                                                     "修改密碼",       // PW Change (PASSWORD_STR_EDIT_SUCCESS)
-                                                    "刪除信息",       // Delete Info
-                                                    "刪除信息",       // Delete Info (PASSWORD_STR_DELETE_CONFIRM)
-                                                    "刪除信息",       // Delete Info (PASSWORD_STR_DELETE_SUCCESS)
+                                                    "刪除血糖記錄", //"刪除信息",       // Delete Info
+                                                    "刪除血糖記錄確認", //"刪除信息",       // Delete Info (PASSWORD_STR_DELETE_CONFIRM)
+                                                    "血糖記錄刪除完成", //"刪除信息",       // Delete Info (PASSWORD_STR_DELETE_SUCCESS)
                                                     "登出",          // Logout
                                                     "重設密碼",    // PASSWORD_STR_INIT
                                                     "重設密碼",    // PASSWORD_STR_INIT_CONFIRM
@@ -2090,9 +2090,9 @@ void TextResource::init()
                                                     "請輸入密碼以進行驗證",
                                                     "請輸入新密碼\n\n至少包含8個字元、數字、字母和符號（例如：.,?!）",
                                                     "密碼修改完成，請重新登入",
-                                                    "是否刪除使用者資訊？",
-                                                    "刪除使用者資訊將重置密碼和設定",
-                                                    "使用者資訊已刪除。\n系統將重新啟動以重置設定",
+                                                    "是否刪除血糖記錄？", //"是否刪除使用者資訊？",
+                                                    "刪除血糖記錄將會一併重置密碼和設定", //"刪除使用者資訊將重置密碼和設定",
+                                                    "血糖記錄已刪除。\n系統將重新啟動以重置設定", //"使用者資訊已刪除。\n系統將重新啟動以重置設定",
                                                     "正在登出，請重新登入",
                                                     "您要重設密碼嗎？",
                                                     "重設後，密碼將恢復為\n預設值",
@@ -2529,7 +2529,7 @@ void TextResource::init()
     textData[Lan][PAGE_PASSWORD_ALLCHAT].insert("labelTitle", QStringList{
                                                     "Iniciar sesión",
                                                     "Cambiar contraseña",
-                                                    "Eliminar usuario",
+                                                    "Eliminar glucosa", //"Eliminar usuario",
                                                     "Confirmar contraseña",
                                                     "Reconfirmar contraseña",
                                                     "Restablecer contraseña",
@@ -2561,9 +2561,9 @@ void TextResource::init()
                                                     "Cambio de contraseña",                 // PW Change
                                                     "Cambio de contraseña",                 // PW Change
                                                     "Cambio de contraseña",                 // PW Change
-                                                    "Eliminar información",                 // Delete Info
-                                                    "Eliminar información",                 // Delete Info
-                                                    "Eliminar información",                 // Delete Info
+                                                    "Eliminar glucosa", //"Eliminar información",                 // Delete Info
+                                                    "Confirmar eliminación", //"Eliminar información",                 // Delete Info
+                                                    "Glucosa eliminada", //"Eliminar información",                 // Delete Info
                                                     "Cerrar sesión",                        // Logout
                                                     "Restablecer contraseña",    // PASSWORD_STR_INIT
                                                     "Restablecer contraseña",    // PASSWORD_STR_INIT_CONFIRM
@@ -2584,9 +2584,9 @@ void TextResource::init()
                                                     "Por favor ingrese su contraseña\npara verificación",                              // 본인 확인을 위해 비밀번호를 입력해주세요 (중복 → 유지 or 제거 결정)
                                                     "Nueva contraseña\n\nmín. 8 caracteres, número\nletra y símbolo como .,?!",        // 변경하실 비밀번호를 입력해주세요
                                                     "Cambio de contraseña completado\nPor favor vuelva a iniciar sesión",              // 비밀번호 변경이 완료되었습니다
-                                                    "¿Desea eliminar la información del usuario?",                                     // 사용자 정보를 삭제하시겠습니까?
-                                                    "Eliminar la información del usuario\nrestablecerá la contraseña\ny la configuración", // 사용자 정보를 삭제할 경우 비밀번호와 설정이 초기화 됩니다
-                                                    "Información del usuario eliminada\nEl sistema se reiniciará\npara restablecer la configuración", // 사용자 정보가 삭제되었습니다
+                                                    "¿Desea eliminar el registro de glucosa?", //"¿Desea eliminar la información del usuario?",                                     // 사용자 정보를 삭제하시겠습니까?
+                                                    "Eliminar el registro de glucosa\nrestablecerá la contraseña\ny la configuración", //"Eliminar la información del usuario\nrestablecerá la contraseña\ny la configuración", // 사용자 정보를 삭제할 경우 비밀번호와 설정이 초기화 됩니다
+                                                    "Registro de glucosa eliminado\nEl sistema se reiniciará\npara restablecer la configuración", //"Información del usuario eliminada\nEl sistema se reiniciará\npara restablecer la configuración", // 사용자 정보가 삭제되었습니다
                                                     "Cerrando sesión\nPor favor vuelva a iniciar sesión",                              // 로그아웃을 진행합니까? (→ 원문과 조금 어색함)
                                                     "¿Desea restablecer la contraseña?",                                               // 비밀번호를 초기화하시겠습니까?
                                                     "Restablecer la contraseña\nla devolverá a los valores por defecto",               // 비밀번호를 초기화할 경우 비밀번호가 초기 설정 상태가 됩니다
@@ -2909,11 +2909,13 @@ void TextResource::init()
                                        });
 
 
+#if FONT_DEBUG
     for(const auto& textName : fontData[KR][PAGE_PASSWORD].keys())
     {
         QFont font = fontData[KR][PAGE_PASSWORD][textName];
         qDebug() <<"TextName: "<< textName << "->" << QFontInfo(font).family();
     }
+#endif
 }
 
 QStringList TextResource::getText(PageNum page, const QString& textName)
@@ -2962,8 +2964,10 @@ QFont TextResource::getFont(PageNum page, const QString& textName)
     {
         if (fontData[lang][page].contains(textName)) {
             font = fontData[lang][page].value(textName);
+#if FONT_DEBUG
             QFontInfo fontInfo(font);
             qDebug() << "fontInfo: "<< fontInfo.family();
+#endif
         } else {
             qDebug() << "getFont fail: TextName not found ->"
                      << "Page:" << page << ", TextName:" << textName;

@@ -5,12 +5,13 @@
 // Define Constants
 //=======================
 
-#define DEVICE true
+#define DEVICE false
 #define IMAGE_FILE_CHECK true
 #define GLUCOSE_LOW_PLUS 5
 #define GLUCOSE_HIGH_MINUS -30
 #define DEVICE_CALI false
 #define NEW_PASSWORD true
+#define FONT_DEBUG false
 
 #define DEBUG_FLAG_BATTERY false
 #if DEBUG_FLAG_BATTERY

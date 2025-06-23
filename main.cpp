@@ -15,7 +15,7 @@ void installSignalHandler() {
     sigemptyset(&sa.sa_mask);
     sa.sa_flags = SA_RESTART;  // 시스템콜 중단 방지
 
-    if (sigaction(SIGUSR1, &sa, nullptr) < 0) {
+    if (sigaction(SIGUSR2, &sa, nullptr) < 0) {
         perror("sigaction");
     }
 

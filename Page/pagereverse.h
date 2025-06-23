@@ -27,6 +27,8 @@ public:
     CustomButtonOK *customButtonOK;
     CustomButtonCancel *customButtonCancel;
 
+    QLabel *labelScreen;
+
     void update() override;
     void pageShow() override;
     void pageHide() override;
@@ -37,6 +39,7 @@ private:
 
 signals:
     //void signalShowPageNum(PageNum pageNum);
+    void signalComHide();
 };
 
 #endif // PAGEREVERSE_H
