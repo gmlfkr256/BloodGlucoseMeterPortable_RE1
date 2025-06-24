@@ -181,7 +181,7 @@ void TextResource::init()
                                                     "변경하실 비밀번호를 입력해주세요\n\n 8자이상, 숫자,\n 영문자(A-Z), 기호(.,?! 등)\n\n반드시 포함되어야 합니다", //PASSWORD_STR_EDIT_CHANGE,
                                                     "비밀번호 변경이 완료되었습니다\n다시 로그인해주시기 바랍니다", //PASSWORD_STR_EDIT_SUCCESS,
                                                     "혈당 기록을 삭제하시겠습니까?", //PASSWORD_STR_DELETE,
-                                                    "삭제된 혈당 기록은 복구할 수 없습니다.", //PAS이SWORD_STR_DELETE_CONFIRM,
+                                                    "삭제된 혈당 기록은 복구할 수 없습니다", //PAS이SWORD_STR_DELETE_CONFIRM,
                                                     "혈당 기록이 삭제되었습니다", //PASSWORD_STR_DELETE_SUCCESS,
                                                     "로그아웃을 진행합니까?\n로그아웃시 다시 로그인해주시기 바랍니다", //PASSWORD_STR_LOGOUT,
                                                     "비밀번호를 초기화하시겠습니까?", //PASSWORD_STR_INIT,
@@ -514,24 +514,24 @@ void TextResource::init()
 
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextResult",QFont(currentFont,instance.pixelToPoint(36)));
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QStringList{
-                                               "Measurement was successful.",     // 0
-                                               "Finger not detected.\nPlease try measuring again.", // 1
-                                               "A problem occurred with the device.\nPlease contact customer support.", // 2
-                                               "A problem occurred with the device.\nPlease contact customer support.", // 3
-                                               "Unable to analyze the measurement result.\nPlease try again.", // 4
-                                               "There is an error in the measured data.\nPlease try again.", // 5
-                                               "Measurement failed.\nPlease contact customer support.", // 6
-                                               "Error. Measurement failed.\nPlease contact customer support." // 7
+                                               "Measurement was successful",     // 0
+                                               "Finger not detected.\nPlease try measuring again", // 1
+                                               "A problem occurred with the device.\nPlease contact customer support", // 2
+                                               "A problem occurred with the device.\nPlease contact customer support", // 3
+                                               "Unable to analyze the measurement result.\nPlease try again", // 4
+                                               "There is an error in the measured data.\nPlease try again", // 5
+                                               "Measurement failed.\nPlease contact customer support", // 6
+                                               "Error. Measurement failed.\nPlease contact customer support" // 7
                                            });
 
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QFont(currentFont, instance.pixelToPoint(42), QFont::Bold));
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QStringList{
-                                               "Upgrade completed successfully.", // 0
-                                               "Upgrade failed.\nPlease contact customer support.", // 1
-                                               "Upgrade file not found.\nPlease check the file again.", // 2
-                                               "There is a problem with the upgrade file.\nPlease try again with a new file.", // 3
-                                               "This is not a valid upgrade file.\nPlease check if the file is correct.", // 4
-                                               "Upgrade failed.\nPlease contact customer support." // 5
+                                               "Upgrade completed successfully", // 0
+                                               "Upgrade failed.\nPlease contact customer support", // 1
+                                               "Upgrade file not found.\nPlease check the file again", // 2
+                                               "There is a problem with the upgrade file.\nPlease try again with a new file", // 3
+                                               "This is not a valid upgrade file.\nPlease check if the file is correct", // 4
+                                               "Upgrade failed.\nPlease contact customer support" // 5
                                            });
 
     fontData[Lan][CUSTOM_COMPONENT_DATE].insert("labelText",QFont(currentFont,instance.pixelToPoint(50)));
@@ -629,8 +629,8 @@ void TextResource::init()
                                                     "Please enter a new password\n\nMin. 8 characters, including number,\nletter, and symbol like .,?!",
                                                     "Password changed\nPlease log in again",
                                                     "Do you want to delete the blood glucose record?", // PASSWORD_STR_DELETE
-                                                    "Deleted data cannot be recovered.", // PASSWORD_STR_DELETE_CONFIRM
-                                                    "Blood glucose record deleted.", // PASSWORD_STR_DELETE_SUCCESS
+                                                    "Deleted data cannot be recovered", // PASSWORD_STR_DELETE_CONFIRM
+                                                    "Blood glucose record deleted", // PASSWORD_STR_DELETE_SUCCESS
                                                     "Logging out\nPlease log in again",
                                                     "Do you want to reset\nyour password?",
                                                     "Resetting will restore the password\nto its default value",
@@ -971,24 +971,24 @@ void TextResource::init()
 
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QFont(currentFont, instance.pixelToPoint(36)));
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QStringList{
-                                               "測定に成功しました。",     // 0
-                                               "指を認識できませんでした。\nもう一度測定してください。", // 1
-                                               "デバイスに問題が発生しました。\nカスタマーサポートにお問い合わせください。", // 2
-                                               "デバイスに問題が発生しました。\nカスタマーサポートにお問い合わせください。", // 3
-                                               "測定結果を解析できませんでした。\nもう一度測定してください。", // 4
-                                               "測定データにエラーがあります。\nもう一度測定してください。", // 5
-                                               "測定に失敗しました。\nカスタマーサポートにお問い合わせください。", // 6
-                                               "エラー測定に失敗しました。\nカスタマーサポートにお問い合わせください。" // 7
+                                               "測定に成功しました",     // 0
+                                               "指を認識できませんでした。\nもう一度測定してください", // 1
+                                               "デバイスに問題が発生しました。\nカスタマーサポートにお問い合わせください", // 2
+                                               "デバイスに問題が発生しました。\nカスタマーサポートにお問い合わせください", // 3
+                                               "測定結果を解析できませんでした。\nもう一度測定してください", // 4
+                                               "測定データにエラーがあります。\nもう一度測定してください", // 5
+                                               "測定に失敗しました。\nカスタマーサポートにお問い合わせください", // 6
+                                               "エラー測定に失敗しました。\nカスタマーサポートにお問い合わせください" // 7
                                            });
 
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QFont(currentFont, instance.pixelToPoint(36), QFont::Bold));
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QStringList{
-                                               "アップグレードに成功しました。", // 0
-                                               "アップグレードに失敗しました。\nカスタマーサポートにお問い合わせください。", // 1
-                                               "アップグレードファイルが見つかりません。\nファイルを再確認してください。", // 2
-                                               "アップグレードファイルに問題があります。\n新しいファイルで再試行してください。", // 3
-                                               "アップグレード用のファイルではありません。\n正しいファイルか確認してください。", // 4
-                                               "アップグレードに失敗しました。\nカスタマーサポートにお問い合わせください。" // 5
+                                               "アップグレードに成功しました", // 0
+                                               "アップグレードに失敗しました。\nカスタマーサポートにお問い合わせください", // 1
+                                               "アップグレードファイルが見つかりません。\nファイルを再確認してください", // 2
+                                               "アップグレードファイルに問題があります。\n新しいファイルで再試行してください", // 3
+                                               "アップグレード用のファイルではありません。\n正しいファイルか確認してください", // 4
+                                               "アップグレードに失敗しました。\nカスタマーサポートにお問い合わせください" // 5
                                            });
 
 
@@ -1096,8 +1096,8 @@ void TextResource::init()
                                                     "新しいパスワードを入力してください\n\n8文字以上で、数字、英字、記号（例：.,?!）を含めてください",
                                                     "パスワード変更が完了しました\n再度ログインしてください",
                                                     "血糖記録を削除しますか？", // PASSWORD_STR_DELETE
-                                                    "削除された記録は復元できません。", // PASSWORD_STR_DELETE_CONFIRM
-                                                    "血糖記録が削除されました。", // PASSWORD_STR_DELETE_SUCCESS
+                                                    "削除された記録は復元できません", // PASSWORD_STR_DELETE_CONFIRM
+                                                    "血糖記録が削除されました", // PASSWORD_STR_DELETE_SUCCESS
                                                     "ログアウトしますか？\nログアウト後は再度ログインしてください",
                                                     "パスワードを初期化しますか？",
                                                     "初期化すると、パスワードは\n初期設定に戻ります",
@@ -1307,9 +1307,9 @@ void TextResource::init()
     //PAGE_INIT_CONFIRM
     fontData[Lan][PAGE_INIT_CONFIRM].insert("labelText", QFont(currentFont, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_INIT_CONFIRM].insert("labelText", QStringList{
-                                                "システム全体の情報が\nリセットされます。\n工場出荷状態に\nリセットしますか？", // The entire system information will be reset. Do you want to proceed with factory reset?
+                                                "システム全体の情報が\nリセットされます\n工場出荷状態に\nリセットしますか？", // The entire system information will be reset. Do you want to proceed with factory reset?
                                                 "システムの初期化後、\nシステムが再起動します",          // After system initialization, the system will restart
-                                                "Bluetoothのユーザー情報が\n初期化されます。\nスマートフォンとの接続が\n切断されます。\nBluetoothをリセットしますか？", // Bluetooth user information will be initialized. The connection with the smartphone is disconnected. Would you like to reset Bluetooth?
+                                                "Bluetoothのユーザー情報が\n初期化されます\nスマートフォンとの接続が\n切断されます\nBluetoothをリセットしますか？", // Bluetooth user information will be initialized. The connection with the smartphone is disconnected. Would you like to reset Bluetooth?
                                                 "Bluetoothのユーザー情報が\n初期化されました",          // Bluetooth user information has been reset
                                                 "血糖補正がリセットされます\n血糖補正を\nリセットしますか？", // Blood sugar correction will be reset. Do you want to reset blood sugar correction?
                                                 "血糖補正がリセットされました"                     // Blood sugar correction has been reset
@@ -1468,24 +1468,24 @@ void TextResource::init()
 
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QFont(currentFont, instance.pixelToPoint(42)));
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QStringList{
-                                               "测量成功。",     // 0
-                                               "未检测到手指。\n请重新测量。", // 1
-                                               "设备出现问题。\n请联系客服。", // 2
-                                               "设备出现问题。\n请联系客服。", // 3
-                                               "无法分析测量结果。\n请重新测量。", // 4
-                                               "测量数据有误。\n请重新测量。", // 5
-                                               "测量失败。\n请联系客服。", // 6
-                                               "错误测量失败。\n请联系客服。" // 7
+                                               "测量成功",     // 0
+                                               "未检测到手指\n请重新测量", // 1
+                                               "设备出现问题\n请联系客服", // 2
+                                               "设备出现问题\n请联系客服", // 3
+                                               "无法分析测量结果\n请重新测量", // 4
+                                               "测量数据有误\n请重新测量", // 5
+                                               "测量失败\n请联系客服", // 6
+                                               "错误测量失败\n请联系客服" // 7
                                            });
 
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QFont(currentFont, instance.pixelToPoint(42), QFont::Bold));
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QStringList{
-                                               "升级成功。", // 0
-                                               "升级失败。\n请联系客服。", // 1
-                                               "未找到升级文件。\n请重新检查文件。", // 2
-                                               "升级文件有问题。\n请使用新文件重试。", // 3
-                                               "此文件不是有效的升级文件。\n请确认文件是否正确。", // 4
-                                               "升级失败。\n请联系客服。" // 5
+                                               "升级成功", // 0
+                                               "升级失败\n请联系客服", // 1
+                                               "未找到升级文件\n请重新检查文件", // 2
+                                               "升级文件有问题\n请使用新文件重试", // 3
+                                               "此文件不是有效的升级文件\n请确认文件是否正确", // 4
+                                               "升级失败\n请联系客服" // 5
                                            });
 
     //CUSTOM_COMPONENT_DATE
@@ -1592,8 +1592,8 @@ void TextResource::init()
                                                     "请输入新密码\n\n至少包含8个字符、数字、字母和符号（例如：.,?!）",
                                                     "密码更改完成，请重新登录",
                                                     "是否删除血糖记录？", // PASSWORD_STR_DELETE
-                                                    "删除后将无法恢复记录。", // PASSWORD_STR_DELETE_CONFIRM
-                                                    "血糖记录已删除。", // PASSWORD_STR_DELETE_SUCCESS
+                                                    "删除后将无法恢复记录", // PASSWORD_STR_DELETE_CONFIRM
+                                                    "血糖记录已删除", // PASSWORD_STR_DELETE_SUCCESS
                                                     "正在退出登录，请重新登录",
                                                     "是否要重置密码？",
                                                     "重置后密码将恢复为\n默认设置",
@@ -1803,11 +1803,11 @@ void TextResource::init()
     //PAGE_INIT_CONFIRM
     fontData[Lan][PAGE_INIT_CONFIRM].insert("labelText", QFont(currentFont, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_INIT_CONFIRM].insert("labelText", QStringList{
-                                                "系统的所有信息将会被重置。\n是否继续进行出厂设置？",   // The entire system information will be reset. Do you want to proceed with factory reset?
+                                                "系统的所有信息将会被重置\n是否继续进行出厂设置？",   // The entire system information will be reset. Do you want to proceed with factory reset?
                                                 "系统初始化后将会重新启动",                 // After system initialization, the system will restart
-                                                "蓝牙用户信息将会初始化。\n与智能手机的连接将被断开。\n是否重置蓝牙？", // Bluetooth user information will be initialized. The connection with the smartphone is disconnected. Would you like to reset Bluetooth?
+                                                "蓝牙用户信息将会初始化\n与智能手机的连接将被断开\n是否重置蓝牙？", // Bluetooth user information will be initialized. The connection with the smartphone is disconnected. Would you like to reset Bluetooth?
                                                 "蓝牙用户信息已被初始化",                 // Bluetooth user information has been reset
-                                                "血糖校正将被重置。\n是否重置血糖校正？", // Blood sugar correction will be reset. Do you want to reset blood sugar correction?
+                                                "血糖校正将被重置\n是否重置血糖校正？", // Blood sugar correction will be reset. Do you want to reset blood sugar correction?
                                                 "血糖校正已被重置"                       // Blood sugar correction has been reset
                                             });
 
@@ -1966,24 +1966,24 @@ void TextResource::init()
 
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QFont(currentFont, instance.pixelToPoint(36)));
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QStringList{
-                                               "測量成功。",     // 0
-                                               "未偵測到手指。\n請重新測量。", // 1
-                                               "設備發生問題。\n請聯繫客服。", // 2
-                                               "設備發生問題。\n請聯繫客服。", // 3
-                                               "無法分析測量結果。\n請重新測量。", // 4
-                                               "測量數據有誤。\n請重新測量。", // 5
-                                               "測量失敗。\n請聯繫客服。", // 6
-                                               "錯誤測量失敗。\n請聯繫客服。" // 7
+                                               "測量成功",     // 0
+                                               "未偵測到手指\n請重新測量", // 1
+                                               "設備發生問題\n請聯繫客服", // 2
+                                               "設備發生問題\n請聯繫客服", // 3
+                                               "無法分析測量結果\n請重新測量", // 4
+                                               "測量數據有誤\n請重新測量", // 5
+                                               "測量失敗\n請聯繫客服", // 6
+                                               "錯誤測量失敗\n請聯繫客服" // 7
                                            });
 
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QFont(currentFont, instance.pixelToPoint(42), QFont::Bold));
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QStringList{
-                                               "升級成功。", // 0
-                                               "升級失敗。\n請聯繫客服。", // 1
-                                               "找不到升級檔案。\n請重新檢查檔案。", // 2
-                                               "升級檔案有問題。\n請使用新檔案重試。", // 3
-                                               "此檔案不是有效的升級檔案。\n請確認是否正確。", // 4
-                                               "升級失敗。\n請聯繫客服。" // 5
+                                               "升級成功", // 0
+                                               "升級失敗\n請聯繫客服", // 1
+                                               "找不到升級檔案\n請重新檢查檔案", // 2
+                                               "升級檔案有問題\n請使用新檔案重試", // 3
+                                               "此檔案不是有效的升級檔案\n請確認是否正確", // 4
+                                               "升級失敗\n請聯繫客服" // 5
                                            });
 
 
@@ -2091,8 +2091,8 @@ void TextResource::init()
                                                     "請輸入新密碼\n\n至少包含8個字元、數字、字母和符號（例如：.,?!）",
                                                     "密碼修改完成，請重新登入",
                                                     "是否刪除血糖記錄？", // PASSWORD_STR_DELETE
-                                                    "刪除後將無法恢復記錄。", // PASSWORD_STR_DELETE_CONFIRM
-                                                    "血糖記錄已刪除。", // PASSWORD_STR_DELETE_SUCCESS
+                                                    "刪除後將無法恢復記錄", // PASSWORD_STR_DELETE_CONFIRM
+                                                    "血糖記錄已刪除", // PASSWORD_STR_DELETE_SUCCESS
                                                     "正在登出，請重新登入",
                                                     "您要重設密碼嗎？",
                                                     "重設後，密碼將恢復為\n預設值",
@@ -2298,11 +2298,11 @@ void TextResource::init()
     //PAGE_INIT_CONFIRM
     fontData[Lan][PAGE_INIT_CONFIRM].insert("labelText", QFont(currentFont, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_INIT_CONFIRM].insert("labelText", QStringList{
-                                                "整個系統資訊將被重置。\n是否繼續執行出廠重置？", // The entire system information will be reset. Do you want to proceed with factory reset?
+                                                "整個系統資訊將被重置\n是否繼續執行出廠重置？", // The entire system information will be reset. Do you want to proceed with factory reset?
                                                 "系統初始化後，\n系統將重新啟動",            // After system initialization, the system will restart
-                                                "藍牙用戶資訊將被初始化。\n與智能手機的連接將被斷開。\n是否重置藍牙？", // Bluetooth user information will be initialized. The connection with the smartphone is disconnected. Would you like to reset Bluetooth?
+                                                "藍牙用戶資訊將被初始化\n與智能手機的連接將被斷開\n是否重置藍牙？", // Bluetooth user information will be initialized. The connection with the smartphone is disconnected. Would you like to reset Bluetooth?
                                                 "藍牙用戶資訊已被重置",                      // Bluetooth user information has been reset
-                                                "血糖校正將被重置。\n是否重置血糖校正？",      // Blood sugar correction will be reset. Do you want to reset blood sugar correction?
+                                                "血糖校正將被重置\n是否重置血糖校正？",      // Blood sugar correction will be reset. Do you want to reset blood sugar correction?
                                                 "血糖校正已被重置"                           // Blood sugar correction has been reset
                                             });
 
@@ -2460,24 +2460,24 @@ void TextResource::init()
 
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QFont(currentFont, instance.pixelToPoint(36)));
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QStringList{
-                                               "Medición exitosa.",     // 0
-                                               "No se detectó el dedo.\nInténtelo de nuevo.", // 1
-                                               "Error del dispositivo.\nContacte soporte.", // 2
-                                               "Error del dispositivo.\nContacte soporte.", // 3
-                                               "No se pudo analizar.\nInténtelo de nuevo.", // 4
-                                               "Error en los datos.\nInténtelo de nuevo.", // 5
-                                               "Fallo en la medición.\nContacte soporte.", // 6
-                                               "Error al medir.\nContacte soporte." // 7
+                                               "Medición exitosa",     // 0
+                                               "No se detectó el dedo\nInténtelo de nuevo", // 1
+                                               "Error del dispositivo\nContacte soporte", // 2
+                                               "Error del dispositivo\nContacte soporte", // 3
+                                               "No se pudo analizar\nInténtelo de nuevo", // 4
+                                               "Error en los datos\nInténtelo de nuevo", // 5
+                                               "Fallo en la medición\nContacte soporte", // 6
+                                               "Error al medir\nContacte soporte" // 7
                                            });
 
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QFont(currentFont, instance.pixelToPoint(42), QFont::Bold));
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QStringList{
-                                               "Actualización completada.", // 0
-                                               "Falló la actualización.\nContacte soporte.", // 1
-                                               "Archivo no encontrado.\nRevise el archivo.", // 2
-                                               "Archivo con errores.\nUse uno nuevo.", // 3
-                                               "Archivo inválido.\nVerifique si es correcto.", // 4
-                                               "Falló la actualización.\nContacte soporte." // 5
+                                               "Actualización completada", // 0
+                                               "Falló la actualización\nContacte soporte", // 1
+                                               "Archivo no encontrado\nRevise el archivo", // 2
+                                               "Archivo con errores\nUse uno nuevo", // 3
+                                               "Archivo inválido\nVerifique si es correcto", // 4
+                                               "Falló la actualización\nContacte soporte" // 5
                                            });
 
 
@@ -2585,8 +2585,8 @@ void TextResource::init()
                                                     "Nueva contraseña\n\nmín. 8 caracteres, número\nletra y símbolo como .,?!",        // 변경하실 비밀번호를 입력해주세요
                                                     "Cambio de contraseña completado\nPor favor vuelva a iniciar sesión",              // 비밀번호 변경이 완료되었습니다
                                                     "¿Desea eliminar el registro de glucosa?", // PASSWORD_STR_DELETE
-                                                    "Una vez eliminado, no se puede recuperar.", // PASSWORD_STR_DELETE_CONFIRM
-                                                    "Registro de glucosa eliminado.", // PASSWORD_STR_DELETE_SUCCESS
+                                                    "Una vez eliminado, no se puede recuperar", // PASSWORD_STR_DELETE_CONFIRM
+                                                    "Registro de glucosa eliminado", // PASSWORD_STR_DELETE_SUCCESS
                                                     "Cerrando sesión\nPor favor vuelva a iniciar sesión",                              // 로그아웃을 진행합니까? (→ 원문과 조금 어색함)
                                                     "¿Desea restablecer la contraseña?",                                               // 비밀번호를 초기화하시겠습니까?
                                                     "Restablecer la contraseña\nla devolverá a los valores por defecto",               // 비밀번호를 초기화할 경우 비밀번호가 초기 설정 상태가 됩니다
@@ -2705,7 +2705,7 @@ void TextResource::init()
     fontData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText", QFont(currentFont, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_CALI_GAIN_RESULT].insert("labelText", QStringList{
                                                     "El ajuste de sensibilidad del LED está completo\nProceda al siguiente paso de medición",
-                                                    "El ajuste de sensibilidad del LED falló.\nPor favor, mida nuevamente"
+                                                    "El ajuste de sensibilidad del LED falló\nPor favor, mida nuevamente"
                                                 });
 
     //PAGE_CALI_SELECT
@@ -2785,30 +2785,30 @@ void TextResource::init()
     fontData[Lan][PAGE_INIT_CONFIRM].insert("labelText", QFont(currentFont, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_INIT_CONFIRM].insert("labelText", QStringList{
                                                 "Toda la información del sistema\n"
-                                                "se restablecerá.\n\n"
+                                                "se restablecerá\n\n"
                                                 "¿Desea proceder con el\n"
                                                 "restablecimiento de fábrica?",
 
                                                 "Después de la inicialización\n"
                                                 "del sistema,\n"
-                                                "el sistema se reiniciará.",
+                                                "el sistema se reiniciará",
 
                                                 "La información del usuario de\n"
-                                                "Bluetooth se inicializará.\n\n"
+                                                "Bluetooth se inicializará\n\n"
                                                 "La conexión con el\n"
-                                                "smartphone se desconectará.\n\n"
+                                                "smartphone se desconectará\n\n"
                                                 "¿Desea restablecer Bluetooth?",
 
                                                 "La información del usuario de\n"
                                                 "Bluetooth ha sido restablecida.",
 
                                                 "La corrección de azúcar\n"
-                                                "se restablecerá.\n\n"
+                                                "se restablecerá\n\n"
                                                 "¿Desea restablecer la\n"
                                                 "corrección de azúcar?",
 
                                                 "La corrección de azúcar\n"
-                                                "ha sido restablecida."
+                                                "ha sido restablecida"
                                             });
 
 
