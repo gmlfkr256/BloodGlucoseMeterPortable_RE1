@@ -314,12 +314,6 @@ void PageGarph::mousePressEvent(QMouseEvent *ev)
 
 void PageGarph::pageShow()
 {
-    instance.isBatCharging = true;
-    if(instance.isBatCharging == true)
-    {
-        pageHide();
-    }
-
     if(instance.currentPage == PAGE_CALI_GAIN_CONFIRM)
         instance.setPageNumPrev(PAGE_CALI_CHECK);
     else
@@ -422,7 +416,7 @@ void PageGarph::pageHide()
 #else
         if(instance.getGraphMode() == GRAPH_GAIN)
             instance.caliUserInfo.led_sense = 1;
-        //instance.sysProcMonInfo.err_code = QRandomGenerator::global()->bounded(2);
+        instance.sysProcMonInfo.err_code = QRandomGenerator::global()->bounded(2);
 #endif
         // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_NORMAL;
         // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_NO_FINGER;
@@ -492,16 +486,9 @@ void PageGarph::pageHide()
             break;
         }
         */
-        if(instance.isBatCharging == false)
-        {
-            emit signalShowPageNum(instance.getPageNumPrev());
-        }
-        else
-        {
-            instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_CHARGING;
-            emit signalShowPageNum(PAGE_RESULT_FAIL);
-        }
+        emit signalShowPageNum(instance.getPageNumPrev());
     }
+
     labelProgressBar->setGeometry(20,95,30,30);
     bIsProcessSuccess = false;
     timerPainter->stop();
