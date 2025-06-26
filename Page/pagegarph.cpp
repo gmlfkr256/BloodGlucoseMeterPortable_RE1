@@ -205,14 +205,6 @@ void PageGarph::updatePainter()
     }
     else
     {
-        instance.isBatCharging = true;
-
-        if(instance.isBatCharging == true)
-        {
-            nProgressValue = -1;
-            instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_CHARGING;
-        }
-
         if(nProgressValue == -1)
         {
             bIsProcessSuccess = false;
@@ -322,6 +314,11 @@ void PageGarph::mousePressEvent(QMouseEvent *ev)
 
 void PageGarph::pageShow()
 {
+    if(instance.isBatCharging == true)
+    {
+        pageHide();
+    }
+
     if(instance.currentPage == PAGE_CALI_GAIN_CONFIRM)
         instance.setPageNumPrev(PAGE_CALI_CHECK);
     else
@@ -494,9 +491,16 @@ void PageGarph::pageHide()
             break;
         }
         */
-        emit signalShowPageNum(instance.getPageNumPrev());
+        if(instance.isBatCharging == false)
+        {
+            emit signalShowPageNum(instance.getPageNumPrev());
+        }
+        else
+        {
+            instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_CHARGING;
+            emit signalShowPageNum(PAGE_RESULT_FAIL);
+        }
     }
-
     labelProgressBar->setGeometry(20,95,30,30);
     bIsProcessSuccess = false;
     timerPainter->stop();
