@@ -205,6 +205,12 @@ void PageGarph::updatePainter()
     }
     else
     {
+        if(instance.isBatCharging == true)
+        {
+            nProgressValue = -1;
+            instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_CHARGING;
+        }
+
         if(nProgressValue == -1)
         {
             bIsProcessSuccess = false;
@@ -416,7 +422,7 @@ void PageGarph::pageHide()
 #else
         if(instance.getGraphMode() == GRAPH_GAIN)
             instance.caliUserInfo.led_sense = 1;
-        instance.sysProcMonInfo.err_code = QRandomGenerator::global()->bounded(2);
+        //instance.sysProcMonInfo.err_code = QRandomGenerator::global()->bounded(2);
 #endif
         // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_NORMAL;
         // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_NO_FINGER;

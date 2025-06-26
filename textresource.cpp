@@ -77,7 +77,8 @@ void TextResource::init()
                                                "측정 결과를 분석할 수 없습니다\n다시 측정해 주세요",             // 4
                                                "측정된 데이터에 오류가 있습니다\n다시 측정해 주세요",             // 5
                                                "측정에 실패했습니다\n고객센터로 문의해 주세요",              // 6
-                                               "오류. 측정에 실패했습니다\n고객센터로 문의해 주세요"             // 7
+                                               "충전 중에는 측정하실 수 없습니다\n제거 후 측정해 주세요", //7
+                                               "오류. 측정에 실패했습니다\n고객센터로 문의해 주세요"             // 8
                                            });
 
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade",QFont(currentFont,instance.pixelToPoint(42),QFont::Bold));

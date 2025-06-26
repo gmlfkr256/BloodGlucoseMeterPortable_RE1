@@ -76,11 +76,14 @@ void ComponentMeasureResult::setTextResult(QLabel *label,unsigned char errCode)
     case GAPI_PROC_ECODE_DATA_ERROR:
         nGetTextNum = 5;
         break;
-    case GAPI_PROC_ECODE_MAX:
+    case GAPI_PROC_ECODE_CHARGING:
         nGetTextNum = 6;
         break;
-    default:
+    case GAPI_PROC_ECODE_MAX:
         nGetTextNum = 7;
+        break;
+    default:
+        nGetTextNum = 8;
         qDebug()<<"measureResult errCode fail";
     }
 
