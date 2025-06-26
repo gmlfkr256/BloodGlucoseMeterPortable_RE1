@@ -314,20 +314,18 @@ void PageGarph::mousePressEvent(QMouseEvent *ev)
 
 void PageGarph::pageShow()
 {
-    instance.isBatCharging = true;
-    if(instance.isBatCharging == true)
-    {
-        instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_CHARGING;
-        emit signalShowPageNum(PAGE_RESULT_FAIL);
-    }
-
     if(instance.currentPage == PAGE_CALI_GAIN_CONFIRM)
         instance.setPageNumPrev(PAGE_CALI_CHECK);
     else
         instance.setPageNumPrev(instance.currentPage);
     //else if(instance.currentPage == PAGE_CALI_CONFIRM)
 
-
+    instance.isBatCharging = true;
+    if(instance.isBatCharging == true)
+    {
+        instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_CHARGING;
+        emit signalShowPageNum(PAGE_RESULT_FAIL);
+    }
 
     instance.sysProcAct = {};
 
