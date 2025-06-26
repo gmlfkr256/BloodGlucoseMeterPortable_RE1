@@ -318,7 +318,7 @@ void PageGarph::pageShow()
     if(instance.isBatCharging == true)
     {
         instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_CHARGING;
-        emit signalShowPageNum(PAGE_RESULT);
+        emit signalShowPageNum(PAGE_RESULT_FAIL);
     }
 
     if(instance.currentPage == PAGE_CALI_GAIN_CONFIRM)
