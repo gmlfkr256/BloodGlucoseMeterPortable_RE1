@@ -91,6 +91,7 @@ void TextResource::init()
                                                "업그레이드가 실패했습니다\n고객센터에 문의해 주세요" //5
                                            });
 
+    //CUSTOM_COMPONENT_DATE
     fontData[Lan][CUSTOM_COMPONENT_DATE].insert("labelText",QFont(currentFont,instance.pixelToPoint(50)));
     fontData[Lan][CUSTOM_COMPONENT_DATE].insert("labelTextSelect",QFont(currentFont,instance.pixelToPoint(50),QFont::Bold));
     fontData[Lan][CUSTOM_COMPONENT_DATE].insert("labelTextSub",QFont(currentFont,instance.pixelToPoint(40)));
@@ -513,7 +514,7 @@ void TextResource::init()
     //CUSTOM_COMPONENT
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextValue",QFont(currentFont,instance.pixelToPoint(30),QFont::Bold));
 
-    fontData[Lan][CUSTOM_COMPONENT].insert("labelTextResult",QFont(currentFont,instance.pixelToPoint(36)));
+    fontData[Lan][CUSTOM_COMPONENT].insert("labelTextResult",QFont(currentFont,instance.pixelToPoint(nTextSize)));
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QStringList{
                                                "Measurement was successful",     // 0
                                                "Finger not detected.\nPlease try measuring again", // 1
@@ -535,6 +536,7 @@ void TextResource::init()
                                                "Upgrade failed.\nPlease contact customer support" // 5
                                            });
 
+    //CUSTOM_COMPONENT_DATE
     fontData[Lan][CUSTOM_COMPONENT_DATE].insert("labelText",QFont(currentFont,instance.pixelToPoint(50)));
     fontData[Lan][CUSTOM_COMPONENT_DATE].insert("labelTextSelect",QFont(currentFont,instance.pixelToPoint(50),QFont::Bold));
     fontData[Lan][CUSTOM_COMPONENT_DATE].insert("labelTextSub",QFont(currentFont,instance.pixelToPoint(40)));
@@ -970,7 +972,7 @@ void TextResource::init()
     //CUSTOM_COMPONENT
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextValue", QFont(currentFont, instance.pixelToPoint(30), QFont::Bold));
 
-    fontData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QFont(currentFont, instance.pixelToPoint(36)));
+    fontData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QFont(currentFont, instance.pixelToPoint(nTextSize)));
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QStringList{
                                                "測定に成功しました",     // 0
                                                "指を認識できませんでした。\nもう一度測定してください", // 1
@@ -1467,7 +1469,7 @@ void TextResource::init()
     //CUSTOM_COMPONENT
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextValue", QFont(currentFont, instance.pixelToPoint(30), QFont::Bold));
 
-    fontData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QFont(currentFont, instance.pixelToPoint(42)));
+    fontData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QFont(currentFont, instance.pixelToPoint(nTextSize)));
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QStringList{
                                                "测量成功",     // 0
                                                "未检测到手指\n请重新测量", // 1
@@ -1965,7 +1967,7 @@ void TextResource::init()
     //CUSTOM_COMPONENT
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextValue", QFont(currentFont, instance.pixelToPoint(30), QFont::Bold));
 
-    fontData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QFont(currentFont, instance.pixelToPoint(36)));
+    fontData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QFont(currentFont, instance.pixelToPoint(nTextSize)));
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QStringList{
                                                "測量成功",     // 0
                                                "未偵測到手指\n請重新測量", // 1
@@ -2459,7 +2461,7 @@ void TextResource::init()
     //CUSTOM_COMPONENT
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextValue", QFont(currentFont, instance.pixelToPoint(30), QFont::Bold));
 
-    fontData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QFont(currentFont, instance.pixelToPoint(36)));
+    fontData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QFont(currentFont, instance.pixelToPoint(nTextSize)));
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QStringList{
                                                "Medición exitosa",     // 0
                                                "No se detectó el dedo\nInténtelo de nuevo", // 1
