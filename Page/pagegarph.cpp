@@ -325,6 +325,7 @@ void PageGarph::pageShow()
     {
         instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_CHARGING;
         emit signalShowPageNum(PAGE_RESULT_FAIL);
+        return;
     }
 
     instance.sysProcAct = {};
