@@ -314,6 +314,7 @@ void PageGarph::mousePressEvent(QMouseEvent *ev)
 
 void PageGarph::pageShow()
 {
+    instance.isBatCharging = true;
     if(instance.isBatCharging == true)
     {
         instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_CHARGING;
