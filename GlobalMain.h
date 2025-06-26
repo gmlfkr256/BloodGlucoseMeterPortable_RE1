@@ -9,7 +9,7 @@
 #define IMAGE_FILE_CHECK true
 #define GLUCOSE_LOW_PLUS 5
 #define GLUCOSE_HIGH_MINUS -30
-#define DEVICE_CALI false
+#define WINDOW_CALI false
 #define NEW_PASSWORD true
 #define FONT_DEBUG false
 

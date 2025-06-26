@@ -124,7 +124,7 @@ void Singleton::init()
     sysProcMonInfo.valid = 1;
     sysProcMonInfo.err_code = GAPI_PROC_ECODE_NORMAL;
 
-    setCaliGainCompleteCheck(DEVICE_CALI);
+    setCaliGainCompleteCheck(WINDOW_CALI);
 
     spkData.vol = 50;
     spkData.used = 1;
