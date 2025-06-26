@@ -205,6 +205,8 @@ void PageGarph::updatePainter()
     }
     else
     {
+        instance.isBatCharging = true;
+
         if(instance.isBatCharging == true)
         {
             nProgressValue = -1;
