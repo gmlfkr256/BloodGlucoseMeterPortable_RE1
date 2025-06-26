@@ -314,6 +314,12 @@ void PageGarph::mousePressEvent(QMouseEvent *ev)
 
 void PageGarph::pageShow()
 {
+    if(instance.isBatCharging == true)
+    {
+        instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_CHARGING;
+        emit signalShowPageNum(PAGE_RESULT);
+    }
+
     if(instance.currentPage == PAGE_CALI_GAIN_CONFIRM)
         instance.setPageNumPrev(PAGE_CALI_CHECK);
     else
