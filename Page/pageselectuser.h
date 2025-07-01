@@ -15,7 +15,7 @@ public:
 
     QLabel *labelTitle;
     QLabel *labelUserImg[USER_MAX];
-    QLabel *labelUserText[USER_MAX];
+    //QLabel *labelUserText[USER_MAX];
     int nLabelNumber = -1;
     bool bIsOneClick = false;
 

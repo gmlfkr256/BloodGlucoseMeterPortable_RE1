@@ -145,7 +145,6 @@ void TextResource::init()
                                                 });
 
 
-
     //PAGE_PASSWORD_CONFIRM
     fontData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTitle",QFont(currentFont,instance.pixelToPoint(40),QFont::Bold));
     textData[Lan][PAGE_PASSWORD_CONFIRM].insert("labelTitle",QStringList{

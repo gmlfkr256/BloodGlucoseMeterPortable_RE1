@@ -18,19 +18,21 @@ void PageSelectUser::init()
     for(int i=0; i<USER_MAX; i++)
     {
         labelUserImg[i] = new QLabel(this);
+        /*
         labelUserText[i] = new QLabel(this);
         labelUserText[i]->setAlignment(Qt::AlignCenter);
         labelUserText[i]->setStyleSheet("color:#000000;");
+        */
 
         if(i==0)
         {
             labelUserImg[0]->setGeometry(75,98,245,215);
-            labelUserText[0]->setGeometry(75,248,245,45);
+            //labelUserText[0]->setGeometry(75,248,245,45);
         }
         else if(i==1)
         {
             labelUserImg[1]->setGeometry(320,98,245,215);
-            labelUserText[1]->setGeometry(320,248,245,45);
+            //labelUserText[1]->setGeometry(320,248,245,45);
         }
     }
 
@@ -45,8 +47,8 @@ void PageSelectUser::update()
 
     for(int i=0; i<USER_MAX; i++)
     {
-        labelUserText[i]->setFont(textResource.getFont(PAGE_SELECT_USER,"labelUserText"));
-        labelUserText[i]->setText(textResource.getText(PAGE_SELECT_USER,"labelUserText").at(i));
+        //labelUserText[i]->setFont(textResource.getFont(PAGE_SELECT_USER,"labelUserText"));
+        //labelUserText[i]->setText(textResource.getText(PAGE_SELECT_USER,"labelUserText").at(i));
         instance.pixLoad(labelUserImg[i],false,strDirPath,"/buttonUser"+QString::number(i)+".png");
     }
 }

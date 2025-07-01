@@ -320,7 +320,7 @@ void PageGarph::pageShow()
         instance.setPageNumPrev(instance.currentPage);
     //else if(instance.currentPage == PAGE_CALI_CONFIRM)
 
-    instance.isBatCharging = true;
+    //instance.isBatCharging = true;
     if(instance.isBatCharging == true)
     {
         instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_CHARGING;
