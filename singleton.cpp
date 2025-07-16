@@ -521,6 +521,16 @@ GraphMode Singleton::getGraphMode()
     return graphMode;
 }
 
+void Singleton::setIsRemeasure(bool isRemeasure)
+{
+    this->isRemeasure = isRemeasure;
+}
+
+bool Singleton::getIsRemeasure()
+{
+    return this->isRemeasure;
+}
+
 //PageCaliSelect
 void Singleton::setCaliSelectIndex(CaliSelIndex caliSelectNum)
 {

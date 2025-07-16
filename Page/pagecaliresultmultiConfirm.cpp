@@ -42,15 +42,17 @@ void PageCaliResultMultiConfirm::mousePressEvent(QMouseEvent *ev)
 {
     if(instance.touchCheck(customButtonOK->geometry(),ev))
     {
+
         gapiCaliUserSpecData_t caliUserInfoClear;
         caliUserInfoClear.user = instance.getUserNumber();
         caliUserInfoClear.idx = instance.getCaliSelectIndex();
         instance.guiApi.glucoseCaliClearUserSpecInfo(&caliUserInfoClear);
+        instance.setCaliSelectOrder(CALI_ORDER_0);
 
 #if DEVICE == false
         instance.clearCaliUserInfo(instance.getCaliSelectIndex());
 #endif
-
+        //instance.setIsRemeasure(true);
         instance.isTouchCtrl = false;
         instance.setGraphMode(GRAPH_CALI);
         emit signalShowPageNum(PAGE_GRAPH);

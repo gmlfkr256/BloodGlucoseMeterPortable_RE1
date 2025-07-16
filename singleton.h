@@ -379,6 +379,8 @@ public:
 
     //PageCaliResultMultiConfirm
     void clearCaliUserInfo(int index);
+    void setIsRemeasure(bool isRemeasure);
+    bool getIsRemeasure();
 
     //public
     bool touchCheck(const QRect &rect, QMouseEvent* ev);
@@ -437,6 +439,7 @@ private:
 
     //PageGraph
     GraphMode graphMode = GRAPH_MAX;
+    bool isRemeasure = false;
 
     //PageCaliSelect
     CaliSelIndex caliSelectIndex = CALI_0;

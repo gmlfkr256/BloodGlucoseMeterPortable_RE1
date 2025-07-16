@@ -186,6 +186,18 @@ void PageGarph::updatePainter()
 
         if(instance.getGraphMode() == GRAPH_CALI)
         {
+            /*
+            if(instance.getIsRemeasure())
+            {
+                gapiCaliUserSpecData_t caliUserInfoClear;
+                caliUserInfoClear.user = instance.getUserNumber();
+                caliUserInfoClear.idx = instance.getCaliSelectIndex();
+                instance.guiApi.glucoseCaliClearUserSpecInfo(&caliUserInfoClear);
+                instance.setCaliSelectOrder(CALI_ORDER_0);
+                instance.setIsRemeasure(false);
+            }
+            */
+
             instance.updateCaliUserInfo();
         }
 
