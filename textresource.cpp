@@ -768,6 +768,10 @@ void TextResource::init()
                                                     "Has it been more than 2 hours\n  since your last meal?"
                                                 });
 
+    //PAGE_CALI_SEELCT_CONFIRM
+    fontData[Lan][PAGE_CALI_SELECT_CONFIRM].insert("labelText",QFont(currentFont,instance.pixelToPoint(nTextSize),QFont::Bold));
+    textData[Lan][PAGE_CALI_SELECT_CONFIRM].insert("labelText",QStringList{"Please proceed with the\nblood glucose calibration in order"});
+
     //PAGE_CALI_CONFIRM
     fontData[Lan][PAGE_CALI_CONFIRM].insert("labelText",QFont(currentFont,instance.pixelToPoint(nTextSize),QFont::Bold));
     textData[Lan][PAGE_CALI_CONFIRM].insert("labelText",QStringList{"Select input or measure"});
@@ -1263,6 +1267,10 @@ void TextResource::init()
                                                     "最後の食事から1時間30分以上\n経過しましたか？",        // Has it been more than 1 hour and 30 minutes since your last meal?
                                                     "最後の食事から2時間以上\n経過しましたか？"            // Has it been more than 2 hours since your last meal?
                                                 });
+
+    //PAGE_CALI_SEELCT_CONFIRM
+    fontData[Lan][PAGE_CALI_SELECT_CONFIRM].insert("labelText",QFont(currentFont,instance.pixelToPoint(nTextSize),QFont::Bold));
+    textData[Lan][PAGE_CALI_SELECT_CONFIRM].insert("labelText",QStringList{"順番に\n血糖値の補正を進めてください"});
 
     //PAGE_CALI_CONFIRM
     fontData[Lan][PAGE_CALI_CONFIRM].insert("labelText", QFont(currentFont, instance.pixelToPoint(nTextSize), QFont::Bold));
@@ -1766,6 +1774,10 @@ void TextResource::init()
                                                     "距离上次进餐是否已超过2小时？"          // Has it been more than 2 hours since your last meal?
                                                 });
 
+    //PAGE_CALI_SEELCT_CONFIRM
+    fontData[Lan][PAGE_CALI_SELECT_CONFIRM].insert("labelText",QFont(currentFont,instance.pixelToPoint(nTextSize),QFont::Bold));
+    textData[Lan][PAGE_CALI_SELECT_CONFIRM].insert("labelText",QStringList{"请按顺序进行血糖校准"});
+
     //PAGE_CALI_CONFIRM
     fontData[Lan][PAGE_CALI_CONFIRM].insert("labelText", QFont(currentFont, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_CALI_CONFIRM].insert("labelText", QStringList{"选择输入或测量"}); // Select input or measure
@@ -2265,6 +2277,10 @@ void TextResource::init()
                                                     "距離上次進餐是否已超過2小時？"            // Has it been more than 2 hours since your last meal?
                                                 });
 
+    //PAGE_CALI_SEELCT_CONFIRM
+    fontData[Lan][PAGE_CALI_SELECT_CONFIRM].insert("labelText",QFont(currentFont,instance.pixelToPoint(nTextSize),QFont::Bold));
+    textData[Lan][PAGE_CALI_SELECT_CONFIRM].insert("labelText",QStringList{"請依序進行血糖校正"});
+
     //PAGE_CALI_CONFIRM
     fontData[Lan][PAGE_CALI_CONFIRM].insert("labelText", QFont(currentFont, instance.pixelToPoint(nTextSize), QFont::Bold));
     textData[Lan][PAGE_CALI_CONFIRM].insert("labelText", QStringList{"選擇輸入或測量"}); // Select input or measure
@@ -2757,6 +2773,10 @@ void TextResource::init()
                                                     "¿Ha pasado más de 1 hora y 30 minutos\ndesde tu última comida?",
                                                     "¿Han pasado más de 2 horas\ndesde tu última comida?"
                                                 });
+
+    //PAGE_CALI_SEELCT_CONFIRM
+    fontData[Lan][PAGE_CALI_SELECT_CONFIRM].insert("labelText",QFont(currentFont,instance.pixelToPoint(nTextSize),QFont::Bold));
+    textData[Lan][PAGE_CALI_SELECT_CONFIRM].insert("labelText",QStringList{"Por favor, realice\nla calibración de glucosa en orden"});
 
     //PAGE_CALI_CONFIRM
     fontData[Lan][PAGE_CALI_CONFIRM].insert("labelText", QFont(currentFont, instance.pixelToPoint(nTextSize), QFont::Bold));
