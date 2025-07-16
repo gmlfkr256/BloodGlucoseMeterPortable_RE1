@@ -302,6 +302,10 @@ void TextResource::init()
                                                     "식후 2시간 이상\n경과되었습니까?"
                                                 });
 
+    //PAGE_CALI_SEELCT_CONFIRM
+    fontData[Lan][PAGE_CALI_SELECT_CONFIRM].insert("labelText",QFont(currentFont,instance.pixelToPoint(nTextSize),QFont::Bold));
+    textData[Lan][PAGE_CALI_SELECT_CONFIRM].insert("labelText",QStringList{"순서대로 혈당보정을 진행해주세요"});
+
     //PAGE_CALI_CONFIRM
     fontData[Lan][PAGE_CALI_CONFIRM].insert("labelText",QFont(currentFont,instance.pixelToPoint(nTextSize),QFont::Bold));
     textData[Lan][PAGE_CALI_CONFIRM].insert("labelText",QStringList{"혈당값 입력 또는 측정을\n하시겠습니까?"});

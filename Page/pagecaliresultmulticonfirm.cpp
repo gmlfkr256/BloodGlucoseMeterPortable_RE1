@@ -1,4 +1,4 @@
-#include "pagecaliresultmultiConfirm.h"
+#include "pagecaliresultmulticonfirm.h"
 
 PageCaliResultMultiConfirm::PageCaliResultMultiConfirm(QWidget *parent) : Page(parent)
 {
