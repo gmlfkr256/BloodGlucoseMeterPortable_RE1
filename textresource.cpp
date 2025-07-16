@@ -316,6 +316,10 @@ void TextResource::init()
     fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextTemp",QFont(currentFont,instance.pixelToPoint(34)));
     fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextHeart",QFont(currentFont,instance.pixelToPoint(34)));
 
+    //PAGE_CALI_RESULT_MULTI_CONFIRM
+    fontData[Lan][PAGE_CALI_RESULT_MULTI_CONFIRM].insert("labelText", QFont(currentFont, instance.pixelToPoint(nTextSize), QFont::Bold));
+    textData[Lan][PAGE_CALI_RESULT_MULTI_CONFIRM].insert("labelText",QStringList{"선택한 혈당값을 삭제하고\n재측정하시겠습니까?"});
+
     //PAGE_RESULT
     fontData[Lan][PAGE_RESULT].insert("labelTextGlucoseValue",QFont(currentFont,instance.pixelToPoint(103),QFont::ExtraBold));
 

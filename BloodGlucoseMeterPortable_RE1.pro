@@ -49,6 +49,7 @@ SOURCES += \
     Page/pagecaligainresult.cpp \
     Page/pagecaliresult.cpp \
     Page/pagecaliresultmulti.cpp \
+    Page/pagecaliresultmultiConfirm.cpp \
     Page/pagecaliselect.cpp \
     Page/pagecaliselectinfo.cpp \
     Page/pagecalivalue.cpp \
@@ -121,6 +122,7 @@ HEADERS += \
     Page/pagecaligainresult.h \
     Page/pagecaliresult.h \
     Page/pagecaliresultmulti.h \
+    Page/pagecaliresultmultiConfirm.h \
     Page/pagecaliselect.h \
     Page/pagecaliselectinfo.h \
     Page/pagecalivalue.h \

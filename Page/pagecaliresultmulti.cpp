@@ -145,9 +145,7 @@ void PageCaliResultMulti::mousePressEvent(QMouseEvent *ev)
     if(customButtonMeasure->isVisible() && instance.touchCheck(customButtonMeasure->geometry(),ev))
     {
         qDebug()<<"multi measure";
-        //instance.setGraphMode(GRAPH_CALI);
-        //emit signalShowPageNum(PAGE_GRAPH);
-        pageHide();
+        emit signalShowPageNum(PAGE_CALI_RESULT_MULTI_CONFIRM);
     }
 
     if(customButtonMeasureRe->isVisible() && instance.touchCheck(customButtonMeasureRe->geometry(),ev))
