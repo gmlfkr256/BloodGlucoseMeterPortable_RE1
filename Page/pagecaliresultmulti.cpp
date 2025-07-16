@@ -41,7 +41,9 @@ void PageCaliResultMulti::update()
     customButtonMeasure->update();
     customButtonMeasureRe->update();
 
+
 #if DEVICE
+    instance.updateCaliUserInfo();
 #else
     int nValiedCheckCount = 0;
     for(int i=0; i<3; i++)

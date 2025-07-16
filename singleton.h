@@ -377,6 +377,9 @@ public:
     void getDeviceVersion();
     QString getDeviceVersion(VersionIndex versionIndex);
 
+    //PageCaliResultMultiConfirm
+    void clearCaliUserInfo(int index);
+
     //public
     bool touchCheck(const QRect &rect, QMouseEvent* ev);
     int pixelToPoint(int pixelSize);
@@ -460,6 +463,7 @@ private:
     PasswordErrIndex passwordErrCode = PASSWORD_ECODE_NORMAL;
 
     volatile sig_atomic_t bleConnectedFlag = 1;
+
 };
 
 #endif // SINGLETON_H

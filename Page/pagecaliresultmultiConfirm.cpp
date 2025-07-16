@@ -35,7 +35,7 @@ void PageCaliResultMultiConfirm::pageShow()
 
 void PageCaliResultMultiConfirm::pageHide()
 {
-    emit signalShowPageNum(instance.currentPage);
+    emit signalShowPageNum(instance.getPageNumPrev());
 }
 
 void PageCaliResultMultiConfirm::mousePressEvent(QMouseEvent *ev)
@@ -46,11 +46,10 @@ void PageCaliResultMultiConfirm::mousePressEvent(QMouseEvent *ev)
         caliUserInfoClear.user = instance.getUserNumber();
         caliUserInfoClear.idx = instance.getCaliSelectIndex();
         instance.guiApi.glucoseCaliClearUserSpecInfo(&caliUserInfoClear);
-        instance.guiApi.glucoseCaliGetUserInfo(&instance.caliUserInfo);
 
-        int checkFail = instance.sysProcMonInfo.err_code;
-        if(checkFail != GAPI_PROC_ECODE_NORMAL)
-            qDebug() <<"PagecaliResultConfirm: saveCaliMeasurement Fail";
+#if DEVICE == false
+        instance.clearCaliUserInfo(instance.getCaliSelectIndex());
+#endif
 
         instance.isTouchCtrl = false;
         instance.setGraphMode(GRAPH_CALI);

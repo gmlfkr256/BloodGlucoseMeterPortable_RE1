@@ -626,6 +626,19 @@ void Singleton::getDeviceVersion()
 #endif
 }
 
+//PageCaliResultMultiConfirm
+void Singleton::clearCaliUserInfo(int index)
+{
+    caliUserInfo.val[index].valid = 0;
+
+    for(int i=0; i<3; i++)
+    {
+        caliUserInfo.val[index].hr[i] = 0;
+        caliUserInfo.val[index].adc[i] = 0;
+        caliUserInfo.val[index].temp[i] = 0;
+    }
+}
+
 QString Singleton::getDeviceVersion(VersionIndex versionIndex)
 {
     getDeviceVersion();
