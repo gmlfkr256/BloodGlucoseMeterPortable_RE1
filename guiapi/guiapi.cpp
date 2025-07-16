@@ -1577,10 +1577,12 @@ int GuiApi::glucoseGetLangData (gapiLangData_t *rLangDataP)
 	if (!rLangDataP)
 		return GAPI_FAIL;
 
+    /*
 	if (g_CurrOprUser == GAPI_USER_MAX) {
 		rLangDataP->used = GAPI_LANGUAGE_KOREAN;
 		return GAPI_SUCCESS;
 	}
+    */
 
 	if (vtIpcProcess ((uint8_t) VTIPC_MSGID_LANG_DATA, (uint8_t) VTIPC_MSGACT_GET, \
 		(void *)rLangDataP, sizeof (gapiLangData_t)) != GAPI_SUCCESS)
