@@ -123,6 +123,15 @@ void PageCaliSelect::mousePressEvent(QMouseEvent *ev)
     {
         if(instance.touchCheck(labelSelectButton[i]->geometry(),ev))
         {
+            if(i!=0)
+            {
+                if(!instance.caliUserInfo.val[i-1].valid)
+                {
+                    emit signalShowPageNum(PAGE_CALI_SELECT_CONFIRM);
+                    return;
+                }
+            }
+
             instance.setCaliSelectIndex(static_cast<CaliSelIndex>(i));
             emit signalShowPageNum(PAGE_CALI_SELECT_INFO);
         }

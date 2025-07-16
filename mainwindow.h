@@ -50,7 +50,8 @@
 #include "Page/pageupagradefail.h"
 #include "Page/pagepasswordallchat.h"
 #include "Page/pageselectuser.h"
-#include "Page/pagecaliresultmultiConfirm.h"
+#include "Page/pagecaliresultmulticonfirm.h"
+#include "Page/pagecaliselectconfirm.h"
 
 
 class MainWindow : public QMainWindow
@@ -114,6 +115,7 @@ public:
     PagePasswordAllChat *pagePasswordAllChat;
     PageSelectUser *pageSelectUser;
     PageCaliResultMultiConfirm *pageCaliResultMultiConfirm;
+    PageCaliSelectConfirm *pageCaliSelectConfirm;
 
     QList<int> listComHiddenPageIndex;
     QMap<PageNum,QString> mapPageNumName;
