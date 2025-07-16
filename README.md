@@ -25,14 +25,23 @@ git commit -m "feat: 로그인 버튼 이벤트 연결"
 
 ## 수정 작업 시작 전 절차
 - 수정 또는 기능 개발을 시작할 때는 아래 절차를 따릅니다.
+- 모든 기능 개발은 `develop` 브랜치를 기준으로 시작합니다.
+- 하지만 `main` 브랜치에 먼저 병합된 변경사항이 있을 수 있음으로,
+- 항상 `develop`을 최신 상태로 갱신한 뒤 작업을 시작해야 합니다.
+- 백업 루틴을 항상 실행합시다.
 
-
-### 1. develop 브랜치로 이동 및 최신 코드 가져오기
-- 수정 작업은 항상 최신 개발 코드(develop)를 기준으로 시작해야 합니다.
+### 1. `develop` 브랜치를 최신화합니다. (항상 실행)
 ```bash
 git checkout develop
+
+git branch backup/develop_before_merge_$(date +%Y%m%d_%H%M%S)
+
+git fetch origin
+git merge origin/main
 git pull origin develop
+git push origin develop
 ```
+
 - 다른 팀원이 먼저 올린 변경사항을 기반으로 작업해야 충돌을 줄일 수 있습니다.
 
 
