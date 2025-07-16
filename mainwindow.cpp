@@ -225,6 +225,10 @@ void MainWindow::init()
     stackedWidget->addWidget(pageUpgradeFail);
     qDebug()<<"====================== PAGE_UPGRADE_FAIL";
 
+    pageCaliResultMultiConfirm = new PageCaliResultMultiConfirm(this);
+    stackedWidget->addWidget(pageCaliResultMultiConfirm);
+    qDebug()<<"====================== PAGE_CALI_RESULT_MULTI_CONFIRM";
+
     comBat = new ComponentBattery(stackedWidget);
     comBle = new ComponentBluetooth(stackedWidget);
     comClock = new ComponentClock(stackedWidget);
@@ -274,6 +278,7 @@ void MainWindow::init()
         {PAGE_DEBUG_USB, "PageDebugUsb"},
         {PAGE_RESULT_FAIL, "PageResultFail"},
         {PAGE_UPGRADE_FAIL, "PageUpgradeFail"},
+        {PAGE_CALI_RESULT_MULTI_CONFIRM, "PageCaliResultMultiConfirm"},
 
         {CUSTOM_BUTTON, "CustomButton"},
         {PAGE_MAX, "InvalidPage"}  // 예외 처리

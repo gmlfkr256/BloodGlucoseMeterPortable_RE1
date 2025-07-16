@@ -316,6 +316,10 @@ void TextResource::init()
     fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextTemp",QFont(currentFont,instance.pixelToPoint(34)));
     fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextHeart",QFont(currentFont,instance.pixelToPoint(34)));
 
+    //PAGE_CALI_RESULT_MULTI_CONFIRM
+    fontData[Lan][PAGE_CALI_RESULT_MULTI_CONFIRM].insert("labelText", QFont(currentFont, instance.pixelToPoint(nTextSize), QFont::Bold));
+    textData[Lan][PAGE_CALI_RESULT_MULTI_CONFIRM].insert("labelText",QStringList{"선택한 혈당값을 삭제하고\n재측정하시겠습니까?"});
+
     //PAGE_RESULT
     fontData[Lan][PAGE_RESULT].insert("labelTextGlucoseValue",QFont(currentFont,instance.pixelToPoint(103),QFont::ExtraBold));
 
@@ -773,6 +777,10 @@ void TextResource::init()
     fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextAdc",QFont(currentFont,instance.pixelToPoint(34),QFont::Bold));
     fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextTemp",QFont(currentFont,instance.pixelToPoint(34)));
     fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextHeart",QFont(currentFont,instance.pixelToPoint(34)));
+
+    //PAGE_CALI_RESULT_MULTI_CONFIRM
+    fontData[Lan][PAGE_CALI_RESULT_MULTI_CONFIRM].insert("labelText", QFont(currentFont, instance.pixelToPoint(nTextSize), QFont::Bold));
+    textData[Lan][PAGE_CALI_RESULT_MULTI_CONFIRM].insert("labelText",QStringList{"Delete selected\nvalue and remeasure?"});
 
     //PAGE_RESULT
     fontData[Lan][PAGE_RESULT].insert("labelTextGlucoseValue",QFont(currentFont,instance.pixelToPoint(103),QFont::ExtraBold));
@@ -1265,6 +1273,11 @@ void TextResource::init()
     fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextAdc", QFont(currentFont, instance.pixelToPoint(34), QFont::Bold));
     fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextTemp", QFont(currentFont, instance.pixelToPoint(34)));
     fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextHeart", QFont(currentFont, instance.pixelToPoint(34)));
+
+    //PAGE_CALI_RESULT_MULTI_CONFIRM
+    fontData[Lan][PAGE_CALI_RESULT_MULTI_CONFIRM].insert("labelText", QFont(currentFont, instance.pixelToPoint(nTextSize), QFont::Bold));
+    textData[Lan][PAGE_CALI_RESULT_MULTI_CONFIRM].insert("labelText",QStringList{"選択した血糖値を削除して\n再測定しますか？"});
+
 
     //PAGE_RESULT
     fontData[Lan][PAGE_RESULT].insert("labelTextGlucoseValue", QFont(currentFont, instance.pixelToPoint(103), QFont::ExtraBold));
@@ -1763,6 +1776,10 @@ void TextResource::init()
     fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextTemp", QFont(currentFont, instance.pixelToPoint(34)));
     fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextHeart", QFont(currentFont, instance.pixelToPoint(34)));
 
+    //PAGE_CALI_RESULT_MULTI_CONFIRM
+    fontData[Lan][PAGE_CALI_RESULT_MULTI_CONFIRM].insert("labelText", QFont(currentFont, instance.pixelToPoint(nTextSize), QFont::Bold));
+    textData[Lan][PAGE_CALI_RESULT_MULTI_CONFIRM].insert("labelText",QStringList{"是否要删除所选血糖值\n并重新测量？"});
+
     //PAGE_RESULT
     fontData[Lan][PAGE_RESULT].insert("labelTextGlucoseValue", QFont(currentFont, instance.pixelToPoint(103), QFont::ExtraBold));
 
@@ -2258,6 +2275,10 @@ void TextResource::init()
     fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextTemp", QFont(currentFont, instance.pixelToPoint(34)));
     fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextHeart", QFont(currentFont, instance.pixelToPoint(34)));
 
+    //PAGE_CALI_RESULT_MULTI_CONFIRM
+    fontData[Lan][PAGE_CALI_RESULT_MULTI_CONFIRM].insert("labelText", QFont(currentFont, instance.pixelToPoint(nTextSize), QFont::Bold));
+    textData[Lan][PAGE_CALI_RESULT_MULTI_CONFIRM].insert("labelText",QStringList{"是否要刪除所選血糖值\n並重新測量？"});
+
     //PAGE_RESULT
     fontData[Lan][PAGE_RESULT].insert("labelTextGlucoseValue", QFont(currentFont, instance.pixelToPoint(103), QFont::ExtraBold));
 
@@ -2746,6 +2767,10 @@ void TextResource::init()
     fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextAdc", QFont(currentFont, instance.pixelToPoint(34), QFont::Bold));
     fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextTemp", QFont(currentFont, instance.pixelToPoint(34)));
     fontData[Lan][PAGE_CALI_RESULT_MULTI].insert("labelTextHeart", QFont(currentFont, instance.pixelToPoint(34)));
+
+    //PAGE_CALI_RESULT_MULTI_CONFIRM
+    fontData[Lan][PAGE_CALI_RESULT_MULTI_CONFIRM].insert("labelText", QFont(currentFont, instance.pixelToPoint(nTextSize), QFont::Bold));
+    textData[Lan][PAGE_CALI_RESULT_MULTI_CONFIRM].insert("labelText",QStringList{"¿Eliminar valor\ny volver a medir?"});
 
     //PAGE_RESULT
     fontData[Lan][PAGE_RESULT].insert("labelTextGlucoseValue", QFont(currentFont, instance.pixelToPoint(103), QFont::ExtraBold));

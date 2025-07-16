@@ -521,6 +521,16 @@ GraphMode Singleton::getGraphMode()
     return graphMode;
 }
 
+void Singleton::setIsRemeasure(bool isRemeasure)
+{
+    this->isRemeasure = isRemeasure;
+}
+
+bool Singleton::getIsRemeasure()
+{
+    return this->isRemeasure;
+}
+
 //PageCaliSelect
 void Singleton::setCaliSelectIndex(CaliSelIndex caliSelectNum)
 {
@@ -624,6 +634,19 @@ void Singleton::getDeviceVersion()
         //qDebug()<<"DeviceVersion get Success";
     }
 #endif
+}
+
+//PageCaliResultMultiConfirm
+void Singleton::clearCaliUserInfo(int index)
+{
+    caliUserInfo.val[index].valid = 0;
+
+    for(int i=0; i<3; i++)
+    {
+        caliUserInfo.val[index].hr[i] = 0;
+        caliUserInfo.val[index].adc[i] = 0;
+        caliUserInfo.val[index].temp[i] = 0;
+    }
 }
 
 QString Singleton::getDeviceVersion(VersionIndex versionIndex)

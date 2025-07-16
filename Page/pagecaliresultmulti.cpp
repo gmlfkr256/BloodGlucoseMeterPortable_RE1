@@ -41,7 +41,9 @@ void PageCaliResultMulti::update()
     customButtonMeasure->update();
     customButtonMeasureRe->update();
 
+
 #if DEVICE
+    instance.updateCaliUserInfo();
 #else
     int nValiedCheckCount = 0;
     for(int i=0; i<3; i++)
@@ -145,15 +147,14 @@ void PageCaliResultMulti::mousePressEvent(QMouseEvent *ev)
     if(customButtonMeasure->isVisible() && instance.touchCheck(customButtonMeasure->geometry(),ev))
     {
         qDebug()<<"multi measure";
-        //instance.setGraphMode(GRAPH_CALI);
-        //emit signalShowPageNum(PAGE_GRAPH);
         pageHide();
     }
 
     if(customButtonMeasureRe->isVisible() && instance.touchCheck(customButtonMeasureRe->geometry(),ev))
     {
         qDebug()<<"multi reMeasure";
-        pageHide();
+        //pageHide();
+        emit signalShowPageNum(PAGE_CALI_RESULT_MULTI_CONFIRM);
     }
 }
 

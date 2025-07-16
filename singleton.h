@@ -79,6 +79,7 @@ typedef enum
     PAGE_DEBUG_USB,
     PAGE_RESULT_FAIL,
     PAGE_UPGRADE_FAIL,
+    PAGE_CALI_RESULT_MULTI_CONFIRM,
 
     //PAGE_COLOR,
 
@@ -376,6 +377,11 @@ public:
     void getDeviceVersion();
     QString getDeviceVersion(VersionIndex versionIndex);
 
+    //PageCaliResultMultiConfirm
+    void clearCaliUserInfo(int index);
+    void setIsRemeasure(bool isRemeasure);
+    bool getIsRemeasure();
+
     //public
     bool touchCheck(const QRect &rect, QMouseEvent* ev);
     int pixelToPoint(int pixelSize);
@@ -433,6 +439,7 @@ private:
 
     //PageGraph
     GraphMode graphMode = GRAPH_MAX;
+    bool isRemeasure = false;
 
     //PageCaliSelect
     CaliSelIndex caliSelectIndex = CALI_0;
@@ -459,6 +466,7 @@ private:
     PasswordErrIndex passwordErrCode = PASSWORD_ECODE_NORMAL;
 
     volatile sig_atomic_t bleConnectedFlag = 1;
+
 };
 
 #endif // SINGLETON_H
