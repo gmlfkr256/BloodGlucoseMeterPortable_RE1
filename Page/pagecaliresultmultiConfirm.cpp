@@ -35,7 +35,7 @@ void PageCaliResultMultiConfirm::pageShow()
 
 void PageCaliResultMultiConfirm::pageHide()
 {
-    emit signalShowPageNum(instance.getPageNumPrev());
+    emit signalShowPageNum(PAGE_CALI_RESULT_MULTI);
 }
 
 void PageCaliResultMultiConfirm::mousePressEvent(QMouseEvent *ev)
