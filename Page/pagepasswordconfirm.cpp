@@ -131,7 +131,8 @@ void PagePasswordConfirm::mousePressEvent(QMouseEvent *ev)
         case PASSWORD_STR_CONFIRM_FAIL:
             instance.setPasswordStatus(PASSWORD_CONFIRM);
 #if NEW_PASSWORD
-            emit signalShowPageNum(PAGE_PASSWORD_ALLCHAT);
+            //emit signalShowPageNum(PAGE_PASSWORD_ALLCHAT);
+            emit signalShowPageNum(PAGE_USERINFO);
 #else
             emit signalShowPageNum(PAGE_PASSWORD);
 #endif
