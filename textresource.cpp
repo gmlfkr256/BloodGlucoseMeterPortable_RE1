@@ -184,7 +184,7 @@ void TextResource::init()
                                                     "혈당 기록을 삭제하시겠습니까?", //PASSWORD_STR_DELETE,
                                                     "삭제된 혈당 기록은 복구할 수 없습니다", //PAS이SWORD_STR_DELETE_CONFIRM,
                                                     "혈당 기록이 삭제되었습니다", //PASSWORD_STR_DELETE_SUCCESS,
-                                                    "로그아웃을 진행합니까?\n로그아웃시 다시 로그인해주시기 바랍니다", //PASSWORD_STR_LOGOUT,
+                                                    "로그아웃을 진행합니다", //PASSWORD_STR_LOGOUT,
                                                     "비밀번호를 초기화하시겠습니까?", //PASSWORD_STR_INIT,
                                                     "비밀번호를 초기화할 경우\n 비밀번호가 초기 설정 상태가 됩니다", //PASSWORD_STR_INIT_CONFIRM,
                                                     "비밀번호가 초기화되었습니다", //PASSWORD_STR_INIT_SUCCESS,가
@@ -642,7 +642,7 @@ void TextResource::init()
                                                     "Do you want to delete the blood glucose record?", // PASSWORD_STR_DELETE
                                                     "Deleted data cannot be recovered", // PASSWORD_STR_DELETE_CONFIRM
                                                     "Blood glucose record deleted", // PASSWORD_STR_DELETE_SUCCESS
-                                                    "Logging out\nPlease log in again",
+                                                    "You will be logged out",
                                                     "Do you want to reset\nyour password?",
                                                     "Resetting will restore the password\nto its default value",
                                                     "Password has been reset",
@@ -1118,7 +1118,7 @@ void TextResource::init()
                                                     "血糖記録を削除しますか？", // PASSWORD_STR_DELETE
                                                     "削除された記録は復元できません", // PASSWORD_STR_DELETE_CONFIRM
                                                     "血糖記録が削除されました", // PASSWORD_STR_DELETE_SUCCESS
-                                                    "ログアウトしますか？\nログアウト後は再度ログインしてください",
+                                                    "ログアウトを開始します",
                                                     "パスワードを初期化しますか？",
                                                     "初期化すると、パスワードは\n初期設定に戻ります",
                                                     "パスワードが初期化されました",
@@ -1624,7 +1624,7 @@ void TextResource::init()
                                                     "是否删除血糖记录？", // PASSWORD_STR_DELETE
                                                     "删除后将无法恢复记录", // PASSWORD_STR_DELETE_CONFIRM
                                                     "血糖记录已删除", // PASSWORD_STR_DELETE_SUCCESS
-                                                    "正在退出登录，请重新登录",
+                                                    "正在注销",
                                                     "是否要重置密码？",
                                                     "重置后密码将恢复为\n默认设置",
                                                     "密码已重置",
@@ -2132,7 +2132,7 @@ void TextResource::init()
                                                     "是否刪除血糖記錄？", // PASSWORD_STR_DELETE
                                                     "刪除後將無法恢復記錄", // PASSWORD_STR_DELETE_CONFIRM
                                                     "血糖記錄已刪除", // PASSWORD_STR_DELETE_SUCCESS
-                                                    "正在登出，請重新登入",
+                                                    "正在登出",
                                                     "您要重設密碼嗎？",
                                                     "重設後，密碼將恢復為\n預設值",
                                                     "密碼已重設",
@@ -2635,7 +2635,7 @@ void TextResource::init()
                                                     "¿Desea eliminar el registro de glucosa?", // PASSWORD_STR_DELETE
                                                     "Una vez eliminado, no se puede recuperar", // PASSWORD_STR_DELETE_CONFIRM
                                                     "Registro de glucosa eliminado", // PASSWORD_STR_DELETE_SUCCESS
-                                                    "Cerrando sesión\nPor favor vuelva a iniciar sesión",                              // 로그아웃을 진행합니까? (→ 원문과 조금 어색함)
+                                                    "cerrará la sesión",                              // 로그아웃
                                                     "¿Desea restablecer la contraseña?",                                               // 비밀번호를 초기화하시겠습니까?
                                                     "Restablecer la contraseña\nla devolverá a los valores por defecto",               // 비밀번호를 초기화할 경우 비밀번호가 초기 설정 상태가 됩니다
                                                     "La contraseña ha sido restablecida",                                              // 비밀번호가 초기화되었습니다
