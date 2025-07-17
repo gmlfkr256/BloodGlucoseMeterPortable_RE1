@@ -182,7 +182,7 @@ void TextResource::init()
                                                     "변경하실 비밀번호를 입력해주세요\n\n 8자이상, 숫자,\n 영문자(A-Z), 기호(.,?! 등)\n\n반드시 포함되어야 합니다", //PASSWORD_STR_EDIT_CHANGE,
                                                     "비밀번호 변경이 완료되었습니다\n다시 로그인해주시기 바랍니다", //PASSWORD_STR_EDIT_SUCCESS,
                                                     "혈당 기록을 삭제하시겠습니까?", //PASSWORD_STR_DELETE,
-                                                    "삭제된 혈당 기록은 복구할 수 없습니다", //PAS이SWORD_STR_DELETE_CONFIRM,
+                                                    "삭제된 혈당 기록은 복구할 수 없습니다", //PASSWORD_STR_DELETE_CONFIRM,
                                                     "혈당 기록이 삭제되었습니다", //PASSWORD_STR_DELETE_SUCCESS,
                                                     "로그아웃을 진행합니다", //PASSWORD_STR_LOGOUT,
                                                     "비밀번호를 초기화하시겠습니까?", //PASSWORD_STR_INIT,
