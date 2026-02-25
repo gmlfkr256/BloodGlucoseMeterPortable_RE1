@@ -48,6 +48,11 @@ MainWindow (QMainWindow)
 | `FONT_DEBUG` | `false` | 폰트 디버그 출력 |
 | `PICTURE_MODE` | `false` | 화면 캡처용 모드 |
 
+## 작업 제한 규칙
+
+- **폰트 크기 변경 금지**: `textresource.cpp`의 폰트 크기는 임의로 변경하지 않는다
+- **텍스트 문구 수정 금지**: `textresource.cpp`의 텍스트 내용은 임의로 수정하지 않는다. 명시적 요청 시에만 수정 가능
+
 ## 커밋 규칙
 
 `feat` / `fix` / `docs` / `style` / `refactor` / `chore`
