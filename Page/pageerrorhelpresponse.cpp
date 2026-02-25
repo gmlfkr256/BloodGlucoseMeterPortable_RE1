@@ -87,6 +87,7 @@ void PageErrorHelpResponse::pageShow()
 
 void PageErrorHelpResponse::pageHide()
 {
+    instance.setPageNumPrev(PAGE_ERROR_RESPONSE);
     emit signalShowPageNum(PAGE_ERROR_HELP);
 }
 

@@ -95,10 +95,14 @@ void PageErrorHelp::update()
 
 void PageErrorHelp::pageShow()
 {
-    m_nSelectIndex = 0;
     int catIdx = instance.nSelectTextIndex;
     m_strList = textResource.getText(PAGE_ERROR_HELP, QString("labelTextErrorHelp%1").arg(catIdx));
     m_nIndexRangeMax = m_strList.count();
+
+    if(instance.getPageNumPrev() == PAGE_ERROR_RESPONSE)
+        m_nSelectIndex = instance.nSelectTextIndexSub;
+    else
+        m_nSelectIndex = 0;
 
     labelNumAll->setText(QString::number(m_nIndexRangeMax));
 
@@ -107,6 +111,7 @@ void PageErrorHelp::pageShow()
 
 void PageErrorHelp::pageHide()
 {
+    instance.setPageNumPrev(PAGE_ERROR_HELP);
     emit signalShowPageNum(PAGE_ERROR_HELP_INDEX);
 }
 

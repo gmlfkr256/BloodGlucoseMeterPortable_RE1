@@ -95,10 +95,14 @@ void PageFaq::update()
 
 void PageFaq::pageShow()
 {
-    m_nSelectIndex = 0;
     int catIdx = instance.nSelectTextIndex;
     m_strList = textResource.getText(PAGE_FAQ, QString("labelTextFaq%1").arg(catIdx));
     m_nIndexRangeMax = m_strList.count();
+
+    if(instance.getPageNumPrev() == PAGE_FAQ_RESPONSE)
+        m_nSelectIndex = instance.nSelectTextIndexSub;
+    else
+        m_nSelectIndex = 0;
 
     labelNumAll->setText(QString::number(m_nIndexRangeMax));
 
@@ -107,6 +111,7 @@ void PageFaq::pageShow()
 
 void PageFaq::pageHide()
 {
+    instance.setPageNumPrev(PAGE_FAQ);
     emit signalShowPageNum(PAGE_FAQ_INDEX);
 }
 
