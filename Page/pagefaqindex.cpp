@@ -60,8 +60,12 @@ void PageFaqIndex::update()
 void PageFaqIndex::pageShow()
 {
     m_strList = textResource.getText(PAGE_FAQ_INDEX,"labelText");
-    m_nPageIndex = 0;
     m_nPageIndexMax = (m_strList.count()-1)/4;
+
+    if(instance.getPageNumPrev() == PAGE_FAQ)
+        m_nPageIndex = instance.nSelectTextIndex / 4;
+    else
+        m_nPageIndex = 0;
 
     labelArrowLeft->setVisible(m_nPageIndexMax > 0);
     labelArrowRight->setVisible(m_nPageIndexMax > 0);

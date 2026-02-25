@@ -542,7 +542,8 @@ void MainWindow::setPageByPageNum(PageNum pageNum)
         }
 
         if(pageNum != PAGE_HELP_RESPONSE && pageNum != PAGE_FAQ_RESPONSE && pageNum != PAGE_ERROR_RESPONSE
-        && pageNum != PAGE_HELP && pageNum != PAGE_FAQ && pageNum != PAGE_ERROR_HELP)
+        && pageNum != PAGE_HELP && pageNum != PAGE_FAQ && pageNum != PAGE_ERROR_HELP
+        && pageNum != PAGE_HELP_INDEX && pageNum != PAGE_FAQ_INDEX && pageNum != PAGE_ERROR_HELP_INDEX)
         {
             instance.nSelectTextIndex = 0;
         }

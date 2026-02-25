@@ -87,6 +87,7 @@ void PageHelpResponse::pageShow()
 
 void PageHelpResponse::pageHide()
 {
+    instance.setPageNumPrev(PAGE_HELP_RESPONSE);
     emit signalShowPageNum(PAGE_HELP);
 }
 
