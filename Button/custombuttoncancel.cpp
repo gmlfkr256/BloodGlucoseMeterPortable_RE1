@@ -20,6 +20,7 @@ void CustomButtonCancel::update()
     labelButtonCancel->setFont(textResource.getFont(CUSTOM_BUTTON,"labelButtonCancel"));
     labelButtonCancel->setText(textResource.getText(CUSTOM_BUTTON,"labelButtonCancel").at(0));
 
+    /*
     switch (instance.getDeviceColor())
     {
     case COLOR_DEFAULT:
@@ -29,6 +30,15 @@ void CustomButtonCancel::update()
         break;
     case COLOR_RED:
         break;
+    }*/
+
+    if(this->bIsEnable)
+    {
+        labelButtonCancel->setStyleSheet("background-color: #212121; color: #ffffff;");
+    }
+    else
+    {
+        labelButtonCancel->setStyleSheet("background-color: #cdcdcd; color: #000000;");
     }
 
     //int x = bIsLong ? 0 : 320;
@@ -42,4 +52,19 @@ void CustomButtonCancel::setLongWidth(bool bIsLong)
 {
     this->bIsLong = bIsLong;
     update();
+}
+
+void CustomButtonCancel::setEnable()
+{
+    this->bIsEnable = true;
+}
+
+void CustomButtonCancel::setDisable()
+{
+    this->bIsEnable = false;
+}
+
+bool CustomButtonCancel::getEnable()
+{
+    return this->bIsEnable;
 }

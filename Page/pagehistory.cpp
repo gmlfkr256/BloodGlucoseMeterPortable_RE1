@@ -133,12 +133,13 @@ void PageHistory::update()
     {
         comDateDay->labelTextBottom->setText("");
     }
-
+    //else if(selectedDate.year()>=dateCurrent.year())
     if(selectedDate.year()>=dateCurrent.year())
     {
         comDateYear->labelTextTop->setText("");
     }
-    else if(selectedDate.year()<=dateMin.year())
+
+    if(selectedDate.year()<=dateMin.year())
     {
         comDateYear->labelTextBottom->setText("");
     }

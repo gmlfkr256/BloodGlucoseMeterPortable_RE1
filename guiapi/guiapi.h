@@ -218,11 +218,16 @@ class GuiApi {
 		int glucoseCaliClearUserSpecInfo (gapiCaliUserSpecData_t *infoP);
 		int glucoseCaliRestoreUserInfo (void);
 		int glucoseCaliSetGlucoseValue (gapiCaliSetGlucose_t *caliP);
+		int glucoseCaliGetRegiDate (gapiCaliRegisteredDate_t *rRegiP);
+		int glucoseCaliSetUserType (int uType);
+		int glucoseCaliGetUserType (int *rUserTypeP);
 
 		int glucoseCaliMeasureSetCfgData (gapiCaliMeasureCfgUser_t *userCfgP);
 		int glucoseCaliMeasureGetCfgData (gapiCaliMeasureCfgUser_t *rUserCfgP);
 		int glucoseSetGlucoseLimit (gapiGlucoseLimit_t *limitP);
 		int glucoseGetGlucoseLimit (gapiGlucoseLimit_t *rLimitP);
+		int glucoseSetGlucoseHighLow (gapiGlucoseHighLow_t *highLowP);
+		int glucoseGetGlucoseHighLow (gapiGlucoseHighLow_t *rHighLowP);
 		int glucoseSetMotorData (gapiMotorData_t *motorP);
 		int glucoseGetMotorData (gapiMotorData_t *rMotorP);
 		int glucoseSetGainDetTime (uint32_t time);

@@ -12,6 +12,13 @@
 #define WINDOW_CALI false
 #define NEW_PASSWORD true
 #define FONT_DEBUG false
+#define PICTURE_MODE false
+
+#if DEVICE == false
+#define CUSTOM_YEAR 2025
+#define CUSTOM_MONTH 9
+#define CUSTOM_DAY 4
+#endif
 
 #define DEBUG_FLAG_BATTERY false
 #if DEBUG_FLAG_BATTERY

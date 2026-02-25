@@ -79,6 +79,12 @@ void PageResult::update()
                 QString::number(instance.sysProcMonInfo.hour).rightJustified(2,'0'),
                 QString::number(instance.sysProcMonInfo.min).rightJustified(2,'0')
                 );
+#if PICTURE_MODE
+    QDateTime localTime(QDateTime::currentDateTime());
+    QLocale clockLocale = QLocale(QLocale::English,QLocale::UnitedStates);
+
+    strTime = textResource.getText(PAGE_RESULT,"labelTextTime").at(0)+" "+clockLocale.toString(localTime,"hh:mm");
+#endif
 
     //#endif
     labelTextTime->setText(strTime);
@@ -89,12 +95,15 @@ void PageResult::update()
     labelProgressBarTextStart->setStyleSheet("color: #777777;");
     labelProgressBarTextStart->setText("0");
     labelProgressBarTextEnd->setStyleSheet("color: #777777");
-    labelProgressBarTextEnd->setText("400");
+    labelProgressBarTextEnd->setText(QString::number(instance.nThresholdLimitHighMax));
 }
 
 void PageResult::setValueUI()
 {
     int nGlucoseValue = instance.sysProcMonInfo.adc_raw;
+#if PICTURE_MODE
+    nGlucoseValue = fMap.value(fCount);
+#endif
 #if !DEVICE
     //nGlucoseValue = 250;
 #endif
@@ -140,7 +149,7 @@ void PageResult::setValueUI()
         nIndexTooltip = 0;
     }
 
-    nProgressBarWidth = static_cast<int>(600*(static_cast<double>(nGlucoseValue)/400));
+    nProgressBarWidth = static_cast<int>(600*(static_cast<double>(nGlucoseValue)/instance.nThresholdLimitHighMax));
     if(nProgressBarWidth < 30)
         nProgressBarWidth = 30;
     else if(nProgressBarWidth > 600)
@@ -208,11 +217,23 @@ void PageResult::setValueUI()
     instance.pixLoad(labelProgressBarTooltipImg,false,strDirPath,strPathPngTooltip);
     labelProgressBarTooltipImg->setGeometry(labelProgressBarTooltip->x()+(labelProgressBarTooltip->width()/2)-3,labelProgressBarTooltip->y()+labelProgressBarTooltip->height(),7,5);
 
-
 }
 
 void PageResult::pageShow()
 {
+    int nGlucoseValue = instance.sysProcMonInfo.adc_raw;
+#if PICTURE_MODE
+    nGlucoseValue = fMap.value(fCount);
+#endif
+
+    qDebug()<<"PageResult: nGlucoseValue="<<nGlucoseValue;
+
+    if(nGlucoseValue<instance.glucoseLimit.low || nGlucoseValue>instance.glucoseLimit.high)
+    {
+        emit signalShowPageNum(PAGE_BLOOD_NOTICE_POPUP);
+        return;
+    }
+
     update();
 }
 
@@ -225,6 +246,17 @@ void PageResult::mousePressEvent(QMouseEvent *ev)
 {
     if(instance.touchCheck(customButtonSave->geometry(),ev))
     {
+#if PICTURE_MODE
+        if(fCount<fMap.size())
+            fCount++;
+        else
+            fCount=0;
+
+        update();
+
+        return;
+#endif
+
 #if DEVICE
         instance.histValue.valid_flag = instance.sysProcMonInfo.valid;
         instance.histValue.value = instance.sysProcMonInfo.adc_raw;
@@ -252,6 +284,10 @@ void PageResult::mousePressEvent(QMouseEvent *ev)
 
     if(instance.touchCheck(customButtonCancel->geometry(),ev))
     {
+#if PICTURE_MODE
+        emit signalShowPageNum(PAGE_BLOOD_NOTICE_POPUP);
+        return;
+#endif
         emit signalShowPageNum(PAGE_HOME);
     }
 }

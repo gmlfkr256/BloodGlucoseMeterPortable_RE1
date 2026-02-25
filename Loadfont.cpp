@@ -17,9 +17,11 @@ void LoadFont::Load()
     int fontId = QFontDatabase::addApplicationFont(suitFont);//font);
     if (fontId != -1) {
         instance.fontSuit = QFontDatabase::applicationFontFamilies(fontId).at(0);
+#if FONT_DEBUG
         qDebug()<<"Loaded fontSuit: "<<instance.fontSuit;
-        QStringList styles = QFontDatabase().styles("Noto Sans KR");
-        qDebug()<<"Noto Sans KR : "<<styles;
+#endif
+        //QStringList styles = QFontDatabase().styles("Noto Sans KR");
+        //qDebug()<<"Noto Sans KR : "<<styles;
     } else {
         qWarning() << "Failed to load font:" << suitFont;
     }
@@ -29,7 +31,9 @@ void LoadFont::Load()
     fontId = QFontDatabase::addApplicationFont(jpFont);
     if (fontId != -1) {
         instance.fontJP = QFontDatabase::applicationFontFamilies(fontId).at(0);
+#if FONT_DEBUG
         qDebug()<<"Loaded fontJP: "<<instance.fontJP;
+#endif
     } else {
         qWarning() << "Failed to load font:" << jpFont;
     }
@@ -39,7 +43,9 @@ void LoadFont::Load()
     fontId = QFontDatabase::addApplicationFont(scFont);
     if (fontId != -1) {
         instance.fontSC = QFontDatabase::applicationFontFamilies(fontId).at(0);
+#if FONT_DEBUG
         qDebug()<<"Loaded fontSC: "<<instance.fontSC;
+#endif
     } else {
         qWarning() << "Failed to load font:" << scFont;
     }
@@ -49,15 +55,20 @@ void LoadFont::Load()
     fontId = QFontDatabase::addApplicationFont(tcFont);
     if (fontId != -1) {
         instance.fontTC = QFontDatabase::applicationFontFamilies(fontId).at(0);
+#if FONT_DEBUG
         qDebug()<<"Loaded fontTC: "<<instance.fontTC;
+#endif
     } else {
         qWarning() << "Failed to load font:" << tcFont;
     }
 
+#if FONT_DEBUG
     QStringList families = QFontDatabase().families();
+
     qDebug()<<"===================================";
     qDebug()<<"familes list";
     for(const QString& name : families)
         qDebug()<< name;
     qDebug()<<"==================================";
+#endif
 }

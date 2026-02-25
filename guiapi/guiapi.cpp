@@ -1577,12 +1577,12 @@ int GuiApi::glucoseGetLangData (gapiLangData_t *rLangDataP)
 	if (!rLangDataP)
 		return GAPI_FAIL;
 
-    /*
+	/*** IKSONG 250701
 	if (g_CurrOprUser == GAPI_USER_MAX) {
 		rLangDataP->used = GAPI_LANGUAGE_KOREAN;
 		return GAPI_SUCCESS;
 	}
-    */
+	***/
 
 	if (vtIpcProcess ((uint8_t) VTIPC_MSGID_LANG_DATA, (uint8_t) VTIPC_MSGACT_GET, \
 		(void *)rLangDataP, sizeof (gapiLangData_t)) != GAPI_SUCCESS)
@@ -2209,6 +2209,71 @@ int GuiApi::glucoseCaliSetGlucoseValue (gapiCaliSetGlucose_t *caliP)
  * PARAMETERS : 
  * RETURNS : None
  *****************************************************************************/
+int GuiApi::glucoseCaliGetRegiDate (gapiCaliRegisteredDate_t *rRegiP)
+{
+	if (!rRegiP)
+		return GAPI_FAIL;
+
+	if (vtIpcProcess ((uint8_t) VTIPC_MSGID_CALI_GET_REGI_DATE, (uint8_t) VTIPC_MSGACT_GET, \
+		(void *)rRegiP, sizeof (gapiCaliRegisteredDate_t)) != GAPI_SUCCESS)
+	{
+		gapiError("couldn't get registered date for calibration.\n");
+		return GAPI_FAIL;
+	}
+
+	return GAPI_SUCCESS;
+}
+
+/*****************************************************************************
+ * FUNCTION NAME : 
+ * DESCRIPTIONS : 
+ * PARAMETERS : 
+ * RETURNS : None
+ *****************************************************************************/
+int GuiApi::glucoseCaliSetUserType (int uType)
+{
+	if ((uType < GAPI_CALI_UTYPE_START) || (uType >= GAPI_CALI_UTYPE_MAX)) {
+		gapiError("Invalid user type (%d).\n", uType);
+		return GAPI_FAIL;
+	}
+
+	if (vtIpcProcess ((uint8_t) VTIPC_MSGID_CALI_USER_TYPE, (uint8_t) VTIPC_MSGACT_SET, \
+		(void *)&uType, sizeof (int)) != GAPI_SUCCESS)
+	{
+		gapiError("couldn't set user type (%d)\n", uType);
+		return GAPI_FAIL;
+	}
+
+	return GAPI_SUCCESS;
+}
+
+/*****************************************************************************
+ * FUNCTION NAME : 
+ * DESCRIPTIONS : 
+ * PARAMETERS : 
+ * RETURNS : None
+ *****************************************************************************/
+int GuiApi::glucoseCaliGetUserType (int *rUserTypeP)
+{
+	if (!rUserTypeP)
+		return GAPI_FAIL;
+
+	if (vtIpcProcess ((uint8_t) VTIPC_MSGID_CALI_USER_TYPE, (uint8_t) VTIPC_MSGACT_GET, \
+		(void *)rUserTypeP, sizeof (int)) != GAPI_SUCCESS)
+	{
+		gapiError("couldn't get user type.\n");
+		return GAPI_FAIL;
+	}
+
+	return GAPI_SUCCESS;
+}
+
+/*****************************************************************************
+ * FUNCTION NAME : 
+ * DESCRIPTIONS : 
+ * PARAMETERS : 
+ * RETURNS : None
+ *****************************************************************************/
 int GuiApi::glucoseCaliMeasureSetCfgData (gapiCaliMeasureCfgUser_t *userCfgP)
 {
 	if (!userCfgP)
@@ -2281,6 +2346,55 @@ int GuiApi::glucoseGetGlucoseLimit (gapiGlucoseLimit_t *rLimitP)
 		(void *)rLimitP, sizeof (gapiGlucoseLimit_t)) != GAPI_SUCCESS)
 	{
 		gapiError("couldn't get glucose Limit.\n");
+		return GAPI_FAIL;
+	}
+
+	return GAPI_SUCCESS;
+}
+
+/*****************************************************************************
+ * FUNCTION NAME : 
+ * DESCRIPTIONS : 
+ * PARAMETERS : 
+ * RETURNS : None
+ *****************************************************************************/
+int GuiApi::glucoseSetGlucoseHighLow (gapiGlucoseHighLow_t *highLowP)
+{
+	if (!highLowP)
+		return GAPI_FAIL;
+
+	if ((highLowP->low < GAPI_CALI_GLUCOSE_MIN_VAL) || \
+		(highLowP->high > GAPI_CALI_GLUCOSE_MAX_VAL))
+	{
+		gapiError("Invalid glucose high & low value (%d-%d).\n", highLowP->low, highLowP->high);
+		return GAPI_FAIL;
+	}
+
+	if (vtIpcProcess ((uint8_t) VTIPC_MSGID_GLUCOSE_HIGHLOW, (uint8_t) VTIPC_MSGACT_SET, \
+		(void *)highLowP, sizeof (gapiGlucoseHighLow_t)) != GAPI_SUCCESS)
+	{
+		gapiError("couldn't set glucose high & low.\n");
+		return GAPI_FAIL;
+	}
+
+	return GAPI_SUCCESS;
+}
+
+/*****************************************************************************
+ * FUNCTION NAME : 
+ * DESCRIPTIONS : 
+ * PARAMETERS : 
+ * RETURNS : None
+ *****************************************************************************/
+int GuiApi::glucoseGetGlucoseHighLow (gapiGlucoseHighLow_t *rHighLowP)
+{
+	if (!rHighLowP)
+		return GAPI_FAIL;
+
+	if (vtIpcProcess ((uint8_t) VTIPC_MSGID_GLUCOSE_HIGHLOW, (uint8_t) VTIPC_MSGACT_GET, \
+		(void *)rHighLowP, sizeof (gapiGlucoseHighLow_t)) != GAPI_SUCCESS)
+	{
+		gapiError("couldn't get glucose High & Low.\n");
 		return GAPI_FAIL;
 	}
 

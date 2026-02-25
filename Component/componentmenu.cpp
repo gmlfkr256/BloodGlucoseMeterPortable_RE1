@@ -22,6 +22,9 @@ void ComponentMenu::update()
 
 void ComponentMenu::mousePressEvent(QMouseEvent* ev)
 {
+    if(!getIsEnable())
+        return;
+
     if(instance.currentPage==PAGE_HISTORY_RESULT)
         return;
 
@@ -41,3 +44,4 @@ void ComponentMenu::pageHide()
 {
     this->hide();
 }
+

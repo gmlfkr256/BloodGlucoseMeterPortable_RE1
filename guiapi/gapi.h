@@ -72,6 +72,8 @@
  *---------------------------------------------------------------------------*/
 // IPC FIFO for monitoring data base
 #define GAPI_IPC_MON_FIFO_FNAME				"/tmp/mon_fifo"
+
+#define GAPI_SYS_MGR_PROG_NAME				"sysmgr"
 #define GAPI_SYS_BLE_PROG_NAME				"blemgr"
 
 /*---------------------------------------------------------------------------*
@@ -254,8 +256,8 @@ typedef struct gapiPressureValue_T {
 #define GAPI_MOTOR_MAX_DEPTH					4095
 #define GAPI_MOTOR_MAX_SPEED					100			// 0~100
 
-#define GAPI_MOTOR_DFT_DEPTH					4000
-#define GAPI_MOTOR_DFT_SPEED					40
+#define GAPI_MOTOR_DFT_DEPTH					700		// IKSONG 250902: 4000 -> 700
+#define GAPI_MOTOR_DFT_SPEED					30		// IKSONG 250902: 40 -> 30
 
 typedef struct gapiMotorData_T {
 	unsigned short depth;
@@ -334,7 +336,8 @@ typedef enum {
 	GAPI_PROC_ECODE_LED_FAIL,
 	GAPI_PROC_ECODE_ANALYSIS_FAIL,
 	GAPI_PROC_ECODE_DATA_ERROR,
-    GAPI_PROC_ECODE_CHARGING, //hrkim 250626 add
+	GAPI_PROC_ECODE_DATA_CHARGING,
+	GAPI_PROC_ECODE_LOW_TEMP,			// 251114
 	GAPI_PROC_ECODE_MAX
 } gapiProcErrCode_e;
 
@@ -371,7 +374,7 @@ typedef enum {
 	GAPI_CALI_INDEX_2,
 	GAPI_CALI_IDX_BEFORE_2ND = GAPI_CALI_INDEX_2,		// before meal 2nd time
 	GAPI_CALI_INDEX_3,
-	GAPI_CALI_IDX_AFTER_1H = GAPI_CALI_INDEX_3,			// 1 hou after meal
+	GAPI_CALI_IDX_AFTER_1H = GAPI_CALI_INDEX_3,			// 1 hour after meal
 	GAPI_CALI_INDEX_4,
 	GAPI_CALI_IDX_AFTER_1H_H = GAPI_CALI_INDEX_4,		// 1 and half hour after meal
 	GAPI_CALI_INDEX_5,
@@ -399,15 +402,21 @@ typedef struct gapiCaliMeasureCfgLed_T {
 } __attribute__((__packed__)) gapiCaliMeasureCfgLed_t; 
 
 // limit glucose value
-#define GAPI_CALI_GLUCOSE_MIN_VAL					54
-#define GAPI_CALI_GLUCOSE_MAX_VAL					400
+#define GAPI_CALI_GLUCOSE_SYS_MIN					54
+#define GAPI_CALI_GLUCOSE_SYS_MAX					500
+
+#define GAPI_CALI_GLUCOSE_MIN_VAL					70
+#define GAPI_CALI_GLUCOSE_MAX_VAL					350
 #define GAPI_MEASURE_GLUCOSE_MIN_VAL			GAPI_CALI_GLUCOSE_MIN_VAL
 #define GAPI_MEASURE_GLUCOSE_MAX_VAL			GAPI_CALI_GLUCOSE_MAX_VAL
+
+#define GAPI_CALI_GLUCOSE_LOW_DFTVAL			79		// 251110
+#define GAPI_CALI_GLUCOSE_HIGH_DFTVAL			250		// 251110
 
 typedef struct gapiGlucoseLimit_T {
 	int low;		// low threahold
 	int high;		// high threshold
-} __attribute__((__packed__)) gapiGlucoseLimit_t;
+} __attribute__((__packed__)) gapiGlucoseLimit_t, gapiGlucoseHighLow_t;
 
 typedef struct gapiCaliMeasureCfgUser_T {
 	unsigned char user;
@@ -416,12 +425,15 @@ typedef struct gapiCaliMeasureCfgUser_T {
 	double cof1;
 	double cof2;
 	gapiGlucoseLimit_t glu_limit;
+	gapiGlucoseHighLow_t glu_highlow;
 	gapiCaliMeasureCfgLed_t led;
 } __attribute__((__packed__)) gapiCaliMeasureCfgUser_t;
 
 typedef struct gapiCaliMeasureCfgData_T {
 	gapiCaliMeasureCfgUser_t user[GAPI_USER_MAX];
 	unsigned int gain_det_time;				// seconds
+	unsigned int cali_lowtemp;
+	unsigned int measure_lowtemp;
 } __attribute__((__packed__)) gapiCaliMeasureCfgData_t;
 
 /*---------------------------------------------------------------------------*
@@ -441,7 +453,8 @@ typedef struct gapiCaliUserInfo_T {
 	unsigned char led_sense;
 	unsigned char completed;
 	unsigned char revd;
-	unsigned int glucose_val[GAPI_CALI_INDEX_MAX];
+	unsigned short glucose_val[GAPI_CALI_INDEX_MAX];
+	unsigned short vb_glucose[GAPI_CALI_INDEX_MAX];		// 251110: venous blood flag
 	gapiCaliUserIdxValue_t val[GAPI_CALI_INDEX_MAX];
 } __attribute__((__packed__)) gapiCaliUserInfo_t;
 
@@ -456,7 +469,27 @@ typedef struct gapiCaliSetGlucose_T {
 	unsigned char user;
 	unsigned char idx;
 	unsigned short glucose;
+	unsigned int vb_glucose;	// 251110: venous blood flag (1 or 0)
 } __attribute__((__packed__)) gapiCaliSetGlucose_t;
+
+// 251110: registered date 
+typedef struct gapiCaliRegisteredDate_T {
+	unsigned char user;
+	unsigned char regied;
+	unsigned int year;
+	unsigned char mon;
+	unsigned char day;
+} __attribute__((__packed__)) gapiCaliRegisteredDate_t;
+
+// 251111: user type
+typedef enum {
+	GAPI_CALI_UTYPE_START = 0,
+	GAPI_CALI_UTYPE_NONE = GAPI_CALI_UTYPE_START,
+	GAPI_CALI_UTYPE_NORMAL,
+	GAPI_CALI_UTYPE_PRE_DIABETES,
+	GAPI_CALI_UTYPE_DIABETES,
+	GAPI_CALI_UTYPE_MAX
+} gapiCaliUserType_e;
 
 /*---------------------------------------------------------------------------*
  * for process monitoring                                                    *

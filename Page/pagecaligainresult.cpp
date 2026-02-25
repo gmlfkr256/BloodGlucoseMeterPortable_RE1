@@ -46,7 +46,8 @@ void PageCaliGainResult::mousePressEvent(QMouseEvent *ev)
         //if(instance.getCaliGainCompleteCheck())
         if(instance.caliUserInfo.led_sense == true)
         {
-            emit signalShowPageNum(PAGE_CALI_SELECT);
+            //emit signalShowPageNum(PAGE_CALI_SELECT);
+            emit signalShowPageNum(PAGE_CALI_SELECT_RE);
         }
         else
         {

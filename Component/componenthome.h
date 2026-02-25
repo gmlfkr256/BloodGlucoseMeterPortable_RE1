@@ -9,10 +9,11 @@ class ComponentHome : public CustomComponent
 public:
     ComponentHome(QWidget *parent);
     void mousePressEvent(QMouseEvent *ev) override;
+
 private:
     QLabel *labelHome;
-
     QString strDirPath = "/ImageComHome";
+
     void init();
 public slots:
     void update() override;

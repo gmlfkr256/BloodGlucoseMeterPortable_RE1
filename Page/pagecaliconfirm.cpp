@@ -48,7 +48,7 @@ void PageCaliConfirm::mousePressEvent(QMouseEvent *ev)
 
     if(instance.touchCheck(customButtonInput->geometry(),ev))
     {
-        emit signalShowPageNum(PAGE_CALI_VALUE);
+        emit signalShowPageNum(PAGE_BLOOD_CHECK);
     }
 }
 

@@ -9,6 +9,7 @@ class ComponentMenu : public CustomComponent
 public:
     ComponentMenu(QWidget *parent);
     void mousePressEvent(QMouseEvent *ev) override;
+
 private:
     QLabel *labelMenu;
     QString strDirPath = "/ImageComMenu";

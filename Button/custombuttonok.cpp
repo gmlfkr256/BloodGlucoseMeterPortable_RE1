@@ -20,15 +20,13 @@ void CustomButtonOK::update()
     labelButtonOk->setFont(textResource.getFont(CUSTOM_BUTTON,"labelButtonOK"));
     labelButtonOk->setText(textResource.getText(CUSTOM_BUTTON,"labelButtonOK").at(0));
 
-    switch (instance.getDeviceColor())
+    if(this->bIsEnable)
     {
-    case COLOR_DEFAULT:
         labelButtonOk->setStyleSheet("background-color: #077bdd; color: #ffffff;");
-        break;
-    case COLOR_BLUE:
-        break;
-    case COLOR_RED:
-        break;
+    }
+    else
+    {
+        labelButtonOk->setStyleSheet("background-color: #cdcdcd; color: #000000;");
     }
 
     int x = bIsLong ? 0 : 320;
@@ -43,4 +41,20 @@ void CustomButtonOK::setLongWidth(bool bIsLong)
 {
     this->bIsLong = bIsLong;
     update();
+}
+
+void CustomButtonOK::setEnable()
+{
+    this->bIsEnable = true;
+
+}
+
+void CustomButtonOK::setDisable()
+{
+    this->bIsEnable = false;
+}
+
+bool CustomButtonOK::getEnable()
+{
+    return this->bIsEnable;
 }
