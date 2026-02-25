@@ -42,12 +42,12 @@ void PageMenu::init()
     }
 
     labelArrowLeft = new QLabel(this);
-    labelArrowLeft->setGeometry(7,182,55,180);
+    labelArrowLeft->setGeometry(0,175,70,200);
     labelArrowLeftTouch = new QLabel(this);
     labelArrowLeftTouch->setGeometry(0,73,70,407);
 
     labelArrowRight = new QLabel(this);
-    labelArrowRight->setGeometry(578,182,55,180);
+    labelArrowRight->setGeometry(570,175,70,200);
     labelArrowRightTouch = new QLabel(this);
     labelArrowRightTouch->setGeometry(570,73,70,407);
 
@@ -65,7 +65,12 @@ void PageMenu::init()
     strPathPngThreshold = "/menuButtonThreshold.png";
     strPathPngInit = "/menuButtonInit.png";
     strPathPngUser = "/menuButtonUser.png";
+    strPathPngHelp = "/menuButtonHelp.png";
+    strPathPngFaq = "/menuButtonFaq.png";
+    strPathPngErrorNotice = "/menuButtonErrorHelp.png";
 
+    instance.pixLoad(labelArrowLeft,false,strDirPath,"/buttonArrowLeft.png");
+    instance.pixLoad(labelArrowRight,false,strDirPath,"/buttonArrowRight.png");
     update();
 }
 
@@ -74,19 +79,27 @@ void PageMenu::update()
     QString pngPath;
     QPixmap pixmap;
 
-    pngPath = "/buttonArrowLeft.png";
-    instance.pixLoad(labelArrowLeft,false,strDirPath,pngPath);
+    //pngPath = "/buttonArrowLeft.png";
+    //instance.pixLoad(labelArrowLeft,false,strDirPath,pngPath);
 
-    pngPath = "/buttonArrowRight.png";
-    instance.pixLoad(labelArrowRight,false,strDirPath,pngPath);
+    //pngPath = "/buttonArrowRight.png";
+    //instance.pixLoad(labelArrowRight,false,strDirPath,pngPath);
 
     for(QLabel *labelButtonText : this->labelButtonText)
     {
         labelButtonText->setFont(textResource.getFont(PAGE_MENU,"labelButtonText"));
         labelButtonText->setStyleSheet("color: #000000;");
+        labelButtonText->setText("");
     }
 
     listPageNum.clear();
+
+    for(int i=0; i<6; i++)
+    {
+        strButtonPathPng[i] = QString();
+        labelButton[i]->clear();
+        labelButtonImg[i]->clear();
+    }
 
     //strPathPngColor
     switch(selectPage)
@@ -107,7 +120,7 @@ void PageMenu::update()
         labelButtonText[5]->setText(textResource.getText(PAGE_MENU,"labelButtonText").at(5));
 
         listPageNum = {
-            PAGE_CALI_CHECK,//PAGE_CALIBRATION,
+            PAGE_USER_NOTICE,//PAGE_USER_CHECK,//PAGE_CALI_CHECK,//PAGE_CALIBRATION,
             PAGE_THRESHOLD,
             PAGE_HISTORY,
             PAGE_SOUND,
@@ -140,20 +153,36 @@ void PageMenu::update()
             PAGE_USERINFO
         };
         break;
+    case MENU_PAGE_2:
+        strButtonPathPng[0] = strPathPngHelp;
+        strButtonPathPng[1] = strPathPngFaq;
+        strButtonPathPng[2] = strPathPngErrorNotice;
+
+        labelButtonText[0]->setText(textResource.getText(PAGE_MENU,"labelButtonText").at(13));
+        labelButtonText[1]->setText(textResource.getText(PAGE_MENU,"labelButtonText").at(14));
+        labelButtonText[2]->setText(textResource.getText(PAGE_MENU,"labelButtonText").at(15));
+
+        listPageNum = {
+            PAGE_HELP_INDEX,
+            PAGE_FAQ_INDEX,
+            PAGE_ERROR_HELP_INDEX,
+        };
+        break;
     case MENU_PAGE_MAX:
         break;
     }
 
     for(int i=0; i<6; i++)
     {
-        instance.pixLoad(labelButton[i],false,strDirPath,"/menuButtonBg.png");
+
         if(!strButtonPathPng[i].isEmpty())
         {
             instance.pixLoad(labelButtonImg[i],false,strDirPath,strButtonPathPng[i]);
+            instance.pixLoad(labelButton[i],false,strDirPath,"/menuButtonBg.png");
         }
         else
         {
-            qDebug()<<"MENU_PAGE_NUM: "+QString::number(selectPage)+"strButtonPath["+QString::number(i)+"] isEmpty";
+            qDebug()<<"MENU_PAGE_NUM: page:"+QString::number(selectPage)+" strButtonPath["+QString::number(i)+"] isEmpty";
         }
     }
 }
@@ -165,7 +194,7 @@ void PageMenu::mousePressEvent(QMouseEvent *ev)
         int nSelectPage = selectPage;
         nSelectPage--;
         if(nSelectPage<MENU_PAGE_0)
-            selectPage = MENU_PAGE_1;
+            selectPage = static_cast<MenuPageIndex>(static_cast<int>(MenuPageIndex::MENU_PAGE_MAX)-1);
         else
             selectPage = static_cast<MenuPageIndex>(nSelectPage);
 
@@ -176,7 +205,7 @@ void PageMenu::mousePressEvent(QMouseEvent *ev)
     {
         int nSelectPage = selectPage;
         nSelectPage++;
-        if(nSelectPage>MENU_PAGE_1)
+        if(nSelectPage==MENU_PAGE_MAX)
             selectPage = MENU_PAGE_0;
         else
             selectPage = static_cast<MenuPageIndex>(nSelectPage);
@@ -189,7 +218,32 @@ void PageMenu::mousePressEvent(QMouseEvent *ev)
         if(instance.touchCheck(labelButton[i]->geometry(),ev))
         {
             if(i>=0 && i<listPageNum.size())
-                emit signalShowPageNum(listPageNum.at(i));
+            {
+                instance.setPageNumPrev(PAGE_MENU);
+
+
+                if(listPageNum.at(i)==PAGE_USER_NOTICE)
+                {
+                    if(instance.getNumUserCheck()==GAPI_CALI_UTYPE_NONE)
+                    {
+                        emit signalShowPageNum(PAGE_USER_NOTICE);
+                        return;
+                    }
+
+                    if(instance.getCaliGainCompleteCheck())
+                    {
+                        emit signalShowPageNum(PAGE_USER_CHECK_NOTICE);
+                        return;
+                    }
+
+                    //emit signalShowPageNum(PAGE_CALI_SELECT);
+                    emit signalShowPageNum(PAGE_CALI_SELECT_RE);
+                }
+                else
+                {
+                    emit signalShowPageNum(listPageNum.at(i));
+                }
+            }
             else
                 qDebug()<<"[fail] Invalid listPageNum index: "<<i;
         }

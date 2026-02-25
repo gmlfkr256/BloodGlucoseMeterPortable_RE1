@@ -19,8 +19,8 @@ void Singleton::init()
 
     langData.used = KR;
 
-    thresholdLow = 69;
-    thresholdHigh = 170;
+    thresholdLow = 79;
+    thresholdHigh = 250;
 
     hisInfo[0].date = 20250205;//QDate::currentDate().toString("yyyyMMdd").toInt();
 
@@ -328,7 +328,13 @@ void Singleton::updateSysUserInfo()
     {
 #if DEVICE
         if(guiApi.glucoseGetUserInfo(i,&sysUserInfo[i]) == GAPI_SUCCESS)
-            qDebug()<<"sysUserInfo["+QString::number(i)+"] update Success";
+        {
+            //qDebug()<<"sysUserInfo["+QString::number(i)+"] update Success";
+        }
+        else
+        {
+            qDebug()<<"sysUserInfo["+QString::number(i)+"] update failed";
+        }
 #endif
     }
 }
@@ -379,8 +385,16 @@ void Singleton::actUserLogin(int i)
     guiApi.glucoseGetLangData(&langData);
     setDeviceLanguage(langData.used);
     guiApi.glucoseGetGlucoseLimit(&glucoseLimit);
-    thresholdLow = glucoseLimit.low;
-    thresholdHigh = glucoseLimit.high;
+    //thresholdLow = glucoseLimit.low;
+    //thresholdHigh = glucoseLimit.high;
+    nThresholdLimitLowMin = glucoseLimit.low;
+    nThresholdLimitHighMax = glucoseLimit.high;
+    qDebug()<<"nThresholdLimitLowMin: "<<nThresholdLimitLowMin;
+    qDebug()<<"nThresholdLimitHighMax: "<<nThresholdLimitHighMax;
+
+    getThresholdHighLow();
+
+    emit signalInitVolume();
 #else
     setDeviceLanguage(langData.used);
 #endif
@@ -416,11 +430,13 @@ void Singleton::setCaliGainCompleteCheck(bool caliGainCompleteCheck)
     {
         caliUserInfo.led_sense = true;
         caliUserInfo.completed = true;
+        caliUserInfo.vb_glucose[0] = true;
     }
     else
     {
         caliUserInfo.led_sense = false;
         caliUserInfo.completed = false;
+        caliUserInfo.vb_glucose[0] = false;
     }
 }
 
@@ -490,6 +506,15 @@ bool Singleton::getCaliValueCompleteCheck()
         return true;
     else
         return false;
+}
+
+bool Singleton::getCaliIndexVenousCheck(int nCaliSelectIndex)
+{
+#if DEVICE
+    updateCaliUserInfo();
+#endif
+    qDebug()<<"caliUserInfo.vb_glucose["<<nCaliSelectIndex<<"]: "<<caliUserInfo.vb_glucose[nCaliSelectIndex];
+    return caliUserInfo.vb_glucose[nCaliSelectIndex];
 }
 
 //PageGraph
@@ -571,11 +596,21 @@ void Singleton::setCaliValue(int nValue)
     caliSetGlucose.idx= getCaliSelectIndex();
     caliSetGlucose.glucose = nValue;
 
+    if(getIsBlood())
+    {
+        caliSetGlucose.vb_glucose = true;
+        setIsBlood(false);
+    }
+    else
+    {
+        caliSetGlucose.vb_glucose = false;
+    }
 
 #if DEVICE
     guiApi.glucoseCaliSetGlucoseValue(&caliSetGlucose);
 #else
     caliUserInfo.glucose_val[getCaliSelectIndex()] = nValue;
+    caliUserInfo.vb_glucose[getCaliSelectIndex()] = caliSetGlucose.vb_glucose;
 #endif
 }
 
@@ -611,13 +646,36 @@ void Singleton::setThresholdValue(ThresholdIndex thresholdIndex, int nValue)
     else
         qDebug()<<"set thresholdvalue fail";
 
-    //gapiGlucoseLimit_t glucoseLimit;
-    glucoseLimit.low = thresholdLow;
-    glucoseLimit.high = thresholdHigh;
+    //glucoseLimit.low = thresholdLow;
+    //glucoseLimit.high = thresholdHigh;
+    glucoseHighLow.low = thresholdLow;
+    glucoseHighLow.high = thresholdHigh;
 
 #if DEVICE
-    guiApi.glucoseSetGlucoseLimit(&glucoseLimit);
+    //guiApi.glucoseSetGlucoseLimit(&glucoseLimit);
+    guiApi.glucoseSetGlucoseHighLow(&glucoseHighLow);
 #endif
+}
+
+void Singleton::setThresholdHighLow()
+{
+    glucoseHighLow.low = thresholdLow;
+    glucoseHighLow.high = thresholdHigh;
+#if DEVICE
+    guiApi.glucoseSetGlucoseHighLow(&glucoseHighLow);
+#endif
+}
+
+void Singleton::getThresholdHighLow()
+{
+#if DEVICE
+    guiApi.glucoseGetGlucoseHighLow(&glucoseHighLow);
+#endif
+    thresholdLow = glucoseHighLow.low;
+    thresholdHigh = glucoseHighLow.high;
+    qDebug()<<"-- getThresholdHighLow()";
+    qDebug()<<"thresholdLow: "<<thresholdLow;
+    qDebug()<<"thresholdHight: "<<thresholdHigh;
 }
 
 //PageUpagrde
@@ -676,6 +734,81 @@ QString Singleton::getDeviceVersion(VersionIndex versionIndex)
         break;
     }
 }
+
+//PageBloodCheck
+bool Singleton::getIsBlood()
+{
+    qDebug()<<"getIsBlood: "<<this->isBlood;
+    return this->isBlood;
+}
+
+void Singleton::setIsBlood(bool isBlood)
+{
+    this->isBlood = isBlood;
+}
+
+bool Singleton::getIsVenousBlood()
+{
+#if DEVICE
+    updateCaliUserInfo();
+#endif
+    int nVenousBloodCount = 0;
+
+    for(int i=0; i<5; i++)
+    {
+        if(caliUserInfo.vb_glucose[i]!=0)
+            nVenousBloodCount++;
+    }
+
+    if(nVenousBloodCount>0)
+        return true;
+    else
+        return false;
+}
+
+//PageElapsedNoticePopup
+int Singleton::getElapsedDay()
+{
+    gapiCaliRegisteredDate_t regiDate;
+    QDateTime dateTime(QDateTime::currentDateTime());
+    guiApi.glucoseCaliGetRegiDate(&regiDate);
+
+    if(regiDate.regied == false)
+    {
+        return 0;
+    }
+    else
+    {
+#if DEVICE
+        QDate target(regiDate.year,regiDate.mon,regiDate.day);
+#else
+        QDate target(CUSTOM_YEAR,CUSTOM_MONTH,CUSTOM_DAY);
+#endif
+        int nElapsedDays = target.daysTo(dateTime.date())+1;
+
+        qDebug()<<"nElapsedDays: "<< nElapsedDays;
+        this->nElapsedDay = nElapsedDays;
+    }
+
+    return this->nElapsedDay;
+}
+
+bool Singleton::getIsUseElapsed()
+{
+    return(getElapsedDay()>=76);
+}
+
+bool Singleton::getIsMeasure()
+{
+    return this->isMeasure;
+}
+
+void Singleton::setIsMeasure(bool isMeasure)
+{
+    this->isMeasure = isMeasure;
+}
+
+
 //public
 bool Singleton::touchCheck(const QRect &rect, QMouseEvent* ev)
 {
@@ -819,6 +952,21 @@ bool Singleton::isPasswordEqual(const char* pszRaw, int nSize, const QString& st
     qDebug() << "Comparing password:" << strFromRaw << "vs" << strInput;
 
     return strFromRaw == strInput;
+}
+
+int Singleton::getNumUserCheck()
+{
+    int nUserCheckNum;
+
+    guiApi.glucoseCaliGetUserType(&nUserCheckNum);
+    qDebug()<<"guiApi.glucoseCaliGetUserType: "<<nUserCheckNum;
+
+    return nUserCheckNum;
+}
+
+void Singleton::setNumUserCheck(int nSelect)
+{
+    guiApi.glucoseCaliSetUserType(nSelect);
 }
 
 // 🔹 시그널-safe 플래그 설정

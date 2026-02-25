@@ -23,7 +23,9 @@ public:
     QLabel *labelBarTouch;
     QLabel *labelCircle;
     QLabel *labelImgMin;
+    QLabel *labelMinTouch;
     QLabel *labelImgMax;
+    QLabel *labelMaxTouch;
 
     int nVolume;
     gapiSpkData_t prevSpkData;
@@ -40,6 +42,7 @@ public:
     void pageHide() override;
 private:
     void init();
+
     void setVolume();
     void setVolumeOut();
     void setScreen();
@@ -49,6 +52,9 @@ private:
 
 signals:
     //void signalShowPageNum(PageNum pageNum);
+
+public slots:
+    void initVolume();
 };
 
 #endif // PAGESOUND_H

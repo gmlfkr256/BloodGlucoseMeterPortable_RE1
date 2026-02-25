@@ -7,6 +7,7 @@ typedef enum
 {
     MENU_PAGE_0 = 0,
     MENU_PAGE_1,
+    MENU_PAGE_2,
     MENU_PAGE_MAX
 } MenuPageIndex;
 
@@ -44,6 +45,9 @@ public:
     QString strPathPngThreshold;
     QString strPathPngInit;
     QString strPathPngUser;
+    QString strPathPngHelp;
+    QString strPathPngFaq;
+    QString strPathPngErrorNotice;
 
     void update() override;
     void pageShow() override;

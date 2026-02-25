@@ -75,10 +75,9 @@ void PageThreshold::update()
 #if DEVICE
     if(instance.getUserNumber() != USER_MAX)
     {
-        gapiGlucoseLimit_t glucoseLimit;
-        instance.guiApi.glucoseGetGlucoseLimit(&glucoseLimit);
-        instance.thresholdLow = glucoseLimit.low;
-        instance.thresholdHigh = glucoseLimit.high;
+        //gapiGlucoseLimit_t glucoseLimit;
+        //instance.guiApi.glucoseGetGlucoseLimit(&glucoseLimit);
+        instance.getThresholdHighLow();
     }
 #endif
 
@@ -98,9 +97,9 @@ void PageThreshold::update()
     case JP:
     case SC:
     case TC:
-        labelValueLow->setGeometry(370,135,90,59);
+        labelValueLow->setGeometry(370,138,90,59);
         labelValueLow->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
-        labelValueHigh->setGeometry(370,254,90,59);
+        labelValueHigh->setGeometry(370,257,90,59);
         labelValueHigh->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
 
         labelValueRangeLow->setGeometry(467,156,45,38);
@@ -110,14 +109,14 @@ void PageThreshold::update()
         break;
     case EN:
     case ES:
-        labelValueLow->setGeometry(425,135,90,59);
+        labelValueLow->setGeometry(425,138,90,59);
         labelValueLow->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
-        labelValueHigh->setGeometry(425,254,90,59);
+        labelValueHigh->setGeometry(425,257,90,59);
         labelValueHigh->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
 
-        labelValueRangeLow->setGeometry(288,156,137,33);
+        labelValueRangeLow->setGeometry(270,156,137,33);//288,156,137,33);
         labelValueRangeLow->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
-        labelValueRangeHigh->setGeometry(288,274,137,33);
+        labelValueRangeHigh->setGeometry(270,274,137,33);//288,274,137,33);
         labelValueRangeHigh->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         break;
     case LAN_MAX:

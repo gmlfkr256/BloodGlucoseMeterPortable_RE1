@@ -26,19 +26,31 @@ void PageSound::init()
     labelBar = new QLabel(this);
     labelBar->setGeometry(70,311,500,5);
     labelBarTouch = new QLabel(this);
-    labelBarTouch->setGeometry(70,305,500,18);
+    labelBarTouch->setGeometry(70,266,500,92);
 
     labelCircle = new QLabel(this);
     labelCircle->setFixedSize(18,18);
     labelImgMin = new QLabel(this);
     labelImgMin->setGeometry(70,266,35,35);
+    labelMinTouch = new QLabel(this);
+    labelMinTouch->setGeometry(0,266,69,92);
     labelImgMax = new QLabel(this);
     labelImgMax->setGeometry(535,266,35,35);
+    labelMaxTouch = new QLabel(this);
+    labelMaxTouch->setGeometry(571,266,69,92);
 
     customButtonSave = new CustomButtonSave(this);
     customButtonCancel = new CustomButtonCancel(this);
 
     update();
+}
+
+void PageSound::initVolume()
+{
+    instance.guiApi.glucoseGetSpeakerData(&instance.spkData);
+    nVolume = instance.spkData.vol;
+
+    setVolume();
 }
 
 void PageSound::update()
@@ -61,21 +73,29 @@ void PageSound::update()
 
 void PageSound::setVolume()
 {
-    if(nVolume>0)
-    {
-        instance.spkData.used = 1;
-    }
-    else
-    {
-        instance.spkData.used = 0;
-    }
+#if DEVICE
+    //qDebug()<<"set nVolume" << nVolume;
+    instance.spkData.vol = nVolume;
+    //qDebug()<<"set spkData.vol: "<<instance.spkData.vol;
+    instance.guiApi.glucoseSetSpeakerData(&instance.spkData);
 
     checkVolume();
 
-    instance.spkData.vol = nVolume;
+    QString hexReg, hexVal;
+    hexReg = "0x0C";
 
-#if DEVICE
-    instance.guiApi.glucoseSetSpeakerData(&instance.spkData);
+    if(nVolume <= 0)
+    {
+        hexVal = "0x100";
+    }
+    else
+    {
+        int regVal = 0xCB + ((nVolume -5)/5)*2;
+        regVal |= 0x100;
+        hexVal = QString("0x%1").arg(regVal, 3, 16, QLatin1Char('0')).toUpper();
+    }
+
+    QProcess::execute("/run/media/mmcblk0p3/gui/rpmsg_tool.sh",{hexReg,hexVal});
 #else
 
 #endif
@@ -136,7 +156,9 @@ void PageSound::pageShow()
 {
 #if DEVICE
     touchEnabled = true;
+    //qDebug()<<"PageSound prev spkData.vol:"<<&instance.spkData.vol;
     instance.guiApi.glucoseGetSpeakerData(&instance.spkData);
+    qDebug()<<"PageSound get spkData.vol:"<<instance.spkData.vol;
 #endif
 
     prevSpkData = instance.spkData;
@@ -179,6 +201,8 @@ void PageSound::mousePressEvent(QMouseEvent *ev)
     {
 #if DEVICE
         instance.guiApi.glucoseSetSpeakerData(&prevSpkData);
+        nVolume = prevSpkData.vol;
+        setVolume();
 #else
         instance.spkData = prevSpkData;
 #endif
@@ -215,6 +239,7 @@ void PageSound::mousePressEvent(QMouseEvent *ev)
         setScreen();
     }
 
+    /*
     if(instance.touchCheck(labelImgMin->geometry(),ev))
     {
         setVolumeMin();
@@ -224,11 +249,22 @@ void PageSound::mousePressEvent(QMouseEvent *ev)
     {
         setVolumeMax();
     }
+    */
+    if(instance.touchCheck(labelMinTouch->geometry(),ev))
+    {
+        setVolumeMin();
+    }
+    if(instance.touchCheck(labelMaxTouch->geometry(),ev))
+    {
+        setVolumeMax();
+    }
 
     if(instance.touchCheck(labelBarTouch->geometry(),ev))
     {
         isBarTouch = true;
-        nVolume = static_cast<int>((ev->x() - 70)/5);
+        //nVolume = static_cast<int>((ev->x() - 70)/5);
+        int rawVolume = (ev->x() -70)/5;
+        nVolume = ((rawVolume +2)/5)*5;
         setScreen();
     }
 }
@@ -247,9 +283,20 @@ void PageSound::mouseReleaseEvent(QMouseEvent *ev)
 
 void PageSound::mouseMoveEvent(QMouseEvent *ev)
 {
+    /*
     if(isBarTouch == true)
     {
         nVolume = (ev->x() -70)/5;
+        setScreen();
+    }
+    */
+
+    if(isBarTouch == true)
+    {
+        int rawVolume = (ev->x() - 70) / 5;
+        // 5단위로 반올림
+        nVolume = ((rawVolume + 2) / 5) * 5;
+
         setScreen();
     }
 }

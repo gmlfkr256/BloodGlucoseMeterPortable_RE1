@@ -108,7 +108,8 @@ void PagePasswordConfirm::mousePressEvent(QMouseEvent *ev)
         switch (instance.getPasswordStrStatus())
         {
         case PASSWORD_STR_LOGIN_SUCCESS:
-            emit signalShowPageNum(PAGE_HOME);
+            //emit signalShowPageNum(PAGE_HOME);
+            checkElapsedNotice();
             break;
         case PASSWORD_STR_LOGIN_FAIL:
 #if NEW_PASSWORD
@@ -118,7 +119,8 @@ void PagePasswordConfirm::mousePressEvent(QMouseEvent *ev)
 #endif
             break;
         case PASSWORD_STR_LOGIN_CHANGE:
-            emit signalShowPageNum(PAGE_HOME);
+            //emit signalShowPageNum(PAGE_HOME);
+            checkElapsedNotice();
             break;
         case PASSWORD_STR_CONFIRM:
             instance.setPasswordStatus(PASSWORD_CONFIRM);
@@ -266,4 +268,20 @@ void PagePasswordConfirm::pageShow()
 void PagePasswordConfirm::pageHide()
 {
 
+}
+
+void PagePasswordConfirm::checkElapsedNotice()
+{
+#if PICTURE_MODE
+    emit signalShowPageNum(PAGE_RESULT);
+    return;
+#endif
+
+    if(instance.getIsUseElapsed())
+    {
+        instance.setIsMeasure(false);
+        emit signalShowPageNum(PAGE_ELAPSED_NOTICE_POPUP);
+    }
+    else
+        emit signalShowPageNum(PAGE_HOME);
 }

@@ -233,6 +233,110 @@ void MainWindow::init()
     stackedWidget->addWidget(pageCaliSelectConfirm);
     qDebug()<<"====================== PAGE_CALI_SELECT_CONFIRM";
 
+    pageElapsedNoticePopup = new PageElapsedNoticePopup(this);
+    stackedWidget->addWidget(pageElapsedNoticePopup);
+    qDebug()<<"====================== PAGE_ELAPSED_NOTICE_POPUP";
+
+    pageBloodCheck = new PageBloodCheck(this);
+    stackedWidget->addWidget(pageBloodCheck);
+    qDebug()<<"====================== PAGE_BLOOD_CHECK";
+
+    pageBloodNoticePopup = new PageBloodNoticePopup(this);
+    stackedWidget->addWidget(pageBloodNoticePopup);
+    qDebug()<<"====================== PAGE_BLOOD_NOTICE_POPUP";
+
+    pageUserCheck = new PageUserCheck(this);
+    stackedWidget->addWidget(pageUserCheck);
+    qDebug()<<"====================== PAGE_USER_CHECK";
+
+    pageBloodCheckNotice = new PageBloodCheckNotice(this);
+    stackedWidget->addWidget(pageBloodCheckNotice);
+    qDebug()<<"====================== PAGE_BLOOD_CHECK_NOTICE";
+
+    pageCaliValueNotice = new PageCaliValueNotice(this);
+    stackedWidget->addWidget(pageCaliValueNotice);
+    qDebug()<<"====================== PAGE_CALI_VALUE_NOTICE";
+
+    pageUserNotice = new PageUserNotice(this);
+    stackedWidget->addWidget(pageUserNotice);
+    qDebug()<<"====================== PAGE_USER_NOTICE";
+
+    pageUserFinger = new PageUserFinger(this);
+    stackedWidget->addWidget(pageUserFinger);
+    qDebug()<<"====================== PAGE_USER_FINGER";
+
+    pageCaliNotice = new PageCaliNotice(this);
+    stackedWidget->addWidget(pageCaliNotice);
+    qDebug()<<"====================== PAGE_CALI_NOTICE";
+
+    pageUserCheckNotice = new PageUserCheckNotice(this);
+    stackedWidget->addWidget(pageUserCheckNotice);
+    qDebug()<<"====================== PAGE_USER_CHECK_NOTICE";
+
+    pageUserCautions = new PageUserCautions(this);
+    stackedWidget->addWidget(pageUserCautions);
+    qDebug()<<"====================== PAGE_USER_CAUTIONS";
+
+    pageHelp = new PageHelp(this);
+    stackedWidget->addWidget(pageHelp);
+    qDebug()<<"====================== PAGE_HELP";
+
+    pageFaq = new PageFaq(this);
+    stackedWidget->addWidget(pageFaq);
+    qDebug()<<"====================== PAGE_FAQ";
+
+    pageErrorHelp = new PageErrorHelp(this);
+    stackedWidget->addWidget(pageErrorHelp);
+    qDebug()<<"====================== PAGE_ERROR_Help";
+
+    pageCaliSelectRe = new PageCaliSelectRe(this);
+    stackedWidget->addWidget(pageCaliSelectRe);
+    qDebug()<<"====================== PAGE_CALI_SELECT_RE";
+
+    pageResponse = new PageResponse(this);
+    stackedWidget->addWidget(pageResponse);
+    qDebug()<<"====================== PAGE_RESPONSE";
+
+    pageResponseRe = new PageResponseRe(this);
+    stackedWidget->addWidget(pageResponseRe);
+    qDebug()<<"====================== PAGE_RESPONSE_RE";
+
+    pageFaqRe = new PageFaqRe(this);
+    stackedWidget->addWidget(pageFaqRe);
+    qDebug()<<"====================== PAGE_FAQ_RE";
+
+    pageHelpRe = new PageHelpRe(this);
+    stackedWidget->addWidget(pageHelpRe);
+    qDebug()<<"====================== PAGE_HELP_RE";
+
+    pageErrorHelpRe = new PageErrorHelpRe(this);
+    stackedWidget->addWidget(pageErrorHelpRe);
+    qDebug()<<"====================== PAGE_ERROR_HELP_RE";
+
+    pageHelpIndex = new PageHelpIndex(this);
+    stackedWidget->addWidget(pageHelpIndex);
+    qDebug()<<"====================== PAGE_HELP_INDEX";
+
+    pageFaqIndex = new PageFaqIndex(this);
+    stackedWidget->addWidget(pageFaqIndex);
+    qDebug()<<"====================== PAGE_FAQ_INDEX";
+
+    pageErrorHelpIndex = new PageErrorHelpIndex(this);
+    stackedWidget->addWidget(pageErrorHelpIndex);
+    qDebug()<<"====================== PAGE_ERROR_HELP_INDEX";
+
+    pageHelpResponse = new PageHelpResponse(this);
+    stackedWidget->addWidget(pageHelpResponse);
+    qDebug()<<"====================== PAGE_HELP_RESPONSE";
+
+    pageFaqResponse = new PageFaqResponse(this);
+    stackedWidget->addWidget(pageFaqResponse);
+    qDebug()<<"====================== PAGE_FAQ_RESPONSE";
+
+    pageErrorResponse = new PageErrorHelpResponse(this);
+    stackedWidget->addWidget(pageErrorResponse);
+    qDebug()<<"====================== PAGE_ERROR_RESPONSE";
+
     comBat = new ComponentBattery(stackedWidget);
     comBle = new ComponentBluetooth(stackedWidget);
     comClock = new ComponentClock(stackedWidget);
@@ -284,6 +388,32 @@ void MainWindow::init()
         {PAGE_UPGRADE_FAIL, "PageUpgradeFail"},
         {PAGE_CALI_RESULT_MULTI_CONFIRM, "PageCaliResultMultiConfirm"},
         {PAGE_CALI_SELECT_CONFIRM,"PageCaliSelectConfirm"},
+        {PAGE_ELAPSED_NOTICE_POPUP,"PageElapsedNoticePoup"},
+        {PAGE_BLOOD_CHECK,"PageBloodCheck"},
+        {PAGE_BLOOD_NOTICE_POPUP,"PageBloodNoticePopup"},
+        {PAGE_USER_CHECK,"PageUserCheck"},
+        {PAGE_BLOOD_CHECK_NOTICE,"PageBloodCheckNotice"},
+        {PAGE_CALI_VALUE_NOTICE,"PageCaliValueNotice"},
+        {PAGE_USER_NOTICE,"PageUserNotice"},
+        {PAGE_USER_FINGER,"PageUserFinger"},
+        {PAGE_CALI_NOTICE,"PageCaliNotice"},
+        {PAGE_USER_CHECK_NOTICE,"PageUserCheckNotice"},
+        {PAGE_USER_CAUTIONS,"PageUserCautions"},
+        {PAGE_HELP,"PageHelp"},
+        {PAGE_FAQ,"PageFaq"},
+        {PAGE_ERROR_HELP,"PageErrorHelp"},
+        {PAGE_CALI_SELECT_RE,"PageCaliSelectRe"},
+        {PAGE_RESPONSE,"PageResponse"},
+        {PAGE_RESPONSE_RE,"PageResponseRe"},
+        {PAGE_FAQ_RE,"PageFaqRe"},
+        {PAGE_HELP_RE,"PageHelpRe"},
+        {PAGE_ERROR_HELP_RE,"PageErrorHelpRe"},
+        {PAGE_HELP_INDEX,"PageHelpIndex"},
+        {PAGE_FAQ_INDEX,"PageFaqIndex"},
+        {PAGE_ERROR_HELP_INDEX,"PageErrorHelpIndex"},
+        {PAGE_HELP_RESPONSE,"PageHelpResponse"},
+        {PAGE_FAQ_RESPONSE,"PageFaqResponse"},
+        {PAGE_ERROR_RESPONSE,"PageErrorResponse"},
 
         {CUSTOM_BUTTON, "CustomButton"},
         {PAGE_MAX, "InvalidPage"}  // 예외 처리
@@ -359,6 +489,8 @@ void MainWindow::initConnect()
     connect(pageHistory,&PageHistory::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     connect(pageHistoryResult,&PageHistoryResult::signalShowPageNum,this,&MainWindow::setPageByPageNum);
     */
+
+    connect(&instance,&Singleton::signalInitVolume,pageSound,&PageSound::initVolume);
 }
 
 void MainWindow::currentPageChanged(int index)
@@ -371,6 +503,17 @@ void MainWindow::currentPageChanged(int index)
     {
         ShowComponents();
     }
+
+    /*
+    if(listComDisablePageIndex.contains(index))
+    {
+        componentsDisable();
+    }
+    else
+    {
+        componentsEnable();
+    }
+    */
 }
 
 void MainWindow::setPageByPageNum(PageNum pageNum)
@@ -383,7 +526,12 @@ void MainWindow::setPageByPageNum(PageNum pageNum)
 
         Page *page = qobject_cast<Page*>(stackedWidget->currentWidget());
 
-        if(pageNum == PAGE_HOME)
+#if PICTURE_MODE
+        comHome->update();
+        comBle->update();
+#endif
+
+        if(pageNum == PAGE_HOME || pageNum == PAGE_ELAPSED_NOTICE_POPUP)
         {
             comHome->update();
             comBle->update();
@@ -391,6 +539,12 @@ void MainWindow::setPageByPageNum(PageNum pageNum)
         else if(pageNum == PAGE_GRAPH)
         {
             pageGraph->initGraphPainter();
+        }
+
+        if(pageNum != PAGE_HELP_RESPONSE && pageNum != PAGE_FAQ_RESPONSE && pageNum != PAGE_ERROR_RESPONSE
+        && pageNum != PAGE_HELP && pageNum != PAGE_FAQ && pageNum != PAGE_ERROR_HELP)
+        {
+            instance.nSelectTextIndex = 0;
         }
 
         if(page)
@@ -418,6 +572,18 @@ void MainWindow::HideComponents()
         com->hide();
         com->raise();
     }
+}
+
+void MainWindow::componentsEnable()
+{
+    comHome->setIsEnable(true);
+    comMenu->setIsEnable(true);
+}
+
+void MainWindow::componentsDisable()
+{
+    comHome->setIsEnable(false);
+    comMenu->setIsEnable(false);
 }
 
 QString MainWindow::getPageName(PageNum pageNum)

@@ -16,6 +16,8 @@ public:
     QLabel *labelTextTemp[3];
     QLabel *labelTextHeart[3];
 
+    QLabel *labelNum[3];
+
     CustomButtonOK *customButtonOk;
     CustomButtonCancel *customButtonCancel;
     CustomButtonMeasure *customButtonMeasure;

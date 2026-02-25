@@ -47,6 +47,14 @@ void PageCaliValue::mousePressEvent(QMouseEvent *ev)
     if(instance.touchCheck(customButtonOK->geometry(),ev))
     {
         nValue = componentSpinner[0]->getValue()*100 + componentSpinner[1]->getValue()*10 + componentSpinner[2]->getValue();
+
+        if(nValue<GAPI_CALI_GLUCOSE_SYS_MIN || GAPI_CALI_GLUCOSE_SYS_MAX<nValue)
+        {
+            emit signalShowPageNum(PAGE_CALI_VALUE_NOTICE);
+            return;
+        }
+
+
         instance.setCaliValue(nValue);
         pageHide();
     }
@@ -64,5 +72,6 @@ void PageCaliValue::pageShow()
 
 void PageCaliValue::pageHide()
 {
-    emit signalShowPageNum(PAGE_CALI_SELECT);
+    //emit signalShowPageNum(PAGE_CALI_SELECT);
+    emit signalShowPageNum(PAGE_CALI_SELECT_RE);
 }

@@ -29,17 +29,19 @@ void PageCaliSelectInfo::update()
     switch(instance.getCaliSelectIndex())
     {
     case CALI_0:
-    case CALI_1:
         nSelectTextNum = 0;
         break;
-    case CALI_2:
+    case CALI_1:
         nSelectTextNum = 1;
         break;
-    case CALI_3:
+    case CALI_2:
         nSelectTextNum = 2;
         break;
-    case CALI_4:
+    case CALI_3:
         nSelectTextNum = 3;
+        break;
+    case CALI_4:
+        nSelectTextNum = 4;
         break;
     case CALI_MAX:
         break;
@@ -57,7 +59,8 @@ void PageCaliSelectInfo::mousePressEvent(QMouseEvent *ev)
 
     if(instance.touchCheck(customButtonCancel->geometry(),ev))
     {
-        emit signalShowPageNum(PAGE_CALI_SELECT);
+        //emit signalShowPageNum(PAGE_CALI_SELECT);
+        emit signalShowPageNum(PAGE_CALI_SELECT_RE);
     }
 }
 

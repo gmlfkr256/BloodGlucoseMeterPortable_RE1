@@ -3,6 +3,24 @@
 
 #include "page.h"
 
+class ApiWorker : public QObject
+{
+    Q_OBJECT
+public:
+    gapiSysProcAct_t act;
+    Singleton &instance = Singleton::getInstance();
+
+public slots:
+    void run()
+    {
+        instance.guiApi.glucoseSysProcAct(&act);
+        emit signalFinished();
+    }
+
+signals:
+    void signalFinished();
+};
+
 class PageGarph : public Page
 {
     Q_OBJECT
@@ -39,6 +57,9 @@ public:
     CustomButtonCancel *customButtonCancel;
 
     bool bIsProcessSuccess = false;
+
+    QThread* threadAPI = nullptr;
+    ApiWorker* apiWorker = nullptr;
 
     void initGraphPainter();
 

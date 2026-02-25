@@ -12,12 +12,18 @@ public:
     Singleton &instance = Singleton::getInstance();
     TextResource &textResource = TextResource::getInstance();
 
+    bool getIsEnable();
+    void setIsEnable(bool bIsEnable = true);
+
     //virtual void init() = 0;
     virtual void update() = 0;
     virtual void pageShow() = 0;
     virtual void pageHide() = 0;
 
     virtual ~CustomComponent() = default;
+
+private:
+    bool bIsEnable = true;
 };
 
 #endif // CUSTOMCOMPONENT_H

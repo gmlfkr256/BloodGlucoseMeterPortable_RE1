@@ -46,7 +46,8 @@ void PageCaliGainConfirm::mousePressEvent(QMouseEvent *ev)
     {
         if(instance.getGainCompleteCheck())
         {
-            emit signalShowPageNum(PAGE_CALI_SELECT);
+            //emit signalShowPageNum(PAGE_CALI_SELECT);
+            emit signalShowPageNum(PAGE_CALI_SELECT_RE);
         }
         else
         {
@@ -59,7 +60,8 @@ void PageCaliGainConfirm::mousePressEvent(QMouseEvent *ev)
     {
         if(instance.getGainCompleteCheck())
         {
-            emit signalShowPageNum(PAGE_CALI_SELECT);
+            //emit signalShowPageNum(PAGE_CALI_SELECT);
+            emit signalShowPageNum(PAGE_CALI_SELECT_RE);
         }
         else
         {

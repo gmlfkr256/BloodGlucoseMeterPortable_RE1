@@ -315,6 +315,8 @@ void PageGarph::mousePressEvent(QMouseEvent *ev)
 
     if(instance.touchCheck(customButtonCancel->geometry(),ev))
     {
+        instance.setIsMeasure(true);
+
         instance.isTouchCtrl = false;
 #if DEVICE
         instance.sysProcAct.act = GAPI_ACT_STOP;
@@ -326,16 +328,17 @@ void PageGarph::mousePressEvent(QMouseEvent *ev)
 
 void PageGarph::pageShow()
 {
+    customButtonCancel->setDisable();
+
     if(instance.currentPage == PAGE_CALI_GAIN_CONFIRM)
         instance.setPageNumPrev(PAGE_CALI_CHECK);
     else
         instance.setPageNumPrev(instance.currentPage);
-    //else if(instance.currentPage == PAGE_CALI_CONFIRM)
 
-    //instance.isBatCharging = true;
+
     if(instance.isBatCharging == true)
     {
-        instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_CHARGING;
+        instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_DATA_CHARGING;
         emit signalShowPageNum(PAGE_RESULT_FAIL);
         return;
     }
@@ -378,11 +381,6 @@ void PageGarph::pageShow()
         break;
     }
 
-#if DEVICE
-    instance.guiApi.glucoseSpeakerOut(GAPI_SPK_MEASURE_START);
-    instance.guiApi.glucoseSysProcAct(&instance.sysProcAct);
-#endif
-
     instance.setProcCheck(true);
 
     switch(instance.getGraphMode())
@@ -401,16 +399,6 @@ void PageGarph::pageShow()
         break;
     }
 
-#if DEVICE
-    timerPainter->start(100);
-#else
-    timerPainter->start(100);
-    QDateTime dateTimeLocal = QDateTime::currentDateTime();
-
-    instance.sysProcMonInfo.hour = dateTimeLocal.time().hour();
-    instance.sysProcMonInfo.min = dateTimeLocal.time().minute();
-#endif
-
     //QPixmap pixNull;
     //labelPainter->setPixmap(pixNull);
 
@@ -420,12 +408,60 @@ void PageGarph::pageShow()
     }
 
     update();
-    QTimer::singleShot(instance.nTouchTime,this,[this](){instance.isTouchCtrl = true;});
+
+#if DEVICE
+    instance.guiApi.glucoseSpeakerOut(GAPI_SPK_MEASURE_START);
+#else
+    timerPainter->start(100);
+    QDateTime dateTimeLocal = QDateTime::currentDateTime();
+
+    instance.sysProcMonInfo.hour = dateTimeLocal.time().hour();
+    instance.sysProcMonInfo.min = dateTimeLocal.time().minute();
+#endif
+
+
+
+#if DEVICE
+    threadAPI = new QThread;
+    apiWorker = new ApiWorker;
+
+    apiWorker->act = instance.sysProcAct;
+    apiWorker->moveToThread(threadAPI);
+
+    connect(threadAPI, &QThread::started, apiWorker, &ApiWorker::run);
+    connect(apiWorker, &ApiWorker::signalFinished, this, [=](){
+        threadAPI->quit();
+        threadAPI->wait();
+
+        apiWorker->deleteLater();
+        threadAPI->deleteLater();
+
+        apiWorker = nullptr;
+        threadAPI = nullptr;
+
+        timerPainter->start(100);
+        instance.isTouchCtrl = true;
+        customButtonCancel->setEnable();
+        customButtonCancel->update();
+    });
+
+    connect(threadAPI, &QThread::finished, threadAPI, &QObject::deleteLater);
+
+    threadAPI->start();
+
+    //instance.guiApi.glucoseSysProcAct(&instance.sysProcAct);
+    //timerPainter->start(100);
+#else
+    QTimer::singleShot(instance.nTouchTime,this,[this](){
+        instance.isTouchCtrl = true;
+    });
+#endif
 }
 
 void PageGarph::pageHide()
 {
     instance.isTouchCtrl = false;
+    timerPainter->stop();
 
     if(bIsProcessSuccess)
     {
@@ -434,7 +470,7 @@ void PageGarph::pageHide()
 #else
         if(instance.getGraphMode() == GRAPH_GAIN)
             instance.caliUserInfo.led_sense = 1;
-        instance.sysProcMonInfo.err_code = QRandomGenerator::global()->bounded(2);
+        instance.sysProcMonInfo.err_code = 0;//QRandomGenerator::global()->bounded(2);
 #endif
         // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_NORMAL;
         // instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_NO_FINGER;
@@ -504,12 +540,16 @@ void PageGarph::pageHide()
             break;
         }
         */
+        if(instance.getPageNumPrev()==PAGE_ELAPSED_NOTICE_POPUP)
+        {
+            instance.setIsMeasure(true);
+        }
+
         emit signalShowPageNum(instance.getPageNumPrev());
     }
 
     labelProgressBar->setGeometry(20,95,30,30);
     bIsProcessSuccess = false;
-    timerPainter->stop();
     instance.setProcCheck(false);
     labelLoading->hide();
     for(int i=0; i<3; i++)

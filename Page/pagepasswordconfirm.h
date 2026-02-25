@@ -23,6 +23,7 @@ public:
 private:
     void init();
 
+    void checkElapsedNotice();
 signals:
     //void signalShowPageNum(PageNum pageNum);
 };
