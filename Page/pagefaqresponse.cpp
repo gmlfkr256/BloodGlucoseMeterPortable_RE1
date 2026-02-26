@@ -81,6 +81,22 @@ void PageFaqResponse::pageShow()
         return;
     }
 
+    bool hasAt = false;
+    for (const QString &s : m_strList) {
+        if (s.contains("@")) { hasAt = true; break; }
+    }
+
+    if (hasAt) {
+        QStringList parsed;
+        for (const QString &s : m_strList) {
+            if (s.contains("@"))
+                parsed += s.split("@", QString::SkipEmptyParts);
+            else
+                parsed.append(s);
+        }
+        m_strList = parsed;
+    }
+
     m_nPageIndexMax = m_strList.size();
     update();
 }
