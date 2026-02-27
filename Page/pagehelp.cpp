@@ -168,21 +168,37 @@ void PageHelp::updateTextSlots()
     int total = m_strList.size();
     if(total == 0) return;
 
-    int indexPrev = (m_nSelectIndex - 1 + total) % total;
-    int indexNext = (m_nSelectIndex + 1) % total;
-
-    labelTextTop->setText(m_strList.at(indexPrev));
-
     labelNumCurrent->setText(QString::number(m_nSelectIndex+1));
     comText->setText(m_strList.at(m_nSelectIndex));
 
-    /*
-    QTimer::singleShot(1000, this, [this](){
-        comText->startMove();
-    });
-    */
-
-    labelTextDown->setText(m_strList.at(indexNext));
+    if(total == 1) {
+        labelTextTop->setVisible(false);
+        labelTextBgTop->setVisible(false);
+        labelButtonGradientTop->setVisible(false);
+        labelTextDown->setVisible(false);
+        labelTextBgDown->setVisible(false);
+        labelButtonGradientDown->setVisible(false);
+    } else if(total == 2) {
+        labelTextTop->setVisible(false);
+        labelTextBgTop->setVisible(false);
+        labelButtonGradientTop->setVisible(false);
+        int indexNext = (m_nSelectIndex + 1) % total;
+        labelTextDown->setText(m_strList.at(indexNext));
+        labelTextDown->setVisible(true);
+        labelTextBgDown->setVisible(true);
+        labelButtonGradientDown->setVisible(true);
+    } else {
+        int indexPrev = (m_nSelectIndex - 1 + total) % total;
+        int indexNext = (m_nSelectIndex + 1) % total;
+        labelTextTop->setText(m_strList.at(indexPrev));
+        labelTextDown->setText(m_strList.at(indexNext));
+        labelTextTop->setVisible(true);
+        labelTextBgTop->setVisible(true);
+        labelButtonGradientTop->setVisible(true);
+        labelTextDown->setVisible(true);
+        labelTextBgDown->setVisible(true);
+        labelButtonGradientDown->setVisible(true);
+    }
 }
 
 void PageHelp::moveNext()
