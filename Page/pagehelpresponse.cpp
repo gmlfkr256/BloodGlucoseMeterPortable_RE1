@@ -69,10 +69,8 @@ void PageHelpResponse::pageShow()
     labelNumCurrent->setFont(textResource.getFont(PAGE_HELP_RESPONSE,"labelNumCurrent"));
     labelNumAll->setFont(textResource.getFont(PAGE_HELP_RESPONSE,"labelNumAll"));
 
-    int catIdx = instance.nSelectTextIndex;
-    int qIdx = instance.nSelectTextIndexSub;
-
-    QString key = QString("labelTextHelp%1-%2").arg(catIdx).arg(qIdx);
+    int idx = instance.nSelectTextIndex;
+    QString key = QString("labelTextHelp%1").arg(idx);
     m_strList = textResource.getText(PAGE_HELP_RESPONSE, key);
 
     if(m_strList.isEmpty())
@@ -88,7 +86,7 @@ void PageHelpResponse::pageShow()
 void PageHelpResponse::pageHide()
 {
     instance.setPageNumPrev(PAGE_HELP_RESPONSE);
-    emit signalShowPageNum(PAGE_HELP);
+    emit signalShowPageNum(PAGE_HELP_INDEX);
 }
 
 void PageHelpResponse::mousePressEvent(QMouseEvent *ev)

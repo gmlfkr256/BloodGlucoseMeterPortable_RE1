@@ -628,10 +628,13 @@ void TextResource::init()
     //PAGE_HELP_INDEX
     fontData[Lan][PAGE_HELP_INDEX].insert("labelText",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
     textData[Lan][PAGE_HELP_INDEX].insert("labelText",QStringList{
-                                              "제품설명 및 사용목적", // 0
-                                              "측정 주의사항", // 1
-                                              "측정제한 및 상담대상", // 2
-                                              "알림기능", // 3
+                                              "사용 대상", // 0
+                                              "제품 안내", // 1
+                                              "사용 목적", // 2
+                                              "측정 전 주의사항", // 3
+                                              "사용 전 전문의 상담대상", // 4
+                                              "제품 주요기능 안내", // 5
+                                              "블루투스 지원 범위", // 6
                                           });
 
     //PAGE_HELP
@@ -662,34 +665,33 @@ void TextResource::init()
     fontData[Lan][PAGE_HELP_RESPONSE].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
     fontData[Lan][PAGE_HELP_RESPONSE].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
     fontData[Lan][PAGE_HELP_RESPONSE].insert("labelText",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
-    // Help 카테고리 0: 제품설명 및 사용목적
-    textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp0-0",QStringList{
+    // Help 0: 사용 대상
+    textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp0",QStringList{
                                                  "사용대상은 만 19세 이상의 당뇨병 전단계인 성인 남녀입니다.",
                                              });
-    textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp0-1",QStringList{
+    // Help 1: 제품 안내
+    textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp1",QStringList{
                                                  "해피존 기기에서 혈당 수치를 측정할 수 있고 앱(APP)과 연동하여 혈당 수치 DATA를 날짜별, 기간별로 확인하여 혈당 수치를 관리하고 모니터링 할 수 있는 제품입니다.",
                                              });
-    textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp0-2",QStringList{
+    // Help 2: 사용 목적
+    textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp2",QStringList{
                                                  "만 19세 이상 약물치료를 하지 않는 당뇨병 전단계 환자의 혈당 관리(모니터링)를 위해 사용되는 의료기기이며, 당뇨병 진단 및 치료, 인슐린 투여 등 의료적 결정의 목적으로는 사용할 수 없습니다.",
                                              });
-    // Help 카테고리 1: 측정 주의사항
-    textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp1-0",QStringList{
-                                                 "측정 전 손을 깨끗이 씻고 물기를 제거해주세요. 측정 중에는 움직임과 강한 손가락 압박을 피해주세요.",
+    // Help 3: 측정 전 주의사항
+    textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp3",QStringList{
+                                                 "측정 전 손을 깨끗이 씻고 물기를 제거해주세요. 측정 중에는 움직임과 강한 손가락 압박을 피해주세요. *기타 측정에 영향을 줄 수 있는 사용설명서 내용을 반드시 참고해주세요.",
                                              });
-    // Help 카테고리 2: 측정제한 및 상담대상
-    textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp2-0",QStringList{
-                                                 "다음 상황에서는 측정값이 부정확할 수 있습니다. 반드시 전문 의료인 상담 후 이용하세요.",
-                                                 "[연령] 만 19세 미만",
-                                                 "[증상] 광 조사 부위에 피부질환, 상처, 다한증, 파킨슨병 등 손 떨림이 있는 경우",
-                                                 "[병력] 중증 저혈당, 당뇨병 케톤산증, 간질, 실신, 부신 질환 병력이 있는 경우",
-                                                 "[치료/기타] 혈액투석 또는 복막투석 중인 경우, 임산부 및 수유부",
+    // Help 4: 사용 전 전문의 상담대상
+    textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp4",QStringList{
+                                                 "광 조사 부위에 피부질환, 상처, 다한증, 파킨슨병 등 손 떨림이 있는 경우, 중증 저혈당, 당뇨병 케톤산증, 간질, 실신, 부신 질환 병력이 있는 경우, 혈액투석 또는 복막투석 중인 경우, 임산부 및 수유부, 만 19세 미만인 경우",
                                              });
-    // Help 카테고리 3: 알림기능
-    textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp3-0",QStringList{
-                                                 "다음과 같은 주요 알림 기능을 제공합니다.",
-                                                 "∙ 고혈당/저혈당 상태 알림",
-                                                 "∙ 혈당보정 유효기간 만료 알림 (혈당보정일로부터 90일 경과 시 발생)",
-                                                 "∙ 혈당 재보정 알림 (만료 15일 전부터 발생)",
+    // Help 5: 제품 주요기능 안내
+    textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp5",QStringList{
+                                                 "* 고혈당/저혈당 상태 알림 * 혈당 보정 유효기간 알림 (혈당보정일로부터 90일 경과 시 발생) * 혈당 재보정 알림 (만료 15일 전부터 발생)",
+                                             });
+    // Help 6: 블루투스 지원 범위
+    textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp6",QStringList{
+                                                 "해피존 APP 전용 블루투스 기능이며, 다른 기기와는 호환되지 않습니다.",
                                              });
 
     //PAGE_FAQ_INDEX

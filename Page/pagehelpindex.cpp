@@ -62,7 +62,7 @@ void PageHelpIndex::pageShow()
     m_strList = textResource.getText(PAGE_HELP_INDEX,"labelText");
     m_nPageIndexMax = (m_strList.count()-1)/4;
 
-    if(instance.getPageNumPrev() == PAGE_HELP)
+    if(instance.getPageNumPrev() == PAGE_HELP_RESPONSE)
         m_nPageIndex = instance.nSelectTextIndex / 4;
     else
         m_nPageIndex = 0;
@@ -130,7 +130,7 @@ void PageHelpIndex::mouseReleaseEvent(QMouseEvent *ev)
         {
             instance.setPageNumPrev(PAGE_HELP_INDEX);
             instance.nSelectTextIndex = m_nPageIndex*4 + i;
-            emit signalShowPageNum(PAGE_HELP);
+            emit signalShowPageNum(PAGE_HELP_RESPONSE);
             return;
         }
     }
