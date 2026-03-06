@@ -9,6 +9,7 @@ PageFaqResponse::PageFaqResponse(QWidget *parent) : Page(parent)
 void PageFaqResponse::init()
 {
     labelText = new QLabel(this);
+    labelText->setAttribute(Qt::WA_TransparentForMouseEvents);
     labelText->setWordWrap(true);
     labelText->setGeometry(65,95,472,250);
     labelText->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
@@ -36,6 +37,14 @@ void PageFaqResponse::init()
     labelArrowDown->setGeometry(565,310,70,70);
     instance.pixLoad(labelArrowDown,false,strDirPath,"/arrowDown.png");
 
+    labelTouchTop = new QLabel(this);
+    labelTouchTop->setGeometry(40,73,520,96);
+    labelTouchTop->setAttribute(Qt::WA_TransparentForMouseEvents);
+
+    labelTouchDown = new QLabel(this);
+    labelTouchDown->setGeometry(40,249,520,96);
+    labelTouchDown->setAttribute(Qt::WA_TransparentForMouseEvents);
+
     customButtonBack = new CustomButtonBack(this);
     customButtonBack->setLongWidth(true);
 }
@@ -58,6 +67,8 @@ void PageFaqResponse::update()
     labelNumCurrent->setVisible(showNum);
     labelNumBar->setVisible(showNum);
     labelNumAll->setVisible(showNum);
+
+    labelText->setGeometry(65, 95, showNum ? 472 : 510, 250);
 }
 
 void PageFaqResponse::pageShow()
@@ -149,6 +160,17 @@ void PageFaqResponse::mouseReleaseEvent(QMouseEvent *ev)
             pageNext();
         else
             pagePrev();
+        return;
+    }
+
+    if(instance.touchCheck(labelTouchTop->geometry(), ev))
+    {
+        pagePrev();
+        return;
+    }
+    if(instance.touchCheck(labelTouchDown->geometry(), ev))
+    {
+        pageNext();
         return;
     }
 }
