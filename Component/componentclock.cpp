@@ -16,7 +16,9 @@ void ComponentClock::init()
 
     connect(timerClock,&QTimer::timeout,this,&ComponentClock::update);
     update();
-    timerClock->start(1000);
+    QTimer::singleShot(2000, this, [this]() {
+        timerClock->start(1000);
+    });
 }
 
 void ComponentClock::update()

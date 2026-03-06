@@ -16,8 +16,11 @@ void ComponentBattery::init()
 
     timerBattery = new QTimer(this);
     connect(timerBattery,&QTimer::timeout,this,&ComponentBattery::update);
-    timerBattery->start(5000);
-    update();
+    QTimer::singleShot(5000, this, [this]() {
+        update();
+        timerBattery->start(5000);
+    });
+    updateUI();
 }
 
 void ComponentBattery::update()
