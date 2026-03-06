@@ -52,7 +52,32 @@
 #include "Page/pageselectuser.h"
 #include "Page/pagecaliresultmulticonfirm.h"
 #include "Page/pagecaliselectconfirm.h"
-
+#include "Page/pageelapsednoticepopup.h"
+#include "Page/pagebloodcheck.h"
+#include "Page/pagebloodnoticepopup.h"
+#include "Page/pageusercheck.h"
+#include "Page/pagebloodchecknotice.h"
+#include "Page/pagecalivaluenotice.h"
+#include "Page/pageusernotice.h"
+#include "Page/pageuserfinger.h"
+#include "Page/pagecalinotice.h"
+#include "Page/pageuserchecknotice.h"
+#include "Page/pageusercautions.h"
+#include "Page/pagehelp.h"
+#include "Page/pagefaq.h"
+#include "Page/pageerrorhelp.h"
+#include "Page/pagecaliselectre.h"
+#include "Page/pageresponse.h"
+#include "Page/pageresponsere.h"
+#include "Page/pagefaqre.h"
+#include "Page/pagehelpre.h"
+#include "Page/pageerrorhelpre.h"
+#include "Page/pagehelpindex.h"
+#include "Page/pagefaqindex.h"
+#include "Page/pageerrorhelpindex.h"
+#include "Page/pagehelpresponse.h"
+#include "Page/pagefaqresponse.h"
+#include "Page/pageerrorhelpresponse.h"
 
 class MainWindow : public QMainWindow
 {
@@ -116,9 +141,36 @@ public:
     PageSelectUser *pageSelectUser;
     PageCaliResultMultiConfirm *pageCaliResultMultiConfirm;
     PageCaliSelectConfirm *pageCaliSelectConfirm;
+    PageBloodCheck *pageBloodCheck;
+    PageElapsedNoticePopup *pageElapsedNoticePopup;
+    PageBloodNoticePopup *pageBloodNoticePopup;
+    PageUserCheck *pageUserCheck;
+    PageBloodCheckNotice *pageBloodCheckNotice;
+    PageCaliValueNotice *pageCaliValueNotice;
+    PageUserNotice *pageUserNotice;
+    PageUserFinger *pageUserFinger;
+    PageCaliNotice *pageCaliNotice;
+    PageUserCheckNotice *pageUserCheckNotice;
+    PageUserCautions *pageUserCautions;
+    PageHelp *pageHelp;
+    PageFaq *pageFaq;
+    PageErrorHelp *pageErrorHelp;
+    PageCaliSelectRe *pageCaliSelectRe;
+    PageResponse *pageResponse;
+    PageResponseRe *pageResponseRe;
+    PageFaqRe *pageFaqRe;
+    PageHelpRe *pageHelpRe;
+    PageErrorHelpRe *pageErrorHelpRe;
+    PageHelpIndex *pageHelpIndex;
+    PageFaqIndex *pageFaqIndex;
+    PageErrorHelpIndex *pageErrorHelpIndex;
+    PageHelpResponse *pageHelpResponse;
+    PageFaqResponse *pageFaqResponse;
+    PageErrorHelpResponse *pageErrorResponse;
 
     QList<int> listComHiddenPageIndex;
     QMap<PageNum,QString> mapPageNumName;
+    QList<int> listComDisablePageIndex;
 public slots:
      void setPageByPageNum(PageNum pageNum);
 private:
@@ -127,6 +179,8 @@ private:
     void currentPageChanged(int index);
     void ShowComponents();
     void HideComponents();
+    void componentsEnable();
+    void componentsDisable();
 
     QString getPageName(PageNum pageNum);
 };

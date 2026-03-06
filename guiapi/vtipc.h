@@ -62,6 +62,8 @@ typedef enum {
 	VTIPC_MSGID_CALI_CLEAR_SPEC_INFO,
 	VTIPC_MSGID_CALI_RESTORE_INFO,
 	VTIPC_MSGID_CALI_SET_GLUCOSE,
+	VTIPC_MSGID_CALI_GET_REGI_DATE,
+	VTIPC_MSGID_CALI_USER_TYPE,
 
 	// configuration for calibration & measure
 	VTIPC_MSGID_CALI_USER_DATA,
@@ -87,6 +89,9 @@ typedef enum {
 
 	// user login state
 	VTIPC_MSGID_USER_STATE_LOGIN,
+
+	// glucose high & low value
+	VTIPC_MSGID_GLUCOSE_HIGHLOW,
 
 	VTIPC_MSGID_MAX
 } vtIpcMsgId_e;
@@ -137,10 +142,12 @@ typedef union vtIpcMsgKind_T {
 		gapiCaliUserInfo_t cali_info;
 		gapiCaliUserSpecData_t cali_spec;
 		gapiCaliSetGlucose_t cali_glucose;
+		gapiCaliRegisteredDate_t cali_regi;
 
 		// configuration for calibration & measure
 		gapiCaliMeasureCfgUser_t user_cfg;
 		gapiGlucoseLimit_t glu_limit;
+		gapiGlucoseHighLow_t glu_highlow;
 		gapiMotorData_t motor;
 
 		// for process activity

@@ -24,6 +24,10 @@ void PageCaliResultMulti::init()
         labelTextHeart[i] = new QLabel(this);
         labelTextHeart[i]->setGeometry(labelButton[i]->geometry().x(),labelButton[i]->geometry().y()+126,labelButton[i]->width(),45);
         labelTextHeart[i]->setAlignment(Qt::AlignCenter);
+
+        labelNum[i] = new QLabel(this);
+        labelNum[i]->setGeometry(labelButton[i]->geometry().x()+33,labelButton[i]->geometry().y()+47,85,85);
+        instance.pixLoad(labelNum[i],false,strDirPath,"/num0"+QString::number(i+1)+".png");
     }
 
     customButtonOk = new CustomButtonOK(this);
@@ -40,7 +44,6 @@ void PageCaliResultMulti::update()
     customButtonCancel->update();
     customButtonMeasure->update();
     customButtonMeasureRe->update();
-
 
 #if DEVICE
     instance.updateCaliUserInfo();
@@ -88,9 +91,14 @@ void PageCaliResultMulti::update()
     for(int i=0; i<3; i++)
     {
         if(instance.caliUserInfo.val[instance.getCaliSelectIndex()].adc[i] != 0)
+        {
             instance.pixLoad(labelButton[i],false,strDirPath,"/validCheck.png");//instance.pixLoad(labelButton[i],false,strDirPath,"/validBg.png");
-        else
+            labelNum[i]->hide();
+        }else
+        {
             instance.pixLoad(labelButton[i],false,strDirPath,"/buttonBg.png");
+            labelNum[i]->show();
+        }
 
         labelTextAdc[i]->setText("");
         labelTextTemp[i]->setText("");
@@ -128,7 +136,8 @@ void PageCaliResultMulti::mousePressEvent(QMouseEvent *ev)
         qDebug()<<"multi ok";
         if(instance.getCaliIndexCompleteCheck(instance.getCaliSelectIndex()))
         {
-            emit signalShowPageNum(PAGE_CALI_SELECT);
+            //emit signalShowPageNum(PAGE_CALI_SELECT);
+            emit signalShowPageNum(PAGE_CALI_SELECT_RE);
         }
         else
         {
@@ -141,7 +150,8 @@ void PageCaliResultMulti::mousePressEvent(QMouseEvent *ev)
     if(customButtonCancel->isVisible() && instance.touchCheck(customButtonCancel->geometry(),ev))
     {
         qDebug()<<"multi cancel";
-        emit signalShowPageNum(PAGE_CALI_SELECT);
+        //emit signalShowPageNum(PAGE_CALI_SELECT);
+        emit signalShowPageNum(PAGE_CALI_SELECT_RE);
     }
 
     if(customButtonMeasure->isVisible() && instance.touchCheck(customButtonMeasure->geometry(),ev))

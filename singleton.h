@@ -81,6 +81,32 @@ typedef enum
     PAGE_UPGRADE_FAIL,
     PAGE_CALI_RESULT_MULTI_CONFIRM,
     PAGE_CALI_SELECT_CONFIRM,
+    PAGE_ELAPSED_NOTICE_POPUP,
+    PAGE_BLOOD_CHECK,
+    PAGE_BLOOD_NOTICE_POPUP,
+    PAGE_USER_CHECK,
+    PAGE_BLOOD_CHECK_NOTICE,
+    PAGE_CALI_VALUE_NOTICE,
+    PAGE_USER_NOTICE,
+    PAGE_USER_FINGER,
+    PAGE_CALI_NOTICE,
+    PAGE_USER_CHECK_NOTICE,
+    PAGE_USER_CAUTIONS,
+    PAGE_HELP,
+    PAGE_FAQ,
+    PAGE_ERROR_HELP,
+    PAGE_CALI_SELECT_RE,
+    PAGE_RESPONSE,
+    PAGE_RESPONSE_RE,
+    PAGE_FAQ_RE,
+    PAGE_HELP_RE,
+    PAGE_ERROR_HELP_RE,
+    PAGE_HELP_INDEX,
+    PAGE_FAQ_INDEX,
+    PAGE_ERROR_HELP_INDEX,
+    PAGE_HELP_RESPONSE,
+    PAGE_FAQ_RESPONSE,
+    PAGE_ERROR_RESPONSE,
 
     //PAGE_COLOR,
 
@@ -262,12 +288,14 @@ public:
     QString fontSC;
     bool bIsStart = true;
 
-    int thresholdLow;
-    int thresholdHigh;
-    const int nThresholdLimitLowMin = 53;
-    const int nThresholdLimitLowMax = 69;
+    int thresholdLow = 79;
+    int thresholdHigh = 250;
+
+    int nThresholdLimitLowMin = 70;
+    const int nThresholdLimitLowMax = 79;
     const int nThresholdLimitHighMin = 170;
-    const int nThresholdLimitHighMax = 400;
+    int nThresholdLimitHighMax = 350;
+
     gapiSysUserInfo_t sysUserInfo[USER_MAX];
     gapiCaliUserInfo_t caliUserInfo;
     gapiDispData_t dispData;
@@ -278,6 +306,7 @@ public:
     gapiHistValue_t histValue;
     gapiSpkData_t spkData;
     gapiGlucoseLimit_t glucoseLimit;
+    gapiGlucoseHighLow_t glucoseHighLow;
     gapiHistInfo_t hisInfo[91];
 
     gapiSysOprData_t sysData;
@@ -297,6 +326,10 @@ public:
     bool bIsDetachCtrlBat = false;
 
     PageNum currentPage = PAGE_MAX;
+
+    const int DRAG_THRESHOLD = 40;
+    int nSelectTextIndex = 0; // ex
+    int nSelectTextIndexSub = 0;
 
     void init();
 
@@ -345,6 +378,7 @@ public:
     bool getCaliCompleteCheck();
     bool getCaliIndexCompleteCheck(int nCaliSelectIndex);
     bool getCaliValueCompleteCheck();
+    bool getCaliIndexVenousCheck(int nCaliSelectIndex);
 
     //PageGraph
     void setGraphMode(GraphMode graphMode);
@@ -353,6 +387,7 @@ public:
     //PageCaliSelect
     void setCaliSelectIndex(CaliSelIndex caliSelectIndex);
     CaliSelIndex getCaliSelectIndex();
+
 
     //PageCaliResultMulti
     void setCaliSelectOrder(CaliSelOrder caliSelectOrder);
@@ -370,6 +405,9 @@ public:
     //PageThreshold
     void setThresholdIndex(ThresholdIndex thresholdIndex);
     ThresholdIndex getThresholdIndex();
+    void setThresholdHighLow();
+    void getThresholdHighLow();
+
 
     //PageThresholdValue
     void setThresholdValue(ThresholdIndex thresholdIndex, int nValue);
@@ -382,6 +420,18 @@ public:
     void clearCaliUserInfo(int index);
     void setIsRemeasure(bool isRemeasure);
     bool getIsRemeasure();
+
+    //PageBloodCheck
+    bool getIsBlood();
+    void setIsBlood(bool isBlood = false);
+    bool getIsVenousBlood();
+
+    //PageElapsedNoticePopup;
+    bool getIsMeasure();
+    void setIsMeasure(bool isMeasure);
+
+    //PagePasswordConfirm
+    bool getIsUseElapsed();
 
     //public
     bool touchCheck(const QRect &rect, QMouseEvent* ev);
@@ -406,11 +456,17 @@ public:
 
     bool isPasswordEqual(const char* pazRaw, int nSize, const QString& strInput);
 
+    int getElapsedDay();
+
+    int getNumUserCheck();
+    void setNumUserCheck(int nSelects = GAPI_CALI_UTYPE_NONE);
+
     // 🔹 시그널 플래그 조작 함수
     void setBleConnectedFlag(sig_atomic_t val);     // 핸들러에서 호출
     sig_atomic_t getBleConnectedFlag() const;
     bool isBleConnected() const;                    // 플래그 == 0 ?
     void resetBleConnectedFlag();                   // 0 → 1로 복구
+
 private:
     //Singleton() = default;
     explicit Singleton(QObject* parent = nullptr) : QObject(parent){init();};
@@ -425,6 +481,8 @@ private:
     PageNum pageNumPrev = PAGE_MAX;
 
     bool procCheck = false;
+
+    int nElapsedDay = 15;
 
     //PagePassword
     UserNum nUserNumber = USER_MAX;
@@ -468,6 +526,17 @@ private:
 
     volatile sig_atomic_t bleConnectedFlag = 1;
 
+    //PageBloodCheck
+    bool isBlood = false;
+
+    //PagePasswordConfirm
+    bool isUseElapsed = false;
+
+    //PageElapsedNoticePopup
+    bool isMeasure = false;
+
+signals:
+    void signalInitVolume();
 };
 
 #endif // SINGLETON_H

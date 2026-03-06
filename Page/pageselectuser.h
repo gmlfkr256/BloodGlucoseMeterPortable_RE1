@@ -19,13 +19,16 @@ public:
     int nLabelNumber = -1;
     bool bIsOneClick = false;
 
-    void update() override;
+    CustomButtonLanguage *customButtonLanguage;
+
+
     void pageShow() override;
     void pageHide() override;
 private:
     void init();
 
 public slots:
+    void update() override;
 
 private slots:
 

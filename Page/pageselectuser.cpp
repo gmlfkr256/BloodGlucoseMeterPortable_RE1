@@ -11,7 +11,7 @@ void PageSelectUser::init()
     setBgTopHide();
 
     labelTitle = new QLabel(this);
-    labelTitle->setGeometry(0,325,640,45);
+    labelTitle->setGeometry(0,60,640,45);
     labelTitle->setAlignment(Qt::AlignCenter);
     labelTitle->setStyleSheet("color: #808080;");
 
@@ -26,22 +26,27 @@ void PageSelectUser::init()
 
         if(i==0)
         {
-            labelUserImg[0]->setGeometry(75,98,245,215);
+            labelUserImg[0]->setGeometry(75,140,245,215);
             //labelUserText[0]->setGeometry(75,248,245,45);
         }
         else if(i==1)
         {
-            labelUserImg[1]->setGeometry(320,98,245,215);
+            labelUserImg[1]->setGeometry(320,140,245,215);
             //labelUserText[1]->setGeometry(320,248,245,45);
         }
     }
 
+    customButtonLanguage = new CustomButtonLanguage(this);
+
+    connect(customButtonLanguage,&CustomButtonLanguage::signalUpdateLanguage,this,&PageSelectUser::update);
 
     update();
 }
 
 void PageSelectUser::update()
 {
+    customButtonLanguage->update();
+
     labelTitle->setFont(textResource.getFont(PAGE_SELECT_USER,"labelTitle"));
     labelTitle->setText(textResource.getText(PAGE_SELECT_USER,"labelTitle").at(0));
 
@@ -76,6 +81,11 @@ void PageSelectUser::mousePressEvent(QMouseEvent *ev)
             nLabelNumber = i;
             instance.pixLoad(labelUserImg[i],false,strDirPath,"/buttonUser"+QString::number(i)+"Press.png");
         }
+    }
+
+    if(instance.touchCheck(customButtonLanguage->geometry(),ev))
+    {
+        customButtonLanguage->updateLanguage();
     }
 }
 

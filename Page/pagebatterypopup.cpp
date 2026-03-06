@@ -56,7 +56,10 @@ void PageBatteryPopup::updateTimer()
 
 #if DEVICE
     if(nBatterySleepCount>=5)
+    {
+        //qDebug()<<"Power Down";
         instance.guiApi.glucoseActPowerDown();
+    }
 #endif
 }
 

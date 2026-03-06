@@ -13,9 +13,13 @@ public:
     void update() override;
 
     void setLongWidth(bool bIsLong);
+    void setEnable();
+    void setDisable();
+    bool getEnable();
 private:
     void init();
     bool bIsLong = false;
+    bool bIsEnable = true;
 };
 
 #endif // CUSTOMBUTTONOK_H

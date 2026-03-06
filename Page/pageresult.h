@@ -25,6 +25,19 @@ public:
     QLabel *labelProgressBarTextStart;
     QLabel *labelProgressBarTextEnd;
 
+#if PICTURE_MODE
+    int fglucoseValue = 76;
+    QMap<int,int> fMap = {{0,76},{1,75},{2,75},
+                          {3,201},{4,199},{5,198},
+                          {6,300},{7,301},{8,297},
+                          {9,71},{10,70},{11,72},
+                          {12,80},{13,79},{14,79},
+                          {15,296},{16,302},{17,301},
+                          {18,251},{19,254},{20,250},
+                         };
+    int fCount = 0;
+#endif
+
     CustomButtonSave *customButtonSave;
     CustomButtonCancel *customButtonCancel;
 

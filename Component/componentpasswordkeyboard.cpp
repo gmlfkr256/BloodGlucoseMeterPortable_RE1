@@ -132,7 +132,7 @@ void ComponentPasswordKeyboard::mousePressEvent(QMouseEvent *ev)
 
                 labelButton[i]->setStyleSheet(bIsKeyPress(true,KEY_FUNC_NORMAL));
                 nLabelIndex = i+5;
-                qDebug()<<strKey;
+                qDebug()<<"input_Key: "<<strKey;
                 emit signalKeyClick(getDisplayText());
             }
         }

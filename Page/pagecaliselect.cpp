@@ -46,7 +46,14 @@ void PageCaliSelect::update()
     for(int i=0; i<5; i++)
     {
         if(instance.getCaliIndexCompleteCheck(i))
-            instance.pixLoad(labelSelectButton[i],false,strDirPath,"/validCheck.png");//instance.pixLoad(labelSelectButton[i],false,strDirPath,"/validBg.png");
+        {
+            if(instance.getCaliIndexVenousCheck(i))
+            {
+                instance.pixLoad(labelSelectButton[i],false,strDirPath,"/validCheckVenous.png");
+            }
+            else
+                instance.pixLoad(labelSelectButton[i],false,strDirPath,"/validCheck.png");//instance.pixLoad(labelSelectButton[i],false,strDirPath,"/validBg.png");
+        }
         else
             instance.pixLoad(labelSelectButton[i],false,strDirPath,"/buttonBg.png");
 
@@ -130,6 +137,14 @@ void PageCaliSelect::mousePressEvent(QMouseEvent *ev)
                     emit signalShowPageNum(PAGE_CALI_SELECT_CONFIRM);
                     return;
                 }
+            }
+
+            if(!instance.getGainCompleteCheck())
+            {
+                //instance.setPageNumPrev(PAGE_CALI_SELECT);
+                instance.setPageNumPrev(PAGE_CALI_SELECT_RE);
+                emit signalShowPageNum(PAGE_USER_NOTICE);
+                return;
             }
 
             instance.setCaliSelectIndex(static_cast<CaliSelIndex>(i));

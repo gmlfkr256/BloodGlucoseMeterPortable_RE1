@@ -33,6 +33,11 @@ void ComponentHome::update()
 
 void ComponentHome::mousePressEvent(QMouseEvent *ev)
 {
+    if(!getIsEnable())
+    {
+        return;
+    }
+
     if(instance.currentPage==PAGE_HISTORY_RESULT)
         return;
 
@@ -51,3 +56,4 @@ void ComponentHome::pageHide()
 {
     this->hide();
 }
+

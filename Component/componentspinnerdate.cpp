@@ -74,6 +74,7 @@ void ComponentSpinnerDate::update()
     {
         strValueTop = "";
     }
+
     if(nValue-1<nMin)
     {
         strValueBottom = "";

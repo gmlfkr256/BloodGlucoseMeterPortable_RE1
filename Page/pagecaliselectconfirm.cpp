@@ -33,7 +33,8 @@ void PageCaliSelectConfirm::pageShow()
 
 void PageCaliSelectConfirm::pageHide()
 {
-    emit signalShowPageNum(PAGE_CALI_SELECT);
+    //emit signalShowPageNum(PAGE_CALI_SELECT);
+    emit signalShowPageNum(PAGE_CALI_SELECT_RE);
 }
 
 void PageCaliSelectConfirm::mousePressEvent(QMouseEvent *ev)

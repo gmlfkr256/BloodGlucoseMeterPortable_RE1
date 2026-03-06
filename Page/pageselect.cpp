@@ -247,11 +247,28 @@ void PageSelect::mousePressEvent(QMouseEvent *ev)
     {
         if(instance.getCaliGainCompleteCheck())
         {
+            /*
+            if(!instance.getIsVenousBlood())
+            {
+                emit signalShowPageNum(PAGE_BLOOD_CHECK_NOTICE);
+                return;
+            }
+            else */
+            if(instance.getElapsedDay()>=86)
+            {
+                instance.setIsMeasure(true);
+                emit signalShowPageNum(PAGE_ELAPSED_NOTICE_POPUP);
+                return;
+            }
+
             pageHide();
         }
         else
         {
-            emit signalShowPageNum(PAGE_CALI_CHECK);
+            //emit signalShowPageNum(PAGE_CALI_CHECK);
+            instance.setPageNumPrev(PAGE_HOME);
+            //emit signalShowPageNum(PAGE_USER_CHECK);
+            emit signalShowPageNum(PAGE_USER_NOTICE);
         }
     }
 }
