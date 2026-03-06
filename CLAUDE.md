@@ -64,6 +64,8 @@ MainWindow (QMainWindow)
 
 `feat` / `fix` / `docs` / `style` / `refactor` / `chore`
 
+- **코드 변경 시 자동 커밋**: 코드 파일을 수정한 후에는 반드시 즉시 git commit을 수행한다. 사용자 요청을 기다리지 않고 변경 완료 시점에 자동으로 커밋한다.
+
 ## Git 브랜치
 
 - `main`: 안정 버전 / `develop`: 통합 테스트 / `feature/*`, `bugfix/*`, `hotfix/*`
