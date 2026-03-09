@@ -25,6 +25,7 @@ private:
 
     // Sliding window median filter
     static const int WINDOW_SIZE = 12;
+    static const int MIN_SAMPLES = 3;
     int batteryWindow[WINDOW_SIZE];
     int windowCount;
     int windowIndex;

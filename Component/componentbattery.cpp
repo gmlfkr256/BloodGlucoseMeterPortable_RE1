@@ -174,7 +174,9 @@ int ComponentBattery::selectIconLevel(int batteryValue)
 // Improvement 5: No special first-check branch — unified logic
 void ComponentBattery::updateUI()
 {
-    nCurrentIconLevel = selectIconLevel(nFilteredBattery);
+    // Skip icon update until we have enough samples to filter reliably
+    if(windowCount >= MIN_SAMPLES)
+        nCurrentIconLevel = selectIconLevel(nFilteredBattery);
 
     QString pngPath = "/nBattery";
     pngPath += QString::number(nCurrentIconLevel);
