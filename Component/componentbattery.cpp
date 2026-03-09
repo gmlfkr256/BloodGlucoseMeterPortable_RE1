@@ -43,6 +43,13 @@ void ComponentBattery::update()
 
         // Improvement 1: Input clamping
         nBatterySize = qBound(0, static_cast<int>(batData.charge), 100);
+
+        // Discard 0% — app force-quits below 5%, so 0 is always a HW read error
+        if(nBatterySize == 0)
+        {
+            DEBUG_BAT("Discarded charge=0 (HW read error)");
+            return;
+        }
     }
     else
     {
