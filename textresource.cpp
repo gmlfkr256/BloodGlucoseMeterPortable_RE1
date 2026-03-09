@@ -606,10 +606,10 @@ void TextResource::init()
                                                  "2. 측정 중 말을 삼가, 움직임 금지",
                                                  "3. 손가락에 힘/압력 금지",
                                                  "4. 손가락에 물기와 이물질X",
-                                                 "5. 손가락 표면온도 26도 이상 유지",
+                                                 "5. 손가락 표면온도 26°C 이상 유지",
                                                  "6. 손가락을 측정부에 밀착, 수평 유지",
                                                  "7. 반드시 충전기를 분리해서 사용",
-                                                 "8. 사용장소 온도확인(15~35도 이내)",
+                                                 "8. 사용장소 온도확인(15~35°C 이내)",
                                              });
 
     //PAGE_CALI_SELECT_RE
@@ -632,9 +632,9 @@ void TextResource::init()
                                               "제품 안내", // 1
                                               "사용 목적", // 2
                                               "측정 전 주의사항", // 3
-                                              "사용 전 전문의 상담대상", // 4
-                                              "제품 주요기능 안내", // 5
-                                              "블루투스 지원 범위", // 6
+                                              "사용 전 전문의\n상담 대상", // 4
+                                              "제품 주요\n기능 안내", // 5
+                                              "블루투스\n지원 범위", // 6
                                           });
 
     //PAGE_HELP
@@ -671,21 +671,25 @@ void TextResource::init()
                                              });
     // Help 1: 제품 안내
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp1",QStringList{
-                                                 "해피존 기기에서 혈당 수치를 측정할 수 있고 앱(APP)과 연동하여 혈당 수치 혈당 기록을 날짜별,@기간별로 확인하여 혈당 수치를 관리하고 모니터링 할 수 있는 제품입니다.",
+                                                 "해피존 기기에서 혈당 수치를 측정할 수 있고 앱(APP)과 연동하여 혈당 수치 자료를 날짜별,"
+                                                 "@기간별로 확인하여 혈당 수치를 관리하고 모니터링 할 수 있는 제품입니다.",
                                              });
     // Help 2: 사용 목적서
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp2",QStringList{
-                                                 "만 19세 이상 약물치료를 하지 않는 당뇨병 전단계 환자의 혈당 관리(모니터링)를 위해 사용되는 의료기기이며,@당뇨병 진단 및 치료, 인슐린 투여 등 의료적 결정의 목적으로는 사용할 수 없습니다.",
+                                                 "만 19세 이상 약물치료를 하지 않는 당뇨병 전단계 환자의 혈당 관리(모니터링)를 위해 사용되는 의료기기이며,"
+                                                 "@당뇨병 진단 및 치료, 인슐린 투여 등 의료적 결정의 목적으로는 사용할 수 없습니다.",
                                              });
     // Help 3: 측정 전 주의사항
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp3",QStringList{
-                                                 "측정 전 손을 깨끗이 씻고 물기를 제거해주세요.\n측정 중에는 움직임과 강한 손가락 압박을 피해주세요.@* 기타 측정에 영향을 줄 수 있는 사용설명서 내용을 반드시 참고해주세요.",
+                                                 "측정 전 손을 깨끗이 씻고 물기를 제거해주세요.\n측정 중에는 움직임과 강한 손가락 압박을 피해주세요."
+                                                 "@* 기타 측정에 영향을 줄 수 있는 사용설명서 내용을 반드시 참고해주세요.",
                                              });
     // Help 4: 사용 전 전문의 상담대상
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp4",QStringList{
-                                                 "광 조사 부위에\n피부질환, 상처, 다한증,\n파킨슨병 등 손 떨림이 있는 경우,"
+                                                 "만 19세 미만인 경우\n",
+                                                 "광 조사 부위에 피부질환, 상처,\n 다한증, 파킨슨병 등 손 떨림이 있는 경우,"
                                                  "@중증 저혈당, 당뇨병 케톤산증, 간질, 실신 등\n부신 질환 병력이 있는 경우,"
-                                                 "@혈액투석 또는\n복막투석 중인 경우,\n임산부 및 수유부인 경우,\n만 19세 미만인 경우",
+                                                 "@혈액투석 또는\n복막투석 중인 경우,\n임산부 및 수유부인 경우",
                                              });
     // Help 5: 제품 주요기능 안내
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp5",QStringList{
@@ -705,7 +709,7 @@ void TextResource::init()
     textData[Lan][PAGE_FAQ_INDEX].insert("labelText",QStringList{
                                              "혈당보정", // 0
                                              "혈당 측정", // 1
-                                             "기기 관리", // 2
+                                             "제품 관리", // 2
                                              "휴대/이동", // 3
                                              "혈당기록", // 4
                                              //"정품인증/비밀번호 찾기", // 5
@@ -724,28 +728,28 @@ void TextResource::init()
                                        "'혈당보정(Calibration)'은 무엇인가요?", // 0-0
                                        "혈당보정은 꼭 해야 하나요?", // 0-1
                                        "혈당보정은 언제 하나요?", // 0-2
-                                       "혈당보정 주기는?", // 0-3
+                                       "혈당보정 주기는 어떻게 되나요?", // 0-3
                                        "혈당보정 초기화 시 이전 측정 기록도 삭제되나요?", // 0-4
                                    });
     // 카테고리 1: 혈당측정
     textData[Lan][PAGE_FAQ].insert("labelTextFaq1",QStringList{
-                                       "올바른 측정 자세는?", // 1-0
+                                       "올바른 측정 자세는 무엇인가요?", // 1-0
                                        "손가락 위치는 어떻게 하나요?", // 1-1
                                        "매번 같은 손가락으로만 측정해야 하나요?", // 1-2
-                                       "측정에 적합한 장소는?", // 1-3
+                                       "측정에 적합한 장소는 어디인가요?", // 1-3
                                        "젖은 손으로 측정해도 되나요?", // 1-4
                                        "하루에 몇 번 측정 하나요?", // 1-5
-                                       "측정 소요시간은?", // 1-6
+                                       "측정 소요 시간은 얼마나 걸리나요?", // 1-6
                                        "측정 중 취소할 수 있나요?", // 1-7
                                        "측정이 시작되지 않아요.", // 1-8
                                        "측정 실패가 자주 발생해요.", // 1-9
                                        "측정 시 손가락의 올바른 위치는?", // 1-10
-                                       "혈당 측정 범위는?", // 1-11
+                                       "혈당 측정 범위는 어떻게 되나요?", // 1-11
                                    });
     // 카테고리 2: 기기 관리
     textData[Lan][PAGE_FAQ].insert("labelTextFaq2",QStringList{
-                                       "배터리 완충 시간은?", // 2-0
-                                       "배터리 사용 시간은?", // 2-1
+                                       "배터리 완충 시간을 알려주세요", // 2-0
+                                       "배터리 사용 시간을 알려주세요", // 2-1
                                        "충전 중 사용해도 되나요?", // 2-2
                                        "방수가 되나요?", // 2-3
                                        "제품은 어떻게 관리해야 하나요?", // 2-4
@@ -786,14 +790,14 @@ void TextResource::init()
     fontData[Lan][PAGE_FAQ_RESPONSE].insert("labelText",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
     // FAQ 카테고리 0: 혈당보정
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-0",QStringList{
-                                                "실제 혈당값과 기기 사이의 오차를 줄이기 위해 침습 장비와 연계하여 혈당 수치로 산출하고 조정하는 일련의 과정입니다.",
+                                                "실제 혈당값과 제품 사이의 오차를 줄이기 위해 침습 장비와 연계하여 혈당 수치로 산출하고 조정하는 일련의 과정입니다.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-1",QStringList{
                                                 "네. 사용자 마다 측정 부위의 구조와 외부 환경에 따른 빛의 투과율이 다르기 때문에 정확한 혈당 측정값을 산출하기 위한 개인별 혈당보정이 꼭 필요합니다.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-2",QStringList{
                                                 "처음 사용하기 전에 혈당보정을 수행해야 합니다. 이후에는 혈당보정일로부터 90일 이내에 반드시 재보정해야 합니다."
-                                                "@혈당보정 만료일 기준 15일 전부터 앱 알림을 통해 재보정 시점을 안내드립니다.",
+                                                "@혈당보정 만료일 기준 15일 전부터 알림을 통해 재보정 시점을 안내드립니다.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-3",QStringList{
                                                 "측정 부위 및 환경의 변화로 인한 오차 보정을 위해 혈당보정일로부터 90일 이내에 반드시 재보정을 해야 합니다."
@@ -801,7 +805,7 @@ void TextResource::init()
                                                 "혈당보정 초기화 후 재보정을 수행하면 혈당 측정이 다시 가능합니다.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-4",QStringList{
-                                                "아니오. 혈당보정을 초기화 해도 기록되었던 혈당측정 혈당 기록은 기기에서 최대 90일까지 저장됩니다."
+                                                "아니오. 혈당보정을 초기화 해도 기록되었던 혈당 기록은 제품에서 최대 90일까지 저장됩니다."
                                                 "\n앱에서는 최대 12개월 까지 저장됩니다.",
                                             });
     // FAQ 카테고리 1: 혈당측정
@@ -810,7 +814,7 @@ void TextResource::init()
                                                 "\n손가락 힘을 빼고 삽입구 끝까지 넣어 제품 내부 바닥에 밀착하세요.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-1",QStringList{
-                                                "손가락 지문이 바닥면과 닿게하면서 밀어넣으세요.\n손 끝이 딱 걸리면 힘을 빼고 자세를 고정하세요.",
+                                                "손가락 지문이 바닥면과 닿게 하면서 밀어넣으세요.\n손 끝이 딱 걸리면 힘을 빼고 자세를 고정하세요.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-2",QStringList{
                                                 "정확한 측정을 위해 같은 손가락으로 측정하는 것을 권장합니다.",
@@ -836,14 +840,14 @@ void TextResource::init()
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-9",QStringList{
                                                 "측정 환경을 확인 후 다시 시도해 주세요.\n"
                                                 "측정 환경은 다음과 같습니다."
-                                                "@1. 측정 중 기침, 재채기, 대화, 움직임 금지\n"
-                                                "2. 손가락의 힘을 빼고 바닥에 수평으로 밀착\n"
-                                                "@3. 손가락 표면 온도 26°C 이상 유지\n"
-                                                "4. 손가락의 물기 및 이물질 제거\n"
+                                                "@측정 중 기침, 재채기, 대화, 움직임 금지\n"
+                                                "손가락의 힘을 빼고 바닥에 수평으로 밀착"
+                                                "@손가락 표면 온도 26°C 이상 유지\n"
+                                                "손가락의 물기 및 이물질 제거"
                                                 "@* 사용설명서\n[ 에러 메시지 및 해결 방법 ]을\n참고하세요.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-10",QStringList{
-                                                "손가락 지문이 바닥면과 닿게하면서 밀어넣으세요.\n손 끝이 딱 걸리면 힘을 빼고 자세를 고정하세요.",
+                                                "손가락 지문이 바닥면과 닿게 하면서 밀어넣으세요.\n손 끝이 딱 걸리면 힘을 빼고 자세를 고정하세요.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-11",QStringList{
                                                 "70~350mg/dL\n\n"
@@ -916,14 +920,14 @@ void TextResource::init()
                                             });
     // FAQ 카테고리 7: 비밀번호
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq7-0",QStringList{
-                                               "'상단 바 메뉴' - '유저정보' - '비밀번호 변경'을 통해 안내에 따라 비밀번호를 변경해 주세요.", // 7-0
+                                               "상단 바 '메뉴' - '유저정보' - '비밀번호 변경'을 통해 안내에 따라 비밀번호를 변경해 주세요.", // 7-0
                                             });
 
     //PAGE_ERROR_HELP_INDEX
     fontData[Lan][PAGE_ERROR_HELP_INDEX].insert("labelText",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
     textData[Lan][PAGE_ERROR_HELP_INDEX].insert("labelText",QStringList{
                                                     "혈당 측정", // 0
-                                                    "기기 관리", // 1
+                                                    "제품 관리", // 1
                                                     "블루투스", // 2
                                                     "혈당 기록", // 3
                                                     //"미분류", // 4
@@ -955,7 +959,7 @@ void TextResource::init()
                                               "업그레이드 중 전원이 꺼졌어요", // 1-5
                                               "화면이 멈추거나 너무 느려요", // 1-6
                                               "무슨 오류인지 모르겠어요", // 1-7
-                                              "화면이 터치 되지 않아요.", // 1-8
+                                              "화면이 터치 되지 않아요", // 1-8
                                               "충전이 되지 않아요", // 1-9
                                           });
     // 카테고리 2: 블루투스
@@ -985,15 +989,15 @@ void TextResource::init()
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-1",QStringList{
                                                   "측정 환경을 확인 후 다시 시도해 주세요.\n"
                                                   "측정 환경은 다음과 같습니다."
-                                                  "@1. 측정 중 기침, 재채기, 대화, 움직임 금지\n"
-                                                  "2. 손가락의 힘을 빼고 바닥에 수평으로 밀착\n"
-                                                  "@3. 손가락 표면 온도 26°C 이상 유지\n"
-                                                  "4. 손가락의 물기 및 이물질 제거\n"
+                                                  "@측정 중 기침, 재채기, 대화, 움직임 금지\n"
+                                                  "손가락의 힘을 빼고 바닥에 수평으로 밀착"
+                                                  "@손가락 표면 온도 26°C 이상 유지\n"
+                                                  "손가락의 물기 및 이물질 제거"
                                                   "@* 사용설명서\n[ 에러 메시지 및 해결 방법 ]을\n참고하세요.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-2",QStringList{
                                                   "손가락이 올바르게 삽입되었는지 확인 후 다시 측정해 주세요."
-                                                  "@손가락 지문이 바닥면과 닿게하면서 밀어넣으세요.\n손 끝이 딱 걸리면 힘을 빼고 자세를 고정하세요.",
+                                                  "@손가락 지문이 바닥면과 닿게 하면서 밀어넣으세요.\n손 끝이 딱 걸리면 힘을 빼고 자세를 고정하세요.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-3",QStringList{
                                                   "손가락을 충분히 따뜻하게 한 후 다시 측정해 주세요.",
@@ -1003,7 +1007,7 @@ void TextResource::init()
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-5",QStringList{
                                                   "측정이 되지 않았을 수 있습니다. 다시 측정해주세요. 그래도 문제가 지속된다면 전원버튼을 껐다 켜주세요.",
-                                                  "외부환경(낮은 온도나 주변에 고온의 물체에 노출되었다면 제품가 오작동 될 수 있습니다. 실내온도 20~30°C에서 다시 사용해보세요.",
+                                                  "외부환경(낮은 온도나 주변에 고온의 물체)에 노출되었다면 오작동 될 수 있습니다. 실내온도 20~30°C에서 다시 사용해보세요.",
                                                   "온도, 습도, 물기에 노출된게 아니라면 고객상담실로 고장접수 해주세요.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-6",QStringList{
@@ -1014,10 +1018,10 @@ void TextResource::init()
                                               });
     // ErrorHelp 카테고리 1: 기기 관리
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-0",QStringList{
-                                                  "1. 전원을 껐다 다시켜보세요.\n",
-                                                  "2. 배터리가 충분한지 확인하세요.\n",
-                                                  "3. 충전기를 꽂은 상태로는 측정이 되지 않습니다.@",
-                                                  "4. 물이 닿거나 습도가 높은곳에 보관했었다면 고장에 원인이 될 수 있습니다. 제품 상태를 확인하세요.",
+                                                  "전원을 껐다 다시켜보세요.\n",
+                                                  "배터리가 충분한지 확인하세요.\n",
+                                                  "충전기를 꽂은 상태로는 측정이 되지 않습니다.@",
+                                                  "물이 닿거나 습도가 높은곳에 보관 했었다면 고장의 원인이 될 수 있습니다. 제품 상태를 확인하세요.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-1",QStringList{
                                                   "충전 케이블 및 어댑터 연결 상태를 확인한 후 충전해 주세요.\n충전이 완료된 후 전원을 다시 켰을 때 부팅이 완료되면 정상 사용이 가능합니다.",
@@ -1046,16 +1050,17 @@ void TextResource::init()
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-9",QStringList{
                                                   "충전 케이블 및 어댑터 연결 상태를 확인해 주세요.\n",
                                                   "사용 중인 충전 어댑터의 출력 사양이 제품 권장 사양과 일치하는지 확인해 주세요.@",
-                                                  "동일한 현상이 발생한다면 A/S 센터로 문의해 주세요.",
+                                                  "동일한 현상이 발생한다면 고객상담실로 문의해 주세요.",
                                               });
     // ErrorHelp 카테고리 2: 블루투스
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp2-0",QStringList{
-                                                  "제품 화면 상단바 - 블루투스 아이콘을 터치하여 활성화 시킵니다. 그리고 스마트폰을 기기와 1M 이내로 가까이 두고 스마트폰에서 블루투스를 검색하여 해피존 제품을 찾아 연동해주세요.",
-                                                  "문제가 지속될 경우 본 기기의 전원을 껐다 켜서 다시 실행해주세요.",
+                                                  "제품 화면 상단 바 '블루투스' 아이콘을 터치하여 활성화 시킵니다. 그리고 스마트폰을 제품과 1M 이내로 가까이 두고"
+                                                  "@스마트폰에서 블루투스를 검색하여 해피존 제품을 찾아 연동해주세요.",
+                                                  "@문제가 지속될 경우 본 제품의 전원을 껐다 켜서 다시 실행해주세요.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp2-1",QStringList{
                                                   "날짜와 측정항목을 확인해주세요.\n",
-                                                  "문제가 지속되면 일시적인 오류일 수 있으니 기기와 앱을 껐다가 다시 켜서 재연동 해봐주세요.",
+                                                  "문제가 지속되면 일시적인 오류일 수 있으니 제품과 앱을 껐다가 다시 켜서 재연동해 주세요.",
                                               });
     // ErrorHelp 카테고리 3: 혈당기록
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp3-0",QStringList{
