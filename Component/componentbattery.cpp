@@ -23,9 +23,10 @@ void ComponentBattery::init()
 
     timerBattery = new QTimer(this);
     connect(timerBattery,&QTimer::timeout,this,&ComponentBattery::update);
+    // Start with 1s interval, switch to 5s after MIN_SAMPLES collected
     QTimer::singleShot(1000, this, [this]() {
         update();
-        timerBattery->start(5000);
+        timerBattery->start(1000);
     });
     updateUI();
 }
@@ -44,10 +45,10 @@ void ComponentBattery::update()
         // Improvement 1: Input clamping
         nBatterySize = qBound(0, static_cast<int>(batData.charge), 100);
 
-        // Discard 0% — app force-quits below 5%, so 0 is always a HW read error
-        if(nBatterySize == 0)
+        // After initial sampling, discard 0% as HW read error
+        if(nBatterySize == 0 && windowCount >= MIN_SAMPLES)
         {
-            DEBUG_BAT("Discarded charge=0 (HW read error)");
+            DEBUG_BAT("Skipped charge=0 from window (HW read error)");
             return;
         }
     }
@@ -63,11 +64,15 @@ void ComponentBattery::update()
     nBatterySize = qBound(0, static_cast<int>(batData.charge), 100);
 #endif
 
-    // Improvement 2: Sliding window — add sample
+    // Sliding window — add sample
     batteryWindow[windowIndex] = nBatterySize;
     windowIndex = (windowIndex + 1) % WINDOW_SIZE;
     if(windowCount < WINDOW_SIZE)
         windowCount++;
+
+    // Switch to normal 5s interval after initial fast sampling
+    if(windowCount == MIN_SAMPLES && timerBattery->interval() != 5000)
+        timerBattery->setInterval(5000);
 
     // Improvement 3: Median filter
     nFilteredBattery = getFilteredBattery();
