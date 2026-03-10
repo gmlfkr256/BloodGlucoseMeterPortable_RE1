@@ -45,10 +45,10 @@ void ComponentBattery::update()
         // Improvement 1: Input clamping
         nBatterySize = qBound(0, static_cast<int>(batData.charge), 100);
 
-        // After initial sampling, discard 0% as HW read error
-        if(nBatterySize == 0 && windowCount >= MIN_SAMPLES)
+        // IPC failure returns charge=0 & charging=0; discard these
+        if(nBatterySize == 0 && batData.charging == 0)
         {
-            DEBUG_BAT("Skipped charge=0 from window (HW read error)");
+            DEBUG_BAT("Skipped charge=0 charging=0 (IPC fail response)");
             return;
         }
     }
