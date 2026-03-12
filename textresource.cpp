@@ -1943,7 +1943,7 @@ void TextResource::init()
                                                 "Wipe with a soft cloth and let it dry before use. Do not use detergents, alcohol, or chemical substances.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq2-5",QStringList{
-                                                "Avoid humid environments (bathrooms, kitchens, etc.) and high-temperature environments above 60°C (140°F) (sealed vehicles, direct sunlight exposure, etc.).",
+                                                "Avoid humid environments (bathrooms, kitchens, etc.) and high-temperature environments above 60°C (140°F)\n(sealed vehicles, direct sunlight exposure, etc.).",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq2-6",QStringList{
                                                 "Yes, always close the cover and store it in the case when not in use."
@@ -1962,7 +1962,8 @@ void TextResource::init()
                                                 "Total: 4.44Wh",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq3-2",QStringList{
-                                                "This product has a lithium-ion polymer battery (approximately 4.4Wh).\nRegulations may vary by airline and country, so please check with your airline before boarding."
+                                                "This product has a lithium-ion polymer battery (approximately 4.4Wh)."
+                                                "@Regulations may vary by airline and country, so please check with your airline before boarding."
                                                 "@[ Battery Specs ]\n"
                                                 "Voltage: 3.7V\n"
                                                 "Capacity: 1200mAh\n"
