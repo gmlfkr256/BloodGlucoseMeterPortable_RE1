@@ -1048,7 +1048,7 @@ void TextResource::init()
                                                   "재부팅 시도 후 정상작동을 확인하시고, 동일한 현상이 발생한다면 고객상담실로 문의해 주세요.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-9",QStringList{
-                                                  "충전 케이블 및 어댑터 연결 상태를 확인해 주세요.\n",
+                                                  "충전 케이블 및 어댑터 연결 상태를 확인해 주세요.\n"
                                                   "사용 중인 충전 어댑터의 출력 사양이 제품 권장 사양과 일치하는지 확인해 주세요.@",
                                                   "동일한 현상이 발생한다면 고객상담실로 문의해 주세요.",
                                               });
@@ -1059,7 +1059,7 @@ void TextResource::init()
                                                   "@문제가 지속될 경우 본 제품의 전원을 껐다 켜서 다시 실행해주세요.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp2-1",QStringList{
-                                                  "날짜와 측정항목을 확인해주세요.\n",
+                                                  "날짜와 측정항목을 확인해주세요.\n"
                                                   "문제가 지속되면 일시적인 오류일 수 있으니 제품과 앱을 껐다가 다시 켜서 재연동해 주세요.",
                                               });
     // ErrorHelp 카테고리 3: 혈당기록
@@ -2120,7 +2120,7 @@ void TextResource::init()
                                                   "Please try rebooting and check for normal operation. If the same issue occurs, please contact customer service.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-9",QStringList{
-                                                  "Please check the charging cable and adapter connection.\n",
+                                                  "Please check the charging cable and adapter connection.\n"
                                                   "Please verify that the output specifications of your charging adapter match the product's recommended specifications.@",
                                                   "If the same issue occurs, please contact customer service.",
                                               });
@@ -2131,7 +2131,7 @@ void TextResource::init()
                                                   "@If the problem persists, try turning the product off and on again.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp2-1",QStringList{
-                                                  "Please check the date and measurement item.\n",
+                                                  "Please check the date and measurement item.\n"
                                                   "If the problem persists, it may be a temporary error. Try turning off and restarting both the product and app.",
                                               });
     // ErrorHelp Category 3: Blood Glucose Records
@@ -3221,7 +3221,7 @@ void TextResource::init()
                                                   "再起動をお試し後、正常動作を確認してください。同じ現象が発生する場合はカスタマーサービスセンターへお問い合わせください。",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-9",QStringList{
-                                                  "充電ケーブルとアダプターの接続状態を確認してください。\n",
+                                                  "充電ケーブルとアダプターの接続状態を確認してください。\n"
                                                   "使用中の充電アダプターの出力仕様が製品の推奨仕様と一致するか確認してください。@",
                                                   "同じ現象が発生する場合はカスタマーサービスセンターへお問い合わせください。",
                                               });
@@ -3232,7 +3232,7 @@ void TextResource::init()
                                                   "@問題が続く場合は本製品の電源を切って再度入れてください。",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp2-1",QStringList{
-                                                  "日付と測定項目を確認してください。\n",
+                                                  "日付と測定項目を確認してください。\n"
                                                   "問題が続く場合は一時的なエラーの可能性がありますので、製品とアプリを切ってから再度起動して再連動してください。",
                                               });
     // ErrorHelp カテゴリ 3: 血糖記録
@@ -4320,7 +4320,7 @@ void TextResource::init()
                                                   "请尝试重启并确认正常运行。如果发生相同现象，请联系客服中心。",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-9",QStringList{
-                                                  "请检查充电线和适配器连接状态。\n",
+                                                  "请检查充电线和适配器连接状态。\n"
                                                   "请确认您使用的充电适配器的输出规格是否与产品推荐规格一致。@",
                                                   "如果发生相同现象，请联系客服中心。",
                                               });
@@ -4331,7 +4331,7 @@ void TextResource::init()
                                                   "@如果问题持续，请关闭本产品电源后重新开启。",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp2-1",QStringList{
-                                                  "请确认日期和测量项目。\n",
+                                                  "请确认日期和测量项目。\n"
                                                   "如果问题持续，可能是暂时性错误，请关闭产品和应用后重新启动并重新连接。",
                                               });
     // ErrorHelp 类别 3: 血糖记录
@@ -5417,7 +5417,7 @@ void TextResource::init()
                                                   "請嘗試重新啟動後確認是否正常運作。如果持續發生相同情況，請聯繫客服中心。",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-9",QStringList{
-                                                  "請確認充電線及轉接器的連接狀態。\n",
+                                                  "請確認充電線及轉接器的連接狀態。\n"
                                                   "請確認使用中的充電轉接器輸出規格是否與產品建議規格一致。@",
                                                   "如果持續發生相同情況，請聯繫客服中心。",
                                               });
@@ -5428,7 +5428,7 @@ void TextResource::init()
                                                   "@如果問題持續，請關閉本產品電源後重新開啟。",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp2-1",QStringList{
-                                                  "請確認日期和測量項目。\n",
+                                                  "請確認日期和測量項目。\n"
                                                   "如果問題持續，可能是暫時性錯誤，請關閉產品和應用程式後重新啟動並重新連動。",
                                               });
     // ErrorHelp 카테고리 3: 血糖記錄
@@ -6528,7 +6528,7 @@ void TextResource::init()
                                                   "Reinicie y verifique si funciona normalmente. Si el problema persiste, contacte al centro de atención al cliente.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-9",QStringList{
-                                                  "Verifique la conexión del cable de carga y el adaptador.\n",
+                                                  "Verifique la conexión del cable de carga y el adaptador.\n"
                                                   "Verifique que las especificaciones de salida del adaptador de carga coincidan con las recomendadas del producto.@",
                                                   "Si el problema persiste, contacte al centro de atención al cliente.",
                                               });
@@ -6539,7 +6539,7 @@ void TextResource::init()
                                                   "@Si el problema persiste, apague y encienda el producto nuevamente.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp2-1",QStringList{
-                                                  "Verifique la fecha y el elemento de medición.\n",
+                                                  "Verifique la fecha y el elemento de medición.\n"
                                                   "Si el problema persiste, puede ser un error temporal. Apague y reinicie tanto el producto como la aplicación y vuelva a vincularlos.",
                                               });
     // ErrorHelp 카테고리 3: Registros de Glucosa
