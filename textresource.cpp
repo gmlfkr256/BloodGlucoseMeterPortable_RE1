@@ -1916,7 +1916,7 @@ void TextResource::init()
                                                 "Relax your finger and press it flat against the surface"
                                                 "@Maintain finger surface temperature above 26°C (79°F)\n"
                                                 "Remove moisture and foreign substances from finger"
-                                                "@* Please refer to the user manual\n[Error Messages and Solutions].",
+                                                "@* Please refer to the user manual\n[Error Messages & Solutions]",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-10",QStringList{
                                                 "Push your finger in with the fingerprint side touching the bottom surface.\nWhen your fingertip catches, relax and hold your position.",
@@ -2064,7 +2064,7 @@ void TextResource::init()
                                                   "Relax your finger and press it flat against the surface"
                                                   "@Maintain finger surface temperature above 26°C (79°F)\n"
                                                   "Remove moisture and foreign substances from finger"
-                                                  "@* Please refer to the user manual\n[Error Messages and Solutions].",
+                                                  "@* Please refer to the user manual\n[Error Messages & Solutions]",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-2",QStringList{
                                                   "Please check if your finger is inserted correctly and measure again."
@@ -6325,7 +6325,7 @@ void TextResource::init()
                                                 "Relaje el dedo y péguelo horizontalmente a la superficie"
                                                 "@Mantenga la temperatura del dedo a 26°C o más\n"
                                                 "Elimine la humedad y cuerpos extraños del dedo"
-                                                "@* Consulte el manual de usuario\n[Mensajes de error y soluciones].",
+                                                "@* Consulte el manual de usuario\n[Mensajes de error & soluciones]",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-10",QStringList{
                                                 "Empuje el dedo con la huella tocando la superficie inferior.\nCuando la punta del dedo se enganche, relaje la fuerza y fije la postura.",
@@ -6472,7 +6472,7 @@ void TextResource::init()
                                                   "Relaje el dedo y péguelo horizontalmente a la superficie"
                                                   "@Mantenga la temperatura del dedo a 26°C o más\n"
                                                   "Elimine la humedad y cuerpos extraños del dedo"
-                                                  "@* Consulte el manual de usuario\n[Mensajes de error y soluciones].",
+                                                  "@* Consulte el manual de usuario\n[Mensajes de error & soluciones]",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-2",QStringList{
                                                   "Verifique que el dedo esté correctamente insertado y mida de nuevo."
