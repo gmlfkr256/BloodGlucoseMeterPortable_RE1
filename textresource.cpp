@@ -6419,7 +6419,7 @@ void TextResource::init()
 
     //PAGE_ERROR_HELP
     fontData[Lan][PAGE_ERROR_HELP].insert("labelText",QFont(currentFont,instance.pixelToPoint(36)));
-    fontData[Lan][PAGE_ERROR_HELP].insert("labelTextBold",QFont(currentFont,instance.pixelToPoint(26),QFont::Bold));
+    fontData[Lan][PAGE_ERROR_HELP].insert("labelTextBold",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
     fontData[Lan][PAGE_ERROR_HELP].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
     fontData[Lan][PAGE_ERROR_HELP].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
     // 카테고리 0: Medición de Glucosa
@@ -6486,7 +6486,8 @@ void TextResource::init()
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-5",QStringList{
                                                   "Es posible que la medición no se haya completado. Mida de nuevo. Si el problema persiste, apague y encienda el dispositivo.",
-                                                  "Si estuvo expuesto a condiciones externas (baja temperatura u objetos calientes cercanos), puede funcionar mal. Use a temperatura interior de 20~30°C.",
+                                                  "Si estuvo expuesto a condiciones externas (baja temperatura u objetos calientes cercanos), puede funcionar mal."
+                                                  "@Use a temperatura interior de 20~30°C.",
                                                   "Si no fue por temperatura, humedad o agua, contacte al centro de atención al cliente.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-6",QStringList{
