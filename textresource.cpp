@@ -609,7 +609,7 @@ void TextResource::init()
                                                  "5. 손가락 표면온도 26°C 이상 유지",
                                                  "6. 손가락을 측정부에 밀착, 수평 유지",
                                                  "7. 반드시 충전기를 분리해서 사용",
-                                                 "8. 사용장소 온도확인(15~35°C 이내)",
+                                                 "8. 사용장소 온도확인(20~30°C 이내)",
                                              });
 
     //PAGE_CALI_SELECT_RE
@@ -886,14 +886,14 @@ void TextResource::init()
                                                 "@[ 배터리 스펙 ]\n"
                                                 "전압: 3.7V\n"
                                                 "용량: 1200mAh\n"
-                                                "총량: 4.4Wh",
+                                                "총량: 4.44Wh",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq3-2",QStringList{
                                                 "본 제품은 리튬 이온 폴리머 배터리(약 4.4Wh)입니다.\n항공사 및 국가별 규정이 상이할 수 있으므로, 탑승 전 이용 항공사에 확인하시기 바랍니다."
                                                 "@[ 배터리 스펙 ]\n"
                                                 "전압: 3.7V\n"
                                                 "용량: 1200maAh\n"
-                                                "총량: 4.4Wh"
+                                                "총량: 4.44Wh"
                                             });
     // FAQ 카테고리 4: 혈당기록
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq4-0",QStringList{
