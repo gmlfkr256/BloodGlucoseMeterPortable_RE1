@@ -1018,10 +1018,10 @@ void TextResource::init()
                                               });
     // ErrorHelp 카테고리 1: 기기 관리
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-0",QStringList{
-                                                  "전원을 껐다 다시켜보세요.\n",
-                                                  "배터리가 충분한지 확인하세요.\n",
-                                                  "충전기를 꽂은 상태로는 측정이 되지 않습니다.@",
-                                                  "물이 닿거나 습도가 높은곳에 보관 했었다면 고장의 원인이 될 수 있습니다. 제품 상태를 확인하세요.",
+                                                  "전원을 껐다 다시켜보세요.\n"
+                                                  "배터리가 충분한지 확인하세요.\n"
+                                                  "충전기를 꽂은 상태로는 측정이 되지 않습니다.",
+                                                  "@물이 닿거나 습도가 높은곳에 보관 했었다면 고장의 원인이 될 수 있습니다. 제품 상태를 확인하세요.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-1",QStringList{
                                                   "충전 케이블 및 어댑터 연결 상태를 확인한 후 충전해 주세요.\n충전이 완료된 후 전원을 다시 켰을 때 부팅이 완료되면 정상 사용이 가능합니다.",
@@ -2090,10 +2090,10 @@ void TextResource::init()
                                               });
     // ErrorHelp Category 1: Device Care
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-0",QStringList{
-                                                  "Try turning the power off and on again.\n",
-                                                  "Check if the battery is sufficient.\n",
-                                                  "Measurement cannot be done while the charger is connected.@",
-                                                  "If the product was exposed to water or stored in a highly humid environment, it may be a cause of malfunction. Please check the product condition.",
+                                                  "Try turning the power off and on again.\n"
+                                                  "Check if the battery is sufficient.\n"
+                                                  "Measurement cannot be done while the charger is connected.",
+                                                  "@If the product was exposed to water or stored in a highly humid environment, it may be a cause of malfunction. Please check the product condition.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-1",QStringList{
                                                   "Check the charging cable and adapter connection, then charge.\nAfter charging is complete, normal use is possible when the device finishes booting after turning the power on again.",
@@ -3191,10 +3191,10 @@ void TextResource::init()
                                               });
     // ErrorHelp カテゴリ 1: 機器管理
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-0",QStringList{
-                                                  "電源を切って再度入れてみてください。\n",
-                                                  "バッテリーが十分かどうか確認してください。\n",
-                                                  "充電器を接続した状態では測定できません。@",
-                                                  "水がかかったり湿度の高い場所に保管していた場合、故障の原因になる可能性があります。製品の状態を確認してください。",
+                                                  "電源を切って再度入れてみてください。\n"
+                                                  "バッテリーが十分かどうか確認してください。\n"
+                                                  "充電器を接続した状態では測定できません。",
+                                                  "@水がかかったり湿度の高い場所に保管していた場合、故障の原因になる可能性があります。製品の状態を確認してください。",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-1",QStringList{
                                                   "充電ケーブルとアダプターの接続状態を確認後、充電してください。\n充電が完了した後、電源を入れ直してブートが完了すると正常使用が可能です。",
@@ -4290,10 +4290,10 @@ void TextResource::init()
                                               });
     // ErrorHelp 类别 1: 设备管理
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-0",QStringList{
-                                                  "请关闭电源后重新开启。\n",
-                                                  "请确认电池是否充足。\n",
-                                                  "充电器连接状态下无法进行测量。@",
-                                                  "如果产品曾接触水或存放在高湿度环境中，可能导致故障。请检查产品状态。",
+                                                  "请关闭电源后重新开启。\n"
+                                                  "请确认电池是否充足。\n"
+                                                  "充电器连接状态下无法进行测量。",
+                                                  "@如果产品曾接触水或存放在高湿度环境中，可能导致故障。请检查产品状态。",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-1",QStringList{
                                                   "请确认充电线和适配器连接状态后进行充电。\n充电完成后重新开机，启动完成后即可正常使用。",
@@ -5387,10 +5387,10 @@ void TextResource::init()
                                               });
     // ErrorHelp 카테고리 1: 產品管理
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-0",QStringList{
-                                                  "請關閉電源後重新開啟。\n",
-                                                  "請確認電池是否充足。\n",
-                                                  "連接充電線的狀態下無法進行測量。@",
-                                                  "如果曾接觸水或保管在高濕度環境中，可能導致故障。請檢查產品狀態。",
+                                                  "請關閉電源後重新開啟。\n"
+                                                  "請確認電池是否充足。\n"
+                                                  "連接充電線的狀態下無法進行測量。",
+                                                  "@如果曾接觸水或保管在高濕度環境中，可能導致故障。請檢查產品狀態。",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-1",QStringList{
                                                   "請確認充電線及轉接器的連接狀態後進行充電。\n充電完成後重新開機，啟動完成即可正常使用。",
@@ -6497,10 +6497,10 @@ void TextResource::init()
                                               });
     // ErrorHelp 카테고리 1: Cuidado del Dispositivo
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-0",QStringList{
-                                                  "Apague y encienda el dispositivo.\n",
-                                                  "Verifique que la batería esté suficiente.\n",
-                                                  "No se puede medir con el cargador conectado.@",
-                                                  "Si estuvo en contacto con agua o en un ambiente húmedo, puede ser causa de avería. Verifique el estado del producto.",
+                                                  "Apague y encienda el dispositivo.\n"
+                                                  "Verifique que la batería esté suficiente.\n"
+                                                  "No se puede medir con el cargador conectado.",
+                                                  "@Si estuvo en contacto con agua o en un ambiente húmedo, puede ser causa de avería. Verifique el estado del producto.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-1",QStringList{
                                                   "Verifique la conexión del cable de carga y el adaptador, luego cargue."
