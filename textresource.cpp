@@ -2816,63 +2816,64 @@ void TextResource::init()
     fontData[Lan][PAGE_HELP].insert("labelTextBold",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
     fontData[Lan][PAGE_HELP].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
     fontData[Lan][PAGE_HELP].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
-    // Category 0: Target Users
+    // カテゴリ 0: 製品説明および使用目的
     textData[Lan][PAGE_HELP].insert("labelTextHelp0",QStringList{
-                                        "誰でも使用できますか？",
-                                        "この製品は何ですか？",
-                                        "この製品の利点は何ですか？",
+                                        "使用対象は誰ですか？", // 0-0
+                                        "製品の主要機能は何ですか？", // 0-1
+                                        "製品の使用目的と注意点は何ですか？", // 0-2
                                     });
-    // Category 1: Product Info
+    // カテゴリ 1: 測定注意事項
     textData[Lan][PAGE_HELP].insert("labelTextHelp1",QStringList{
-                                        "どのような機能を提供しますか？",
+                                        "正確な測定のために測定時に守るべきことは何ですか？", // 1-0
                                     });
-    // Category 2: Purpose of Use
+    // カテゴリ 2: 測定制限および相談対象
     textData[Lan][PAGE_HELP].insert("labelTextHelp2",QStringList{
-                                        "この製品はどのような用途に使用しますか？",
+                                        "測定値が不正確な場合があり、専門医への相談が必要な場合はいつですか？", // 2-0
                                     });
-    // Category 3: Pre-Measurement Precautions
+    // カテゴリ 3: アラート機能
     textData[Lan][PAGE_HELP].insert("labelTextHelp3",QStringList{
-                                        "測定前に注意事項がありますか？",
+                                        "製品にアラート機能はありますか？", // 3-0
                                     });
 
     //PAGE_HELP_RESPONSE
     fontData[Lan][PAGE_HELP_RESPONSE].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
     fontData[Lan][PAGE_HELP_RESPONSE].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
     fontData[Lan][PAGE_HELP_RESPONSE].insert("labelText",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
-    // Help 0: Target Users
+    // Help 0: 使用対象
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp0",QStringList{
-                                                 "薬物治療を受けていない糖尿病予備群の患者が使用できます"
-                                                 "@この製品は19〜74歳の成人を基準に設計されています",
+                                                 "使用対象は満19歳以上の\n糖尿病予備群の成人男女です。",
                                              });
-    // Help 1: Product Info
+    // Help 1: 製品案内
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp1",QStringList{
                                                  "ハッピーゾーン機器で血糖値を測定でき、アプリ(APP)と連動して血糖値データを日付別、"
                                                  "@期間別に確認して血糖値を管理・モニタリングできる製品です。",
                                              });
-    // Help 2: Purpose of Use
+    // Help 2: 使用目的
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp2",QStringList{
-                                                 "本製品は19歳以上の薬物治療を受けていない糖尿病予備群の患者の血糖管理（モニタリング）のための医療機器であり、"
+                                                 "満19歳以上の薬物治療を受けていない糖尿病予備群の患者の血糖管理（モニタリング）のための医療機器であり、"
                                                  "@糖尿病の診断・治療、インスリン投与などの医療的判断には使用できません。",
                                              });
-    // Help 3: Pre-Measurement Precautions
+    // Help 3: 測定前の注意事項
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp3",QStringList{
                                                  "測定前に手をきれいに洗い、水分を取り除いてください。\n測定中は動きや強い指の圧迫を避けてください。"
                                                  "@* その他測定に影響を与える可能性がある使用説明書の内容を必ず参考にしてください。",
                                              });
-    // Help 4: Consult a Doctor Before Use
+    // Help 4: 使用前に専門医に相談すべき方
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp4",QStringList{
-                                                 "19歳未満の場合\n"
-                                                 "光照射部位の皮膚疾患・傷、\n多汗症、パーキンソン病などの手の震えがある場合、"
+                                                 "満19歳未満の場合\n",
+                                                 "光照射部位の皮膚疾患・傷、\n 多汗症、パーキンソン病などの手の震えがある場合、"
                                                  "@重症低血糖、糖尿病ケトアシドーシス、てんかん、失神など\n副腎疾患の既往歴がある場合、"
                                                  "@血液透析または\n腹膜透析中の場合、\n妊婦および授乳婦の場合",
                                              });
-    // Help 5: Key Features
+    // Help 5: 主要機能のご案内
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp5",QStringList{
-                                                 "* 高血糖/低血糖状態アラート\n* 血糖補正有効期限アラート\n* 血糖再補正アラート"
-                                                 "血糖補正日から90日経過時に血糖補正有効期限アラートが発生します。"
+                                                 "* 高血糖/低血糖状態アラート\n"
+                                                 "* 血糖補正有効期限アラート\n"
+                                                 "* 血糖再補正アラート",
+                                                 "血糖補正日から90日経過時に血糖補正有効期限アラートが発生します。",
                                                  "期限の15日前から血糖再補正アラートが発生します。",
                                              });
-    // Help 6: Bluetooth Support
+    // Help 6: ブルートゥース対応範囲
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp6",QStringList{
                                                  "ハッピーゾーンAPP専用のBluetooth機能であり、他のデバイスとは互換性がありません。",
                                              });
@@ -2895,194 +2896,200 @@ void TextResource::init()
     fontData[Lan][PAGE_FAQ].insert("labelTextBold",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
     fontData[Lan][PAGE_FAQ].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
     fontData[Lan][PAGE_FAQ].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
-    // Category 0: Blood Glucose Calibration
+    // カテゴリ 0: 血糖補正
     textData[Lan][PAGE_FAQ].insert("labelTextFaq0",QStringList{
-                                       "血糖補正はなぜ必要ですか？",
-                                       "血糖補正をしないとどうなりますか？",
-                                       "血糖補正の期限が過ぎたら測定できますか？",
-                                       "血糖補正はなぜ90日ごとに行う必要がありますか？",
+                                       "「血糖補正（Calibration）」とは何ですか？", // 0-0
+                                       "血糖補正は必ず行う必要がありますか？", // 0-1
+                                       "血糖補正はいつ行いますか？", // 0-2
+                                       "血糖補正の周期はどのくらいですか？", // 0-3
+                                       "血糖補正を初期化すると以前の測定記録も削除されますか？", // 0-4
                                    });
-    // Category 1: Blood Glucose Measurement
+    // カテゴリ 1: 血糖測定
     textData[Lan][PAGE_FAQ].insert("labelTextFaq1",QStringList{
-                                       "血糖測定の範囲はありますか？",
-                                       "値が急に高い、または低い場合はどうすればよいですか？",
-                                       "測定に失敗した場合はどうすればよいですか？",
-                                       "別の指で測定しても大丈夫ですか？",
-                                       "指の位置が合っていない場合はどうすればよいですか？",
-                                       "測定姿勢が正しくない場合、影響がありますか？",
-                                       "測定時間が合っていなくても大丈夫ですか？",
-                                       "温度が低い、または高い場合に影響はありますか？",
-                                       "濡れた手で測定しても大丈夫ですか？",
-                                       "運動直後に測定しても大丈夫ですか？",
-                                       "製品内部に直射日光が入っても大丈夫ですか？",
-                                       "光学透過方式とは何ですか？",
+                                       "正しい測定姿勢は何ですか？", // 1-0
+                                       "指の位置はどのようにしますか？", // 1-1
+                                       "毎回同じ指で測定しなければなりませんか？", // 1-2
+                                       "測定に適した場所はどこですか？", // 1-3
+                                       "濡れた手で測定しても大丈夫ですか？", // 1-4
+                                       "1日に何回測定しますか？", // 1-5
+                                       "測定にかかる時間はどのくらいですか？", // 1-6
+                                       "測定中にキャンセルできますか？", // 1-7
+                                       "測定が開始されません。", // 1-8
+                                       "測定失敗がよく発生します。", // 1-9
+                                       "測定時の指の正しい位置は？", // 1-10
+                                       "血糖測定範囲はどのくらいですか？", // 1-11
                                    });
-    // Category 2: Device Care
+    // カテゴリ 2: 機器管理
     textData[Lan][PAGE_FAQ].insert("labelTextFaq2",QStringList{
-                                       "充電中に使用しても大丈夫ですか？",
-                                       "バッテリーの完充電時間はどのくらいかかりますか？",
-                                       "バッテリー性能が低下しているようであればどうすればよいですか？",
-                                       "水で拭いても大丈夫ですか？",
-                                       "洗浄剤、アルコール、アセトンなどで拭いても大丈夫ですか？",
+                                       "バッテリー完充電時間を教えてください", // 2-0
+                                       "バッテリー使用時間を教えてください", // 2-1
+                                       "充電中に使用しても大丈夫ですか？", // 2-2
+                                       "防水ですか？", // 2-3
+                                       "製品はどのように管理すればよいですか？", // 2-4
+                                       "保管時に注意すべき場所はありますか？", // 2-5
+                                       "指挿入口のカバーは必ず閉めなければなりませんか？", // 2-6
                                    });
-    // Category 3: Portability & Travel
+    // カテゴリ 3: 携帯/移動
     textData[Lan][PAGE_FAQ].insert("labelTextFaq3",QStringList{
-                                       "携帯用として使用できますか？",
-                                       "携帯用収納ケースは使用しなければなりませんか？",
-                                       "航空機への機内持ち込みは可能ですか？",
-                                       "受託手荷物として送ることができますか？",
+                                       "携帯用として使用できますか？", // 3-0
+                                       "航空機への機内持ち込みは可能ですか？", // 3-1
+                                       "航空機の受託手荷物として送ることができますか？", // 3-2
                                    });
-    // Category 4: Blood Glucose Records
+    // カテゴリ 4: 血糖記録
     textData[Lan][PAGE_FAQ].insert("labelTextFaq4",QStringList{
-                                       "血糖結果はどこで確認できますか？",
+                                       "血糖測定結果はどこで見ますか？", // 4-0
+                                       "血糖記録はどのくらいの期間保存されますか？", // 4-1
                                    });
-    // Category 5: Users
+    // カテゴリ 5: 使用対象/人数
     textData[Lan][PAGE_FAQ].insert("labelTextFaq5",QStringList{
-                                       "妊婦でも使用できますか？",
-                                       "糖尿病患者でも使用できますか？",
-                                       "透析患者でも使用できますか？",
-                                       "測定部位に傷があっても使用できますか？",
-                                       "複数人で一緒に使用しても大丈夫ですか？",
-                                       "スマートフォンなしで使用できますか？",
+                                       "誰でも使用できますか？", // 5-0
+                                       "製品1台で何人まで使用できますか？", // 5-1
                                    });
-    // Category 6: A/S
+    // カテゴリ 6: A/S
     textData[Lan][PAGE_FAQ].insert("labelTextFaq6",QStringList{
-                                       "A/S期間はどのくらいですか？",
+                                       "製品のA/S期間はどのくらいですか？", // 6-0
+                                       "ご希望の回答が見つかりませんでしたか？", // 6-1
                                    });
-    // Category 7: Password
+    // カテゴリ 7: パスワード
     textData[Lan][PAGE_FAQ].insert("labelTextFaq7",QStringList{
-                                       "パスワードはどのように変更しますか？",
+                                       "パスワードはどのように変更しますか？", // 7-0
                                    });
 
     //PAGE_FAQ_RESPONSE
     fontData[Lan][PAGE_FAQ_RESPONSE].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
     fontData[Lan][PAGE_FAQ_RESPONSE].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
     fontData[Lan][PAGE_FAQ_RESPONSE].insert("labelText",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
-    // FAQ Category 0: Blood Glucose Calibration
+    // FAQ カテゴリ 0: 血糖補正
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-0",QStringList{
-                                                "個人の特性が異なるため、製品の特性を個人に合わせる作業が必要です",
+                                                "実際の血糖値と製品の間の誤差を減らすために、侵襲式機器と連携して血糖値を算出・調整する一連の過程です。",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-1",QStringList{
-                                                "血糖補正を行わないと測定できません",
+                                                "はい。ユーザーごとに測定部位の構造と外部環境による光の透過率が異なるため、正確な血糖測定値を算出するための個人別血糖補正が必ず必要です。",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-2",QStringList{
-                                                "期限が過ぎると測定が不可能になりますので、血糖補正を再度行ってください",
+                                                "初めて使用する前に血糖補正を行う必要があります。その後は血糖補正日から90日以内に必ず再補正してください。"
+                                                "@血糖補正期限の15日前からアラートで再補正時期をお知らせします。",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-3",QStringList{
-                                                "正確な測定のために90日ごとに補正を再度行う必要があります",
+                                                "測定部位および環境の変化による誤差補正のため、血糖補正日から90日以内に必ず再補正を行ってください。"
+                                                "@血糖補正日から90日が経過すると血糖補正有効期限アラートが発生し、再補正を完了するまで血糖測定が制限されます。@"
+                                                "血糖補正初期化後に再補正を行うと、血糖測定が再び可能になります。",
                                             });
-    // FAQ Category 1: Blood Glucose Measurement
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-4",QStringList{
+                                                "いいえ。血糖補正を初期化しても記録された血糖記録は製品に最大90日まで保存されます。"
+                                                "\nアプリでは最大12ヶ月まで保存されます。",
+                                            });
+    // FAQ カテゴリ 1: 血糖測定
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-0",QStringList{
-                                                "70〜350 mg/dLの範囲で測定が可能です",
+                                                "座った姿勢でテーブルに肘を置き、水平にしてください。"
+                                                "\n指の力を抜いて挿入口の奥まで入れ、製品内部の底面に密着させてください。",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-1",QStringList{
-                                                "正しい使用環境と測定姿勢を確認後、再測定してください",
+                                                "指紋が底面に触れるように押し入れてください。\n指先が引っかかったら力を抜いて姿勢を固定してください。",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-2",QStringList{
-                                                "測定に失敗した場合、失敗の理由についての通知ウィンドウが表示されます"
-                                                "@測定失敗の問題はトラブルシューティングメニューでご確認ください",
+                                                "正確な測定のために、同じ指で測定することをお勧めします。",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-3",QStringList{
-                                                "正確な測定のために、補正を行った指で測定することをお勧めします",
+                                                "室温20〜30°Cの直射日光、風、湿気、振動など製品に影響を与える要素のない場所で測定してください。",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-4",QStringList{
-                                                "正確な測定になりません"
-                                                "@正確な測定のために、指の中央がセンサー窓の端を軽く覆うように力を抜いて置いてください",
+                                                "いいえ。濡れた手で測定すると製品の故障の原因になる可能性があります。",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-5",QStringList{
-                                                "測定姿勢が正しくない場合、測定が正確でない可能性があります"
-                                                "@正確な測定のために正しい姿勢で測定してください",
+                                                "血糖は食事・活動によって変動するため、起床後1回、食前食後各1回、就寝前1回の測定をお勧めします。",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-6",QStringList{
-                                                "測定結果には影響しません"
-                                                "@ただし、血糖管理用のデータとして活用する予定の場合は、該当時間に合わせて測定することをお勧めします",
+                                                "測定開始後1分以内に測定結果が出ます。",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-7",QStringList{
-                                                "温度が低すぎたり高すぎる場合、測定値が正確でない可能性があります",
+                                                "測定中に「キャンセル」ボタンを押すと中断されます。",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-8",QStringList{
-                                                "濡れた手で測定してはいけません"
-                                                "@製品の故障原因となる可能性があります",
+                                                "血糖補正有効期限(90日)満了時に測定ができませんので、血糖補正を行ってください。",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-9",QStringList{
-                                                "運動直後に測定してはいけません"
-                                                "@呼吸と心拍数が安定した後に測定してください",
+                                                "測定環境を確認後、再度お試しください。\n"
+                                                "測定環境は以下の通りです。"
+                                                "@測定中の咳、くしゃみ、会話、動きの禁止\n"
+                                                "指の力を抜いて水平に底面へ密着"
+                                                "@指の表面温度26°C以上を維持\n"
+                                                "指の水分および異物を除去"
+                                                "@* 使用説明書の\n[ エラーメッセージおよび解決方法 ]を\nご参考ください。",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-10",QStringList{
-                                                "正確な測定になりません"
-                                                "@正確な測定のために直射日光のない室内で測定してください",
+                                                "指紋が底面に触れるように押し入れてください。\n指先が引っかかったら力を抜いて姿勢を固定してください。",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-11",QStringList{
-                                                "指を通過した光を分析して血糖を測定する方式です",
+                                                "70〜350mg/dL\n\n"
+                                                "本製品の血糖測定範囲は最小70以上から最大350以下まで測定が可能です。",
                                             });
-    // FAQ Category 2: Device Care
+    // FAQ カテゴリ 2: 機器管理
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq2-0",QStringList{
-                                                "必ず充電器を取り外した後にご使用ください",
+                                                "本製品の完充電までの合計所要時間は約3時間45分です。",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq2-1",QStringList{
-                                                "満充電時間は約3時間45分かかります",
+                                                "完充電時、1日8回測定基準で最大29日間使用可能です。\nバッテリーの状態により異なる場合があります。",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq2-2",QStringList{
-                                                "A/Sセンターにお問い合わせいただき、点検後必要に応じて交換します",
+                                                "必ず充電器を取り外した状態でご使用ください。",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq2-3",QStringList{
-                                                "水で拭いてはいけません"
-                                                "@製品の故障原因となる可能性があります",
+                                                "いいえ。本製品には防水機能がありませんので、濡れた手で操作しないでください。製品に液体がかかった場合は直ちに拭き取り、正常動作を確認してください。",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq2-4",QStringList{
-                                                "洗浄剤、アルコール、アセトンなどで拭いてはいけません"
-                                                "@製品の故障原因となる可能性があります",
+                                                "柔らかい布で拭いた後、乾燥させてからご使用ください。洗浄剤、アルコール、化学物質の使用は禁止します。",
                                             });
-    // FAQ Category 3: Portability & Travel
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq2-5",QStringList{
+                                                "湿気の多い環境（浴室、キッチンなど）および60°C以上の高温（密閉された車両、直射日光暴露など）環境は避けてください。",
+                                            });
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq2-6",QStringList{
+                                                "はい、使用しない時は必ず閉じてケースに保管してください。"
+                                                "@ほこりや金属または尖った物体が内部に入ることによる製品の損傷やショート事故を防ぐことができます。",
+                                            });
+    // FAQ カテゴリ 3: 携帯/移動
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq3-0",QStringList{
-                                                "はい、携帯してご使用ください"
-                                                "@測定に適した室内環境でご使用ください",
+                                                "はい、測定に適した室内環境では充電して携帯できます。ただし、外部衝撃による誤作動、故障が発生する可能性がありますので"
+                                                "@製品に衝撃がないよう携帯用ケースに入れて携帯してください。",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq3-1",QStringList{
-                                                "外部衝撃により誤作動、故障が発生する可能性がありますので、携帯用収納ケースに入れて携帯してください",
+                                                "本製品のリチウムイオンポリマーバッテリー（約4.4Wh）は航空安全基準（100Wh以下）を満たしており、機内持ち込みが可能です。"
+                                                "@[ バッテリースペック ]\n"
+                                                "電圧: 3.7V\n"
+                                                "容量: 1200mAh\n"
+                                                "総量: 4.44Wh",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq3-2",QStringList{
-                                                "航空機内で携帯および使用できます"
-                                                "@手荷物としての発送はできません",
+                                                "本製品はリチウムイオンポリマーバッテリー（約4.4Wh）です。\n航空会社および国別の規定が異なる場合がありますので、搭乗前にご利用の航空会社にご確認ください。"
+                                                "@[ バッテリースペック ]\n"
+                                                "電圧: 3.7V\n"
+                                                "容量: 1200mAh\n"
+                                                "総量: 4.44Wh"
                                             });
-    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq3-3",QStringList{
-                                                "手荷物としての発送はできません"
-                                                "@本製品はリチウムイオンポリマーバッテリーを内蔵した製品で、安全規定上、受託手荷物としては送ることができません"
-                                                "@必ず機内持ち込み手荷物として携帯してください",
-                                            });
-    // FAQ Category 4: Blood Glucose Records
+    // FAQ カテゴリ 4: 血糖記録
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq4-0",QStringList{
-                                                "当日の記録はホーム画面で確認できます"
-                                                "@過去の血糖記録は血糖記録メニューでご確認ください",
+                                                "製品内の「設定メニュー」-「血糖記録」アイコンを押すか、Bluetoothでスマートフォンと接続後、アプリ(App)でご確認ください。"
+                                                "@当日測定した記録はホーム画面に自動的に表示されます。\n過去の血糖記録は設定の血糖記録アイコンを押して確認してください。",
                                             });
-    // FAQ Category 5: Users
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq4-1",QStringList{
+                                                "本製品は測定された血糖記録を最大90日まで保存しています。\n"
+                                                "90日が経過した記録は自動的に削除されます。",
+                                            });
+    // FAQ カテゴリ 5: 使用対象/人数
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq5-0",QStringList{
-                                                "測定結果が正確でない可能性があります"
-                                                "@専門医にご相談ください",
+                                                "満19歳以上の薬物治療を受けていない糖尿病予備群の患者を対象とする医療機器であり、糖尿病の診断・治療、インスリン投与などの医療的判断は専門医にご相談ください。",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq5-1",QStringList{
-                                                "測定結果が正確でない可能性があります"
-                                                "@専門医にご相談ください",
+                                                "本製品は1台で最大2名まで使用できます。",
                                             });
-    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq5-2",QStringList{
-                                                "測定結果が正確でない可能性があります"
-                                                "@専門医にご相談ください",
-                                            });
-    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq5-3",QStringList{
-                                                "測定結果が正確でない可能性があります"
-                                                "@専門医にご相談ください",
-                                            });
-    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq5-4",QStringList{
-                                                "最大2名まで同時に使用できます",
-                                            });
-    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq5-5",QStringList{
-                                                "製品単独で使用できます",
-                                            });
-    // FAQ Category 6: A/S
+    // FAQ カテゴリ 6: A/S
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq6-0",QStringList{
-                                                "公式A/S期間は製品購入後24ヶ月です",
+                                                "本製品は購入日から最大2年間保証されます。\nただし、個人の事由による破損および故障は保証されません。",
                                             });
-    // FAQ Category 7: Password
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq6-1",QStringList{
+                                                "カスタマーサービスセンターへお問い合わせください。"
+                                            });
+    // FAQ カテゴリ 7: パスワード
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq7-0",QStringList{
                                                 "上部バーの「メニュー」-「ユーザー情報」-「パスワード変更」から案内に従ってパスワードを変更してください。",
                                             });
@@ -3101,154 +3108,131 @@ void TextResource::init()
     fontData[Lan][PAGE_ERROR_HELP].insert("labelTextBold",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
     fontData[Lan][PAGE_ERROR_HELP].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
     fontData[Lan][PAGE_ERROR_HELP].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
-    // Category 0: Blood Glucose Measurement
+    // カテゴリ 0: 血糖測定
     textData[Lan][PAGE_ERROR_HELP].insert("labelTextErrorHelp0",QStringList{
-                                              "測定失敗がよく発生します",
-                                              "指を認識しなかったと表示されます",
-                                              "指の表面温度が低いと表示されます",
-                                              "測定データにエラーがあると表示されます",
-                                              "測定結果を分析できないと表示されます",
-                                              "測定中にキャンセルできますか？",
-                                              "血糖値がいつもと違います",
-                                              "血糖値が正常だと思うのに警告が表示されます",
-                                              "血糖補正の有効期限が切れたと表示されます",
+                                              "測定が開始されません", // 0-0
+                                              "測定失敗がよく発生します", // 0-1
+                                              "「指を認識できませんでした」というメッセージが表示されます", // 0-2
+                                              "「指の表面温度が低く測定できません」というメッセージが表示されます", // 0-3
+                                              "「測定データにエラーがあります」というメッセージが表示されます", // 0-4
+                                              "次のステップに進みません", // 0-5
+                                              "「測定結果を分析できません」というメッセージが表示されます", // 0-6
+                                              "血糖値が正常だと思うのに警告が表示されます", // 0-7
                                           });
-    // Category 1: Device Care
+    // カテゴリ 1: 機器管理
     textData[Lan][PAGE_ERROR_HELP].insert("labelTextErrorHelp1",QStringList{
-                                              "充電できません",
-                                              "電池残量不足の通知が出たらどうすればよいですか？",
-                                              "電池残量不足の通知が出て、製品がオフになりました",
-                                              "電源ブート後、初期画面に入りません",
-                                              "アップグレードファイルが見えないと表示されます",
-                                              "アップグレードファイルに問題があると表示されます",
-                                              "アップグレード用のファイルではないと表示されます",
-                                              "アップグレード中に電源が切れました",
-                                              "画面がフリーズしたり、とても遅くなっています",
-                                              "どんなエラーなのかわかりません",
-                                              "デバイスに問題が発生しました",
-                                              "問題が解決しない場合はどうすればよいですか？",
-                                              "製品使用時に追加の消耗品はありますか？",
+                                              "ボタンを押しても動作しません", // 1-0
+                                              "電源ブート後、初期画面に入りません", // 1-1
+                                              "「アップグレードファイルが見えません」というメッセージが表示されます", // 1-2
+                                              "「アップグレードファイルに問題があります」というメッセージが表示されます", // 1-3
+                                              "「アップグレードファイルではありません」というメッセージが表示されます", // 1-4
+                                              "アップグレード中に電源が切れました", // 1-5
+                                              "画面がフリーズしたり、とても遅いです", // 1-6
+                                              "どんなエラーなのかわかりません", // 1-7
+                                              "画面がタッチできません", // 1-8
+                                              "充電できません", // 1-9
                                           });
-    // Category 2: Bluetooth
+    // カテゴリ 2: ブルートゥース
     textData[Lan][PAGE_ERROR_HELP].insert("labelTextErrorHelp2",QStringList{
-                                              "アプリ連動ができません",
-                                              "製品の測定値とアプリの測定値が異なります",
+                                              "アプリ連動ができません", // 2-0
+                                              "製品の測定値とアプリの測定値が異なります", // 2-1
                                           });
-    // Category 3: Blood Glucose Records
+    // カテゴリ 3: 血糖記録
     textData[Lan][PAGE_ERROR_HELP].insert("labelTextErrorHelp3",QStringList{
-                                              "血糖補正を初期化すると以前の記録は削除されますか？",
-                                              "削除した血糖記録は復元できますか？",
+                                              "血糖補正を初期化して使用すると以前の血糖測定記録はすべて消えますか？", // 3-0
+                                              "削除した血糖記録は復元できますか？", // 3-1
                                           });
 
     //PAGE_ERROR_RESPONSE
     fontData[Lan][PAGE_ERROR_RESPONSE].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
     fontData[Lan][PAGE_ERROR_RESPONSE].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
     fontData[Lan][PAGE_ERROR_RESPONSE].insert("labelText",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
-    // ErrorHelp Category 0: Blood Glucose Measurement
+    // ErrorHelp カテゴリ 0: 血糖測定
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-0",QStringList{
-                                                  "次の測定環境を確認後、再測定してください"
-                                                  "@測定中に咳、くしゃみ、会話をせず、動かないでください"
-                                                  "@指の力を抜いて水平に密着させてください"
-                                                  "@指の表面温度を26℃(79℉)以上に保ってください"
-                                                  "@指の水分や異物を取り除いてください",
+                                                  "血糖補正有効期限(90日)満了時に測定ができませんので、血糖補正を行ってください。",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-1",QStringList{
-                                                  "指が正しく挿入されているか確認後、再測定してください"
-                                                  "@正確な測定のために、指の中央がセンサー窓の端を軽く覆うように力を抜いて置いてください",
+                                                  "測定環境を確認後、再度お試しください。\n"
+                                                  "測定環境は以下の通りです。"
+                                                  "@測定中の咳、くしゃみ、会話、動きの禁止\n"
+                                                  "指の力を抜いて水平に底面へ密着"
+                                                  "@指の表面温度26°C以上を維持\n"
+                                                  "指の水分および異物を除去"
+                                                  "@* 使用説明書の\n[ エラーメッセージおよび解決方法 ]を\nご参考ください。",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-2",QStringList{
-                                                  "指を十分に温めた後、再測定してください",
+                                                  "指が正しく挿入されているか確認後、再度測定してください。"
+                                                  "@指紋が底面に触れるように押し入れてください。\n指先が引っかかったら力を抜いて姿勢を固定してください。",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-3",QStringList{
-                                                  "測定データが不完全または分析できない値が検出されたときに発生します"
-                                                  "@手の震え、くしゃみ、会話を避けてください",
+                                                  "指を十分に温めた後、再度測定してください。",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-4",QStringList{
-                                                  "測定された血糖値の偏差が範囲を超えたときに発生します"
-                                                  "@指の測定位置と測定環境を確認後、再測定してください",
+                                                  "会話、手の震え、くしゃみを避けて、一定時間安定をとってから再度測定してください。",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-5",QStringList{
-                                                  "測定中に「キャンセル」ボタンを押すと中断されます",
+                                                  "測定ができなかった可能性があります。再度測定してください。それでも問題が続く場合は電源ボタンを切って入れ直してください。",
+                                                  "外部環境（低温や周囲の高温物体）に露出していた場合、誤作動する可能性があります。室温20〜30°Cで再度使用してみてください。",
+                                                  "温度、湿度、水分に露出したのでなければ、カスタマーサービスセンターへ故障受付をしてください。",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-6",QStringList{
-                                                  "測定環境を確認後、再測定してください"
-                                                  "@測定環境に影響がない場合は以下の内容をご確認ください"
-                                                  "@低血糖または高血糖の症状があるか確認してください"
-                                                  "@継続的に不正確だと疑われる場合は専門医にご相談ください",
+                                                  "指の測定位置と測定環境を確認後、再度測定してください。",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-7",QStringList{
-                                                  "血糖範囲メニューで正常範囲を確認し、調整してください",
+                                                  "血糖範囲アイコンを押して血糖状態アラート範囲を調整してください。",
                                               });
-    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-8",QStringList{
-                                                  "血糖補正有効期限(90日)満了時に測定が不可能です"
-                                                  "@血糖補正を行ってください",
-                                              });
-    // ErrorHelp Category 1: Device Care
+    // ErrorHelp カテゴリ 1: 機器管理
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-0",QStringList{
-                                                  "定格バッテリー充電器かどうかご確認ください"
-                                                  "@定格バッテリー充電器を使用しても充電できない場合はA/Sセンターへお問い合わせください",
+                                                  "電源を切って再度入れてみてください。\n",
+                                                  "バッテリーが十分かどうか確認してください。\n",
+                                                  "充電器を接続した状態では測定できません。@",
+                                                  "水がかかったり湿度の高い場所に保管していた場合、故障の原因になる可能性があります。製品の状態を確認してください。",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-1",QStringList{
-                                                  "充電器を使用して充電してください",
+                                                  "充電ケーブルとアダプターの接続状態を確認後、充電してください。\n充電が完了した後、電源を入れ直してブートが完了すると正常使用が可能です。",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-2",QStringList{
-                                                  "バッテリーが5%以下の場合、システム保護のために5秒後に製品がシャットダウンします"
-                                                  "@充電器を使用して充電してください",
+                                                  "アップグレードファイルを再度ご確認ください。同じ現象が発生する場合はカスタマーサービスセンターへお問い合わせください。",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-3",QStringList{
-                                                  "定格バッテリー充電器を使用してバッテリーを充電してください"
-                                                  "@充電完了後、電源を入れ直してブートが完了すれば正常使用が可能です",
+                                                  "アップグレードファイルを再ダウンロードして新しいファイルで再度お試しください。同じ現象が発生する場合はカスタマーサービスセンターへお問い合わせください。",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-4",QStringList{
-                                                  "アップグレードファイルを再度ご確認ください",
+                                                  "正しいファイルかどうか確認後、再度お試しください。同じ現象が発生する場合はカスタマーサービスセンターへお問い合わせください。",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-5",QStringList{
-                                                  "アップグレードファイルを再ダウンロードしてから再試行してください",
+                                                  "充電後、再度アップグレードを行ってください。同じ現象が発生する場合はカスタマーサービスセンターへお問い合わせください。",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-6",QStringList{
-                                                  "ファイルが正しいファイルかどうか確認後、再試行してください",
+                                                  "ピンを使用してリセットボタンを押してください。リセットボタンを押した後、システムが再起動されると正常使用が可能です。",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-7",QStringList{
-                                                  "充電後に再試行してください"
-                                                  "@充電後も同じ現象が発生する場合はA/Sセンターへお問い合わせください",
+                                                  "再起動後、同じエラーが発生するか確認してください。同じ現象が発生する場合はカスタマーサービスセンターへお問い合わせください。",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-8",QStringList{
-                                                  "ピンを使用してリセットボタンを押してください"
-                                                  "@充電後も同じ現象が発生する場合はA/Sセンターへお問い合わせください",
+                                                  "再起動をお試し後、正常動作を確認してください。同じ現象が発生する場合はカスタマーサービスセンターへお問い合わせください。",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-9",QStringList{
-                                                  "まず製品を再起動後、同じエラーが発生するか確認してください"
-                                                  "@または製品のソフトウェアバージョンを最新バージョンにアップグレードしてください"
-                                                  "@同じ現象が発生する場合はA/Sセンターへお問い合わせください",
+                                                  "充電ケーブルとアダプターの接続状態を確認してください。\n",
+                                                  "使用中の充電アダプターの出力仕様が製品の推奨仕様と一致するか確認してください。@",
+                                                  "同じ現象が発生する場合はカスタマーサービスセンターへお問い合わせください。",
                                               });
-    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-10",QStringList{
-                                                  "その他製品に問題が発生した場合です"
-                                                  "@再起動およびアップデートをお試しください"
-                                                  "@同じ現象が発生する場合はA/Sセンターへお問い合わせください",
-                                              });
-    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-11",QStringList{
-                                                  "A/Sセンターへお問い合わせください",
-                                              });
-    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-12",QStringList{
-                                                  "追加の消耗品はありません",
-                                              });
-    // ErrorHelp Category 2: Bluetooth
+    // ErrorHelp カテゴリ 2: ブルートゥース
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp2-0",QStringList{
                                                   "製品画面上部バーの「ブルートゥース」アイコンをタッチして有効にします。スマートフォンを製品から1M以内に近づけて"
                                                   "@スマートフォンでブルートゥースを検索してハッピーゾーン製品を見つけて連動してください。"
                                                   "@問題が続く場合は本製品の電源を切って再度入れてください。",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp2-1",QStringList{
-                                                  "日付と測定項目を確認してください。\n"
+                                                  "日付と測定項目を確認してください。\n",
                                                   "問題が続く場合は一時的なエラーの可能性がありますので、製品とアプリを切ってから再度起動して再連動してください。",
                                               });
-    // ErrorHelp Category 3: Blood Glucose Records
+    // ErrorHelp カテゴリ 3: 血糖記録
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp3-0",QStringList{
-                                                  "初期化しても記録は削除されません",
+                                                  "いいえ。血糖補正を初期化しても記録された血糖記録は製品に最大90日まで保存されます。\nアプリでは最大12ヶ月まで保存されます。",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp3-1",QStringList{
-                                                  "復元できません"
-                                                  "血糖記録削除時にご注意ください",
+                                                  "いいえ。復元ができませんので、血糖記録削除時にご注意ください。",
                                               });
 
     fontData[Lan][PAGE_RESPONSE].insert("labelText",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
