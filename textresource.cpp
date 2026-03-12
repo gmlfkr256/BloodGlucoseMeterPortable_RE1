@@ -1737,7 +1737,7 @@ void TextResource::init()
     //PAGE_HELP_RESPONSE
     fontData[Lan][PAGE_HELP_RESPONSE].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
     fontData[Lan][PAGE_HELP_RESPONSE].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
-    fontData[Lan][PAGE_HELP_RESPONSE].insert("labelText",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
+    fontData[Lan][PAGE_HELP_RESPONSE].insert("labelText",QFont(currentFont,instance.pixelToPoint(32),QFont::Bold));
     // Help 0: Target Users
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp0",QStringList{
                                                  "The target users are adult males and females aged 19 and older who are in the pre-diabetic stage.",
@@ -1792,7 +1792,7 @@ void TextResource::init()
 
     //PAGE_FAQ
     fontData[Lan][PAGE_FAQ].insert("labelText",QFont(currentFont,instance.pixelToPoint(36)));
-    fontData[Lan][PAGE_FAQ].insert("labelTextBold",QFont(currentFont,instance.pixelToPoint(26),QFont::Bold));
+    fontData[Lan][PAGE_FAQ].insert("labelTextBold",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
     fontData[Lan][PAGE_FAQ].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
     fontData[Lan][PAGE_FAQ].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
     // Category 0: Blood Glucose Calibration
@@ -1857,10 +1857,11 @@ void TextResource::init()
     //PAGE_FAQ_RESPONSE
     fontData[Lan][PAGE_FAQ_RESPONSE].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
     fontData[Lan][PAGE_FAQ_RESPONSE].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
-    fontData[Lan][PAGE_FAQ_RESPONSE].insert("labelText",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
+    fontData[Lan][PAGE_FAQ_RESPONSE].insert("labelText",QFont(currentFont,instance.pixelToPoint(32),QFont::Bold));
     // FAQ Category 0: Blood Glucose Calibration
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-0",QStringList{
-                                                "It is a process of calculating and adjusting blood glucose values by linking with an invasive device to reduce the error between actual blood glucose values and the product.",
+                                                "It is a process of calculating and adjusting blood glucose values by linking with an invasive device"
+                                                "@to reduce the error between actual blood glucose values and the product.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-1",QStringList{
                                                 "Yes. Since each user has different light transmittance depending on the structure of the measurement area and external environment, individual blood glucose calibration is essential for accurate blood glucose measurement values.",
@@ -2004,7 +2005,7 @@ void TextResource::init()
 
     //PAGE_ERROR_HELP
     fontData[Lan][PAGE_ERROR_HELP].insert("labelText",QFont(currentFont,instance.pixelToPoint(36)));
-    fontData[Lan][PAGE_ERROR_HELP].insert("labelTextBold",QFont(currentFont,instance.pixelToPoint(26),QFont::Bold));
+    fontData[Lan][PAGE_ERROR_HELP].insert("labelTextBold",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
     fontData[Lan][PAGE_ERROR_HELP].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
     fontData[Lan][PAGE_ERROR_HELP].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
     // Category 0: Blood Glucose Measurement
@@ -2045,7 +2046,7 @@ void TextResource::init()
     //PAGE_ERROR_RESPONSE
     fontData[Lan][PAGE_ERROR_RESPONSE].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
     fontData[Lan][PAGE_ERROR_RESPONSE].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
-    fontData[Lan][PAGE_ERROR_RESPONSE].insert("labelText",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
+    fontData[Lan][PAGE_ERROR_RESPONSE].insert("labelText",QFont(currentFont,instance.pixelToPoint(32),QFont::Bold));
     // ErrorHelp Category 0: Blood Glucose Measurement
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-0",QStringList{
                                                   "Measurement is not possible when the blood glucose calibration validity period (90 days) has expired. Please perform blood glucose calibration.",
@@ -2134,7 +2135,7 @@ void TextResource::init()
                                                   "No. Recovery is not possible, so please be careful when deleting blood glucose records.",
                                               });
 
-    fontData[Lan][PAGE_RESPONSE].insert("labelText",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
+    fontData[Lan][PAGE_RESPONSE].insert("labelText",QFont(currentFont,instance.pixelToPoint(32),QFont::Bold));
     fontData[Lan][PAGE_RESPONSE].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
     fontData[Lan][PAGE_RESPONSE].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
     fontData[Lan][PAGE_RESPONSE].insert("labelPageNum",QFont(currentFont,instance.pixelToPoint(28)));
@@ -6261,7 +6262,8 @@ void TextResource::init()
     fontData[Lan][PAGE_FAQ_RESPONSE].insert("labelText",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
     // FAQ 카테고리 0: Calibración de Glucosa
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-0",QStringList{
-                                                "Es un proceso de cálculo y ajuste de los valores de glucosa en relación con equipos invasivos para reducir el error entre los valores reales y el producto.",
+                                                "Es un proceso de cálculo y ajuste de los valores de glucosa en relación con equipos invasivos"
+                                                "@para reducir el error entre los valores reales y el producto.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-1",QStringList{
                                                 "Sí. Dado que la estructura del área de medición y la transmisión de luz varían según las condiciones externas de cada persona, la calibración individual es esencial para obtener valores precisos.",
