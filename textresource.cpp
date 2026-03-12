@@ -1679,10 +1679,10 @@ void TextResource::init()
                                                  "2. Refrain from speaking and\nremain still during measurement",
                                                  "3. Do not apply force or pressure\nto the finger",
                                                  "4. Ensure the finger is dry and\nfree of foreign substances",
-                                                 "5. Keep finger surface temperature\nat or above 26°C",
+                                                 "5. Keep finger surface temperature\nat or above 26°C (79°F)",
                                                  "6. Place the finger firmly on the sensor\n and keep it level",
                                                  "7. Disconnect the charger before use",
-                                                 "8. Check ambient temperature (15–35°C)",
+                                                 "8. Check ambient temperature (15–35°C / 59–95°F)",
                                              });
 
     //PAGE_CALI_SELECT_RE
@@ -1892,7 +1892,7 @@ void TextResource::init()
                                                 "It is recommended to measure with the same finger for accurate measurement.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-3",QStringList{
-                                                "Measure in an indoor environment at 20-30°C, free from direct sunlight, wind, humidity, vibration, and other factors that may affect the product.",
+                                                "Measure in an indoor environment at 20-30°C (68-86°F), free from direct sunlight, wind, humidity, vibration, and other factors that may affect the product.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-4",QStringList{
                                                 "No. Measuring with wet hands may cause product malfunction.",
@@ -1914,7 +1914,7 @@ void TextResource::init()
                                                 "The measurement environment is as follows."
                                                 "@No coughing, sneezing, talking, or moving during measurement\n"
                                                 "Relax your finger and press it flat against the surface"
-                                                "@Maintain finger surface temperature above 26°C\n"
+                                                "@Maintain finger surface temperature above 26°C (79°F)\n"
                                                 "Remove moisture and foreign substances from finger"
                                                 "@* Please refer to the user manual\n[ Error Messages and Solutions ].",
                                             });
@@ -1943,7 +1943,7 @@ void TextResource::init()
                                                 "Wipe with a soft cloth and let it dry before use. Do not use detergents, alcohol, or chemical substances.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq2-5",QStringList{
-                                                "Avoid humid environments (bathrooms, kitchens, etc.) and high-temperature environments above 60°C (sealed vehicles, direct sunlight exposure, etc.).",
+                                                "Avoid humid environments (bathrooms, kitchens, etc.) and high-temperature environments above 60°C (140°F) (sealed vehicles, direct sunlight exposure, etc.).",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq2-6",QStringList{
                                                 "Yes, always close the cover and store it in the case when not in use."
@@ -2059,7 +2059,7 @@ void TextResource::init()
                                                   "The measurement environment is as follows."
                                                   "@No coughing, sneezing, talking, or moving during measurement\n"
                                                   "Relax your finger and press it flat against the surface"
-                                                  "@Maintain finger surface temperature above 26°C\n"
+                                                  "@Maintain finger surface temperature above 26°C (79°F)\n"
                                                   "Remove moisture and foreign substances from finger"
                                                   "@* Please refer to the user manual\n[ Error Messages and Solutions ].",
                                               });
@@ -2076,7 +2076,7 @@ void TextResource::init()
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-5",QStringList{
                                                   "The measurement may not have been completed. Please measure again. If the problem persists, try turning the power button off and on.",
                                                   "If the product was exposed to external environments (low temperature or nearby high-temperature objects), it may malfunction."
-                                                  "@Try using it again at an indoor temperature of 20-30°C.",
+                                                  "@Try using it again at an indoor temperature of 20-30°C (68-86°F).",
                                                   "If it was not exposed to temperature, humidity, or moisture, please contact customer service for repair.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-6",QStringList{
