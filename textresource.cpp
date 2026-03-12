@@ -686,7 +686,7 @@ void TextResource::init()
                                              });
     // Help 4: 사용 전 전문의 상담대상
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp4",QStringList{
-                                                 "만 19세 미만인 경우\n"
+                                                 "만 19세 미만인 경우,\n"
                                                  "광 조사 부위에 피부질환, 상처,\n 다한증, 파킨슨병 등 손 떨림이 있는 경우,"
                                                  "@중증 저혈당, 당뇨병 케톤산증, 간질, 실신 등\n부신 질환 병력이 있는 경우,"
                                                  "@혈액투석 또는\n복막투석 중인 경우,\n임산부 및 수유부인 경우",
@@ -1759,7 +1759,7 @@ void TextResource::init()
                                              });
     // Help 4: Consult a Doctor Before Use
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp4",QStringList{
-                                                 "Under 19 years of age\n"
+                                                 "Under 19 years of age,\n"
                                                  "Skin diseases or wounds in light-exposed areas,\n hand tremors such as hyperhidrosis or Parkinson's disease,"
                                                  "@Severe hypoglycemia, diabetic ketoacidosis, epilepsy, syncope,\nor history of adrenal disease,"
                                                  "@Undergoing hemodialysis or\nperitoneal dialysis,\npregnant or breastfeeding",
@@ -2860,7 +2860,7 @@ void TextResource::init()
                                              });
     // Help 4: 使用前に専門医に相談すべき方
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp4",QStringList{
-                                                 "満19歳未満の場合\n"
+                                                 "満19歳未満の場合、\n"
                                                  "光照射部位の皮膚疾患・傷、\n 多汗症、パーキンソン病などの手の震えがある場合、"
                                                  "@重症低血糖、糖尿病ケトアシドーシス、てんかん、失神など\n副腎疾患の既往歴がある場合、"
                                                  "@血液透析または\n腹膜透析中の場合、\n妊婦および授乳婦の場合",
@@ -3959,7 +3959,7 @@ void TextResource::init()
                                              });
     // Help 4: 使用前需咨询专业医生的情况
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp4",QStringList{
-                                                 "未满19岁的情况\n"
+                                                 "未满19岁的情况，\n"
                                                  "受光照部位有皮肤病或伤口，\n 患有多汗症、帕金森病等手部颤抖的情况，"
                                                  "@有严重低血糖、糖尿病酮症酸中毒、癫痫、晕厥等\n肾上腺疾病病史的情况，"
                                                  "@正在进行血液透析或\n腹膜透析的情况，\n孕妇及哺乳期妇女的情况",
@@ -5056,7 +5056,7 @@ void TextResource::init()
                                              });
     // Help 4: 使用前需諮詢專業醫生的情況
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp4",QStringList{
-                                                 "未滿19歲的情況\n"
+                                                 "未滿19歲的情況，\n"
                                                  "受光照部位有皮膚病或傷口，\n 患有多汗症、帕金森病等手部顫抖的情況，"
                                                  "@有嚴重低血糖、糖尿病酮症酸中毒、癲癇、暈厥等\n腎上腺疾病病史的情況，"
                                                  "@正在進行血液透析或\n腹膜透析的情況，\n孕婦及哺乳期婦女的情況",
@@ -6160,7 +6160,7 @@ void TextResource::init()
                                              });
     // Help 4: Consulta Médica Previa
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp4",QStringList{
-                                                 "Menores de 19 años\n"
+                                                 "Menores de 19 años,\n"
                                                  "Enfermedades de la piel o heridas en áreas expuestas a la luz,\ntemblores en las manos como hiperhidrosis, enfermedad de Parkinson,"
                                                  "@Historial de hipoglucemia grave, cetoacidosis diabética, epilepsia, síncope,\nenfermedades suprarrenales,"
                                                  "@En hemodiálisis o\ndiálisis peritoneal,\nmujeres embarazadas o en período de lactancia",
