@@ -1864,7 +1864,8 @@ void TextResource::init()
                                                 "@to reduce the error between actual blood glucose values and the product.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-1",QStringList{
-                                                "Yes. Since each user has different light transmittance depending on the structure of the measurement area and external environment, individual blood glucose calibration is essential for accurate blood glucose measurement values.",
+                                                "Yes. Since each user has different light transmittance depending on the structure of the measurement area and external environment,"
+                                                "@individual blood glucose calibration is essential for accurate blood glucose measurement values.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-2",QStringList{
                                                 "Blood glucose calibration must be performed before first use. After that, re-calibration must be done within 90 days from the calibration date."
@@ -1877,12 +1878,12 @@ void TextResource::init()
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-4",QStringList{
                                                 "No. Even if blood glucose calibration is reset, the recorded blood glucose records are stored on the product for up to 90 days."
-                                                "\nRecords are stored on the app for up to 12 months.",
+                                                "@Records are stored on the app for up to 12 months.",
                                             });
     // FAQ Category 1: Blood Glucose Measurement
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-0",QStringList{
                                                 "Sit down and place your elbow on a table, keeping it level."
-                                                "\nRelax your finger and insert it fully to the end of the insertion port, pressing it flat against the bottom surface inside.",
+                                                "@Relax your finger and insert it fully to the end of the insertion port, pressing it flat against the bottom surface inside.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-1",QStringList{
                                                 "Push your finger in with the fingerprint side touching the bottom surface.\nWhen your fingertip catches, relax and hold your position.",
@@ -1935,7 +1936,8 @@ void TextResource::init()
                                                 "Please make sure to disconnect the charger before use.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq2-3",QStringList{
-                                                "No. This product does not have waterproof features, so do not operate it with wet hands. If liquid comes in contact with the product, wipe it off immediately and check for normal operation.",
+                                                "No. This product does not have waterproof features, so do not operate it with wet hands."
+                                                "@If liquid comes in contact with the product, wipe it off immediately and check for normal operation.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq2-4",QStringList{
                                                 "Wipe with a soft cloth and let it dry before use. Do not use detergents, alcohol, or chemical substances.",
@@ -1977,7 +1979,8 @@ void TextResource::init()
                                             });
     // FAQ Category 5: Target Users / Number of Users
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq5-0",QStringList{
-                                                "This is a medical device intended for pre-diabetic patients aged 19 and older not on drug treatment. For medical decisions such as diabetes diagnosis, treatment, or insulin administration, please consult a medical professional.",
+                                                "This is a medical device intended for pre-diabetic patients aged 19 and older not on drug treatment."
+                                                "@For medical decisions such as diabetes diagnosis, treatment, or insulin administration, please consult a medical professional.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq5-1",QStringList{
                                                 "This product can be used by up to 2 people with one device.",
@@ -2072,7 +2075,8 @@ void TextResource::init()
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-5",QStringList{
                                                   "The measurement may not have been completed. Please measure again. If the problem persists, try turning the power button off and on.",
-                                                  "If the product was exposed to external environments (low temperature or nearby high-temperature objects), it may malfunction. Try using it again at an indoor temperature of 20-30°C.",
+                                                  "If the product was exposed to external environments (low temperature or nearby high-temperature objects), it may malfunction."
+                                                  "@Try using it again at an indoor temperature of 20-30°C.",
                                                   "If it was not exposed to temperature, humidity, or moisture, please contact customer service for repair.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-6",QStringList{
@@ -6266,7 +6270,8 @@ void TextResource::init()
                                                 "@para reducir el error entre los valores reales y el producto.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-1",QStringList{
-                                                "Sí. Dado que la estructura del área de medición y la transmisión de luz varían según las condiciones externas de cada persona, la calibración individual es esencial para obtener valores precisos.",
+                                                "Sí. Dado que la estructura del área de medición y la transmisión de luz varían según las condiciones externas de cada persona,"
+                                                "@la calibración individual es esencial para obtener valores precisos.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-2",QStringList{
                                                 "Debe realizarse antes del primer uso. Después, debe recalibrarse dentro de los 90 días desde la fecha de calibración."
@@ -6362,7 +6367,8 @@ void TextResource::init()
                                                 "Total: 4.44Wh",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq3-2",QStringList{
-                                                "Este producto tiene una batería de polímero de iones de litio (aprox. 4.4Wh).\nLas regulaciones pueden variar según la aerolínea y el país, consulte con su aerolínea antes de viajar."
+                                                "Este producto tiene una batería de polímero de iones de litio (aprox. 4.4Wh)."
+                                                "@Las regulaciones pueden variar según la aerolínea y el país, consulte con su aerolínea antes de viajar."
                                                 "@[ Especificaciones de la batería ]\n"
                                                 "Voltaje: 3.7V\n"
                                                 "Capacidad: 1200mAh\n"
@@ -6379,7 +6385,8 @@ void TextResource::init()
                                             });
     // FAQ 카테고리 5: Usuarios/Capacidad
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq5-0",QStringList{
-                                                "Es un dispositivo médico para pacientes prediabéticos mayores de 19 años sin tratamiento farmacológico. Para decisiones médicas como diagnóstico y tratamiento de diabetes o administración de insulina, consulte a un profesional médico.",
+                                                "Es un dispositivo médico para pacientes prediabéticos mayores de 19 años sin tratamiento farmacológico."
+                                                "@Para decisiones médicas como diagnóstico y tratamiento de diabetes o administración de insulina, consulte a un profesional médico.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq5-1",QStringList{
                                                 "Este producto puede ser usado por un máximo de 2 personas.",
@@ -6491,7 +6498,8 @@ void TextResource::init()
                                                   "Si estuvo en contacto con agua o en un ambiente húmedo, puede ser causa de avería. Verifique el estado del producto.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-1",QStringList{
-                                                  "Verifique la conexión del cable de carga y el adaptador, luego cargue.\nDespués de cargar, al encender y completar el arranque, se puede usar normalmente.",
+                                                  "Verifique la conexión del cable de carga y el adaptador, luego cargue."
+                                                  "@Después de cargar, al encender y completar el arranque, se puede usar normalmente.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-2",QStringList{
                                                   "Verifique el archivo de actualización. Si el problema persiste, contacte al centro de atención al cliente.",
