@@ -1971,8 +1971,10 @@ void TextResource::init()
                                             });
     // FAQ Category 4: Blood Glucose Records
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq4-0",QStringList{
-                                                "Press the 'Blood Glucose Records' icon in the 'Settings Menu' on the product, or connect to your smartphone via Bluetooth and check in the App."
-                                                "@Today's measurement records are automatically displayed on the home screen.\nCheck past blood glucose records by pressing the blood glucose records icon in settings.",
+                                                "Press the 'Blood Glucose Records' icon in the 'Settings Menu' on the product,"
+                                                "@or connect to your smartphone via Bluetooth and check in the App."
+                                                "@Today's measurement records are automatically displayed on the home screen."
+                                                "@Check past blood glucose records by pressing the blood glucose records icon in settings.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq4-1",QStringList{
                                                 "This product stores measured blood glucose records for up to 90 days.\n"
@@ -6377,8 +6379,10 @@ void TextResource::init()
                                             });
     // FAQ 카테고리 4: Registros de Glucosa
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq4-0",QStringList{
-                                                "Presione el icono 'Registros de glucosa' en el menú de configuración del producto, o conéctese al smartphone por Bluetooth y verifique en la app."
-                                                "@Los registros del día se muestran automáticamente en la pantalla de inicio.\nPara registros anteriores, presione el icono de registros de glucosa en la configuración.",
+                                                "Presione el icono 'Registros de glucosa' en el menú de configuración del producto,"
+                                                "@o conéctese al smartphone por Bluetooth y verifique en la app."
+                                                "@Los registros del día se muestran automáticamente en la pantalla de inicio."
+                                                "@Para registros anteriores, presione el icono de registros de glucosa en la configuración.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq4-1",QStringList{
                                                 "Este producto almacena los registros de glucosa medidos hasta un máximo de 90 días.\n"
