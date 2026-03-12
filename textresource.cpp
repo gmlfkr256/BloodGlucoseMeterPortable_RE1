@@ -964,12 +964,12 @@ void TextResource::init()
                                           });
     // 카테고리 2: 블루투스
     textData[Lan][PAGE_ERROR_HELP].insert("labelTextErrorHelp2",QStringList{
-                                              "앱 연동이 안되요", // 2-0
+                                              "앱 연동이 안돼요", // 2-0
                                               "제품의 측정 수치와 앱의 측정 수치가 달라요", // 2-1
                                           });
     // 카테고리 3: 혈당기록
     textData[Lan][PAGE_ERROR_HELP].insert("labelTextErrorHelp3",QStringList{
-                                              "혈당보정을 초기화하여 사용하면 이전 혈당측정 기록은 다 지워지나요?", // 3-0
+                                              "혈당보정 초기화 시 이전 측정 기록도 삭제되나요?", // 3-0
                                               "삭제한 혈당 기록은 복구할 수 있나요?", // 3-1
                                           });
     //// 카테고리 4: 미분류 (주석처리)
@@ -2045,7 +2045,7 @@ void TextResource::init()
                                           });
     // Category 3: Blood Glucose Records
     textData[Lan][PAGE_ERROR_HELP].insert("labelTextErrorHelp3",QStringList{
-                                              "Are previous blood glucose records deleted when calibration is reset?", // 3-0
+                                              "Are previous measurement records deleted when calibration is reset?", // 3-0
                                               "Can deleted blood glucose records be recovered?", // 3-1
                                           });
 
@@ -2901,7 +2901,7 @@ void TextResource::init()
 
     //PAGE_FAQ
     fontData[Lan][PAGE_FAQ].insert("labelText",QFont(currentFont,instance.pixelToPoint(36)));
-    fontData[Lan][PAGE_FAQ].insert("labelTextBold",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
+    fontData[Lan][PAGE_FAQ].insert("labelTextBold",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
     fontData[Lan][PAGE_FAQ].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
     fontData[Lan][PAGE_FAQ].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
     // カテゴリ 0: 血糖補正
@@ -3147,7 +3147,7 @@ void TextResource::init()
                                           });
     // カテゴリ 3: 血糖記録
     textData[Lan][PAGE_ERROR_HELP].insert("labelTextErrorHelp3",QStringList{
-                                              "血糖補正を初期化して使用すると以前の血糖測定記録はすべて消えますか？", // 3-0
+                                              "血糖補正を初期化すると以前の測定記録も削除されますか？", // 3-0
                                               "削除した血糖記録は復元できますか？", // 3-1
                                           });
 
@@ -4000,7 +4000,7 @@ void TextResource::init()
 
     //PAGE_FAQ
     fontData[Lan][PAGE_FAQ].insert("labelText",QFont(currentFont,instance.pixelToPoint(36)));
-    fontData[Lan][PAGE_FAQ].insert("labelTextBold",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
+    fontData[Lan][PAGE_FAQ].insert("labelTextBold",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
     fontData[Lan][PAGE_FAQ].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
     fontData[Lan][PAGE_FAQ].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
     // 类别 0: 血糖校准
@@ -4246,7 +4246,7 @@ void TextResource::init()
                                           });
     // 类别 3: 血糖记录
     textData[Lan][PAGE_ERROR_HELP].insert("labelTextErrorHelp3",QStringList{
-                                              "血糖校准初始化后使用，以前的血糖测量记录都会被删除吗？", // 3-0
+                                              "血糖校准初始化后以前的测量记录也会删除吗？", // 3-0
                                               "删除的血糖记录可以恢复吗？", // 3-1
                                           });
 
@@ -5097,7 +5097,7 @@ void TextResource::init()
 
     //PAGE_FAQ
     fontData[Lan][PAGE_FAQ].insert("labelText",QFont(currentFont,instance.pixelToPoint(36)));
-    fontData[Lan][PAGE_FAQ].insert("labelTextBold",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
+    fontData[Lan][PAGE_FAQ].insert("labelTextBold",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
     fontData[Lan][PAGE_FAQ].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
     fontData[Lan][PAGE_FAQ].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
     // 類別 0: 血糖校準
@@ -5343,7 +5343,7 @@ void TextResource::init()
                                           });
     // 카테고리 3: 血糖記錄
     textData[Lan][PAGE_ERROR_HELP].insert("labelTextErrorHelp3",QStringList{
-                                              "初始化血糖校正後，之前的血糖測量記錄會被刪除嗎？", // 3-0
+                                              "血糖校準初始化後以前的測量記錄也會刪除嗎？", // 3-0
                                               "刪除的血糖記錄可以恢復嗎？", // 3-1
                                           });
 
@@ -6201,7 +6201,7 @@ void TextResource::init()
 
     //PAGE_FAQ
     fontData[Lan][PAGE_FAQ].insert("labelText",QFont(currentFont,instance.pixelToPoint(36)));
-    fontData[Lan][PAGE_FAQ].insert("labelTextBold",QFont(currentFont,instance.pixelToPoint(26),QFont::Bold));
+    fontData[Lan][PAGE_FAQ].insert("labelTextBold",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
     fontData[Lan][PAGE_FAQ].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
     fontData[Lan][PAGE_FAQ].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
     // 카테고리 0: Calibración de Glucosa
@@ -6453,7 +6453,7 @@ void TextResource::init()
                                           });
     // 카테고리 3: Registros de Glucosa
     textData[Lan][PAGE_ERROR_HELP].insert("labelTextErrorHelp3",QStringList{
-                                              "¿Se eliminan los registros anteriores al inicializar la calibración?", // 3-0
+                                              "¿Se eliminan los registros previos al inicializar la calibración?", // 3-0
                                               "¿Se pueden recuperar los registros de glucosa eliminados?", // 3-1
                                           });
 
