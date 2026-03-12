@@ -1698,283 +1698,465 @@ void TextResource::init()
 
     fontData[Lan][PAGE_CALI_SELECT_RE].insert("labelTextValue",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
 
+    //PAGE_HELP_INDEX
+    fontData[Lan][PAGE_HELP_INDEX].insert("labelText",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
+    textData[Lan][PAGE_HELP_INDEX].insert("labelText",QStringList{
+                                              "Target Users", // 0
+                                              "Product Info", // 1
+                                              "Purpose of Use", // 2
+                                              "Pre-Measurement\nPrecautions", // 3
+                                              "Consult a Doctor\nBefore Use", // 4
+                                              "Key Features", // 5
+                                              "Bluetooth\nSupport", // 6
+                                          });
+
     //PAGE_HELP
     fontData[Lan][PAGE_HELP].insert("labelText",QFont(currentFont,instance.pixelToPoint(36)));
     fontData[Lan][PAGE_HELP].insert("labelTextBold",QFont(currentFont,instance.pixelToPoint(26),QFont::Bold));
-    textData[Lan][PAGE_HELP].insert("labelText",QStringList{
-                                        "What is this product?", // 0
-                                        "What is this product used for?", // 1
-                                        "What are the advantages of this product?", // 2
-                                        "Can anyone use it?", // 3
-                                        "What functions does it provide?", // 4
-                                        "When is it good to use it?", // 5
-                                        "Is measurement simple?", // 6
-                                        "Are there preparation steps before measurement?", // 7
-                                        "What is blood glucose calibration?", // 8
-                                        "Is blood glucose calibration mandatory?", // 9
-                                        "Is there a calibration cycle?", // 10
-                                        "Are there precautions before measurement?", // 11
-                                        "Are there precautions during measurement?", // 12
-                                        "Is consultation with a medical professional needed?", // 13
-                                        "How does the measurement proceed?", // 14
-                                        "Is the measurement process automatic?", // 15
-                                        "How long does measurement take?", // 16
-                                        "How are results displayed?", // 17
-                                        "What do the results mean?", // 18
-                                        "Can result colors be adjusted?", // 19
-                                        "How can results be utilized?", // 20
-                                        "Are measurement records saved?", // 21
-                                        "Are measurement results accurate?", // 22
-                                        "Does the measurement environment affect results?", // 23
-                                        "How should it be stored?", // 24
-                                        "Is it waterproof?", // 25
-                                        "What are the limitations of this product?", // 26
-                                        "Is this product for diagnostic purposes?", // 27
-                                        "How is power supplied?", // 28
-                                        "What is the product usage time?", // 29
-                                        "How do I charge it?", // 30
-                                    });
     fontData[Lan][PAGE_HELP].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
     fontData[Lan][PAGE_HELP].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
+    // Category 0: Target Users
+    textData[Lan][PAGE_HELP].insert("labelTextHelp0",QStringList{
+                                        "Can anyone use it?", // 0-0
+                                        "What is this product?", // 0-1
+                                        "What are the advantages of this product?", // 0-2
+                                    });
+    // Category 1: Product Info
+    textData[Lan][PAGE_HELP].insert("labelTextHelp1",QStringList{
+                                        "What functions does it provide?", // 1-0
+                                    });
+    // Category 2: Purpose of Use
+    textData[Lan][PAGE_HELP].insert("labelTextHelp2",QStringList{
+                                        "What is this product used for?", // 2-0
+                                    });
+    // Category 3: Pre-Measurement Precautions
+    textData[Lan][PAGE_HELP].insert("labelTextHelp3",QStringList{
+                                        "Are there precautions before measurement?", // 3-0
+                                    });
+
+    //PAGE_HELP_RESPONSE
+    fontData[Lan][PAGE_HELP_RESPONSE].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
+    fontData[Lan][PAGE_HELP_RESPONSE].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
+    fontData[Lan][PAGE_HELP_RESPONSE].insert("labelText",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
+    // Help 0: Target Users
+    textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp0",QStringList{
+                                                 "Can be used by pre-diabetic patients not on drug treatment"
+                                                 "@This product is designed for adults aged 19-74",
+                                             });
+    // Help 1: Product Info
+    textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp1",QStringList{
+                                                 "You can measure blood glucose levels with the Happyzone device and link it with the APP"
+                                                 "@to check blood glucose data by date and period to manage and monitor your levels.",
+                                             });
+    // Help 2: Purpose of Use
+    textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp2",QStringList{
+                                                 "This is a medical device used for blood glucose management (monitoring) of pre-diabetic patients aged 19 and older not on drug treatment,"
+                                                 "@and cannot be used for medical decisions such as diabetes diagnosis, treatment, or insulin administration.",
+                                             });
+    // Help 3: Pre-Measurement Precautions
+    textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp3",QStringList{
+                                                 "Wash your hands thoroughly and remove moisture before measurement.\nAvoid moving or applying strong pressure to your fingers during measurement."
+                                                 "@* Please refer to the user manual for other factors that may affect measurement.",
+                                             });
+    // Help 4: Consult a Doctor Before Use
+    textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp4",QStringList{
+                                                 "Under 19 years of age\n",
+                                                 "Skin diseases or wounds in areas exposed to light,\nhand tremors such as hyperhidrosis, Parkinson's disease,"
+                                                 "@History of severe hypoglycemia, diabetic ketoacidosis, epilepsy, syncope,\nadrenal disease,"
+                                                 "@Undergoing hemodialysis or\nperitoneal dialysis,\npregnant or breastfeeding",
+                                             });
+    // Help 5: Key Features
+    textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp5",QStringList{
+                                                 "* High/Low blood glucose alerts\n"
+                                                 "* Blood glucose calibration expiry alerts\n"
+                                                 "* Blood glucose re-calibration alerts",
+                                                 "When 90 days have passed from the calibration date, a calibration expiry alert occurs.",
+                                                 "Re-calibration alerts begin 15 days before expiration.",
+                                             });
+    // Help 6: Bluetooth Support
+    textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp6",QStringList{
+                                                 "This is an exclusive Bluetooth feature for the Happyzone APP and is not compatible with other devices.",
+                                             });
+
+    //PAGE_FAQ_INDEX
+    fontData[Lan][PAGE_FAQ_INDEX].insert("labelText",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
+    textData[Lan][PAGE_FAQ_INDEX].insert("labelText",QStringList{
+                                             "Blood Glucose\nCalibration", // 0
+                                             "Blood Glucose\nMeasurement", // 1
+                                             "Device Care", // 2
+                                             "Portability\n& Travel", // 3
+                                             "Blood Glucose\nRecords", // 4
+                                             "Users", // 5
+                                             "A/S", // 6
+                                             "Password", // 7
+                                         });
 
     //PAGE_FAQ
     fontData[Lan][PAGE_FAQ].insert("labelText",QFont(currentFont,instance.pixelToPoint(36)));
     fontData[Lan][PAGE_FAQ].insert("labelTextBold",QFont(currentFont,instance.pixelToPoint(26),QFont::Bold));
-    textData[Lan][PAGE_FAQ].insert("labelText",QStringList{
-                                       "Is there a blood glucose measurement range?", // 0
-                                       "Where can I check blood glucose results?", // 1
-                                       "What to do if the value is suddenly high or low?", // 2
-                                       "Why is blood glucose calibration necessary?", // 3
-                                       "What happens if I don't do blood glucose calibration?", // 4
-                                       "Can I measure after the blood glucose calibration deadline?", // 5
-                                       "Why does blood glucose calibration need to be done every 90 days?", // 6
-                                       "What to do if measurement fails?", // 7
-                                       "Can I measure with a different finger?", // 8
-                                       "What to do if the finger position is incorrect?", // 9
-                                       "Does incorrect measurement posture affect results?", // 10
-                                       "Does it matter if the measurement time is incorrect?", // 11
-                                       "Does low or high temperature affect results?", // 12
-                                       "Can I measure with wet hands?", // 13
-                                       "Can I measure immediately after exercise?", // 14
-                                       "Is it okay for direct sunlight to enter the product?", // 15
-                                       "Can pregnant women use it?", // 16
-                                       "Can diabetic patients use it?", // 17
-                                       "Can dialysis patients use it?", // 18
-                                       "Can it be used if there is a wound on the measurement area?", // 19
-                                       "Can multiple people use it together?", // 20
-                                       "Can it be used without a smartphone?", // 21
-                                       "Can it be used while charging?", // 22
-                                       "How long does a full charge take?", // 23
-                                       "What to do if battery performance seems degraded?", // 24
-                                       "Can it be wiped with water?", // 25
-                                       "Can it be wiped with cleaners, alcohol, acetone, etc.?", // 26
-                                       "Can it be used portably?", // 27
-                                       "Should the portable storage case be used?", // 28
-                                       "Is carry-on allowed on aircraft?", // 29
-                                       "Can it be sent as checked baggage?", // 30
-                                       "What is the optical transmission method?", // 31
-                                       "What is the A/S period?", // 32
-                                   });
     fontData[Lan][PAGE_FAQ].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
     fontData[Lan][PAGE_FAQ].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
+    // Category 0: Blood Glucose Calibration
+    textData[Lan][PAGE_FAQ].insert("labelTextFaq0",QStringList{
+                                       "Why is blood glucose calibration necessary?", // 0-0
+                                       "What happens if I don't do blood glucose calibration?", // 0-1
+                                       "Can I measure after the blood glucose calibration deadline?", // 0-2
+                                       "Why does blood glucose calibration need to be done every 90 days?", // 0-3
+                                   });
+    // Category 1: Blood Glucose Measurement
+    textData[Lan][PAGE_FAQ].insert("labelTextFaq1",QStringList{
+                                       "Is there a blood glucose measurement range?", // 1-0
+                                       "What to do if the value is suddenly high or low?", // 1-1
+                                       "What to do if measurement fails?", // 1-2
+                                       "Can I measure with a different finger?", // 1-3
+                                       "What to do if the finger position is incorrect?", // 1-4
+                                       "Does incorrect measurement posture affect results?", // 1-5
+                                       "Does it matter if the measurement time is incorrect?", // 1-6
+                                       "Does low or high temperature affect results?", // 1-7
+                                       "Can I measure with wet hands?", // 1-8
+                                       "Can I measure immediately after exercise?", // 1-9
+                                       "Is it okay for direct sunlight to enter the product?", // 1-10
+                                       "What is the optical transmission method?", // 1-11
+                                   });
+    // Category 2: Device Care
+    textData[Lan][PAGE_FAQ].insert("labelTextFaq2",QStringList{
+                                       "Can it be used while charging?", // 2-0
+                                       "How long does a full charge take?", // 2-1
+                                       "What to do if battery performance seems degraded?", // 2-2
+                                       "Can it be wiped with water?", // 2-3
+                                       "Can it be wiped with cleaners, alcohol, acetone, etc.?", // 2-4
+                                   });
+    // Category 3: Portability & Travel
+    textData[Lan][PAGE_FAQ].insert("labelTextFaq3",QStringList{
+                                       "Can it be used portably?", // 3-0
+                                       "Should the portable storage case be used?", // 3-1
+                                       "Is carry-on allowed on aircraft?", // 3-2
+                                       "Can it be sent as checked baggage?", // 3-3
+                                   });
+    // Category 4: Blood Glucose Records
+    textData[Lan][PAGE_FAQ].insert("labelTextFaq4",QStringList{
+                                       "Where can I check blood glucose results?", // 4-0
+                                   });
+    // Category 5: Users
+    textData[Lan][PAGE_FAQ].insert("labelTextFaq5",QStringList{
+                                       "Can pregnant women use it?", // 5-0
+                                       "Can diabetic patients use it?", // 5-1
+                                       "Can dialysis patients use it?", // 5-2
+                                       "Can it be used if there is a wound on the measurement area?", // 5-3
+                                       "Can multiple people use it together?", // 5-4
+                                       "Can it be used without a smartphone?", // 5-5
+                                   });
+    // Category 6: A/S
+    textData[Lan][PAGE_FAQ].insert("labelTextFaq6",QStringList{
+                                       "What is the A/S period?", // 6-0
+                                   });
+    // Category 7: Password
+    textData[Lan][PAGE_FAQ].insert("labelTextFaq7",QStringList{
+                                       "How do I change my password?", // 7-0
+                                   });
+
+    //PAGE_FAQ_RESPONSE
+    fontData[Lan][PAGE_FAQ_RESPONSE].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
+    fontData[Lan][PAGE_FAQ_RESPONSE].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
+    fontData[Lan][PAGE_FAQ_RESPONSE].insert("labelText",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
+    // FAQ Category 0: Blood Glucose Calibration
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-0",QStringList{
+                                                "Because individual characteristics differ, it is necessary to adjust the product's characteristics to each person",
+                                            });
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-1",QStringList{
+                                                "You cannot measure without blood glucose calibration",
+                                            });
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-2",QStringList{
+                                                "Measurement is not possible after the deadline, so please perform blood glucose calibration again",
+                                            });
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-3",QStringList{
+                                                "Calibration must be performed again every 90 days for accurate measurement",
+                                            });
+    // FAQ Category 1: Blood Glucose Measurement
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-0",QStringList{
+                                                "Measurement is possible in the range of 70~350 mg/dL",
+                                            });
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-1",QStringList{
+                                                "Check the correct usage environment and measurement posture, then re-measure",
+                                            });
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-2",QStringList{
+                                                "If measurement fails, a notification window appears with the reason for failure"
+                                                "@Check the measurement failure problem in the troubleshooting menu",
+                                            });
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-3",QStringList{
+                                                "For accurate measurement, it is recommended to measure with the finger on which calibration was performed",
+                                            });
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-4",QStringList{
+                                                "Accurate measurement is not possible"
+                                                "@For accurate measurement, relax and place your finger so the center lightly covers the sensor window edge",
+                                            });
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-5",QStringList{
+                                                "If the measurement posture is incorrect, measurement may not be accurate"
+                                                "@Please measure in the correct posture for accurate measurement",
+                                            });
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-6",QStringList{
+                                                "It does not affect measurement results"
+                                                "@However, if you plan to use it as blood glucose management data, it is recommended to measure at the appropriate time",
+                                            });
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-7",QStringList{
+                                                "If the temperature is too low or high, measurement values may not be accurate",
+                                            });
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-8",QStringList{
+                                                "Do not measure with wet hands"
+                                                "@It may cause product malfunction",
+                                            });
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-9",QStringList{
+                                                "Do not measure immediately after exercise"
+                                                "@Measure after breathing and heart rate have stabilized",
+                                            });
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-10",QStringList{
+                                                "Accurate measurement is not possible"
+                                                "@For accurate measurement, please measure indoors without direct sunlight",
+                                            });
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-11",QStringList{
+                                                "It measures blood glucose by analyzing light passing through the finger",
+                                            });
+    // FAQ Category 2: Device Care
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq2-0",QStringList{
+                                                "Please make sure to disconnect the charger before use",
+                                            });
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq2-1",QStringList{
+                                                "Full charge takes approximately 3 hours and 45 minutes",
+                                            });
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq2-2",QStringList{
+                                                "Contact the A/S center for inspection and replacement if necessary",
+                                            });
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq2-3",QStringList{
+                                                "Do not wipe with water"
+                                                "@It may cause product malfunction",
+                                            });
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq2-4",QStringList{
+                                                "Do not wipe with cleaners, alcohol, acetone, etc."
+                                                "@It may cause product malfunction",
+                                            });
+    // FAQ Category 3: Portability & Travel
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq3-0",QStringList{
+                                                "Yes, you can carry and use it"
+                                                "@Please use it in an indoor environment suitable for measurement",
+                                            });
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq3-1",QStringList{
+                                                "External shock may cause malfunction, so please carry it in the portable storage case",
+                                            });
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq3-2",QStringList{
+                                                "Can be carried and used in aircraft cabins"
+                                                "@Cannot be sent as checked baggage",
+                                            });
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq3-3",QStringList{
+                                                "Cannot be sent as checked baggage"
+                                                "@This product contains a lithium-ion polymer battery and cannot be sent as checked baggage due to safety regulations"
+                                                "@It must be carried as carry-on luggage",
+                                            });
+    // FAQ Category 4: Blood Glucose Records
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq4-0",QStringList{
+                                                "Today's records can be checked on the home screen"
+                                                "@Check past blood glucose records in the blood glucose record menu",
+                                            });
+    // FAQ Category 5: Users
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq5-0",QStringList{
+                                                "Measurement results may not be accurate"
+                                                "@Please consult a medical professional",
+                                            });
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq5-1",QStringList{
+                                                "Measurement results may not be accurate"
+                                                "@Please consult a medical professional",
+                                            });
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq5-2",QStringList{
+                                                "Measurement results may not be accurate"
+                                                "@Please consult a medical professional",
+                                            });
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq5-3",QStringList{
+                                                "Measurement results may not be accurate"
+                                                "@Please consult a medical professional",
+                                            });
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq5-4",QStringList{
+                                                "Up to 2 people can use it simultaneously",
+                                            });
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq5-5",QStringList{
+                                                "The product can be used independently",
+                                            });
+    // FAQ Category 6: A/S
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq6-0",QStringList{
+                                                "The official A/S period is 24 months after product purchase",
+                                            });
+    // FAQ Category 7: Password
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq7-0",QStringList{
+                                                "Go to the top bar 'Menu' - 'User Info' - 'Change Password' and follow the instructions to change your password.",
+                                            });
+
+    //PAGE_ERROR_HELP_INDEX
+    fontData[Lan][PAGE_ERROR_HELP_INDEX].insert("labelText",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
+    textData[Lan][PAGE_ERROR_HELP_INDEX].insert("labelText",QStringList{
+                                                    "Blood Glucose\nMeasurement", // 0
+                                                    "Device Care", // 1
+                                                    "Bluetooth", // 2
+                                                    "Blood Glucose\nRecords", // 3
+                                                });
 
     //PAGE_ERROR_HELP
     fontData[Lan][PAGE_ERROR_HELP].insert("labelText",QFont(currentFont,instance.pixelToPoint(36)));
     fontData[Lan][PAGE_ERROR_HELP].insert("labelTextBold",QFont(currentFont,instance.pixelToPoint(26),QFont::Bold));
-    textData[Lan][PAGE_ERROR_HELP].insert("labelText",QStringList{
-                                              "Measurement failure occurs frequently", // 0
-                                              "It says the finger was not recognized", // 1
-                                              "It says the finger surface temperature is low", // 2
-                                              "It says there is an error in the measurement data", // 3
-                                              "It says the measurement results cannot be analyzed", // 4
-                                              "Can I cancel during measurement?", // 5
-                                              "Blood glucose level is different from usual", // 6
-                                              "I think blood glucose is normal but a warning is displayed", // 7
-                                              "It says blood glucose calibration has expired", // 8
-                                              "Are previous records deleted when resetting blood glucose calibration?", // 9
-                                              "Can deleted blood glucose records be recovered?", // 10
-                                              "Charging is not working", // 11
-                                              "What to do when a low battery notification appears?", // 12
-                                              "Battery low notification appeared and the product turned off", // 13
-                                              "After booting, it doesn't enter the initial screen", // 14
-                                              "It says the upgrade file is not visible", // 15
-                                              "It says there is a problem with the upgrade file", // 16
-                                              "It says it is not an upgrade file", // 17
-                                              "The power turned off during upgrade", // 18
-                                              "Screen is frozen or too slow", // 19
-                                              "I don't know what error this is", // 20
-                                              "A problem has occurred with the device", // 21
-                                              "What to do if the problem is not resolved?", // 22
-                                              "What additional consumables are there when using the product?", // 23
-                                          });
     fontData[Lan][PAGE_ERROR_HELP].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
     fontData[Lan][PAGE_ERROR_HELP].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
+    // Category 0: Blood Glucose Measurement
+    textData[Lan][PAGE_ERROR_HELP].insert("labelTextErrorHelp0",QStringList{
+                                              "Measurement failure occurs frequently", // 0-0
+                                              "It says the finger was not recognized", // 0-1
+                                              "It says the finger surface temperature is low", // 0-2
+                                              "It says there is an error in the measurement data", // 0-3
+                                              "It says the measurement results cannot be analyzed", // 0-4
+                                              "Can I cancel during measurement?", // 0-5
+                                              "Blood glucose level is different from usual", // 0-6
+                                              "I think blood glucose is normal but a warning is displayed", // 0-7
+                                              "It says blood glucose calibration has expired", // 0-8
+                                          });
+    // Category 1: Device Care
+    textData[Lan][PAGE_ERROR_HELP].insert("labelTextErrorHelp1",QStringList{
+                                              "Charging is not working", // 1-0
+                                              "What to do when a low battery notification appears?", // 1-1
+                                              "Battery low notification appeared and the product turned off", // 1-2
+                                              "After booting, it doesn't enter the initial screen", // 1-3
+                                              "It says the upgrade file is not visible", // 1-4
+                                              "It says there is a problem with the upgrade file", // 1-5
+                                              "It says it is not an upgrade file", // 1-6
+                                              "The power turned off during upgrade", // 1-7
+                                              "Screen is frozen or too slow", // 1-8
+                                              "I don't know what error this is", // 1-9
+                                              "A problem has occurred with the device", // 1-10
+                                              "What to do if the problem is not resolved?", // 1-11
+                                              "What additional consumables are there when using the product?", // 1-12
+                                          });
+    // Category 2: Bluetooth
+    textData[Lan][PAGE_ERROR_HELP].insert("labelTextErrorHelp2",QStringList{
+                                              "App won't sync", // 2-0
+                                              "Product and app measurement values differ", // 2-1
+                                          });
+    // Category 3: Blood Glucose Records
+    textData[Lan][PAGE_ERROR_HELP].insert("labelTextErrorHelp3",QStringList{
+                                              "Are previous records deleted when resetting blood glucose calibration?", // 3-0
+                                              "Can deleted blood glucose records be recovered?", // 3-1
+                                          });
 
-    //PAGE_RESPONSE
-    fontData[Lan][PAGE_RESPONSE].insert("labelText",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
-    textData[Lan][PAGE_RESPONSE].insert("labelTextHelp",QStringList{
-                                            "This product measures blood glucose using an optical system", // 0
-                                            "It is used to measure blood glucose in the body", // 1
-                                            "The advantage is painless measurement with a non-invasive method", // 2
-                                            "Can be used by pre-diabetic patients not on drug treatment"
-                                            "@This product is designed for adults aged 19-74", // 3
-                                            "Provides blood glucose measurement, record storage and viewing functions", // 4
-                                            "It is good to use it to check daily blood glucose changes", // 5
-                                            "Measurement is simple"
-                                            "@Please follow the instructions to proceed with measurement", // 6
-                                            "Blood glucose calibration is required before measurement"
-                                            "@Please follow the instructions for calibration", // 7
-                                            "Refers to calibration work to reduce the error between actual blood glucose values and the product", // 8
-                                            "Yes. It must be done before measurement", // 9
-                                            "Blood glucose calibration must be performed within 90 days from the completion date"
-                                            "@If not performed, measurement is not possible", // 10
-                                            "Wash your hands thoroughly and remove moisture before measurement"
-                                            "@Disconnect the charger from the product", // 11
-                                            "Avoid moving or applying strong pressure to your fingers during measurement"
-                                            "@Please re-measure if your finger moved due to coughing or sneezing", // 12
-                                            "Measurement values may be inaccurate in the following situations, requiring consultation with a medical professional"
-                                            "@Under 19 or 75 years of age or older"
-                                            "@Skin diseases or wounds in areas exposed to light"
-                                            "@Hand tremors such as hyperhidrosis, Parkinson's disease"
-                                            "@History of severe hypoglycemia, diabetic ketoacidosis, epilepsy, syncope, adrenal disease"
-                                            "@Undergoing hemodialysis or peritoneal dialysis"
-                                            "@Pregnant or breastfeeding", // 13
-                                            "Select the measurement time zone on the home screen and follow the instructions", // 14
-                                            "Press the start measurement button and it will automatically proceed to completion", // 15
-                                            "Measurement is completed within 1 minute", // 16
-                                            "Results are displayed as a number when measurement is complete", // 17
-                                            "The colors mean the following"
-                                            "@Green is normal"
-                                            "@Orange is caution"
-                                            "@Red is warning", // 18
-                                            "You can adjust the normal color range through the blood glucose range menu", // 19
-                                            "Use it as a reference when managing blood glucose"
-                                            "@The displayed values are for reference only"
-                                            "@Consult a medical professional if medical judgment is required", // 20
-                                            "Measurement records up to 90 days are stored in the device"
-                                            "@Records after 90 days are automatically deleted", // 21
-                                            "It may vary depending on the usage environment conditions"
-                                            "@Please use according to the usage instructions", // 22
-                                            "Yes. Please avoid the following environments"
-                                            "@Avoid places with strong direct sunlight"
-                                            "@Avoid places with strong winds"
-                                            "@Avoid humid environments"
-                                            "@Avoid environments with vibration"
-                                            "@Avoid places where indoor temperature is too low or high\n*Optimal temperature: 10~35\u00b0C (50~95\u00b0F)", // 23
-                                            "Turn off the power, cover the finger insertion port, and store in the storage case", // 24
-                                            "Not waterproof", // 25
-                                            "This product is a device for checking daily condition"
-                                            "@It is not intended for medical diagnosis", // 26
-                                            "This product provides information for reference purposes"
-                                            "@It cannot replace medical diagnosis or treatment decisions"
-                                            "@Always consult a medical professional when medical actions such as diabetes diagnosis, treatment, or insulin administration are required", // 27
-                                            "Power is supplied through a lithium-ion polymer battery", // 28
-                                            "When fully charged, it can be used for up to approximately 29 days in standby mode", // 29
-                                            "Charge using a USB Type-C charger that meets 5V DC / 2A~2.4A standards", // 30
-                                        });
-    textData[Lan][PAGE_RESPONSE].insert("labelTextFaq",QStringList{
-                                            "Measurement is possible in the range of 70~350 mg/dL", // 0
-                                            "Today's records can be checked on the home screen"
-                                            "@Check past blood glucose records in the blood glucose record menu", // 1
-                                            "Check the correct usage environment and measurement posture, then re-measure", // 2
-                                            "Because individual characteristics differ, it is necessary to adjust the product's characteristics to each person", // 3
-                                            "You cannot measure without blood glucose calibration", // 4
-                                            "Measurement is not possible after the deadline, so please perform blood glucose calibration again", // 5
-                                            "Calibration must be performed again every 90 days for accurate measurement", // 6
-                                            "If measurement fails, a notification window appears with the reason for failure"
-                                            "@Check the measurement failure problem in the troubleshooting menu", // 7
-                                            "For accurate measurement, it is recommended to measure with the finger on which calibration was performed", // 8
-                                            "Accurate measurement is not possible"
-                                            "@For accurate measurement, relax and place your finger so the center lightly covers the sensor window edge", // 9
-                                            "If the measurement posture is incorrect, measurement may not be accurate"
-                                            "@Please measure in the correct posture for accurate measurement", // 10
-                                            "It does not affect measurement results"
-                                            "@However, if you plan to use it as blood glucose management data, it is recommended to measure at the appropriate time", // 11
-                                            "If the temperature is too low or high, measurement values may not be accurate", // 12
-                                            "Do not measure with wet hands"
-                                            "@It may cause product malfunction", // 13
-                                            "Do not measure immediately after exercise"
-                                            "@Measure after breathing and heart rate have stabilized", // 14
-                                            "Accurate measurement is not possible"
-                                            "@For accurate measurement, please measure indoors without direct sunlight", // 15
-                                            "Measurement results may not be accurate"
-                                            "@Please consult a medical professional", // 16
-                                            "Measurement results may not be accurate"
-                                            "@Please consult a medical professional", // 17
-                                            "Measurement results may not be accurate"
-                                            "@Please consult a medical professional", // 18
-                                            "Measurement results may not be accurate"
-                                            "@Please consult a medical professional", // 19
-                                            "Up to 2 people can use it simultaneously", // 20
-                                            "The product can be used independently", // 21
-                                            "Please make sure to disconnect the charger before use", // 22
-                                            "Full charge takes approximately 3 hours and 45 minutes", // 23
-                                            "Contact the A/S center for inspection and replacement if necessary", // 24
-                                            "Do not wipe with water"
-                                            "@It may cause product malfunction", // 25
-                                            "Do not wipe with cleaners, alcohol, acetone, etc."
-                                            "@It may cause product malfunction", // 26
-                                            "Yes, you can carry and use it"
-                                            "@Please use it in an indoor environment suitable for measurement", // 27
-                                            "External shock may cause malfunction, so please carry it in the portable storage case", // 28
-                                            "Can be carried and used in aircraft cabins"
-                                            "@Cannot be sent as checked baggage", // 29
-                                            "Cannot be sent as checked baggage"
-                                            "@This product contains a lithium-ion polymer battery and cannot be sent as checked baggage due to safety regulations"
-                                            "@It must be carried as carry-on luggage", // 30
-                                            "It measures blood glucose by analyzing light passing through the finger", // 31
-                                            "The official A/S period is 24 months after product purchase", // 32
-                                        });
-    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp",QStringList{
+    //PAGE_ERROR_RESPONSE
+    fontData[Lan][PAGE_ERROR_RESPONSE].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
+    fontData[Lan][PAGE_ERROR_RESPONSE].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
+    fontData[Lan][PAGE_ERROR_RESPONSE].insert("labelText",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
+    // ErrorHelp Category 0: Blood Glucose Measurement
+    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-0",QStringList{
                                                   "Please check the following measurement environment and re-measure"
                                                   "@Do not cough, sneeze, or talk and do not move during measurement"
                                                   "@Relax your finger and place it flat against the surface"
-                                                  "@Maintain finger surface temperature above 26\u00b0C(79\u00b0F)"
-                                                  "@Remove moisture and foreign substances from your finger", // 0
+                                                  "@Maintain finger surface temperature above 26°C(79°F)"
+                                                  "@Remove moisture and foreign substances from your finger",
+                                              });
+    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-1",QStringList{
                                                   "Please check if the finger is inserted correctly and re-measure"
-                                                  "@For accurate measurement, relax and place your finger so the center lightly covers the sensor window edge", // 1
-                                                  "Please warm your finger sufficiently and re-measure", // 2
+                                                  "@For accurate measurement, relax and place your finger so the center lightly covers the sensor window edge",
+                                              });
+    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-2",QStringList{
+                                                  "Please warm your finger sufficiently and re-measure",
+                                              });
+    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-3",QStringList{
                                                   "Occurs when measurement data is incomplete or unanalyzable values are detected"
-                                                  "@Avoid hand tremors, sneezing, and talking", // 3
+                                                  "@Avoid hand tremors, sneezing, and talking",
+                                              });
+    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-4",QStringList{
                                                   "Occurs when the deviation of measured blood glucose values exceeds the range"
-                                                  "@Please check the finger measurement position and environment, then re-measure", // 4
-                                                  "Pressing the 'Cancel' button during measurement will stop it", // 5
+                                                  "@Please check the finger measurement position and environment, then re-measure",
+                                              });
+    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-5",QStringList{
+                                                  "Pressing the 'Cancel' button during measurement will stop it",
+                                              });
+    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-6",QStringList{
                                                   "Check the measurement environment and re-measure"
                                                   "@If the measurement environment has no effect, check the following"
                                                   "@Check if there are symptoms of hypoglycemia or hyperglycemia"
-                                                  "@If you suspect it is consistently inaccurate, consult a medical professional", // 6
-                                                  "Please check and adjust the normal range in the blood glucose range menu", // 7
+                                                  "@If you suspect it is consistently inaccurate, consult a medical professional",
+                                              });
+    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-7",QStringList{
+                                                  "Please check and adjust the normal range in the blood glucose range menu",
+                                              });
+    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-8",QStringList{
                                                   "Measurement is not possible when the blood glucose calibration validity period (90 days) expires"
-                                                  "@Please perform blood glucose calibration", // 8
-                                                  "Records are not deleted even after initialization", // 9
-                                                  "Cannot be recovered"
-                                                  "Please be careful when deleting blood glucose records", // 10
+                                                  "@Please perform blood glucose calibration",
+                                              });
+    // ErrorHelp Category 1: Device Care
+    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-0",QStringList{
                                                   "Please check if it is a rated battery charger"
-                                                  "@If charging is not possible even with a rated battery charger, please contact the A/S center", // 11
-                                                  "Please charge using the charger", // 12
+                                                  "@If charging is not possible even with a rated battery charger, please contact the A/S center",
+                                              });
+    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-1",QStringList{
+                                                  "Please charge using the charger",
+                                              });
+    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-2",QStringList{
                                                   "When the battery is 5% or below, the product will shut down after 5 seconds to protect the system"
-                                                  "@Please charge using the charger", // 13
+                                                  "@Please charge using the charger",
+                                              });
+    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-3",QStringList{
                                                   "Charge the battery using a rated battery charger"
-                                                  "@After charging is complete, normal use is possible when booting completes after turning on the power again", // 14
-                                                  "Please check the upgrade file again", // 15
-                                                  "Please download the upgrade file again and try again", // 16
-                                                  "Please check if the file is correct and try again", // 17
+                                                  "@After charging is complete, normal use is possible when booting completes after turning on the power again",
+                                              });
+    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-4",QStringList{
+                                                  "Please check the upgrade file again",
+                                              });
+    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-5",QStringList{
+                                                  "Please download the upgrade file again and try again",
+                                              });
+    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-6",QStringList{
+                                                  "Please check if the file is correct and try again",
+                                              });
+    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-7",QStringList{
                                                   "Please try again after charging"
-                                                  "@If the same phenomenon occurs after charging, please contact the A/S center", // 18
+                                                  "@If the same phenomenon occurs after charging, please contact the A/S center",
+                                              });
+    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-8",QStringList{
                                                   "Please press the reset button using a pin"
-                                                  "@If the same phenomenon occurs after charging, please contact the A/S center", // 19
+                                                  "@If the same phenomenon occurs after charging, please contact the A/S center",
+                                              });
+    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-9",QStringList{
                                                   "First restart the product and check if the same error occurs"
                                                   "@Or upgrade the product's software version to the latest version"
-                                                  "@If the same phenomenon occurs, please contact the A/S center", // 20
+                                                  "@If the same phenomenon occurs, please contact the A/S center",
+                                              });
+    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-10",QStringList{
                                                   "This is a case where a problem has occurred with the product"
                                                   "@Please try restarting and updating"
-                                                  "@If the same phenomenon occurs, please contact the A/S center", // 21
-                                                  "Please contact the A/S center", // 22
-                                                  "There are no additional consumables", // 23
+                                                  "@If the same phenomenon occurs, please contact the A/S center",
                                               });
+    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-11",QStringList{
+                                                  "Please contact the A/S center",
+                                              });
+    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-12",QStringList{
+                                                  "There are no additional consumables",
+                                              });
+    // ErrorHelp Category 2: Bluetooth
+    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp2-0",QStringList{
+                                                  "Touch the 'Bluetooth' icon on the top bar of the product screen to activate it. Then keep your smartphone within 1M of the product"
+                                                  "@and search for Bluetooth on your smartphone to find and link the Happyzone product."
+                                                  "@If the problem persists, try turning the product off and on again.",
+                                              });
+    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp2-1",QStringList{
+                                                  "Check the date and measurement item.\n"
+                                                  "If the problem persists, it may be a temporary error, so try turning off and restarting both the product and app.",
+                                              });
+    // ErrorHelp Category 3: Blood Glucose Records
+    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp3-0",QStringList{
+                                                  "Records are not deleted even after initialization",
+                                              });
+    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp3-1",QStringList{
+                                                  "Cannot be recovered"
+                                                  "@Please be careful when deleting blood glucose records",
+                                              });
+
+    fontData[Lan][PAGE_RESPONSE].insert("labelText",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
     fontData[Lan][PAGE_RESPONSE].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
     fontData[Lan][PAGE_RESPONSE].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
     fontData[Lan][PAGE_RESPONSE].insert("labelPageNum",QFont(currentFont,instance.pixelToPoint(28)));
+
 
     //=====================================================================================================================================
     //JP
