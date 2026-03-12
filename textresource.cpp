@@ -1152,23 +1152,23 @@ void TextResource::init()
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QStringList{
                                                "Measurement successful",                                 // 0
                                                "Finger not detected.\nTry again",                         // 1
-                                               "Device error.\nContact support",                          // 2
-                                               "Device error.\nContact support",                          // 3
+                                               "Device error.\nContact customer service",                          // 2
+                                               "Device error.\nContact customer service",                          // 3
                                                "Analysis failed.\nTry again",                             // 4
                                                "Invalid data.\nTry again",                                // 5
                                                "Cannot measure while charging.\nUnplug and retry",        // 6
                                                "Finger too cold,\nCannot measure",                        // 7
-                                               "Measurement failed.\nContact support",                    // 8
+                                               "Measurement failed.\nContact customer service",                    // 8
                                            });
 
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QFont(currentFont, instance.pixelToPoint(42), QFont::Bold));
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QStringList{
                                                "Upgrade completed successfully", // 0
-                                               "Upgrade failed.\nPlease contact customer support", // 1
+                                               "Upgrade failed.\nPlease contact customer service", // 1
                                                "Upgrade file not found.\nPlease check the file again", // 2
                                                "There is a problem with the upgrade file.\nPlease try again with a new file", // 3
                                                "This is not a valid upgrade file.\nPlease check if the file is correct", // 4
-                                               "Upgrade failed.\nPlease contact customer support" // 5
+                                               "Upgrade failed.\nPlease contact customer service" // 5
                                            });
 
     //CUSTOM_COMPONENT_DATE
@@ -2222,23 +2222,23 @@ void TextResource::init()
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QStringList{
                                                "測定に成功しました",                         // 0
                                                "指を検出できませんでした。\n再度測定してください", // 1
-                                               "デバイスエラーです。\nサポートへお問い合わせください", // 2
-                                               "デバイスエラーです。\nサポートへお問い合わせください", // 3
+                                               "デバイスエラーです。\nカスタマーサービスセンターへお問い合わせください", // 2
+                                               "デバイスエラーです。\nカスタマーサービスセンターへお問い合わせください", // 3
                                                "解析に失敗しました。\n再度測定してください",         // 4
                                                "データエラーです。\n再度測定してください",           // 5
                                                "充電中は測定できません。\n充電を外して再度お試しください", // 6
                                                "指が冷たすぎます。\n測定できません。",               // 7
-                                               "測定に失敗しました。\nサポートへお問い合わせください"  // 8
+                                               "測定に失敗しました。\nカスタマーサービスセンターへお問い合わせください"  // 8
                                            });
 
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QFont(currentFont, instance.pixelToPoint(36), QFont::Bold));
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QStringList{
                                                "アップグレードに成功しました", // 0
-                                               "アップグレードに失敗しました。\nカスタマーサポートにお問い合わせください", // 1
+                                               "アップグレードに失敗しました。\nカスタマーサービスセンターにお問い合わせください", // 1
                                                "アップグレードファイルが見つかりません。\nファイルを再確認してください", // 2
                                                "アップグレードファイルに問題があります。\n新しいファイルで再試行してください", // 3
                                                "アップグレード用のファイルではありません。\n正しいファイルか確認してください", // 4
-                                               "アップグレードに失敗しました。\nカスタマーサポートにお問い合わせください" // 5
+                                               "アップグレードに失敗しました。\nカスタマーサービスセンターにお問い合わせください" // 5
                                            });
 
 
@@ -3323,23 +3323,23 @@ void TextResource::init()
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QStringList{
                                                "测量成功",                         // 0
                                                "未检测到手指\n请重新测量",           // 1
-                                               "设备错误\n请联系客服",               // 2
-                                               "设备错误\n请联系客服",               // 3
+                                               "设备错误\n请联系客服中心",               // 2
+                                               "设备错误\n请联系客服中心",               // 3
                                                "分析失败\n请重新测量",               // 4
                                                "数据错误\n请重新测量",               // 5
                                                "充电中无法测量\n请拔掉充电器后再试",    // 6
                                                "因手指温度过低，\n无法测量",           // 7
-                                               "测量失败\n请联系客服"                // 8
+                                               "测量失败\n请联系客服中心"                // 8
                                            });
 
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QFont(currentFont, instance.pixelToPoint(42), QFont::Bold));
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QStringList{
                                                "升级成功", // 0
-                                               "升级失败\n请联系客服", // 1
+                                               "升级失败\n请联系客服中心", // 1
                                                "未找到升级文件\n请重新检查文件", // 2
                                                "升级文件有问题\n请使用新文件重试", // 3
                                                "此文件不是有效的升级文件\n请确认文件是否正确", // 4
-                                               "升级失败\n请联系客服" // 5
+                                               "升级失败\n请联系客服中心" // 5
                                            });
 
     //CUSTOM_COMPONENT_DATE
@@ -4422,23 +4422,23 @@ void TextResource::init()
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QStringList{
                                                "測量成功",                            // 0
                                                "未偵測到手指\n請重新測量",               // 1
-                                               "設備錯誤\n請聯繫客服",                   // 2
-                                               "設備錯誤\n請聯繫客服",                   // 3
+                                               "設備錯誤\n請聯繫客服中心",                   // 2
+                                               "設備錯誤\n請聯繫客服中心",                   // 3
                                                "分析失敗\n請重新測量",                   // 4
                                                "數據錯誤\n請重新測量",                   // 5
                                                "充電中無法測量\n請拔除充電器後再試",       // 6
                                                "因手指溫度過低，\n無法測量",               // 7
-                                               "測量失敗\n請聯繫客服"                    // 8
+                                               "測量失敗\n請聯繫客服中心"                    // 8
                                            });
 
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QFont(currentFont, instance.pixelToPoint(42), QFont::Bold));
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QStringList{
                                                "升級成功", // 0
-                                               "升級失敗\n請聯繫客服", // 1
+                                               "升級失敗\n請聯繫客服中心", // 1
                                                "找不到升級檔案\n請重新檢查檔案", // 2
                                                "升級檔案有問題\n請使用新檔案重試", // 3
                                                "此檔案不是有效的升級檔案\n請確認是否正確", // 4
-                                               "升級失敗\n請聯繫客服" // 5
+                                               "升級失敗\n請聯繫客服中心" // 5
                                            });
 
 
@@ -5518,23 +5518,23 @@ void TextResource::init()
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextResult", QStringList{
                                                "Medición exitosa",                              // 0
                                                "No se detectó el dedo\nInténtelo de nuevo",     // 1
-                                               "Error del dispositivo\nContacte soporte",       // 2
-                                               "Error del dispositivo\nContacte soporte",       // 3
+                                               "Error del dispositivo\nContacte al centro de atención al cliente",       // 2
+                                               "Error del dispositivo\nContacte al centro de atención al cliente",       // 3
                                                "No se pudo analizar\nInténtelo de nuevo",       // 4
                                                "Error en los datos\nInténtelo de nuevo",        // 5
                                                "No se puede medir mientras carga\nDesconéctelo e intente de nuevo", // 6
                                                "El dedo está muy frío.\nNo se puede medir",     // 7
-                                               "Fallo en la medición\nContacte soporte"         // 8
+                                               "Fallo en la medición\nContacte al centro de atención al cliente"         // 8
                                            });
 
     fontData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QFont(currentFont, instance.pixelToPoint(42), QFont::Bold));
     textData[Lan][CUSTOM_COMPONENT].insert("labelTextUpgrade", QStringList{
                                                "Actualización completada", // 0
-                                               "Falló la actualización\nContacte soporte", // 1
+                                               "Falló la actualización\nContacte al centro de atención al cliente", // 1
                                                "Archivo no encontrado\nRevise el archivo", // 2
                                                "Archivo con errores\nUse uno nuevo", // 3
                                                "Archivo inválido\nVerifique si es correcto", // 4
-                                               "Falló la actualización\nContacte soporte" // 5
+                                               "Falló la actualización\nContacte al centro de atención al cliente" // 5
                                            });
 
 
