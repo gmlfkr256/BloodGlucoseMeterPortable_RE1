@@ -686,7 +686,7 @@ void TextResource::init()
                                              });
     // Help 4: 사용 전 전문의 상담대상
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp4",QStringList{
-                                                 "만 19세 미만인 경우\n",
+                                                 "만 19세 미만인 경우\n"
                                                  "광 조사 부위에 피부질환, 상처,\n 다한증, 파킨슨병 등 손 떨림이 있는 경우,"
                                                  "@중증 저혈당, 당뇨병 케톤산증, 간질, 실신 등\n부신 질환 병력이 있는 경우,"
                                                  "@혈액투석 또는\n복막투석 중인 경우,\n임산부 및 수유부인 경우",
@@ -801,8 +801,8 @@ void TextResource::init()
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-3",QStringList{
                                                 "측정 부위 및 환경의 변화로 인한 오차 보정을 위해 혈당보정일로부터 90일 이내에 반드시 재보정을 해야 합니다."
-                                                "@혈당보정일로부터 90일이 경과하면 혈당보정 유효기간만료 알림이 발생하며 재보정을 완료하기 전까지 혈당 측정이 제한됩니다.@"
-                                                "혈당보정 초기화 후 재보정을 수행하면 혈당 측정이 다시 가능합니다.",
+                                                "@혈당보정일로부터 90일이 경과하면 혈당보정 유효기간만료 알림이 발생하며 재보정을 완료하기 전까지 혈당 측정이 제한됩니다."
+                                                "@혈당보정 초기화 후 재보정을 수행하면 혈당 측정이 다시 가능합니다.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-4",QStringList{
                                                 "아니오. 혈당보정을 초기화 해도 기록되었던 혈당 기록은 제품에서 최대 90일까지 저장됩니다."
@@ -1759,7 +1759,7 @@ void TextResource::init()
                                              });
     // Help 4: Consult a Doctor Before Use
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp4",QStringList{
-                                                 "Under 19 years of age\n",
+                                                 "Under 19 years of age\n"
                                                  "Skin diseases or wounds in light-exposed areas,\n hand tremors such as hyperhidrosis or Parkinson's disease,"
                                                  "@Severe hypoglycemia, diabetic ketoacidosis, epilepsy, syncope,\nor history of adrenal disease,"
                                                  "@Undergoing hemodialysis or\nperitoneal dialysis,\npregnant or breastfeeding",
@@ -1871,8 +1871,8 @@ void TextResource::init()
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-3",QStringList{
                                                 "Re-calibration must be done within 90 days from the calibration date to correct errors due to changes in the measurement area and environment."
-                                                "@When 90 days have passed from the calibration date, a calibration expiry alert occurs and blood glucose measurement is restricted until re-calibration is completed.@"
-                                                "Blood glucose measurement becomes available again after performing re-calibration following calibration reset.",
+                                                "@When 90 days have passed from the calibration date, a calibration expiry alert occurs and blood glucose measurement is restricted until re-calibration is completed."
+                                                "@Blood glucose measurement becomes available again after performing re-calibration following calibration reset.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-4",QStringList{
                                                 "No. Even if blood glucose calibration is reset, the recorded blood glucose records are stored on the product for up to 90 days."
@@ -2860,7 +2860,7 @@ void TextResource::init()
                                              });
     // Help 4: 使用前に専門医に相談すべき方
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp4",QStringList{
-                                                 "満19歳未満の場合\n",
+                                                 "満19歳未満の場合\n"
                                                  "光照射部位の皮膚疾患・傷、\n 多汗症、パーキンソン病などの手の震えがある場合、"
                                                  "@重症低血糖、糖尿病ケトアシドーシス、てんかん、失神など\n副腎疾患の既往歴がある場合、"
                                                  "@血液透析または\n腹膜透析中の場合、\n妊婦および授乳婦の場合",
@@ -2972,8 +2972,8 @@ void TextResource::init()
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-3",QStringList{
                                                 "測定部位および環境の変化による誤差補正のため、血糖補正日から90日以内に必ず再補正を行ってください。"
-                                                "@血糖補正日から90日が経過すると血糖補正有効期限アラートが発生し、再補正を完了するまで血糖測定が制限されます。@"
-                                                "血糖補正初期化後に再補正を行うと、血糖測定が再び可能になります。",
+                                                "@血糖補正日から90日が経過すると血糖補正有効期限アラートが発生し、再補正を完了するまで血糖測定が制限されます。"
+                                                "@血糖補正初期化後に再補正を行うと、血糖測定が再び可能になります。",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-4",QStringList{
                                                 "いいえ。血糖補正を初期化しても記録された血糖記録は製品に最大90日まで保存されます。"
@@ -3959,7 +3959,7 @@ void TextResource::init()
                                              });
     // Help 4: 使用前需咨询专业医生的情况
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp4",QStringList{
-                                                 "未满19岁的情况\n",
+                                                 "未满19岁的情况\n"
                                                  "受光照部位有皮肤病或伤口，\n 患有多汗症、帕金森病等手部颤抖的情况，"
                                                  "@有严重低血糖、糖尿病酮症酸中毒、癫痫、晕厥等\n肾上腺疾病病史的情况，"
                                                  "@正在进行血液透析或\n腹膜透析的情况，\n孕妇及哺乳期妇女的情况",
@@ -4071,8 +4071,8 @@ void TextResource::init()
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-3",QStringList{
                                                 "为了校正因测量部位及环境变化导致的误差，必须在血糖校准日起90天内进行重新校准。"
-                                                "@血糖校准日起经过90天后会发生血糖校准有效期到期提醒，在完成重新校准前血糖测量将受到限制。@"
-                                                "血糖校准初始化后进行重新校准即可重新进行血糖测量。",
+                                                "@血糖校准日起经过90天后会发生血糖校准有效期到期提醒，在完成重新校准前血糖测量将受到限制。"
+                                                "@血糖校准初始化后进行重新校准即可重新进行血糖测量。",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-4",QStringList{
                                                 "不会。即使初始化血糖校准，已记录的血糖记录会在产品中保存最多90天。"
@@ -5056,7 +5056,7 @@ void TextResource::init()
                                              });
     // Help 4: 使用前需諮詢專業醫生的情況
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp4",QStringList{
-                                                 "未滿19歲的情況\n",
+                                                 "未滿19歲的情況\n"
                                                  "受光照部位有皮膚病或傷口，\n 患有多汗症、帕金森病等手部顫抖的情況，"
                                                  "@有嚴重低血糖、糖尿病酮症酸中毒、癲癇、暈厥等\n腎上腺疾病病史的情況，"
                                                  "@正在進行血液透析或\n腹膜透析的情況，\n孕婦及哺乳期婦女的情況",
@@ -5168,8 +5168,8 @@ void TextResource::init()
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-3",QStringList{
                                                 "為了校正因測量部位及環境變化導致的誤差，必須在血糖校準日起90天內進行重新校準。"
-                                                "@血糖校準日起經過90天後會發生血糖校準有效期到期提醒，在完成重新校準前血糖測量將受到限制。@"
-                                                "血糖校準初始化後進行重新校準即可重新進行血糖測量。",
+                                                "@血糖校準日起經過90天後會發生血糖校準有效期到期提醒，在完成重新校準前血糖測量將受到限制。"
+                                                "@血糖校準初始化後進行重新校準即可重新進行血糖測量。",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-4",QStringList{
                                                 "不會。即使初始化血糖校準，已記錄的血糖記錄會在產品中保存最多90天。"
@@ -6160,7 +6160,7 @@ void TextResource::init()
                                              });
     // Help 4: Consulta Médica Previa
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp4",QStringList{
-                                                 "Menores de 19 años\n",
+                                                 "Menores de 19 años\n"
                                                  "Enfermedades de la piel o heridas en áreas expuestas a la luz,\ntemblores en las manos como hiperhidrosis, enfermedad de Parkinson,"
                                                  "@Historial de hipoglucemia grave, cetoacidosis diabética, epilepsia, síncope,\nenfermedades suprarrenales,"
                                                  "@En hemodiálisis o\ndiálisis peritoneal,\nmujeres embarazadas o en período de lactancia",
@@ -6272,8 +6272,8 @@ void TextResource::init()
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-3",QStringList{
                                                 "Para corregir errores por cambios en el área de medición y el entorno, debe recalibrarse dentro de los 90 días."
-                                                "@Cuando han pasado 90 días desde la calibración, se produce una alerta de vencimiento y la medición se restringe hasta completar la recalibración.@"
-                                                "Después de inicializar y recalibrar, la medición vuelve a ser posible.",
+                                                "@Cuando han pasado 90 días desde la calibración, se produce una alerta de vencimiento y la medición se restringe hasta completar la recalibración."
+                                                "@Después de inicializar y recalibrar, la medición vuelve a ser posible.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-4",QStringList{
                                                 "No. Incluso al inicializar la calibración, los registros de glucosa se almacenan en el producto hasta 90 días."
