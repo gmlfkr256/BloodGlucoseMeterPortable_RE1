@@ -6106,7 +6106,7 @@ void TextResource::init()
                                               "Info del\nProducto", // 1
                                               "Propósito\nde Uso", // 2
                                               "Precauciones\nPre-Medición", // 3
-                                              "Consultar Médico\nAntes de Usar", // 4
+                                              "Consulta\nMédica Previa", // 4
                                               "Funciones\nPrincipales", // 5
                                               "Soporte\nBluetooth", // 6
                                           });
@@ -6116,65 +6116,66 @@ void TextResource::init()
     fontData[Lan][PAGE_HELP].insert("labelTextBold",QFont(currentFont,instance.pixelToPoint(26),QFont::Bold));
     fontData[Lan][PAGE_HELP].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
     fontData[Lan][PAGE_HELP].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
-    // Category 0: Target Users
+    // 카테고리 0: Descripción del producto y propósito de uso
     textData[Lan][PAGE_HELP].insert("labelTextHelp0",QStringList{
-                                        "¿Puede usarlo cualquier persona?",
-                                        "¿Qué es este producto?",
-                                        "¿Cuáles son las ventajas de este producto?",
+                                        "¿Quiénes son los usuarios objetivo?", // 0-0
+                                        "¿Cuáles son las funciones principales del producto?", // 0-1
+                                        "¿Cuál es el propósito de uso y las precauciones?", // 0-2
                                     });
-    // Category 1: Product Info
+    // 카테고리 1: Precauciones de medición
     textData[Lan][PAGE_HELP].insert("labelTextHelp1",QStringList{
-                                        "¿Qué funciones proporciona?",
+                                        "¿Qué debo tener en cuenta para una medición precisa?", // 1-0
                                     });
-    // Category 2: Purpose of Use
+    // 카테고리 2: Restricciones de medición y consulta
     textData[Lan][PAGE_HELP].insert("labelTextHelp2",QStringList{
-                                        "¿Para qué se usa este producto?",
+                                        "¿Cuándo debo consultar a un profesional médico por posibles resultados inexactos?", // 2-0
                                     });
-    // Category 3: Pre-Measurement Precautions
+    // 카테고리 3: Funciones de alerta
     textData[Lan][PAGE_HELP].insert("labelTextHelp3",QStringList{
-                                        "¿Hay precauciones antes de la medición?",
+                                        "¿El producto tiene funciones de alerta?", // 3-0
                                     });
 
     //PAGE_HELP_RESPONSE
     fontData[Lan][PAGE_HELP_RESPONSE].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
     fontData[Lan][PAGE_HELP_RESPONSE].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
     fontData[Lan][PAGE_HELP_RESPONSE].insert("labelText",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
-    // Help 0: Target Users
+    // Help 0: Usuarios Objetivo
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp0",QStringList{
-                                                 "Puede ser utilizado por pacientes en etapa de prediabetes que no reciben tratamiento farmacológico"
-                                                 "@Este producto está diseñado para adultos de 19 a 74 años",
+                                                 "Los usuarios objetivo son adultos mayores de 19 años\nen etapa de prediabetes.",
                                              });
-    // Help 1: Product Info
+    // Help 1: Info del Producto
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp1",QStringList{
-                                                 "Puede medir los niveles de glucosa en sangre con el dispositivo Happyzone y vincularlo con la APP"
+                                                 "Puede medir los niveles de glucosa con el dispositivo Happyzone y vincularlo con la APP"
                                                  "@para verificar los datos de glucosa por fecha y período para gestionar y monitorear sus niveles.",
                                              });
-    // Help 2: Purpose of Use
+    // Help 2: Propósito de Uso
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp2",QStringList{
-                                                 "Este es un dispositivo médico utilizado para la gestión (monitoreo) de glucosa en sangre de pacientes prediabéticos mayores de 19 años sin tratamiento farmacológico,"
+                                                 "Es un dispositivo médico para la gestión (monitoreo) de glucosa de pacientes prediabéticos mayores de 19 años sin tratamiento farmacológico,"
                                                  "@y no puede utilizarse para decisiones médicas como diagnóstico de diabetes, tratamiento o administración de insulina.",
                                              });
-    // Help 3: Pre-Measurement Precautions
+    // Help 3: Precauciones Pre-Medición
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp3",QStringList{
-                                                 "Lávese bien las manos y elimine la humedad antes de la medición.\nEvite moverse o aplicar fuerte presión en los dedos durante la medición."
+                                                 "Lávese bien las manos y elimine la humedad antes de la medición.\nEvite moverse o aplicar presión fuerte en los dedos durante la medición."
                                                  "@* Consulte el manual de usuario para otros factores que pueden afectar la medición.",
                                              });
-    // Help 4: Consult a Doctor Before Use
+    // Help 4: Consulta Médica Previa
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp4",QStringList{
-                                                 "Menores de 19 años\n"
+                                                 "Menores de 19 años\n",
                                                  "Enfermedades de la piel o heridas en áreas expuestas a la luz,\ntemblores en las manos como hiperhidrosis, enfermedad de Parkinson,"
                                                  "@Historial de hipoglucemia grave, cetoacidosis diabética, epilepsia, síncope,\nenfermedades suprarrenales,"
                                                  "@En hemodiálisis o\ndiálisis peritoneal,\nmujeres embarazadas o en período de lactancia",
                                              });
-    // Help 5: Key Features
+    // Help 5: Funciones Principales
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp5",QStringList{
-                                                 "* Alertas de estado de glucosa alta/baja\n* Alertas de vencimiento de calibración de glucosa\n* Alertas de recalibración de glucosa"
-                                                 "Cuando han pasado 90 días desde la fecha de calibración, se produce una alerta de vencimiento."
+                                                 "* Alertas de estado de glucosa alta/baja\n"
+                                                 "* Alertas de vencimiento de calibración de glucosa\n"
+                                                 "* Alertas de recalibración de glucosa",
+                                                 "Cuando han pasado 90 días desde la fecha de calibración, se produce una alerta de vencimiento.",
                                                  "Las alertas de recalibración comienzan 15 días antes del vencimiento.",
                                              });
-    // Help 6: Bluetooth Support
+    // Help 6: Soporte Bluetooth
     textData[Lan][PAGE_HELP_RESPONSE].insert("labelTextHelp6",QStringList{
-                                                 "Esta es una función Bluetooth exclusiva para la APP Happyzone y no es compatible con otros dispositivos.",
+                                                 "Es una función Bluetooth exclusiva para la APP Happyzone y no es compatible con otros dispositivos.",
                                              });
 
     //PAGE_FAQ_INDEX
@@ -6185,7 +6186,7 @@ void TextResource::init()
                                              "Cuidado del\nDispositivo", // 2
                                              "Portabilidad\ny Viaje", // 3
                                              "Registros de\nGlucosa", // 4
-                                             "Usuarios", // 5
+                                             "Usuarios/\nCapacidad", // 5
                                              "A/S", // 6
                                              "Contraseña", // 7
                                          });
@@ -6195,194 +6196,200 @@ void TextResource::init()
     fontData[Lan][PAGE_FAQ].insert("labelTextBold",QFont(currentFont,instance.pixelToPoint(26),QFont::Bold));
     fontData[Lan][PAGE_FAQ].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
     fontData[Lan][PAGE_FAQ].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
-    // Category 0: Blood Glucose Calibration
+    // 카테고리 0: Calibración de Glucosa
     textData[Lan][PAGE_FAQ].insert("labelTextFaq0",QStringList{
-                                       "¿Por qué es necesaria la calibración de glucosa en sangre?",
-                                       "¿Qué pasa si no realizo la calibración de glucosa en sangre?",
-                                       "¿Puedo medir después de que venza el plazo de calibración?",
-                                       "¿Por qué es necesario calibrar la glucosa cada 90 días?",
+                                       "¿Qué es la 'Calibración de Glucosa'?", // 0-0
+                                       "¿Es obligatoria la calibración de glucosa?", // 0-1
+                                       "¿Cuándo se realiza la calibración de glucosa?", // 0-2
+                                       "¿Cuál es el ciclo de calibración de glucosa?", // 0-3
+                                       "¿Se eliminan los registros previos al inicializar la calibración?", // 0-4
                                    });
-    // Category 1: Blood Glucose Measurement
+    // 카테고리 1: Medición de Glucosa
     textData[Lan][PAGE_FAQ].insert("labelTextFaq1",QStringList{
-                                       "¿Existe un rango de medición de glucosa en sangre?",
-                                       "¿Qué hacer si el valor es repentinamente alto o bajo?",
-                                       "¿Qué hacer si falla la medición?",
-                                       "¿Puedo medir con un dedo diferente?",
-                                       "¿Qué hacer si la posición del dedo es incorrecta?",
-                                       "¿Afecta a los resultados una postura de medición incorrecta?",
-                                       "¿Importa si el tiempo de medición no es el correcto?",
-                                       "¿Afecta la temperatura baja o alta a los resultados?",
-                                       "¿Puedo medir con las manos mojadas?",
-                                       "¿Puedo medir inmediatamente después del ejercicio?",
-                                       "¿Es correcto que entre luz solar directa en el producto?",
-                                       "¿Qué es el método de transmisión óptica?",
+                                       "¿Cuál es la postura correcta de medición?", // 1-0
+                                       "¿Cómo colocar el dedo?", // 1-1
+                                       "¿Debo medir siempre con el mismo dedo?", // 1-2
+                                       "¿Cuál es el lugar adecuado para medir?", // 1-3
+                                       "¿Puedo medir con las manos mojadas?", // 1-4
+                                       "¿Cuántas veces al día debo medir?", // 1-5
+                                       "¿Cuánto tiempo tarda la medición?", // 1-6
+                                       "¿Puedo cancelar durante la medición?", // 1-7
+                                       "La medición no se inicia.", // 1-8
+                                       "La medición falla con frecuencia.", // 1-9
+                                       "¿Cuál es la posición correcta del dedo?", // 1-10
+                                       "¿Cuál es el rango de medición de glucosa?", // 1-11
                                    });
-    // Category 2: Device Care
+    // 카테고리 2: Cuidado del Dispositivo
     textData[Lan][PAGE_FAQ].insert("labelTextFaq2",QStringList{
-                                       "¿Se puede usar mientras se carga?",
-                                       "¿Cuánto tiempo tarda una carga completa de la batería?",
-                                       "¿Qué hacer si el rendimiento de la batería parece disminuido?",
-                                       "¿Se puede limpiar con agua?",
-                                       "¿Se puede limpiar con detergentes, alcohol, acetona, etc.?",
+                                       "¿Cuánto tiempo tarda la carga completa?", // 2-0
+                                       "¿Cuánto dura la batería?", // 2-1
+                                       "¿Se puede usar mientras se carga?", // 2-2
+                                       "¿Es resistente al agua?", // 2-3
+                                       "¿Cómo debo mantener el producto?", // 2-4
+                                       "¿Hay lugares que debo evitar para guardar el producto?", // 2-5
+                                       "¿Debo cerrar siempre la tapa de inserción del dedo?", // 2-6
                                    });
-    // Category 3: Portability & Travel
+    // 카테고리 3: Portabilidad y Viaje
     textData[Lan][PAGE_FAQ].insert("labelTextFaq3",QStringList{
-                                       "¿Se puede usar de forma portátil?",
-                                       "¿Es necesario usar el estuche de almacenamiento portátil?",
-                                       "¿Está permitido el equipaje de mano en aviones?",
-                                       "¿Se puede enviar como equipaje facturado?",
+                                       "¿Se puede usar de forma portátil?", // 3-0
+                                       "¿Se puede llevar en la cabina del avión?", // 3-1
+                                       "¿Se puede enviar como equipaje facturado?", // 3-2
                                    });
-    // Category 4: Blood Glucose Records
+    // 카테고리 4: Registros de Glucosa
     textData[Lan][PAGE_FAQ].insert("labelTextFaq4",QStringList{
-                                       "¿Dónde puedo consultar los resultados de glucosa en sangre?",
+                                       "¿Dónde puedo ver los resultados de glucosa?", // 4-0
+                                       "¿Cuánto tiempo se guardan los registros de glucosa?", // 4-1
                                    });
-    // Category 5: Users
+    // 카테고리 5: Usuarios/Capacidad
     textData[Lan][PAGE_FAQ].insert("labelTextFaq5",QStringList{
-                                       "¿Pueden usarlo las mujeres embarazadas?",
-                                       "¿Pueden usarlo los pacientes con diabetes?",
-                                       "¿Pueden usarlo los pacientes en diálisis?",
-                                       "¿Se puede usar aunque haya una herida en el área de medición?",
-                                       "¿Pueden varias personas usarlo juntas?",
-                                       "¿Se puede usar sin un teléfono inteligente?",
+                                       "¿Cualquier persona puede usarlo?", // 5-0
+                                       "¿Cuántas personas pueden usar un solo producto?", // 5-1
                                    });
-    // Category 6: A/S
+    // 카테고리 6: A/S
     textData[Lan][PAGE_FAQ].insert("labelTextFaq6",QStringList{
-                                       "¿Cuál es el período de A/S?",
+                                       "¿Cuál es el período de A/S del producto?", // 6-0
+                                       "¿No encontró la respuesta que buscaba?", // 6-1
                                    });
-    // Category 7: Password
+    // 카테고리 7: Contraseña
     textData[Lan][PAGE_FAQ].insert("labelTextFaq7",QStringList{
-                                       "¿Cómo cambio mi contraseña?",
+                                       "¿Cómo cambio mi contraseña?", // 7-0
                                    });
 
     //PAGE_FAQ_RESPONSE
     fontData[Lan][PAGE_FAQ_RESPONSE].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
     fontData[Lan][PAGE_FAQ_RESPONSE].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
     fontData[Lan][PAGE_FAQ_RESPONSE].insert("labelText",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
-    // FAQ Category 0: Blood Glucose Calibration
+    // FAQ 카테고리 0: Calibración de Glucosa
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-0",QStringList{
-                                                "Debido a que las características individuales son diferentes, es necesario ajustar las características del producto a cada persona",
+                                                "Es un proceso de cálculo y ajuste de los valores de glucosa en relación con equipos invasivos para reducir el error entre los valores reales y el producto.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-1",QStringList{
-                                                "No podrá medir sin la calibración de glucosa en sangre",
+                                                "Sí. Dado que la estructura del área de medición y la transmisión de luz varían según las condiciones externas de cada persona, la calibración individual es esencial para obtener valores precisos.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-2",QStringList{
-                                                "Una vez vencido el plazo, no será posible medir, así que realice la calibración nuevamente",
+                                                "Debe realizarse antes del primer uso. Después, debe recalibrarse dentro de los 90 días desde la fecha de calibración."
+                                                "@Se le notificará 15 días antes de la fecha de vencimiento de la calibración.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-3",QStringList{
-                                                "Se debe realizar la calibración nuevamente cada 90 días para una medición precisa",
+                                                "Para corregir errores por cambios en el área de medición y el entorno, debe recalibrarse dentro de los 90 días."
+                                                "@Cuando han pasado 90 días desde la calibración, se produce una alerta de vencimiento y la medición se restringe hasta completar la recalibración.@"
+                                                "Después de inicializar y recalibrar, la medición vuelve a ser posible.",
                                             });
-    // FAQ Category 1: Blood Glucose Measurement
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq0-4",QStringList{
+                                                "No. Incluso al inicializar la calibración, los registros de glucosa se almacenan en el producto hasta 90 días."
+                                                "\nEn la app se almacenan hasta 12 meses.",
+                                            });
+    // FAQ 카테고리 1: Medición de Glucosa
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-0",QStringList{
-                                                "La medición es posible en el rango de 70~350 mg/dL",
+                                                "Sentado, apoye el codo en la mesa y mantenga el nivel horizontal."
+                                                "\nRelaje el dedo e insértelo hasta el fondo, pegándolo al interior del producto.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-1",QStringList{
-                                                "Verifique el entorno de uso correcto y la postura de medición, luego vuelva a medir",
+                                                "Empuje el dedo con la huella tocando la superficie inferior.\nCuando la punta del dedo se enganche, relaje la fuerza y fije la postura.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-2",QStringList{
-                                                "Si la medición falla, aparecerá una ventana de notificación con el motivo del fallo"
-                                                "@Verifique el problema de fallo de medición en el menú de solución de problemas",
+                                                "Para una medición precisa, se recomienda medir con el mismo dedo.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-3",QStringList{
-                                                "Para una medición precisa, se recomienda medir con el dedo en el que se realizó la calibración",
+                                                "Mida en un lugar con temperatura interior de 20~30°C, sin luz solar directa, viento, humedad ni vibraciones que puedan afectar al producto.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-4",QStringList{
-                                                "No se puede medir con precisión"
-                                                "@Para una medición precisa, relaje el dedo y colóquelo de manera que el centro cubra suavemente el extremo del sensor",
+                                                "No. Medir con las manos mojadas puede causar mal funcionamiento del producto.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-5",QStringList{
-                                                "Si la postura de medición es incorrecta, la medición puede no ser precisa"
-                                                "@Mida en la postura correcta para una medición precisa",
+                                                "La glucosa varía según las comidas/actividades, se recomienda medir 1 vez al despertar, 1 vez antes y después de cada comida, y 1 vez antes de dormir.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-6",QStringList{
-                                                "No afecta los resultados de la medición"
-                                                "@Sin embargo, si planea usarlo como datos de control de glucosa, se recomienda medir en el momento apropiado",
+                                                "El resultado de la medición se obtiene en menos de 1 minuto después de iniciar.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-7",QStringList{
-                                                "Si la temperatura es demasiado baja o alta, los valores de medición pueden no ser precisos",
+                                                "Presionando el botón 'Cancelar' durante la medición se detendrá.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-8",QStringList{
-                                                "No mida con las manos mojadas"
-                                                "@Puede causar mal funcionamiento del producto",
+                                                "Cuando la calibración de glucosa ha vencido (90 días), no es posible medir. Realice la calibración de glucosa.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-9",QStringList{
-                                                "No mida inmediatamente después del ejercicio"
-                                                "@Mida después de que la respiración y la frecuencia cardíaca se hayan estabilizado",
+                                                "Verifique el entorno de medición e intente de nuevo.\n"
+                                                "Las condiciones de medición son las siguientes:"
+                                                "@No tosa, estornude, hable ni se mueva durante la medición\n"
+                                                "Relaje el dedo y péguelo horizontalmente a la superficie"
+                                                "@Mantenga la temperatura del dedo a 26°C o más\n"
+                                                "Elimine la humedad y cuerpos extraños del dedo"
+                                                "@* Consulte el manual de usuario\n[ Mensajes de error y soluciones ].",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-10",QStringList{
-                                                "No se puede medir con precisión"
-                                                "@Para una medición precisa, mida en interiores sin luz solar directa",
+                                                "Empuje el dedo con la huella tocando la superficie inferior.\nCuando la punta del dedo se enganche, relaje la fuerza y fije la postura.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq1-11",QStringList{
-                                                "Es un método que mide la glucosa en sangre analizando la luz que pasa a través del dedo",
+                                                "70~350mg/dL\n\n"
+                                                "El rango de medición de glucosa de este producto es de mínimo 70 a máximo 350.",
                                             });
-    // FAQ Category 2: Device Care
+    // FAQ 카테고리 2: Cuidado del Dispositivo
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq2-0",QStringList{
-                                                "Asegúrese de desconectar el cargador antes de usar",
+                                                "El tiempo total de carga completa es de aproximadamente 3 horas y 45 minutos.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq2-1",QStringList{
-                                                "El tiempo de carga completa tarda aproximadamente 3 horas y 45 minutos",
+                                                "Con carga completa, se puede usar hasta 29 días con 8 mediciones diarias.\nPuede variar según el estado de la batería.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq2-2",QStringList{
-                                                "Comuníquese con el centro de A/S para inspección y reemplazo si es necesario",
+                                                "Asegúrese de desconectar el cargador antes de usar.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq2-3",QStringList{
-                                                "No limpie con agua"
-                                                "@Puede causar mal funcionamiento del producto",
+                                                "No. Este producto no es resistente al agua, no lo opere con las manos mojadas. Si el producto se moja, séquelo inmediatamente y verifique su funcionamiento.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq2-4",QStringList{
-                                                "No limpie con detergentes, alcohol, acetona, etc."
-                                                "@Puede causar mal funcionamiento del producto",
+                                                "Limpie con un paño suave y déjelo secar. No use detergentes, alcohol ni sustancias químicas.",
                                             });
-    // FAQ Category 3: Portability & Travel
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq2-5",QStringList{
+                                                "Evite ambientes húmedos (baño, cocina, etc.) y temperaturas superiores a 60°C (vehículos cerrados, exposición solar directa, etc.).",
+                                            });
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq2-6",QStringList{
+                                                "Sí, cuando no lo use, cierre siempre la tapa y guárdelo en su estuche."
+                                                "@Esto previene daños o cortocircuitos causados por polvo, objetos metálicos o punzantes que entren al interior.",
+                                            });
+    // FAQ 카테고리 3: Portabilidad y Viaje
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq3-0",QStringList{
-                                                "Sí, puede llevarlo y usarlo"
-                                                "@Úselo en un entorno interior adecuado para la medición",
+                                                "Sí, puede cargarlo y llevarlo para usarlo en ambientes interiores adecuados para la medición. Sin embargo, los golpes externos pueden causar mal funcionamiento,"
+                                                "@así que llévelo en el estuche portátil para protegerlo.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq3-1",QStringList{
-                                                "Los impactos externos pueden causar mal funcionamiento, así que llévelo en el estuche de almacenamiento portátil",
+                                                "La batería de polímero de iones de litio de este producto (aprox. 4.4Wh) cumple con los estándares de seguridad aérea (menos de 100Wh) y se puede llevar en cabina."
+                                                "@[ Especificaciones de la batería ]\n"
+                                                "Voltaje: 3.7V\n"
+                                                "Capacidad: 1200mAh\n"
+                                                "Total: 4.44Wh",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq3-2",QStringList{
-                                                "Se puede llevar y usar en la cabina de un avión"
-                                                "@No se puede enviar como equipaje facturado",
+                                                "Este producto tiene una batería de polímero de iones de litio (aprox. 4.4Wh).\nLas regulaciones pueden variar según la aerolínea y el país, consulte con su aerolínea antes de viajar."
+                                                "@[ Especificaciones de la batería ]\n"
+                                                "Voltaje: 3.7V\n"
+                                                "Capacidad: 1200mAh\n"
+                                                "Total: 4.44Wh",
                                             });
-    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq3-3",QStringList{
-                                                "No se puede enviar como equipaje facturado"
-                                                "@Este producto contiene una batería de polímero de iones de litio y no se puede enviar como equipaje facturado según las regulaciones de seguridad"
-                                                "@Debe llevarse como equipaje de mano",
-                                            });
-    // FAQ Category 4: Blood Glucose Records
+    // FAQ 카테고리 4: Registros de Glucosa
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq4-0",QStringList{
-                                                "Los registros del día se pueden ver en la pantalla de inicio"
-                                                "@Consulte los registros anteriores de glucosa en el menú de registros de glucosa",
+                                                "Presione el icono 'Registros de glucosa' en el menú de configuración del producto, o conéctese al smartphone por Bluetooth y verifique en la app."
+                                                "@Los registros del día se muestran automáticamente en la pantalla de inicio.\nPara registros anteriores, presione el icono de registros de glucosa en la configuración.",
                                             });
-    // FAQ Category 5: Users
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq4-1",QStringList{
+                                                "Este producto almacena los registros de glucosa medidos hasta un máximo de 90 días.\n"
+                                                "Los registros de más de 90 días se eliminan automáticamente.",
+                                            });
+    // FAQ 카테고리 5: Usuarios/Capacidad
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq5-0",QStringList{
-                                                "Los resultados de la medición pueden no ser precisos"
-                                                "@Consulte a un profesional médico",
+                                                "Es un dispositivo médico para pacientes prediabéticos mayores de 19 años sin tratamiento farmacológico. Para decisiones médicas como diagnóstico y tratamiento de diabetes o administración de insulina, consulte a un profesional médico.",
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq5-1",QStringList{
-                                                "Los resultados de la medición pueden no ser precisos"
-                                                "@Consulte a un profesional médico",
+                                                "Este producto puede ser usado por un máximo de 2 personas.",
                                             });
-    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq5-2",QStringList{
-                                                "Los resultados de la medición pueden no ser precisos"
-                                                "@Consulte a un profesional médico",
-                                            });
-    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq5-3",QStringList{
-                                                "Los resultados de la medición pueden no ser precisos"
-                                                "@Consulte a un profesional médico",
-                                            });
-    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq5-4",QStringList{
-                                                "Se puede usar simultáneamente por un máximo de 2 personas",
-                                            });
-    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq5-5",QStringList{
-                                                "El producto se puede usar de forma independiente",
-                                            });
-    // FAQ Category 6: A/S
+    // FAQ 카테고리 6: A/S
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq6-0",QStringList{
-                                                "El período oficial de A/S es de 24 meses después de la compra del producto",
+                                                "Este producto está garantizado hasta 2 años desde la fecha de compra.\nSin embargo, no se cubren daños o averías por causas personales.",
                                             });
-    // FAQ Category 7: Password
+    textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq6-1",QStringList{
+                                                "Por favor, contacte al centro de atención al cliente.",
+                                            });
+    // FAQ 카테고리 7: Contraseña
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq7-0",QStringList{
                                                 "Vaya a la barra superior 'Menú' - 'Info de usuario' - 'Cambiar contraseña' y siga las instrucciones para cambiar su contraseña.",
                                             });
@@ -6401,154 +6408,131 @@ void TextResource::init()
     fontData[Lan][PAGE_ERROR_HELP].insert("labelTextBold",QFont(currentFont,instance.pixelToPoint(26),QFont::Bold));
     fontData[Lan][PAGE_ERROR_HELP].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
     fontData[Lan][PAGE_ERROR_HELP].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
-    // Category 0: Blood Glucose Measurement
+    // 카테고리 0: Medición de Glucosa
     textData[Lan][PAGE_ERROR_HELP].insert("labelTextErrorHelp0",QStringList{
-                                              "La falla de medición ocurre con frecuencia",
-                                              "Indica que el dedo no fue reconocido",
-                                              "Indica que la temperatura de la superficie del dedo es baja",
-                                              "Indica que hay un error en los datos de medición",
-                                              "Indica que los resultados de medición no se pueden analizar",
-                                              "¿Puedo cancelar durante la medición?",
-                                              "El nivel de glucosa en sangre es diferente al habitual",
-                                              "Creo que la glucosa es normal pero aparece una advertencia",
-                                              "Indica que la calibración de glucosa ha vencido",
+                                              "La medición no se inicia", // 0-0
+                                              "La medición falla con frecuencia", // 0-1
+                                              "Aparece el mensaje 'No se reconoció el dedo'", // 0-2
+                                              "Aparece el mensaje 'La temperatura del dedo es demasiado baja'", // 0-3
+                                              "Aparece el mensaje 'Error en los datos de medición'", // 0-4
+                                              "No avanza al siguiente paso", // 0-5
+                                              "Aparece el mensaje 'No se pueden analizar los resultados'", // 0-6
+                                              "La glucosa es normal pero aparece una advertencia", // 0-7
                                           });
-    // Category 1: Device Care
+    // 카테고리 1: Cuidado del Dispositivo
     textData[Lan][PAGE_ERROR_HELP].insert("labelTextErrorHelp1",QStringList{
-                                              "La carga no funciona",
-                                              "¿Qué hacer cuando aparece una notificación de batería baja?",
-                                              "Apareció la notificación de batería baja y el producto se apagó",
-                                              "Después de encender, no entra en la pantalla inicial",
-                                              "Indica que no se puede ver el archivo de actualización",
-                                              "Indica que hay un problema con el archivo de actualización",
-                                              "Indica que no es un archivo de actualización",
-                                              "El dispositivo se apagó durante la actualización",
-                                              "La pantalla está congelada o muy lenta",
-                                              "No sé qué error es este",
-                                              "Se ha producido un problema con el dispositivo",
-                                              "¿Qué hacer si el problema no se resuelve?",
-                                              "¿Qué consumibles adicionales se necesitan al usar el producto?",
+                                              "Los botones no funcionan al presionarlos", // 1-0
+                                              "No entra en la pantalla inicial tras encender", // 1-1
+                                              "Aparece el mensaje 'No se encuentra el archivo de actualización'", // 1-2
+                                              "Aparece el mensaje 'El archivo de actualización tiene un problema'", // 1-3
+                                              "Aparece el mensaje 'No es un archivo de actualización'", // 1-4
+                                              "El dispositivo se apagó durante la actualización", // 1-5
+                                              "La pantalla está congelada o muy lenta", // 1-6
+                                              "No sé qué error es este", // 1-7
+                                              "La pantalla no responde al tacto", // 1-8
+                                              "No se puede cargar", // 1-9
                                           });
-    // Category 2: Bluetooth
+    // 카테고리 2: Bluetooth
     textData[Lan][PAGE_ERROR_HELP].insert("labelTextErrorHelp2",QStringList{
-                                              "La aplicación no se sincroniza",
-                                              "Los valores de medición del producto y la aplicación son diferentes",
+                                              "No se puede vincular con la aplicación", // 2-0
+                                              "Los valores del producto y la aplicación son diferentes", // 2-1
                                           });
-    // Category 3: Blood Glucose Records
+    // 카테고리 3: Registros de Glucosa
     textData[Lan][PAGE_ERROR_HELP].insert("labelTextErrorHelp3",QStringList{
-                                              "¿Se eliminan los registros anteriores al restablecer la calibración?",
-                                              "¿Se pueden recuperar los registros de glucosa eliminados?",
+                                              "¿Se eliminan los registros anteriores al inicializar la calibración?", // 3-0
+                                              "¿Se pueden recuperar los registros de glucosa eliminados?", // 3-1
                                           });
 
     //PAGE_ERROR_RESPONSE
     fontData[Lan][PAGE_ERROR_RESPONSE].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
     fontData[Lan][PAGE_ERROR_RESPONSE].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
     fontData[Lan][PAGE_ERROR_RESPONSE].insert("labelText",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
-    // ErrorHelp Category 0: Blood Glucose Measurement
+    // ErrorHelp 카테고리 0: Medición de Glucosa
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-0",QStringList{
-                                                  "Verifique el siguiente entorno de medición y vuelva a medir"
-                                                  "@No tosa, estornude ni hable, y no se mueva durante la medición"
-                                                  "@Relaje el dedo y colóquelo horizontalmente en la superficie"
-                                                  "@Mantenga la temperatura de la superficie del dedo por encima de 26°C(79°F)"
-                                                  "@Elimine la humedad y los cuerpos extraños del dedo",
+                                                  "Cuando la calibración de glucosa ha vencido (90 días), no es posible medir. Realice la calibración de glucosa.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-1",QStringList{
-                                                  "Verifique si el dedo está insertado correctamente y vuelva a medir"
-                                                  "@Para una medición precisa, relaje el dedo y colóquelo de manera que el centro cubra suavemente el extremo del sensor",
+                                                  "Verifique el entorno de medición e intente de nuevo.\n"
+                                                  "Las condiciones de medición son las siguientes:"
+                                                  "@No tosa, estornude, hable ni se mueva durante la medición\n"
+                                                  "Relaje el dedo y péguelo horizontalmente a la superficie"
+                                                  "@Mantenga la temperatura del dedo a 26°C o más\n"
+                                                  "Elimine la humedad y cuerpos extraños del dedo"
+                                                  "@* Consulte el manual de usuario\n[ Mensajes de error y soluciones ].",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-2",QStringList{
-                                                  "Caliente suficientemente el dedo y vuelva a medir",
+                                                  "Verifique que el dedo esté correctamente insertado y mida de nuevo."
+                                                  "@Empuje el dedo con la huella tocando la superficie inferior.\nCuando la punta se enganche, relaje la fuerza y fije la postura.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-3",QStringList{
-                                                  "Ocurre cuando los datos de medición están incompletos o se detectan valores que no se pueden analizar"
-                                                  "@Evite los temblores de manos, los estornudos y las conversaciones",
+                                                  "Caliente suficientemente el dedo y mida de nuevo.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-4",QStringList{
-                                                  "Ocurre cuando la desviación de los valores de glucosa medidos excede el rango"
-                                                  "@Verifique la posición de medición del dedo y el entorno, luego vuelva a medir",
+                                                  "Evite hablar, temblar y estornudar, descanse un momento y mida de nuevo.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-5",QStringList{
-                                                  "Presionar el botón 'Cancelar' durante la medición la detendrá",
+                                                  "Es posible que la medición no se haya completado. Mida de nuevo. Si el problema persiste, apague y encienda el dispositivo.",
+                                                  "Si estuvo expuesto a condiciones externas (baja temperatura u objetos calientes cercanos), puede funcionar mal. Use a temperatura interior de 20~30°C.",
+                                                  "Si no fue por temperatura, humedad o agua, contacte al centro de atención al cliente.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-6",QStringList{
-                                                  "Verifique el entorno de medición y vuelva a medir"
-                                                  "@Si el entorno de medición no tiene ningún efecto, verifique lo siguiente"
-                                                  "@Verifique si hay síntomas de hipoglucemia o hiperglucemia"
-                                                  "@Si sospecha que es constantemente inexacto, consulte a un profesional médico",
+                                                  "Verifique la posición del dedo y el entorno de medición, luego mida de nuevo.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-7",QStringList{
-                                                  "Verifique y ajuste el rango normal en el menú de rango de glucosa en sangre",
+                                                  "Presione el icono de rango de glucosa para ajustar el rango de alerta de estado.",
                                               });
-    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp0-8",QStringList{
-                                                  "No es posible medir cuando vence el período de validez de la calibración (90 días)"
-                                                  "@Por favor realice la calibración de glucosa en sangre",
-                                              });
-    // ErrorHelp Category 1: Device Care
+    // ErrorHelp 카테고리 1: Cuidado del Dispositivo
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-0",QStringList{
-                                                  "Verifique si es un cargador de batería nominal"
-                                                  "@Si la carga no es posible incluso con un cargador nominal, comuníquese con el centro de A/S",
+                                                  "Apague y encienda el dispositivo.\n",
+                                                  "Verifique que la batería esté suficiente.\n",
+                                                  "No se puede medir con el cargador conectado.@",
+                                                  "Si estuvo en contacto con agua o en un ambiente húmedo, puede ser causa de avería. Verifique el estado del producto.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-1",QStringList{
-                                                  "Por favor, cargue usando el cargador",
+                                                  "Verifique la conexión del cable de carga y el adaptador, luego cargue.\nDespués de cargar, al encender y completar el arranque, se puede usar normalmente.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-2",QStringList{
-                                                  "Cuando la batería está por debajo del 5%, el producto se apagará después de 5 segundos para proteger el sistema"
-                                                  "@Por favor, cargue usando el cargador",
+                                                  "Verifique el archivo de actualización. Si el problema persiste, contacte al centro de atención al cliente.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-3",QStringList{
-                                                  "Cargue la batería usando un cargador de batería nominal"
-                                                  "@Después de completar la carga, cuando el arranque se complete al volver a encender, se puede usar normalmente",
+                                                  "Descargue nuevamente el archivo de actualización e intente con el nuevo archivo. Si el problema persiste, contacte al centro de atención al cliente.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-4",QStringList{
-                                                  "Por favor verifique el archivo de actualización nuevamente",
+                                                  "Verifique si el archivo es correcto e intente de nuevo. Si el problema persiste, contacte al centro de atención al cliente.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-5",QStringList{
-                                                  "Descargue el archivo de actualización nuevamente e inténtelo de nuevo",
+                                                  "Cargue el dispositivo e intente la actualización de nuevo. Si el problema persiste, contacte al centro de atención al cliente.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-6",QStringList{
-                                                  "Verifique si el archivo es el correcto e inténtelo de nuevo",
+                                                  "Use un pin para presionar el botón de reinicio. Después de reiniciar el sistema, se puede usar normalmente.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-7",QStringList{
-                                                  "Inténtelo de nuevo después de cargar"
-                                                  "@Si el mismo fenómeno ocurre después de cargar, comuníquese con el centro de A/S",
+                                                  "Reinicie y verifique si ocurre el mismo error. Si el problema persiste, contacte al centro de atención al cliente.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-8",QStringList{
-                                                  "Use un pin para presionar el botón de reinicio"
-                                                  "@Si el mismo fenómeno ocurre después de cargar, comuníquese con el centro de A/S",
+                                                  "Reinicie y verifique si funciona normalmente. Si el problema persiste, contacte al centro de atención al cliente.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-9",QStringList{
-                                                  "Primero reinicie el producto y verifique si ocurre el mismo error"
-                                                  "@O actualice la versión del software del producto a la última versión"
-                                                  "@Si el mismo fenómeno ocurre, comuníquese con el centro de A/S",
+                                                  "Verifique la conexión del cable de carga y el adaptador.\n",
+                                                  "Verifique que las especificaciones de salida del adaptador de carga coincidan con las recomendadas del producto.@",
+                                                  "Si el problema persiste, contacte al centro de atención al cliente.",
                                               });
-    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-10",QStringList{
-                                                  "Este es un caso en el que se ha producido un problema con el producto"
-                                                  "@Intente reiniciar y actualizar"
-                                                  "@Si el mismo fenómeno ocurre, comuníquese con el centro de A/S",
-                                              });
-    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-11",QStringList{
-                                                  "Por favor comuníquese con el centro de A/S",
-                                              });
-    textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-12",QStringList{
-                                                  "No hay consumibles adicionales",
-                                              });
-    // ErrorHelp Category 2: Bluetooth
+    // ErrorHelp 카테고리 2: Bluetooth
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp2-0",QStringList{
-                                                  "Toque el icono 'Bluetooth' en la barra superior de la pantalla del producto para activarlo. Luego mantenga su teléfono a menos de 1M del producto"
+                                                  "Toque el icono 'Bluetooth' en la barra superior de la pantalla para activarlo. Luego mantenga su teléfono a menos de 1M del producto"
                                                   "@y busque Bluetooth en su teléfono para encontrar y vincular el producto Happyzone."
-                                                  "@Si el problema persiste, intente apagar y encender el producto nuevamente.",
+                                                  "@Si el problema persiste, apague y encienda el producto nuevamente.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp2-1",QStringList{
-                                                  "Verifique la fecha y el elemento de medición.\n"
-                                                  "Si el problema persiste, puede ser un error temporal, así que intente apagar y reiniciar tanto el producto como la aplicación.",
+                                                  "Verifique la fecha y el elemento de medición.\n",
+                                                  "Si el problema persiste, puede ser un error temporal. Apague y reinicie tanto el producto como la aplicación y vuelva a vincularlos.",
                                               });
-    // ErrorHelp Category 3: Blood Glucose Records
+    // ErrorHelp 카테고리 3: Registros de Glucosa
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp3-0",QStringList{
-                                                  "Los registros no se eliminan incluso después de la inicialización",
+                                                  "No. Incluso al inicializar la calibración, los registros de glucosa se almacenan en el producto hasta 90 días.\nEn la app se almacenan hasta 12 meses.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp3-1",QStringList{
-                                                  "No se puede recuperar"
-                                                  "Tenga cuidado al eliminar registros de glucosa en sangre",
+                                                  "No. No es posible recuperarlos, tenga cuidado al eliminar registros de glucosa.",
                                               });
 
     fontData[Lan][PAGE_RESPONSE].insert("labelText",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
