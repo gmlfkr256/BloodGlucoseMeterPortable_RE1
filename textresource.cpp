@@ -6529,9 +6529,9 @@ void TextResource::init()
                                                   "Reinicie y verifique si funciona normalmente. Si el problema persiste, contacte al centro de atención al cliente.",
                                               });
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp1-9",QStringList{
-                                                  "Verifique la conexión del cable de carga y el adaptador.\n"
-                                                  "Verifique que las especificaciones de salida del adaptador de carga coincidan con las recomendadas del producto.@",
-                                                  "Si el problema persiste, contacte al centro de atención al cliente.",
+                                                  "Verifique la conexión del cable de carga y el adaptador."
+                                                  "@Verifique que las especificaciones de salida del adaptador de carga coincidan con las recomendadas del producto.",
+                                                  "@Si el problema persiste, contacte al centro de atención al cliente.",
                                               });
     // ErrorHelp 카테고리 2: Bluetooth
     textData[Lan][PAGE_ERROR_RESPONSE].insert("labelTextErrorHelp2-0",QStringList{

@@ -20,7 +20,7 @@
 #define CUSTOM_DAY 4
 #endif
 
-#define DEBUG_FLAG_BATTERY true
+#define DEBUG_FLAG_BATTERY false
 #if DEBUG_FLAG_BATTERY
     #define DEBUG_BAT(msg) qDebug() << msg
 #else

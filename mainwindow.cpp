@@ -8,6 +8,8 @@ MainWindow::MainWindow(QWidget* parent)
 
     qApp->installEventFilter(this);
 
+    instance.updateSysUserInfo();
+
 #if DEVICE
     int nUser = USER_MAX;
     instance.guiApi.glucoseGetActUser(&nUser);
