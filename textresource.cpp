@@ -883,6 +883,7 @@ void TextResource::init()
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq3-1",QStringList{
                                                 "본 제품의 리튬 이온 폴리머 배터리(약 4.4Wh)는 항공 안전 기준(100Wh 이하)을 충족하여 기내 반입이 가능합니다."
+                                                "@항공사 및 국가별 규정이 상이할 수 있으므로, 탑승 전 이용 항공사에 확인하시기 바랍니다."
                                                 "@[ 배터리 스펙 ]\n"
                                                 "전압: 3.7V\n"
                                                 "용량: 1200mAh\n"
@@ -1956,6 +1957,7 @@ void TextResource::init()
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq3-1",QStringList{
                                                 "This product's lithium-ion polymer battery (approximately 4.4Wh) meets aviation safety standards (100Wh or less) and can be carried on board."
+                                                "@Regulations may vary by airline and country, so please check with your airline before boarding."
                                                 "@[ Battery Specs ]\n"
                                                 "Voltage: 3.7V\n"
                                                 "Capacity: 1200mAh\n"
@@ -3062,6 +3064,7 @@ void TextResource::init()
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq3-1",QStringList{
                                                 "本製品のリチウムイオンポリマーバッテリー（約4.4Wh）は航空安全基準（100Wh以下）を満たしており、機内持ち込みが可能です。"
+                                                "@航空会社および国別の規定が異なる場合がありますので、搭乗前にご利用の航空会社にご確認ください。"
                                                 "@[ バッテリースペック ]\n"
                                                 "電圧: 3.7V\n"
                                                 "容量: 1200mAh\n"
@@ -4161,6 +4164,7 @@ void TextResource::init()
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq3-1",QStringList{
                                                 "本产品的锂离子聚合物电池（约4.4Wh）符合航空安全标准（100Wh以下），可以随身携带登机。"
+                                                "@各航空公司及各国规定可能不同，请在登机前向所乘航空公司确认。"
                                                 "@[ 电池规格 ]\n"
                                                 "电压: 3.7V\n"
                                                 "容量: 1200mAh\n"
@@ -5258,6 +5262,7 @@ void TextResource::init()
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq3-1",QStringList{
                                                 "本產品的鋰離子聚合物電池（約4.4Wh）符合航空安全標準（100Wh以下），可以隨身攜帶登機。"
+                                                "@各航空公司及各國規定可能不同，請在登機前向所乘航空公司確認。"
                                                 "@[ 電池規格 ]\n"
                                                 "電壓: 3.7V\n"
                                                 "容量: 1200mAh\n"
@@ -6364,6 +6369,7 @@ void TextResource::init()
                                             });
     textData[Lan][PAGE_FAQ_RESPONSE].insert("labelTextFaq3-1",QStringList{
                                                 "La batería de polímero de iones de litio de este producto (aprox. 4.4Wh) cumple con los estándares de seguridad aérea (menos de 100Wh) y se puede llevar en cabina."
+                                                "@Las regulaciones pueden variar según la aerolínea y el país, consulte con su aerolínea antes de viajar."
                                                 "@[ Especificaciones de la batería ]\n"
                                                 "Voltaje: 3.7V\n"
                                                 "Capacidad: 1200mAh\n"
