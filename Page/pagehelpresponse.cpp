@@ -9,6 +9,7 @@ PageHelpResponse::PageHelpResponse(QWidget *parent) : Page(parent)
 void PageHelpResponse::init()
 {
     labelText = new QLabel(this);
+    labelText->setAttribute(Qt::WA_TransparentForMouseEvents);
     labelText->setWordWrap(true);
     labelText->setGeometry(65,95,472,250);
     labelText->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
@@ -36,6 +37,14 @@ void PageHelpResponse::init()
     labelArrowDown->setGeometry(565,310,70,70);
     instance.pixLoad(labelArrowDown,false,strDirPath,"/arrowDown.png");
 
+    labelTouchTop = new QLabel(this);
+    labelTouchTop->setGeometry(40,73,520,96);
+    labelTouchTop->setAttribute(Qt::WA_TransparentForMouseEvents);
+
+    labelTouchDown = new QLabel(this);
+    labelTouchDown->setGeometry(40,249,520,96);
+    labelTouchDown->setAttribute(Qt::WA_TransparentForMouseEvents);
+
     customButtonBack = new CustomButtonBack(this);
     customButtonBack->setLongWidth(true);
 }
@@ -58,6 +67,8 @@ void PageHelpResponse::update()
     labelNumCurrent->setVisible(showNum);
     labelNumBar->setVisible(showNum);
     labelNumAll->setVisible(showNum);
+
+    labelText->setGeometry(65, 95, showNum ? 472 : 510, 250);
 }
 
 void PageHelpResponse::pageShow()
@@ -69,11 +80,24 @@ void PageHelpResponse::pageShow()
     labelNumCurrent->setFont(textResource.getFont(PAGE_HELP_RESPONSE,"labelNumCurrent"));
     labelNumAll->setFont(textResource.getFont(PAGE_HELP_RESPONSE,"labelNumAll"));
 
-    int catIdx = instance.nSelectTextIndex;
-    int qIdx = instance.nSelectTextIndexSub;
-
-    QString key = QString("labelTextHelp%1-%2").arg(catIdx).arg(qIdx);
+    int idx = instance.nSelectTextIndex;
+    QString key = QString("labelTextHelp%1").arg(idx);
     m_strList = textResource.getText(PAGE_HELP_RESPONSE, key);
+
+    bool hasAt = false;
+    for (const QString &s : m_strList) {
+        if (s.contains("@")) { hasAt = true; break; }
+    }
+    if (hasAt) {
+        QStringList parsed;
+        for (const QString &s : m_strList) {
+            if (s.contains("@"))
+                parsed += s.split("@", QString::SkipEmptyParts);
+            else
+                parsed.append(s);
+        }
+        m_strList = parsed;
+    }
 
     if(m_strList.isEmpty())
     {
@@ -88,7 +112,7 @@ void PageHelpResponse::pageShow()
 void PageHelpResponse::pageHide()
 {
     instance.setPageNumPrev(PAGE_HELP_RESPONSE);
-    emit signalShowPageNum(PAGE_HELP);
+    emit signalShowPageNum(PAGE_HELP_INDEX);
 }
 
 void PageHelpResponse::mousePressEvent(QMouseEvent *ev)
@@ -133,6 +157,17 @@ void PageHelpResponse::mouseReleaseEvent(QMouseEvent *ev)
             pageNext();
         else
             pagePrev();
+        return;
+    }
+
+    if(instance.touchCheck(labelTouchTop->geometry(), ev))
+    {
+        pagePrev();
+        return;
+    }
+    if(instance.touchCheck(labelTouchDown->geometry(), ev))
+    {
+        pageNext();
         return;
     }
 }

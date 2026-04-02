@@ -384,9 +384,11 @@ void Singleton::actUserLogin(int i)
     qDebug()<<"dispData.ts_timeout: "<<dispData.ts_timeout;
     guiApi.glucoseGetLangData(&langData);
     setDeviceLanguage(langData.used);
-    guiApi.glucoseGetGlucoseLimit(&glucoseLimit);
-    //thresholdLow = glucoseLimit.low;
-    //thresholdHigh = glucoseLimit.high;
+    if(guiApi.glucoseGetGlucoseLimit(&glucoseLimit) != GAPI_SUCCESS)
+    {
+        qWarning() << "glucoseGetGlucoseLimit failed - retrying";
+        guiApi.glucoseGetGlucoseLimit(&glucoseLimit);
+    }
     nThresholdLimitLowMin = glucoseLimit.low;
     nThresholdLimitHighMax = glucoseLimit.high;
     qDebug()<<"nThresholdLimitLowMin: "<<nThresholdLimitLowMin;
@@ -669,7 +671,11 @@ void Singleton::setThresholdHighLow()
 void Singleton::getThresholdHighLow()
 {
 #if DEVICE
-    guiApi.glucoseGetGlucoseHighLow(&glucoseHighLow);
+    if(guiApi.glucoseGetGlucoseHighLow(&glucoseHighLow) != GAPI_SUCCESS)
+    {
+        qWarning() << "glucoseGetGlucoseHighLow failed - retrying";
+        guiApi.glucoseGetGlucoseHighLow(&glucoseHighLow);
+    }
 #endif
     thresholdLow = glucoseHighLow.low;
     thresholdHigh = glucoseHighLow.high;

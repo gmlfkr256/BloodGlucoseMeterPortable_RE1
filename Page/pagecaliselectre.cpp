@@ -50,7 +50,7 @@ void PageCaliSelectRe::update()
 
         if(i==0)
         {
-            customBox[i]->labelSelectText->setStyleSheet("color: #cecece;");
+            customBox[i]->labelSelectText->setStyleSheet("color: #000000;");
             instance.pixLoad(customBox[i]->labelSelectButton,false,strDirPath,"/buttonFrame.png");
             for(int j=0; j<3; j++)
             {
@@ -58,7 +58,7 @@ void PageCaliSelectRe::update()
             }
 
             customBox[i]->labelSelectTextValue->setText("107");
-            customBox[i]->labelSelectTextValue->setStyleSheet("color: #cecece;");
+            customBox[i]->labelSelectTextValue->setStyleSheet("color: #000000;");
 
             instance.pixLoad(customBox[i]->labelSelectBar,false,strDirPath,"/barEmpty.png");
         }

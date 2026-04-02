@@ -12,7 +12,6 @@ public:
 private:
     QLabel *labelBattery;
     QTimer *timerBattery;
-    bool bIsBatteryFirstCheck = true;
     int nBatterySize = 0;
 
     bool bIsBatteryAlert15 = false;
@@ -23,9 +22,18 @@ private:
     gapiBatData_t batData;
 
     QString strDirPath = "/ImageComBattery";
-    QString pngPathPrev;
 
-    QList<int> listBatterySize;
+    // Sliding window median filter
+    static const int WINDOW_SIZE = 12;
+    static const int MIN_SAMPLES = 3;
+    int batteryWindow[WINDOW_SIZE];
+    int windowCount;
+    int windowIndex;
+    int nCurrentIconLevel;
+    int nFilteredBattery;
+
+    int getFilteredBattery() const;
+    int selectIconLevel(int batteryValue);
 
     void init();
 public slots:

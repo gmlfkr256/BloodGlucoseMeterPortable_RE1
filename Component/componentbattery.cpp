@@ -1,4 +1,5 @@
 #include "componentbattery.h"
+#include <algorithm>
 
 ComponentBattery::ComponentBattery(QWidget *parent) : CustomComponent(parent)
 {
@@ -14,10 +15,20 @@ void ComponentBattery::init()
     batData.charge = 100;
     nBatterySize = 100;
 
+    // Empty window start — no prefill
+    windowCount = 0;
+    windowIndex = 0;
+    nCurrentIconLevel = 100;
+    nFilteredBattery = 100;
+
     timerBattery = new QTimer(this);
     connect(timerBattery,&QTimer::timeout,this,&ComponentBattery::update);
-    timerBattery->start(5000);
-    update();
+    // Start with 1s interval, switch to 5s after MIN_SAMPLES collected
+    QTimer::singleShot(1000, this, [this]() {
+        update();
+        timerBattery->start(1000);
+    });
+    updateUI();
 }
 
 void ComponentBattery::update()
@@ -31,8 +42,15 @@ void ComponentBattery::update()
 
         DEBUG_BAT("batData.charge: "<<batData.charge<<", batData.Charging: "<<batData.charging);
 
-        nBatterySize = batData.charge;
-        updateUI();
+        // Improvement 1: Input clamping
+        nBatterySize = qBound(0, static_cast<int>(batData.charge), 100);
+
+        // IPC failure returns charge=0 & charging=0; discard these
+        if(nBatterySize == 0 && batData.charging == 0)
+        {
+            DEBUG_BAT("Skipped charge=0 charging=0 (IPC fail response)");
+            return;
+        }
     }
     else
     {
@@ -43,9 +61,25 @@ void ComponentBattery::update()
     batData.charge = 100;
     //batData.charge = QRandomGenerator::global()->bounded(101);
     batData.charging = 0;//(QRandomGenerator::global()->bounded(2) == 1);
-    nBatterySize = batData.charge;
+    nBatterySize = qBound(0, static_cast<int>(batData.charge), 100);
 #endif
 
+    // Sliding window — add sample
+    batteryWindow[windowIndex] = nBatterySize;
+    windowIndex = (windowIndex + 1) % WINDOW_SIZE;
+    if(windowCount < WINDOW_SIZE)
+        windowCount++;
+
+    // Switch to normal 5s interval after initial fast sampling
+    if(windowCount == MIN_SAMPLES && timerBattery->interval() != 5000)
+        timerBattery->setInterval(5000);
+
+    // Improvement 3: Median filter
+    nFilteredBattery = getFilteredBattery();
+
+    DEBUG_BAT("filtered: "<<nFilteredBattery<<", windowCount: "<<windowCount);
+
+    // Improvement 6: Alert logic uses filtered value
     if(batData.charging)
     {
         instance.isBatCharging = true;
@@ -58,12 +92,12 @@ void ComponentBattery::update()
     else
     {
         instance.isBatCharging = false;
-        if(nBatterySize <= 5)
+        if(nFilteredBattery <= 5)
         {
             nBatteyTimer15 = 0;
             nBatteyTimer5++;
         }
-        else if(nBatterySize <=15)
+        else if(nFilteredBattery <= 15)
         {
             nBatteyTimer15++;
             nBatteyTimer5 = 0;
@@ -78,7 +112,7 @@ void ComponentBattery::update()
         {
             bIsBatteryAlert15 = true;
 
-            if(nBatterySize > 5)
+            if(nFilteredBattery > 5)
             {
                 instance.isBatZero = false;
                 emit signalShowPageNum(PAGE_BATPOPUP);
@@ -97,59 +131,67 @@ void ComponentBattery::update()
     updateUI();
 }
 
+// Improvement 3: Median filter — robust against outliers
+int ComponentBattery::getFilteredBattery() const
+{
+    if(windowCount == 0)
+        return 100;
+
+    int sorted[WINDOW_SIZE];
+    for(int i = 0; i < windowCount; i++)
+        sorted[i] = batteryWindow[i];
+
+    std::sort(sorted, sorted + windowCount);
+
+    if(windowCount % 2 == 1)
+        return sorted[windowCount / 2];
+    else
+        return (sorted[windowCount / 2 - 1] + sorted[windowCount / 2]) / 2;
+}
+
+// Improvement 4: Hysteresis icon selection (±3%)
+int ComponentBattery::selectIconLevel(int batteryValue)
+{
+    // Thresholds: 90/60/30/10 for descending, +3 for ascending
+    if(nCurrentIconLevel == 100)
+    {
+        if(batteryValue < 90) return 75;
+        return 100;
+    }
+    else if(nCurrentIconLevel == 75)
+    {
+        if(batteryValue >= 93) return 100;
+        if(batteryValue < 60) return 50;
+        return 75;
+    }
+    else if(nCurrentIconLevel == 50)
+    {
+        if(batteryValue >= 63) return 75;
+        if(batteryValue < 30) return 15;
+        return 50;
+    }
+    else if(nCurrentIconLevel == 15)
+    {
+        if(batteryValue >= 33) return 50;
+        if(batteryValue < 10) return 5;
+        return 15;
+    }
+    else // nCurrentIconLevel == 5
+    {
+        if(batteryValue >= 13) return 15;
+        return 5;
+    }
+}
+
+// Improvement 5: No special first-check branch — unified logic
 void ComponentBattery::updateUI()
 {
-    QString pngPath;
+    // Skip icon update until we have enough samples to filter reliably
+    if(windowCount >= MIN_SAMPLES)
+        nCurrentIconLevel = selectIconLevel(nFilteredBattery);
 
-    pngPath = "/nBattery";
-
-    if(bIsBatteryFirstCheck)
-    {
-        if(nBatterySize>=90)
-            pngPath += "100";
-        else if(nBatterySize>=60)
-            pngPath += "75";
-        else if(nBatterySize>=30)
-            pngPath += "50";
-        else if(nBatterySize>=10)
-            pngPath += "15";
-        else
-            pngPath += "5";
-
-        bIsBatteryFirstCheck = false;
-        pngPathPrev = pngPath;
-    }
-    else
-    {
-        listBatterySize<<nBatterySize;
-
-        //qDebug()<<"list:"<<listBatterySize;
-        if(listBatterySize.size()>=12)
-        {
-            int sum = std::accumulate(listBatterySize.begin(),listBatterySize.end(),0);
-            int average = static_cast<int>(sum/listBatterySize.size());
-
-            DEBUG_BAT("average: "<<average);
-
-            if(average>=90)
-                pngPath += "100";
-            else if(average>=60)
-                pngPath += "75";
-            else if(average>=30)
-                pngPath += "50";
-            else if(average>=10)
-                pngPath += "15";
-            else
-                pngPath += "5";
-
-            listBatterySize.clear();
-            pngPathPrev = pngPath;
-        }
-        else
-        {
-            pngPath = pngPathPrev;
-        }
-    }
+    QString pngPath = "/nBattery";
+    pngPath += QString::number(nCurrentIconLevel);
 
     if(batData.charging == true)
         pngPath += "_Charge.png";

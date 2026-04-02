@@ -22,6 +22,8 @@ public:
     QLabel *labelNumAll;
     QLabel *labelArrowTop;
     QLabel *labelArrowDown;
+    QLabel *labelTouchTop;
+    QLabel *labelTouchDown;
 
     CustomButtonBack *customButtonBack;
 
