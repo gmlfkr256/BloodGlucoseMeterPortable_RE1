@@ -22,7 +22,7 @@ public:
     QLabel *labelButtonGradientTop;
     QLabel *labelButtonGradientDown;
 
-    DeviceLanguage deviceLan = KR;
+    DeviceLanguage deviceLan = ko;
     CustomButtonOK *customButtonOK;
     CustomButtonCancel *customButtonCancel;
 

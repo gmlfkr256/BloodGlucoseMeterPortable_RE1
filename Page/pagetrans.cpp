@@ -43,12 +43,12 @@ void PageTrans::init()
 
 void PageTrans::fontMapping()
 {
-    fontMap[KR] = textResource.getFont(PAGE_TRANS,"fontSuit");
-    fontMap[EN] = textResource.getFont(PAGE_TRANS,"fontSuit");
-    fontMap[JP] = textResource.getFont(PAGE_TRANS,"fontJP");
-    fontMap[SC] = textResource.getFont(PAGE_TRANS,"fontSC");
-    fontMap[TC] = textResource.getFont(PAGE_TRANS,"fontTC");
-    fontMap[ES] = textResource.getFont(PAGE_TRANS,"fontSuit");
+    fontMap[ko] = textResource.getFont(PAGE_TRANS,"fontSuit");
+    fontMap[en] = textResource.getFont(PAGE_TRANS,"fontSuit");
+    fontMap[ja] = textResource.getFont(PAGE_TRANS,"fontJP");
+    fontMap[zh_CN] = textResource.getFont(PAGE_TRANS,"fontSC");
+    fontMap[zh_TW] = textResource.getFont(PAGE_TRANS,"fontTC");
+    fontMap[es] = textResource.getFont(PAGE_TRANS,"fontSuit");
 }
 
 void PageTrans::update()

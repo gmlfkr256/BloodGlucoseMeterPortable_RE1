@@ -2,12 +2,12 @@
 
 // 정적 멤버 초기화
 const QHash<unsigned int, QPair<QString, DeviceLanguage>> Singleton::hashLanguage = {
-    { static_cast<unsigned int>(DeviceLanguage::KR), { "/KR", DeviceLanguage::KR } },
-    { static_cast<unsigned int>(DeviceLanguage::EN), { "/EN", DeviceLanguage::EN } },
-    { static_cast<unsigned int>(DeviceLanguage::JP), { "/JP", DeviceLanguage::JP } },
-    { static_cast<unsigned int>(DeviceLanguage::SC), { "/SC", DeviceLanguage::SC } },
-    { static_cast<unsigned int>(DeviceLanguage::TC), { "/TC", DeviceLanguage::TC } },
-    { static_cast<unsigned int>(DeviceLanguage::ES), { "/ES", DeviceLanguage::ES } },
+    { static_cast<unsigned int>(DeviceLanguage::ko), { "/KR", DeviceLanguage::ko } },
+    { static_cast<unsigned int>(DeviceLanguage::en), { "/EN", DeviceLanguage::en } },
+    { static_cast<unsigned int>(DeviceLanguage::ja), { "/JP", DeviceLanguage::ja } },
+    { static_cast<unsigned int>(DeviceLanguage::zh_CN), { "/SC", DeviceLanguage::zh_CN } },
+    { static_cast<unsigned int>(DeviceLanguage::zh_TW), { "/TC", DeviceLanguage::zh_TW } },
+    { static_cast<unsigned int>(DeviceLanguage::es), { "/ES", DeviceLanguage::es } },
 };
 
 void Singleton::init()
@@ -17,7 +17,7 @@ void Singleton::init()
     updateSysUserInfo();
 #else
 
-    langData.used = KR;
+    langData.used = ko;
 
     thresholdLow = 79;
     thresholdHigh = 250;
@@ -251,18 +251,18 @@ void Singleton::setDeviceLanguage(unsigned int nLanguage)
 
         switch (nLanguage)
         {
-        case KR:
-        case EN:
-        case ES:
+        case ko:
+        case en:
+        case es:
             QApplication::setFont(fontSuit);
             break;
-        case JP:
+        case ja:
             QApplication::setFont(fontJP);
             break;
-        case SC:
+        case zh_CN:
             QApplication::setFont(fontSC);
             break;
-        case TC:
+        case zh_TW:
             QApplication::setFont(fontTC);
             break;
         }

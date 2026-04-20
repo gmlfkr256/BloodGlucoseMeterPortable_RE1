@@ -182,15 +182,15 @@ void PageResult::setValueUI()
 
     switch (instance.getDeviceLanguage())
     {
-    case KR:
+    case ko:
         strLabelText += "<span style='font-weight:bold; "+strTextGlucoseValueColor+"'>"+textResource.getText(PAGE_RESULT,"indexResult").at(nBloodSugarIndex)+" </span>"
                 +"<span style='color: #808080; '>"+textResource.getText(PAGE_RESULT,"indexResultSub").at(0)+"</span>";
         break;
-    case EN:
-    case JP:
-    case SC:
-    case TC:
-    case ES:
+    case en:
+    case ja:
+    case zh_CN:
+    case zh_TW:
+    case es:
         strLabelText += "<p style='font-weight:bold; "+strTextGlucoseValueColor+" line-height: 0.5; font-size: 30px;'>"+textResource.getText(PAGE_RESULT,"indexResult").at(nBloodSugarIndex)+"</p>"
                 +"<p style='color: #808080; font-size: 30px;'>"+textResource.getText(PAGE_RESULT,"indexResultSub").at(nBloodSugarIndex)+"</p>";
     case LAN_MAX:

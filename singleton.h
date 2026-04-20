@@ -18,12 +18,12 @@ Q_ENUMS(DeviceColor)
 
 typedef enum
 {
-    KR = 0,
-    EN,
-    JP,
-    SC,
-    TC,
-    ES,
+    ko = 0,
+    en,
+    ja,
+    zh_CN,
+    zh_TW,
+    es,
     LAN_MAX
 } DeviceLanguage;
 

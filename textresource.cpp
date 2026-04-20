@@ -17,7 +17,7 @@ void TextResource::init()
 
     //KR
     //CUSTOM_BUTTON
-    DeviceLanguage Lan = KR;
+    DeviceLanguage Lan = ko;
     nTextSize = 36;
     QString currentFont = instance.fontSuit;
 
@@ -1080,7 +1080,7 @@ void TextResource::init()
 
     //====================================================================================================================================
     //EN
-    Lan = EN;
+    Lan = en;
     nTextSize = 30;
     currentFont = instance.fontSuit;
 
@@ -2152,7 +2152,7 @@ void TextResource::init()
 
     //=====================================================================================================================================
     //JP
-    Lan = JP;
+    Lan = ja;
     nTextSize = 30;
     currentFont = instance.fontJP;
 
@@ -3253,7 +3253,7 @@ void TextResource::init()
 
     //=====================================================================================================================================
     //SC
-    Lan = SC;
+    Lan = zh_CN;
     nTextSize = 36;
     currentFont = instance.fontSC;
 
@@ -4353,7 +4353,7 @@ void TextResource::init()
 
     //=====================================================================================================================================
     //TC
-    Lan = TC;
+    Lan = zh_TW;
     nTextSize = 36;
     currentFont = instance.fontTC;
 
@@ -5451,7 +5451,7 @@ void TextResource::init()
 
     //=====================================================================================================================================
     //ES
-    Lan = ES;
+    Lan = es;
     nTextSize = 30;
     currentFont = instance.fontSuit;
 
@@ -6563,9 +6563,9 @@ void TextResource::init()
     fontData[Lan][PAGE_RESPONSE].insert("labelPageNum",QFont(currentFont,instance.pixelToPoint(28)));
 
 #if FONT_DEBUG
-    for(const auto& textName : fontData[KR][PAGE_PASSWORD].keys())
+    for(const auto& textName : fontData[ko][PAGE_PASSWORD].keys())
     {
-        QFont font = fontData[KR][PAGE_PASSWORD][textName];
+        QFont font = fontData[ko][PAGE_PASSWORD][textName];
         qDebug() <<"TextName: "<< textName << "->" << QFontInfo(font).family();
     }
 #endif
