@@ -31,8 +31,8 @@ void TextResource::init()
                                          "한국어",
                                          "ENGLISH",
                                          "日本語",
-                                         "繁體中文",
                                          "简体中文",
+                                         "繁體中文",
                                          "ESPAÑOL"
                                      });
 
@@ -76,8 +76,8 @@ void TextResource::init()
                                             "한국어",
                                             "ENGLISH",
                                             "日本語",
-                                            "繁體中文",
                                             "简体中文",
+                                            "繁體中文",
                                             "ESPAÑOL"
                                         });
 
@@ -1094,8 +1094,8 @@ void TextResource::init()
                                          "한국어",
                                          "ENGLISH",
                                          "日本語",
-                                         "繁體中文",
                                          "简体中文",
+                                         "繁體中文",
                                          "ESPAÑOL"
                                      });
 
@@ -1138,8 +1138,8 @@ void TextResource::init()
                                             "한국어",
                                             "ENGLISH",
                                             "日本語",
-                                            "繁體中文",
                                             "简体中文",
+                                            "繁體中文",
                                             "ESPAÑOL"
                                         });
 
@@ -2166,8 +2166,8 @@ void TextResource::init()
                                          "한국어",
                                          "ENGLISH",
                                          "日本語",
-                                         "繁體中文",
                                          "简体中文",
+                                         "繁體中文",
                                          "ESPAÑOL"
                                      });
     //CUSTOM_BUTTON
@@ -2209,8 +2209,8 @@ void TextResource::init()
                                             "한국어",
                                             "ENGLISH",
                                             "日本語",
-                                            "繁體中文",
                                             "简体中文",
+                                            "繁體中文",
                                             "ESPAÑOL"
                                         });
 
@@ -3267,8 +3267,8 @@ void TextResource::init()
                                          "한국어",
                                          "ENGLISH",
                                          "日本語",
-                                         "繁體中文",
                                          "简体中文",
+                                         "繁體中文",
                                          "ESPAÑOL"
                                      });
 
@@ -3311,8 +3311,8 @@ void TextResource::init()
                                             "한국어",
                                             "ENGLISH",
                                             "日本語",
-                                            "繁體中文",
                                             "简体中文",
+                                            "繁體中文",
                                             "ESPAÑOL"
                                         });
 
@@ -4367,8 +4367,8 @@ void TextResource::init()
                                          "한국어",
                                          "ENGLISH",
                                          "日本語",
-                                         "繁體中文",
                                          "简体中文",
+                                         "繁體中文",
                                          "ESPAÑOL"
                                      });
 
@@ -4411,8 +4411,8 @@ void TextResource::init()
                                             "한국어",
                                             "ENGLISH",
                                             "日本語",
-                                            "繁體中文",
                                             "简体中文",
+                                            "繁體中文",
                                             "ESPAÑOL"
                                         });
 
@@ -5465,8 +5465,8 @@ void TextResource::init()
                                          "한국어",
                                          "ENGLISH",
                                          "日本語",
-                                         "繁體中文",
                                          "简体中文",
+                                         "繁體中文",
                                          "ESPAÑOL"
                                      });
     //CUSTOM_BUTTON
@@ -5508,8 +5508,8 @@ void TextResource::init()
                                             "한국어",
                                             "ENGLISH",
                                             "日本語",
-                                            "繁體中文",
                                             "简体中文",
+                                            "繁體中文",
                                             "ESPAÑOL"
                                         });
 
