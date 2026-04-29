@@ -85,9 +85,6 @@ void ComponentBluetooth::update()
 
 void ComponentBluetooth::mousePressEvent(QMouseEvent* ev)
 {
-    if(instance.currentPage==PAGE_HISTORY_RESULT)
-        return;
-
     if(instance.touchCheck(this->rect(),ev))
     {
         //qDebug()<<"comBluetooth";

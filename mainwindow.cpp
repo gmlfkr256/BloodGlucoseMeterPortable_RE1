@@ -200,6 +200,7 @@ void MainWindow::init()
 
     pageHistoryResult = new PageHistoryResult(this);
     stackedWidget->addWidget(pageHistoryResult);
+    listComHiddenPageIndex.append(stackedWidget->indexOf(pageHistoryResult));
     qDebug()<<"====================== PAGE_HISTORY_RESULT";
 
     pageDebug = new PageDebug(this);
@@ -498,6 +499,8 @@ void MainWindow::currentPageChanged(int index)
     if(listComHiddenPageIndex.contains(index))
     {
         HideComponents();
+        if(index == stackedWidget->indexOf(pageHistoryResult))
+            comClock->pageShow();
     }
     else
     {
