@@ -36,6 +36,14 @@ void Page::pageShow()
     this->show();
 }
 
+void Page::updateBgTopPhantom()
+{
+    if(instance.bIsPhantomTest)
+        labelBgTop->setStyleSheet("background-color: red;");
+    else
+        labelBgTop->setStyleSheet("background-color: #212121;");
+}
+
 void Page::pageHide()
 {
     this->hide();

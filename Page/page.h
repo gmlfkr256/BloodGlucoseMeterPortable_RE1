@@ -32,6 +32,7 @@ public:
 
     void setBgTopHide();
     void setBgHide();
+    void updateBgTopPhantom();
 
 signals:
     void signalShowPageNum(PageNum pageNum);

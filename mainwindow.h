@@ -46,6 +46,7 @@
 #include "Page/pagedebug.h"
 #include "Page/pagedebugsys.h"
 #include "Page/pagedebugusb.h"
+#include "Page/pagedebugphantom.h"
 #include "Page/pageresultfail.h"
 #include "Page/pageupagradefail.h"
 #include "Page/pagepasswordallchat.h"
@@ -135,6 +136,7 @@ public:
     PageDebug *pageDebug;
     PageDebugSys *pageDebugSys;
     PageDebugUsb *pageDebugUsb;
+    PageDebugPhantom *pageDebugPhantom;
     PageResultFail *pageResultFail;
     PageUpagradeFail *pageUpgradeFail;
     PagePasswordAllChat *pagePasswordAllChat;
