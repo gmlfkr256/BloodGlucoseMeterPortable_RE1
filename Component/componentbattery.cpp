@@ -152,27 +152,27 @@ int ComponentBattery::getFilteredBattery() const
 // Improvement 4: Hysteresis icon selection (±3%)
 int ComponentBattery::selectIconLevel(int batteryValue)
 {
-    // Thresholds: 90/60/30/10 for descending, +3 for ascending
+    // Thresholds: 80/50/25/10 for descending, +3 for ascending
     if(nCurrentIconLevel == 100)
     {
-        if(batteryValue < 90) return 75;
+        if(batteryValue < 80) return 75;
         return 100;
     }
     else if(nCurrentIconLevel == 75)
     {
-        if(batteryValue >= 93) return 100;
-        if(batteryValue < 60) return 50;
+        if(batteryValue >= 83) return 100;
+        if(batteryValue < 50) return 50;
         return 75;
     }
     else if(nCurrentIconLevel == 50)
     {
-        if(batteryValue >= 63) return 75;
-        if(batteryValue < 30) return 15;
+        if(batteryValue >= 53) return 75;
+        if(batteryValue < 25) return 15;
         return 50;
     }
     else if(nCurrentIconLevel == 15)
     {
-        if(batteryValue >= 33) return 50;
+        if(batteryValue >= 28) return 50;
         if(batteryValue < 10) return 5;
         return 15;
     }

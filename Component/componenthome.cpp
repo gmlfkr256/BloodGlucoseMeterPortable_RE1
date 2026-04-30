@@ -38,9 +38,6 @@ void ComponentHome::mousePressEvent(QMouseEvent *ev)
         return;
     }
 
-    if(instance.currentPage==PAGE_HISTORY_RESULT)
-        return;
-
     if(instance.touchCheck(this->rect(),ev))
     {
         emit singalShowPageNum(PAGE_HOME);

@@ -93,10 +93,10 @@ void PageThreshold::update()
 
     switch (instance.getDeviceLanguage())
     {
-    case KR:
-    case JP:
-    case SC:
-    case TC:
+    case ko:
+    case ja:
+    case zh_CN:
+    case zh_TW:
         labelValueLow->setGeometry(370,138,90,59);
         labelValueLow->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         labelValueHigh->setGeometry(370,257,90,59);
@@ -107,8 +107,8 @@ void PageThreshold::update()
         labelValueRangeHigh->setGeometry(467,274,45,38);
         labelValueRangeHigh->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         break;
-    case EN:
-    case ES:
+    case en:
+    case es:
         labelValueLow->setGeometry(425,138,90,59);
         labelValueLow->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         labelValueHigh->setGeometry(425,257,90,59);

@@ -25,9 +25,6 @@ void ComponentMenu::mousePressEvent(QMouseEvent* ev)
     if(!getIsEnable())
         return;
 
-    if(instance.currentPage==PAGE_HISTORY_RESULT)
-        return;
-
     if(instance.touchCheck(this->rect(),ev))
     {
         instance.isComMenuCheck = true;

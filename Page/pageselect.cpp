@@ -154,14 +154,14 @@ void PageSelect::updateStatus()
 
         switch (instance.getDeviceLanguage())
         {
-        case KR:
+        case ko:
             nResultSubIndex = 0;
             break;
-        case EN:
-        case JP:
-        case SC:
-        case TC:
-        case ES:
+        case en:
+        case ja:
+        case zh_CN:
+        case zh_TW:
+        case es:
             nResultSubIndex = bloodSugarIndex;
         case LAN_MAX:
             break;
