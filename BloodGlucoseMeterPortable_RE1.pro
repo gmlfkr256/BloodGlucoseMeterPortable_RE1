@@ -29,6 +29,7 @@ SOURCES += \
     Button/custombuttonmeasurestart.cpp \
     Button/custombuttonno.cpp \
     Button/custombuttonok.cpp \
+    Button/custombuttonreboot.cpp \
     Button/custombuttonsave.cpp \
     Button/custombuttonupgrade.cpp \
     Button/custombuttonyes.cpp \
@@ -133,6 +134,7 @@ HEADERS += \
     Button/custombuttonmeasurestart.h \
     Button/custombuttonno.h \
     Button/custombuttonok.h \
+    Button/custombuttonreboot.h \
     Button/custombuttonsave.h \
     Button/custombuttonupgrade.h \
     Button/custombuttonyes.h \
