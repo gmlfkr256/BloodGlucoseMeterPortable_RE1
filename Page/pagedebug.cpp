@@ -59,7 +59,7 @@ void PageDebug::init()
     labelDebugMenu[1]->setStyleSheet("border: 1px solid white; background-color: #007BFF; color: white;");
 
     pageNum[2] = PAGE_DEBUG_PHANTOM;
-    labelDebugMenu[2]->setText("팬");
+    labelDebugMenu[2]->setText("PHAN");
     labelDebugMenu[2]->setStyleSheet("border: 1px solid white; background-color: #007BFF; color: white;");
 
     update();
