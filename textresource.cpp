@@ -65,6 +65,9 @@ void TextResource::init()
     fontData[Lan][CUSTOM_BUTTON].insert("labelButtonUpgrade",QFont(currentFont,instance.pixelToPoint(30),QFont::Bold));
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonUpgrade",QStringList{"소프트웨어 업그레이드"});
 
+    fontData[Lan][CUSTOM_BUTTON].insert("labelButtonReboot",QFont(currentFont,instance.pixelToPoint(30),QFont::Bold));
+    textData[Lan][CUSTOM_BUTTON].insert("labelButtonReboot",QStringList{"재부팅"});
+
     fontData[Lan][CUSTOM_BUTTON].insert("labelButtonYes",QFont(currentFont,instance.pixelToPoint(30),QFont::Bold));
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonYes",QStringList{"네"});
 
@@ -1126,6 +1129,9 @@ void TextResource::init()
 
     fontData[Lan][CUSTOM_BUTTON].insert("labelButtonUpgrade",QFont(currentFont,instance.pixelToPoint(30),QFont::Bold));
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonUpgrade",QStringList{"Software Upgrade"});
+
+    fontData[Lan][CUSTOM_BUTTON].insert("labelButtonReboot",QFont(currentFont,instance.pixelToPoint(30),QFont::Bold));
+    textData[Lan][CUSTOM_BUTTON].insert("labelButtonReboot",QStringList{"Reboot"});
 
     fontData[Lan][CUSTOM_BUTTON].insert("labelButtonYes",QFont(currentFont,instance.pixelToPoint(30),QFont::Bold));
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonYes",QStringList{"Yes"});
@@ -2197,6 +2203,9 @@ void TextResource::init()
 
     fontData[Lan][CUSTOM_BUTTON].insert("labelButtonUpgrade", QFont(currentFont, instance.pixelToPoint(30), QFont::Bold));
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonUpgrade", QStringList{"ソフトウェア更新"});
+
+    fontData[Lan][CUSTOM_BUTTON].insert("labelButtonReboot",QFont(currentFont,instance.pixelToPoint(30),QFont::Bold));
+    textData[Lan][CUSTOM_BUTTON].insert("labelButtonReboot",QStringList{"再起動"});
 
     fontData[Lan][CUSTOM_BUTTON].insert("labelButtonYes",QFont(currentFont,instance.pixelToPoint(30),QFont::Bold));
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonYes",QStringList{"はい"});
@@ -3300,6 +3309,9 @@ void TextResource::init()
     fontData[Lan][CUSTOM_BUTTON].insert("labelButtonUpgrade", QFont(currentFont, instance.pixelToPoint(30), QFont::Bold));
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonUpgrade", QStringList{"软件升级"}); // Software Upgrade
 
+    fontData[Lan][CUSTOM_BUTTON].insert("labelButtonReboot",QFont(currentFont,instance.pixelToPoint(30),QFont::Bold));
+    textData[Lan][CUSTOM_BUTTON].insert("labelButtonReboot",QStringList{"重启"});
+
     fontData[Lan][CUSTOM_BUTTON].insert("labelButtonYes",QFont(currentFont,instance.pixelToPoint(30),QFont::Bold));
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonYes",QStringList{"是"});
 
@@ -4400,6 +4412,9 @@ void TextResource::init()
     fontData[Lan][CUSTOM_BUTTON].insert("labelButtonUpgrade", QFont(currentFont, instance.pixelToPoint(30), QFont::Bold));
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonUpgrade", QStringList{"軟體升級"}); // Software Upgrade
 
+    fontData[Lan][CUSTOM_BUTTON].insert("labelButtonReboot",QFont(currentFont,instance.pixelToPoint(30),QFont::Bold));
+    textData[Lan][CUSTOM_BUTTON].insert("labelButtonReboot",QStringList{"重新啟動"});
+
     fontData[Lan][CUSTOM_BUTTON].insert("labelButtonYes",QFont(currentFont,instance.pixelToPoint(30),QFont::Bold));
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonYes",QStringList{"是"});
 
@@ -5496,6 +5511,9 @@ void TextResource::init()
 
     fontData[Lan][CUSTOM_BUTTON].insert("labelButtonUpgrade", QFont(currentFont, instance.pixelToPoint(30), QFont::Bold));
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonUpgrade", QStringList{"Actualizar software"}); // Software Upgrade
+
+    fontData[Lan][CUSTOM_BUTTON].insert("labelButtonReboot",QFont(currentFont,instance.pixelToPoint(30),QFont::Bold));
+    textData[Lan][CUSTOM_BUTTON].insert("labelButtonReboot",QStringList{"Reiniciar"});
 
     fontData[Lan][CUSTOM_BUTTON].insert("labelButtonYes",QFont(currentFont,instance.pixelToPoint(30),QFont::Bold));
     textData[Lan][CUSTOM_BUTTON].insert("labelButtonYes",QStringList{"Sí"});

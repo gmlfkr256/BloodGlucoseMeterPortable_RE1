@@ -13,7 +13,7 @@ public:
     QString strDirPath = "/ImageUpgradeConfirm";
 
     QLabel *labelText;
-    CustomButtonOK *customButtonOK;
+    CustomButtonReboot *customButtonReboot;
     CustomButtonCancel *customButtonCancel;
 
     void update() override;

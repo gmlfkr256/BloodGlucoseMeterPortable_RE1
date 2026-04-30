@@ -12,6 +12,7 @@
 #include "Button/custombuttonmeasurere.h"
 #include "Button/custombuttonsave.h"
 #include "Button/custombuttonupgrade.h"
+#include "Button/custombuttonreboot.h"
 #include "Button/custombuttonyes.h"
 #include "Button/custombuttonno.h"
 #include "Button/custombuttonlanguage.h"
