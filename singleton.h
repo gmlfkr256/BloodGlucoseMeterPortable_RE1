@@ -77,6 +77,7 @@ typedef enum
     PAGE_DEBUG,
     PAGE_DEBUG_SYS,
     PAGE_DEBUG_USB,
+    PAGE_DEBUG_PHANTOM,
     PAGE_RESULT_FAIL,
     PAGE_UPGRADE_FAIL,
     PAGE_CALI_RESULT_MULTI_CONFIRM,
@@ -316,6 +317,7 @@ public:
     bool isComMenuCheck = false;
     bool isBatZero = true;
     bool isBatCharging = false;
+    bool bIsPhantomTest = false;
 
     bool isTouchCtrl = false;
     int nTouchTime = 100;

@@ -70,6 +70,7 @@ SOURCES += \
     Page/pagedebug.cpp \
     Page/pagedebugsys.cpp \
     Page/pagedebugusb.cpp \
+    Page/pagedebugphantom.cpp \
     Page/pagedeviceinfo.cpp \
     Page/pageelapsednoticepopup.cpp \
     Page/pageerrorhelp.cpp \
@@ -176,6 +177,7 @@ HEADERS += \
     Page/pagedebug.h \
     Page/pagedebugsys.h \
     Page/pagedebugusb.h \
+    Page/pagedebugphantom.h \
     Page/pagedeviceinfo.h \
     Page/pageelapsednoticepopup.h \
     Page/pageerrorhelp.h \

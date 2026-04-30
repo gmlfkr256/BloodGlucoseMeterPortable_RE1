@@ -58,6 +58,10 @@ void PageDebug::init()
     labelDebugMenu[1]->setText("USB");
     labelDebugMenu[1]->setStyleSheet("border: 1px solid white; background-color: #007BFF; color: white;");
 
+    pageNum[2] = PAGE_DEBUG_PHANTOM;
+    labelDebugMenu[2]->setText("PHANTOM");
+    labelDebugMenu[2]->setStyleSheet("border: 1px solid white; background-color: #007BFF; color: white;");
+
     update();
 }
 

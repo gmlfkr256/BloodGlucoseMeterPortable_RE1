@@ -218,6 +218,11 @@ void MainWindow::init()
     listComHiddenPageIndex.append(stackedWidget->indexOf(pageDebugUsb));
     qDebug()<<"====================== PAGE_DEBUG_USB";
 
+    pageDebugPhantom = new PageDebugPhantom(this);
+    stackedWidget->addWidget(pageDebugPhantom);
+    listComHiddenPageIndex.append(stackedWidget->indexOf(pageDebugPhantom));
+    qDebug()<<"====================== PAGE_DEBUG_PHANTOM";
+
     pageResultFail = new PageResultFail(this);
     stackedWidget->addWidget(pageResultFail);
     qDebug()<<"====================== PAGE_RESULT_FAIL";
@@ -385,6 +390,7 @@ void MainWindow::init()
         {PAGE_DEBUG, "PageDebug"},
         {PAGE_DEBUG_SYS, "PageDebugSys"},
         {PAGE_DEBUG_USB, "PageDebugUsb"},
+        {PAGE_DEBUG_PHANTOM, "PageDebugPhantom"},
         {PAGE_RESULT_FAIL, "PageResultFail"},
         {PAGE_UPGRADE_FAIL, "PageUpgradeFail"},
         {PAGE_CALI_RESULT_MULTI_CONFIRM, "PageCaliResultMultiConfirm"},
