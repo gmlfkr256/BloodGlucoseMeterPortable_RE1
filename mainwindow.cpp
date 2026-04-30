@@ -558,7 +558,10 @@ void MainWindow::setPageByPageNum(PageNum pageNum)
         }
 
         if(page)
+        {
+            page->updateBgTopPhantom();
             page->pageShow();
+        }
     }
     else
     {
