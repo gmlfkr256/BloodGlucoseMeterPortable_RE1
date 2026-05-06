@@ -73,6 +73,7 @@ void PageDebugPhantom::mousePressEvent(QMouseEvent *ev)
         instance.bIsPhantomTest = bPhantomState;
 #if DEVICE
         instance.guiApi.glucoseSetPhantomUsage(bPhantomState ? GAPI_ACT_START : GAPI_ACT_STOP);
+        instance.getCaliGainCompleteCheck();
 #endif
         pageHide();
     }
