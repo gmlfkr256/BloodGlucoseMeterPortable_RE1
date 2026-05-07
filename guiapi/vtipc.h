@@ -93,6 +93,9 @@ typedef enum {
 	// glucose high & low value
 	VTIPC_MSGID_GLUCOSE_HIGHLOW,
 
+	// phantom usage
+	VTIPC_MSGID_PHANTOM_USAGE,
+
 	VTIPC_MSGID_MAX
 } vtIpcMsgId_e;
 

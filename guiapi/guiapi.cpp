@@ -2600,6 +2600,45 @@ int GuiApi::glucoseMonGetRawData (gapiSysProcMonInfo_t *rMonP)
  * PARAMETERS : 
  * RETURNS : None
  *****************************************************************************/
+int GuiApi::glucoseSetPhantomUsage (int usage)
+{
+	if (vtIpcProcess ((uint8_t) VTIPC_MSGID_PHANTOM_USAGE, (uint8_t) VTIPC_MSGACT_SET, \
+		(void *)&usage, sizeof (int)) != GAPI_SUCCESS)
+	{
+		gapiError("couldn't set phantom usage.\n");
+		return GAPI_FAIL;
+	}
+
+	return GAPI_SUCCESS;
+}
+
+/*****************************************************************************
+ * FUNCTION NAME : 
+ * DESCRIPTIONS : 
+ * PARAMETERS : 
+ * RETURNS : None
+ *****************************************************************************/
+int GuiApi::glucoseGetPhantomUsage (int *rUsageP)
+{
+	if (!rUsageP)
+		return GAPI_FAIL;
+
+	if (vtIpcProcess ((uint8_t) VTIPC_MSGID_PHANTOM_USAGE, (uint8_t) VTIPC_MSGACT_GET, \
+		(void *)rUsageP, sizeof (int)) != GAPI_SUCCESS)
+	{
+		gapiError("couldn't get phantom usage.\n");
+		return GAPI_FAIL;
+	}
+
+	return GAPI_SUCCESS;
+}
+
+/*****************************************************************************
+ * FUNCTION NAME : 
+ * DESCRIPTIONS : 
+ * PARAMETERS : 
+ * RETURNS : None
+ *****************************************************************************/
 int GuiApi::glucoseAttach (void)
 {
 	FILE *fp;

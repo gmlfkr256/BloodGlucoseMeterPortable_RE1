@@ -232,6 +232,8 @@ class GuiApi {
 		int glucoseGetMotorData (gapiMotorData_t *rMotorP);
 		int glucoseSetGainDetTime (uint32_t time);
 		int glucoseGetGainDetTime (uint32_t *rTimeP);
+		int glucoseSetPhantomUsage (int usage);			// GAPI_ACT_START or GAPI_ACT_STOP
+		int glucoseGetPhantomUsage (int *rUsageP);	// GAPI_ACT_START or GAPI_ACT_STOP
 
 		int glucoseSysProcAct (gapiSysProcAct_t *actP);
 		int glucoseMonGetRawData (gapiSysProcMonInfo_t *rMonP);

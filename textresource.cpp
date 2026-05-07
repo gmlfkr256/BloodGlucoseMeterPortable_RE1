@@ -1081,6 +1081,12 @@ void TextResource::init()
     //                                              "개발팀 확인 중",
     //                                          });
 
+    //PAGE_RESPONSE
+    fontData[Lan][PAGE_RESPONSE].insert("labelText",QFont(currentFont,instance.pixelToPoint(36),QFont::Bold));
+    fontData[Lan][PAGE_RESPONSE].insert("labelNumCurrent",QFont(currentFont,instance.pixelToPoint(28)));
+    fontData[Lan][PAGE_RESPONSE].insert("labelNumAll",QFont(currentFont,instance.pixelToPoint(28),QFont::Bold));
+    fontData[Lan][PAGE_RESPONSE].insert("labelPageNum",QFont(currentFont,instance.pixelToPoint(28)));
+
     //====================================================================================================================================
     //EN
     Lan = en;
