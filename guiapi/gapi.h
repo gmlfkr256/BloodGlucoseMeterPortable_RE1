@@ -256,8 +256,8 @@ typedef struct gapiPressureValue_T {
 #define GAPI_MOTOR_MAX_DEPTH					4095
 #define GAPI_MOTOR_MAX_SPEED					100			// 0~100
 
-#define GAPI_MOTOR_DFT_DEPTH					700		// IKSONG 250902: 4000 -> 700
-#define GAPI_MOTOR_DFT_SPEED					30		// IKSONG 250902: 40 -> 30
+#define GAPI_MOTOR_DFT_DEPTH					700		// IKSONG 250902: 4000->700
+#define GAPI_MOTOR_DFT_SPEED					20		// IKSONG 250902: 40->30: 260424: 30->20
 
 typedef struct gapiMotorData_T {
 	unsigned short depth;
@@ -503,10 +503,10 @@ typedef struct gapiMeasureGetRaw_T {
 	unsigned int temp_valid;
 	unsigned short temp_obj[GAPI_TEMP_CH_MAX];
 	unsigned short temp_amb[GAPI_TEMP_CH_MAX];
-	unsigned short raw_cnt[GAPI_ADC_CH_MAX];
-	unsigned short raw_val[GAPI_ADC_CH_MAX][GAPI_MEASURE_ADC_RAW_MAX];
-	unsigned short pres_cnt[GAPI_PRESSURE_CH_MAX];
-	short pres_val[GAPI_PRESSURE_CH_MAX][GAPI_MEASURE_PRESSURE_RAW_MAX];
+	unsigned short raw_cnt;
+	unsigned short raw_val[GAPI_MEASURE_ADC_RAW_MAX];
+	unsigned short pres_cnt;
+	short pres_val[GAPI_MEASURE_PRESSURE_RAW_MAX];
 } __attribute__((__packed__)) gapiMeasureGetRaw_t;
 
 /*---------------------------------------------------------------------------*
@@ -557,126 +557,32 @@ typedef struct gapiHwTestMeasureAct_T {
  *---------------------------------------------------------------------------*/
 typedef enum {
 	GAPI_CALITEST_OPMODE_RAW_TEST = 0,
-	GAPI_CALITEST_OPMODE_SINGLE_ADJUST,
-	GAPI_CALITEST_OPMODE_AMP_TEST_POTENTIOMETER,
-	GAPI_CALITEST_OPMODE_AMP_TEST_LED,
-	GAPI_CALITEST_OPMODE_AMP_NORMAL,
-	GAPI_CALITEST_OPMODE_INVITRO_TEST,
-	GAPI_CALITEST_OPMODE_REPEAT_TEST,
-	GAPI_CALITEST_OPMODE_MEASURE_TEST,
+	GAPI_CALITEST_OPMODE_LED_PWM,
 	GAPI_CALITEST_OPMODE_MAX
 } gapiCaliTestOpmode_e;
 
-typedef enum {
-	GAPI_CALITEST_LED_1 = 0,
-	GAPI_CALITEST_LED_2,
-	GAPI_CALITEST_LED_BOTH,
-	GAPI_CALITEST_LED_MAX
-} gapiCaliTestLed_e;
-
 // raw test
 typedef struct gapiCaliTestRaw_T {
-	unsigned char led;
-	unsigned char bright;
-	unsigned short start;
-	unsigned short end;
-	unsigned char revd[2];
+	unsigned short regi;
+	unsigned short bright;
+	unsigned short duration;
+	unsigned short revd;
 } __attribute__((__packed__)) gapiCaliTestRaw_t;
 
-// single LED adjust
-typedef enum {
-	GAPI_CALITEST_SA_LED_STEP1 = 0,
-	GAPI_CALITEST_SA_LED_STEP2,
-	GAPI_CALITEST_SA_LED_MAX_STEP
-} gapiCaliTestSaLedStep_e;
-
-typedef struct gapiCaliTestSingleAdjust_T {
-	unsigned char led_num;
-	unsigned char bright[GAPI_CALITEST_SA_LED_MAX_STEP];
-	unsigned char duration;
+// LWD PWM test
+typedef struct gapiCaliTestLedPwm_T {
+	unsigned short regi;
+	unsigned short bright1;
+	unsigned short bright2;
+	unsigned short duty;
 	unsigned short period;
-	unsigned char revd[2];
-} __attribute__((__packed__)) gapiCaliTestSingleAdjust_t;
-
-typedef struct gapiCaliTestAmpTest_T {
-	unsigned char num;
-	unsigned short start_idx;
-	unsigned short stop_idx;
-	unsigned char step;
-	unsigned char regi_ch;
-	unsigned char revd;
-} __attribute__((__packed__)) gapiCaliTestAmpTest_t;
-
-typedef struct gapiCaliTestAmpNormal_T {
-	unsigned char num;
-	unsigned short period;
-	unsigned char led_step;
-	unsigned char regi_step;
-	unsigned char revd[3];
-} __attribute__((__packed__)) gapiCaliTestAmpNormal_t;
-
-typedef struct gapiCaliTestPressureOpt_T {
-	unsigned char used[GAPI_PRESSURE_CH_MAX];
-	unsigned char revd[2];
-} __attribute__((__packed__)) gapiCaliTestPressureOpt_t;
-
-// in-vitro test
-typedef enum {
-	GAPI_CALITEST_INVITRO_BRIGHT_START = 0,
-	GAPI_CALITEST_INVITRO_BRIGHT_20 = GAPI_CALITEST_INVITRO_BRIGHT_START,
-	GAPI_CALITEST_INVITRO_BRIGHT_40,
-	GAPI_CALITEST_INVITRO_BRIGHT_60,
-	GAPI_CALITEST_INVITRO_BRIGHT_80,
-	GAPI_CALITEST_INVITRO_BRIGHT_100,
-	GAPI_CALITEST_INVITRO_BRIGHT_MAX
-} gapiCaliTestInVitroBright_e;
-
-typedef enum {
-	GAPI_CALITEST_INVITRO_MODE_NORMAL = 0,
-	GAPI_CALITEST_INVITRO_MODE_ADJUST,
-	GAPI_CALITEST_INVITRO_MODE_MAX
-} gapiCaliTestInVitroMode_e;
-
-typedef struct gapiCaliTestInVitro_T {
-	unsigned char mode;
-	unsigned char led;
-	unsigned short act;
-	unsigned short idle;
-	unsigned short loop;
-} __attribute__((__packed__)) gapiCaliTestInVitro_t;
-
-// measure test
-typedef struct gapiCaliTestMeasure_T {
-	unsigned char led;
-	unsigned char bright;
-	unsigned short start;
-	unsigned short end;
-	unsigned char save;
-	unsigned char len;
-	double cof1;
-	double cof2;
-} __attribute__((__packed__)) gapiCaliTestMeasure_t;
-
-// repeat test
-typedef struct gapiCaliTestRepeat_T {
-	unsigned char led;
-	unsigned char bright;
-	unsigned short act;
-	unsigned short idle;
-	unsigned short loop;
-} __attribute__((__packed__)) gapiCaliTestRepeat_t;
+	unsigned short duration;
+} __attribute__((__packed__)) gapiCaliTestLedPwm_t;
 
 // calibration data
 typedef struct gapiCaliTestData_T {
 	gapiCaliTestRaw_t raw;
-	gapiCaliTestSingleAdjust_t sa_led;
-	gapiCaliTestAmpTest_t amp_regi;
-	gapiCaliTestAmpTest_t amp_led;
-	gapiCaliTestAmpNormal_t amp_norm;
-	gapiCaliTestPressureOpt_t pres_opt;
-	gapiCaliTestInVitro_t invitro;
-	gapiCaliTestMeasure_t measure;
-	gapiCaliTestRepeat_t repeat;
+	gapiCaliTestLedPwm_t led_pwm;
 } __attribute__((__packed__)) gapiCaliTestData_t;
 
 // measurement activity
