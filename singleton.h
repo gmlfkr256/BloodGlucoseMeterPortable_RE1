@@ -317,7 +317,7 @@ public:
     bool isComMenuCheck = false;
     bool isBatZero = true;
     bool isBatCharging = false;
-    bool bIsPhantomTest = false;
+    int nPhantomMode = GAPI_PHANTOM_MODE_NORMAL;
 
     bool isTouchCtrl = false;
     int nTouchTime = 100;

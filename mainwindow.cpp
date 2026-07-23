@@ -14,9 +14,9 @@ MainWindow::MainWindow(QWidget* parent)
     int nUser = USER_MAX;
     instance.guiApi.glucoseGetActUser(&nUser);
 
-    int nPhantomUsage = GAPI_ACT_STOP;
-    if(instance.guiApi.glucoseGetPhantomUsage(&nPhantomUsage) == GAPI_SUCCESS)
-        instance.bIsPhantomTest = (nPhantomUsage == GAPI_ACT_START);
+    int nPhantomMode = GAPI_PHANTOM_MODE_NORMAL;
+    if(instance.guiApi.glucoseGetPhantomUsage(&nPhantomMode) == GAPI_SUCCESS)
+        instance.nPhantomMode = nPhantomMode;
 
     if(nUser != USER_MAX)
     {

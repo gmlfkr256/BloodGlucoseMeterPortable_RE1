@@ -43,10 +43,15 @@ void PageDebugPhantom::init()
 
 void PageDebugPhantom::update()
 {
-    if(bPhantomState)
+    if(nPhantomMode == GAPI_PHANTOM_MODE_MASS_PRODUCT)
     {
-        labelPhantomButton->setText("ON");
+        labelPhantomButton->setText("MASS");
         labelPhantomButton->setStyleSheet("background-color: red; color: white;");
+    }
+    else if(nPhantomMode == GAPI_PHANTOM_MODE_QUALITY)
+    {
+        labelPhantomButton->setText("QUALITY");
+        labelPhantomButton->setStyleSheet("background-color: green; color: white;");
     }
     else
     {
@@ -57,7 +62,7 @@ void PageDebugPhantom::update()
 
 void PageDebugPhantom::pageShow()
 {
-    bPhantomState = instance.bIsPhantomTest;
+    nPhantomMode = instance.nPhantomMode;
     update();
 }
 
@@ -70,9 +75,9 @@ void PageDebugPhantom::mousePressEvent(QMouseEvent *ev)
 {
     if(instance.touchCheck(customButtonSave->geometry(),ev))
     {
-        instance.bIsPhantomTest = bPhantomState;
+        instance.nPhantomMode = nPhantomMode;
 #if DEVICE
-        instance.guiApi.glucoseSetPhantomUsage(bPhantomState ? GAPI_ACT_START : GAPI_ACT_STOP);
+        instance.guiApi.glucoseSetPhantomUsage(nPhantomMode);
         instance.getCaliGainCompleteCheck();
 #endif
         pageHide();
@@ -85,7 +90,7 @@ void PageDebugPhantom::mousePressEvent(QMouseEvent *ev)
 
     if(instance.touchCheck(labelPhantomButton->geometry(),ev))
     {
-        bPhantomState = !bPhantomState;
+        nPhantomMode = (nPhantomMode + 1) % GAPI_PHANTOM_MODE_END;
         update();
     }
 }

@@ -38,8 +38,10 @@ void Page::pageShow()
 
 void Page::updateBgTopPhantom()
 {
-    if(instance.bIsPhantomTest)
+    if(instance.nPhantomMode == GAPI_PHANTOM_MODE_MASS_PRODUCT)
         labelBgTop->setStyleSheet("background-color: red;");
+    else if(instance.nPhantomMode == GAPI_PHANTOM_MODE_QUALITY)
+        labelBgTop->setStyleSheet("background-color: green;");
     else
         labelBgTop->setStyleSheet("background-color: #212121;");
 }

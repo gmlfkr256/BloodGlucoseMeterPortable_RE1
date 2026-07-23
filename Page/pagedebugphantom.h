@@ -17,7 +17,7 @@ public:
     CustomButtonSave *customButtonSave;
     CustomButtonCancel *customButtonCancel;
 
-    bool bPhantomState = false;
+    int nPhantomMode = GAPI_PHANTOM_MODE_NORMAL;
 
     void update() override;
     void pageShow() override;

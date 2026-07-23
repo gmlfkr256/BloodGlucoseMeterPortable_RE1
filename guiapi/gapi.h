@@ -278,19 +278,6 @@ typedef struct gapiSysOprData_T {
 } __attribute__((__packed__)) gapiSysOprData_t;
 
 /*---------------------------------------------------------------------------*
- * system hidden data                                                        *
- *---------------------------------------------------------------------------*/
-#define GAPI_MTIME_DFT_AM							900		// 09:00
-#define GAPI_MTIME_DFT_PM							1300	// 13:00
-
-typedef struct gapiMeasureStartTime_T {
-	unsigned short am_hour;
-	unsigned short am_min;
-	unsigned short pm_hour;
-	unsigned short pm_min;
-} __attribute__((__packed__)) gapiMeasureStartTime_t;
-
-/*---------------------------------------------------------------------------*
  * BLE                                                                       *
  *---------------------------------------------------------------------------*/
 typedef enum {
@@ -346,7 +333,7 @@ typedef struct gapiSysProcAct_T {
 	unsigned char proc;					// gapiProcAct_e
 	unsigned char act;
 	unsigned char user;
-	unsigned char idx;					// calibration index or measurement term
+	unsigned char idx;					// calibration index, measurement term or phantom kind
 	unsigned char cali_order;		// for calibration only
 	unsigned char revd[3];
 	unsigned int g_val;
@@ -594,6 +581,17 @@ typedef struct gapiCaliTestMeasureAct_T {
 	unsigned char mon;
 	unsigned char revd[3];
 } __attribute__((__packed__)) gapiCaliTestMeasureAct_t;
+
+/*---------------------------------------------------------------------------*
+ * for phantom test                                                          *
+ *---------------------------------------------------------------------------*/
+typedef enum {
+	GAPI_PHANTOM_MODE_START = 0,
+	GAPI_PHANTOM_MODE_NORMAL = GAPI_PHANTOM_MODE_START,
+	GAPI_PHANTOM_MODE_MASS_PRODUCT,
+	GAPI_PHANTOM_MODE_QUALITY,
+	GAPI_PHANTOM_MODE_END
+} gapiPhantomMode_e;
 
 #endif /* _GAPI_DEF_H */
 
