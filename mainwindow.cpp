@@ -24,6 +24,13 @@ MainWindow::MainWindow(QWidget* parent)
         instance.actUserLogin(nUser);
         setPageByPageNum(PAGE_HOME);
     }
+    else if(instance.nPhantomMode != GAPI_PHANTOM_MODE_NORMAL)
+    {
+        // 팬텀 모드: 유저1 선택 → 비밀번호 스킵과 동일 절차로 자동로그인
+        qDebug()<<"phantom auto login USER_1";
+        instance.actUserLogin(USER_1);
+        setPageByPageNum(PAGE_HOME);
+    }
 #endif
     instance.bIsStart = true;
 }
