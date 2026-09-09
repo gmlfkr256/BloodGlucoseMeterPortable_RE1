@@ -167,6 +167,14 @@ void PageMenu::update()
             PAGE_FAQ_INDEX,
             PAGE_ERROR_HELP_INDEX,
         };
+
+        //hrkim 20260909 팬텀 메뉴: 토글 활성 시에만 마지막 슬롯에 노출 (테스트 전용, 다국어 미적용)
+        if(instance.bPhantomMenuShow == true)
+        {
+            strButtonPathPng[3] = strPathPngDebug;
+            labelButtonText[3]->setText("PHANTOM");
+            listPageNum.append(PAGE_PHANTOM_MODE);
+        }
         break;
     case MENU_PAGE_MAX:
         break;

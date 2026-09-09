@@ -58,6 +58,8 @@ void MainWindow::init()
     instance.setDeviceLanguage(instance.langData.used);
     textResource.init();
 
+    instance.loadPhantomMenuShow();     //hrkim 20260909 팬텀 메뉴 노출 플래그 로드 (페이지 생성 전)
+
     /*
     QLabel* pLabel = new QLabel("폰트 테스트입니다. 12345 ABCDE ñáéóú");
     QFont oFont("Noto Sans KR");
@@ -354,6 +356,11 @@ void MainWindow::init()
     stackedWidget->addWidget(pageErrorResponse);
     qDebug()<<"====================== PAGE_ERROR_RESPONSE";
 
+    pagePhantomMode = new PagePhantomMode(this);
+    stackedWidget->addWidget(pagePhantomMode);
+    listComHiddenPageIndex.append(stackedWidget->indexOf(pagePhantomMode));
+    qDebug()<<"====================== PAGE_PHANTOM_MODE";
+
     comBat = new ComponentBattery(stackedWidget);
     comBle = new ComponentBluetooth(stackedWidget);
     comClock = new ComponentClock(stackedWidget);
@@ -432,6 +439,7 @@ void MainWindow::init()
         {PAGE_HELP_RESPONSE,"PageHelpResponse"},
         {PAGE_FAQ_RESPONSE,"PageFaqResponse"},
         {PAGE_ERROR_RESPONSE,"PageErrorResponse"},
+        {PAGE_PHANTOM_MODE,"PagePhantomMode"},
 
         {CUSTOM_BUTTON, "CustomButton"},
         {PAGE_MAX, "InvalidPage"}  // 예외 처리

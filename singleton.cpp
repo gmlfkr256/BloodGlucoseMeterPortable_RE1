@@ -999,3 +999,35 @@ void Singleton::resetBleConnectedFlag()
 {
     bleConnectedFlag = 1;
 }
+
+//hrkim 20260909 팬텀 메뉴 노출 플래그 로드: 파일 없음(기본) = 노출, "0" = 숨김
+void Singleton::loadPhantomMenuShow()
+{
+    bPhantomMenuShow = true;
+
+    QFile file(QCoreApplication::applicationDirPath()+"/phantomMenu.flag");
+    if(file.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+        if(QString(file.readAll()).trimmed() == "0")
+            bPhantomMenuShow = false;
+        file.close();
+    }
+
+    qDebug()<<"phantomMenu show: "<<bPhantomMenuShow;
+}
+
+//hrkim 20260909 팬텀 메뉴 노출 플래그 저장 (재부팅 후에도 유지)
+void Singleton::savePhantomMenuShow(bool bShow)
+{
+    bPhantomMenuShow = bShow;
+
+    QFile file(QCoreApplication::applicationDirPath()+"/phantomMenu.flag");
+    if(file.open(QIODevice::WriteOnly | QIODevice::Text))
+    {
+        QTextStream stream(&file);
+        stream << (bShow ? "1" : "0");
+        file.close();
+    }
+    else
+        qDebug()<<"[fail] phantomMenu.flag save fail";
+}

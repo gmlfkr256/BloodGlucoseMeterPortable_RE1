@@ -108,6 +108,7 @@ typedef enum
     PAGE_HELP_RESPONSE,
     PAGE_FAQ_RESPONSE,
     PAGE_ERROR_RESPONSE,
+    PAGE_PHANTOM_MODE,
 
     //PAGE_COLOR,
 
@@ -318,6 +319,7 @@ public:
     bool isBatZero = true;
     bool isBatCharging = false;
     int nPhantomMode = GAPI_PHANTOM_MODE_NORMAL;
+    bool bPhantomMenuShow = true;   //hrkim 20260909 팬텀 메뉴 노출 여부 (기본: 노출)
 
     bool isTouchCtrl = false;
     int nTouchTime = 100;
@@ -449,6 +451,9 @@ public:
 
     void setPageNumPrev(PageNum pageNumPrev);
     PageNum getPageNumPrev();
+
+    void loadPhantomMenuShow();
+    void savePhantomMenuShow(bool bShow);
 
     void setUpgradeErrCode(int errCode);
     gapiUpgradeErrCode_e getUpgradeErrCode();
