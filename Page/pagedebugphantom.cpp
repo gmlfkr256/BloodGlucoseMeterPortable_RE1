@@ -1,5 +1,6 @@
 #include "pagedebugphantom.h"
 
+//hrkim 20260909 팬텀 모드 설정은 PagePhantomMode(팬텀 메뉴)로 이동, 이 페이지는 팬텀 메뉴 노출 토글 전용
 PageDebugPhantom::PageDebugPhantom(QWidget *parent) : Page(parent)
 {
     this->setGeometry(parent->geometry());
@@ -20,14 +21,20 @@ void PageDebugPhantom::init()
     labelTitle->setStyleSheet("color: white;");
     labelTitle->setFont(font);
     labelTitle->setAlignment(Qt::AlignCenter);
-    labelTitle->setText("PHANTOM");
+    labelTitle->setText("PHANTOM MENU");
+
+    labelModeInfo = new QLabel(this);
+    labelModeInfo->setGeometry(0,75,640,40);
+    labelModeInfo->setStyleSheet("color: gray;");
+    labelModeInfo->setFont(QFont(instance.fontSuit,20));
+    labelModeInfo->setAlignment(Qt::AlignCenter);
 
     labelPhantomText = new QLabel(this);
     labelPhantomText->setGeometry(50,200,250,50);
     labelPhantomText->setStyleSheet("color: white;");
     labelPhantomText->setFont(font);
     labelPhantomText->setAlignment(Qt::AlignCenter);
-    labelPhantomText->setText("Phantom: ");
+    labelPhantomText->setText("Menu: ");
 
     labelPhantomButton = new QLabel(this);
     labelPhantomButton->setGeometry(350,100,250,250);
@@ -43,21 +50,30 @@ void PageDebugPhantom::init()
 
 void PageDebugPhantom::update()
 {
-    if(bPhantomState)
+    if(bMenuShow == true)
     {
-        labelPhantomButton->setText("ON");
-        labelPhantomButton->setStyleSheet("background-color: red; color: white;");
+        labelPhantomButton->setText("SHOW");
+        labelPhantomButton->setStyleSheet("background-color: green; color: white;");
     }
     else
     {
-        labelPhantomButton->setText("OFF");
+        labelPhantomButton->setText("HIDE");
         labelPhantomButton->setStyleSheet("background-color: white; color: black;");
     }
+
+    // 현재 팬텀 모드 상태 표시 (읽기 전용)
+    QString strMode = "OFF";
+    if(instance.nPhantomMode == GAPI_PHANTOM_MODE_MASS_PRODUCT)
+        strMode = "MASS";
+    else if(instance.nPhantomMode == GAPI_PHANTOM_MODE_QUALITY)
+        strMode = "QUALITY";
+
+    labelModeInfo->setText("Phantom: "+strMode);
 }
 
 void PageDebugPhantom::pageShow()
 {
-    bPhantomState = instance.bIsPhantomTest;
+    bMenuShow = instance.bPhantomMenuShow;
     update();
 }
 
@@ -70,11 +86,7 @@ void PageDebugPhantom::mousePressEvent(QMouseEvent *ev)
 {
     if(instance.touchCheck(customButtonSave->geometry(),ev))
     {
-        instance.bIsPhantomTest = bPhantomState;
-#if DEVICE
-        instance.guiApi.glucoseSetPhantomUsage(bPhantomState ? GAPI_ACT_START : GAPI_ACT_STOP);
-        instance.getCaliGainCompleteCheck();
-#endif
+        instance.savePhantomMenuShow(bMenuShow);
         pageHide();
     }
 
@@ -85,7 +97,7 @@ void PageDebugPhantom::mousePressEvent(QMouseEvent *ev)
 
     if(instance.touchCheck(labelPhantomButton->geometry(),ev))
     {
-        bPhantomState = !bPhantomState;
+        bMenuShow = !bMenuShow;
         update();
     }
 }

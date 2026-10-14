@@ -1684,48 +1684,6 @@ int GuiApi::glucoseGetSysOprData (gapiSysOprData_t *rSysDataP)
  * PARAMETERS : 
  * RETURNS : None
  *****************************************************************************/
-int GuiApi::glucoseSetSysMeasureData (gapiMeasureStartTime_t *mTimeP)
-{
-	if (!mTimeP)
-		return GAPI_FAIL;
-
-	if (vtIpcProcess ((uint8_t) VTIPC_MSGID_SYS_MEASURE_DATA, (uint8_t) VTIPC_MSGACT_SET, \
-		(void *) mTimeP, sizeof (gapiMeasureStartTime_t)) != GAPI_SUCCESS)
-	{
-		gapiError("couldn't set SYSTEM hidden data.\n");
-		return GAPI_FAIL;
-	}
-
-	return GAPI_SUCCESS;
-}
-
-/*****************************************************************************
- * FUNCTION NAME : 
- * DESCRIPTIONS : 
- * PARAMETERS : 
- * RETURNS : None
- *****************************************************************************/
-int GuiApi::glucoseGetSysMeasureData (gapiMeasureStartTime_t *rMtimeP)
-{
-	if (!rMtimeP)
-		return GAPI_FAIL;
-
-	if (vtIpcProcess ((uint8_t) VTIPC_MSGID_SYS_MEASURE_DATA, (uint8_t) VTIPC_MSGACT_GET, \
-		(void *) rMtimeP, sizeof (gapiMeasureStartTime_t)) != GAPI_SUCCESS)
-	{
-		gapiError("couldn't get SYSTEM hidden data.\n");
-		return GAPI_FAIL;
-	}
-
-	return GAPI_SUCCESS;
-}
-
-/*****************************************************************************
- * FUNCTION NAME : 
- * DESCRIPTIONS : 
- * PARAMETERS : 
- * RETURNS : None
- *****************************************************************************/
 int GuiApi::glucoseSetPressureData (gapiPressureData_t *pressureDataP)
 {
 	if (!pressureDataP)

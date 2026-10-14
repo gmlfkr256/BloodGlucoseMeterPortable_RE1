@@ -14,14 +14,21 @@ MainWindow::MainWindow(QWidget* parent)
     int nUser = USER_MAX;
     instance.guiApi.glucoseGetActUser(&nUser);
 
-    int nPhantomUsage = GAPI_ACT_STOP;
-    if(instance.guiApi.glucoseGetPhantomUsage(&nPhantomUsage) == GAPI_SUCCESS)
-        instance.bIsPhantomTest = (nPhantomUsage == GAPI_ACT_START);
+    int nPhantomMode = GAPI_PHANTOM_MODE_NORMAL;
+    if(instance.guiApi.glucoseGetPhantomUsage(&nPhantomMode) == GAPI_SUCCESS)
+        instance.nPhantomMode = nPhantomMode;
 
     if(nUser != USER_MAX)
     {
         qDebug()<<"userCheck";
         instance.actUserLogin(nUser);
+        setPageByPageNum(PAGE_HOME);
+    }
+    else if(instance.nPhantomMode != GAPI_PHANTOM_MODE_NORMAL)
+    {
+        // 팬텀 모드: 유저1 선택 → 비밀번호 스킵과 동일 절차로 자동로그인
+        qDebug()<<"phantom auto login USER_1";
+        instance.actUserLogin(USER_1);
         setPageByPageNum(PAGE_HOME);
     }
 #endif
@@ -50,6 +57,8 @@ void MainWindow::init()
     loadFont.Load();
     instance.setDeviceLanguage(instance.langData.used);
     textResource.init();
+
+    instance.loadPhantomMenuShow();     //hrkim 20260909 팬텀 메뉴 노출 플래그 로드 (페이지 생성 전)
 
     /*
     QLabel* pLabel = new QLabel("폰트 테스트입니다. 12345 ABCDE ñáéóú");
@@ -347,6 +356,11 @@ void MainWindow::init()
     stackedWidget->addWidget(pageErrorResponse);
     qDebug()<<"====================== PAGE_ERROR_RESPONSE";
 
+    pagePhantomMode = new PagePhantomMode(this);
+    stackedWidget->addWidget(pagePhantomMode);
+    listComHiddenPageIndex.append(stackedWidget->indexOf(pagePhantomMode));
+    qDebug()<<"====================== PAGE_PHANTOM_MODE";
+
     comBat = new ComponentBattery(stackedWidget);
     comBle = new ComponentBluetooth(stackedWidget);
     comClock = new ComponentClock(stackedWidget);
@@ -425,6 +439,7 @@ void MainWindow::init()
         {PAGE_HELP_RESPONSE,"PageHelpResponse"},
         {PAGE_FAQ_RESPONSE,"PageFaqResponse"},
         {PAGE_ERROR_RESPONSE,"PageErrorResponse"},
+        {PAGE_PHANTOM_MODE,"PagePhantomMode"},
 
         {CUSTOM_BUTTON, "CustomButton"},
         {PAGE_MAX, "InvalidPage"}  // 예외 처리

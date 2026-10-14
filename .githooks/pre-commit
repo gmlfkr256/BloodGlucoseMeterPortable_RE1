@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Pre-commit secret scan — blocks commits that contain secrets (API keys, tokens, ...).
+# Enable in a fresh clone with:  git config core.hooksPath .githooks
+# (리전 거버넌스 gitleaks-pre-commit 리눅스 원본 — 빌드 PC 이식 2026-09-07, XW-0152)
+set -euo pipefail
+GITLEAKS="$(command -v gitleaks || true)"
+if [ -z "$GITLEAKS" ] && [ -x "$HOME/.local/bin/gitleaks" ]; then
+  GITLEAKS="$HOME/.local/bin/gitleaks"
+fi
+if [ -z "$GITLEAKS" ]; then
+  echo "⚠️  gitleaks 미설치 — 시크릿 검사를 건너뜁니다." >&2
+  echo "    설치: https://github.com/gitleaks/gitleaks (또는 ~/.local/bin 에 바이너리)" >&2
+  exit 0
+fi
+if ! "$GITLEAKS" git --staged --redact --no-banner; then
+  echo "" >&2
+  echo "❌ 커밋 차단: 스테이징된 변경에서 시크릿이 감지되었습니다 (위 결과 참고)." >&2
+  echo "   • 진짜 키면: 코드에서 제거하고 .env/환경변수로 옮긴 뒤 재커밋." >&2
+  echo "   • 오탐이면: 해당 라인 끝에 '// gitleaks:allow' 주석 또는 .gitleaks.toml allowlist." >&2
+  exit 1
+fi

@@ -134,7 +134,6 @@ typedef union vtIpcMsgKind_T {
 		gapiRegiData_t regi;
 		gapiTempData_t temp;
 		gapiSysOprData_t opr;
-		gapiMeasureStartTime_t mtime;
 		gapiPressureData_t pressure;
 
 		// for BLE

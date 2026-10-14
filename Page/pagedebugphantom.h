@@ -12,12 +12,13 @@ public:
 
     QLabel *labelBg;
     QLabel *labelTitle;
+    QLabel *labelModeInfo;
     QLabel *labelPhantomText;
     QLabel *labelPhantomButton;
     CustomButtonSave *customButtonSave;
     CustomButtonCancel *customButtonCancel;
 
-    bool bPhantomState = false;
+    bool bMenuShow = true;  //hrkim 20260909 팬텀 메뉴 노출 토글 (모드 설정은 PagePhantomMode로 이동)
 
     void update() override;
     void pageShow() override;

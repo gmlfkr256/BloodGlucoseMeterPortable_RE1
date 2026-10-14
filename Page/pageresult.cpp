@@ -228,7 +228,8 @@ void PageResult::pageShow()
 
     qDebug()<<"PageResult: nGlucoseValue="<<nGlucoseValue;
 
-    if(nGlucoseValue<instance.glucoseLimit.low || nGlucoseValue>instance.glucoseLimit.high)
+    if(instance.nPhantomMode == GAPI_PHANTOM_MODE_NORMAL
+            && (nGlucoseValue<instance.glucoseLimit.low || nGlucoseValue>instance.glucoseLimit.high))
     {
         emit signalShowPageNum(PAGE_BLOOD_NOTICE_POPUP);
         return;

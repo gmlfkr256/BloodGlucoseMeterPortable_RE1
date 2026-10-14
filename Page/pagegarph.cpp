@@ -336,7 +336,7 @@ void PageGarph::pageShow()
         instance.setPageNumPrev(instance.currentPage);
 
 
-    if(instance.isBatCharging == true)
+    if(instance.isBatCharging == true && instance.nPhantomMode == GAPI_PHANTOM_MODE_NORMAL)
     {
         instance.sysProcMonInfo.err_code = GAPI_PROC_ECODE_DATA_CHARGING;
         emit signalShowPageNum(PAGE_RESULT_FAIL);
