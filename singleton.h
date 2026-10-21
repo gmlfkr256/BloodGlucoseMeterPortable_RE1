@@ -193,6 +193,14 @@ typedef enum
 
 Q_ENUMS(GraphMode);
 
+//hrkim 20261021 디지털 라벨(mes-dlabel) 삭제 결과 (XW-0416)
+typedef enum
+{
+    DLABEL_DELETE_OK = 0,   // 삭제함
+    DLABEL_DELETE_NONE,     // 원래 없음
+    DLABEL_DELETE_FAIL      // p6 경로 못 찾음 또는 삭제 후에도 남음
+} DlabelDeleteResult;
+
 typedef enum
 {
     CALI_0 = 0,
@@ -454,6 +462,8 @@ public:
 
     void loadPhantomMenuShow();
     void savePhantomMenuShow(bool bShow);
+    QString getVdataMountPath();
+    int deleteDigitalLabel();
 
     void setUpgradeErrCode(int errCode);
     gapiUpgradeErrCode_e getUpgradeErrCode();

@@ -1,4 +1,7 @@
 #include "singleton.h"
+#include <QDir>
+#include <QFileInfo>
+#include <unistd.h>
 
 // 정적 멤버 초기화
 const QHash<unsigned int, QPair<QString, DeviceLanguage>> Singleton::hashLanguage = {
@@ -1027,7 +1030,66 @@ void Singleton::savePhantomMenuShow(bool bShow)
         QTextStream stream(&file);
         stream << (bShow ? "1" : "0");
         file.close();
+        ::sync();   //hrkim 20261021 저장 직후 재부팅(팬텀 SET)돼도 남도록 (XW-0416)
     }
     else
         qDebug()<<"[fail] phantomMenu.flag save fail";
+}
+
+//hrkim 20261021 p6(vdata) 런타임 마운트 경로: /proc/mounts 에서 조회 (PC 개발 모드는 실행 폴더)
+QString Singleton::getVdataMountPath()
+{
+#if DEVICE
+    QFile file("/proc/mounts");
+    if(file.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+        const QStringList lines = QString(file.readAll()).split('\n');
+        file.close();
+
+        for(const QString &line : lines)
+        {
+            QStringList fields = line.split(' ');
+            if(fields.size() > 1 && fields.at(0) == GAPI_SYS_VDATA_DEV_NAME)
+                return fields.at(1);
+        }
+    }
+    return QString();
+#else
+    return QCoreApplication::applicationDirPath();
+#endif
+}
+
+//hrkim 20261021 디지털 라벨(p6 mes-dlabel) 삭제 + sync + 존재 재확인 — 팬텀 테스트 종료(OFF 저장) 시 SET 앞에서 호출 (XW-0416)
+int Singleton::deleteDigitalLabel()
+{
+    QString strBase = getVdataMountPath();
+    if(strBase.isEmpty())
+    {
+        qDebug()<<"[fail] dlabel: p6 mount path not found";
+        return DLABEL_DELETE_FAIL;
+    }
+
+    QString strPath = strBase + "/mes-dlabel";
+    QFileInfo info(strPath);
+    if(!info.exists())
+    {
+        qDebug()<<"dlabel: none "<<strPath;
+        return DLABEL_DELETE_NONE;
+    }
+
+    if(info.isDir())
+        QDir(strPath).removeRecursively();
+    else
+        QFile::remove(strPath);
+
+    ::sync();
+
+    if(QFileInfo::exists(strPath))
+    {
+        qDebug()<<"[fail] dlabel delete fail: "<<strPath;
+        return DLABEL_DELETE_FAIL;
+    }
+
+    qDebug()<<"dlabel deleted: "<<strPath;
+    return DLABEL_DELETE_OK;
 }

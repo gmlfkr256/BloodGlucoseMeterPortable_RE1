@@ -15,10 +15,12 @@ public:
     QLabel *labelTitle;
     QLabel *labelPhantomText;
     QLabel *labelPhantomButton;
+    QLabel *labelDlabelResult;  //hrkim 20261021 디지털 라벨 삭제 결과 표시 (XW-0416)
     CustomButtonSave *customButtonSave;
     CustomButtonCancel *customButtonCancel;
 
     int nPhantomMode = GAPI_PHANTOM_MODE_NORMAL;
+    bool bWaitConfirm = false;  //hrkim 20261021 라벨 삭제 후 SAVE 한 번 더 눌러야 SET (XW-0416)
 
     void update() override;
     void pageShow() override;
