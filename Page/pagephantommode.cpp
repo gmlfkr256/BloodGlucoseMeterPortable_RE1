@@ -1,4 +1,6 @@
 #include "pagephantommode.h"
+#include "qrcodegen/qrcodegen.hpp"
+#include <QPainter>
 
 PagePhantomMode::PagePhantomMode(QWidget *parent) : Page(parent)
 {
@@ -22,21 +24,27 @@ void PagePhantomMode::init()
     labelTitle->setAlignment(Qt::AlignCenter);
     labelTitle->setText("PHANTOM");
 
-    labelPhantomText = new QLabel(this);
-    labelPhantomText->setGeometry(50,200,250,50);
-    labelPhantomText->setStyleSheet("color: white;");
-    labelPhantomText->setFont(font);
-    labelPhantomText->setAlignment(Qt::AlignCenter);
-    labelPhantomText->setText("Phantom: ");
-
     labelPhantomButton = new QLabel(this);
     labelPhantomButton->setGeometry(350,100,250,250);
     labelPhantomButton->setFont(font);
     labelPhantomButton->setAlignment(Qt::AlignCenter);
     labelPhantomButton->setStyleSheet("background-color: blue; color: white;");
 
+    //hrkim 20261025 왼쪽 'Phantom:' 글자 자리에 디지털 라벨 QR + 글자 (최종 테스트 스캔용, XW-0416 (a))
+    labelDlabelCode = new QLabel(this);
+    labelDlabelCode->setGeometry(76,78,198,198);
+    labelDlabelCode->setStyleSheet("color: white;");
+    labelDlabelCode->setFont(QFont(instance.fontSuit,20,QFont::Bold));
+    labelDlabelCode->setAlignment(Qt::AlignCenter);
+    labelDlabelCode->setWordWrap(true);
+
+    labelDlabelText = new QLabel(this);
+    labelDlabelText->setGeometry(10,280,330,30);
+    labelDlabelText->setStyleSheet("color: white;");
+    labelDlabelText->setAlignment(Qt::AlignCenter);
+
     labelDlabelResult = new QLabel(this);
-    labelDlabelResult->setGeometry(20,260,320,120);
+    labelDlabelResult->setGeometry(10,312,330,76);
     labelDlabelResult->setStyleSheet("color: white;");
     labelDlabelResult->setFont(QFont(instance.fontSuit,20,QFont::Bold));
     labelDlabelResult->setAlignment(Qt::AlignCenter);
@@ -67,11 +75,63 @@ void PagePhantomMode::update()
     }
 }
 
+//hrkim 20261025 mes-dlabel/prod_serial 값을 QR(ECC M, 여백 4칸, 흰 바탕) + 글자로 표시, 없으면 '디지털 라벨 없음' (XW-0416 (a))
+void PagePhantomMode::updateDlabelCode()
+{
+    QString strLabel = instance.getDigitalLabel();
+    labelDlabelText->clear();
+    if(strLabel.isEmpty())
+    {
+        labelDlabelCode->setText("디지털 라벨 없음");
+        return;
+    }
+
+    try
+    {
+        qrcodegen::QrCode qr = qrcodegen::QrCode::encodeText(strLabel.toUtf8().constData(), qrcodegen::QrCode::Ecc::MEDIUM);
+        const int nQuiet = 4;
+        int nCount = qr.getSize() + nQuiet*2;
+        int nScale = qMax(1, labelDlabelCode->width() / nCount);
+
+        QImage img(nCount*nScale, nCount*nScale, QImage::Format_RGB32);
+        img.fill(Qt::white);
+        QPainter painter(&img);
+        for(int y=0; y<qr.getSize(); y++)
+            for(int x=0; x<qr.getSize(); x++)
+                if(qr.getModule(x,y))
+                    painter.fillRect((x+nQuiet)*nScale, (y+nQuiet)*nScale, nScale, nScale, Qt::black);
+        painter.end();
+        labelDlabelCode->setPixmap(QPixmap::fromImage(img));
+    }
+    catch(const std::exception &e)
+    {
+        qDebug()<<"[fail] dlabel QR encode: "<<e.what();
+        labelDlabelCode->setText("QR 오류");
+    }
+
+    //글자는 칸 폭에 맞을 때까지 줄임
+    QFont fontText(instance.fontSuit,18,QFont::Bold);
+    while(fontText.pointSize() > 10)
+    {
+#if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
+        int nTextWidth = QFontMetrics(fontText).horizontalAdvance(strLabel);
+#else
+        int nTextWidth = QFontMetrics(fontText).width(strLabel);
+#endif
+        if(nTextWidth <= labelDlabelText->width())
+            break;
+        fontText.setPointSize(fontText.pointSize()-1);
+    }
+    labelDlabelText->setFont(fontText);
+    labelDlabelText->setText(strLabel);
+}
+
 void PagePhantomMode::pageShow()
 {
     nPhantomMode = instance.nPhantomMode;
     bWaitConfirm = false;
     labelDlabelResult->clear();
+    updateDlabelCode();
     update();
 }
 
@@ -92,6 +152,7 @@ void PagePhantomMode::mousePressEvent(QMouseEvent *ev)
         if(bTestEnd && !bWaitConfirm)
         {
             int nResult = instance.deleteDigitalLabel();
+            updateDlabelCode();   //hrkim 20261025 삭제 결과를 QR 자리에도 반영 (XW-0416 (a))
             if(nResult == DLABEL_DELETE_FAIL)
             {
                 //삭제 실패 시 SET 막음 (Hr 2026-10-21) — SAVE 다시 누르면 재시도

@@ -13,8 +13,9 @@ public:
 
     QLabel *labelBg;
     QLabel *labelTitle;
-    QLabel *labelPhantomText;
     QLabel *labelPhantomButton;
+    QLabel *labelDlabelCode;    //hrkim 20261025 디지털 라벨 QR (XW-0416 (a))
+    QLabel *labelDlabelText;    //hrkim 20261025 디지털 라벨 글자 (XW-0416 (a))
     QLabel *labelDlabelResult;  //hrkim 20261021 디지털 라벨 삭제 결과 표시 (XW-0416)
     CustomButtonSave *customButtonSave;
     CustomButtonCancel *customButtonCancel;
@@ -27,6 +28,7 @@ public:
     void pageHide() override;
 private:
     void init();
+    void updateDlabelCode();
 
 signals:
 };

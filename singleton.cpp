@@ -1093,3 +1093,19 @@ int Singleton::deleteDigitalLabel()
     qDebug()<<"dlabel deleted: "<<strPath;
     return DLABEL_DELETE_OK;
 }
+
+//hrkim 20261025 디지털 라벨 값(p6 mes-dlabel/prod_serial 첫 줄) — 없으면 빈 문자열 (XW-0416 (a))
+QString Singleton::getDigitalLabel()
+{
+    QString strBase = getVdataMountPath();
+    if(strBase.isEmpty())
+        return QString();
+
+    QFile file(strBase + "/mes-dlabel/prod_serial");
+    if(!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        return QString();
+
+    QString strLabel = QString::fromUtf8(file.readLine(256)).trimmed();
+    file.close();
+    return strLabel;
+}

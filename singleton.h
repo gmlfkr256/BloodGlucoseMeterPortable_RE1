@@ -464,6 +464,7 @@ public:
     void savePhantomMenuShow(bool bShow);
     QString getVdataMountPath();
     int deleteDigitalLabel();
+    QString getDigitalLabel();
 
     void setUpgradeErrCode(int errCode);
     gapiUpgradeErrCode_e getUpgradeErrCode();
