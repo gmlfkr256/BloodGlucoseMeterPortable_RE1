@@ -20,6 +20,8 @@ const char *RESULT_PREFIX       = "MESDL1";             // 결과 코드 머리 
 const int   SHIP_SERIAL_MAX     = 62;                   // guiapi getFwVersion 버퍼 64 = 시리얼 + '\n' + NUL
 const char *SHIP_SERIAL_PATTERN = "^[A-Za-z0-9-]+$";    // ':' 는 결과 코드 칸 구분자라 받지 않음
 const bool  SHIP_SERIAL_REQUIRED = true;                // ship_serial 이 없으면 해제 안 함(D-54). false 면 기록을 건너뛰고 삭제만 (지금 흐름 호환)
+const bool  RESULT_CONFIRM_STEP = true;                 // OK 면 결과 화면(결과 코드 QR) → 저장 한 번 더 → SET. false 면 OK 일 때 결과 화면 없이 바로 SET (실패는 늘 결과 화면)
+                                                        // Hr 2026-10-26 "결과 큐알은 필요하면 팬텀 해제 앞으로 보내서 … 모듈화" — 자리 정책은 미정, QR 그리기는 qrCodePixmap 공용
 
 const char *FT_DIR_DEFAULT      = "/home/root/factoryTest";                    // 공정 테스트 앱 폴더 (rootfs)
 const char *FT_UNIT_DEFAULT     = "/etc/systemd/system/factorytest.service";   // 공정 테스트 앱 자동 기동 유닛
@@ -352,6 +354,11 @@ bool PhantomRelease::purgeFactoryTest(QString *strErr)
 bool PhantomRelease::returnWithPhantomNormal()
 {
     return FT_RETURN_PHANTOM_NORMAL;
+}
+
+bool PhantomRelease::resultConfirmStep()
+{
+    return RESULT_CONFIRM_STEP;
 }
 
 int PhantomRelease::runDevmode(const QStringList &listArgs, int nTimeoutMs, QString *strErr)

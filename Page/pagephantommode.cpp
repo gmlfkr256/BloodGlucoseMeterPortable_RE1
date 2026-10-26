@@ -1,6 +1,5 @@
 #include "pagephantommode.h"
-#include "qrcodegen/qrcodegen.hpp"
-#include <QPainter>
+#include "qrcodeimage.h"
 
 namespace {
 //hrkim 20261026 팬텀 화면 문구·시간 — 테스트 때 Hr 확인 후 바꿀 자리 (팬텀 화면은 영문 표기, 다국어 미적용) (XW-0446, XW-0453)
@@ -205,32 +204,19 @@ void PagePhantomMode::showResult(int nResult)
                                   strNext));
 }
 
-//hrkim 20261025 QR(ECC M, 여백 4칸, 흰 바탕) — 칸 크기는 라벨 폭에 맞춤 (XW-0416 (a) 에서 가져옴)
+//hrkim 20261026 결과 코드 QR — 그리기는 qrCodePixmap(공용)으로 (XW-0446)
 void PagePhantomMode::setQrCode(QLabel *label, const QString &strCode)
 {
-    try
+    int nVersion = 0, nScale = 0;
+    QPixmap pixmap = qrCodePixmap(strCode, label->width(), &nVersion, &nScale);
+    if(pixmap.isNull())
     {
-        qrcodegen::QrCode qr = qrcodegen::QrCode::encodeText(strCode.toUtf8().constData(), qrcodegen::QrCode::Ecc::MEDIUM);
-        const int nQuiet = 4;
-        int nCount = qr.getSize() + nQuiet*2;
-        int nScale = qMax(1, label->width() / nCount);
-
-        QImage img(nCount*nScale, nCount*nScale, QImage::Format_RGB32);
-        img.fill(Qt::white);
-        QPainter painter(&img);
-        for(int y=0; y<qr.getSize(); y++)
-            for(int x=0; x<qr.getSize(); x++)
-                if(qr.getModule(x,y))
-                    painter.fillRect((x+nQuiet)*nScale, (y+nQuiet)*nScale, nScale, nScale, Qt::black);
-        painter.end();
-        label->setPixmap(QPixmap::fromImage(img));
-        qDebug()<<"result code:"<<strCode<<"QR v"<<qr.getVersion()<<"scale"<<nScale;
-    }
-    catch(const std::exception &e)
-    {
-        qDebug()<<"[fail] QR encode: "<<e.what();
         label->setText("QR ERROR");
+        return;
     }
+
+    label->setPixmap(pixmap);
+    qDebug()<<"result code:"<<strCode<<"QR v"<<nVersion<<"scale"<<nScale;
 }
 
 void PagePhantomMode::pageShow()
@@ -420,9 +406,14 @@ void PagePhantomMode::mousePressEvent(QMouseEvent *ev)
                 showMessage(TXT_WORKING);
 
             int nResult = PhantomRelease::runRelease(releaseState);
-            showResult(nResult);
-            bWaitConfirm = (nResult == PhantomRelease::RESULT_OK);
-            return;
+
+            //hrkim 20261026 결과 코드 QR 단계는 설정으로 뺄 수 있게 — 끄면 OK 일 때 아래 SET 으로 바로 (실패는 늘 결과 화면) (XW-0446, Hr "모듈화")
+            if(nResult != PhantomRelease::RESULT_OK || PhantomRelease::resultConfirmStep())
+            {
+                showResult(nResult);
+                bWaitConfirm = (nResult == PhantomRelease::RESULT_OK);
+                return;
+            }
         }
 
         //hrkim 20261021 메뉴 숨김 플래그를 SET 앞에 저장 (SET 직후 재부팅으로 유실 방지, XW-0416)

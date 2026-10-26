@@ -123,6 +123,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     phantomrelease.cpp \
+    qrcodeimage.cpp \
     singleton.cpp \
     textresource.cpp
 
@@ -233,6 +234,7 @@ HEADERS += \
     qrcodegen/qrcodegen.hpp \
     mainwindow.h \
     phantomrelease.h \
+    qrcodeimage.h \
     singleton.h \
     textresource.h
 

@@ -58,6 +58,7 @@ public:
 
     // 설정값 (화면에서도 쓰는 것)
     static bool returnWithPhantomNormal();  // [FACTORY TEST] 때 팬텀 값을 NORMAL 로 되돌릴지 (D-61 4번 결정 대기)
+    static bool resultConfirmStep();        // OK 뒤 결과 코드 QR 화면 + 확인 저장을 거칠지 (끄면 OK 일 때 바로 SET)
 
 private:
     static QString readFirstLine(const QString &strPath);
