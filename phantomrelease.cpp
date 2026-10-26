@@ -28,6 +28,8 @@ const char *FT_UNIT_DEFAULT     = "/etc/systemd/system/factorytest.service";   /
 const char *FT_DIR_ENV          = "HZ_FACTORYTEST_DIR";    // 기기 시험 때만 경로를 바꾸는 환경변수 (평소 없음)
 const char *FT_UNIT_ENV         = "HZ_FACTORYTEST_UNIT";
 const char *FT_DEVMODE          = "devmode.sh";            // 공통 모듈 — 있으면 공정 테스트 앱이 깔린 것
+                                                           // ※ 이 글자는 지우거나 쪼개지 말 것: 공정 테스트 앱 devmode.sh gui 가 이 바이너리에 "devmode.sh" 가 있어야
+                                                           //   새 상용앱(해제 때 purge 함)으로 보고 [팬텀 모드로 전환]을 허락한다 (factorytest 0.2.18, 2026-10-26)
 const char *FT_BINARY           = "factoryTest";
 const int   FT_SWITCH_TIMEOUT_MS = 15000;
 const int   FT_PURGE_TIMEOUT_MS  = 30000;
