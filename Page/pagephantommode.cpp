@@ -15,7 +15,7 @@ const char *TXT_WORKING             = "WORKING...";
 const char *TXT_REBOOTING           = "REBOOTING...";
 const char *TXT_SAVE_TO_FINISH      = "SAVE TO FINISH";
 const char *TXT_SAVE_TO_RETRY       = "SAVE TO RETRY";
-const char *TXT_USB_TO_RETRY        = "USB CONNECT TO RETRY";
+const char *TXT_USB_TO_RETRY        = "CANCEL, THEN\nUSB CONNECT";
 
 const int FT_CONFIRM_MS       = 5000;   // [FACTORY TEST] 두 번째 누름 대기
 const int USB_POLL_MS         = 500;    // PC 꺼냄 감지 주기
@@ -240,8 +240,8 @@ void PagePhantomMode::pageShow()
     bFtInstalled = PhantomRelease::isFactoryTestInstalled();
     labelDlabelResult->clear();
 
-    //hrkim 20261026 다른 화면으로 넘어가며 USB 를 못 거둔 채 돌아왔으면 USB 화면부터 (XW-0446)
-    if(PhantomRelease::usbMediaState() != PhantomRelease::USB_MEDIA_NONE)
+    //hrkim 20261026 USB 를 못 거둔 채(가젯이 남았거나 p6 가 안 붙음) 돌아왔으면 USB 화면부터 — [USB DISCONNECT] 로 다시 붙임 (XW-0446)
+    if(PhantomRelease::usbMediaState() != PhantomRelease::USB_MEDIA_NONE || instance.getVdataMountPath().isEmpty())
     {
         nView = VIEW_USB;
         showMessage(TXT_USB_CONNECTED);
@@ -420,6 +420,16 @@ void PagePhantomMode::mousePressEvent(QMouseEvent *ev)
 
     if(instance.touchCheck(customButtonCancel->geometry(),ev))
     {
+        //hrkim 20261026 결과 화면의 취소는 기본 화면으로 (NO-SHIP 이면 여기서 [USB CONNECT] 부터 다시) — 끝난 단계는 그대로 둠 (XW-0446)
+        if(nView == VIEW_RESULT)
+        {
+            nView = VIEW_IDLE;
+            bWaitConfirm = false;
+            labelDlabelResult->clear();
+            updateView();
+            return;
+        }
+
         pageHide();
         return;
     }
