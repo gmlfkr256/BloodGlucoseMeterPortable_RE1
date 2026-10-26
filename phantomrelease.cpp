@@ -31,8 +31,9 @@ const int   FT_SWITCH_TIMEOUT_MS = 15000;
 const int   FT_PURGE_TIMEOUT_MS  = 30000;
 const bool  FT_RETURN_PHANTOM_NORMAL = false;   // D-61 4번(공정 테스트 NORMAL·MASS 비교 뒤 Hr 결정): true 면 표식만 지우고 팬텀 NORMAL SET 으로 재부팅
 
-const char *USB_UDC_CLASS_DIR   = "/sys/class/udc";        // <udc>/device/gadget/lun0/file — PC 가 꺼내면 빈 값
-const char *USB_LUN_FILE        = "device/gadget/lun0/file";
+const char *USB_UDC_CLASS_DIR   = "/sys/class/udc";        // USB 장치 컨트롤러 (기기는 ci_hdrc.0 하나)
+const char *USB_LUN_FILE        = "device/gadget/lun0/file";   // PC 가 꺼내기(eject) 명령을 보내면 빈 값
+const char *USB_STATE_FILE      = "state";                     // PC 가 잡고 있으면 "configured" — power-off(udisksctl)·케이블 뽑기면 바뀜 (실기 2026-10-26)
 
 #if !DEVICE
 bool g_bMockUsb = false;    // PC 개발 모드: USB 연결 흉내
@@ -275,18 +276,43 @@ int PhantomRelease::usbMediaState()
 #endif
 }
 
+bool PhantomRelease::usbHostConfigured()
+{
+#if DEVICE
+    QString strUdc = usbUdcPath();
+    if(strUdc.isEmpty())
+        return false;
+
+    QFile file(strUdc + "/" + USB_STATE_FILE);
+    if(!file.open(QIODevice::ReadOnly))
+        return false;
+
+    QByteArray baState = file.readAll().trimmed();
+    file.close();
+    return baState == "configured";
+#else
+    return g_bMockUsb;
+#endif
+}
+
 QString PhantomRelease::usbLunFilePath()
 {
     //저장장치 가젯이 올라와 있을 때만 생긴다 (g_ether 등 다른 가젯이면 없음)
+    QString strUdc = usbUdcPath();
+    if(strUdc.isEmpty())
+        return QString();
+
+    QString strPath = strUdc + "/" + USB_LUN_FILE;
+    return QFileInfo::exists(strPath) ? strPath : QString();
+}
+
+QString PhantomRelease::usbUdcPath()
+{
     QDir dirUdc(USB_UDC_CLASS_DIR);
     const QStringList listUdc = dirUdc.entryList(QDir::AllEntries | QDir::NoDotAndDotDot);
-    for(const QString &strUdc : listUdc)
-    {
-        QString strPath = dirUdc.absoluteFilePath(strUdc) + "/" + USB_LUN_FILE;
-        if(QFileInfo::exists(strPath))
-            return strPath;
-    }
-    return QString();
+    if(listUdc.isEmpty())
+        return QString();
+    return dirUdc.absoluteFilePath(listUdc.first());
 }
 
 bool PhantomRelease::isFactoryTestInstalled()

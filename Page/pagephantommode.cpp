@@ -19,6 +19,7 @@ const char *TXT_USB_TO_RETRY        = "CANCEL, THEN\nUSB CONNECT";
 
 const int FT_CONFIRM_MS       = 5000;   // [FACTORY TEST] 두 번째 누름 대기
 const int USB_POLL_MS         = 500;    // PC 꺼냄 감지 주기
+const int USB_DETACH_POLLS    = 4;      // PC 가 잡았다가 놓은 상태가 이만큼(2초) 이어지면 해제 — 잠깐 끊김에 흔들리지 않게
 const int REBOOT_FALLBACK_MS  = 10000;  // 재부팅이 안 오면 직접 (M4 명령 실패 대비)
 
 QString resultTitle(int nResult)
@@ -92,7 +93,7 @@ void PagePhantomMode::init()
     labelResultText = new QLabel(this);
     labelResultText->setGeometry(330,80,300,300);
     labelResultText->setStyleSheet("color: white;");
-    labelResultText->setFont(QFont(instance.fontSuit,20,QFont::Bold));
+    labelResultText->setFont(QFont(instance.fontSuit,17,QFont::Bold));
     labelResultText->setAlignment(Qt::AlignCenter);
     labelResultText->setWordWrap(true);
 
@@ -197,7 +198,7 @@ void PagePhantomMode::showResult(int nResult)
         strNext = TXT_SAVE_TO_RETRY;
 
     labelResultText->setStyleSheet(nResult == PhantomRelease::RESULT_OK ? "color: white;" : "color: red;");
-    labelResultText->setText(QString("%1\n\nSHIP\n%2\n\nPROD\n%3\n\n%4")
+    labelResultText->setText(QString("%1\n\nSHIP\n%2\nPROD\n%3\n\n%4")
                              .arg(resultTitle(nResult),
                                   releaseState.strReadback.isEmpty() ? "-" : releaseState.strReadback,
                                   releaseState.strProdSerial.isEmpty() ? "-" : releaseState.strProdSerial,
@@ -245,6 +246,8 @@ void PagePhantomMode::pageShow()
     {
         nView = VIEW_USB;
         showMessage(TXT_USB_CONNECTED);
+        bUsbSeenConfigured = false;
+        nUsbDetachCount = 0;
         timerUsb->start(USB_POLL_MS);
     }
     else
@@ -274,6 +277,8 @@ void PagePhantomMode::startUsb()
     nView = VIEW_USB;
     updateView();
     showMessage(TXT_USB_CONNECTED);
+    bUsbSeenConfigured = false;
+    nUsbDetachCount = 0;
     timerUsb->start(USB_POLL_MS);
 }
 
@@ -310,9 +315,24 @@ void PagePhantomMode::checkUsb()
         return;
     }
 
-    //PC 가 꺼냄(안전 제거·power-off) → 자동 해제
+    //PC 가 꺼내기(eject) 명령을 보냄 → 자동 해제
     if(PhantomRelease::usbMediaState() != PhantomRelease::USB_MEDIA_LOADED)
+    {
         stopUsb();
+        return;
+    }
+
+    //PC 가 power-off(udisksctl — eject 명령 없이 포트만 끔)하거나 케이블을 뽑음 → 잡았다가 놓은 지 2초면 자동 해제 (실기 2026-10-26)
+    if(PhantomRelease::usbHostConfigured())
+    {
+        bUsbSeenConfigured = true;
+        nUsbDetachCount = 0;
+    }
+    else if(bUsbSeenConfigured && ++nUsbDetachCount >= USB_DETACH_POLLS)
+    {
+        qDebug()<<"usb: PC released (not configured)";
+        stopUsb();
+    }
 }
 
 //hrkim 20261026 [FACTORY TEST] 두 번째 누름: devmode.sh factorytest → 재부팅 (XW-0453, D-61)

@@ -49,6 +49,7 @@ public:
     static bool usbStart(QString *strErr);
     static bool usbStop(QString *strErr);
     static int usbMediaState();
+    static bool usbHostConfigured();    // PC 가 디스크로 잡고 있음 (UDC state "configured") — power-off·케이블 뽑기 감지용
 
     // 공정 테스트 앱 (공통 모듈 devmode.sh — 공정 테스트 앱 설치가 앱 폴더에 둔다)
     static bool isFactoryTestInstalled();
@@ -66,6 +67,7 @@ private:
     static QString factoryTestDir();
     static QString factoryTestUnit();
     static QString usbLunFilePath();
+    static QString usbUdcPath();
 };
 
 #endif // PHANTOMRELEASE_H

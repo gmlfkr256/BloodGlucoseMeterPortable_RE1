@@ -53,6 +53,8 @@ private:
     bool bFtConfirm = false;                    // [FACTORY TEST] 첫 번째 누름 뒤 두 번째 대기
     bool bFtInstalled = false;
     PhantomRelease::State releaseState;         // 해제 시도에서 끝난 단계 (다시 누르면 이어서)
+    bool bUsbSeenConfigured = false;            // 이번 USB 연결에서 PC 가 디스크로 잡은 적 있음
+    int nUsbDetachCount = 0;                    // PC 가 놓은 뒤 이어진 감시 횟수
     QTimer *timerUsb;
     QTimer *timerFtConfirm;
     QTimer *timerReboot;
