@@ -196,12 +196,34 @@ void PagePhantomMode::showResult(int nResult)
     else
         strNext = TXT_SAVE_TO_RETRY;
 
+    QString strText = QString("%1\n\nSHIP\n%2\nPROD\n%3\n\n%4")
+            .arg(resultTitle(nResult),
+                 releaseState.strReadback.isEmpty() ? "-" : releaseState.strReadback,
+                 releaseState.strProdSerial.isEmpty() ? "-" : releaseState.strProdSerial,
+                 strNext);
+
+    //hrkim 20261026 시리얼이 길면 하이픈에서 줄이 갈림(실기 21자 생산 시리얼) → 가장 긴 줄이 칸에 맞을 때까지 글자를 줄임 (XW-0446)
+    QFont fontText(instance.fontSuit,17,QFont::Bold);
+    const QStringList listLine = strText.split('\n');
+    while(fontText.pointSize() > 11)
+    {
+        int nWidest = 0;
+        for(const QString &strLine : listLine)
+        {
+#if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
+            nWidest = qMax(nWidest, QFontMetrics(fontText).horizontalAdvance(strLine));
+#else
+            nWidest = qMax(nWidest, QFontMetrics(fontText).width(strLine));
+#endif
+        }
+        if(nWidest <= labelResultText->width() - 10)
+            break;
+        fontText.setPointSize(fontText.pointSize()-1);
+    }
+
+    labelResultText->setFont(fontText);
     labelResultText->setStyleSheet(nResult == PhantomRelease::RESULT_OK ? "color: white;" : "color: red;");
-    labelResultText->setText(QString("%1\n\nSHIP\n%2\nPROD\n%3\n\n%4")
-                             .arg(resultTitle(nResult),
-                                  releaseState.strReadback.isEmpty() ? "-" : releaseState.strReadback,
-                                  releaseState.strProdSerial.isEmpty() ? "-" : releaseState.strProdSerial,
-                                  strNext));
+    labelResultText->setText(strText);
 }
 
 //hrkim 20261026 결과 코드 QR — 그리기는 qrCodePixmap(공용)으로 (XW-0446)
@@ -406,6 +428,7 @@ void PagePhantomMode::mousePressEvent(QMouseEvent *ev)
                 showMessage(TXT_WORKING);
 
             int nResult = PhantomRelease::runRelease(releaseState);
+            bFtInstalled = PhantomRelease::isFactoryTestInstalled();   //hrkim 20261026 purge 뒤 [FACTORY TEST] 숨김 (XW-0453)
 
             //hrkim 20261026 결과 코드 QR 단계는 설정으로 뺄 수 있게 — 끄면 OK 일 때 아래 SET 으로 바로 (실패는 늘 결과 화면) (XW-0446, Hr "모듈화")
             if(nResult != PhantomRelease::RESULT_OK || PhantomRelease::resultConfirmStep())
