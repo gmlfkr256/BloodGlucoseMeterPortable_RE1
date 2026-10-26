@@ -169,7 +169,8 @@ void PageMenu::update()
         };
 
         //hrkim 20260909 팬텀 메뉴: 토글 활성 시에만 마지막 슬롯에 노출 (테스트 전용, 다국어 미적용)
-        if(instance.bPhantomMenuShow == true)
+        //hrkim 20261026 팬텀 값이 켜져 있으면 숨김 표식과 상관없이 노출 — 해제했던 기기 재작업 때 [FACTORY TEST]·해제에 갈 수 있게 (Hr D-61, XW-0453)
+        if(instance.bPhantomMenuShow == true || instance.nPhantomMode != GAPI_PHANTOM_MODE_NORMAL)
         {
             strButtonPathPng[3] = strPathPngDebug;
             labelButtonText[3]->setText("팬텀");   //hrkim 20261022 영문 PHANTOM 은 버튼 폭에 꽉 차 잘려 보여 한글 표기 (XW-0417)
