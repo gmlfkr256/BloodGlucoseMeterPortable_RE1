@@ -172,7 +172,7 @@ void PageMenu::update()
         if(instance.bPhantomMenuShow == true)
         {
             strButtonPathPng[3] = strPathPngDebug;
-            labelButtonText[3]->setText("PHANTOM");
+            labelButtonText[3]->setText("팬텀");   //hrkim 20261022 영문 PHANTOM 은 버튼 폭에 꽉 차 잘려 보여 한글 표기 (XW-0417)
             listPageNum.append(PAGE_PHANTOM_MODE);
         }
         break;
