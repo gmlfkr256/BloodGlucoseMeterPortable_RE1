@@ -119,8 +119,11 @@ SOURCES += \
     Page/pageusernotice.cpp \
     guiapi/guiapi.cpp \
     guiapi/vtipc.cpp \
+    qrcodegen/qrcodegen.cpp \
     main.cpp \
     mainwindow.cpp \
+    phantomrelease.cpp \
+    qrcodeimage.cpp \
     singleton.cpp \
     textresource.cpp
 
@@ -228,7 +231,10 @@ HEADERS += \
     guiapi/gapi.h \
     guiapi/guiapi.h \
     guiapi/vtipc.h \
+    qrcodegen/qrcodegen.hpp \
     mainwindow.h \
+    phantomrelease.h \
+    qrcodeimage.h \
     singleton.h \
     textresource.h
 
