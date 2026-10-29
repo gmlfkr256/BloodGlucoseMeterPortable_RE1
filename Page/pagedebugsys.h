@@ -15,7 +15,7 @@ public:
     QLabel *labelBg;
     QLabel *labelTitle;
     QLabel *labelModeText;
-    QLabel *labelModeButton;
+    QLabel *labelModeButton[3];    //hrkim 20261029 회전 버튼 1개 → 모드별 버튼 3개 (인덱스 = opr_mode 0 Normal, 1 Test, 2 Self) (XW-0478)
 
     CustomButtonSave *customButtonSave;
     CustomButtonCancel *customButtonCancel;

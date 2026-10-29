@@ -28,11 +28,17 @@ void PageDebugSys::init()
     labelModeText->setAlignment(Qt::AlignCenter);
     labelModeText->setText("Sys Mode: ");
 
-    labelModeButton = new QLabel(this);
-    labelModeButton->setGeometry(350,100,250,250);
-    labelModeButton->setFont(font);
-    labelModeButton->setAlignment(Qt::AlignCenter);
-    labelModeButton->setStyleSheet("background-color: blue; color: white;");
+    //hrkim 20261029 모드별 버튼 3개를 오른쪽에 세로로 — 처음엔 모두 흰 바탕·검은 글자 (XW-0478)
+    QStringList listModeName = {"Normal","Test","Self"};
+    for(int i=0; i<3; i++)
+    {
+        labelModeButton[i] = new QLabel(this);
+        labelModeButton[i]->setGeometry(350,90+i*100,250,80);
+        labelModeButton[i]->setFont(font);
+        labelModeButton[i]->setAlignment(Qt::AlignCenter);
+        labelModeButton[i]->setText(listModeName.at(i));
+        labelModeButton[i]->setStyleSheet("background-color: white; color: black;");
+    }
 
     customButtonSave = new CustomButtonSave(this);
     customButtonCancel = new CustomButtonCancel(this);
@@ -43,27 +49,16 @@ void PageDebugSys::init()
 void PageDebugSys::update()
 {
 #if DEVICE
-    if(!bIsGetSysData)
-        return;
-
-    if(instance.sysData.opr_mode == 0)
+    //hrkim 20261029 겟한(또는 누른) 모드만 빨강 바탕·흰 글자, 나머지는 흰 바탕·검은 글자로 되돌림 (XW-0478)
+    for(int i=0; i<3; i++)
     {
-        labelModeButton->setText("Normal");
-        labelModeButton->setStyleSheet("background-color: white; color: black;");
-    }
-    else if(instance.sysData.opr_mode == 1)
-    {
-        labelModeButton->setText("Test");
-        labelModeButton->setStyleSheet("background-color: red; color: white;");
-    }
-    //hrkim 20261029 셀프 모드(gapi.h GAPI_OPR_MODE_SELF) 추가 (XW-0478)
-    else if(instance.sysData.opr_mode == 2)
-    {
-        labelModeButton->setText("Self");
-        labelModeButton->setStyleSheet("background-color: green; color: white;");
+        if(bIsGetSysData && instance.sysData.opr_mode == (unsigned int)i)
+            labelModeButton[i]->setStyleSheet("background-color: red; color: white;");
+        else
+            labelModeButton[i]->setStyleSheet("background-color: white; color: black;");
     }
 #else
-    labelModeButton->setText("Not Device");
+    labelModeText->setText("Not Device");
 #endif
 
 }
@@ -73,11 +68,12 @@ void PageDebugSys::pageShow()
     if(instance.guiApi.glucoseGetSysOprData(&instance.sysData) == GAPI_SUCCESS)
     {
         bIsGetSysData = true;
+        labelModeText->setText("Sys Mode: ");
     }
     else
     {
         bIsGetSysData = false;
-        labelModeButton->setText("SYS Fail");
+        labelModeText->setText("SYS Fail");    //hrkim 20261029 버튼이 3개라 실패 표시는 왼쪽 글자로 (XW-0478)
     }
     update();
 }
@@ -92,7 +88,8 @@ void PageDebugSys::mousePressEvent(QMouseEvent *ev)
     if(instance.touchCheck(customButtonSave->geometry(),ev))
     {
 #if DEVICE
-        instance.guiApi.glucoseSetSysOprData(&instance.sysData);
+        if(bIsGetSysData)   //hrkim 20261029 겟 실패면 모르는 값을 SET 하지 않음 (XW-0478)
+            instance.guiApi.glucoseSetSysOprData(&instance.sysData);
 #endif
         pageHide();
     }
@@ -102,15 +99,13 @@ void PageDebugSys::mousePressEvent(QMouseEvent *ev)
         pageHide();
     }
 
-    if(instance.touchCheck(labelModeButton->geometry(),ev))
+    //hrkim 20261029 회전식 → 누른 버튼의 모드로 바로 선택 (인덱스 = opr_mode), 겟 실패면 고르지 않음 (XW-0478)
+    for(int i=0; i<3; i++)
     {
-        if(instance.sysData.opr_mode == 0)
-            instance.sysData.opr_mode = 1;
-        else if(instance.sysData.opr_mode == 1)
-            instance.sysData.opr_mode = 2;  //hrkim 20261029 0 → 1 → 2 → 0 순환 (XW-0478)
-        else if(instance.sysData.opr_mode == 2)
-            instance.sysData.opr_mode = 0;
-
-        update();
+        if(bIsGetSysData && instance.touchCheck(labelModeButton[i]->geometry(),ev))
+        {
+            instance.sysData.opr_mode = i;
+            update();
+        }
     }
 }
