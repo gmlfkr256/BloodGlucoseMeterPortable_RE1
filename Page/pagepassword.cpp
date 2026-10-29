@@ -224,9 +224,7 @@ void PagePassword::processOK()
         }
         else
         {
-            instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
-            if(strPasswordNum == "9999")
-                instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
+            instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);   //hrkim 20261029 히든 비밀번호 9999 제거 (XW-0463)
         }
         break;
     case PASSWORD_EDIT:

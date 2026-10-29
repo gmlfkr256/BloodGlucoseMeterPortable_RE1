@@ -261,21 +261,12 @@ void ComponentPasswordKeyboard::processOK()
         else
         {
             instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_FAIL);
-            if(strKey == "9999" || strKey == "1111" || strKey == "2222")
+            //hrkim 20261029 히든 비밀번호 9999·1111·2222 제거 — 셀프 모드(opr_mode 2)일 때만 1111 → 사용자 1 로그인 (XW-0463)
+            if(strKey == "1111" && instance.guiApi.glucoseGetSysOprData(&instance.sysData) == GAPI_SUCCESS
+                    && instance.sysData.opr_mode == GAPI_OPR_MODE_SELF)
             {
-                if(strKey == "2222")
-                {
-                    instance.actUserLogin(1);
-                }
-                else
-                {
-                    instance.actUserLogin(0);
-                }
-
-                if(strKey == "1111" || strKey == "2222")
-                    instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_CHANGE);
-                else
-                    instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
+                instance.actUserLogin(USER_1);
+                instance.setPasswordStrStatus(PASSWORD_STR_LOGIN_SUCCESS);
             }
         }
 #else
