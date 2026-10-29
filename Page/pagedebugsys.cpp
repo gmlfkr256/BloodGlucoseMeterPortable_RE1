@@ -56,6 +56,12 @@ void PageDebugSys::update()
         labelModeButton->setText("Test");
         labelModeButton->setStyleSheet("background-color: red; color: white;");
     }
+    //hrkim 20261029 셀프 모드(gapi.h GAPI_OPR_MODE_SELF) 추가 (XW-0478)
+    else if(instance.sysData.opr_mode == 2)
+    {
+        labelModeButton->setText("Self");
+        labelModeButton->setStyleSheet("background-color: green; color: white;");
+    }
 #else
     labelModeButton->setText("Not Device");
 #endif
@@ -101,6 +107,8 @@ void PageDebugSys::mousePressEvent(QMouseEvent *ev)
         if(instance.sysData.opr_mode == 0)
             instance.sysData.opr_mode = 1;
         else if(instance.sysData.opr_mode == 1)
+            instance.sysData.opr_mode = 2;  //hrkim 20261029 0 → 1 → 2 → 0 순환 (XW-0478)
+        else if(instance.sysData.opr_mode == 2)
             instance.sysData.opr_mode = 0;
 
         update();
